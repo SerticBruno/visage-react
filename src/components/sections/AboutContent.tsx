@@ -1,4 +1,7 @@
 import Image from 'next/image';
+import { FaAward, FaUserMd, FaHandHoldingHeart, FaCheck } from 'react-icons/fa';
+import { GiHealthNormal } from 'react-icons/gi';
+import { MdHealthAndSafety } from 'react-icons/md';
 
 const AboutContent = () => {
   return (
@@ -27,24 +30,67 @@ const AboutContent = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-4">Vizija</h3>
+            <div className="flex items-center mb-4">
+              <FaAward className="text-3xl text-gray-900 mr-3" />
+              <h3 className="text-xl font-semibold">Vizija</h3>
+            </div>
             <p className="text-gray-600">
               Biti vodeći estetski studio u regiji, poznat po inovativnim tretmanima i izvrsnoj usluzi.
             </p>
           </div>
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-4">Misija</h3>
+            <div className="flex items-center mb-4">
+              <GiHealthNormal className="text-3xl text-gray-900 mr-3" />
+              <h3 className="text-xl font-semibold">Misija</h3>
+            </div>
             <p className="text-gray-600">
               Pružiti klijentima najbolje moguće tretmane koristeći najmoderniju tehnologiju i iskustvo naših stručnjaka.
             </p>
           </div>
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-4">Vrijednosti</h3>
+            <div className="flex items-center mb-4">
+              <FaHandHoldingHeart className="text-3xl text-gray-900 mr-3" />
+              <h3 className="text-xl font-semibold">Vrijednosti</h3>
+            </div>
             <p className="text-gray-600">
               Profesionalizam, pouzdanost, inovativnost i individualni pristup svakom klijentu.
             </p>
+          </div>
+        </div>
+
+        <div className="bg-gray-50 rounded-lg p-8 mb-16">
+          <h2 className="text-3xl font-bold mb-8 text-center">Zašto odabrati nas?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex items-start">
+              <FaCheck className="text-green-500 text-xl mt-1 mr-3 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Certificirani stručnjaci</h3>
+                <p className="text-gray-600">Naš tim čine iskusni stručnjaci s dugogodišnjim iskustvom u estetskoj medicini.</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <FaCheck className="text-green-500 text-xl mt-1 mr-3 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Najmodernija oprema</h3>
+                <p className="text-gray-600">Koristimo najnoviju tehnologiju i opremu vrhunskih proizvođača.</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <FaCheck className="text-green-500 text-xl mt-1 mr-3 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Individualni pristup</h3>
+                <p className="text-gray-600">Svakom klijentu prilazimo individualno, prilagođavajući tretmane njihovim potrebama.</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <FaCheck className="text-green-500 text-xl mt-1 mr-3 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Sigurnost i kvaliteta</h3>
+                <p className="text-gray-600">Strogo se pridržavamo svih sigurnosnih standarda i koristimo najkvalitetnije proizvode.</p>
+              </div>
+            </div>
           </div>
         </div>
 
