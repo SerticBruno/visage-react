@@ -8,15 +8,15 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const services = [
-    { name: 'Kemijski Piling', href: '/usluge#kemijski-piling' },
-    { name: 'Mezoterapija', href: '/usluge#mezoterapija' },
-    { name: 'PRP', href: '/usluge#prp' },
-    { name: 'Skin Boosteri', href: '/usluge#skin-boosteri' },
-    { name: 'Dermalni Fileri', href: '/usluge#dermalni-fileri' },
-    { name: 'Plasmage', href: '/usluge#plasmage' },
-    { name: 'Terapija bora lica', href: '/usluge#terapija-bora' },
-    { name: 'Beauty Tretmani', href: '/usluge#beauty-tretmani' },
-    { name: 'Bio Sculpture Sistemi', href: '/usluge#bio-sculpture' },
+    { name: 'Kemijski Piling', href: '/usluge/kemijski-piling' },
+    { name: 'Mezoterapija', href: '/usluge/mezoterapija' },
+    { name: 'PRP', href: '/usluge/prp' },
+    { name: 'Skin Boosteri', href: '/usluge/skin-boosteri' },
+    { name: 'Dermalni Fileri', href: '/usluge/dermalni-fileri' },
+    { name: 'Plasmage', href: '/usluge/plasmage' },
+    { name: 'Terapija bora lica', href: '/usluge/terapija-bora' },
+    { name: 'Beauty Tretmani', href: '/usluge/beauty-tretmani' },
+    { name: 'Bio Sculpture Sistemi', href: '/usluge/bio-sculpture' },
   ];
 
   const navItems = [
