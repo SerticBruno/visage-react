@@ -59,6 +59,7 @@ export default function Header() {
               <Link
                 href="/usluge"
                 className="text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1 cursor-pointer"
+                onClick={() => setIsServicesOpen(false)}
               >
                 Usluge
                 <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
