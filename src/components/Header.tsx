@@ -1,160 +1,190 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { services } from '@/data/services';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-const Header = () => {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const services = [
-    { name: 'Kemijski Piling', href: '/usluge/kemijski-piling' },
-    { name: 'Mezoterapija', href: '/usluge/mezoterapija' },
-    { name: 'PRP', href: '/usluge/prp' },
-    { name: 'Skin Boosteri', href: '/usluge/skin-boosteri' },
-    { name: 'Dermalni Fileri', href: '/usluge/dermalni-fileri' },
-    { name: 'Plasmage', href: '/usluge/plasmage' },
-    { name: 'Terapija bora lica', href: '/usluge/terapija-bora' },
-    { name: 'Beauty Tretmani', href: '/usluge/beauty-tretmani' },
-    { name: 'Bio Sculpture Sistemi', href: '/usluge/bio-sculpture' },
-  ];
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
-  const navItems = [
-    { name: 'Katalog', href: '/katalog' },
-    { name: 'Cjenik', href: '/cjenik' },
-    { name: 'O nama', href: '/o-nama' },
-    { name: 'Kontakt', href: '/kontakt' },
-  ];
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 200);
+  };
+
+  const handleMobileLinkClick = () => {
+    setIsMenuOpen(false);
+    setIsServicesOpen(false);
+  };
 
   return (
     <header className="fixed w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-gray-800">
-              VISAGE studio
-            </Link>
-          </div>
-          
+          <Link href="/" className="text-2xl font-bold text-indigo-600">
+            VISAGE
+          </Link>
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <div 
-              className="relative group"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+            <Link href="/" className="text-gray-600 hover:text-indigo-600 transition-colors">
+              Početna
+            </Link>
+            <div
+              className="relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              ref={dropdownRef}
             >
               <Link
                 href="/usluge"
-                className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium flex items-center"
+                className="text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1 cursor-pointer"
               >
                 Usluge
-                <svg
-                  className={`ml-2 h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
+                <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
               </Link>
-              <div className={`absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all duration-200 ${isServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-                <div className="py-1">
-                  {services.map((service) => (
+              {isServicesOpen && (
+                <div 
+                  className="absolute left-0 mt-3 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {Object.entries(services).map(([pageName, service]) => (
                     <Link
-                      key={service.name}
-                      href={service.href}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-indigo-600 transition-colors duration-200"
+                      key={pageName}
+                      href={`/usluge/${pageName}`}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                      onClick={() => setIsServicesOpen(false)}
                     >
-                      {service.name}
+                      {service.title}
                     </Link>
                   ))}
                 </div>
-              </div>
+              )}
             </div>
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                {item.name}
-              </Link>
-            ))}
+            <Link href="/o-nama" className="text-gray-600 hover:text-indigo-600 transition-colors">
+              O nama
+            </Link>
+            <Link href="/kontakt" className="text-gray-600 hover:text-indigo-600 transition-colors">
+              Kontakt
+            </Link>
           </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+          {/* Mobile Navigation Button */}
+          <button
+            className="md:hidden text-gray-600 hover:text-indigo-600 transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMenuOpen(!isMenuOpen);
+            }}
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <span className="sr-only">Open main menu</span>
-              {!isMenuOpen ? (
-                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
-            </button>
-          </div>
+            </svg>
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <div className="px-3 py-2">
-              <button
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="w-full text-left text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 flex items-center justify-between"
-              >
-                Usluge
-                <svg
-                  className={`h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
-              {isServicesOpen && (
-                <div className="pl-4 mt-2 space-y-1">
-                  {services.map((service) => (
-                    <Link
-                      key={service.name}
-                      href={service.href}
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        setIsServicesOpen(false);
-                      }}
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
-                </div>
+      {/* Mobile Navigation Menu */}
+      <div 
+        className={`md:hidden fixed top-16 left-0 right-0 bg-white border-t border-gray-100 transition-all duration-300 ease-in-out transform ${
+          isMenuOpen 
+            ? 'translate-y-0 opacity-100 visible' 
+            : '-translate-y-full opacity-0 invisible'
+        }`}
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1">
+          <Link
+            href="/"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+            onClick={handleMobileLinkClick}
+          >
+            Početna
+          </Link>
+          
+          <div className="relative">
+            <button
+              className="w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors flex items-center justify-between cursor-pointer"
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+            >
+              Usluge
+              {isServicesOpen ? (
+                <FaChevronUp className="w-3 h-3 transition-transform duration-300" />
+              ) : (
+                <FaChevronDown className="w-3 h-3 transition-transform duration-300" />
               )}
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="pl-4 space-y-1">
+                {Object.entries(services).map(([pageName, service]) => (
+                  <Link
+                    key={pageName}
+                    href={`/usluge/${pageName}`}
+                    className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+                    onClick={handleMobileLinkClick}
+                  >
+                    {service.title}
+                  </Link>
+                ))}
+              </div>
             </div>
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
           </div>
+
+          <Link
+            href="/o-nama"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+            onClick={handleMobileLinkClick}
+          >
+            O nama
+          </Link>
+          <Link
+            href="/kontakt"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+            onClick={handleMobileLinkClick}
+          >
+            Kontakt
+          </Link>
         </div>
-      )}
+      </div>
     </header>
   );
-};
-
-export default Header; 
+} 
