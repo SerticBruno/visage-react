@@ -7,7 +7,6 @@ interface HeroSectionProps {
   image: string;
   ctaText?: string;
   ctaLink?: string;
-  height?: string;
 }
 
 const HeroSection = ({
@@ -16,10 +15,9 @@ const HeroSection = ({
   image,
   ctaText,
   ctaLink,
-  height = '80vh'
 }: HeroSectionProps) => {
   return (
-    <section className={`relative h-[${height}] flex items-center justify-center`}>
+    <section className="relative h-[80vh] flex items-center justify-center">
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
           <Image
