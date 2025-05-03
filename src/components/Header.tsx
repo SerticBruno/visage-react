@@ -64,6 +64,7 @@ export default function Header() {
                 Usluge
                 <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
               </Link>
+              
               {isServicesOpen && (
                 <div 
                   className="absolute left-0 mt-3 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100"
@@ -83,6 +84,9 @@ export default function Header() {
                 </div>
               )}
             </div>
+            <Link href="/cjenik" className="text-gray-600 hover:text-indigo-600 transition-colors">
+              Cjenik
+            </Link>
             <Link href="/o-nama" className="text-gray-600 hover:text-indigo-600 transition-colors">
               O nama
             </Link>
@@ -169,6 +173,14 @@ export default function Header() {
               </div>
             </div>
           </div>
+
+          <Link
+            href="/cjenik"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+            onClick={handleMobileLinkClick}
+          >
+            Cjenik
+          </Link>
 
           <Link
             href="/o-nama"
