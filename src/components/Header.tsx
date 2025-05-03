@@ -87,6 +87,9 @@ export default function Header() {
             <Link href="/cjenik" className="text-gray-600 hover:text-indigo-600 transition-colors">
               Cjenik
             </Link>
+            <Link href="/katalog" className="text-gray-600 hover:text-indigo-600 transition-colors">
+              Katalog
+            </Link>
             <Link href="/o-nama" className="text-gray-600 hover:text-indigo-600 transition-colors">
               O nama
             </Link>
@@ -181,7 +184,13 @@ export default function Header() {
           >
             Cjenik
           </Link>
-
+          <Link
+            href="/katalog"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+            onClick={handleMobileLinkClick}
+          >
+            Katalog
+          </Link>
           <Link
             href="/o-nama"
             className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"

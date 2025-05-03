@@ -198,7 +198,13 @@ export default function KatalogPage() {
                     <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">{product.description}</p>
                     <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                       <div className="text-xl font-bold text-gray-900">{product.price}</div>
-                      <button className="px-3 py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm">
+                      <button 
+                        className="px-3 py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm cursor-pointer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openProductModal(product);
+                        }}
+                      >
                         Detalji
                       </button>
                     </div>
@@ -257,31 +263,28 @@ export default function KatalogPage() {
                       </Dialog.Title>
                       <button
                         onClick={() => setIsModalOpen(false)}
-                        className="text-gray-400 hover:text-gray-600 focus:outline-none transition-colors"
+                        className="text-gray-400 hover:text-gray-600 focus:outline-none transition-colors cursor-pointer p-1 hover:bg-gray-100 rounded-full"
                       >
                         <FaTimes size={20} />
                       </button>
                     </div>
                     
                     <div className="flex flex-col md:flex-row gap-4">
-                      <div className="w-full md:w-1/3">
-                        <div className="relative h-48 bg-gray-50 rounded-xl overflow-hidden shadow-sm">
+                      <div className="w-full md:w-2/5">
+                        <div className="relative h-64 md:h-96 bg-gray-50 rounded-xl overflow-hidden shadow-sm">
                           <Image
                             src={selectedProduct?.image || ''}
                             alt={selectedProduct?.title || ''}
                             fill
-                            className="object-contain p-4"
+                            className="object-contain p-6"
                           />
                         </div>
-                        <div className="mt-3 flex items-center justify-between bg-gray-50 rounded-xl p-3">
-                          <div className="text-lg font-bold text-gray-900">{selectedProduct?.price}</div>
-                          <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium shadow-sm hover:shadow-md">
-                            Naruči
-                          </button>
+                        <div className="mt-3 flex items-center justify-center bg-gray-50 rounded-xl p-3">
+                          <div className="text-xl font-bold text-gray-900">{selectedProduct?.price}</div>
                         </div>
                       </div>
                       
-                      <div className="w-full md:w-2/3 space-y-3">
+                      <div className="w-full md:w-3/5 space-y-3">
                         <div className="bg-gray-50 rounded-xl p-3">
                           <h3 className="text-sm font-semibold text-gray-900 mb-1">Opis</h3>
                           <p className="text-sm text-gray-600 leading-relaxed">{selectedProduct?.description}</p>
