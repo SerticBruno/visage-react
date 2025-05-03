@@ -11,7 +11,13 @@ import { popularProducts } from '@/data/popularProducts';
 export default function Home() {
   return (
     <main>
-      <HeroSection />
+      <HeroSection
+        title="VISAGE studio"
+        description="Estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI"
+        image="/images/services/toskani-hero.webp"
+        ctaText="Zakažite termin"
+        ctaLink="/kontakt"
+      />
       <AboutSection />
       <PopularItemsSection
         title="Popularni tretmani"
