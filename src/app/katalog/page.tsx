@@ -33,6 +33,11 @@ export default function KatalogPage() {
     );
   };
 
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsFiltering(true);
+    setSearchTerm(e.target.value);
+  };
+
   useEffect(() => {
     if (isFiltering) {
       // Calculate the scroll position accounting for the navbar
@@ -52,7 +57,7 @@ export default function KatalogPage() {
         setIsFiltering(false);
       }, 300);
     }
-  }, [isFiltering, filteredProducts]);
+  }, [isFiltering, filteredProducts, searchTerm, selectedCategories]);
 
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
@@ -94,7 +99,7 @@ export default function KatalogPage() {
                     placeholder="Naziv ili opis..."
                     className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={handleSearch}
                   />
                   <FaSearch className="absolute left-3 top-3 text-gray-400" />
                 </div>
@@ -148,12 +153,12 @@ export default function KatalogPage() {
                   `}
                   onClick={() => openProductModal(product)}
                 >
-                  <div className="relative h-48">
+                  <div className="relative h-48 bg-gray-100">
                     <Image
                       src={product.image}
                       alt={product.title}
                       fill
-                      className="object-cover"
+                      className="object-contain p-2"
                     />
                   </div>
                   <div className="p-4">
@@ -207,12 +212,12 @@ export default function KatalogPage() {
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="relative h-64 md:h-96">
+                  <div className="relative h-64 md:h-96 bg-gray-100">
                     <Image
                       src={selectedProduct.image}
                       alt={selectedProduct.title}
                       fill
-                      className="object-cover rounded-lg"
+                      className="object-contain p-4 rounded-lg"
                     />
                   </div>
                   
