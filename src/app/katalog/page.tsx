@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, Fragment } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
@@ -16,6 +17,28 @@ export default function KatalogPage() {
   const [isFiltering, setIsFiltering] = useState(false);
   const [displayedProducts, setDisplayedProducts] = useState<Product[]>(products);
   const productsRef = useRef<HTMLDivElement>(null);
+
+  // Handle modal open/close with scrollbar width
+  useEffect(() => {
+    if (isModalOpen) {
+      // Get the scrollbar width
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      // Store the original padding-right
+      const originalPaddingRight = document.body.style.paddingRight;
+      // Store the original overflow
+      const originalOverflow = document.body.style.overflow;
+      
+      // Apply the styles
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      document.body.style.overflow = 'hidden';
+      
+      // Cleanup function
+      return () => {
+        document.body.style.paddingRight = originalPaddingRight;
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isModalOpen]);
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -150,6 +173,7 @@ export default function KatalogPage() {
                     ${product.isPopular ? 'border-indigo-500' : 'border-gray-200'}
                     hover:shadow-lg transition-all duration-300
                     ${isFiltering ? 'opacity-50' : 'opacity-100'}
+                    flex flex-col h-full
                   `}
                   onClick={() => openProductModal(product)}
                 >
@@ -161,7 +185,7 @@ export default function KatalogPage() {
                       className="object-contain p-2"
                     />
                   </div>
-                  <div className="p-4">
+                  <div className="p-4 flex flex-col flex-grow">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="text-lg font-bold text-gray-900">{product.title}</h3>
                       {product.isPopular && (
@@ -171,8 +195,8 @@ export default function KatalogPage() {
                         </span>
                       )}
                     </div>
-                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
-                    <div className="flex items-center justify-between">
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">{product.description}</p>
+                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                       <div className="text-xl font-bold text-gray-900">{product.price}</div>
                       <button className="px-3 py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm">
                         Detalji
@@ -197,90 +221,121 @@ export default function KatalogPage() {
         </div>
 
         {/* Product Modal */}
-        {isModalOpen && selectedProduct && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900">{selectedProduct.title}</h2>
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="text-gray-500 hover:text-gray-700"
-                  >
-                    <FaTimes size={24} />
-                  </button>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="relative h-64 md:h-96 bg-gray-100">
-                    <Image
-                      src={selectedProduct.image}
-                      alt={selectedProduct.title}
-                      fill
-                      className="object-contain p-4 rounded-lg"
-                    />
-                  </div>
-                  
-                  <div>
-                    <div className="mb-4">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Opis</h3>
-                      <p className="text-gray-600">{selectedProduct.description}</p>
-                    </div>
+        <Transition appear show={isModalOpen} as={Fragment}>
+          <Dialog
+            as="div"
+            className="relative z-50"
+            onClose={() => setIsModalOpen(false)}
+          >
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 backdrop-blur-sm bg-white/30" />
+            </Transition.Child>
 
-                    {selectedProduct.volume && (
-                      <div className="mb-4">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Sadržaj</h3>
-                        <p className="text-gray-600">{selectedProduct.volume}</p>
-                      </div>
-                    )}
-
-                    {selectedProduct.activeIngredients && (
-                      <div className="mb-4">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Aktivni sastojci</h3>
-                        <ul className="list-disc list-inside text-gray-600">
-                          {selectedProduct.activeIngredients.map((ingredient, index) => (
-                            <li key={index}>{ingredient}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {selectedProduct.application && (
-                      <div className="mb-4">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Primjena</h3>
-                        <ul className="list-disc list-inside text-gray-600">
-                          {selectedProduct.application.map((step, index) => (
-                            <li key={index}>{step}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {selectedProduct.tags && (
-                      <div className="mb-4">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Oznake</h3>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedProduct.tags.map((tag, index) => (
-                            <span key={index} className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="flex items-center justify-between mt-6">
-                      <div className="text-2xl font-bold text-gray-900">{selectedProduct.price}</div>
-                      <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
-                        Naruči
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white p-4 shadow-2xl transition-all border border-gray-100">
+                    <div className="flex justify-between items-start mb-3 pb-3 border-b border-gray-100">
+                      <Dialog.Title as="h2" className="text-xl font-bold text-gray-900">
+                        {selectedProduct?.title}
+                      </Dialog.Title>
+                      <button
+                        onClick={() => setIsModalOpen(false)}
+                        className="text-gray-400 hover:text-gray-600 focus:outline-none transition-colors"
+                      >
+                        <FaTimes size={20} />
                       </button>
                     </div>
-                  </div>
-                </div>
+                    
+                    <div className="flex flex-col md:flex-row gap-4">
+                      <div className="w-full md:w-1/3">
+                        <div className="relative h-48 bg-gray-50 rounded-xl overflow-hidden shadow-sm">
+                          <Image
+                            src={selectedProduct?.image || ''}
+                            alt={selectedProduct?.title || ''}
+                            fill
+                            className="object-contain p-4"
+                          />
+                        </div>
+                        <div className="mt-3 flex items-center justify-between bg-gray-50 rounded-xl p-3">
+                          <div className="text-lg font-bold text-gray-900">{selectedProduct?.price}</div>
+                          <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium shadow-sm hover:shadow-md">
+                            Naruči
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <div className="w-full md:w-2/3 space-y-3">
+                        <div className="bg-gray-50 rounded-xl p-3">
+                          <h3 className="text-sm font-semibold text-gray-900 mb-1">Opis</h3>
+                          <p className="text-sm text-gray-600 leading-relaxed">{selectedProduct?.description}</p>
+                        </div>
+
+                        {selectedProduct?.volume && (
+                          <div className="bg-gray-50 rounded-xl p-3">
+                            <h3 className="text-sm font-semibold text-gray-900 mb-1">Sadržaj</h3>
+                            <p className="text-sm text-gray-600">{selectedProduct.volume}</p>
+                          </div>
+                        )}
+
+                        {selectedProduct?.activeIngredients && (
+                          <div className="bg-gray-50 rounded-xl p-3">
+                            <h3 className="text-sm font-semibold text-gray-900 mb-1">Aktivni sastojci</h3>
+                            <ul className="list-disc list-inside text-sm text-gray-600 space-y-0.5">
+                              {selectedProduct.activeIngredients.map((ingredient, index) => (
+                                <li key={index}>{ingredient}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {selectedProduct?.application && (
+                          <div className="bg-gray-50 rounded-xl p-3">
+                            <h3 className="text-sm font-semibold text-gray-900 mb-1">Primjena</h3>
+                            <ul className="list-disc list-inside text-sm text-gray-600 space-y-0.5">
+                              {selectedProduct.application.map((step, index) => (
+                                <li key={index}>{step}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {selectedProduct?.tags && (
+                          <div className="bg-gray-50 rounded-xl p-3">
+                            <h3 className="text-sm font-semibold text-gray-900 mb-1">Oznake</h3>
+                            <div className="flex flex-wrap gap-1.5">
+                              {selectedProduct.tags.map((tag, index) => (
+                                <span key={index} className="px-2 py-0.5 bg-white text-gray-600 rounded-full text-xs font-medium shadow-sm">
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
               </div>
             </div>
-          </div>
-        )}
+          </Dialog>
+        </Transition>
       </div>
       <CTASection />
       <ContactSection />
