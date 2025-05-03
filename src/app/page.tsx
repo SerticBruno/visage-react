@@ -1,20 +1,33 @@
 import HeroSection from '@/components/sections/HeroSection';
 import AboutSection from '@/components/sections/AboutSection';
-import PopularTreatmentsSection from '@/components/sections/PopularTreatmentsSection';
 import PartnersSlider from '@/components/sections/PartnersSlider';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
-import PopularProductsSection from '@/components/sections/PopularProductsSection';
+import PopularItemsSection from '@/components/sections/PopularItemsSection';
+import { popularServices } from '@/data/popularServices';
+import { popularProducts } from '@/data/popularProducts';
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
       <AboutSection />
-      <PopularTreatmentsSection />
+      <PopularItemsSection
+        title="Popularni tretmani"
+        items={popularServices}
+        viewAllLink="/usluge"
+        viewAllText="Pogledajte sve tretmane"
+        background="gray"
+      />
       <NewsletterCTASection />
-      <PopularProductsSection />
+      <PopularItemsSection
+        title="Popularni proizvodi"
+        items={popularProducts}
+        viewAllLink="/proizvodi"
+        viewAllText="Pogledajte sve proizvode"
+        background="white"
+      />
       <PartnersSlider />
       <CTASection />
       <ContactSection />
