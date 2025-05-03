@@ -7,16 +7,22 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
           <Image
-            src="/images/plasmage-hero.webp"
+            src="/images/services/toskani-hero.webp"
             alt="VISAGE Studio"
             fill
             className="object-cover"
             priority
             quality={100}
             sizes="100vw"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+            }}
           />
         </div>
-        <div className="absolute inset-0 bg-black bg-opacity-20" />
       </div>
       <div className="relative z-10 text-center text-white px-4">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
