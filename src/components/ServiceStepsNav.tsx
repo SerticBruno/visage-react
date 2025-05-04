@@ -34,6 +34,21 @@ interface ServiceStepsNavProps {
 export default function ServiceStepsNav({ steps }: ServiceStepsNavProps) {
   const [active, setActive] = useState<string | null>(null);
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, stepId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(stepId);
+    if (element) {
+      const headerOffset = 120; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   useEffect(() => {
     const onScroll = () => {
       for (const step of steps) {
@@ -62,6 +77,7 @@ export default function ServiceStepsNav({ steps }: ServiceStepsNavProps) {
             <a
               key={step.id}
               href={`#${step.id}`}
+              onClick={(e) => handleClick(e, step.id)}
               className={`flex flex-col items-center px-2 transition group ${isActive ? 'text-indigo-600' : 'text-gray-700 hover:text-indigo-600'}`}
               style={{ minWidth: 90 }}
             >
