@@ -65,7 +65,7 @@ const PartnersSlider = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Naši Partneri
+            Naši partneri
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Suradnja s vodećim brendovima u industriji ljepote
@@ -113,21 +113,21 @@ const PartnersSlider = () => {
           >
             {partners.map((partner) => (
               <SwiperSlide key={partner.id}>
-                <div className="flex items-center justify-center h-48 bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                  <a
-                    href={partner.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full h-full relative"
-                  >
+                <a
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center h-48 bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <div className="relative w-full h-full">
                     <Image
                       src={partner.logo}
                       alt={partner.name}
                       fill
                       className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
-                  </a>
-                </div>
+                  </div>
+                </a>
               </SwiperSlide>
             ))}
           </Swiper>

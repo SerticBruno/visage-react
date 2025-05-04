@@ -30,8 +30,9 @@ const PopularItemsSection = ({
         <h2 className="text-3xl font-bold text-center mb-12">{title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item) => (
-            <div 
+            <Link 
               key={item.title}
+              href={item.link}
               className="group relative bg-white rounded-xl shadow-sm p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="flex flex-col items-center h-full relative z-10">
@@ -59,10 +60,7 @@ const PopularItemsSection = ({
                     </div>
                   ))}
                 </div>
-                <Link
-                  href={item.link}
-                  className="mt-auto inline-flex items-center text-sky-600 hover:text-sky-800 font-medium transition-colors duration-300 cursor-pointer relative z-20"
-                >
+                <div className="mt-auto inline-flex items-center text-sky-600 hover:text-sky-800 font-medium transition-colors duration-300 cursor-pointer relative z-20">
                   Saznajte više
                   <svg 
                     className="w-4 h-4 ml-2" 
@@ -77,10 +75,10 @@ const PopularItemsSection = ({
                       d="M14 5l7 7m0 0l-7 7m7-7H3" 
                     />
                   </svg>
-                </Link>
+                </div>
               </div>
               <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-sky-200 transition-colors duration-300 pointer-events-none" />
-            </div>
+            </Link>
           ))}
         </div>
         <div className="text-center mt-12">
