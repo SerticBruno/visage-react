@@ -151,17 +151,6 @@ export default function Header() {
             </div>
             
             <Link 
-              href="/cjenik" 
-              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
-                isActive('/cjenik') ? 'text-indigo-600' : ''
-              }`}
-            >
-              Cjenik
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
-                isActive('/cjenik') ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
-            </Link>
-            <Link 
               href="/katalog" 
               className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
                 isActive('/katalog') ? 'text-indigo-600' : ''
@@ -172,6 +161,31 @@ export default function Header() {
                 isActive('/katalog') ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></span>
             </Link>
+            
+            <Link 
+              href="/cjenik" 
+              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
+                isActive('/cjenik') ? 'text-indigo-600' : ''
+              }`}
+            >
+              Cjenik
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActive('/cjenik') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
+            </Link>
+            
+            <Link 
+              href="/blog" 
+              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
+                isActive('/blog') ? 'text-indigo-600' : ''
+              }`}
+            >
+              Blog
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActive('/blog') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
+            </Link>
+            
             <Link 
               href="/o-nama" 
               className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
@@ -183,6 +197,7 @@ export default function Header() {
                 isActive('/o-nama') ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></span>
             </Link>
+            
             <Link 
               href="/kontakt" 
               className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
@@ -192,17 +207,6 @@ export default function Header() {
               Kontakt
               <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
                 isActive('/kontakt') ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
-            </Link>
-            <Link 
-              href="/blog" 
-              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
-                isActive('/blog') ? 'text-indigo-600' : ''
-              }`}
-            >
-              Blog
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
-                isActive('/blog') ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></span>
             </Link>
           </nav>
@@ -270,7 +274,8 @@ export default function Header() {
                 <FaChevronDown className="w-3 h-3 transition-transform duration-300" />
               )}
             </button>
-            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+            
+            {isServicesOpen && (
               <div className="pl-4 space-y-1">
                 {Object.entries(services).map(([pageName, service]) => (
                   <Link
@@ -283,16 +288,9 @@ export default function Header() {
                   </Link>
                 ))}
               </div>
-            </div>
+            )}
           </div>
 
-          <Link
-            href="/cjenik"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
-            onClick={handleMobileLinkClick}
-          >
-            Cjenik
-          </Link>
           <Link
             href="/katalog"
             className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
@@ -300,6 +298,23 @@ export default function Header() {
           >
             Katalog
           </Link>
+          
+          <Link
+            href="/cjenik"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
+            onClick={handleMobileLinkClick}
+          >
+            Cjenik
+          </Link>
+          
+          <Link
+            href="/blog"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
+            onClick={handleMobileLinkClick}
+          >
+            Blog
+          </Link>
+          
           <Link
             href="/o-nama"
             className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
@@ -307,19 +322,13 @@ export default function Header() {
           >
             O nama
           </Link>
+          
           <Link
             href="/kontakt"
             className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
             onClick={handleMobileLinkClick}
           >
             Kontakt
-          </Link>
-          <Link
-            href="/blog"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
-            onClick={handleMobileLinkClick}
-          >
-            Blog
           </Link>
         </div>
       </div>
