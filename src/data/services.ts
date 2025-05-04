@@ -10,7 +10,8 @@ export const services = {
       'Poboljšava apsorpciju proizvoda za njegu',
       'Smanjuje ožiljke od akni'
     ],
-    image: '/images/services/socialmedia_peelings_combined.webp',
+    image: '/images/services/toskani-woman.webp',
+    heroImage: '/images/services/socialmedia_peelings_combined.webp',
     metaDescription: 'Profesionalni kemijski piling u VISAGE studiju u Siska. Obnovite svoju kožu uz pomoć naprednih kemijskih pilinzi. Rezultati odmah vidljivi.',
     metaKeywords: 'kemijski piling, piling lica, obnova kože, estetski studio Sisak, VISAGE studio'
   },
@@ -25,7 +26,8 @@ export const services = {
       'Poboljšava elastičnost kože',
       'Potiče proizvodnju kolagena'
     ],
-    image: '/images/services/Mesoterapia-transdermica-facial.webp',
+    image: '/images/services/botox-face-girl.webp',
+    heroImage: '/images/services/Mesoterapia-transdermica-facial.webp',
     metaDescription: 'Napredna mezoterapija u VISAGE studiju. Revitalizirajte svoju kožu uz pomoć injekcija vitamina i minerala. Vidljivi rezultati nakon prvog tretmana.',
     metaKeywords: 'mezoterapija, injekcije vitamina, revitalizacija kože, estetski studio Sisak, VISAGE studio'
   },
@@ -40,7 +42,8 @@ export const services = {
       'Poboljšava kvalitetu kože',
       'Potpuno prirodna metoda'
     ],
-    image: '/images/services/MYV_selfie_details.webp',
+    image: '/images/services/plasmage-hero.webp',
+    heroImage: '/images/services/MYV_selfie_details.webp',
     metaDescription: 'PRP terapija u VISAGE studiju. Koristite vlastite trombocite za regeneraciju kože. Prirodna i sigurna metoda.',
     metaKeywords: 'PRP terapija, regeneracija kože, trombociti, estetski studio Sisak, VISAGE studio'
   },
@@ -55,7 +58,8 @@ export const services = {
       'Poboljšava elastičnost kože',
       'Dugotrajni rezultati'
     ],
-    image: '/images/services/toskani-hero.webp',
+    image: '/images/services/obrve-i-trepavice.webp',
+    heroImage: '/images/services/toskani-hero.webp',
     metaDescription: 'Skin boosteri u VISAGE studiju. Duboka hidratacija i revitalizacija kože. Vidljivi i dugotrajni rezultati.',
     metaKeywords: 'skin boosteri, hidratacija kože, revitalizacija kože, estetski studio Sisak, VISAGE studio'
   },
@@ -70,7 +74,8 @@ export const services = {
       'Prirodni izgled',
       'Dugotrajni rezultati'
     ],
-    image: '/images/services/botox-face-girl.webp',
+    image: '/images/services/TKNHA3_.webp',
+    heroImage: '/images/services/botox-face-girl.webp',
     metaDescription: 'Dermalni fileri u VISAGE studiju. Volumizacija i obnavljanje kontura lica. Prirodni i dugotrajni rezultati.',
     metaKeywords: 'dermalni fileri, volumizacija lica, konture lica, estetski studio Sisak, VISAGE studio'
   },
@@ -85,7 +90,8 @@ export const services = {
       'Poboljšava elastičnost',
       'Minimalno invazivna metoda'
     ],
-    image: '/images/services/plasmage-hero.webp',
+    image: '/images/services/toskani-woman.webp',
+    heroImage: '/images/services/plasmage-hero.webp',
     metaDescription: 'Plasmage terapija u VISAGE studiju. Lifting i obnavljanje kože uz pomoć plazme. Sigurna i učinkovita metoda.',
     metaKeywords: 'plasmage, lifting kože, plazma, estetski studio Sisak, VISAGE studio'
   },
@@ -100,7 +106,8 @@ export const services = {
       'Poboljšava elastičnost',
       'Prirodni izgled'
     ],
-    image: '/images/services/toskani-woman.webp',
+    image: '/images/services/manikura.webp',
+    heroImage: '/images/services/toskani-woman.webp',
     metaDescription: 'Terapija bora lica u VISAGE studiju. Smanjite i spriječite bore uz pomoć naprednih metoda. Prirodni i dugotrajni rezultati.',
     metaKeywords: 'terapija bora, bore lica, prevencija bora, estetski studio Sisak, VISAGE studio'
   },
@@ -115,7 +122,8 @@ export const services = {
       'Poboljšava hidrataciju',
       'Luksuzno iskustvo'
     ],
-    image: '/images/services/TKNHA3_.webp',
+    image: '/images/services/socialmedia_peelings_combined.webp',
+    heroImage: '/images/services/TKNHA3_.webp',
     metaDescription: 'Beauty tretmani u VISAGE studiju. Luksuzni tretmani za lice i tijelo. Potpuno opuštanje i njega.',
     metaKeywords: 'beauty tretmani, njega kože, opuštanje, estetski studio Sisak, VISAGE studio'
   },
@@ -130,11 +138,21 @@ export const services = {
       'Prirodan izgled',
       'Visoka kvaliteta'
     ],
-    image: '/images/services/manikura.webp',
+    image: '/images/services/Mesoterapia-transdermica-facial.webp',
+    heroImage: '/images/services/manikura.webp',
     metaDescription: 'Bio Sculpture sistemi u VISAGE studiju. Profesionalna njega i ukrašavanje noktiju. Vrhunska kvaliteta i dugotrajni rezultati.',
     metaKeywords: 'bio sculpture, nokti, manikura, estetski studio Sisak, VISAGE studio'
   }
 } as const;
 
 export type ServiceKey = keyof typeof services;
-export type Service = typeof services[ServiceKey]; 
+export type Service = {
+  title: string;
+  description: string;
+  longDescription: string;
+  benefits: string[];
+  image: string;
+  heroImage: string;
+  metaDescription: string;
+  metaKeywords: string;
+}; 

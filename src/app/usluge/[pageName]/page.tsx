@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { services, type ServiceKey } from '@/data/services';
 import ContactSection from '@/components/sections/ContactSection';
+import HeroSection from '@/components/sections/HeroSection';
 
 type Props = {
   params: { pageName: string };
@@ -64,6 +65,11 @@ export default function ServicePage({ params }: Props) {
 
   return (
     <div className="min-h-screen">
+      <HeroSection
+        title={service.title}
+        description={service.description}
+        image={service.heroImage}
+      />
       <div className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
