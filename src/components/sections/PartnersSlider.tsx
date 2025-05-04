@@ -80,6 +80,7 @@ const PartnersSlider = () => {
             modules={[Autoplay, Pagination]}
             spaceBetween={60}
             slidesPerView={1}
+            wrapperClass="!pb-3"
             breakpoints={{
               640: {
                 slidesPerView: 2,

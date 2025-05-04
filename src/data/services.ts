@@ -1,6 +1,6 @@
 export const services = {
   'kemijski-piling': {
-    title: 'Kemijski Piling',
+    title: 'Kemijski piling',
     description: 'Profesionalni kemijski piling za obnavljanje kože',
     longDescription: 'Kemijski piling je napredna estetska procedura koja koristi kemijske spojeve za uklanjanje mrtvih stanica s površine kože. Ova metoda potiče regeneraciju kože, poboljšava ton i teksturu, te pomaže u smanjenju bora i ožiljaka.',
     benefits: [
@@ -45,7 +45,7 @@ export const services = {
     metaKeywords: 'PRP terapija, regeneracija kože, trombociti, estetski studio Sisak, VISAGE studio'
   },
   'skin-boosteri': {
-    title: 'Skin Boosteri',
+    title: 'Skin boosteri',
     description: 'Napredni skin boosteri za hidrataciju i revitalizaciju',
     longDescription: 'Skin boosteri su napredni tretmani koji pružaju duboku hidrataciju i revitalizaciju kože. Ova metoda koristi visokokvalitetne sastojke za dugotrajno poboljšanje kvalitete kože.',
     benefits: [
@@ -60,7 +60,7 @@ export const services = {
     metaKeywords: 'skin boosteri, hidratacija kože, revitalizacija kože, estetski studio Sisak, VISAGE studio'
   },
   'dermalni-fileri': {
-    title: 'Dermalni Fileri',
+    title: 'Dermalni fileri',
     description: 'Profesionalni dermalni fileri za volumizaciju',
     longDescription: 'Dermalni fileri su napredna metoda za volumizaciju i obnavljanje kontura lica. Koriste se visokokvalitetni proizvodi koji su sigurni i daju prirodne rezultate.',
     benefits: [
@@ -105,7 +105,7 @@ export const services = {
     metaKeywords: 'terapija bora, bore lica, prevencija bora, estetski studio Sisak, VISAGE studio'
   },
   'beauty-tretmani': {
-    title: 'Beauty Tretmani',
+    title: 'Beauty tretmani',
     description: 'Luksuzni beauty tretmani za potpuno opuštanje',
     longDescription: 'Beauty tretmani su luksuzni tretmani za lice i tijelo koji pružaju potpuno opuštanje i njegu. Koristimo najkvalitetnije proizvode za maksimalne rezultate.',
     benefits: [
@@ -120,7 +120,7 @@ export const services = {
     metaKeywords: 'beauty tretmani, njega kože, opuštanje, estetski studio Sisak, VISAGE studio'
   },
   'bio-sculpture': {
-    title: 'Bio Sculpture Sistemi',
+    title: 'Bio Sculpture sistemi',
     description: 'Profesionalni Bio Sculpture sistemi za nokte',
     longDescription: 'Bio Sculpture je vrhunski sistem za njegu i ukrašavanje noktiju. Koristimo najkvalitetnije proizvode i tehnike za savršene rezultate.',
     benefits: [

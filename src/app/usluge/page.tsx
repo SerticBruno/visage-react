@@ -7,7 +7,7 @@ export default function ServicesPage() {
   return (
     <main>
       <HeroSection
-        title="Naše Usluge"
+        title="Naše usluge"
         description="Otkrijte našu široku ponudu tretmana za lice i tijelo, dizajniranih da vas učine osjećati se i izgledati najbolje"
         image="/images/services/botox-face-girl.webp"
       />
