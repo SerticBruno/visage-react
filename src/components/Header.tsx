@@ -47,12 +47,12 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed w-full bg-gradient-to-r from-white to-gray-50 shadow-sm z-50">
+    <header className="fixed w-full bg-gradient-to-r from-gray-50 to-gray-100 shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           <Link 
             href="/" 
-            className="text-2xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors duration-300 transform hover:scale-105"
+            className="text-3xl font-bold text-gray-800 hover:text-gray-900 transition-colors duration-300 transform hover:scale-105"
           >
             VISAGE
           </Link>
@@ -61,14 +61,11 @@ export default function Header() {
           <nav className="hidden md:flex space-x-8">
             <Link 
               href="/" 
-              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
-                isActive('/') ? 'text-indigo-600' : ''
+              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
+                isActive('/') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
             >
               Početna
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
-                isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
             </Link>
             
             <div
@@ -79,16 +76,13 @@ export default function Header() {
             >
               <Link
                 href="/usluge"
-                className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 flex items-center gap-1 cursor-pointer relative group ${
-                  isActive('/usluge') ? 'text-indigo-600' : ''
+                className={`text-gray-700 hover:text-gray-900 transition-all duration-300 flex items-center gap-1 cursor-pointer relative group text-lg ${
+                  isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
                 }`}
                 onClick={() => setIsServicesOpen(false)}
               >
                 Usluge
                 <FaChevronDown className={`w-3 h-3 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
-                  isActive('/usluge') ? 'w-full' : 'w-0 group-hover:w-full'
-                }`}></span>
               </Link>
               
               {isServicesOpen && (
@@ -101,8 +95,8 @@ export default function Header() {
                     <Link
                       key={pageName}
                       href={`/usluge/${pageName}`}
-                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 transform hover:translate-x-1 ${
-                        isActive(`/usluge/${pageName}`) ? 'text-indigo-600 bg-indigo-50' : ''
+                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-300 transform hover:translate-x-1 ${
+                        isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold bg-gray-50' : ''
                       }`}
                       onClick={() => setIsServicesOpen(false)}
                     >
@@ -115,68 +109,53 @@ export default function Header() {
             
             <Link 
               href="/katalog" 
-              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
-                isActive('/katalog') ? 'text-indigo-600' : ''
+              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
+                isActive('/katalog') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
             >
               Katalog
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
-                isActive('/katalog') ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
             </Link>
             
             <Link 
               href="/cjenik" 
-              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
-                isActive('/cjenik') ? 'text-indigo-600' : ''
+              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
+                isActive('/cjenik') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
             >
               Cjenik
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
-                isActive('/cjenik') ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
             </Link>
             
             <Link 
               href="/blog" 
-              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
-                isActive('/blog') ? 'text-indigo-600' : ''
+              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
+                isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
             >
               Blog
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
-                isActive('/blog') ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
             </Link>
             
             <Link 
               href="/o-nama" 
-              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
-                isActive('/o-nama') ? 'text-indigo-600' : ''
+              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
+                isActive('/o-nama') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
             >
               O nama
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
-                isActive('/o-nama') ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
             </Link>
             
             <Link 
               href="/kontakt" 
-              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
-                isActive('/kontakt') ? 'text-indigo-600' : ''
+              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
+                isActive('/kontakt') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
             >
               Kontakt
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
-                isActive('/kontakt') ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
             </Link>
           </nav>
 
           {/* Mobile Navigation Button */}
           <button
-            className="md:hidden text-gray-600 hover:text-indigo-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+            className="md:hidden text-gray-700 hover:text-gray-900 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
             onClick={(e) => {
               e.preventDefault();
               setIsMenuOpen(!isMenuOpen);
@@ -210,7 +189,7 @@ export default function Header() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`md:hidden fixed top-16 left-0 right-0 bg-white border-t border-gray-100 transition-all duration-300 ease-in-out transform ${
+        className={`md:hidden fixed top-20 left-0 right-0 bg-white border-t border-gray-100 transition-all duration-300 ease-in-out transform ${
           isMenuOpen 
             ? 'translate-y-0 opacity-100 visible' 
             : '-translate-y-full opacity-0 invisible'
@@ -219,7 +198,9 @@ export default function Header() {
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link
             href="/"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
+            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+              isActive('/') ? 'text-gray-900 font-bold' : 'font-medium'
+            }`}
             onClick={handleMobileLinkClick}
           >
             Početna
@@ -227,7 +208,9 @@ export default function Header() {
           
           <div className="relative">
             <button
-              className="w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 flex items-center justify-between cursor-pointer"
+              className={`w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 flex items-center justify-between cursor-pointer text-lg ${
+                isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
+              }`}
               onClick={() => setIsServicesOpen(!isServicesOpen)}
             >
               Usluge
@@ -244,7 +227,9 @@ export default function Header() {
                   <Link
                     key={pageName}
                     href={`/usluge/${pageName}`}
-                    className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
+                    className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-base ${
+                      isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold' : ''
+                    }`}
                     onClick={handleMobileLinkClick}
                   >
                     {service.title}
@@ -256,7 +241,9 @@ export default function Header() {
 
           <Link
             href="/katalog"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
+            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+              isActive('/katalog') ? 'text-gray-900 font-bold' : 'font-medium'
+            }`}
             onClick={handleMobileLinkClick}
           >
             Katalog
@@ -264,7 +251,9 @@ export default function Header() {
           
           <Link
             href="/cjenik"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
+            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+              isActive('/cjenik') ? 'text-gray-900 font-bold' : 'font-medium'
+            }`}
             onClick={handleMobileLinkClick}
           >
             Cjenik
@@ -272,7 +261,9 @@ export default function Header() {
           
           <Link
             href="/blog"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
+            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+              isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
+            }`}
             onClick={handleMobileLinkClick}
           >
             Blog
@@ -280,7 +271,9 @@ export default function Header() {
           
           <Link
             href="/o-nama"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
+            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+              isActive('/o-nama') ? 'text-gray-900 font-bold' : 'font-medium'
+            }`}
             onClick={handleMobileLinkClick}
           >
             O nama
@@ -288,7 +281,9 @@ export default function Header() {
           
           <Link
             href="/kontakt"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
+            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+              isActive('/kontakt') ? 'text-gray-900 font-bold' : 'font-medium'
+            }`}
             onClick={handleMobileLinkClick}
           >
             Kontakt

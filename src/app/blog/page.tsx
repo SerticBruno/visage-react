@@ -9,6 +9,7 @@ import { useState, useMemo } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import ContactSection from '@/components/sections/ContactSection';
 import SubscriptionCTASection from '@/components/sections/SubscriptionCTASection';
+import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 
 const POSTS_PER_PAGE = 6;
 
@@ -129,14 +130,11 @@ export default function BlogPage() {
               </div>
             )}
 
-            {/* Subscription CTA */}
-            <SubscriptionCTASection />
-
-            {/* Contact Section */}
-            <ContactSection />
           </>
         )}
       </div>
+      <NewsletterCTASection />
+      <ContactSection />
     </div>
   );
 } 

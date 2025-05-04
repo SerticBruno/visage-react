@@ -19,7 +19,7 @@ const SubscriptionCTASection = () => {
             {/* Content */}
             <div className="p-6 sm:p-8 lg:p-16 order-2 lg:order-1">
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-                Pretplatite se na naš blog
+                Pretplatite se na naš newsletter
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
                 Budite u toku s najnovijim savjetima i trendovima u svijetu ljepote. Pretplatite se na naš newsletter i primajte ekskluzivne sadržaje direktno u vaš inbox.
