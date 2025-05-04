@@ -13,7 +13,25 @@ export const services = {
     image: '/images/services/toskani-woman.webp',
     heroImage: '/images/services/socialmedia_peelings_combined.webp',
     metaDescription: 'Profesionalni kemijski piling u VISAGE studiju u Siska. Obnovite svoju kožu uz pomoć naprednih kemijskih pilinzi. Rezultati odmah vidljivi.',
-    metaKeywords: 'kemijski piling, piling lica, obnova kože, estetski studio Sisak, VISAGE studio'
+    metaKeywords: 'kemijski piling, piling lica, obnova kože, estetski studio Sisak, VISAGE studio',
+    steps: [
+      { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+      { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
+      { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
+      { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
+      { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
+      { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+      { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
+    ],
+    stepContents: {
+      'opis-zahvata': 'Ovo je opis zahvata za kemijski piling...',
+      'kandidati': 'Kandidati za kemijski piling su...',
+      'priprema': 'Priprema za kemijski piling uključuje...',
+      'tijek-zahvata': 'Tijek zahvata za kemijski piling je...',
+      'oporavak': 'Oporavak nakon kemijskog pilinga...',
+      'mjere-opreza': 'Mjere opreza za kemijski piling...',
+      'cijena': 'Cijena kemijskog pilinga je...'
+    }
   },
   'mezoterapija': {
     title: 'Mezoterapija',
@@ -29,7 +47,25 @@ export const services = {
     image: '/images/services/botox-face-girl.webp',
     heroImage: '/images/services/Mesoterapia-transdermica-facial.webp',
     metaDescription: 'Napredna mezoterapija u VISAGE studiju. Revitalizirajte svoju kožu uz pomoć injekcija vitamina i minerala. Vidljivi rezultati nakon prvog tretmana.',
-    metaKeywords: 'mezoterapija, injekcije vitamina, revitalizacija kože, estetski studio Sisak, VISAGE studio'
+    metaKeywords: 'mezoterapija, injekcije vitamina, revitalizacija kože, estetski studio Sisak, VISAGE studio',
+    steps: [
+      { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+      { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
+      { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
+      { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
+      { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
+      { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+      { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
+    ],
+    stepContents: {
+      'opis-zahvata': 'Ovo je opis zahvata za mezoterapiju...',
+      'kandidati': 'Kandidati za mezoterapiju su...',
+      'priprema': 'Priprema za mezoterapiju uključuje...',
+      'tijek-zahvata': 'Tijek zahvata za mezoterapiju je...',
+      'oporavak': 'Oporavak nakon mezoterapije...',
+      'mjere-opreza': 'Mjere opreza za mezoterapiju...',
+      'cijena': 'Cijena mezoterapije je...'
+    }
   },
   'prp': {
     title: 'PRP',
@@ -45,7 +81,25 @@ export const services = {
     image: '/images/services/plasmage-hero.webp',
     heroImage: '/images/services/MYV_selfie_details.webp',
     metaDescription: 'PRP terapija u VISAGE studiju. Koristite vlastite trombocite za regeneraciju kože. Prirodna i sigurna metoda.',
-    metaKeywords: 'PRP terapija, regeneracija kože, trombociti, estetski studio Sisak, VISAGE studio'
+    metaKeywords: 'PRP terapija, regeneracija kože, trombociti, estetski studio Sisak, VISAGE studio',
+    steps: [
+      { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+      { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
+      { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
+      { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
+      { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
+      { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+      { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
+    ],
+    stepContents: {
+      'opis-zahvata': 'Ovo je opis zahvata za PRP...',
+      'kandidati': 'Kandidati za PRP su...',
+      'priprema': 'Priprema za PRP uključuje...',
+      'tijek-zahvata': 'Tijek zahvata za PRP je...',
+      'oporavak': 'Oporavak nakon PRP...',
+      'mjere-opreza': 'Mjere opreza za PRP...',
+      'cijena': 'Cijena PRP je...'
+    }
   },
   'skin-boosteri': {
     title: 'Skin boosteri',
@@ -61,7 +115,25 @@ export const services = {
     image: '/images/services/obrve-i-trepavice.webp',
     heroImage: '/images/services/toskani-hero.webp',
     metaDescription: 'Skin boosteri u VISAGE studiju. Duboka hidratacija i revitalizacija kože. Vidljivi i dugotrajni rezultati.',
-    metaKeywords: 'skin boosteri, hidratacija kože, revitalizacija kože, estetski studio Sisak, VISAGE studio'
+    metaKeywords: 'skin boosteri, hidratacija kože, revitalizacija kože, estetski studio Sisak, VISAGE studio',
+    steps: [
+      { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+      { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
+      { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
+      { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
+      { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
+      { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+      { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
+    ],
+    stepContents: {
+      'opis-zahvata': 'Ovo je opis zahvata za skin boostere...',
+      'kandidati': 'Kandidati za skin boostere su...',
+      'priprema': 'Priprema za skin boostere uključuje...',
+      'tijek-zahvata': 'Tijek zahvata za skin boostere je...',
+      'oporavak': 'Oporavak nakon skin boostera...',
+      'mjere-opreza': 'Mjere opreza za skin boostere...',
+      'cijena': 'Cijena skin boostera je...'
+    }
   },
   'dermalni-fileri': {
     title: 'Dermalni fileri',
@@ -77,7 +149,25 @@ export const services = {
     image: '/images/services/TKNHA3_.webp',
     heroImage: '/images/services/botox-face-girl.webp',
     metaDescription: 'Dermalni fileri u VISAGE studiju. Volumizacija i obnavljanje kontura lica. Prirodni i dugotrajni rezultati.',
-    metaKeywords: 'dermalni fileri, volumizacija lica, konture lica, estetski studio Sisak, VISAGE studio'
+    metaKeywords: 'dermalni fileri, volumizacija lica, konture lica, estetski studio Sisak, VISAGE studio',
+    steps: [
+      { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+      { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
+      { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
+      { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
+      { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
+      { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+      { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
+    ],
+    stepContents: {
+      'opis-zahvata': 'Ovo je opis zahvata za dermalne filere...',
+      'kandidati': 'Kandidati za dermalne filere su...',
+      'priprema': 'Priprema za dermalne filere uključuje...',
+      'tijek-zahvata': 'Tijek zahvata za dermalne filere je...',
+      'oporavak': 'Oporavak nakon dermalnih filera...',
+      'mjere-opreza': 'Mjere opreza za dermalne filere...',
+      'cijena': 'Cijena dermalnih filera je...'
+    }
   },
   'plasmage': {
     title: 'Plasmage',
@@ -93,7 +183,25 @@ export const services = {
     image: '/images/services/toskani-woman.webp',
     heroImage: '/images/services/plasmage-hero.webp',
     metaDescription: 'Plasmage terapija u VISAGE studiju. Lifting i obnavljanje kože uz pomoć plazme. Sigurna i učinkovita metoda.',
-    metaKeywords: 'plasmage, lifting kože, plazma, estetski studio Sisak, VISAGE studio'
+    metaKeywords: 'plasmage, lifting kože, plazma, estetski studio Sisak, VISAGE studio',
+    steps: [
+      { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+      { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
+      { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
+      { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
+      { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
+      { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+      { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
+    ],
+    stepContents: {
+      'opis-zahvata': 'Ovo je opis zahvata za Plasmage...',
+      'kandidati': 'Kandidati za Plasmage su...',
+      'priprema': 'Priprema za Plasmage uključuje...',
+      'tijek-zahvata': 'Tijek zahvata za Plasmage je...',
+      'oporavak': 'Oporavak nakon Plasmage...',
+      'mjere-opreza': 'Mjere opreza za Plasmage...',
+      'cijena': 'Cijena Plasmage je...'
+    }
   },
   'terapija-bora': {
     title: 'Terapija bora lica',
@@ -109,7 +217,25 @@ export const services = {
     image: '/images/services/manikura.webp',
     heroImage: '/images/services/toskani-woman.webp',
     metaDescription: 'Terapija bora lica u VISAGE studiju. Smanjite i spriječite bore uz pomoć naprednih metoda. Prirodni i dugotrajni rezultati.',
-    metaKeywords: 'terapija bora, bore lica, prevencija bora, estetski studio Sisak, VISAGE studio'
+    metaKeywords: 'terapija bora, bore lica, prevencija bora, estetski studio Sisak, VISAGE studio',
+    steps: [
+      { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+      { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
+      { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
+      { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
+      { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
+      { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+      { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
+    ],
+    stepContents: {
+      'opis-zahvata': 'Ovo je opis zahvata za terapiju bora...',
+      'kandidati': 'Kandidati za terapiju bora su...',
+      'priprema': 'Priprema za terapiju bora uključuje...',
+      'tijek-zahvata': 'Tijek zahvata za terapiju bora je...',
+      'oporavak': 'Oporavak nakon terapije bora...',
+      'mjere-opreza': 'Mjere opreza za terapiju bora...',
+      'cijena': 'Cijena terapije bora je...'
+    }
   },
   'beauty-tretmani': {
     title: 'Beauty tretmani',
@@ -125,7 +251,25 @@ export const services = {
     image: '/images/services/socialmedia_peelings_combined.webp',
     heroImage: '/images/services/TKNHA3_.webp',
     metaDescription: 'Beauty tretmani u VISAGE studiju. Luksuzni tretmani za lice i tijelo. Potpuno opuštanje i njega.',
-    metaKeywords: 'beauty tretmani, njega kože, opuštanje, estetski studio Sisak, VISAGE studio'
+    metaKeywords: 'beauty tretmani, njega kože, opuštanje, estetski studio Sisak, VISAGE studio',
+    steps: [
+      { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+      { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
+      { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
+      { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
+      { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
+      { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+      { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
+    ],
+    stepContents: {
+      'opis-zahvata': 'Ovo je opis zahvata za beauty tretmane...',
+      'kandidati': 'Kandidati za beauty tretmane su...',
+      'priprema': 'Priprema za beauty tretmane uključuje...',
+      'tijek-zahvata': 'Tijek zahvata za beauty tretmane je...',
+      'oporavak': 'Oporavak nakon beauty tretmana...',
+      'mjere-opreza': 'Mjere opreza za beauty tretmane...',
+      'cijena': 'Cijena beauty tretmana je...'
+    }
   },
   'bio-sculpture': {
     title: 'Bio Sculpture sistemi',
@@ -141,7 +285,25 @@ export const services = {
     image: '/images/services/Mesoterapia-transdermica-facial.webp',
     heroImage: '/images/services/manikura.webp',
     metaDescription: 'Bio Sculpture sistemi u VISAGE studiju. Profesionalna njega i ukrašavanje noktiju. Vrhunska kvaliteta i dugotrajni rezultati.',
-    metaKeywords: 'bio sculpture, nokti, manikura, estetski studio Sisak, VISAGE studio'
+    metaKeywords: 'bio sculpture, nokti, manikura, estetski studio Sisak, VISAGE studio',
+    steps: [
+      { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+      { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
+      { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
+      { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
+      { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
+      { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+      { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
+    ],
+    stepContents: {
+      'opis-zahvata': 'Ovo je opis zahvata za Bio Sculpture...',
+      'kandidati': 'Kandidati za Bio Sculpture su...',
+      'priprema': 'Priprema za Bio Sculpture uključuje...',
+      'tijek-zahvata': 'Tijek zahvata za Bio Sculpture je...',
+      'oporavak': 'Oporavak nakon Bio Sculpture...',
+      'mjere-opreza': 'Mjere opreza za Bio Sculpture...',
+      'cijena': 'Cijena Bio Sculpture je...'
+    }
   }
 } as const;
 
