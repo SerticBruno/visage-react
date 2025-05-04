@@ -194,6 +194,17 @@ export default function Header() {
                 isActive('/kontakt') ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></span>
             </Link>
+            <Link 
+              href="/blog" 
+              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
+                isActive('/blog') ? 'text-indigo-600' : ''
+              }`}
+            >
+              Blog
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActive('/blog') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
+            </Link>
           </nav>
 
           {/* Mobile Navigation Button */}
@@ -302,6 +313,13 @@ export default function Header() {
             onClick={handleMobileLinkClick}
           >
             Kontakt
+          </Link>
+          <Link
+            href="/blog"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
+            onClick={handleMobileLinkClick}
+          >
+            Blog
           </Link>
         </div>
       </div>
