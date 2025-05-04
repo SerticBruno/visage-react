@@ -5,6 +5,7 @@ import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import PopularItemsSection from '@/components/sections/PopularItemsSection';
+import FAQSection from '@/components/sections/FAQSection';
 import { popularServices } from '@/data/popularServices';
 import { popularProducts } from '@/data/popularProducts';
 
@@ -35,6 +36,7 @@ export default function Home() {
         background="white"
       />
       <PartnersSlider />
+      <FAQSection />
       <CTASection />
       <ContactSection />
     </main>

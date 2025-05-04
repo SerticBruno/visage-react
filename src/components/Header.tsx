@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { services } from '@/data/services';
-import { FaChevronDown, FaChevronUp, FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -48,43 +48,6 @@ export default function Header() {
 
   return (
     <header className="fixed w-full bg-gradient-to-r from-white to-gray-50 shadow-sm z-50">
-      {/* Contact Bar - Hidden on Mobile */}
-      <div className="hidden sm:block bg-gray-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-8 text-sm">
-            <div className="flex items-center">
-              <span className="text-gray-500 mr-2">Certificirani predstavnik</span>
-              <span className="text-indigo-600 font-medium">TOSKANI</span>
-            </div>
-            <div className="flex items-center">
-              <a 
-                href="tel:+385911105020" 
-                className="flex items-center text-gray-600 hover:text-indigo-600 transition-colors duration-300 mr-4"
-              >
-                <FaWhatsapp className="w-3 h-3 mr-1" />
-                <span>091 110 50 20</span>
-              </a>
-              <a 
-                href="mailto:contact@visagestudio.hr" 
-                className="flex items-center text-gray-600 hover:text-indigo-600 transition-colors duration-300 mr-4"
-              >
-                <FaEnvelope className="w-3 h-3 mr-1" />
-                <span>contact@visagestudio.hr</span>
-              </a>
-              <a 
-                href="https://maps.google.com/?q=Ulica+Stjepana+i+Antuna+Radića+37,+Sisak" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center text-gray-600 hover:text-indigo-600 transition-colors duration-300"
-              >
-                <FaMapMarkerAlt className="w-3 h-3 mr-1" />
-                <span>Kako do nas</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link 
