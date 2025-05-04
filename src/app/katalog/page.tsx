@@ -6,7 +6,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
 import { products, productCategories, type Product } from '@/data/products';
-import { FaSearch, FaStar, FaTimes } from 'react-icons/fa';
+import { FaSearch, FaStar, FaTimes, FaSpinner } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function KatalogPage() {
@@ -15,30 +15,10 @@ export default function KatalogPage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
-  const [displayedProducts, setDisplayedProducts] = useState<Product[]>(products);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const productsPerPage = 9;
   const productsRef = useRef<HTMLDivElement>(null);
-
-  // Handle modal open/close with scrollbar width
-  useEffect(() => {
-    if (isModalOpen) {
-      // Get the scrollbar width
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      // Store the original padding-right
-      const originalPaddingRight = document.body.style.paddingRight;
-      // Store the original overflow
-      const originalOverflow = document.body.style.overflow;
-      
-      // Apply the styles
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-      document.body.style.overflow = 'hidden';
-      
-      // Cleanup function
-      return () => {
-        document.body.style.paddingRight = originalPaddingRight;
-        document.body.style.overflow = originalOverflow;
-      };
-    }
-  }, [isModalOpen]);
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -46,6 +26,41 @@ export default function KatalogPage() {
     const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
     return matchesSearch && matchesCategory;
   });
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const currentProducts = filteredProducts.slice(startIndex, endIndex);
+
+  // Reset to first page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategories]);
+
+  // Scroll to top when page changes
+  useEffect(() => {
+    const navbarHeight = 80;
+    const productsTop = productsRef.current?.offsetTop || 0;
+    const scrollPosition = productsTop - navbarHeight - 30;
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: 'smooth'
+    });
+  }, [currentPage]);
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage !== currentPage) {
+      setIsScrolling(true);
+      setCurrentPage(newPage);
+      
+      // Reset scrolling state after animation
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, 800);
+    }
+  };
 
   const toggleCategory = (category: string) => {
     setIsFiltering(true);
@@ -60,27 +75,6 @@ export default function KatalogPage() {
     setIsFiltering(true);
     setSearchTerm(e.target.value);
   };
-
-  useEffect(() => {
-    if (isFiltering) {
-      // Calculate the scroll position accounting for the navbar
-      const navbarHeight = 80; // Adjust this value based on your navbar height
-      const productsTop = productsRef.current?.offsetTop || 0;
-      const scrollPosition = productsTop - navbarHeight;
-
-      // First scroll to top
-      window.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
-      });
-
-      // Then update the displayed products after a short delay
-      setTimeout(() => {
-        setDisplayedProducts(filteredProducts);
-        setIsFiltering(false);
-      }, 300);
-    }
-  }, [isFiltering, filteredProducts, searchTerm, selectedCategories]);
 
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
@@ -161,11 +155,16 @@ export default function KatalogPage() {
           <div className="flex-1" ref={productsRef}>
             {isFiltering && (
               <div className="absolute inset-0 bg-white bg-opacity-50 flex items-center justify-center z-10">
-                <div className="animate-pulse text-gray-600">Filtriranje proizvoda...</div>
+                <div className="flex flex-col items-center">
+                  <FaSpinner className="w-8 h-8 text-indigo-600 animate-spin mb-2" />
+                  <div className="text-gray-600">
+                    Filtriranje proizvoda...
+                  </div>
+                </div>
               </div>
             )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {displayedProducts.map((product) => (
+            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 transition-opacity duration-300 ${isScrolling ? 'opacity-25' : 'opacity-100'}`}>
+              {currentProducts.map((product) => (
                 <div
                   key={product.id}
                   className={`
@@ -183,6 +182,7 @@ export default function KatalogPage() {
                       alt={product.title}
                       fill
                       className="object-contain p-2"
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-4 flex flex-col flex-grow">
@@ -213,7 +213,48 @@ export default function KatalogPage() {
               ))}
             </div>
 
-            {displayedProducts.length === 0 && (
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="mt-8 flex justify-center items-center space-x-2">
+                <button
+                  onClick={() => {
+                    handlePageChange(Math.max(currentPage - 1, 1));
+                  }}
+                  disabled={currentPage === 1}
+                  className="px-3 py-1 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                >
+                  Prethodna
+                </button>
+                <div className="flex items-center space-x-2">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <button
+                      key={page}
+                      onClick={() => {
+                        handlePageChange(page);
+                      }}
+                      className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer ${
+                        currentPage === page
+                          ? 'bg-indigo-600 text-white'
+                          : 'text-gray-600 hover:bg-gray-100'
+                      } transition-colors`}
+                    >
+                      {page}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  onClick={() => {
+                    handlePageChange(Math.min(currentPage + 1, totalPages));
+                  }}
+                  disabled={currentPage === totalPages}
+                  className="px-3 py-1 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                >
+                  Sljedeća
+                </button>
+              </div>
+            )}
+
+            {currentProducts.length === 0 && (
               <div className="text-center py-8">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   Nema pronađenih proizvoda
