@@ -3,41 +3,59 @@ import { BlogPost } from './types';
 export const blogPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'Getting Started with Next.js',
-    slug: 'getting-started-with-nextjs',
-    excerpt: 'Learn the basics of Next.js and how to build modern web applications with this powerful React framework.',
-    content: `Next.js is a React framework that enables server-side rendering and static site generation for React applications. It provides a great developer experience with features like hot reloading, automatic code splitting, and optimized production builds.
+    title: 'Plazma terapija - revolucionarna metoda za mladolik izgled',
+    slug: 'plazma-terapija',
+    excerpt: 'Otkrijte kako plazma terapija može pomoći u borbi protiv starenja kože i postizanju mladolikog izgleda.',
+    content: `Plazma terapija je revolucionarna metoda u estetskoj medicini koja koristi vlastitu plazmu pacijenta za stimulaciju regeneracije kože. Ova metoda je postala izuzetno popularna zbog svoje učinkovitosti i prirodnog pristupa.
 
-In this post, we'll explore the core concepts of Next.js and how to get started with building your first application.`,
+Plazma terapija se koristi za:
+- Smanjenje bora
+- Poboljšanje tonusa kože
+- Stimulaciju proizvodnje kolagena
+- Poboljšanje teksture kože
+
+Tretman je minimalno invazivan i ne zahtijeva dugo vrijeme oporavka, što ga čini idealnim za moderan način života.`,
     date: '2024-05-01',
-    author: 'John Doe',
-    tags: ['Next.js', 'React', 'Web Development'],
-    image: '/images/nextjs-blog.jpg'
+    author: 'Dr. Ana Horvat',
+    tags: ['Plazma terapija', 'Anti-aging', 'Estetska medicina'],
+    image: '/images/services/plasmage-hero.webp'
   },
   {
     id: '2',
-    title: 'The Power of TypeScript',
-    slug: 'power-of-typescript',
-    excerpt: 'Discover how TypeScript can improve your development workflow and catch errors before they reach production.',
-    content: `TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It adds optional static typing to the language, which can help catch errors early in the development process.
+    title: 'Savršene obrve i trepavice - ključ za izražajni pogled',
+    slug: 'obrve-trepavice',
+    excerpt: 'Saznajte kako postići savršene obrve i trepavice koje će vašem licu dati izražajnost i mladolik izgled.',
+    content: `Obrve i trepavice igraju ključnu ulogu u izgledu našeg lica. Dobro oblikovane obrve mogu potpuno promijeniti izraz lica, dok duge i guste trepavice daju očima izražajnost i mladolik izgled.
 
-In this article, we'll explore the key features of TypeScript and how it can benefit your projects.`,
+U našem salonu nudimo:
+- Laminaciju obrva
+- Tintiranje trepavica
+- Lifting trepavica
+- Mikroblading
+
+Svaki tretman je prilagođen individualnim potrebama klijenta, kako bismo postigli najbolje rezultate.`,
     date: '2024-05-03',
-    author: 'Jane Smith',
-    tags: ['TypeScript', 'JavaScript', 'Programming'],
-    image: '/images/typescript-blog.jpg'
+    author: 'Maja Kovač',
+    tags: ['Obrve', 'Trepavice', 'Laminacija'],
+    image: '/images/services/obrve-i-trepavice.webp'
   },
   {
     id: '3',
-    title: 'Building Responsive UIs with Tailwind CSS',
-    slug: 'responsive-uis-with-tailwind',
-    excerpt: 'Learn how to create beautiful, responsive user interfaces using Tailwind CSS.',
-    content: `Tailwind CSS is a utility-first CSS framework that allows you to build custom designs without leaving your HTML. It provides a set of low-level utility classes that let you build completely custom designs.
+    title: 'Toskani - vrhunski proizvodi za njegu kože',
+    slug: 'toskani-proizvodi',
+    excerpt: 'Upoznajte Toskani proizvode - vrhunsku liniju za njegu kože koja kombinira prirodne sastojke i najnovije tehnologije.',
+    content: `Toskani je vodeći proizvođač kozmetičkih proizvoda koji kombiniraju prirodne sastojke s najnovijim tehnologijama. Njihova linija proizvoda je specijalizirana za različite tipove kože i probleme.
 
-In this tutorial, we'll walk through creating a responsive layout using Tailwind CSS.`,
+Prednosti Toskani proizvoda:
+- Prirodni sastojci
+- Dokazana učinkovitost
+- Visoka kvaliteta
+- Prilagodljivost različitim tipovima kože
+
+U našem salonu možete pronaći cijelu Toskani liniju proizvoda i dobiti profesionalne savjete o njihovoj primjeni.`,
     date: '2024-05-05',
-    author: 'Mike Johnson',
-    tags: ['CSS', 'Tailwind', 'UI/UX'],
-    image: '/images/tailwind-blog.jpg'
+    author: 'Ivana Petrović',
+    tags: ['Toskani', 'Njega kože', 'Kozmetika'],
+    image: '/images/services/toskani-hero.webp'
   }
 ]; 

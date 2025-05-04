@@ -19,7 +19,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     <div className="container mx-auto px-4 py-8">
       <article className="max-w-3xl mx-auto">
         {post.image && (
-          <div className="relative h-64 w-full mb-8">
+          <div className="relative h-64 w-full mt-8 mb-8">
             <Image
               src={post.image}
               alt={post.title}
