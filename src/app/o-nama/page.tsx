@@ -8,7 +8,7 @@ export default function OnamaPage() {
       <HeroSection
         title="O nama"
         description="VISAGE Studio - Vaš partner u estetskoj medicini"
-        image="/images/plasmage-hero.webp"
+        image="/images/services/Mesoterapia-transdermica-facial.webp"
       />
       <AboutContent />
       <ContactSection/>
