@@ -15,6 +15,7 @@ import {
   FaRegFile,
   FaHandHoldingUsd
 } from 'react-icons/fa';
+import ServiceContentSection from '@/components/sections/ServiceContentSection';
 
 const iconMap = {
   FaRegFileAlt,
@@ -91,6 +92,16 @@ export default function ServicePage({ params }: Props) {
         description={service.description}
         image={service.heroImage}
       />
+      
+      <ServiceContentSection
+        title={service.title}
+        description={service.longDescription}
+        imageSrc={service.image}
+        imageAlt={service.title}
+        benefits={service.benefits}
+        reverse={false}
+      />
+
       {service.steps && <ServiceStepsNav steps={service.steps} />}
       {service.steps && service.stepContents && (
         <ServiceStepSections steps={service.steps} stepContents={service.stepContents} />
