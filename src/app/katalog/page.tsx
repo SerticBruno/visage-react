@@ -173,7 +173,7 @@ export default function KatalogPage() {
                     ${product.isPopular ? 'border-indigo-500' : 'border-gray-200'}
                     hover:shadow-lg transition-all duration-300
                     ${isFiltering ? 'opacity-50' : 'opacity-100'}
-                    flex flex-col h-full
+                    flex flex-col h-full cursor-pointer
                   `}
                   onClick={() => openProductModal(product)}
                 >

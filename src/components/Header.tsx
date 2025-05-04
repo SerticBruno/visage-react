@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { services } from '@/data/services';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp, FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,17 +38,61 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed w-full bg-white shadow-md z-50">
+    <header className="fixed w-full bg-gradient-to-r from-white to-gray-50 shadow-sm z-50">
+      {/* Contact Bar */}
+      <div className="bg-gray-50 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-8 text-sm">
+            <div className="flex items-center">
+              <span className="text-gray-500 mr-2">Certificirani predstavnik</span>
+              <span className="text-indigo-600 font-medium">TOSKANI</span>
+            </div>
+            <div className="flex items-center">
+              <a 
+                href="tel:+385911105020" 
+                className="flex items-center text-gray-600 hover:text-indigo-600 transition-colors duration-300 mr-4"
+              >
+                <FaWhatsapp className="w-3 h-3 mr-1" />
+                <span>091 110 50 20</span>
+              </a>
+              <a 
+                href="mailto:contact@visagestudio.hr" 
+                className="flex items-center text-gray-600 hover:text-indigo-600 transition-colors duration-300 mr-4"
+              >
+                <FaEnvelope className="w-3 h-3 mr-1" />
+                <span>contact@visagestudio.hr</span>
+              </a>
+              <a 
+                href="https://maps.google.com/?q=Ulica+Stjepana+i+Antuna+Radića+37,+Sisak" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center text-gray-600 hover:text-indigo-600 transition-colors duration-300"
+              >
+                <FaMapMarkerAlt className="w-3 h-3 mr-1" />
+                <span>Kako do nas</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-2xl font-bold text-indigo-600">
+          <Link 
+            href="/" 
+            className="text-2xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors duration-300 transform hover:scale-105"
+          >
             VISAGE
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-600 hover:text-indigo-600 transition-colors">
+            <Link 
+              href="/" 
+              className="text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group"
+            >
               Početna
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <div
               className="relative"
@@ -58,16 +102,17 @@ export default function Header() {
             >
               <Link
                 href="/usluge"
-                className="text-gray-600 hover:text-indigo-600 transition-colors flex items-center gap-1 cursor-pointer"
+                className="text-gray-600 hover:text-indigo-600 transition-all duration-300 flex items-center gap-1 cursor-pointer relative group"
                 onClick={() => setIsServicesOpen(false)}
               >
                 Usluge
-                <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                <FaChevronDown className={`w-3 h-3 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
               
               {isServicesOpen && (
                 <div 
-                  className="absolute left-0 mt-3 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100"
+                  className="absolute left-0 mt-3 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100 transform transition-all duration-300 origin-top"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -75,7 +120,7 @@ export default function Header() {
                     <Link
                       key={pageName}
                       href={`/usluge/${pageName}`}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 transform hover:translate-x-1"
                       onClick={() => setIsServicesOpen(false)}
                     >
                       {service.title}
@@ -84,23 +129,39 @@ export default function Header() {
                 </div>
               )}
             </div>
-            <Link href="/cjenik" className="text-gray-600 hover:text-indigo-600 transition-colors">
+            <Link 
+              href="/cjenik" 
+              className="text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group"
+            >
               Cjenik
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link href="/katalog" className="text-gray-600 hover:text-indigo-600 transition-colors">
+            <Link 
+              href="/katalog" 
+              className="text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group"
+            >
               Katalog
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link href="/o-nama" className="text-gray-600 hover:text-indigo-600 transition-colors">
+            <Link 
+              href="/o-nama" 
+              className="text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group"
+            >
               O nama
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link href="/kontakt" className="text-gray-600 hover:text-indigo-600 transition-colors">
+            <Link 
+              href="/kontakt" 
+              className="text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group"
+            >
               Kontakt
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </nav>
 
           {/* Mobile Navigation Button */}
           <button
-            className="md:hidden text-gray-600 hover:text-indigo-600 transition-colors"
+            className="md:hidden text-gray-600 hover:text-indigo-600 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
             onClick={(e) => {
               e.preventDefault();
               setIsMenuOpen(!isMenuOpen);
@@ -133,7 +194,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div 
+      <div
         className={`md:hidden fixed top-16 left-0 right-0 bg-white border-t border-gray-100 transition-all duration-300 ease-in-out transform ${
           isMenuOpen 
             ? 'translate-y-0 opacity-100 visible' 
@@ -143,7 +204,7 @@ export default function Header() {
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link
             href="/"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
             onClick={handleMobileLinkClick}
           >
             Početna
@@ -151,7 +212,7 @@ export default function Header() {
           
           <div className="relative">
             <button
-              className="w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors flex items-center justify-between cursor-pointer"
+              className="w-full text-left px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 flex items-center justify-between cursor-pointer"
               onClick={() => setIsServicesOpen(!isServicesOpen)}
             >
               Usluge
@@ -167,7 +228,7 @@ export default function Header() {
                   <Link
                     key={pageName}
                     href={`/usluge/${pageName}`}
-                    className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+                    className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
                     onClick={handleMobileLinkClick}
                   >
                     {service.title}
@@ -179,28 +240,28 @@ export default function Header() {
 
           <Link
             href="/cjenik"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
             onClick={handleMobileLinkClick}
           >
             Cjenik
           </Link>
           <Link
             href="/katalog"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
             onClick={handleMobileLinkClick}
           >
             Katalog
           </Link>
           <Link
             href="/o-nama"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
             onClick={handleMobileLinkClick}
           >
             O nama
           </Link>
           <Link
             href="/kontakt"
-            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+            className="block px-3 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-all duration-300 transform hover:translate-x-1"
             onClick={handleMobileLinkClick}
           >
             Kontakt
