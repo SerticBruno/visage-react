@@ -5,7 +5,11 @@ export interface Product {
   category: string;
   image: string;
   price: string;
+  oldPrice?: string;
   isPopular?: boolean;
+  isNew?: boolean;
+  isOnSale?: boolean;
+  isLimited?: boolean;
   features?: string[];
   volume?: string;
   activeIngredients?: string[];
@@ -34,7 +38,9 @@ export const products: Product[] = [
     category: 'Čišćenje',
     image: '/images/products/toskanienergizingcleanser.webp',
     price: '40 €',
+    oldPrice: '50 €',
     volume: '200 ml',
+    isNew: true,
     activeIngredients: ['Cimet', 'Curcuma', 'Đumbir'],
     application: [
       'Nanesite svako jutro i noć, izravno na mokru kožu',
@@ -52,7 +58,9 @@ export const products: Product[] = [
     category: 'Čišćenje',
     image: '/images/products/TOSKANIpurifyingcleanser.webp',
     price: '44 €',
+    oldPrice: '55 €',
     volume: '200 ml',
+    isOnSale: true,
     activeIngredients: ['Hamamelis Virginiana Extract', 'Mliječna kiselina', 'Purifying Complex', 'Salvia Officinalis Extract', 'Urea'],
     application: [
       'Nanesite svako jutro i noć, izravno na mokru kožu',
@@ -70,7 +78,9 @@ export const products: Product[] = [
     category: 'Toniziranje',
     image: '/images/products/toskanibamboohydratonic.webp',
     price: '28 €',
+    oldPrice: '35 €',
     volume: '200 ml',
+    isLimited: true,
     activeIngredients: ['Aloe Vera Ekstrakt', 'Bambusova voda', 'Ekstrakt javora', 'ekstrakti naranče i limuna'],
     application: [
       'Uklonite šminku i očistite kožu energizirajućim sredstvom za čišćenje',
@@ -87,7 +97,10 @@ export const products: Product[] = [
     category: 'Piling',
     image: '/images/products/toskaninutritivescrub.webp',
     price: '44 €',
+    oldPrice: '55 €',
     volume: '200 ml',
+    isNew: true,
+    isOnSale: true,
     activeIngredients: ['Blueberry Extract', 'Lemon Extract', 'Maple Extract', 'Musk rose oil', 'Orange Extract', 'Vitamin E'],
     application: [
       'Uklonite šminku i temeljito očistite lice Energizing gel sredstvom za čišćenje',
@@ -107,7 +120,10 @@ export const products: Product[] = [
     category: 'Piling',
     image: '/images/products/toskanipurifyingscrub.webp',
     price: '44 €',
+    oldPrice: '55 €',
     volume: '200 ml',
+    isLimited: true,
+    isOnSale: true,
     activeIngredients: ['Hamamelis Virginiana Extract', 'Marokanska glina od lave', 'Vitamin E'],
     application: [
       'Uklonite šminku i očistite lice Energizing gel sredstvom za čišćenje',
@@ -127,6 +143,7 @@ export const products: Product[] = [
     category: 'Maska',
     image: '/images/products/toskaniantistressmask.webp',
     price: '65 €',
+    oldPrice: '75 €',
     volume: '200 ml',
     activeIngredients: ['Aloe Vera Ekstrakt', 'Ekstrakt kamilice', 'Maslinovo ulje', 'Mentol'],
     application: [
@@ -143,6 +160,7 @@ export const products: Product[] = [
     category: 'Krema',
     image: '/images/products/toskanitotalrecoverycream.webp',
     price: '60 €',
+    oldPrice: '70 €',
     volume: '50 ml',
     activeIngredients: ['Acetil dipeptid-3 aminoheksanoat', 'Acetil heksapeptid-46', 'Allantoin', 'Betaine', 'Bisabolol', 'Diaminopropionoyl Tripeptide-33', 'Resveratrol', 'Tokoferol'],
     application: [
@@ -159,6 +177,7 @@ export const products: Product[] = [
     category: 'Krema',
     image: '/images/products/toskanitotalrecoverygel.webp',
     price: '37 €',
+    oldPrice: '45 €',
     volume: '50 ml',
     activeIngredients: ['Aloe Vera Ekstrakt', 'Ekstrakt mimoze Tenuiflora', 'Elastin', 'Hidrolizirani proteini pšenice', 'Kolagen', 'Shea Maslac', 'Vegetable Tensor'],
     application: [
@@ -175,6 +194,7 @@ export const products: Product[] = [
     category: 'Krema',
     image: '/images/products/toskaniAntipollution_Total_Defense.webp',
     price: '65 €',
+    oldPrice: '75 €',
     volume: '50 ml',
     activeIngredients: ['Amid acetil heksapeptida-51', 'Peptidi', 'Probiotici', 'Shea Maslac', 'Tara i suncokretov ekstrakt', 'UV filteri', 'Vitamin E'],
     application: [
@@ -190,6 +210,7 @@ export const products: Product[] = [
     category: 'Zaštita od sunca',
     image: '/images/products/toskanisunprotectioncream.webp',
     price: '35 €',
+    oldPrice: '45 €',
     volume: '50 ml',
     activeIngredients: ['Allantoin', 'Ekstrakt mimoze Tenuiflora', 'Urea', 'Vitamin E'],
     application: [
@@ -206,6 +227,7 @@ export const products: Product[] = [
     category: 'Krema',
     image: '/images/products/toskaniradiancedailycream.webp',
     price: '65 €',
+    oldPrice: '75 €',
     volume: '50 ml',
     application: [
       'Nanesite jednom dnevno, ujutro',
@@ -222,6 +244,7 @@ export const products: Product[] = [
     category: 'Oko očiju',
     image: '/images/products/toskaniantiagingeyecontour.webp',
     price: '45 €',
+    oldPrice: '55 €',
     volume: '15 ml',
     activeIngredients: ['Acetyl Hexapeptide-8', 'DMAE', 'Ekstrakti Ginkgo Bilobe', 'Hijaluronska kiselina', 'Maslinovo ulje', 'Organski silicij'],
     tags: ['okoloočna njega', 'anti-age', 'ublažavanje finih linija']
@@ -233,6 +256,7 @@ export const products: Product[] = [
     category: 'Oko očiju',
     image: '/images/products/toskaniradianceeyecontour.webp',
     price: '65 €',
+    oldPrice: '75 €',
     volume: '15 ml',
     activeIngredients: ['Ekstrakt Aesculus Hippocastanum', 'Ekstrakti Ginkgo Bilobe', 'Hesperidin Metil halkon', 'Peptidi'],
     application: [
@@ -249,6 +273,7 @@ export const products: Product[] = [
     category: 'Serum',
     image: '/images/products/toskaniRADIANCE-ULTIMATE-MESOSERUM.webp',
     price: '85 €',
+    oldPrice: '100 €',
     volume: '30 ml',
     activeIngredients: ['Alfa Arbutin', 'Aspergillus Ferment', 'Azelaična kiselina', 'Azeloglicina', 'Ferulinska kiselina', 'Kojična kiselina', 'Mliječna kiselina', 'Niacinamid', 'Retinol', 'traneksamična kiselina', 'Vitamin C'],
     application: [
@@ -265,6 +290,7 @@ export const products: Product[] = [
     category: 'Serum',
     image: '/images/products/toskanipurifyingIntensiveSerum.webp',
     price: '45 €',
+    oldPrice: '55 €',
     volume: '15 ml',
     activeIngredients: ['Purifying actives', 'Purifying Complex', 'Salicylic Acid'],
     application: [
@@ -281,6 +307,7 @@ export const products: Product[] = [
     category: 'Krema',
     image: '/images/products/TOSKANIPurifyingCream.webp',
     price: '65 €',
+    oldPrice: '75 €',
     volume: '50 ml',
     activeIngredients: ['Ekstrakt lista Hamamelis virginiana', 'Lactic Acid', 'Purifying actives', 'Purifying Complex', 'Rhodosorus Marinus Extract', 'Salicylic Acid', 'Zinc'],
     application: [
@@ -297,6 +324,7 @@ export const products: Product[] = [
     category: 'Serum',
     image: '/images/products/Toskani-Skin-Architect-Mesoserum-1.webp',
     price: '80 €',
+    oldPrice: '90 €',
     volume: '30 ml',
     activeIngredients: ['Acetyl Hexapeptide-8', 'DMAE', 'Elastin', 'Hijaluronska kiselina', 'L-Carnitine', 'Prirodni Kolagen', 'Tokoferol', 'Vitamin E'],
     application: [
@@ -313,6 +341,7 @@ export const products: Product[] = [
     category: 'Krema',
     image: '/images/products/toskaniskinarchitectcream.webp',
     price: '70 €',
+    oldPrice: '80 €',
     volume: '50 ml',
     activeIngredients: ['Acetyl Hexapeptide-8', 'DMAE', 'Elastin', 'Hijaluronska kiselina', 'L-Carnitine', 'Organic Silicon', 'Prirodni Kolagen', 'Retinol', 'Shea Maslac', 'Tokoferol', 'Vitamin E'],
     application: [
@@ -329,6 +358,7 @@ export const products: Product[] = [
     category: 'Serum',
     image: '/images/products/toskaniantiagenightdrops.webp',
     price: '87 €',
+    oldPrice: '95 €',
     volume: '30 ml',
     activeIngredients: ['Probiotici', 'algae extract', 'Byfida ferment Lysate', 'tetrapeptide-26', 'TRC (Total Restoring Complex)'],
     application: [
@@ -345,6 +375,7 @@ export const products: Product[] = [
     category: 'Serum',
     image: '/images/products/toskaniGlacierSerum.webp',
     price: '75 €',
+    oldPrice: '85 €',
     volume: '30 ml',
     activeIngredients: ['Nicotinamide (B3)', 'Derived from vitamin C', 'Glacier termal water', 'Pseudoalteromona ferment extract'],
     application: [
@@ -361,6 +392,7 @@ export const products: Product[] = [
     category: 'Krema',
     image: '/images/products/toskaniGlacierCream.webp',
     price: '70 €',
+    oldPrice: '80 €',
     volume: '50 ml',
     activeIngredients: ['Encapsuled ceramide', 'Glacier termal water', 'Kaempherol', 'Liposomal hyaluronic acid'],
     application: [
@@ -377,6 +409,7 @@ export const products: Product[] = [
     category: 'Serum',
     image: '/images/products/toskaniRetinProAge_Serum.webp',
     price: '80 €',
+    oldPrice: '90 €',
     volume: '30 ml',
     activeIngredients: ['Bakuchiol (99% Pure Bakuchiol)', 'Kappaphycus alvarezii extract and Caesalpinia spinosa fruit extract', 'Plant extract of tara and red algae', 'Retinal (retinaldehyde) Lipocapsules', 'Retinol like: Nicotiana Benthamiana Hexapeptide-40 sh-Polypeptide-76'],
     application: [
@@ -393,6 +426,7 @@ export const products: Product[] = [
     category: 'Krema',
     image: '/images/products/toskaniRetinCream.webp',
     price: '75 €',
+    oldPrice: '85 €',
     volume: '50 ml',
     activeIngredients: ['Kappaphycus alvarezii extract and Caesalpinia spinosa fruit extract', 'Plant based Collagen-Like: Acacia', 'Plant extract of tara and red algae', 'Retinol like: Nicotiana Benthamiana Hexapeptide-40 sh-Polypeptide-76', 'Sodium Retinoyl Hyaluronate (HA+ retinoic acid)'],
     application: [
@@ -409,6 +443,7 @@ export const products: Product[] = [
     category: 'Serum',
     image: '/images/products/toskaniUniqueProAge_Serum.webp',
     price: '80 €',
+    oldPrice: '90 €',
     volume: '30 ml',
     activeIngredients: ['Bacuri butter', 'Cell oil', 'Manosa-6-fosfato', 'Olea Vita PLF', 'Plant based Collagen Fragment'],
     application: [
@@ -425,6 +460,7 @@ export const products: Product[] = [
     category: 'Krema',
     image: '/images/products/toskaniUniqueCream.webp',
     price: '75 €',
+    oldPrice: '85 €',
     volume: '50 ml',
     activeIngredients: ['4D Hyaluronic Acid', 'Aminobutyric acid (GABA)', 'Bacuri butter', 'Nourishing Oils: (Meadowfoam, Canola Oil, Helianthus Annuus, Argan, Polyglutamic Acid (PGA)'],
     application: [
@@ -441,6 +477,7 @@ export const products: Product[] = [
     category: 'Njega kose',
     image: '/images/products/Anti-hair-loss-lotion.webp',
     price: '37 €',
+    oldPrice: '45 €',
     volume: '100 ml',
     activeIngredients: ['Aminexil', 'Biotin (B8)', 'Nicotinamide (B3)', 'Pyridoxine (B6)', 'Sabal serrulata', 'Vitamin E', 'Vitamin H', 'Zinc'],
     application: [
@@ -457,6 +494,7 @@ export const products: Product[] = [
     category: 'Njega kose',
     image: '/images/products/toskaniDensiHair-Boost-capsules.webp',
     price: '38 €',
+    oldPrice: '45 €',
     volume: '30 kapsula',
     activeIngredients: ['Aminokiseline Lysine', 'Arginine', 'Biotin (B8)', 'Cistin', 'Sabal serrulata', 'Selen', 'Zinc'],
     application: [

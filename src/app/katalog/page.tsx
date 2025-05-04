@@ -7,11 +7,13 @@ import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
 import { products, productCategories, type Product } from '@/data/products';
 import { FaSearch, FaStar, FaTimes, FaSpinner } from 'react-icons/fa';
+import { FaTag, FaFire, FaLeaf } from 'react-icons/fa6';
 import Image from 'next/image';
 
 export default function KatalogPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedBadges, setSelectedBadges] = useState<string[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
@@ -24,7 +26,11 @@ export default function KatalogPage() {
     const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          product.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
-    return matchesSearch && matchesCategory;
+    const matchesBadges = selectedBadges.length === 0 || 
+      (selectedBadges.includes('new') && product.isNew) ||
+      (selectedBadges.includes('sale') && product.isOnSale) ||
+      (selectedBadges.includes('limited') && product.isLimited);
+    return matchesSearch && matchesCategory && matchesBadges;
   });
 
   // Calculate pagination
@@ -38,22 +44,20 @@ export default function KatalogPage() {
     setCurrentPage(1);
   }, [searchTerm, selectedCategories]);
 
-  // Scroll to top when page changes
-  useEffect(() => {
-    const navbarHeight = 80;
-    const productsTop = productsRef.current?.offsetTop || 0;
-    const scrollPosition = productsTop - navbarHeight - 30;
-
-    window.scrollTo({
-      top: scrollPosition,
-      behavior: 'smooth'
-    });
-  }, [currentPage]);
-
   const handlePageChange = (newPage: number) => {
     if (newPage !== currentPage) {
       setIsScrolling(true);
       setCurrentPage(newPage);
+      
+      // Scroll to products section only when user clicks pagination
+      const navbarHeight = 80;
+      const productsTop = productsRef.current?.offsetTop || 0;
+      const scrollPosition = productsTop - navbarHeight - 30;
+
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+      });
       
       // Reset scrolling state after animation
       setTimeout(() => {
@@ -68,6 +72,15 @@ export default function KatalogPage() {
       prev.includes(category)
         ? prev.filter(c => c !== category)
         : [...prev, category]
+    );
+  };
+
+  const toggleBadge = (badge: string) => {
+    setIsFiltering(true);
+    setSelectedBadges(prev => 
+      prev.includes(badge)
+        ? prev.filter(b => b !== badge)
+        : [...prev, badge]
     );
   };
 
@@ -142,6 +155,51 @@ export default function KatalogPage() {
                 </div>
               </div>
 
+              {/* Badges Filter */}
+              <div className="mt-6">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Oznake
+                </label>
+                <div className="space-y-2">
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={selectedBadges.includes('new')}
+                      onChange={() => toggleBadge('new')}
+                      className="h-4 w-4 text-green-500 focus:ring-green-500 border-gray-300 rounded"
+                    />
+                    <span className="text-sm text-gray-700 flex items-center gap-1">
+                      <FaLeaf className="w-3 h-3 text-green-500" />
+                      Novo
+                    </span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={selectedBadges.includes('sale')}
+                      onChange={() => toggleBadge('sale')}
+                      className="h-4 w-4 text-red-500 focus:ring-red-500 border-gray-300 rounded"
+                    />
+                    <span className="text-sm text-gray-700 flex items-center gap-1">
+                      <FaTag className="w-3 h-3 text-red-500" />
+                      Akcija
+                    </span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={selectedBadges.includes('limited')}
+                      onChange={() => toggleBadge('limited')}
+                      className="h-4 w-4 text-purple-500 focus:ring-purple-500 border-gray-300 rounded"
+                    />
+                    <span className="text-sm text-gray-700 flex items-center gap-1">
+                      <FaFire className="w-3 h-3 text-purple-500" />
+                      Limitirano
+                    </span>
+                  </label>
+                </div>
+              </div>
+
               {/* Results Count */}
               <div className="mt-6 pt-6 border-t border-gray-200">
                 <p className="text-sm text-gray-600">
@@ -172,7 +230,7 @@ export default function KatalogPage() {
                     ${product.isPopular ? 'border-indigo-500' : 'border-gray-200'}
                     hover:shadow-lg transition-all duration-300
                     ${isFiltering ? 'opacity-50' : 'opacity-100'}
-                    flex flex-col h-full cursor-pointer
+                    flex flex-col h-full cursor-pointer relative
                   `}
                   onClick={() => openProductModal(product)}
                 >
@@ -184,6 +242,27 @@ export default function KatalogPage() {
                       className="object-contain p-2"
                       loading="lazy"
                     />
+                    {/* Product Badges */}
+                    <div className="absolute top-2 right-2 flex flex-col gap-1">
+                      {product.isNew && (
+                        <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
+                          <FaLeaf className="w-3 h-3" />
+                          Novo
+                        </span>
+                      )}
+                      {product.isOnSale && product.oldPrice && (
+                        <span className="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
+                          <FaTag className="w-3 h-3" />
+                          Akcija
+                        </span>
+                      )}
+                      {product.isLimited && (
+                        <span className="bg-purple-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
+                          <FaFire className="w-3 h-3" />
+                          Limitirano
+                        </span>
+                      )}
+                    </div>
                   </div>
                   <div className="p-4 flex flex-col flex-grow">
                     <div className="flex justify-between items-start mb-2">
@@ -197,7 +276,23 @@ export default function KatalogPage() {
                     </div>
                     <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">{product.description}</p>
                     <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                      <div className="text-xl font-bold text-gray-900">{product.price}</div>
+                      <div className="flex items-center gap-2">
+                        <div className="flex flex-col h-12 justify-center">
+                          {product.isOnSale && product.oldPrice ? (
+                            <>
+                              <span className="text-sm text-gray-500 line-through">{product.oldPrice}</span>
+                              <span className="text-xl font-bold text-red-500">{product.price}</span>
+                            </>
+                          ) : (
+                            <span className="text-xl font-bold text-gray-900">{product.price}</span>
+                          )}
+                        </div>
+                        {product.isOnSale && product.oldPrice && (
+                          <span className="bg-red-500 text-white text-xs font-bold w-10 h-10 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center">
+                            -{Math.round((1 - parseFloat(product.price) / parseFloat(product.oldPrice)) * 100)}%
+                          </span>
+                        )}
+                      </div>
                       <button 
                         className="px-3 py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm cursor-pointer"
                         onClick={(e) => {
@@ -234,8 +329,8 @@ export default function KatalogPage() {
                       }}
                       className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer ${
                         currentPage === page
-                          ? 'bg-indigo-600 text-white'
-                          : 'text-gray-600 hover:bg-gray-100'
+                          ? 'bg-indigo-600 text-white border-b-2 border-white'
+                          : 'text-gray-600 hover:bg-gray-100 hover:border-b-2 hover:border-gray-600'
                       } transition-colors`}
                     >
                       {page}
@@ -319,9 +414,46 @@ export default function KatalogPage() {
                             fill
                             className="object-contain p-6"
                           />
+                          {/* Product Badges in Modal */}
+                          <div className="absolute top-4 right-4 flex flex-col gap-2">
+                            {selectedProduct?.isNew && (
+                              <span className="bg-green-500 text-white text-sm font-semibold px-3 py-1.5 rounded-full flex items-center gap-1">
+                                <FaLeaf className="w-4 h-4" />
+                                Novo
+                              </span>
+                            )}
+                            {selectedProduct?.isOnSale && selectedProduct?.oldPrice && (
+                              <span className="bg-red-500 text-white text-sm font-semibold px-3 py-1.5 rounded-full flex items-center gap-1">
+                                <FaTag className="w-4 h-4" />
+                                Akcija
+                              </span>
+                            )}
+                            {selectedProduct?.isLimited && (
+                              <span className="bg-purple-500 text-white text-sm font-semibold px-3 py-1.5 rounded-full flex items-center gap-1">
+                                <FaFire className="w-4 h-4" />
+                                Limitirano
+                              </span>
+                            )}
+                          </div>
                         </div>
-                        <div className="mt-3 flex items-center justify-center bg-gray-50 rounded-xl p-3">
-                          <div className="text-xl font-bold text-gray-900">{selectedProduct?.price}</div>
+                        <div className="mt-3 flex items-center justify-between bg-gray-50 rounded-xl p-3">
+                          <div className="flex items-center gap-3">
+                            <div className="flex flex-col">
+                              {selectedProduct?.isOnSale && selectedProduct?.oldPrice ? (
+                                <>
+                                  <span className="text-sm text-gray-500 line-through">{selectedProduct.oldPrice}</span>
+                                  <span className="text-xl font-bold text-red-500">{selectedProduct.price}</span>
+                                </>
+                              ) : (
+                                <span className="text-xl font-bold text-gray-900">{selectedProduct?.price}</span>
+                              )}
+                            </div>
+                            {selectedProduct?.isOnSale && selectedProduct?.oldPrice && (
+                              <span className="bg-red-500 text-white text-sm font-bold w-12 h-12 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center">
+                                -{Math.round((1 - parseFloat(selectedProduct.price) / parseFloat(selectedProduct.oldPrice)) * 100)}%
+                              </span>
+                            )}
+                          </div>
                         </div>
                       </div>
                       

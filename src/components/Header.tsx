@@ -4,12 +4,14 @@ import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { services } from '@/data/services';
 import { FaChevronDown, FaChevronUp, FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     return () => {
@@ -35,6 +37,13 @@ export default function Header() {
   const handleMobileLinkClick = () => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
+  };
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return pathname === path;
+    }
+    return pathname.startsWith(path);
   };
 
   return (
@@ -89,11 +98,16 @@ export default function Header() {
           <nav className="hidden md:flex space-x-8">
             <Link 
               href="/" 
-              className="text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group"
+              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
+                isActive('/') ? 'text-indigo-600' : ''
+              }`}
             >
               Početna
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
             </Link>
+            
             <div
               className="relative"
               onMouseEnter={handleMouseEnter}
@@ -102,12 +116,16 @@ export default function Header() {
             >
               <Link
                 href="/usluge"
-                className="text-gray-600 hover:text-indigo-600 transition-all duration-300 flex items-center gap-1 cursor-pointer relative group"
+                className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 flex items-center gap-1 cursor-pointer relative group ${
+                  isActive('/usluge') ? 'text-indigo-600' : ''
+                }`}
                 onClick={() => setIsServicesOpen(false)}
               >
                 Usluge
                 <FaChevronDown className={`w-3 h-3 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                  isActive('/usluge') ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </Link>
               
               {isServicesOpen && (
@@ -120,7 +138,9 @@ export default function Header() {
                     <Link
                       key={pageName}
                       href={`/usluge/${pageName}`}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 transform hover:translate-x-1"
+                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-300 transform hover:translate-x-1 ${
+                        isActive(`/usluge/${pageName}`) ? 'text-indigo-600 bg-indigo-50' : ''
+                      }`}
                       onClick={() => setIsServicesOpen(false)}
                     >
                       {service.title}
@@ -129,33 +149,50 @@ export default function Header() {
                 </div>
               )}
             </div>
+            
             <Link 
               href="/cjenik" 
-              className="text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group"
+              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
+                isActive('/cjenik') ? 'text-indigo-600' : ''
+              }`}
             >
               Cjenik
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActive('/cjenik') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
             </Link>
             <Link 
               href="/katalog" 
-              className="text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group"
+              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
+                isActive('/katalog') ? 'text-indigo-600' : ''
+              }`}
             >
               Katalog
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActive('/katalog') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
             </Link>
             <Link 
               href="/o-nama" 
-              className="text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group"
+              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
+                isActive('/o-nama') ? 'text-indigo-600' : ''
+              }`}
             >
               O nama
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActive('/o-nama') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
             </Link>
             <Link 
               href="/kontakt" 
-              className="text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group"
+              className={`text-gray-600 hover:text-indigo-600 transition-all duration-300 relative group ${
+                isActive('/kontakt') ? 'text-indigo-600' : ''
+              }`}
             >
               Kontakt
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                isActive('/kontakt') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
             </Link>
           </nav>
 
