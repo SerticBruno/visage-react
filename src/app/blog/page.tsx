@@ -320,38 +320,47 @@ export default function BlogPage() {
 
             {/* Pagination */}
             {totalPages > 1 && (
-              <div className="flex justify-center items-center gap-2 mt-12">
+              <div className="mt-8 flex justify-center items-center space-x-2">
                 <button
-                  onClick={() => handlePageChange(currentPage - 1)}
+                  onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
                   disabled={currentPage === 1}
-                  className="px-4 py-2 rounded-lg bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-200 transition-colors cursor-pointer"
+                  className="px-3 py-1 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
                 >
                   Prethodna
                 </button>
-                
-                <div className="flex items-center gap-2">
+                <div className="flex items-center space-x-2">
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                     <button
                       key={page}
                       onClick={() => handlePageChange(page)}
-                      className={`w-10 h-10 rounded-lg cursor-pointer ${
+                      className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer ${
                         currentPage === page
-                          ? 'bg-blue-600 text-white'
-                          : 'bg-gray-100 hover:bg-gray-200'
+                          ? 'bg-indigo-600 text-white border-b-2 border-white'
+                          : 'text-gray-600 hover:bg-gray-100 hover:border-b-2 hover:border-gray-600'
                       } transition-colors`}
                     >
                       {page}
                     </button>
                   ))}
                 </div>
-
                 <button
-                  onClick={() => handlePageChange(currentPage + 1)}
+                  onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
                   disabled={currentPage === totalPages}
-                  className="px-4 py-2 rounded-lg bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-200 transition-colors cursor-pointer"
+                  className="px-3 py-1 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
                 >
                   Sljedeća
                 </button>
+              </div>
+            )}
+
+            {currentPosts.length === 0 && (
+              <div className="text-center py-8">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Nema pronađenih članaka
+                </h3>
+                <p className="text-gray-600">
+                  Pokušajte promijeniti kriterije pretraživanja
+                </p>
               </div>
             )}
           </div>
