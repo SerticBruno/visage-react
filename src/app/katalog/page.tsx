@@ -49,7 +49,7 @@ export default function KatalogPage() {
     if (isFiltering) {
       const timer = setTimeout(() => {
         setIsFiltering(false);
-      }, 300);
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [isFiltering]);
@@ -73,11 +73,9 @@ export default function KatalogPage() {
       // Use requestAnimationFrame to ensure DOM is updated before scrolling
       requestAnimationFrame(() => {
         scrollToProducts();
-        
-        // Reset scrolling state after animation
         setTimeout(() => {
           setIsScrolling(false);
-        }, 800);
+        }, 500);
       });
     }
   };

@@ -65,7 +65,7 @@ export default function BlogPage() {
     if (isFiltering) {
       const timer = setTimeout(() => {
         setIsFiltering(false);
-      }, 300);
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [isFiltering]);
@@ -90,7 +90,7 @@ export default function BlogPage() {
         scrollToPosts();
         setTimeout(() => {
           setIsScrolling(false);
-        }, 800);
+        }, 500);
       });
     }
   };
@@ -324,7 +324,7 @@ export default function BlogPage() {
                 <button
                   onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
                   disabled={currentPage === 1}
-                  className="px-3 py-1 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                  className="px-3 py-1 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300 cursor-pointer"
                 >
                   Prethodna
                 </button>
@@ -333,11 +333,11 @@ export default function BlogPage() {
                     <button
                       key={page}
                       onClick={() => handlePageChange(page)}
-                      className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer ${
+                      className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300 ${
                         currentPage === page
                           ? 'bg-indigo-600 text-white border-b-2 border-white'
                           : 'text-gray-600 hover:bg-gray-100 hover:border-b-2 hover:border-gray-600'
-                      } transition-colors`}
+                      }`}
                     >
                       {page}
                     </button>
@@ -346,7 +346,7 @@ export default function BlogPage() {
                 <button
                   onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
                   disabled={currentPage === totalPages}
-                  className="px-3 py-1 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                  className="px-3 py-1 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300 cursor-pointer"
                 >
                   Sljedeća
                 </button>
