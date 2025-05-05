@@ -39,7 +39,7 @@ export interface BlogPost {
   slug: string;
   excerpt: string;
   content: ContentItem[];
-  date: string;
+  date: Date;
   author: string;
   tags: string[];
   image: string;

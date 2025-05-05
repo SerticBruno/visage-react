@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import RelatedArticles from '@/components/blog/RelatedArticles';
 import { FaCalendarAlt, FaUser, FaTag } from 'react-icons/fa';
-import { cn } from '@/lib/utils';
+import { formatDate } from '@/lib/utils';
 import { ElementType } from 'react';
 import { TextSpan, LinkSpan, TextContent, ImageContent, HeadingContent, ContentItem } from '@/data/types';
 import Link from 'next/link';
@@ -42,10 +42,7 @@ function renderTextContent(content: TextContent, index: number) {
           return (
             <span
               key={`span-${index}-${spanIndex}`}
-              className={cn(
-                span.style === 'bold' && 'font-bold',
-                span.style === 'italic' && 'italic'
-              )}
+              className={span.style === 'bold' ? 'font-bold' : span.style === 'italic' ? 'italic' : ''}
             >
               {span.text}
             </span>
@@ -97,7 +94,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="flex items-center justify-center gap-4 text-gray-600 mb-6">
               <div className="flex items-center gap-2">
                 <FaCalendarAlt className="w-4 h-4" />
-                <span>{post.date}</span>
+                <span>{formatDate(post.date)}</span>
               </div>
               <div className="flex items-center gap-2">
                 <FaUser className="w-4 h-4" />
@@ -141,12 +138,11 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   return (
                     <Tag 
                       key={`heading-${index}`}
-                      className={cn(
-                        'font-bold text-gray-900 mb-4',
-                        item.level === 1 && 'text-4xl',
-                        item.level === 2 && 'text-3xl',
-                        item.level === 3 && 'text-2xl'
-                      )}
+                      className={`font-bold text-gray-900 mb-4 ${
+                        item.level === 1 ? 'text-4xl' :
+                        item.level === 2 ? 'text-3xl' :
+                        item.level === 3 ? 'text-2xl' : ''
+                      }`}
                     >
                       {item.text}
                     </Tag>

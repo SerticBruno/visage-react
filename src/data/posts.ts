@@ -1,5 +1,28 @@
 import { BlogPost } from './types';
 
+const formatDate = (date: Date): string => {
+  const months = {
+    '01': 'siječnja',
+    '02': 'veljače',
+    '03': 'ožujka',
+    '04': 'travnja',
+    '05': 'svibnja',
+    '06': 'lipnja',
+    '07': 'srpnja',
+    '08': 'kolovoza',
+    '09': 'rujna',
+    '10': 'listopada',
+    '11': 'studenog',
+    '12': 'prosinca'
+  };
+
+  const day = date.getDate();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+
+  return `${day}. ${months[month as keyof typeof months]} ${year}.`;
+};
+
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
@@ -128,10 +151,10 @@ export const blogPosts: BlogPost[] = [
         ]
       }
     ],
-    date: '15. ožujka 2024.',
+    date: new Date('2024-03-15'),
     author: 'dr. Ana Horvat',
     tags: ['Plazma terapija', 'Anti-aging', 'Estetska medicina'],
-    image: '/images/services/plasmage-hero.webp'
+    image: '/images/services/MYV_selfie_details.webp'
   },
   {
     id: 2,
@@ -207,7 +230,7 @@ export const blogPosts: BlogPost[] = [
         ]
       }
     ],
-    date: '20. ožujka 2024.',
+    date: new Date('2024-03-20'),
     author: 'Maja Kovač',
     tags: ['Obrve', 'Trepavice', 'Laminacija'],
     image: '/images/services/obrve-i-trepavice.webp'
@@ -286,7 +309,7 @@ export const blogPosts: BlogPost[] = [
         ]
       }
     ],
-    date: '25. ožujka 2024.',
+    date: new Date('2024-03-25'),
     author: 'Ivana Petrović',
     tags: ['Toskani', 'Njega kože', 'Kozmetika'],
     image: '/images/services/toskani-hero.webp'
@@ -332,7 +355,7 @@ export const blogPosts: BlogPost[] = [
         ]
       }
     ],
-    date: '2024-05-07',
+    date: new Date('2024-05-07'),
     author: 'Dr. Petra Novak',
     tags: ['Mesoterapija', 'Hidratacija', 'Anti-aging'],
     image: '/images/services/Mesoterapia-transdermica-facial.webp'
@@ -378,7 +401,7 @@ export const blogPosts: BlogPost[] = [
         ]
       }
     ],
-    date: '2024-05-09',
+    date: new Date('2024-05-09'),
     author: 'Lara Horvat',
     tags: ['Manikura', 'Njega ruku', 'Nokti'],
     image: '/images/services/manikura.webp'
@@ -424,9 +447,165 @@ export const blogPosts: BlogPost[] = [
         ]
       }
     ],
-    date: '2024-05-11',
+    date: new Date('2024-05-11'),
     author: 'Dr. Marko Kovač',
     tags: ['Muška njega', 'Kozmetika', 'Anti-aging'],
+    image: '/images/services/botox-face-girl.webp'
+  },
+  {
+    id: 7,
+    title: 'Prirodna njega kože - najbolji sastojci za svaki tip kože',
+    slug: 'prirodna-njega-koze',
+    excerpt: 'Otkrijte prirodne sastojke koji će vašoj koži dati sve što joj treba za zdrav i mladolik izgled.',
+    content: [
+      {
+        type: 'heading',
+        level: 1,
+        text: 'Prirodna njega kože - najbolji sastojci za svaki tip kože'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Prirodna njega kože postaje sve popularnija, a s razlogom. Prirodni sastojci su blagi, učinkoviti i često sadrže aktivne tvari koje koža lako apsorbira.' }
+        ]
+      },
+      {
+        type: 'image',
+        src: '/images/services/toskani-woman.webp',
+        alt: 'Prirodna njega kože',
+        caption: 'Prirodni sastojci za njegu kože'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Najbolji prirodni sastojci'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Evo nekoliko prirodnih sastojaka koji su posebno korisni za kožu:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Aloe vera', style: 'bold' },
+          { type: 'text', text: ' - odlična za hidrataciju i smirivanje' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Čajno drvo', style: 'bold' },
+          { type: 'text', text: ' - prirodni antiseptik za problematičnu kožu' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Kokosovo ulje', style: 'bold' },
+          { type: 'text', text: ' - bogato srednjelančanim masnim kiselinama' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Med', style: 'bold' },
+          { type: 'text', text: ' - prirodni humektant s antibakterijskim svojstvima' }
+        ]
+      }
+    ],
+    date: new Date('2024-05-15'),
+    author: 'Ivana Petrović',
+    tags: ['Prirodna njega', 'Kozmetika', 'Njega kože'],
+    image: '/images/services/toskani-woman.webp'
+  },
+  {
+    id: 8,
+    title: 'Zimski tretmani za kožu - kako održati kožu zdravom tijekom hladnih mjeseci',
+    slug: 'zimski-tretmani-koze',
+    excerpt: 'Saznajte kako pravilno njegovati kožu tijekom zime i spriječiti suhoću i oštećenja.',
+    content: [
+      {
+        type: 'heading',
+        level: 1,
+        text: 'Zimski tretmani za kožu - kako održati kožu zdravom tijekom hladnih mjeseci'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Zima je posebno zahtjevno doba godine za našu kožu. Hladno vrijeme, suhi zrak u zatvorenim prostorima i promjene temperature mogu dovesti do suhoće, iritacije i oštećenja kože.' }
+        ]
+      },
+      {
+        type: 'image',
+        src: '/images/services/MYV_selfie_details.webp',
+        alt: 'Zimski tretman kože',
+        caption: 'Profesionalni zimski tretman kože'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Ključni koraci za zimsku njegu kože'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Za zdravu kožu tijekom zime, preporučujemo sljedeće korake:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Intenzivna hidratacija', style: 'bold' },
+          { type: 'text', text: ' - koristite bogate kreme i serume' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Zaštita od vremenskih uvjeta', style: 'bold' },
+          { type: 'text', text: ' - SPF je važan i zimi' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Gentilno čišćenje', style: 'bold' },
+          { type: 'text', text: ' - izbjegavajte agresivne proizvode' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Redovni tretmani', style: 'bold' },
+          { type: 'text', text: ' - profesionalna njega jednom mjesečno' }
+        ]
+      }
+    ],
+    date: new Date('2024-05-20'),
+    author: 'Dr. Petra Novak',
+    tags: ['Zimska njega', 'Hidratacija', 'Njega kože'],
+    image: '/images/services/MYV_selfie_details.webp'
+  },
+  {
+    id: 9,
+    title: 'Anti-aging tretmani - kako održati mladolik izgled prirodno',
+    slug: 'anti-aging-tretmani',
+    excerpt: 'Otkrijte najučinkovitije anti-aging tretmane koji će vam pomoći održati mladolik izgled na prirodan način.',
+    content: [
+      {
+        type: 'heading',
+        level: 1,
+        text: 'Anti-aging tretmani - kako održati mladolik izgled prirodno'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Anti-aging tretmani su postali sastavni dio moderne kozmetičke njege. Uz pravilnu kombinaciju profesionalnih tretmana i kućne njege, možete postići značajno poboljšanje izgleda kože.' }
+        ]
+      },
+      {
+        type: 'image',
+        src: '/images/services/botox-face-girl.webp',
+        alt: 'Anti-aging tretman',
+        caption: 'Profesionalni anti-aging tretman'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Najučinkovitiji anti-aging tretmani'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'U našem salonu nudimo širok spektar anti-aging tretmana:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Plazma terapija', style: 'bold' },
+          { type: 'text', text: ' - prirodna regeneracija kože' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Radiofrekvencija', style: 'bold' },
+          { type: 'text', text: ' - lifting i toniziranje kože' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Mezoterapija', style: 'bold' },
+          { type: 'text', text: ' - dubinska hidratacija i regeneracija' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'LED terapija', style: 'bold' },
+          { type: 'text', text: ' - stimulacija proizvodnje kolagena' }
+        ]
+      }
+    ],
+    date: new Date('2024-05-25'),
+    author: 'dr. Ana Horvat',
+    tags: ['Anti-aging', 'Estetska medicina', 'Njega kože'],
     image: '/images/services/botox-face-girl.webp'
   }
 ]; 

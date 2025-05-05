@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { FaCalendarAlt, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa';
 import Link from 'next/link';
 import InteractiveLink from '@/components/blog/InteractiveLink';
+import { formatDate } from '@/lib/utils';
 
 interface AuthorPageProps {
   params: {
@@ -90,7 +91,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
                   <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
                     <div className="flex items-center gap-2">
                       <FaCalendarAlt className="w-4 h-4" />
-                      <span>{latestPost.date}</span>
+                      <span>{formatDate(latestPost.date)}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <FaTag className="w-4 h-4" />
@@ -142,7 +143,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
                     <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
                       <div className="flex items-center gap-2">
                         <FaCalendarAlt className="w-4 h-4" />
-                        <span>{post.date}</span>
+                        <span>{formatDate(post.date)}</span>
                       </div>
                     </div>
                     <Link 
