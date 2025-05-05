@@ -1,20 +1,3 @@
-export interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: (TextContent | ImageContent | HeadingContent)[];
-  date: string;
-  author: string;
-  tags: string[];
-  image: string;
-}
-
-export interface TextContent {
-  type: 'text';
-  text: string | (TextSpan | LinkSpan)[];
-}
-
 export interface TextSpan {
   type: 'text';
   text: string;
@@ -27,10 +10,9 @@ export interface LinkSpan {
   href: string;
 }
 
-export interface HeadingContent {
-  type: 'heading';
-  text: string;
-  level: 1 | 2 | 3 | 4;
+export interface TextContent {
+  type: 'text';
+  text: (TextSpan | LinkSpan)[];
 }
 
 export interface ImageContent {
@@ -38,4 +20,24 @@ export interface ImageContent {
   src: string;
   alt: string;
   caption?: string;
+}
+
+export interface HeadingContent {
+  type: 'heading';
+  level: 1 | 2 | 3;
+  text: string;
+}
+
+export type ContentItem = TextContent | ImageContent | HeadingContent;
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: ContentItem[];
+  image: string;
+  date: string;
+  author: string;
+  tags: string[];
 } 

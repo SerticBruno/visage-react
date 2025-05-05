@@ -5,8 +5,9 @@ import RelatedArticles from '@/components/blog/RelatedArticles';
 import { FaCalendarAlt, FaUser } from 'react-icons/fa';
 import { cn } from '@/lib/utils';
 import { ElementType } from 'react';
+import { TextSpan, LinkSpan, TextContent, ImageContent, HeadingContent, ContentItem } from '@/data/types';
 import Link from 'next/link';
-import { TextSpan, LinkSpan } from '@/data/types';
+import InteractiveLink from '@/components/blog/InteractiveLink';
 
 interface BlogPostPageProps {
   params: {
@@ -14,17 +15,8 @@ interface BlogPostPageProps {
   };
 }
 
-const Heading = ({ level, children, className }: { level: 1 | 2 | 3 | 4; children: React.ReactNode; className?: string }) => {
-  const Tag = `h${level}` as ElementType;
-  return (
-    <Tag className={className}>
-      {children}
-    </Tag>
-  );
-};
-
-const renderListItems = (text: string, parentIndex: number) => {
-  const items = text.split('\n').filter(item => item.trim().startsWith('•'));
+function renderListItems(text: string, parentIndex: number) {
+  const items = text.split('\n').filter(line => line.trim().startsWith('•'));
   if (items.length === 0) return null;
 
   return (
@@ -36,29 +28,23 @@ const renderListItems = (text: string, parentIndex: number) => {
       ))}
     </ul>
   );
-};
+}
 
-const renderTextContent = (content: string | (TextSpan | LinkSpan)[], index: number) => {
-  if (typeof content === 'string') {
-    const listItems = renderListItems(content, index);
-    if (listItems) return listItems;
-    return <p key={`text-${index}`} className="mb-4">{content}</p>;
-  }
-
-  const text = content.map(span => span.text).join('');
+function renderTextContent(content: TextContent, index: number) {
+  const text = content.text.map(span => span.text).join('');
   const listItems = renderListItems(text, index);
   if (listItems) return listItems;
 
   return (
-    <p key={`text-${index}`} className="mb-4">
-      {content.map((span, spanIndex) => {
+    <p key={`text-${index}`} className="text-gray-700 mb-4">
+      {content.text.map((span, spanIndex) => {
         if (span.type === 'text') {
           return (
             <span
               key={`span-${index}-${spanIndex}`}
               className={cn(
-                span.style === 'bold' && "font-bold",
-                span.style === 'italic' && "italic"
+                span.style === 'bold' && 'font-bold',
+                span.style === 'italic' && 'italic'
               )}
             >
               {span.text}
@@ -66,23 +52,23 @@ const renderTextContent = (content: string | (TextSpan | LinkSpan)[], index: num
           );
         } else if (span.type === 'link') {
           return (
-            <Link
+            <InteractiveLink
               key={`link-${index}-${spanIndex}`}
               href={span.href}
               className="text-blue-600 hover:text-blue-800 underline"
             >
               {span.text}
-            </Link>
+            </InteractiveLink>
           );
         }
         return null;
       })}
     </p>
   );
-};
+}
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = blogPosts.find((post) => post.slug === params.slug);
+  const post = blogPosts.find(p => p.slug === params.slug);
 
   if (!post) {
     notFound();
@@ -115,7 +101,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
               <div className="flex items-center gap-2">
                 <FaUser className="w-4 h-4" />
-                <span>{post.author}</span>
+                <InteractiveLink 
+                  href={`/blog/autor/${post.author}`}
+                  className="hover:text-blue-600 transition-colors"
+                >
+                  {post.author}
+                </InteractiveLink>
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -126,12 +117,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </p>
             <div className="flex flex-wrap justify-center gap-2">
               {post.tags.map((tag) => (
-                <span
+                <InteractiveLink
                   key={tag}
+                  href={`/blog/kategorija/${tag}`}
                   className="px-4 py-2 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-gray-200 transition-colors"
                 >
                   {tag}
-                </span>
+                </InteractiveLink>
               ))}
             </div>
           </div>
@@ -140,52 +132,51 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Content Section */}
       <div className="container mx-auto px-4 py-12">
-        <article className="max-w-3xl mx-auto">
-          <div className="prose max-w-none">
+        <div className="max-w-4xl mx-auto">
+          <div className="prose prose-lg max-w-none">
             {post.content.map((item, index) => {
-              if (item.type === 'text') {
-                return renderTextContent(item.text, index);
-              } else if (item.type === 'heading') {
+              if (item.type === 'heading') {
+                const Tag = `h${item.level}` as ElementType;
                 return (
-                  <Heading
+                  <Tag 
                     key={`heading-${index}`}
-                    level={item.level}
                     className={cn(
-                      "font-bold mb-4",
-                      item.level === 1 && "text-4xl",
-                      item.level === 2 && "text-3xl",
-                      item.level === 3 && "text-2xl",
-                      item.level === 4 && "text-xl"
+                      'font-bold text-gray-900 mb-4',
+                      item.level === 1 && 'text-4xl',
+                      item.level === 2 && 'text-3xl',
+                      item.level === 3 && 'text-2xl'
                     )}
                   >
                     {item.text}
-                  </Heading>
+                  </Tag>
                 );
               } else if (item.type === 'image') {
                 return (
                   <figure key={`figure-${index}`} className="my-8">
-                    <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
+                    <div className="relative aspect-[16/9] w-full">
                       <Image
                         src={item.src}
                         alt={item.alt}
                         fill
-                        className="object-cover"
+                        className="object-cover rounded-lg"
                       />
                     </div>
                     {item.caption && (
-                      <figcaption className="text-center text-gray-600 mt-2 text-sm">
+                      <figcaption className="text-center text-gray-600 mt-2">
                         {item.caption}
                       </figcaption>
                     )}
                   </figure>
                 );
+              } else if (item.type === 'text') {
+                return renderTextContent(item, index);
               }
               return null;
             })}
           </div>
 
           <RelatedArticles currentPost={post} allPosts={blogPosts} />
-        </article>
+        </div>
       </div>
     </div>
   );

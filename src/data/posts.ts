@@ -15,7 +15,9 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Plazma terapija je revolucionarna metoda u estetskoj medicini koja koristi prirodnu plazmu vaše krvi za stimulaciju regeneracije kože. Ova neinvazivna tehnika je postala izuzetno popularna zahvaljujući svojoj učinkovitosti i minimalnom vremenu oporavka.' }
+          { type: 'text', text: 'Plazma terapija je ' },
+          { type: 'text', text: 'revolucionarna metoda', style: 'bold' },
+          { type: 'text', text: ' u estetskoj medicini koja koristi prirodnu plazmu vaše krvi za stimulaciju regeneracije kože. Ova neinvazivna tehnika je postala izuzetno popularna zahvaljujući svojoj učinkovitosti i minimalnom vremenu oporavka.' }
         ]
       },
       {
@@ -52,7 +54,11 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Tijekom tretmana, mala količina vaše krvi se uzima i centrifugira kako bi se izdvojila plazma bogata trombocitima (PRP). Ova plazma sadrži koncentrirane faktore rasta koji se zatim injiciraju u kožu, stimulirajući prirodni proces regeneracije.' }
+          { type: 'text', text: 'Tijekom tretmana, mala količina vaše krvi se uzima i centrifugira kako bi se izdvojila ' },
+          { type: 'text', text: 'plazma bogata trombocitima (PRP)', style: 'bold' },
+          { type: 'text', text: '. Ova plazma sadrži koncentrirane faktore rasta koji se zatim injiciraju u kožu, stimulirajući prirodni proces regeneracije. Za više informacija o ' },
+          { type: 'link', text: 'PRP tretmanima', href: '/usluge/prp-terapija' },
+          { type: 'text', text: ', posjetite našu stranicu s uslugama.' }
         ]
       },
       {
@@ -70,10 +76,18 @@ export const blogPosts: BlogPost[] = [
         type: 'text',
         text: [
           { type: 'text', text: 'Plazma terapija je idealna za osobe koje žele:' },
-          { type: 'text', text: '\n\n• Poboljšati tonus i teksturu kože' },
-          { type: 'text', text: '\n• Smanjiti fine linije i bore' },
-          { type: 'text', text: '\n• Poboljšati kvalitetu ožiljaka' },
-          { type: 'text', text: '\n• Postići prirodan lifting bez operacije' }
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Poboljšati tonus i teksturu kože', style: 'bold' },
+          { type: 'text', text: ' - za mladolik i zdrav izgled' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Smanjiti fine linije i bore', style: 'bold' },
+          { type: 'text', text: ' - prirodna alternativa botoksu' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Poboljšati kvalitetu ožiljaka', style: 'bold' },
+          { type: 'text', text: ' - učinkovito rješenje za stare i nove ožiljke' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Postići prirodan lifting bez operacije', style: 'bold' },
+          { type: 'text', text: ' - sigurna alternativa kirurškim zahvatima' }
         ]
       },
       {
@@ -85,16 +99,32 @@ export const blogPosts: BlogPost[] = [
         type: 'text',
         text: [
           { type: 'text', text: 'Nakon serije tretmana, možete očekivati:' },
-          { type: 'text', text: '\n\n• Poboljšanu teksturu i tonus kože' },
-          { type: 'text', text: '\n• Smanjenje fine linija i bora' },
-          { type: 'text', text: '\n• Prirodan lifting i volumizaciju' },
-          { type: 'text', text: '\n• Poboljšanu hidrataciju i sjaj kože' }
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Poboljšanu teksturu i tonus kože', style: 'bold' },
+          { type: 'text', text: ' - glatka i sjajna koža' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Smanjenje fine linija i bora', style: 'bold' },
+          { type: 'text', text: ' - prirodno podmlađivanje' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Prirodan lifting i volumizaciju', style: 'bold' },
+          { type: 'text', text: ' - obnavljanje volumena' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Poboljšanu hidrataciju i sjaj kože', style: 'bold' },
+          { type: 'text', text: ' - zdrava i svježa koža' }
         ]
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Za najbolje rezultate, preporučujemo seriju od 3-4 tretmana u razmaku od 4-6 tjedana. Rezultati su kumulativni i traju do 12-18 mjeseci.' }
+          { type: 'text', text: 'Za najbolje rezultate, preporučujemo seriju od ' },
+          { type: 'text', text: '3-4 tretmana', style: 'bold' },
+          { type: 'text', text: ' u razmaku od ' },
+          { type: 'text', text: '4-6 tjedana', style: 'bold' },
+          { type: 'text', text: '. Rezultati su kumulativni i traju do ' },
+          { type: 'text', text: '12-18 mjeseci', style: 'bold' },
+          { type: 'text', text: '. Za više informacija o ' },
+          { type: 'link', text: 'cijenama i rasporedu tretmana', href: '/cjenik' },
+          { type: 'text', text: ', kontaktirajte nas ili posjetite našu stranicu s cjenikom.' }
         ]
       }
     ],
