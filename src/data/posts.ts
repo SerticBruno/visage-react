@@ -5,67 +5,101 @@ export const blogPosts: BlogPost[] = [
     id: '1',
     title: 'Plazma terapija - revolucionarna metoda za mladolik izgled',
     slug: 'plazma-terapija',
-    excerpt: 'Otkrijte kako plazma terapija može pomoći u borbi protiv starenja kože i postizanju mladolikog izgleda.',
+    excerpt: 'Otkrijte kako plazma terapija može pomoći u redukciji bora, liftingu kože i poboljšanju tonusa kože bez invazivnih zahvata.',
     content: [
       {
+        type: 'heading',
+        level: 1,
+        text: 'Plazma terapija - revolucionarna metoda za mladolik izgled'
+      },
+      {
         type: 'text',
-        text: 'Plazma terapija je revolucionarna metoda u estetskoj medicini koja koristi vlastitu plazmu pacijenta za stimulaciju regeneracije kože. Ova metoda je postala izuzetno popularna zbog svoje učinkovitosti i prirodnog pristupa. Za razliku od tradicionalnih tretmana, plazma terapija koristi prirodne procese tijela za postizanje željenih rezultata.'
+        text: [
+          { type: 'text', text: 'Plazma terapija je revolucionarna metoda u estetskoj medicini koja koristi prirodnu plazmu vaše krvi za stimulaciju regeneracije kože. Ova neinvazivna tehnika je postala izuzetno popularna zahvaljujući svojoj učinkovitosti i minimalnom vremenu oporavka.' }
+        ]
       },
       {
         type: 'image',
         src: '/images/services/plasmage-hero.webp',
         alt: 'Plazma terapija tretman',
-        caption: 'Plazma terapija - prirodna metoda za mladolik izgled'
+        caption: 'Plazma terapija - siguran i učinkovit tretman za mladolik izgled'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Prednosti plazma terapije'
       },
       {
         type: 'text',
-        text: 'Kako radi plazma terapija?\n\nPlazma terapija se temelji na principu korištenja vlastite plazme pacijenta, koja je bogata trombocitima i rastućim faktorima. Tijekom tretmana, mala količina krvi se uzima iz pacijentove ruke, centrifugira se kako bi se odvojila plazma, a zatim se injektira u područja koja zahtijevaju tretman. Ovaj proces stimulira prirodne mehanizme regeneracije kože.'
+        text: [
+          { type: 'text', text: 'Plazma terapija nudi brojne prednosti u odnosu na tradicionalne metode:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Prirodna regeneracija kože', style: 'bold' },
+          { type: 'text', text: ' - koristi vlastite faktore rasta iz krvi' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Minimalno vrijeme oporavka', style: 'bold' },
+          { type: 'text', text: ' - većina klijenata se može vratiti normalnim aktivnostima isti dan' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Dugotrajni rezultati', style: 'bold' },
+          { type: 'text', text: ' - rezultati se postupno poboljšavaju tijekom nekoliko tjedana' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Kako radi plazma terapija?'
       },
       {
         type: 'text',
-        text: 'Prednosti plazma terapije:\n\n- Prirodan pristup: Koristi vlastite prirodne sastojke pacijenta\n- Minimalno invazivan: Bez opasnosti od alergijskih reakcija\n- Dugotrajni rezultati: Stimulira prirodnu regeneraciju kože\n- Svestranost: Može se koristiti na različitim dijelovima tijela\n- Sigurnost: Minimalni rizik od nuspojava'
+        text: [
+          { type: 'text', text: 'Tijekom tretmana, mala količina vaše krvi se uzima i centrifugira kako bi se izdvojila plazma bogata trombocitima (PRP). Ova plazma sadrži koncentrirane faktore rasta koji se zatim injiciraju u kožu, stimulirajući prirodni proces regeneracije.' }
+        ]
       },
       {
         type: 'image',
         src: '/images/services/MYV_selfie_details.webp',
-        alt: 'Prije i nakon plazma terapije',
-        caption: 'Rezultati prije i nakon tretmana'
+        alt: 'Rezultati plazma terapije',
+        caption: 'Vidljivi rezultati nakon serije tretmana plazma terapije'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Tko je idealan kandidat?'
       },
       {
         type: 'text',
-        text: 'Indikacije za tretman:\n\n- Smanjenje bora i finih linija\n- Poboljšanje tonusa i teksture kože\n- Tretman ožiljaka i strija\n- Poboljšanje kvalitete kože\n- Stimulacija rasta kose\n- Tretman pigmentacije'
+        text: [
+          { type: 'text', text: 'Plazma terapija je idealna za osobe koje žele:' },
+          { type: 'text', text: '\n\n• Poboljšati tonus i teksturu kože' },
+          { type: 'text', text: '\n• Smanjiti fine linije i bore' },
+          { type: 'text', text: '\n• Poboljšati kvalitetu ožiljaka' },
+          { type: 'text', text: '\n• Postići prirodan lifting bez operacije' }
+        ]
       },
       {
-        type: 'image',
-        src: '/images/services/Mesoterapia-transdermica-facial.webp',
-        alt: 'Detalj tretmana',
-        caption: 'Profesionalni tretman plazma terapije'
-      },
-      {
-        type: 'text',
-        text: 'Tijek tretmana:\n\n1. Konzultacija: Detaljna analiza kože i definiranje ciljeva\n2. Priprema: Uzimanje krvi i priprema plazme\n3. Tretman: Precizna aplikacija plazme\n4. Oporavak: Kratko vrijeme oporavka\n5. Praćenje: Redovito praćenje rezultata'
-      },
-      {
-        type: 'text',
-        text: 'Očekivani rezultati:\n\nPrvi rezultati se obično vide nakon 2-3 tjedna, a optimalni rezultati nakon 2-3 tretmana. Koža postaje glatka, hidratizirana i mladolika. Rezultati su progresivni i prirodni, bez iznenadnih promjena.'
-      },
-      {
-        type: 'image',
-        src: '/images/services/TKNHA3_.webp',
-        alt: 'Rezultati tretmana',
-        caption: 'Dugotrajni rezultati plazma terapije'
+        type: 'heading',
+        level: 2,
+        text: 'Očekivani rezultati'
       },
       {
         type: 'text',
-        text: 'Nakon tretmana:\n\n- Izbjegavajte direktno sunčevo zračenje 24-48 sati\n- Koristite zaštitni kremu protiv sunca\n- Izbjegavajte intenzivnu fizičku aktivnost 24 sata\n- Pratite upute za njegu kože koje vam daje terapeut'
+        text: [
+          { type: 'text', text: 'Nakon serije tretmana, možete očekivati:' },
+          { type: 'text', text: '\n\n• Poboljšanu teksturu i tonus kože' },
+          { type: 'text', text: '\n• Smanjenje fine linija i bora' },
+          { type: 'text', text: '\n• Prirodan lifting i volumizaciju' },
+          { type: 'text', text: '\n• Poboljšanu hidrataciju i sjaj kože' }
+        ]
       },
       {
         type: 'text',
-        text: 'Plazma terapija je idealna za sve koji žele prirodan pristup anti-aging tretmanima. Kombinira najnovije tehnologije s prirodnim procesima tijela, što je čini jednom od najsigurnijih i najučinkovitijih metoda u estetskoj medicini.'
+        text: [
+          { type: 'text', text: 'Za najbolje rezultate, preporučujemo seriju od 3-4 tretmana u razmaku od 4-6 tjedana. Rezultati su kumulativni i traju do 12-18 mjeseci.' }
+        ]
       }
     ],
-    date: '2024-05-01',
-    author: 'Dr. Ana Horvat',
+    date: '15. ožujka 2024.',
+    author: 'dr. Ana Horvat',
     tags: ['Plazma terapija', 'Anti-aging', 'Estetska medicina'],
     image: '/images/services/plasmage-hero.webp'
   },
@@ -76,18 +110,44 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Saznajte kako postići savršene obrve i trepavice koje će vašem licu dati izražajnost i mladolik izgled.',
     content: [
       {
+        type: 'heading',
+        level: 1,
+        text: 'Savršene obrve i trepavice - ključ za izražajni pogled'
+      },
+      {
         type: 'text',
-        text: 'Obrve i trepavice igraju ključnu ulogu u izgledu našeg lica. Dobro oblikovane obrve mogu potpuno promijeniti izraz lica, dok duge i guste trepavice daju očima izražajnost i mladolik izgled.'
+        text: [
+          { type: 'text', text: 'Obrve i trepavice igraju ključnu ulogu u izgledu našeg lica. Dobro oblikovane obrve mogu potpuno promijeniti izraz lica, dok duge i guste trepavice daju očima izražajnost i mladolik izgled.' }
+        ]
       },
       {
         type: 'image',
         src: '/images/services/obrve-i-trepavice.webp',
         alt: 'Tretman obrva',
-        caption: 'Profesionalni tretman obrva'
+        caption: 'Profesionalni tretman obrva za savršen izgled'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Naše usluge'
       },
       {
         type: 'text',
-        text: 'U našem salonu nudimo:\n- Laminaciju obrva\n- Tintiranje trepavica\n- Lifting trepavica\n- Mikroblading'
+        text: [
+          { type: 'text', text: 'U našem salonu nudimo širok spektar tretmana:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Laminacija obrva', style: 'bold' },
+          { type: 'text', text: ' - dugotrajno oblikovanje i volumizacija' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Tintiranje trepavica', style: 'bold' },
+          { type: 'text', text: ' - intenzivniji i izražajniji pogled' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Lifting trepavica', style: 'bold' },
+          { type: 'text', text: ' - prirodno podizanje i volumizacija' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Mikroblading', style: 'bold' },
+          { type: 'text', text: ' - polutrajno oblikovanje obrva' }
+        ]
       },
       {
         type: 'image',
@@ -96,11 +156,28 @@ export const blogPosts: BlogPost[] = [
         caption: 'Tretman trepavica za izražajniji pogled'
       },
       {
+        type: 'heading',
+        level: 2,
+        text: 'Prednosti naših tretmana'
+      },
+      {
         type: 'text',
-        text: 'Svaki tretman je prilagođen individualnim potrebama klijenta, kako bismo postigli najbolje rezultate.'
+        text: [
+          { type: 'text', text: 'Svaki tretman je prilagođen individualnim potrebama klijenta:' },
+          { type: 'text', text: '\n\n• Prirodan izgled' },
+          { type: 'text', text: '\n• Dugotrajni rezultati' },
+          { type: 'text', text: '\n• Minimalno vrijeme oporavka' },
+          { type: 'text', text: '\n• Profesionalna primjena' }
+        ]
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Naši stručnjaci će vam pomoći odabrati najbolji tretman za vaše potrebe i želje, osiguravajući prirodan i dugotrajan rezultat.' }
+        ]
       }
     ],
-    date: '2024-05-03',
+    date: '20. ožujka 2024.',
     author: 'Maja Kovač',
     tags: ['Obrve', 'Trepavice', 'Laminacija'],
     image: '/images/services/obrve-i-trepavice.webp'
@@ -112,8 +189,15 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Upoznajte Toskani proizvode - vrhunsku liniju za njegu kože koja kombinira prirodne sastojke i najnovije tehnologije.',
     content: [
       {
+        type: 'heading',
+        level: 1,
+        text: 'Toskani - vrhunski proizvodi za njegu kože'
+      },
+      {
         type: 'text',
-        text: 'Toskani je vodeći proizvođač kozmetičkih proizvoda koji kombiniraju prirodne sastojke s najnovijim tehnologijama. Njihova linija proizvoda je specijalizirana za različite tipove kože i probleme.'
+        text: [
+          { type: 'text', text: 'Toskani je vodeći proizvođač kozmetičkih proizvoda koji kombiniraju prirodne sastojke s najnovijim tehnologijama. Njihova linija proizvoda je specijalizirana za različite tipove kože i probleme, pružajući rješenja koja su i učinkovita i blaga za kožu.' }
+        ]
       },
       {
         type: 'image',
@@ -122,8 +206,27 @@ export const blogPosts: BlogPost[] = [
         caption: 'Toskani linija proizvoda za njegu kože'
       },
       {
+        type: 'heading',
+        level: 2,
+        text: 'Prednosti Toskani proizvoda'
+      },
+      {
         type: 'text',
-        text: 'Prednosti Toskani proizvoda:\n- Prirodni sastojci\n- Dokazana učinkovitost\n- Visoka kvaliteta\n- Prilagodljivost različitim tipovima kože'
+        text: [
+          { type: 'text', text: 'Toskani proizvodi se ističu svojim jedinstvenim svojstvima:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Prirodni sastojci', style: 'bold' },
+          { type: 'text', text: ' - visokokvalitetni ekstrakti iz prirode' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Dokazana učinkovitost', style: 'bold' },
+          { type: 'text', text: ' - rezultati potvrđeni kliničkim istraživanjima' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Visoka kvaliteta', style: 'bold' },
+          { type: 'text', text: ' - proizvedeno u Italiji po najvišim standardima' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Prilagodljivost', style: 'bold' },
+          { type: 'text', text: ' - odgovara svim tipovima kože' }
+        ]
       },
       {
         type: 'image',
@@ -132,11 +235,28 @@ export const blogPosts: BlogPost[] = [
         caption: 'Profesionalni tretman s Toskani proizvodima'
       },
       {
+        type: 'heading',
+        level: 2,
+        text: 'Naše Toskani usluge'
+      },
+      {
         type: 'text',
-        text: 'U našem salonu možete pronaći cijelu Toskani liniju proizvoda i dobiti profesionalne savjete o njihovoj primjeni.'
+        text: [
+          { type: 'text', text: 'U našem salonu možete pronaći:' },
+          { type: 'text', text: '\n\n• Profesionalne tretmane s Toskani proizvodima' },
+          { type: 'text', text: '\n• Individualne savjete za kućnu njegu' },
+          { type: 'text', text: '\n• Kompletne linije proizvoda' },
+          { type: 'text', text: '\n• Redovne promocije i posebne ponude' }
+        ]
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Naši stručnjaci će vam pomoći odabrati najbolje Toskani proizvode za vašu kožu i naučiti vas kako ih pravilno koristiti za optimalne rezultate.' }
+        ]
       }
     ],
-    date: '2024-05-05',
+    date: '25. ožujka 2024.',
     author: 'Ivana Petrović',
     tags: ['Toskani', 'Njega kože', 'Kozmetika'],
     image: '/images/services/toskani-hero.webp'
