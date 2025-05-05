@@ -16,9 +16,9 @@ export default function KatalogPage() {
   const [selectedBadges, setSelectedBadges] = useState<string[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isFiltering, setIsFiltering] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [isFiltering, setIsFiltering] = useState(false);
   const productsPerPage = 9;
   const productsRef = useRef<HTMLDivElement>(null);
 
@@ -44,25 +44,41 @@ export default function KatalogPage() {
     setCurrentPage(1);
   }, [searchTerm, selectedCategories]);
 
+  // Reset filtering state after a delay
+  useEffect(() => {
+    if (isFiltering) {
+      const timer = setTimeout(() => {
+        setIsFiltering(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isFiltering]);
+
+  const scrollToProducts = () => {
+    const navbarHeight = 80;
+    const productsTop = productsRef.current?.offsetTop || 0;
+    const scrollPosition = productsTop - navbarHeight - 30;
+
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: 'smooth' as ScrollBehavior
+    });
+  };
+
   const handlePageChange = (newPage: number) => {
     if (newPage !== currentPage) {
       setIsScrolling(true);
       setCurrentPage(newPage);
       
-      // Scroll to products section only when user clicks pagination
-      const navbarHeight = 80;
-      const productsTop = productsRef.current?.offsetTop || 0;
-      const scrollPosition = productsTop - navbarHeight - 30;
-
-      window.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
+      // Use requestAnimationFrame to ensure DOM is updated before scrolling
+      requestAnimationFrame(() => {
+        scrollToProducts();
+        
+        // Reset scrolling state after animation
+        setTimeout(() => {
+          setIsScrolling(false);
+        }, 800);
       });
-      
-      // Reset scrolling state after animation
-      setTimeout(() => {
-        setIsScrolling(false);
-      }, 800);
     }
   };
 
@@ -73,6 +89,9 @@ export default function KatalogPage() {
         ? prev.filter(c => c !== category)
         : [...prev, category]
     );
+
+    // Use requestAnimationFrame to ensure DOM is updated before scrolling
+    requestAnimationFrame(scrollToProducts);
   };
 
   const toggleBadge = (badge: string) => {
@@ -82,11 +101,17 @@ export default function KatalogPage() {
         ? prev.filter(b => b !== badge)
         : [...prev, badge]
     );
+
+    // Use requestAnimationFrame to ensure DOM is updated before scrolling
+    requestAnimationFrame(scrollToProducts);
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsFiltering(true);
     setSearchTerm(e.target.value);
+
+    // Use requestAnimationFrame to ensure DOM is updated before scrolling
+    requestAnimationFrame(scrollToProducts);
   };
 
   const openProductModal = (product: Product) => {
@@ -211,17 +236,7 @@ export default function KatalogPage() {
 
           {/* Products Grid */}
           <div className="flex-1" ref={productsRef}>
-            {isFiltering && (
-              <div className="absolute inset-0 bg-white bg-opacity-50 flex items-center justify-center z-10">
-                <div className="flex flex-col items-center">
-                  <FaSpinner className="w-8 h-8 text-indigo-600 animate-spin mb-2" />
-                  <div className="text-gray-600">
-                    Filtriranje proizvoda...
-                  </div>
-                </div>
-              </div>
-            )}
-            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 transition-opacity duration-300 ${isScrolling ? 'opacity-25' : 'opacity-100'}`}>
+            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 transition-opacity duration-300 ${isScrolling || isFiltering ? 'opacity-25' : 'opacity-100'}`}>
               {currentProducts.map((product) => (
                 <div
                   key={product.id}
@@ -229,7 +244,6 @@ export default function KatalogPage() {
                     bg-white rounded-lg shadow-md overflow-hidden border
                     ${product.isPopular ? 'border-indigo-500' : 'border-gray-200'}
                     hover:shadow-lg transition-all duration-300
-                    ${isFiltering ? 'opacity-50' : 'opacity-100'}
                     flex flex-col h-full cursor-pointer relative
                   `}
                   onClick={() => openProductModal(product)}
