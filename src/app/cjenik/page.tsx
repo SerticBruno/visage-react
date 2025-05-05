@@ -153,7 +153,7 @@ export default function PricingPage() {
       <HeroSection
         title="Cjenik usluga"
         description="Pronađite savršenu uslugu za vaše potrebe. Naš cjenik je transparentan i jasno prikazuje sve naše usluge i njihove cijene."
-        image="/images/services/MYV_selfie_details.webp"
+        image="/images/services/cjenik-hero.webp"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Search and Filter Section */}

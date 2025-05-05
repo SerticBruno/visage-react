@@ -7,7 +7,7 @@ export default function KontaktPage() {
       <HeroSection
         title="Kontakt"
         description="Javite nam se za sve informacije i rezervacije"
-        image="/images/plasmage-hero.webp"
+        image="/images/services/kontakt-hero.webp"
       />
       <ContactSection />
     </main>

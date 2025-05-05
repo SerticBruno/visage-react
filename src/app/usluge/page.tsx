@@ -9,7 +9,7 @@ export default function ServicesPage() {
       <HeroSection
         title="Naše usluge"
         description="Otkrijte našu široku ponudu tretmana za lice i tijelo, dizajniranih da vas učine osjećati se i izgledati najbolje"
-        image="/images/services/botox-face-girl.webp"
+        image="/images/services/usluge-hero.webp"
       />
       <ServicesSection />
       <CTASection />

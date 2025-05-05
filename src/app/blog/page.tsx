@@ -41,7 +41,7 @@ export default function BlogPage() {
       <HeroSection
         title="Blog"
         description="Otkrijte najnovije savjete i trendove u svijetu ljepote i njege"
-        image="/images/services/toskani-woman.webp"
+        image="/images/services/blog-hero.jpg"
         ctaText="Pročitajte više"
         ctaLink="#blog-posts"
       />

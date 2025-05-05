@@ -15,7 +15,7 @@ export default function Home() {
       <HeroSection
         title="VISAGE studio"
         description="Estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI"
-        image="/images/services/toskani-hero.webp"
+        image="/images/services/toskani-woman.webp"
         ctaText="Zakažite termin"
         ctaLink="/kontakt"
       />
