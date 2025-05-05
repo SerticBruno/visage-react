@@ -2,7 +2,7 @@ import { BlogPost } from './types';
 
 export const blogPosts: BlogPost[] = [
   {
-    id: '1',
+    id: 1,
     title: 'Plazma terapija - revolucionarna metoda za mladolik izgled',
     slug: 'plazma-terapija',
     excerpt: 'Otkrijte kako plazma terapija može pomoći u redukciji bora, liftingu kože i poboljšanju tonusa kože bez invazivnih zahvata.',
@@ -134,7 +134,7 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/plasmage-hero.webp'
   },
   {
-    id: '2',
+    id: 2,
     title: 'Savršene obrve i trepavice - ključ za izražajni pogled',
     slug: 'obrve-trepavice',
     excerpt: 'Saznajte kako postići savršene obrve i trepavice koje će vašem licu dati izražajnost i mladolik izgled.',
@@ -213,7 +213,7 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/obrve-i-trepavice.webp'
   },
   {
-    id: '3',
+    id: 3,
     title: 'Toskani - vrhunski proizvodi za njegu kože',
     slug: 'toskani-proizvodi',
     excerpt: 'Upoznajte Toskani proizvode - vrhunsku liniju za njegu kože koja kombinira prirodne sastojke i najnovije tehnologije.',
@@ -292,14 +292,16 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/toskani-hero.webp'
   },
   {
-    id: '4',
+    id: 4,
     title: 'Mesoterapija - prirodna metoda za hidrataciju kože',
     slug: 'mesoterapija',
     excerpt: 'Otkrijte prednosti mesoterapije - prirodne metode za dubinsku hidrataciju i regeneraciju kože.',
     content: [
       {
         type: 'text',
-        text: 'Mesoterapija je minimalno invazivna metoda koja uključuje injekciju prirodnih sastojaka direktno u srednji sloj kože. Ova tehnika omogućuje direktnu dostavu aktivnih sastojaka u područje koje zahtijeva tretman.'
+        text: [
+          { type: 'text', text: 'Mesoterapija je minimalno invazivna metoda koja uključuje injekciju prirodnih sastojaka direktno u srednji sloj kože. Ova tehnika omogućuje direktnu dostavu aktivnih sastojaka u područje koje zahtijeva tretman.' }
+        ]
       },
       {
         type: 'image',
@@ -309,7 +311,13 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'text',
-        text: 'Prednosti mesoterapije:\n- Dubinska hidratacija\n- Stimulacija proizvodnje kolagena\n- Poboljšanje tonusa kože\n- Smanjenje finih linija'
+        text: [
+          { type: 'text', text: 'Prednosti mesoterapije:' },
+          { type: 'text', text: '\n- Dubinska hidratacija' },
+          { type: 'text', text: '\n- Stimulacija proizvodnje kolagena' },
+          { type: 'text', text: '\n- Poboljšanje tonusa kože' },
+          { type: 'text', text: '\n- Smanjenje finih linija' }
+        ]
       },
       {
         type: 'image',
@@ -319,7 +327,9 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'text',
-        text: 'Tretman je prilagođen individualnim potrebama kože i može se kombinirati s drugim tretmanima za optimalne rezultate.'
+        text: [
+          { type: 'text', text: 'Tretman je prilagođen individualnim potrebama kože i može se kombinirati s drugim tretmanima za optimalne rezultate.' }
+        ]
       }
     ],
     date: '2024-05-07',
@@ -328,14 +338,16 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/Mesoterapia-transdermica-facial.webp'
   },
   {
-    id: '5',
+    id: 5,
     title: 'Profesionalna njega ruku i noktiju',
     slug: 'njega-ruku',
     excerpt: 'Saznajte kako održavati ruke i nokte u savršenom stanju uz pomoć profesionalnih tretmana.',
     content: [
       {
         type: 'text',
-        text: 'Ruke su jedna od prvih stvari koje drugi primjećuju, a dobro održavani nokti su znak brige o sebi. U našem salonu nudimo širok spektar tretmana za njegu ruku i noktiju.'
+        text: [
+          { type: 'text', text: 'Ruke su jedna od prvih stvari koje drugi primjećuju, a dobro održavani nokti su znak brige o sebi. U našem salonu nudimo širok spektar tretmana za njegu ruku i noktiju.' }
+        ]
       },
       {
         type: 'image',
@@ -345,7 +357,13 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'text',
-        text: 'Naše usluge uključuju:\n- Profesionalnu manikuru\n- Gel lak\n- Rekonstrukciju noktiju\n- Njegu kože ruku'
+        text: [
+          { type: 'text', text: 'Naše usluge uključuju:' },
+          { type: 'text', text: '\n- Profesionalnu manikuru' },
+          { type: 'text', text: '\n- Gel lak' },
+          { type: 'text', text: '\n- Rekonstrukciju noktiju' },
+          { type: 'text', text: '\n- Njegu kože ruku' }
+        ]
       },
       {
         type: 'image',
@@ -355,7 +373,9 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'text',
-        text: 'Svaki tretman je prilagođen vašim potrebama i željama, a koristimo samo najkvalitetnije proizvode za postizanje najboljih rezultata.'
+        text: [
+          { type: 'text', text: 'Svaki tretman je prilagođen vašim potrebama i željama, a koristimo samo najkvalitetnije proizvode za postizanje najboljih rezultata.' }
+        ]
       }
     ],
     date: '2024-05-09',
@@ -364,14 +384,16 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/manikura.webp'
   },
   {
-    id: '6',
+    id: 6,
     title: 'Kozmetički tretmani za muškarce',
     slug: 'kozmeticki-tretmani-za-muskarce',
     excerpt: 'Otkrijte kako muškarci mogu održavati zdrav i mladolik izgled uz pomoć profesionalnih kozmetičkih tretmana.',
     content: [
       {
         type: 'text',
-        text: 'Kozmetički tretmani nisu samo za žene - sve više muškaraca prepoznaje važnost profesionalne njege kože. U našem salonu nudimo specijalizirane tretmane prilagođene muškoj koži.'
+        text: [
+          { type: 'text', text: 'Kozmetički tretmani nisu samo za žene - sve više muškaraca prepoznaje važnost profesionalne njege kože. U našem salonu nudimo specijalizirane tretmane prilagođene muškoj koži.' }
+        ]
       },
       {
         type: 'image',
@@ -381,7 +403,13 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'text',
-        text: 'Popularni tretmani za muškarce:\n- Čišćenje lica\n- Anti-aging tretmani\n- Njega kože\n- Tretmani protiv akni'
+        text: [
+          { type: 'text', text: 'Popularni tretmani za muškarce:' },
+          { type: 'text', text: '\n- Čišćenje lica' },
+          { type: 'text', text: '\n- Anti-aging tretmani' },
+          { type: 'text', text: '\n- Njega kože' },
+          { type: 'text', text: '\n- Tretmani protiv akni' }
+        ]
       },
       {
         type: 'image',
@@ -391,7 +419,9 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'text',
-        text: 'Naši tretmani su prilagođeni specifičnim potrebama muške kože, koja se razlikuje od ženske po debljini, sadržaju ulja i brzini starenja.'
+        text: [
+          { type: 'text', text: 'Naši tretmani su prilagođeni specifičnim potrebama muške kože, koja se razlikuje od ženske po debljini, sadržaju ulja i brzini starenja.' }
+        ]
       }
     ],
     date: '2024-05-11',

@@ -12,7 +12,7 @@ export interface LinkSpan {
 
 export interface TextContent {
   type: 'text';
-  text: TextSpan[];
+  text: (TextSpan | LinkSpan)[];
 }
 
 export interface ImageContent {
