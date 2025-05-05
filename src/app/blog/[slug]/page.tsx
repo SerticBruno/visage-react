@@ -2,7 +2,7 @@ import { blogPosts } from '@/data/posts';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import RelatedArticles from '@/components/blog/RelatedArticles';
-import { FaCalendarAlt, FaUser } from 'react-icons/fa';
+import { FaCalendarAlt, FaUser, FaTag } from 'react-icons/fa';
 import { cn } from '@/lib/utils';
 import { ElementType } from 'react';
 import { TextSpan, LinkSpan, TextContent, ImageContent, HeadingContent, ContentItem } from '@/data/types';
@@ -75,11 +75,11 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          <div className="relative aspect-[21/9] w-full rounded-2xl overflow-hidden mb-8">
+          <div className="relative aspect-[21/9] w-full rounded-2xl overflow-hidden mb-8 shadow-xl">
             {post.image && (
               <Image
                 src={post.image}
@@ -102,7 +102,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="flex items-center gap-2">
                 <FaUser className="w-4 h-4" />
                 <InteractiveLink 
-                  href={`/blog/autor/${post.author}`}
+                  href={`/blog/autor/${encodeURIComponent(post.author)}`}
                   className="hover:text-blue-600 transition-colors"
                 >
                   {post.author}
@@ -133,49 +133,54 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Content Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          <div className="prose prose-lg max-w-none">
-            {post.content.map((item, index) => {
-              if (item.type === 'heading') {
-                const Tag = `h${item.level}` as ElementType;
-                return (
-                  <Tag 
-                    key={`heading-${index}`}
-                    className={cn(
-                      'font-bold text-gray-900 mb-4',
-                      item.level === 1 && 'text-4xl',
-                      item.level === 2 && 'text-3xl',
-                      item.level === 3 && 'text-2xl'
-                    )}
-                  >
-                    {item.text}
-                  </Tag>
-                );
-              } else if (item.type === 'image') {
-                return (
-                  <figure key={`figure-${index}`} className="my-8">
-                    <div className="relative aspect-[16/9] w-full">
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        fill
-                        className="object-cover rounded-lg"
-                      />
-                    </div>
-                    {item.caption && (
-                      <figcaption className="text-center text-gray-600 mt-2">
-                        {item.caption}
-                      </figcaption>
-                    )}
-                  </figure>
-                );
-              } else if (item.type === 'text') {
-                return renderTextContent(item, index);
-              }
-              return null;
-            })}
-          </div>
+          <article className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="prose prose-lg max-w-none">
+              {post.content.map((item, index) => {
+                if (item.type === 'heading') {
+                  const Tag = `h${item.level}` as ElementType;
+                  return (
+                    <Tag 
+                      key={`heading-${index}`}
+                      className={cn(
+                        'font-bold text-gray-900 mb-4',
+                        item.level === 1 && 'text-4xl',
+                        item.level === 2 && 'text-3xl',
+                        item.level === 3 && 'text-2xl'
+                      )}
+                    >
+                      {item.text}
+                    </Tag>
+                  );
+                } else if (item.type === 'image') {
+                  return (
+                    <figure key={`figure-${index}`} className="my-8">
+                      <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden">
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      {item.caption && (
+                        <figcaption className="text-center text-gray-600 mt-2">
+                          {item.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  );
+                } else if (item.type === 'text') {
+                  return renderTextContent(item, index);
+                }
+                return null;
+              })}
+            </div>
+          </article>
 
-          <RelatedArticles currentPost={post} allPosts={blogPosts} />
+          {/* Related Articles */}
+          <div className="mt-12">
+            <RelatedArticles currentPost={post} allPosts={blogPosts} />
+          </div>
         </div>
       </div>
     </div>

@@ -12,32 +12,35 @@ export interface LinkSpan {
 
 export interface TextContent {
   type: 'text';
-  text: (TextSpan | LinkSpan)[];
+  text: TextSpan[];
 }
 
 export interface ImageContent {
   type: 'image';
   src: string;
   alt: string;
-  caption?: string;
+  caption: string;
 }
 
 export interface HeadingContent {
   type: 'heading';
-  level: 1 | 2 | 3;
+  level: 1 | 2 | 3 | 4 | 5 | 6;
   text: string;
 }
 
-export type ContentItem = TextContent | ImageContent | HeadingContent;
+export type ContentItem = 
+  | HeadingContent 
+  | TextContent 
+  | ImageContent;
 
 export interface BlogPost {
-  id: string;
+  id: number;
   title: string;
   slug: string;
   excerpt: string;
   content: ContentItem[];
-  image: string;
   date: string;
   author: string;
   tags: string[];
+  image: string;
 } 
