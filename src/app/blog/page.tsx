@@ -28,7 +28,10 @@ export default function BlogPage() {
   });
 
   // Get unique authors and tags
-  const authors = useMemo(() => Array.from(new Set(blogPosts.map(post => post.author))), []);
+  const authors = useMemo(() => {
+    const uniqueAuthors = Array.from(new Set(blogPosts.map(post => post.author)));
+    return uniqueAuthors.sort((a, b) => a.localeCompare(b)); // Sort authors alphabetically
+  }, []);
   const allTags = useMemo(() => Array.from(new Set(blogPosts.flatMap(post => post.tags))), []);
 
   // Get popular tags (tags that appear in more than one post)
@@ -40,7 +43,12 @@ export default function BlogPage() {
     
     return Object.entries(tagCounts)
       .filter(([_, count]) => count > 1)
-      .sort((a, b) => b[1] - a[1])
+      .sort((a, b) => {
+        // First sort by count (descending)
+        if (b[1] !== a[1]) return b[1] - a[1];
+        // Then sort alphabetically
+        return a[0].localeCompare(b[0]);
+      })
       .map(([tag]) => tag);
   }, [allTags, blogPosts]);
 
@@ -169,7 +177,7 @@ export default function BlogPage() {
                     <button
                       key={tag}
                       onClick={() => handleTagClick(tag)}
-                      className={`px-3 py-1 text-sm rounded-full transition-colors ${
+                      className={`px-3 py-1 text-sm rounded-full transition-colors cursor-pointer ${
                         selectedTags.includes(tag)
                           ? 'bg-blue-600 text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -189,7 +197,7 @@ export default function BlogPage() {
                     <button
                       key={author}
                       onClick={() => handleAuthorClick(author)}
-                      className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${
+                      className={`w-full text-left px-3 py-2 rounded-lg transition-colors cursor-pointer ${
                         selectedAuthor === author
                           ? 'bg-blue-600 text-white'
                           : 'hover:bg-gray-100'

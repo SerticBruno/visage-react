@@ -151,7 +151,7 @@ export const blogPosts: BlogPost[] = [
         ]
       }
     ],
-    date: new Date('2024-03-15'),
+    date: new Date('2024-03-15T00:00:00.000Z'),
     author: 'dr. Ana Horvat',
     tags: ['Plazma terapija', 'Anti-aging', 'Estetska medicina'],
     image: '/images/services/MYV_selfie_details.webp'
