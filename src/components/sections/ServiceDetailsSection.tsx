@@ -45,30 +45,41 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
         );
       }
       
-      // Check if paragraph is a numbered step
-      if (paragraph.match(/^\d+\./)) {
-        const [number, ...rest] = paragraph.split('.');
-        const content = rest.join('.').trim();
-        const [title, description] = content.split(' - ');
-        
-        return (
-          <div key={idx} className="mb-8">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
-                <span className="text-indigo-600 font-semibold">{number}</span>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
-                <p className="text-gray-600 leading-relaxed">{description}</p>
-              </div>
-            </div>
-          </div>
-        );
-      }
-      
       // Regular paragraph
       return <p key={idx} className="text-gray-600 mb-6 leading-relaxed">{paragraph}</p>;
     });
+  };
+
+  const renderTreatmentSteps = (content: string) => {
+    const steps = content.split('\n').filter(line => line.trim().match(/^\d+\./));
+    
+    return (
+      <div className="space-y-8">
+        {steps.map((step, idx) => {
+          const [number, ...rest] = step.split('.');
+          const content = rest.join('.').trim();
+          const [title, description] = content.split(' - ');
+          
+          return (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * idx }}
+              className="relative pl-12"
+            >
+              <div className="absolute left-0 top-0 h-8 w-8 rounded-full bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center shadow-md">
+                <span className="text-indigo-600 font-semibold">{number}</span>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
+                <p className="text-gray-600 leading-relaxed">{description}</p>
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+    );
   };
 
   return (
@@ -136,7 +147,10 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         transition={{ delay: 0.3 }}
                         className="prose prose-indigo max-w-none"
                       >
-                        {formatContent(service.stepContents[step.id])}
+                        {activeTab === 'tijek-zahvata' 
+                          ? renderTreatmentSteps(service.stepContents[step.id])
+                          : formatContent(service.stepContents[step.id])
+                        }
                       </motion.div>
                     </div>
 
@@ -171,39 +185,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                       </motion.div>
                     )}
 
-                    {/* Process Timeline */}
-                    {activeTab === 'tijek-zahvata' && (
-                      <motion.div 
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.15 }}
-                        className="relative"
-                      >
-                        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-200 to-indigo-100" />
-                        {service.stepContents[step.id].split('\n').map((item, idx) => (
-                          <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.1 * idx }}
-                            className="relative pl-12 pb-8"
-                          >
-                            <div className="absolute left-0 top-0 h-8 w-8 rounded-full bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center shadow-md">
-                              <span className="text-indigo-600 font-semibold">{idx + 1}</span>
-                            </div>
-                            <motion.div
-                              whileHover={{ scale: 1.02 }}
-                              className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 cursor-pointer"
-                            >
-                              <p className="text-gray-600 leading-relaxed">{item.replace(/^\d+\.\s*/, '')}</p>
-                            </motion.div>
-                          </motion.div>
-                        ))}
-                      </motion.div>
-                    )}
-
                     {/* Image for other tabs */}
-                    {activeTab !== 'opis-zahvata' && activeTab !== 'tijek-zahvata' && (
+                    {activeTab !== 'opis-zahvata' && (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
