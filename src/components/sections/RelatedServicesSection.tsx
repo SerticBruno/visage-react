@@ -50,12 +50,12 @@ export default function RelatedServicesSection({ currentService, relatedServices
                 className="block h-full"
               >
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-                  <div className="relative h-48">
+                  <div className="relative h-48 overflow-hidden">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
