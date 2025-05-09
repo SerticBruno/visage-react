@@ -239,8 +239,8 @@ export default function KatalogPage() {
                 <div
                   key={product.id}
                   className={`
-                    bg-gradient-to-b from-white to-slate-50 rounded-xl shadow-sm overflow-hidden border
-                    ${product.isPopular ? 'border-slate-200 ring-1 ring-slate-200/50' : 'border-slate-100'}
+                    bg-gradient-to-b from-white to-slate-50 rounded-xl shadow-sm overflow-hidden
+                    ${product.isPopular ? 'ring-1 ring-slate-200/50' : ''}
                     hover:shadow-xl transition-all duration-300
                     flex flex-col h-full cursor-pointer relative
                   `}

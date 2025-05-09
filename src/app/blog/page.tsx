@@ -136,7 +136,7 @@ export default function BlogPage() {
   };
 
   return (
-    <main>
+    <div className="min-h-screen">
       <HeroSection
         title="Blog"
         description="Otkrijte najnovije vijesti i savjete iz svijeta estetske medicine"
@@ -145,10 +145,10 @@ export default function BlogPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">
+          <h2 className="text-3xl font-bold text-slate-900 mb-2">
             Najnoviji članci
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-slate-600">
             Pratite najnovije trendove i savjete iz svijeta ljepote
           </p>
         </div>
@@ -157,11 +157,11 @@ export default function BlogPage() {
           {/* Sidebar with Filters */}
           <div className="lg:w-64 flex-shrink-0">
             <div className="bg-white rounded-lg shadow-md p-6 sticky top-24">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Filtriraj članke</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-4">Filtriraj članke</h3>
               
               {/* Search */}
               <div className="mb-6">
-                <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="search" className="block text-sm font-medium text-slate-700 mb-2">
                   Pretraži članke
                 </label>
                 <div className="relative">
@@ -169,26 +169,26 @@ export default function BlogPage() {
                     id="search"
                     type="text"
                     placeholder="Naslov ili sadržaj..."
-                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition-all duration-300"
                     value={searchTerm}
                     onChange={handleSearch}
                   />
-                  <FaSearch className="absolute left-3 top-3 text-gray-400" />
+                  <FaSearch className="absolute left-3 top-3 text-slate-400" />
                 </div>
               </div>
 
               {/* Sort Options */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-slate-700 mb-2">
                   Sortiraj po
                 </label>
                 <div className="space-y-2">
                   <button
                     onClick={() => handleSort('newest')}
-                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors ${
+                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
                       sortBy === 'newest' 
-                        ? 'bg-indigo-50 text-indigo-700' 
-                        : 'hover:bg-gray-50'
+                        ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                        : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
                     }`}
                   >
                     <FaSortAmountDown className="w-4 h-4" />
@@ -196,10 +196,10 @@ export default function BlogPage() {
                   </button>
                   <button
                     onClick={() => handleSort('oldest')}
-                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors ${
+                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
                       sortBy === 'oldest' 
-                        ? 'bg-indigo-50 text-indigo-700' 
-                        : 'hover:bg-gray-50'
+                        ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                        : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
                     }`}
                   >
                     <FaSortAmountUp className="w-4 h-4" />
@@ -207,10 +207,10 @@ export default function BlogPage() {
                   </button>
                   <button
                     onClick={() => handleSort('title-asc')}
-                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors ${
+                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
                       sortBy === 'title-asc' 
-                        ? 'bg-indigo-50 text-indigo-700' 
-                        : 'hover:bg-gray-50'
+                        ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                        : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
                     }`}
                   >
                     <FaSort className="w-4 h-4" />
@@ -218,10 +218,10 @@ export default function BlogPage() {
                   </button>
                   <button
                     onClick={() => handleSort('title-desc')}
-                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors ${
+                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
                       sortBy === 'title-desc' 
-                        ? 'bg-indigo-50 text-indigo-700' 
-                        : 'hover:bg-gray-50'
+                        ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                        : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
                     }`}
                   >
                     <FaSort className="w-4 h-4 rotate-180" />
@@ -232,7 +232,7 @@ export default function BlogPage() {
 
               {/* Authors */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-slate-700 mb-2">
                   Autori
                 </label>
                 <div className="space-y-2">
@@ -242,9 +242,9 @@ export default function BlogPage() {
                         type="checkbox"
                         checked={selectedAuthors.includes(author)}
                         onChange={() => toggleAuthor(author)}
-                        className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                        className="h-4 w-4 text-slate-600 focus:ring-slate-500 border-slate-300 rounded cursor-pointer"
                       />
-                      <span className="text-sm text-gray-700">{author}</span>
+                      <span className="text-sm text-slate-700 cursor-pointer">{author}</span>
                     </label>
                   ))}
                 </div>
@@ -252,7 +252,7 @@ export default function BlogPage() {
 
               {/* Tags */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-slate-700 mb-2">
                   Kategorije
                 </label>
                 <div className="space-y-2">
@@ -262,17 +262,17 @@ export default function BlogPage() {
                         type="checkbox"
                         checked={selectedTags.includes(tag)}
                         onChange={() => toggleTag(tag)}
-                        className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                        className="h-4 w-4 text-slate-600 focus:ring-slate-500 border-slate-300 rounded cursor-pointer"
                       />
-                      <span className="text-sm text-gray-700">{tag}</span>
+                      <span className="text-sm text-slate-700 cursor-pointer">{tag}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
               {/* Results Count */}
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <p className="text-sm text-gray-600">
+              <div className="mt-6 pt-6 border-t border-slate-200">
+                <p className="text-sm text-slate-600">
                   Pronađeno članaka: <span className="font-semibold">{filteredPosts.length}</span>
                 </p>
               </div>
@@ -283,14 +283,14 @@ export default function BlogPage() {
           <div className="flex-1" ref={postsRef}>
             <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-300 ${isScrolling || isFiltering ? 'opacity-25' : 'opacity-100'}`}>
               {currentPosts.map((post) => (
-                <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                <article key={post.id} className="bg-gradient-to-b from-white to-slate-50 rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 cursor-pointer">
                   <Link href={`/blog/${post.slug}`} className="block">
-                    <div className="relative h-48 w-full">
+                    <div className="relative h-48 w-full bg-slate-50">
                       <Image
                         src={post.image}
                         alt={post.title}
                         fill
-                        className="object-cover"
+                        className="object-cover transition-transform duration-300 hover:scale-105"
                       />
                     </div>
                     <div className="p-6">
@@ -298,17 +298,17 @@ export default function BlogPage() {
                         {post.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-sm"
+                            className="bg-slate-100 text-slate-600 px-2 py-1 rounded-full text-sm hover:bg-slate-200 transition-colors"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
-                      <h2 className="text-xl font-semibold mb-2 hover:text-blue-600 transition-colors">
+                      <h2 className="text-xl font-semibold mb-2 text-slate-900 hover:text-slate-700 transition-colors">
                         {post.title}
                       </h2>
-                      <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
-                      <div className="flex items-center justify-between text-sm text-gray-500">
+                      <p className="text-slate-600 mb-4 line-clamp-3">{post.excerpt}</p>
+                      <div className="flex items-center justify-between text-sm text-slate-500">
                         <span>{post.author}</span>
                         <time>{formatDate(post.date)}</time>
                       </div>
@@ -324,7 +324,7 @@ export default function BlogPage() {
                 <button
                   onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
                   disabled={currentPage === 1}
-                  className="px-3 py-1 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300 cursor-pointer"
+                  className="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm"
                 >
                   Prethodna
                 </button>
@@ -333,10 +333,10 @@ export default function BlogPage() {
                     <button
                       key={page}
                       onClick={() => handlePageChange(page)}
-                      className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-colors duration-300 ${
+                      className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all duration-300 ${
                         currentPage === page
-                          ? 'bg-indigo-600 text-white border-b-2 border-white'
-                          : 'text-gray-600 hover:bg-gray-100 hover:border-b-2 hover:border-gray-600'
+                          ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-md'
+                          : 'text-slate-600 hover:bg-slate-50 hover:border hover:border-slate-200 hover:shadow-sm'
                       }`}
                     >
                       {page}
@@ -346,7 +346,7 @@ export default function BlogPage() {
                 <button
                   onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
                   disabled={currentPage === totalPages}
-                  className="px-3 py-1 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300 cursor-pointer"
+                  className="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm"
                 >
                   Sljedeća
                 </button>
@@ -355,10 +355,10 @@ export default function BlogPage() {
 
             {currentPosts.length === 0 && (
               <div className="text-center py-8">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">
                   Nema pronađenih članaka
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-slate-600">
                   Pokušajte promijeniti kriterije pretraživanja
                 </p>
               </div>
@@ -366,6 +366,6 @@ export default function BlogPage() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

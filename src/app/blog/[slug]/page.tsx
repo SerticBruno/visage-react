@@ -91,7 +91,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
           
           <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-4 text-gray-600 mb-6">
+            <div className="flex items-center justify-center gap-4 text-slate-600 mb-6">
               <div className="flex items-center gap-2">
                 <FaCalendarAlt className="w-4 h-4" />
                 <span>{formatDate(post.date)}</span>
@@ -100,16 +100,16 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 <FaUser className="w-4 h-4" />
                 <InteractiveLink 
                   href={`/blog/autor/${encodeURIComponent(post.author)}`}
-                  className="hover:text-blue-600 transition-colors"
+                  className="hover:text-slate-700 transition-colors"
                 >
                   {post.author}
                 </InteractiveLink>
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
               {post.title}
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-8">
               {post.excerpt}
             </p>
             <div className="flex flex-wrap justify-center gap-2">
@@ -117,7 +117,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 <InteractiveLink
                   key={tag}
                   href={`/blog/kategorija/${tag}`}
-                  className="px-4 py-2 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-gray-200 transition-colors"
+                  className="px-4 py-2 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-slate-200 transition-all duration-300 hover:shadow-sm"
                 >
                   {tag}
                 </InteractiveLink>
@@ -130,7 +130,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Content Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          <article className="bg-white rounded-2xl shadow-lg p-8">
+          <article className="bg-gradient-to-b from-white to-slate-50 rounded-2xl shadow-lg p-8 border border-slate-100">
             <div className="prose prose-lg max-w-none">
               {post.content.map((item, index) => {
                 if (item.type === 'heading') {
@@ -138,7 +138,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   return (
                     <Tag 
                       key={`heading-${index}`}
-                      className={`font-bold text-gray-900 mb-4 ${
+                      className={`font-bold text-slate-900 mb-4 ${
                         item.level === 1 ? 'text-4xl' :
                         item.level === 2 ? 'text-3xl' :
                         item.level === 3 ? 'text-2xl' : ''
@@ -150,7 +150,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 } else if (item.type === 'image') {
                   return (
                     <figure key={`figure-${index}`} className="my-8">
-                      <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden">
+                      <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden shadow-md">
                         <Image
                           src={item.src}
                           alt={item.alt}
@@ -159,7 +159,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                         />
                       </div>
                       {item.caption && (
-                        <figcaption className="text-center text-gray-600 mt-2">
+                        <figcaption className="text-center text-slate-600 mt-2">
                           {item.caption}
                         </figcaption>
                       )}
