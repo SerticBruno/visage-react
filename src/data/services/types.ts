@@ -6,20 +6,25 @@ export type ServiceStep = {
   icon: string;
 };
 
-export type Service = {
+export interface Service {
+  id: string;
   title: string;
   description: string;
   longDescription: string;
-  benefits: string[];
   image: string;
   heroImage: string;
+  benefits: string[];
   metaDescription: string;
   metaKeywords: string;
-  steps: ServiceStep[];
+  steps: {
+    id: string;
+    label: string;
+    icon: string;
+  }[];
   stepContents: {
     [key: string]: string;
   };
-};
+}
 
 export type Services = {
   [key: string]: Service;

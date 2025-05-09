@@ -1,6 +1,7 @@
 import { Service } from './types';
 
 export const chemicalPeel: Service = {
+  id: 'kemijski-piling',
   title: 'Kemijski Piling',
   description: 'Otkrijte tajnu blistave kože uz profesionalni kemijski piling',
   longDescription: 'Kemijski piling je ključan korak u njezi kože koji pomaže u uklanjanju mrtvih stanica s površine kože, potiče regeneraciju stanica te smanjuje pojavu nepravilnosti poput hiperpigmentacije, sitnih linija i akni. U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama, koristeći kombinaciju nježnih kiselina kako bismo postigli optimalne rezultate.',

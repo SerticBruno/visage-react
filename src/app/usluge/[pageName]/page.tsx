@@ -2,16 +2,49 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { services, type ServiceKey } from '@/data/services';
+import { Service } from '@/data/services/types';
 import ContactSection from '@/components/sections/ContactSection';
 import HeroSection from '@/components/sections/HeroSection';
 import ServiceContentSection from '@/components/sections/ServiceContentSection';
 import ChemicalPeelTypesSection from '@/components/sections/ChemicalPeelTypesSection';
 import ChemicalPeelRecoverySection from '@/components/sections/ChemicalPeelRecoverySection';
 import ServiceDetailsSection from '@/components/sections/ServiceDetailsSection';
+import RelatedServicesSection from '@/components/sections/RelatedServicesSection';
+import CTASection from '@/components/sections/CTASection';
 import { FaArrowLeft } from 'react-icons/fa';
+import { notFound } from 'next/navigation';
 
 type Props = {
   params: { pageName: string };
+};
+
+const findRelatedServices = (currentService: Service, allServices: Service[]): Service[] => {
+  // Define relationships between services
+  const serviceRelationships: { [key: string]: string[] } = {
+    'kemijski-piling': ['mezoterapija', 'plasmage', 'hidrafacial'],
+    'mezoterapija': ['kemijski-piling', 'plasmage', 'hidrafacial'],
+    'plasmage': ['kemijski-piling', 'mezoterapija', 'hidrafacial'],
+    'hidrafacial': ['kemijski-piling', 'mezoterapija', 'plasmage']
+  };
+
+  // Get related service IDs for the current service
+  const relatedIds = serviceRelationships[currentService.id] || [];
+  
+  // Find related services
+  const relatedServices = allServices
+    .filter(service => relatedIds.includes(service.id))
+    .slice(0, 3);
+
+  // If we don't have enough related services, add random ones
+  if (relatedServices.length < 3) {
+    const remainingServices = allServices
+      .filter(service => service.id !== currentService.id && !relatedServices.includes(service))
+      .slice(0, 3 - relatedServices.length);
+    
+    return [...relatedServices, ...remainingServices];
+  }
+
+  return relatedServices;
 };
 
 export async function generateStaticParams() {
@@ -30,13 +63,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const metaDescription = service.metaDescription || service.description;
+  const metaKeywords = service.metaKeywords || '';
+
   return {
     title: `${service.title} | VISAGE studio`,
-    description: service.metaDescription,
-    keywords: service.metaKeywords,
+    description: metaDescription,
+    keywords: metaKeywords,
     openGraph: {
       title: `${service.title} | VISAGE studio`,
-      description: service.metaDescription,
+      description: metaDescription,
       images: [service.image],
       type: 'website',
       locale: 'hr_HR',
@@ -45,45 +81,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: `${service.title} | VISAGE studio`,
-      description: service.metaDescription,
+      description: metaDescription,
       images: [service.image],
     },
   };
 }
 
 export default function ServicePage({ params }: Props) {
-  const service = services[params.pageName as ServiceKey];
+  const service = services[params.pageName];
+  const allServices = Object.values(services);
+  const relatedServices = findRelatedServices(service, allServices);
 
   if (!service) {
-    return (
-      <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900">Usluga nije pronađena</h1>
-            <p className="mt-4 text-lg text-gray-600">
-              Tražena usluga nije pronađena u našoj ponudi.
-            </p>
-            <Link
-              href="/usluge"
-              className="mt-6 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200"
-            >
-              <FaArrowLeft className="mr-2" />
-              Povratak na sve usluge
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
+    return notFound();
   }
 
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
       <HeroSection
         title={service.title}
         description={service.description}
         image={service.heroImage}
+        ctaText="Rezervirajte svoj tretman"
+        ctaLink="/kontakt"
       />
-      
       <ServiceContentSection
         title={service.title}
         description={service.longDescription}
@@ -92,17 +113,18 @@ export default function ServicePage({ params }: Props) {
         benefits={service.benefits}
         reverse={false}
       />
-
       <ServiceDetailsSection service={service} />
-
-      {params.pageName === 'kemijski-piling' && (
-        <>
-          <ChemicalPeelTypesSection />
-          <ChemicalPeelRecoverySection />
-        </>
-      )}
-      
+      <RelatedServicesSection
+        currentService={service}
+        relatedServices={relatedServices}
+      />
+      <CTASection
+        title="Spremni za transformaciju?"
+        description="Rezervirajte svoj tretman danas i otkrijte razliku koju VISAGE studio može napraviti."
+        ctaText="Kontaktirajte nas"
+        ctaLink="/kontakt"
+      />
       <ContactSection />
-    </div>
+    </main>
   );
 } 

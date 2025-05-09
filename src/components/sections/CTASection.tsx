@@ -4,7 +4,19 @@ import Link from 'next/link';
 import { FaArrowRight, FaCalendarAlt } from 'react-icons/fa';
 import Image from 'next/image';
 
-const CTASection = () => {
+interface CTASectionProps {
+  title?: string;
+  description?: string;
+  ctaText?: string;
+  ctaLink?: string;
+}
+
+const CTASection = ({
+  title = "Rezervirajte svoj termin danas",
+  description = "Doživite vrhunsku uslugu u našem salonu. Rezervirajte termin i prepustite se stručnom timu koji će se pobrinuti za vašu ljepotu.",
+  ctaText = "Rezervirajte termin",
+  ctaLink = "/kontakt"
+}: CTASectionProps) => {
   return (
     <section className="relative overflow-hidden">
       {/* Background pattern */}
@@ -20,17 +32,17 @@ const CTASection = () => {
             {/* Content */}
             <div className="p-6 sm:p-8 lg:p-16 order-2 lg:order-1">
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-                Rezervirajte svoj termin danas
+                {title}
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
-                Doživite vrhunsku uslugu u našem salonu. Rezervirajte termin i prepustite se stručnom timu koji će se pobrinuti za vašu ljepotu.
+                {description}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
-                  href="/kontakt"
+                  href={ctaLink}
                   className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors group text-sm sm:text-base"
                 >
-                  Rezervirajte termin
+                  {ctaText}
                   <FaCalendarAlt className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
@@ -44,7 +56,7 @@ const CTASection = () => {
             </div>
 
             {/* Image */}
-            <div className="relative h-48 sm:h-64 lg:h-auto order-1 lg:order-2">
+            <div className="relative h-64 lg:h-auto order-1 lg:order-2">
               <div className="absolute inset-0">
                 <Image
                   src="/images/services/TKNHA3_.webp"
