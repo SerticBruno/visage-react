@@ -18,13 +18,48 @@ export const chemicalPeel: Service = {
   metaDescription: 'Profesionalni kemijski piling u VISAGE studiju u Siska. Obnovite svoju kožu uz pomoć naprednih kemijskih pilinzi TOSKANI. Rezultati odmah vidljivi.',
   metaKeywords: 'kemijski piling, piling lica, obnova kože, estetski studio Sisak, VISAGE studio, TOSKANI piling, kemijski piling Sisak',
   steps: [
-    { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
-    { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
-    { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
-    { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
-    { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
-    { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
-    { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
+    { 
+      id: 'opis-zahvata', 
+      label: 'Opis zahvata', 
+      icon: 'FaRegFileAlt',
+      image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp'
+    },
+    { 
+      id: 'kandidati', 
+      label: 'Kandidati', 
+      icon: 'FaUsers',
+      image: '/images/services/kemijski-piling/toskani-peelings.webp'
+    },
+    { 
+      id: 'priprema', 
+      label: 'Priprema', 
+      icon: 'FaRegEdit',
+      image: '/images/services/kemijski-piling/toskani-duosomal.webp'
+    },
+    { 
+      id: 'tijek-zahvata', 
+      label: 'Tijek zahvata', 
+      icon: 'FaRegClock',
+      image: '/images/services/kemijski-piling/kombinirani-pilinzi.webp'
+    },
+    { 
+      id: 'oporavak', 
+      label: 'Oporavak', 
+      icon: 'FaRegHospital',
+      image: '/images/services/kemijski-piling/toskani-bg.webp'
+    },
+    { 
+      id: 'mjere-opreza', 
+      label: 'Mjere opreza', 
+      icon: 'FaRegFile',
+      image: '/images/services/kemijski-piling/toskani-woman.webp'
+    },
+    { 
+      id: 'cijena', 
+      label: 'Cijena', 
+      icon: 'FaHandHoldingUsd',
+      image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp'
+    }
   ],
   stepContents: {
     'opis-zahvata': `Kemijski piling je napredna estetska procedura koja koristi kemijske spojeve za uklanjanje mrtvih stanica s površine kože. Postupak potiče prirodnu regeneraciju kože, poboljšava ton i teksturu, te pomaže u smanjenju bora i ožiljaka.

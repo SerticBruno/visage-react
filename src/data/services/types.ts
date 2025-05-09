@@ -4,6 +4,7 @@ export type ServiceStep = {
   id: string;
   label: string;
   icon: string;
+  image?: string;
 };
 
 export type TreatmentStep = {

@@ -60,7 +60,7 @@ export default function RelatedServicesSection({ currentService, relatedServices
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-slate-700 transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-gray-600 line-clamp-2 flex-1">
