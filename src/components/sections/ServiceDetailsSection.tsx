@@ -40,8 +40,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
             <ul className="space-y-3">
               {bulletPoints.map((item, itemIdx) => (
                 <li key={itemIdx} className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-100 flex items-center justify-center mr-3 mt-0.5">
-                    <FaCheck className="h-4 w-4 text-indigo-600" />
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm">
+                    <FaCheck className="h-4 w-4 text-slate-700" />
                   </div>
                   <span className="text-gray-600">{item.replace('- ', '')}</span>
                 </li>
@@ -74,10 +74,10 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
               transition={{ delay: 0.1 * idx }}
               className="relative pl-12"
             >
-              <div className="absolute left-0 top-0 h-8 w-8 rounded-full bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center shadow-md">
-                <span className="text-indigo-600 font-semibold">{number}</span>
+              <div className="absolute left-0 top-0 h-8 w-8 rounded-full bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400 flex items-center justify-center shadow-lg">
+                <span className="text-slate-700 font-semibold">{number}</span>
               </div>
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300">
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-slate-200">
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
                 <p className="text-gray-600 leading-relaxed">{description}</p>
               </div>
@@ -105,8 +105,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                   className={`
                     whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-all duration-200 cursor-pointer
                     ${activeTab === step.id
-                      ? 'border-indigo-500 text-indigo-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                      ? 'border-slate-600 text-slate-700 bg-gradient-to-b from-white to-slate-50'
+                      : 'border-transparent text-gray-500 hover:text-slate-700 hover:border-slate-300 hover:bg-gradient-to-b hover:from-white hover:to-slate-50'
                     }
                   `}
                 >
@@ -140,9 +140,9 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         transition={{ delay: 0.15 }}
                         className="flex items-center space-x-3 mb-6"
                       >
-                        <div className="flex-shrink-0 h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center">
+                        <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center shadow-md">
                           {React.createElement(tabIcons[step.id as keyof typeof tabIcons], {
-                            className: "h-6 w-6 text-indigo-600"
+                            className: "h-6 w-6 text-slate-700"
                           })}
                         </div>
                         <h3 className="text-2xl font-bold text-gray-900">{step.label}</h3>
@@ -178,8 +178,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                             className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 cursor-pointer"
                           >
                             <div className="flex items-center space-x-3 mb-4">
-                              <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center">
-                                <svg className="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400 flex items-center justify-center shadow-lg">
+                                <svg className="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                 </svg>
                               </div>

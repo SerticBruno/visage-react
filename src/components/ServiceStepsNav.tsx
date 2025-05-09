@@ -51,7 +51,7 @@ export default function ServiceStepsNav({ steps }: ServiceStepsNavProps) {
 
   return (
     <nav className="w-full flex justify-center">
-      <div className="flex overflow-x-auto gap-8 py-6 px-4 bg-white rounded-2xl shadow-lg border border-gray-100 max-w-5xl w-full items-center">
+      <div className="flex overflow-x-auto gap-8 py-6 px-4 bg-gradient-to-br from-white via-slate-50 to-slate-100 rounded-2xl shadow-lg border border-slate-200 max-w-5xl w-full items-center">
         {steps.map(step => {
           const Icon = FaIcons[step.icon as keyof typeof FaIcons];
           const isActive = active === step.id;
@@ -60,13 +60,15 @@ export default function ServiceStepsNav({ steps }: ServiceStepsNavProps) {
               key={step.id}
               href={`#${step.id}`}
               onClick={(e) => handleClick(e, step.id)}
-              className={`flex flex-col items-center px-2 transition group ${isActive ? 'text-indigo-600' : 'text-gray-700 hover:text-indigo-600'}`}
+              className={`flex flex-col items-center px-2 transition-all duration-300 group ${isActive ? 'text-slate-700' : 'text-gray-700 hover:text-slate-700'}`}
               style={{ minWidth: 90 }}
             >
-              <div className={`rounded-full p-3 mb-2 transition-all duration-200 ${isActive ? 'bg-indigo-50 shadow-md' : 'bg-gray-50 group-hover:bg-indigo-50'}`}>
+              <div className={`rounded-full p-3 mb-2 transition-all duration-300 ${isActive 
+                ? 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 shadow-md transform scale-110' 
+                : 'bg-gray-50 group-hover:bg-gradient-to-br group-hover:from-slate-50 group-hover:via-slate-100 group-hover:to-slate-200 group-hover:shadow-sm group-hover:transform group-hover:scale-105'}`}>
                 {Icon && <Icon size={44} />}
               </div>
-              <span className={`mt-1 text-sm font-medium ${isActive ? 'border-b-2 border-indigo-600 pb-0.5' : ''}`}>{step.label}</span>
+              <span className={`mt-1 text-sm font-medium transition-all duration-300 ${isActive ? 'border-b-2 border-slate-700 pb-0.5' : 'group-hover:border-b group-hover:border-slate-300 group-hover:pb-0.5'}`}>{step.label}</span>
             </a>
           );
         })}

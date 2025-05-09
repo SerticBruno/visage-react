@@ -44,7 +44,7 @@ export default function ServiceContentSection({
                 <ul className="space-y-2">
                   {benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start">
-                      <svg className="h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-6 w-6 text-slate-700 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-600">{benefit}</span>
@@ -56,7 +56,7 @@ export default function ServiceContentSection({
 
             <Link
               href="/kontakt"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200"
+              className="inline-flex items-center px-8 py-4 border border-transparent text-base font-medium rounded-xl shadow-lg text-white bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 hover:from-slate-800 hover:via-slate-900 hover:to-slate-950 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-xl"
             >
               Zakažite termin
             </Link>
