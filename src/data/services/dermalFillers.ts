@@ -34,13 +34,7 @@ U VISAGE studiju koristimo najkvalitetnije dermalne filere, prilagođene vašem 
 - Popravljanje kontura
 - Smanjivanje bora
 - Postići prirodan izgled
-- Dugotrajne rezultate
-
-Nisu preporučljivi za:
-- Osobe s aktivnim infekcijama kože
-- Osobe s ozbiljnim kožnim stanjima
-- Osobe koje su nedavno prošle kroz agresivne tretmane kože
-- Osobe s alergijama na sastojke filera`,
+- Dugotrajne rezultate`,
     'priprema': `Prije tretmana dermalnim filerima potrebno je:
 1. Konzultacija s našim stručnjacima za procjenu stanja kože
 2. Preporuka odgovarajućeg filera za vaš tip kože

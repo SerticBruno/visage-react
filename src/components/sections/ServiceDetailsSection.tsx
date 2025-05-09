@@ -28,20 +28,26 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
     const paragraphs = content.split('\n\n');
     
     return paragraphs.map((paragraph, idx) => {
-      // Check if paragraph is a list
+      // Check if paragraph contains bullet points
       if (paragraph.includes('- ')) {
-        const items = paragraph.split('\n').filter(item => item.trim().startsWith('- '));
+        const lines = paragraph.split('\n');
+        const introText = lines.find(line => !line.trim().startsWith('- '));
+        const bulletPoints = lines.filter(line => line.trim().startsWith('- '));
+        
         return (
-          <ul key={idx} className="space-y-3 mb-6">
-            {items.map((item, itemIdx) => (
-              <li key={itemIdx} className="flex items-start">
-                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-100 flex items-center justify-center mr-3 mt-0.5">
-                  <FaCheck className="h-4 w-4 text-indigo-600" />
-                </div>
-                <span className="text-gray-600">{item.replace('- ', '')}</span>
-              </li>
-            ))}
-          </ul>
+          <div key={idx} className="mb-6">
+            {introText && <p className="text-gray-600 mb-4 leading-relaxed">{introText}</p>}
+            <ul className="space-y-3">
+              {bulletPoints.map((item, itemIdx) => (
+                <li key={itemIdx} className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-100 flex items-center justify-center mr-3 mt-0.5">
+                    <FaCheck className="h-4 w-4 text-indigo-600" />
+                  </div>
+                  <span className="text-gray-600">{item.replace('- ', '')}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         );
       }
       

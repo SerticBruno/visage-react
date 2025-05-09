@@ -35,12 +35,7 @@ U VISAGE studiju koristimo najkvalitetnije proizvode za kemijski piling, prilago
 - Smanjiti fine linije i bore
 - Ukloniti ožiljke od akni
 - Poboljšati apsorpciju proizvoda za njegu kože
-- Osvježiti i revitalizirati kožu
-
-Nije preporučljiv za:
-- Osobe s aktivnim infekcijama kože
-- Osobe s ozbiljnim kožnim stanjima
-- Osobe koje su nedavno prošle kroz agresivne tretmane kože`,
+- Osvježiti i revitalizirati kožu`,
     'priprema': `Prije kemijskog pilinga potrebno je:
 1. Konzultacija s našim stručnjacima za procjenu stanja kože
 2. Preporuka odgovarajućeg tipa pilinga za vaš tip kože
