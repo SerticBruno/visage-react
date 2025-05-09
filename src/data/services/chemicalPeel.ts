@@ -46,9 +46,9 @@ Tjedan dana prije tretmana:
 - Izbjegavati izlaganje suncu
 - Prekinuti korištenje agresivnih proizvoda za njegu kože
 - Piti dovoljno vode za optimalnu hidrataciju kože`,
-    'tijek-zahvata': `Kemijski piling je napredan tretman za obnavljanje kože koji uključuje primjenu kemijskih otopina za uklanjanje mrtvih stanica i stimulaciju regeneracije. Tretman se provodi u nekoliko faza, gdje svaka faza ima svoju specifičnu svrhu i trajanje. Naši stručnjaci prate svaki korak postupka kako bi osigurali optimalne rezultate i sigurnost tretmana.
+    'tijek-zahvata': `Tretman kemijskim pilingom je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg pilinga, plan tretmana i objašnjenje postupka. Ova faza je ključna za postizanje optimalnih rezultata.
+1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg tipa pilinga, plan tretmana i objašnjenje postupka. Ova faza je ključna za postizanje optimalnih rezultata.
 
 2. Priprema kože (15 min) - Dubinsko čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože. Ova faza osigurava optimalne uvjete za primjenu pilinga.
 

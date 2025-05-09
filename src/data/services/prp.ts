@@ -33,13 +33,7 @@ U VISAGE studiju koristimo najnapredniju opremu za pripremu PRP-a, što osigurav
 - Poboljšati ton i teksturu kože
 - Smanjiti fine linije i bore
 - Poboljšati kvalitetu kože
-- Koristiti potpuno prirodnu metodu
-
-Nije preporučljiva za:
-- Osobe s aktivnim infekcijama kože
-- Osobe s ozbiljnim kožnim stanjima
-- Osobe koje su nedavno prošle kroz agresivne tretmane kože
-- Osobe s poremećajima zgrušavanja krvi`,
+- Koristiti potpuno prirodnu metodu`,
     'priprema': `Prije PRP terapije potrebno je:
 1. Konzultacija s našim stručnjacima za procjenu stanja kože
 2. Preporuka broja tretmana za optimalne rezultate
@@ -51,14 +45,17 @@ Tjedan dana prije tretmana:
 - Prekinuti korištenje agresivnih proizvoda za njegu kože
 - Piti dovoljno vode za optimalnu hidrataciju kože
 - Izbjegavati alkohol i pušenje`,
-    'tijek-zahvata': `Tijek PRP terapije uključuje:
-1. Uzimanje krvi pacijenta
-2. Centrifugiranje krvi za dobivanje PRP-a
-3. Primjena anestetika (po potrebi)
-4. Injekcija PRP-a u kožu
-5. Primjena umirujućih i regenerativnih proizvoda
+    'tijek-zahvata': `Tretman PRP (Platelet Rich Plasma) je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-Cijeli postupak traje oko 60-90 minuta i provodi se u ugodnom ambijentu našeg studija.`,
+1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg tretmana, plan postupka i objašnjenje. Ova faza je ključna za postizanje optimalnih rezultata.
+
+2. Priprema kože (15 min) - Dubinsko čišćenje kože, priprema za uzimanje krvi, dezinfekcija kože. Ova faza osigurava optimalne uvjete za primjenu tretmana.
+
+3. Primjena PRP (30-45 min) - Uzimanje krvi, priprema plazme, precizne mikroinjekcije i masiranje područja. Ova faza zahtijeva maksimalnu preciznost i stručnost.
+
+4. Završni koraci (15 min) - Primjena umirujućih proizvoda, regenerativnih seruma, zaštitnog krema i fotografiranje prije/nakon. Ova faza osigurava optimalno oporavak kože.
+
+5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata.`,
     'oporavak': `Nakon PRP terapije:
 - Koža može biti osjetljiva i crvenkasta 1-2 dana
 - Moguća su mala modrica na mjestima injekcija

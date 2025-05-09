@@ -34,12 +34,7 @@ U VISAGE studiju koristimo originalne Bio Sculpture proizvode i tehnike, što os
 - Prirodan izgled noktiju
 - Širok izbor boja i dizajna
 - Profesionalnu njegu noktiju
-- Visoku kvalitetu i trajnost
-
-Nije preporučljiv za:
-- Osobe s aktivnim infekcijama noktiju
-- Osobe s ozbiljnim stanjima noktiju
-- Osobe s alergijama na sastojke proizvoda`,
+- Visoku kvalitetu i trajnost`,
     'priprema': `Prije Bio Sculpture tretmana potrebno je:
 1. Konzultacija s našim stručnjacima za procjenu stanja noktiju
 2. Odabir odgovarajućeg tretmana i boje
@@ -49,14 +44,17 @@ Dan prije tretmana:
 - Očistiti nokte od starih lakova
 - Ukloniti umjetne nokte (ako ih imate)
 - Piti dovoljno vode za optimalnu hidrataciju`,
-    'tijek-zahvata': `Tijek Bio Sculpture tretmana uključuje:
-1. Čišćenje i priprema noktiju
-2. Odabir boje i dizajna
-3. Primjena Bio Sculpture sistema
-4. Sušenje i oblikovanje
-5. Primjena zaštitnog sloja
+    'tijek-zahvata': `Tretman Bio Sculpture je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-Cijeli postupak traje oko 60-90 minuta i provodi se u ugodnom ambijentu našeg studija.`,
+1. Konzultacija i procjena (10 min) - Detaljna analiza stanja noktiju, odabir odgovarajućeg tretmana, plan postupka i objašnjenje. Ova faza je ključna za postizanje optimalnih rezultata.
+
+2. Priprema noktiju (15 min) - Čišćenje noktiju, uklanjanje starog laka, oblikovanje i poliranje. Ova faza osigurava optimalne uvjete za primjenu tretmana.
+
+3. Primjena tretmana (30-45 min) - Precizna primjena Bio Sculpture proizvoda, praćenje reakcije noktiju i masiranje. Ova faza zahtijeva maksimalnu preciznost i stručnost.
+
+4. Završni koraci (15 min) - Primjena zaštitnog sloja, sušenje i fotografiranje prije/nakon. Ova faza osigurava optimalno trajanje tretmana.
+
+5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata.`,
     'oporavak': `Nakon Bio Sculpture tretmana:
 - Nokti su zaštićeni i ojačani
 - Potrebno je izbjegavati vodu 2 sata

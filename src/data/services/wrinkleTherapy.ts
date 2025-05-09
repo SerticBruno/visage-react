@@ -34,13 +34,7 @@ U VISAGE studiju koristimo najkvalitetnije proizvode i tehnike za terapiju bora,
 - Spriječiti pojavu novih bora
 - Poboljšati ton kože
 - Poboljšati elastičnost kože
-- Postići prirodan izgled
-
-Nije preporučljiva za:
-- Osobe s aktivnim infekcijama kože
-- Osobe s ozbiljnim kožnim stanjima
-- Osobe koje su nedavno prošle kroz agresivne tretmane kože
-- Osobe s alergijama na sastojke proizvoda`,
+- Postići prirodan izgled`,
     'priprema': `Prije terapije bora potrebno je:
 1. Konzultacija s našim stručnjacima za procjenu stanja kože
 2. Preporuka odgovarajućeg tretmana za vaš tip kože
@@ -51,14 +45,17 @@ Tjedan dana prije tretmana:
 - Izbjegavati izlaganje suncu
 - Prekinuti korištenje agresivnih proizvoda za njegu kože
 - Piti dovoljno vode za optimalnu hidrataciju kože`,
-    'tijek-zahvata': `Tijek terapije bora uključuje:
-1. Čišćenje kože
-2. Analiza stanja kože i bora
-3. Primjena odgovarajućih proizvoda
-4. Masiranje i oblikovanje
-5. Primjena zaštitnog krema
+    'tijek-zahvata': `Tretman za smanjenje bora je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-Cijeli postupak traje oko 45-60 minuta i provodi se u ugodnom ambijentu našeg studija.`,
+1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg tretmana, plan postupka i objašnjenje. Ova faza je ključna za postizanje optimalnih rezultata.
+
+2. Priprema kože (15 min) - Dubinsko čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože. Ova faza osigurava optimalne uvjete za primjenu tretmana.
+
+3. Primjena tretmana (20-30 min) - Precizna primjena proizvoda, praćenje reakcije kože i masiranje područja. Ova faza zahtijeva maksimalnu preciznost i stručnost.
+
+4. Završni koraci (15 min) - Primjena umirujućih proizvoda, regenerativnih seruma, zaštitnog krema i fotografiranje prije/nakon. Ova faza osigurava optimalno oporavak kože.
+
+5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata.`,
     'oporavak': `Nakon terapije bora:
 - Koža može biti osjetljiva 1-2 dana
 - Potrebno je izbjegavati izravno sunce 2 tjedna

@@ -51,14 +51,17 @@ Tjedan dana prije tretmana:
 - Prekinuti korištenje agresivnih proizvoda za njegu kože
 - Piti dovoljno vode za optimalnu hidrataciju kože
 - Izbjegavati alkohol i pušenje`,
-    'tijek-zahvata': `Tijek Plasmage tretmana uključuje:
-1. Čišćenje kože
-2. Primjena anestetika
-3. Generiranje plazme
-4. Primjena plazme na kožu
-5. Primjena umirujućih i regenerativnih proizvoda
+    'tijek-zahvata': `Tretman Plasmage je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-Cijeli postupak traje oko 60-90 minuta i provodi se u ugodnom ambijentu našeg studija.`,
+1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg tretmana, plan postupka i objašnjenje. Ova faza je ključna za postizanje optimalnih rezultata.
+
+2. Priprema kože (15 min) - Dubinsko čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože. Ova faza osigurava optimalne uvjete za primjenu tretmana.
+
+3. Primjena Plasmage (20-30 min) - Precizna primjena plazme, praćenje reakcije kože i masiranje područja. Ova faza zahtijeva maksimalnu preciznost i stručnost.
+
+4. Završni koraci (15 min) - Primjena umirujućih proizvoda, regenerativnih seruma, zaštitnog krema i fotografiranje prije/nakon. Ova faza osigurava optimalno oporavak kože.
+
+5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata.`,
     'oporavak': `Nakon Plasmage tretmana:
 - Koža može biti osjetljiva i crvenkasta 3-5 dana
 - Potrebno je izbjegavati izravno sunce 2 tjedna

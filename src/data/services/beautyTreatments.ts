@@ -34,12 +34,7 @@ U VISAGE studiju nudimo različite vrste beauty tretmana, prilagođene vašim po
 - Duboku njegu kože
 - Poboljšati ton kože
 - Poboljšati hidrataciju kože
-- Doživjeti luksuzno iskustvo
-
-Nisu preporučljivi za:
-- Osobe s aktivnim infekcijama kože
-- Osobe s ozbiljnim kožnim stanjima
-- Osobe s alergijama na sastojke proizvoda`,
+- Doživjeti luksuzno iskustvo`,
     'priprema': `Prije beauty tretmana potrebno je:
 1. Konzultacija s našim stručnjacima za procjenu stanja kože
 2. Odabir odgovarajućeg tretmana
@@ -49,14 +44,17 @@ Dan prije tretmana:
 - Izbjegavati izlaganje suncu
 - Prekinuti korištenje agresivnih proizvoda za njegu kože
 - Piti dovoljno vode za optimalnu hidrataciju kože`,
-    'tijek-zahvata': `Tijek beauty tretmana uključuje:
-1. Konzultacija i procjena potreba
-2. Čišćenje kože
-3. Primjena odgovarajućih proizvoda
-4. Masiranje i opuštanje
-5. Primjena zaštitnog krema
+    'tijek-zahvata': `Tretman lica je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-Cijeli postupak traje oko 60-90 minuta i provodi se u ugodnom ambijentu našeg studija.`,
+1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg tretmana, plan postupka i objašnjenje. Ova faza je ključna za postizanje optimalnih rezultata.
+
+2. Priprema kože (15 min) - Dubinsko čišćenje kože, primjena pripremnih proizvoda, oznaka područja za tretman. Ova faza osigurava optimalne uvjete za primjenu tretmana.
+
+3. Primjena tretmana (30-45 min) - Precizna primjena proizvoda, masaža lica, maske i posebni tretmani. Ova faza zahtijeva maksimalnu preciznost i stručnost.
+
+4. Završni koraci (15 min) - Primjena regenerativnih seruma, zaštitnog krema i fotografiranje prije/nakon. Ova faza osigurava optimalno oporavak kože.
+
+5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata.`,
     'oporavak': `Nakon beauty tretmana:
 - Koža je osvježena i hidratizirana
 - Potrebno je izbjegavati izravno sunce 24 sata

@@ -46,7 +46,7 @@ Tjedan dana prije tretmana:
 - Prekinuti korištenje agresivnih proizvoda za njegu kože
 - Piti dovoljno vode za optimalnu hidrataciju kože
 - Izbjegavati alkohol i pušenje`,
-    'tijek-zahvata': `Dermalni fileri su napredna metoda za volumizaciju i obnavljanje kontura lica. Tretman se provodi u nekoliko faza, gdje svaka faza ima svoju specifičnu svrhu i trajanje. Naši stručnjaci prate svaki korak postupka kako bi osigurali optimalne rezultate i sigurnost tretmana.
+    'tijek-zahvata': `Tretman dermalnim filerima je precizan i siguran postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
 1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg filera, plan tretmana i objašnjenje postupka. Ova faza je ključna za postizanje prirodnih i dugotrajnih rezultata.
 

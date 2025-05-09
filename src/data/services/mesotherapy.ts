@@ -30,7 +30,7 @@ export const mesotherapy: Service = {
     'opis-zahvata': 'Mezoterapija je minimalno invazivni tretman koji uključuje primjenu mikroinjekcija s koktelom aktivnih sastojaka direktno u srednji sloj kože. Ovo omogućuje optimalnu apsorpciju i učinkovitost aktivnih sastojaka.',
     'kandidati': 'Mezoterapija je pogodna za:\n- Dehidriranu kožu\n- Kožu s finim linijama\n- Kožu koja izgleda umorno\n- Kožu koja treba revitalizaciju\n- Sve tipove kože',
     'priprema': 'Prije tretmana:\n- Izbjegavati sunčanje 1 tjedan prije\n- Doći s očišćenom kožom\n- Konzultirati se s terapeutom o povijesti kože\n- Izbjegavati alkohol 24h prije',
-    'tijek-zahvata': `Mezoterapija je minimalno invazivni tretman koji kombinira mikroinjekcije s koktelom aktivnih sastojaka za dubinsku hidrataciju i revitalizaciju kože. Tretman se provodi u nekoliko faza, gdje svaka faza ima svoju specifičnu svrhu i trajanje. Naši stručnjaci prate svaki korak postupka kako bi osigurali optimalne rezultate i sigurnost tretmana.
+    'tijek-zahvata': `Tretman mezoterapijom je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
 1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg koktela, plan tretmana i objašnjenje postupka. Ova faza je ključna za postizanje optimalnih rezultata.
 

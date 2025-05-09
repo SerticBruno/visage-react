@@ -34,13 +34,7 @@ U VISAGE studiju koristimo najkvalitetnije skin boostere, prilagođene vašem ti
 - Poboljšati ton i sjaj kože
 - Smanjiti fine linije
 - Poboljšati elastičnost kože
-- Postići dugotrajne rezultate
-
-Nisu preporučljivi za:
-- Osobe s aktivnim infekcijama kože
-- Osobe s ozbiljnim kožnim stanjima
-- Osobe koje su nedavno prošle kroz agresivne tretmane kože
-- Osobe s alergijama na sastojke boostera`,
+- Postići dugotrajne rezultate`,
     'priprema': `Prije tretmana skin boosterima potrebno je:
 1. Konzultacija s našim stručnjacima za procjenu stanja kože
 2. Preporuka odgovarajućeg boostera za vaš tip kože
@@ -51,14 +45,17 @@ Tjedan dana prije tretmana:
 - Izbjegavati izlaganje suncu
 - Prekinuti korištenje agresivnih proizvoda za njegu kože
 - Piti dovoljno vode za optimalnu hidrataciju kože`,
-    'tijek-zahvata': `Tijek tretmana skin boosterima uključuje:
-1. Čišćenje kože
-2. Primjena anestetika (po potrebi)
-3. Injekcija boostera u kožu
-4. Primjena umirujućih i regenerativnih proizvoda
-5. Primjena zaštitnog krema
+    'tijek-zahvata': `Tretman Skin Boosters je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-Cijeli postupak traje oko 30-45 minuta i provodi se u ugodnom ambijentu našeg studija.`,
+1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg koktela, plan tretmana i objašnjenje postupka. Ova faza je ključna za postizanje optimalnih rezultata.
+
+2. Priprema kože (15 min) - Dubinsko čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože. Ova faza osigurava optimalne uvjete za primjenu tretmana.
+
+3. Primjena Skin Boosters (20-30 min) - Precizne mikroinjekcije, praćenje reakcije kože, prilagodba dubine injekcija i masiranje područja. Ova faza zahtijeva maksimalnu preciznost i stručnost.
+
+4. Završni koraci (15 min) - Primjena umirujućih proizvoda, regenerativnih seruma, zaštitnog krema i fotografiranje prije/nakon. Ova faza osigurava optimalno oporavak kože.
+
+5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata.`,
     'oporavak': `Nakon tretmana skin boosterima:
 - Koža može biti osjetljiva i crvenkasta 1-2 dana
 - Moguća su mala modrica na mjestima injekcija
