@@ -72,6 +72,18 @@ export default function RelatedServicesSection({ currentService, relatedServices
             </motion.div>
           ))}
         </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/usluge"
+            className="inline-flex items-center px-8 py-4 text-base font-medium rounded-xl shadow-lg text-white bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+          >
+            <svg className="mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Povratak na sve usluge
+          </Link>
+        </div>
       </div>
     </section>
   );

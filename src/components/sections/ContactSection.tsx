@@ -174,7 +174,7 @@ const ContactSection = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gray-900 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors text-sm sm:text-base"
+                  className="w-full bg-gray-900 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors text-sm sm:text-base cursor-pointer"
                 >
                   Pošalji poruku
                 </button>
