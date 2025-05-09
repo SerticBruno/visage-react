@@ -1,20 +1,21 @@
 import { Service } from './types';
 
 export const chemicalPeel: Service = {
-  title: 'Kemijski piling',
-  description: 'Profesionalni kemijski piling za obnavljanje kože',
-  longDescription: 'Kemijski piling je napredna estetska procedura koja koristi kemijske spojeve za uklanjanje mrtvih stanica s površine kože. Ova metoda potiče regeneraciju kože, poboljšava ton i teksturu, te pomaže u smanjenju bora i ožiljaka.',
+  title: 'Kemijski Piling',
+  description: 'Otkrijte tajnu blistave kože uz profesionalni kemijski piling',
+  longDescription: 'Kemijski piling je ključan korak u njezi kože koji pomaže u uklanjanju mrtvih stanica s površine kože, potiče regeneraciju stanica te smanjuje pojavu nepravilnosti poput hiperpigmentacije, sitnih linija i akni. U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama, koristeći kombinaciju nježnih kiselina kako bismo postigli optimalne rezultate.',
   benefits: [
-    'Poboljšava ton i teksturu kože',
-    'Smanjuje fine linije i bore',
-    'Uklanja mrtve stanice kože',
-    'Poboljšava apsorpciju proizvoda za njegu',
-    'Smanjuje ožiljke od akni'
+    'Uklanja mrtve stanice i nečistoće s kože',
+    'Poboljšava čvrstoću i zaglađuje teksturu kože',
+    'Ublažava nepravilnu pigmentaciju',
+    'Umanjuje učinke fotostarenja',
+    'Poboljšava izgled kože sklone aknama',
+    'Pruža trenutne rezultate bez nelagode'
   ],
-  image: '/images/services/toskani-woman.webp',
-  heroImage: '/images/services/socialmedia_peelings_combined.webp',
-  metaDescription: 'Profesionalni kemijski piling u VISAGE studiju u Siska. Obnovite svoju kožu uz pomoć naprednih kemijskih pilinzi. Rezultati odmah vidljivi.',
-  metaKeywords: 'kemijski piling, piling lica, obnova kože, estetski studio Sisak, VISAGE studio',
+  image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp',
+  heroImage: '/images/services/kemijski-piling/toskani-bg.webp',
+  metaDescription: 'Profesionalni kemijski piling u VISAGE studiju u Siska. Obnovite svoju kožu uz pomoć naprednih kemijskih pilinzi TOSKANI. Rezultati odmah vidljivi.',
+  metaKeywords: 'kemijski piling, piling lica, obnova kože, estetski studio Sisak, VISAGE studio, TOSKANI piling, kemijski piling Sisak',
   steps: [
     { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },

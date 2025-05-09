@@ -4,28 +4,11 @@ import Link from 'next/link';
 import { services, type ServiceKey } from '@/data/services';
 import ContactSection from '@/components/sections/ContactSection';
 import HeroSection from '@/components/sections/HeroSection';
-import ServiceStepsNav from '@/components/ServiceStepsNav';
-import ServiceStepSections from '@/components/ServiceStepSections';
-import {
-  FaRegFileAlt,
-  FaUsers,
-  FaRegEdit,
-  FaRegClock,
-  FaRegHospital,
-  FaRegFile,
-  FaHandHoldingUsd
-} from 'react-icons/fa';
 import ServiceContentSection from '@/components/sections/ServiceContentSection';
-
-const iconMap = {
-  FaRegFileAlt,
-  FaUsers,
-  FaRegEdit,
-  FaRegClock,
-  FaRegHospital,
-  FaRegFile,
-  FaHandHoldingUsd
-};
+import ChemicalPeelTypesSection from '@/components/sections/ChemicalPeelTypesSection';
+import ChemicalPeelRecoverySection from '@/components/sections/ChemicalPeelRecoverySection';
+import ServiceDetailsSection from '@/components/sections/ServiceDetailsSection';
+import { FaArrowLeft } from 'react-icons/fa';
 
 type Props = {
   params: { pageName: string };
@@ -55,16 +38,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${service.title} | VISAGE studio`,
       description: service.metaDescription,
       images: [service.image],
+      type: 'website',
+      locale: 'hr_HR',
+      siteName: 'VISAGE studio',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${service.title} | VISAGE studio`,
+      description: service.metaDescription,
+      images: [service.image],
     },
   };
 }
 
 export default function ServicePage({ params }: Props) {
-  console.log('Service page params:', params);
   const service = services[params.pageName as ServiceKey];
 
   if (!service) {
-    console.log('Service not found for pageName:', params.pageName);
     return (
       <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -75,8 +65,9 @@ export default function ServicePage({ params }: Props) {
             </p>
             <Link
               href="/usluge"
-              className="mt-6 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+              className="mt-6 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200"
             >
+              <FaArrowLeft className="mr-2" />
               Povratak na sve usluge
             </Link>
           </div>
@@ -102,10 +93,15 @@ export default function ServicePage({ params }: Props) {
         reverse={false}
       />
 
-      {service.steps && <ServiceStepsNav steps={service.steps} />}
-      {service.steps && service.stepContents && (
-        <ServiceStepSections steps={service.steps} stepContents={service.stepContents} />
+      <ServiceDetailsSection service={service} />
+
+      {params.pageName === 'kemijski-piling' && (
+        <>
+          <ChemicalPeelTypesSection />
+          <ChemicalPeelRecoverySection />
+        </>
       )}
+      
       <ContactSection />
     </div>
   );

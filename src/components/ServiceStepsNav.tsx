@@ -1,30 +1,12 @@
 "use client";
 
-import {
-  FaRegFileAlt,
-  FaUsers,
-  FaRegEdit,
-  FaRegClock,
-  FaRegHospital,
-  FaRegFile,
-  FaHandHoldingUsd
-} from "react-icons/fa";
 import { useEffect, useState } from "react";
-
-const iconMap = {
-  FaRegFileAlt,
-  FaUsers,
-  FaRegEdit,
-  FaRegClock,
-  FaRegHospital,
-  FaRegFile,
-  FaHandHoldingUsd
-};
+import * as FaIcons from "react-icons/fa";
 
 export type Step = {
   id: string;
   label: string;
-  icon: keyof typeof iconMap;
+  icon: string;
 };
 
 interface ServiceStepsNavProps {
@@ -71,7 +53,7 @@ export default function ServiceStepsNav({ steps }: ServiceStepsNavProps) {
     <nav className="w-full flex justify-center">
       <div className="flex overflow-x-auto gap-8 py-6 px-4 bg-white rounded-2xl shadow-lg border border-gray-100 max-w-5xl w-full items-center">
         {steps.map(step => {
-          const Icon = iconMap[step.icon];
+          const Icon = FaIcons[step.icon as keyof typeof FaIcons];
           const isActive = active === step.id;
           return (
             <a
@@ -82,7 +64,7 @@ export default function ServiceStepsNav({ steps }: ServiceStepsNavProps) {
               style={{ minWidth: 90 }}
             >
               <div className={`rounded-full p-3 mb-2 transition-all duration-200 ${isActive ? 'bg-indigo-50 shadow-md' : 'bg-gray-50 group-hover:bg-indigo-50'}`}>
-                <Icon size={44} />
+                {Icon && <Icon size={44} />}
               </div>
               <span className={`mt-1 text-sm font-medium ${isActive ? 'border-b-2 border-indigo-600 pb-0.5' : ''}`}>{step.label}</span>
             </a>
