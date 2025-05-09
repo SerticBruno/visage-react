@@ -52,43 +52,46 @@ Tjedan dana prije tretmana:
 - Prekinuti korištenje agresivnih proizvoda za njegu kože
 - Piti dovoljno vode za optimalnu hidrataciju kože
 - Izbjegavati alkohol i pušenje`,
-    'tijek-zahvata': `Tijek tretmana dermalnim filerima uključuje:
-1. Čišćenje kože
-2. Primjena anestetika
-3. Injekcija filera u odabrana područja
-4. Masiranje i oblikovanje
-5. Primjena zaštitnog krema
+    'tijek-zahvata': `Dermalni fileri su napredna metoda za volumizaciju i obnavljanje kontura lica. Tretman se provodi u nekoliko faza, gdje svaka faza ima svoju specifičnu svrhu i trajanje. Naši stručnjaci prate svaki korak postupka kako bi osigurali optimalne rezultate i sigurnost tretmana.
 
-Cijeli postupak traje oko 30-60 minuta i provodi se u ugodnom ambijentu našeg studija.`,
-    'oporavak': `Nakon tretmana dermalnim filerima:
-- Koža može biti osjetljiva i crvenkasta 1-2 dana
-- Moguća su mala modrica na mjestima injekcija
-- Potrebno je izbjegavati izravno sunce 2 tjedna
-- Koristiti blage proizvode za njegu kože
-- Izbjegavati intenzivnu fizičku aktivnost 24 sata
+1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg filera, plan tretmana i objašnjenje postupka. Ova faza je ključna za postizanje prirodnih i dugotrajnih rezultata.
 
-Rezultati su vidljivi odmah i traju 6-18 mjeseci, ovisno o tipu filera.`,
-    'mjere-opreza': `Važne mjere opreza:
-- Izbjegavati izravno sunce 2 tjedna nakon tretmana
-- Koristiti zaštitni krem s visokim SPF-om
-- Izbjegavati korištenje agresivnih proizvoda za njegu kože
-- Ne češati i ne trljati kožu
-- Pratiti sve upute naših stručnjaka
+2. Priprema kože (15 min) - Čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože. Ova faza osigurava optimalne uvjete za sigurnu primjenu filera.
 
-U slučaju bilo kakvih nuspojava, odmah nas kontaktirajte.`,
-    'cijena': `Cijena tretmana dermalnim filerima:
-- Pojedinačni tretman: od 1.500 kn
-- Cijena ovisi o:
-  - Tipu filera
-  - Količini potrebne tvari
-  - Područjima koja se tretiraju
+3. Primjena filera (20-30 min) - Precizne injekcije u odabrana područja, kontinuirano praćenje rezultata, prilagodba količine filera i masiranje. Ova faza zahtijeva maksimalnu preciznost i stručnost.
 
-Cijene uključuju:
-- Konzultaciju s našim stručnjacima
-- Tretman dermalnim filerima
-- Naknadnu njegu kože
-- Savjete za kućnu njegu
+4. Završni koraci (10 min) - Primjena umirujućih proizvoda, zaštitnog krema, fotografiranje prije/nakon i detaljne upute za naknadnu njegu. Ova faza osigurava optimalno oporavak i dugotrajnost rezultata.
 
-Za više informacija o cijenama i mogućnostima plaćanja, kontaktirajte nas.`
-  }
-}; 
+5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata i prevenciju komplikacija.`,
+    'oporavak': 'Nakon tretmana:\n- Blago crvenilo koje nestaje u roku od 24h\n- Moguća osjetljivost kože\n- Potrebno je izbjegavati sunčanje\n- Pratiti upute terapeuta za njegu',
+    'mjere-opreza': 'Mjere opreze su važne za održavanje rezultata i prevenciju komplikacija.',
+    'cijena': 'Cijena tretmana dermalnim filerima ovisi o mnogim faktorima, uključujući lokaciju, stručnost i količinu filera.'
+  },
+  treatmentSteps: [
+    {
+      title: 'Konzultacija i procjena',
+      duration: '10 min',
+      description: 'Detaljna analiza stanja kože, odabir odgovarajućeg filera, plan tretmana i objašnjenje postupka. Ova faza je ključna za postizanje prirodnih i dugotrajnih rezultata.'
+    },
+    {
+      title: 'Priprema kože',
+      duration: '15 min',
+      description: 'Čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože. Ova faza osigurava optimalne uvjete za sigurnu primjenu filera.'
+    },
+    {
+      title: 'Primjena filera',
+      duration: '20-30 min',
+      description: 'Precizne injekcije u odabrana područja, kontinuirano praćenje rezultata, prilagodba količine filera i masiranje. Ova faza zahtijeva maksimalnu preciznost i stručnost.'
+    },
+    {
+      title: 'Završni koraci',
+      duration: '10 min',
+      description: 'Primjena umirujućih proizvoda, zaštitnog krema, fotografiranje prije/nakon i detaljne upute za naknadnu njegu. Ova faza osigurava optimalno oporavak i dugotrajnost rezultata.'
+    },
+    {
+      title: 'Naknadna kontrola',
+      duration: '5 min',
+      description: 'Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata i prevenciju komplikacija.'
+    }
+  ]
+};

@@ -24,7 +24,10 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   const [activeTab, setActiveTab] = useState(service.steps[0].id);
 
   const formatContent = (content: string) => {
-    return content.split('\n\n').map((paragraph, idx) => {
+    // Split content into paragraphs
+    const paragraphs = content.split('\n\n');
+    
+    return paragraphs.map((paragraph, idx) => {
       // Check if paragraph is a list
       if (paragraph.includes('- ')) {
         const items = paragraph.split('\n').filter(item => item.trim().startsWith('- '));
@@ -41,6 +44,29 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
           </ul>
         );
       }
+      
+      // Check if paragraph is a numbered step
+      if (paragraph.match(/^\d+\./)) {
+        const [number, ...rest] = paragraph.split('.');
+        const content = rest.join('.').trim();
+        const [title, description] = content.split(' - ');
+        
+        return (
+          <div key={idx} className="mb-8">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
+                <span className="text-indigo-600 font-semibold">{number}</span>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
+                <p className="text-gray-600 leading-relaxed">{description}</p>
+              </div>
+            </div>
+          </div>
+        );
+      }
+      
+      // Regular paragraph
       return <p key={idx} className="text-gray-600 mb-6 leading-relaxed">{paragraph}</p>;
     });
   };

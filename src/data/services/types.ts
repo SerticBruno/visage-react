@@ -6,6 +6,12 @@ export type ServiceStep = {
   icon: string;
 };
 
+export type TreatmentStep = {
+  title: string;
+  duration: string;
+  description: string;
+};
+
 export interface Service {
   id: string;
   title: string;
@@ -16,14 +22,11 @@ export interface Service {
   benefits: string[];
   metaDescription: string;
   metaKeywords: string;
-  steps: {
-    id: string;
-    label: string;
-    icon: string;
-  }[];
+  steps: ServiceStep[];
   stepContents: {
     [key: string]: string;
   };
+  treatmentSteps?: TreatmentStep[];
 }
 
 export type Services = {

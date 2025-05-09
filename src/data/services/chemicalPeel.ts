@@ -51,41 +51,19 @@ Tjedan dana prije tretmana:
 - Izbjegavati izlaganje suncu
 - Prekinuti korištenje agresivnih proizvoda za njegu kože
 - Piti dovoljno vode za optimalnu hidrataciju kože`,
-    'tijek-zahvata': `Tijek kemijskog pilinga uključuje:
-1. Čišćenje kože
-2. Primjena kemijskog pilinga
-3. Neutralizacija pilinga
-4. Primjena umirujućih i regenerativnih proizvoda
-5. Primjena zaštitnog krema
+    'tijek-zahvata': `Kemijski piling je napredan tretman za obnavljanje kože koji uključuje primjenu kemijskih otopina za uklanjanje mrtvih stanica i stimulaciju regeneracije. Tretman se provodi u nekoliko faza, gdje svaka faza ima svoju specifičnu svrhu i trajanje. Naši stručnjaci prate svaki korak postupka kako bi osigurali optimalne rezultate i sigurnost tretmana.
 
-Cijeli postupak traje oko 45-60 minuta i provodi se u ugodnom ambijentu našeg studija.`,
-    'oporavak': `Nakon kemijskog pilinga:
-- Koža može biti osjetljiva i crvenkasta 1-2 dana
-- Ljuštenje kože je normalno i traje 3-7 dana
-- Potrebno je izbjegavati izravno sunce 2 tjedna
-- Koristiti blage proizvode za njegu kože
-- Piti dovoljno vode za optimalnu hidrataciju
+1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg pilinga, plan tretmana i objašnjenje postupka. Ova faza je ključna za postizanje optimalnih rezultata.
 
-Redoviti tretmani svakih 4-6 tjedana daju najbolje rezultate.`,
-    'mjere-opreza': `Važne mjere opreza:
-- Izbjegavati izravno sunce 2 tjedna nakon tretmana
-- Koristiti zaštitni krem s visokim SPF-om
-- Izbjegavati korištenje agresivnih proizvoda za njegu kože
-- Ne češati i ne trljati kožu koja se ljušti
-- Pratiti sve upute naših stručnjaka
+2. Priprema kože (15 min) - Dubinsko čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože. Ova faza osigurava optimalne uvjete za primjenu pilinga.
 
-U slučaju bilo kakvih nuspojava, odmah nas kontaktirajte.`,
-    'cijena': `Cijena kemijskog pilinga:
-- Pojedinačni tretman: 400 kn
-- Paket od 3 tretmana: 1.000 kn
-- Paket od 6 tretmana: 1.800 kn
+3. Primjena pilinga (20-30 min) - Precizna primjena kemijskog pilinga, praćenje reakcije kože, neutralizacija pilinga i masiranje. Ova faza zahtijeva maksimalnu preciznost i stručnost.
 
-Cijene uključuju:
-- Konzultaciju s našim stručnjacima
-- Tretman kemijskim pilingom
-- Naknadnu njegu kože
-- Savjete za kućnu njegu
+4. Završni koraci (15 min) - Primjena umirujućih proizvoda, regenerativnih seruma, zaštitnog krema i fotografiranje prije/nakon. Ova faza osigurava optimalno oporavak kože.
 
-Za više informacija o cijenama i mogućnostima plaćanja, kontaktirajte nas.`
+5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata.`,
+    'oporavak': 'Nakon tretmana:\n- Blago crvenilo koje nestaje u roku od 24h\n- Moguća osjetljivost kože\n- Potrebno je izbjegavati sunčanje\n- Pratiti upute terapeuta za njegu',
+    'mjere-opreza': 'Mjere opreze su važne za održavanje rezultata i prevenciju komplikacija.',
+    'cijena': 'Cijena tretmana kemijskim pilingom ovisi o mnogim faktorima, uključujući lokaciju, stručnost i tip pilinga.'
   }
 }; 

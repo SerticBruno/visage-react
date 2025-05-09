@@ -30,9 +30,19 @@ export const mesotherapy: Service = {
     'opis-zahvata': 'Mezoterapija je minimalno invazivni tretman koji uključuje primjenu mikroinjekcija s koktelom aktivnih sastojaka direktno u srednji sloj kože. Ovo omogućuje optimalnu apsorpciju i učinkovitost aktivnih sastojaka.',
     'kandidati': 'Mezoterapija je pogodna za:\n- Dehidriranu kožu\n- Kožu s finim linijama\n- Kožu koja izgleda umorno\n- Kožu koja treba revitalizaciju\n- Sve tipove kože',
     'priprema': 'Prije tretmana:\n- Izbjegavati sunčanje 1 tjedan prije\n- Doći s očišćenom kožom\n- Konzultirati se s terapeutom o povijesti kože\n- Izbjegavati alkohol 24h prije',
-    'tijek-zahvata': 'Tretman uključuje:\n1. Očišćavanje kože\n2. Primjena anestetičke kreme\n3. Primjena mikroinjekcija\n4. Primjena maski za smirenje\n5. Primjena zaštitnih proizvoda',
+    'tijek-zahvata': `Mezoterapija je minimalno invazivni tretman koji kombinira mikroinjekcije s koktelom aktivnih sastojaka za dubinsku hidrataciju i revitalizaciju kože. Tretman se provodi u nekoliko faza, gdje svaka faza ima svoju specifičnu svrhu i trajanje. Naši stručnjaci prate svaki korak postupka kako bi osigurali optimalne rezultate i sigurnost tretmana.
+
+1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg koktela, plan tretmana i objašnjenje postupka. Ova faza je ključna za postizanje optimalnih rezultata.
+
+2. Priprema kože (15 min) - Dubinsko čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože. Ova faza osigurava optimalne uvjete za primjenu mezoterapije.
+
+3. Primjena mezoterapije (20-30 min) - Precizne mikroinjekcije, praćenje reakcije kože, prilagodba dubine injekcija i masiranje područja. Ova faza zahtijeva maksimalnu preciznost i stručnost.
+
+4. Završni koraci (15 min) - Primjena umirujućih proizvoda, regenerativnih seruma, zaštitnog krema i fotografiranje prije/nakon. Ova faza osigurava optimalno oporavak kože.
+
+5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata.`,
     'oporavak': 'Nakon tretmana:\n- Blago crvenilo koje nestaje u roku od 24h\n- Moguća osjetljivost kože\n- Potrebno je izbjegavati sunčanje\n- Pratiti upute terapeuta za njegu',
-    'mjere-opreza': 'Važne mjere opreza:\n- Koristiti SPF 50+ svaki dan\n- Izbjegavati sunčanje 1 tjedan\n- Ne koristiti agresivne proizvode\n- Pratiti upute terapeuta za njegu',
-    'cijena': 'Cijena tretmana ovisi o:\n- Tipu koktela\n- Području koje se tretira\n- Broju tretmana\n\nKontaktirajte nas za detaljnu ponudu.'
+    'mjere-opreza': 'Mjere opreze su važne za održavanje rezultata i prevenciju komplikacija.',
+    'cijena': 'Cijena tretmana mezoterapijom ovisi o mnogim faktorima, uključujući lokaciju, stručnost i tip koktela.'
   }
 }; 
