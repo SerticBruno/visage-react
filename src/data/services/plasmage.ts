@@ -1,6 +1,7 @@
 import { Service } from './types';
 
 export const plasmage: Service = {
+  id: 'plasmage',
   title: 'Plasmage',
   description: 'Napredna Plasmage terapija za lifting kože',
   longDescription: 'Plasmage je revolucionarna metoda koja koristi plazmu za lifting i obnavljanje kože. Ova metoda je minimalno invazivna i daje izvanredne rezultate.',
@@ -28,18 +29,17 @@ export const plasmage: Service = {
     'opis-zahvata': `Plasmage je revolucionarna metoda koja koristi plazmu za lifting i obnavljanje kože. Ova metoda je minimalno invazivna i daje izvanredne rezultate.
 
 U VISAGE studiju koristimo najnapredniju Plasmage opremu, što osigurava optimalne rezultate. Postupak je siguran i učinkovit, a rezultati su vidljivi već nakon prvog tretmana.`,
-    'kandidati': `Plasmage je idealan za osobe koje žele:
-- Lifting kože
-- Poboljšati ton i teksturu kože
-- Smanjiti fine linije
-- Poboljšati elastičnost kože
-- Koristiti minimalno invazivnu metodu
+    'kandidati': `Plasmage je napredni tretman koji koristi plazmu za lifting i obnavljanje kože. Idealni kandidati su osobe koje žele poboljšati izgled svoje kože, ali i one koje imaju specifične probleme koje žele riješiti. Prije tretmana, svaki klijent prolazi detaljnu konzultaciju s našim stručnjacima kako bismo osigurali sigurnost i optimalne rezultate.
 
-Nije preporučljiv za:
-- Osobe s aktivnim infekcijama kože
-- Osobe s ozbiljnim kožnim stanjima
-- Osobe koje su nedavno prošle kroz agresivne tretmane kože
-- Osobe s poremećajima zgrušavanja krvi`,
+Idealni kandidati za Plasmage su osobe koje žele:
+- Poboljšati ton i teksturu kože
+- Smanjiti fine linije i bore
+- Ukloniti ožiljke od akni
+- Poboljšati apsorpciju proizvoda za njegu kože
+- Osvježiti i revitalizirati kožu
+- Postići prirodan lifting bez operacije
+- Poboljšati elastičnost kože
+- Koristiti minimalno invazivnu metodu`,
     'priprema': `Prije Plasmage tretmana potrebno je:
 1. Konzultacija s našim stručnjacima za procjenu stanja kože
 2. Preporuka broja tretmana za optimalne rezultate

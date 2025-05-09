@@ -21,24 +21,46 @@ type Props = {
 const findRelatedServices = (currentService: Service, allServices: Service[]): Service[] => {
   // Define relationships between services
   const serviceRelationships: { [key: string]: string[] } = {
-    'kemijski-piling': ['mezoterapija', 'plasmage', 'hidrafacial'],
-    'mezoterapija': ['kemijski-piling', 'plasmage', 'hidrafacial'],
-    'plasmage': ['kemijski-piling', 'mezoterapija', 'hidrafacial'],
-    'hidrafacial': ['kemijski-piling', 'mezoterapija', 'plasmage']
+    'kemijski-piling': ['mezoterapija', 'plasmage', 'skin-boosters'],
+    'mezoterapija': ['kemijski-piling', 'plasmage', 'skin-boosters'],
+    'plasmage': ['kemijski-piling', 'mezoterapija', 'skin-boosters'],
+    'skin-boosters': ['mezoterapija', 'dermalni-fileri', 'terapija-bora-lica'],
+    'dermalni-fileri': ['skin-boosters', 'terapija-bora-lica', 'beauty-tretmani'],
+    'terapija-bora-lica': ['dermalni-fileri', 'skin-boosters', 'beauty-tretmani'],
+    'beauty-tretmani': ['terapija-bora-lica', 'bio-sculpture', 'dermalni-fileri'],
+    'bio-sculpture': ['beauty-tretmani', 'kemijski-piling', 'mezoterapija']
   };
 
+  // Get the current service key
+  const currentServiceKey = Object.entries(services).find(([_, service]) => service === currentService)?.[0];
+  
+  if (!currentServiceKey) {
+    return [];
+  }
+
   // Get related service IDs for the current service
-  const relatedIds = serviceRelationships[currentService.id] || [];
+  const relatedIds = serviceRelationships[currentServiceKey] || [];
   
   // Find related services
   const relatedServices = allServices
-    .filter(service => relatedIds.includes(service.id))
+    .filter(service => {
+      const serviceKey = Object.entries(services).find(([_, s]) => s === service)?.[0];
+      const isRelated = relatedIds.includes(serviceKey || '');
+      if (currentServiceKey === 'kemijski-piling') {
+        console.log('Checking service:', service.title, 'Key:', serviceKey, 'Is related:', isRelated);
+      }
+      return isRelated;
+    })
     .slice(0, 3);
 
-  // If we don't have enough related services, add random ones
+  // If we don't have enough related services, add some from the remaining services
   if (relatedServices.length < 3) {
     const remainingServices = allServices
-      .filter(service => service.id !== currentService.id && !relatedServices.includes(service))
+      .filter(service => {
+        const serviceKey = Object.entries(services).find(([_, s]) => s === service)?.[0];
+        return serviceKey !== currentServiceKey && 
+               !relatedServices.some(rs => rs.id === service.id);
+      })
       .slice(0, 3 - relatedServices.length);
     
     return [...relatedServices, ...remainingServices];

@@ -1,6 +1,7 @@
 import { Service } from './types';
 
 export const skinBoosters: Service = {
+  id: 'skin-boosters',
   title: 'Skin boosteri',
   description: 'Napredni skin boosteri za hidrataciju i revitalizaciju',
   longDescription: 'Skin boosteri su napredni tretmani koji pružaju duboku hidrataciju i revitalizaciju kože. Ova metoda koristi visokokvalitetne sastojke za dugotrajno poboljšanje kvalitete kože.',

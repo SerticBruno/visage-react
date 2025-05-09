@@ -1,6 +1,7 @@
 import { Service } from './types';
 
 export const bioSculpture: Service = {
+  id: 'bio-sculpture',
   title: 'Bio Sculpture sistemi',
   description: 'Profesionalni Bio Sculpture sistemi za nokte',
   longDescription: 'Bio Sculpture je vrhunski sistem za njegu i ukrašavanje noktiju. Koristimo najkvalitetnije proizvode i tehnike za savršene rezultate.',

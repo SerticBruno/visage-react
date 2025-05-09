@@ -1,6 +1,7 @@
 import { Service } from './types';
 
 export const wrinkleTherapy: Service = {
+  id: 'terapija-bora-lica',
   title: 'Terapija bora lica',
   description: 'Efikasna terapija za smanjenje bora',
   longDescription: 'Terapija bora lica je specijalizirana metoda za smanjenje i prevenciju bora. Koristimo napredne tehnike i proizvode za optimalne rezultate.',

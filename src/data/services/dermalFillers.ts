@@ -1,6 +1,7 @@
 import { Service } from './types';
 
 export const dermalFillers: Service = {
+  id: 'dermalni-fileri',
   title: 'Dermalni fileri',
   description: 'Profesionalni dermalni fileri za volumizaciju',
   longDescription: 'Dermalni fileri su napredna metoda za volumizaciju i obnavljanje kontura lica. Koriste se visokokvalitetni proizvodi koji su sigurni i daju prirodne rezultate.',
