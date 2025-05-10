@@ -99,7 +99,7 @@ const ContactSection = () => {
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Kontaktirajte nas</h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
