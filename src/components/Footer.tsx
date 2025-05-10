@@ -1,99 +1,67 @@
+'use client'
 import Link from 'next/link';
+import Image from 'next/image';
+import { useState } from 'react';
 import { FaFacebook, FaWhatsapp, FaInstagram, FaEnvelope, FaCcVisa, FaCcMastercard, FaPhone } from 'react-icons/fa';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Here you would typically handle the newsletter subscription
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated API call
+      setSubmitStatus('success');
+      setEmail('');
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-gray-800 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Newsletter */}
-          <div className="lg:col-span-2">
-            <h3 className="text-xl font-semibold mb-4">Prijavite se na naš newsletter</h3>
-            <p className="text-gray-300 mb-4">Budite u toku s najnovijim ponudama i akcijama</p>
-            <form className="flex flex-col sm:flex-row gap-2">
-              <input
-                type="email"
-                placeholder="Vaša email adresa"
-                className="flex-1 px-4 py-2 rounded-lg bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-slate-600 border border-gray-700"
-              />
-              <button
-                type="submit"
-                className="px-6 py-2 bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white rounded-lg transition-all duration-300 font-medium transform hover:-translate-y-0.5 hover:shadow-lg cursor-pointer"
-              >
-                Prijavi se
-              </button>
-            </form>
-          </div>
-
-          {/* Contact Information */}
+          {/* Company Info */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Kontakt</h3>
-            <div className="space-y-3">
-              <a 
-                href="mailto:contact@visagestudio.hr"
-                className="flex items-center gap-2 text-gray-300 hover:text-slate-300 transition-colors cursor-pointer"
-              >
-                <FaEnvelope className="text-slate-400" />
-                contact@visagestudio.hr
-              </a>
-              <a 
-                href="https://wa.me/385911105020"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-300 hover:text-slate-300 transition-colors cursor-pointer"
-              >
-                <FaWhatsapp className="text-slate-400" />
-                091 110 50 20
-              </a>
-              <a 
-                href="tel:+385911105020"
-                className="flex items-center gap-2 text-gray-300 hover:text-slate-300 transition-colors cursor-pointer"
-              >
-                <FaPhone className="text-slate-400" />
-                091 110 50 20
-              </a>
-              <p className="text-gray-300">Ulica Stjepana i Antuna Radića 37,</p>
-              <p className="text-gray-300">44 000, Sisak</p>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Brzi linkovi</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/usluge" className="text-gray-300 hover:text-slate-300 transition-colors">
-                  Usluge
-                </Link>
-              </li>
-              <li>
-                <Link href="/katalog" className="text-gray-300 hover:text-slate-300 transition-colors">
-                  Katalog
-                </Link>
-              </li>
-              <li>
-                <Link href="/cjenik" className="text-gray-300 hover:text-slate-300 transition-colors">
-                  Cjenik
-                </Link>
-              </li>
-              <li>
-                <Link href="/o-nama" className="text-gray-300 hover:text-slate-300 transition-colors">
-                  O nama
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Social Media & Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-700">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex space-x-6">
+            <Link href="/" className="inline-block mb-6">
+              <div className="flex items-center gap-3 group">
+                <div className="relative w-12 h-12">
+                  <div className="absolute -inset-1 bg-gray-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <Image
+                      src="/images/LogoV.webp"
+                      alt="VISAGE Studio"
+                      width={40}
+                      height={40}
+                      className="w-10 h-10 relative transform group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold leading-none text-white group-hover:text-gray-200 transition-colors">VISAGE</span>
+                  <span className="text-sm text-gray-400 font-medium group-hover:text-gray-300 transition-colors">Studio</span>
+                </div>
+              </div>
+            </Link>
+            <p className="text-gray-300 mb-6">
+              Certificirani predstavnik za TOSKANI u centru Siska. Pružamo profesionalne usluge estetske medicine i kozmetičkih tretmana.
+            </p>
+            <div className="flex space-x-4">
               <a
                 href="https://facebook.com/visagestudio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-slate-300 transition-colors"
+                className="text-gray-400 hover:text-white transition-colors transform hover:scale-110"
+                aria-label="Facebook"
               >
                 <FaFacebook size={24} />
               </a>
@@ -101,7 +69,8 @@ const Footer = () => {
                 href="https://instagram.com/visagestudio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-slate-300 transition-colors"
+                className="text-gray-400 hover:text-white transition-colors transform hover:scale-110"
+                aria-label="Instagram"
               >
                 <FaInstagram size={24} />
               </a>
@@ -109,21 +78,175 @@ const Footer = () => {
                 href="https://wa.me/385911105020"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-slate-300 transition-colors"
+                className="text-gray-400 hover:text-white transition-colors transform hover:scale-110"
+                aria-label="WhatsApp"
               >
                 <FaWhatsapp size={24} />
               </a>
             </div>
-            <div className="text-center md:text-right">
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Brzi linkovi
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <Link 
+                  href="/usluge" 
+                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                >
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
+                  Usluge
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/katalog" 
+                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                >
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
+                  Katalog
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/cjenik" 
+                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                >
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
+                  Cjenik
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/blog" 
+                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                >
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/o-nama" 
+                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                >
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
+                  O nama
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/kontakt" 
+                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                >
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
+                  Kontakt
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Information */}
+          <div>
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Kontakt
+            </h3>
+            <div className="space-y-4">
+              <a 
+                href="mailto:contact@visagestudio.hr"
+                className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
+              >
+                <div className="bg-gray-800/50 p-2 rounded-lg group-hover:bg-gray-700/50 transition-colors">
+                  <FaEnvelope className="text-slate-400 group-hover:text-slate-300" />
+                </div>
+                <span>contact@visagestudio.hr</span>
+              </a>
+              <a 
+                href="https://wa.me/385911105020"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
+              >
+                <div className="bg-gray-800/50 p-2 rounded-lg group-hover:bg-gray-700/50 transition-colors">
+                  <FaWhatsapp className="text-slate-400 group-hover:text-slate-300" />
+                </div>
+                <span>091 110 50 20</span>
+              </a>
+              <a 
+                href="tel:+385911105020"
+                className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
+              >
+                <div className="bg-gray-800/50 p-2 rounded-lg group-hover:bg-gray-700/50 transition-colors">
+                  <FaPhone className="text-slate-400 group-hover:text-slate-300" />
+                </div>
+                <span>091 110 50 20</span>
+              </a>
+              <div className="space-y-1">
+                <p className="text-gray-300">Ulica Stjepana i Antuna Radića 37,</p>
+                <p className="text-gray-300">44 000, Sisak</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Newsletter
+            </h3>
+            <p className="text-gray-300 mb-6 text-lg">
+              Budite u toku s najnovijim ponudama i akcijama
+            </p>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="flex flex-col gap-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Vaša email adresa"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-slate-600 border border-gray-700 transition-all duration-300 hover:border-gray-600"
+                  required
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full px-6 py-3 bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white rounded-lg transition-all duration-300 font-medium transform hover:-translate-y-0.5 hover:shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                >
+                  {isSubmitting ? (
+                    <span className="animate-pulse">Slanje...</span>
+                  ) : (
+                    <>
+                      Prijavi se
+                      <FaEnvelope className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
+                </button>
+              </div>
+              {submitStatus === 'success' && (
+                <p className="text-green-400 text-sm">Uspješno ste se prijavili na newsletter!</p>
+              )}
+              {submitStatus === 'error' && (
+                <p className="text-red-400 text-sm">Došlo je do greške. Molimo pokušajte ponovno.</p>
+              )}
+            </form>
+          </div>
+        </div>
+
+        {/* Copyright & Payment Methods */}
+        <div className="mt-16 pt-8 border-t border-gray-700">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
               <p className="text-gray-400">© {new Date().getFullYear()} VISAGE Studio. Sva prava pridržana.</p>
-              <div className="flex items-center justify-center md:justify-end gap-2 mt-2">
-                <span className="text-sm text-gray-500">Načini plaćanja:</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm text-gray-400">Gotovina, Kartice</span>
-                  <div className="flex gap-2 ml-2">
-                    <FaCcVisa className="text-gray-400" size={24} />
-                    <FaCcMastercard className="text-gray-400" size={24} />
-                  </div>
+            </div>
+            <div className="flex items-center justify-center md:justify-end gap-3">
+              <span className="text-sm text-gray-500">Načini plaćanja:</span>
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-gray-400">Gotovina, Kartice</span>
+                <div className="flex gap-3">
+                  <FaCcVisa className="text-gray-400 hover:text-white transition-colors transform hover:scale-110" size={24} />
+                  <FaCcMastercard className="text-gray-400 hover:text-white transition-colors transform hover:scale-110" size={24} />
                 </div>
               </div>
             </div>

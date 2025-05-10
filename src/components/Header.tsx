@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from 'react';
 import { services } from '@/data/services';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -203,108 +204,171 @@ export default function Header() {
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div
-        className={`md:hidden fixed top-20 left-0 right-0 bg-white border-t border-gray-100 transition-all duration-300 ease-in-out transform ${
-          isMenuOpen 
-            ? 'translate-y-0 opacity-100 visible' 
-            : '-translate-y-full opacity-0 invisible'
-        }`}
-      >
-        <div className="px-2 pt-2 pb-3 space-y-1">
-          <Link
-            href="/"
-            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
-              isActive('/') ? 'text-gray-900 font-bold' : 'font-medium'
-            }`}
-            onClick={handleMobileLinkClick}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden fixed top-20 left-0 right-0 bg-white border-t border-gray-100 overflow-hidden"
           >
-            Početna
-          </Link>
-          
-          <div className="relative">
-            <button
-              className={`w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 flex items-center justify-between cursor-pointer text-lg ${
-                isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
-              }`}
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
+            <motion.div 
+              className="px-2 pt-2 pb-3 space-y-1"
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ duration: 0.2 }}
             >
-              Usluge
-              {isServicesOpen ? (
-                <FaChevronUp className="w-3 h-3 transition-transform duration-300" />
-              ) : (
-                <FaChevronDown className="w-3 h-3 transition-transform duration-300" />
-              )}
-            </button>
-            
-            {isServicesOpen && (
-              <div className="pl-4 space-y-1">
-                {Object.entries(services).map(([pageName, service]) => (
-                  <Link
-                    key={pageName}
-                    href={`/usluge/${pageName}`}
-                    className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-base ${
-                      isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold' : ''
-                    }`}
-                    onClick={handleMobileLinkClick}
+              <Link
+                href="/"
+                className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+                  isActive('/') ? 'text-gray-900 font-bold' : 'font-medium'
+                }`}
+                onClick={handleMobileLinkClick}
+              >
+                Početna
+              </Link>
+              
+              <div className="relative">
+                <button
+                  className={`w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 flex items-center justify-between cursor-pointer text-lg ${
+                    isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
+                  }`}
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                >
+                  Usluge
+                  <motion.div
+                    animate={{ rotate: isServicesOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    {service.title}
-                  </Link>
-                ))}
+                    <FaChevronDown className="w-3 h-3" />
+                  </motion.div>
+                </button>
+                
+                <AnimatePresence>
+                  {isServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-4 space-y-1">
+                        {Object.entries(services).map(([pageName, service]) => (
+                          <motion.div
+                            key={pageName}
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: -20, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <Link
+                              href={`/usluge/${pageName}`}
+                              className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-base ${
+                                isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold' : ''
+                              }`}
+                              onClick={handleMobileLinkClick}
+                            >
+                              {service.title}
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            )}
-          </div>
 
-          <Link
-            href="/katalog"
-            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
-              isActive('/katalog') ? 'text-gray-900 font-bold' : 'font-medium'
-            }`}
-            onClick={handleMobileLinkClick}
-          >
-            Katalog
-          </Link>
-          
-          <Link
-            href="/cjenik"
-            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
-              isActive('/cjenik') ? 'text-gray-900 font-bold' : 'font-medium'
-            }`}
-            onClick={handleMobileLinkClick}
-          >
-            Cjenik
-          </Link>
-          
-          <Link
-            href="/blog"
-            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
-              isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
-            }`}
-            onClick={handleMobileLinkClick}
-          >
-            Blog
-          </Link>
-          
-          <Link
-            href="/o-nama"
-            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
-              isActive('/o-nama') ? 'text-gray-900 font-bold' : 'font-medium'
-            }`}
-            onClick={handleMobileLinkClick}
-          >
-            O nama
-          </Link>
-          
-          <Link
-            href="/kontakt"
-            className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
-              isActive('/kontakt') ? 'text-gray-900 font-bold' : 'font-medium'
-            }`}
-            onClick={handleMobileLinkClick}
-          >
-            Kontakt
-          </Link>
-        </div>
-      </div>
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Link
+                  href="/katalog"
+                  className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+                    isActive('/katalog') ? 'text-gray-900 font-bold' : 'font-medium'
+                  }`}
+                  onClick={handleMobileLinkClick}
+                >
+                  Katalog
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                transition={{ duration: 0.2, delay: 0.1 }}
+              >
+                <Link
+                  href="/cjenik"
+                  className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+                    isActive('/cjenik') ? 'text-gray-900 font-bold' : 'font-medium'
+                  }`}
+                  onClick={handleMobileLinkClick}
+                >
+                  Cjenik
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                transition={{ duration: 0.2, delay: 0.2 }}
+              >
+                <Link
+                  href="/blog"
+                  className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+                    isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
+                  }`}
+                  onClick={handleMobileLinkClick}
+                >
+                  Blog
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                transition={{ duration: 0.2, delay: 0.3 }}
+              >
+                <Link
+                  href="/o-nama"
+                  className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+                    isActive('/o-nama') ? 'text-gray-900 font-bold' : 'font-medium'
+                  }`}
+                  onClick={handleMobileLinkClick}
+                >
+                  O nama
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                transition={{ duration: 0.2, delay: 0.4 }}
+              >
+                <Link
+                  href="/kontakt"
+                  className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+                    isActive('/kontakt') ? 'text-gray-900 font-bold' : 'font-medium'
+                  }`}
+                  onClick={handleMobileLinkClick}
+                >
+                  Kontakt
+                </Link>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 } 

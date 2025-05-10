@@ -158,70 +158,43 @@ export default function PricingPage() {
           <div className="flex-1" ref={contentRef}>
             {/* Content View */}
             <div className={`transition-opacity duration-300 ${isScrolling || isFiltering ? 'opacity-25' : 'opacity-100'}`}>
-              <div className="overflow-hidden rounded-lg border border-gray-200">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Usluga
-                      </th>
-                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Opis
-                      </th>
-                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Cijena
-                      </th>
-                      <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Akcija
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {Object.entries(groupedItems).map(([category, items]) => (
-                      <React.Fragment key={`category-group-${category}`}>
-                        <tr className="bg-gray-100">
-                          <td colSpan={4} className="px-6 py-3">
-                            <h3 className="text-lg font-semibold text-gray-900">{category}</h3>
-                          </td>
-                        </tr>
-                        {items.map((item) => (
-                          <tr key={item.id} className="hover:bg-gray-50">
-                            <td className="px-6 py-4 whitespace-nowrap">
-                              <div className="flex items-center">
-                                <div className="text-sm font-medium text-gray-900">
-                                  {item.title}
-                                  {item.isPackage && (
-                                    <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
-                                      <FaBox className="mr-1" />
-                                      Paket
-                                    </span>
-                                  )}
-                                  {item.isPopular && (
-                                    <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
-                                      <FaStar className="mr-1" />
-                                      Popularno
-                                    </span>
-                                  )}
-                                </div>
+              <div className="space-y-6">
+                {Object.entries(groupedItems).map(([category, items]) => (
+                  <div key={`category-group-${category}`} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div className="bg-gray-50 px-6 py-3 border-b border-gray-200">
+                      <h3 className="text-lg font-semibold text-gray-900">{category}</h3>
+                    </div>
+                    <div className="divide-y divide-gray-200">
+                      {items.map((item) => (
+                        <div key={item.id} className="p-6 hover:bg-gray-50 transition-colors duration-150">
+                          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                            <div className="flex-1">
+                              <div className="flex flex-wrap items-center gap-2 mb-2">
+                                <h4 className="text-base font-medium text-gray-900">{item.title}</h4>
+                                {item.isPackage && (
+                                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                                    <FaBox className="mr-1" />
+                                    Paket
+                                  </span>
+                                )}
+                                {item.isPopular && (
+                                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
+                                    <FaStar className="mr-1" />
+                                    Popularno
+                                  </span>
+                                )}
                               </div>
-                            </td>
-                            <td className="px-6 py-4">
-                              <div className="text-sm text-gray-600">{item.description}</div>
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
-                              <div className="text-sm font-medium text-gray-900">{item.price}</div>
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                              <button className="text-indigo-600 hover:text-indigo-900">
-                                Rezerviraj
-                              </button>
-                            </td>
-                          </tr>
-                        ))}
-                      </React.Fragment>
-                    ))}
-                  </tbody>
-                </table>
+                              <p className="text-sm text-gray-600">{item.description}</p>
+                            </div>
+                            <div className="flex items-center justify-between sm:justify-end gap-4">
+                              <div className="text-base font-medium text-gray-900">{item.price}</div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
