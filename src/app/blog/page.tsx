@@ -25,6 +25,8 @@ export default function BlogPage() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
   const postsRef = useRef<HTMLDivElement>(null);
+  const categoriesRef = useRef<HTMLDivElement>(null);
+  const [showGradient, setShowGradient] = useState(false);
 
   const filteredPosts = blogPosts
     .filter(post => {
@@ -136,6 +138,19 @@ export default function BlogPage() {
     });
   };
 
+  const handleCategoriesScroll = () => {
+    const scrollTop = categoriesRef.current?.scrollTop || 0;
+    const scrollHeight = categoriesRef.current?.scrollHeight || 0;
+    const clientHeight = categoriesRef.current?.clientHeight || 0;
+    const scrollThreshold = scrollHeight - clientHeight - 100;
+
+    if (scrollTop >= scrollThreshold) {
+      setShowGradient(true);
+    } else {
+      setShowGradient(false);
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <HeroSection
@@ -178,100 +193,115 @@ export default function BlogPage() {
                 </div>
               </div>
 
-              {/* Sort Options */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Sortiraj po
-                </label>
-                <div className="space-y-2">
-                  <button
-                    onClick={() => handleSort('newest')}
-                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
-                      sortBy === 'newest' 
-                        ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
-                        : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
-                    }`}
-                  >
-                    <FaSortAmountDown className="w-4 h-4" />
-                    Najnovije
-                  </button>
-                  <button
-                    onClick={() => handleSort('oldest')}
-                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
-                      sortBy === 'oldest' 
-                        ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
-                        : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
-                    }`}
-                  >
-                    <FaSortAmountUp className="w-4 h-4" />
-                    Najstarije
-                  </button>
-                  <button
-                    onClick={() => handleSort('title-asc')}
-                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
-                      sortBy === 'title-asc' 
-                        ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
-                        : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
-                    }`}
-                  >
-                    <FaSort className="w-4 h-4" />
-                    Naslov A-Ž
-                  </button>
-                  <button
-                    onClick={() => handleSort('title-desc')}
-                    className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
-                      sortBy === 'title-desc' 
-                        ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
-                        : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
-                    }`}
-                  >
-                    <FaSort className="w-4 h-4 rotate-180" />
-                    Naslov Ž-A
-                  </button>
-                </div>
-              </div>
-
-              {/* Authors */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Autori
-                </label>
-                <div className="space-y-2">
-                  {allAuthors.map((author) => (
-                    <label key={author} className="flex items-center space-x-2 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={selectedAuthors.includes(author)}
-                        onChange={() => toggleAuthor(author)}
-                        className="h-4 w-4 text-slate-600 focus:ring-slate-500 border-slate-300 rounded cursor-pointer"
-                      />
-                      <span className="text-sm text-slate-700 cursor-pointer">{author}</span>
+              {/* Scrollable Filters Container */}
+              <div className="relative h-[300px]">
+                <div 
+                  ref={categoriesRef}
+                  onScroll={handleCategoriesScroll}
+                  className="absolute inset-0 overflow-y-auto pr-2 space-y-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+                >
+                  {/* Sort Options */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      Sortiraj po
                     </label>
-                  ))}
-                </div>
-              </div>
+                    <div className="space-y-2">
+                      <button
+                        onClick={() => handleSort('newest')}
+                        className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
+                          sortBy === 'newest' 
+                            ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                            : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
+                        }`}
+                      >
+                        <FaSortAmountDown className="w-4 h-4" />
+                        Najnovije
+                      </button>
+                      <button
+                        onClick={() => handleSort('oldest')}
+                        className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
+                          sortBy === 'oldest' 
+                            ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                            : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
+                        }`}
+                      >
+                        <FaSortAmountUp className="w-4 h-4" />
+                        Najstarije
+                      </button>
+                      <button
+                        onClick={() => handleSort('title-asc')}
+                        className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
+                          sortBy === 'title-asc' 
+                            ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                            : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
+                        }`}
+                      >
+                        <FaSort className="w-4 h-4" />
+                        Naslov A-Ž
+                      </button>
+                      <button
+                        onClick={() => handleSort('title-desc')}
+                        className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
+                          sortBy === 'title-desc' 
+                            ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                            : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
+                        }`}
+                      >
+                        <FaSort className="w-4 h-4 rotate-180" />
+                        Naslov Ž-A
+                      </button>
+                    </div>
+                  </div>
 
-              {/* Tags */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Kategorije
-                </label>
-                <div className="space-y-2">
-                  {allTags.map((tag) => (
-                    <label key={tag} className="flex items-center space-x-2 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={selectedTags.includes(tag)}
-                        onChange={() => toggleTag(tag)}
-                        className="h-4 w-4 text-slate-600 focus:ring-slate-500 border-slate-300 rounded cursor-pointer"
-                      />
-                      <span className="text-sm text-slate-700 cursor-pointer">{tag}</span>
+                  {/* Authors */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      Autori
                     </label>
-                  ))}
+                    <div className="space-y-2">
+                      {allAuthors.map((author) => (
+                        <label key={author} className="flex items-center space-x-2 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={selectedAuthors.includes(author)}
+                            onChange={() => toggleAuthor(author)}
+                            className="h-4 w-4 text-slate-600 focus:ring-slate-500 border-slate-300 rounded cursor-pointer"
+                          />
+                          <span className="text-sm text-slate-700 cursor-pointer">{author}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Tags */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      Kategorije
+                    </label>
+                    <div className="space-y-2">
+                      {allTags.map((tag) => (
+                        <label key={tag} className="flex items-center space-x-2 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={selectedTags.includes(tag)}
+                            onChange={() => toggleTag(tag)}
+                            className="h-4 w-4 text-slate-600 focus:ring-slate-500 border-slate-300 rounded cursor-pointer"
+                          />
+                          <span className="text-sm text-slate-700 cursor-pointer">{tag}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
                 </div>
+                {/* Gradient overlay to indicate scrollable content */}
+                <div 
+                  className={`absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent pointer-events-none transition-opacity duration-200 ${
+                    showGradient ? 'opacity-100' : 'opacity-0'
+                  }`} 
+                />
               </div>
 
-              {/* Results Count */}
+              {/* Results Count - Moved to bottom */}
               <div className="mt-6 pt-6 border-t border-slate-200">
                 <p className="text-sm text-slate-600">
                   Pronađeno članaka: <span className="font-semibold">{filteredPosts.length}</span>
