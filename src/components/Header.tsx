@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { services } from '@/data/services';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
@@ -52,9 +53,23 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           <Link 
             href="/" 
-            className="text-3xl font-bold text-gray-800 hover:text-gray-900 transition-colors duration-300 transform hover:scale-105"
+            className="group flex items-center gap-3 text-gray-800 hover:text-gray-900 transition-all duration-300"
           >
-            VISAGE
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gray-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <Image
+                src="/images/LogoV.webp"
+                alt="VISAGE Studio"
+                width={40}
+                height={40}
+                className="h-10 w-auto relative transform group-hover:scale-105 transition-transform duration-300"
+                priority
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold leading-none transform group-hover:translate-x-0.5 transition-transform duration-300">VISAGE</span>
+              <span className="text-sm text-gray-600 font-medium transform group-hover:translate-x-0.5 transition-transform duration-300">Studio</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
