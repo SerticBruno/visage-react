@@ -93,7 +93,7 @@ export default async function BlogPostPage(
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 pt-12">
         <div className="max-w-6xl mx-auto">
           <div className="relative aspect-[21/9] w-full rounded-2xl overflow-hidden mb-8 shadow-xl">
             {post.image && (
@@ -147,7 +147,7 @@ export default async function BlogPostPage(
       </div>
 
       {/* Content Section */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 pb-12">
         <div className="max-w-4xl mx-auto">
           <article className="bg-gradient-to-b from-white to-slate-50 rounded-2xl shadow-lg p-8 border border-slate-100">
             <div className="prose prose-lg max-w-none">
