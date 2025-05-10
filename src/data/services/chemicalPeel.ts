@@ -52,7 +52,7 @@ export const chemicalPeel: Service = {
       id: 'mjere-opreza', 
       label: 'Mjere opreza', 
       icon: 'FaRegFile',
-      image: '/images/services/kemijski-piling/toskani-woman.webp'
+      image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp'
     },
     { 
       id: 'cijena', 
