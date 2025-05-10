@@ -6,11 +6,18 @@ import CTASection from '@/components/sections/CTASection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import PopularItemsSection from '@/components/sections/PopularItemsSection';
 import FAQSection from '@/components/sections/FAQSection';
+import FeaturedBlogsSection from '@/components/sections/FeaturedBlogsSection';
 import { popularServices } from '@/data/popularServices';
 import { popularProducts } from '@/data/popularProducts';
+import { blogPosts } from '@/data/posts';
 import ServiceSlider from '@/components/ui/ServiceSlider';
 
 export default function Home() {
+  // Get the 3 most recent blog posts
+  const featuredPosts = blogPosts
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
+
   return (
     <main>
       <HeroSection
@@ -38,6 +45,7 @@ export default function Home() {
       />
       <ServiceSlider />
       <CTASection />
+      <FeaturedBlogsSection posts={featuredPosts} />
       <FAQSection />
       <PartnersSlider />
       <ContactSection />

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import HeroSection from '@/components/sections/HeroSection';
 import { FaSearch, FaSort, FaSortAmountDown, FaSortAmountUp } from 'react-icons/fa';
+import BlogPostCard from '@/components/ui/BlogPostCard';
 
 const POSTS_PER_PAGE = 6;
 
@@ -280,41 +281,13 @@ export default function BlogPage() {
           </div>
 
           {/* Posts Grid */}
-          <div className="flex-1" ref={postsRef}>
-            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-300 ${isScrolling || isFiltering ? 'opacity-25' : 'opacity-100'}`}>
+          <div className="flex-1">
+            <div ref={postsRef} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-300 ${isScrolling || isFiltering ? 'opacity-25' : 'opacity-100'}`}>
               {currentPosts.map((post) => (
-                <article key={post.id} className="bg-gradient-to-b from-white to-slate-50 rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 cursor-pointer">
-                  <Link href={`/blog/${post.slug}`} className="block">
-                    <div className="relative h-48 w-full bg-slate-50">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-300 hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        {post.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="bg-slate-100 text-slate-600 px-2 py-1 rounded-full text-sm hover:bg-slate-200 transition-colors"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <h2 className="text-xl font-semibold mb-2 text-slate-900 hover:text-slate-700 transition-colors">
-                        {post.title}
-                      </h2>
-                      <p className="text-slate-600 mb-4 line-clamp-3">{post.excerpt}</p>
-                      <div className="flex items-center justify-between text-sm text-slate-500">
-                        <span>{post.author}</span>
-                        <time>{formatDate(post.date)}</time>
-                      </div>
-                    </div>
-                  </Link>
-                </article>
+                <BlogPostCard 
+                  key={post.id} 
+                  post={post}
+                />
               ))}
             </div>
 
