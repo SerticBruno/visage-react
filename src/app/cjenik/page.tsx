@@ -5,6 +5,7 @@ import { pricingData, pricingCategories, PricingItem } from '@/data/pricing';
 import { FaSearch, FaStar, FaBox } from 'react-icons/fa';
 import React from 'react';
 import HeroSection from '@/components/sections/HeroSection';
+import ContactSection from '@/components/sections/ContactSection';
 
 export default function PricingPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -246,6 +247,7 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
+      <ContactSection/>
     </main>
   );
 } 

@@ -9,6 +9,7 @@ import { TextContent } from '@/data/types';
 import InteractiveLink from '@/components/blog/InteractiveLink';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import ContactSection from '@/components/sections/ContactSection';
 
 type SegmentParams = {
   slug: string;
