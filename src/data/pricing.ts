@@ -14,15 +14,15 @@ export interface PricingItem {
 export const pricingCategories = [
   "Konzultacije",
   "Beauty Tretmani",
-  "Brow & Lash",
-  "Bio Sculpture",
+  "Bio Sculpture Proizvodi",
+  "Bio Sculpture Sistemi",
   "Botox",
   "Dermalni Fileri",
   "Hijaluronidaza",
   "Kemijski Piling",
+  "Mesosynergy",
   "Mezoterapija Dermapenom 4",
   "Mezoterapija Mesoject Gunom",
-  "Mesosynergy",
   "Plasmage",
   "PRP",
   "RRS",
@@ -85,8 +85,6 @@ export const pricingData: PricingItem[] = [
     price: "200 EUR",
     category: "Beauty Tretmani"
   },
-
-  // LED Terapija
   {
     id: "led-addon",
     title: "Dermalux LED Terapija Dodatak",
@@ -130,8 +128,6 @@ export const pricingData: PricingItem[] = [
     isPackage: true,
     packageDetails: "12 tretmana"
   },
-
-  // Brow & Lash
   {
     id: "brow-lift",
     title: "BROW LIFT",
@@ -166,6 +162,129 @@ export const pricingData: PricingItem[] = [
     description: "Profesionalno bojanje obrva i trepavica",
     price: "7 EUR",
     category: "Beauty Tretmani"
+  },
+
+  // Bio Sculpture Proizvodi
+  {
+    id: "bio-sculpture-almond-oil",
+    title: "ETHOS ALMOND OIL",
+    description: "14 ml",
+    price: "13 EUR",
+    category: "Bio Sculpture Proizvodi"
+  },
+  {
+    id: "bio-sculpture-rosehip-oil",
+    title: "ETHOS ROSEHIP CUTICLE OIL",
+    description: "14 ml",
+    price: "13 EUR",
+    category: "Bio Sculpture Proizvodi"
+  },
+  {
+    id: "bio-sculpture-blackcurrent",
+    title: "ETHOS BLACKCURRENT",
+    description: "14 ml",
+    price: "13 EUR",
+    category: "Bio Sculpture Proizvodi"
+  },
+  {
+    id: "bio-sculpture-jasmine-oil",
+    title: "ETHOS JASMINE CUTICLE OIL",
+    description: "14 ml",
+    price: "13 EUR",
+    category: "Bio Sculpture Proizvodi"
+  },
+  {
+    id: "bio-sculpture-refill",
+    title: "REFILL",
+    description: "1 ml",
+    price: "1 EUR",
+    category: "Bio Sculpture Proizvodi"
+  },
+  {
+    id: "bio-sculpture-raspa",
+    title: "RAŠPA ORLIT EXTREME",
+    description: "100/180",
+    price: "2 EUR",
+    category: "Bio Sculpture Proizvodi"
+  },
+  {
+    id: "bio-sculpture-apricot-scrub",
+    title: "APRICOT KERNEL SCRUB",
+    description: "75 ml",
+    price: "15 EUR",
+    category: "Bio Sculpture Proizvodi"
+  },
+  {
+    id: "bio-sculpture-heel-balm",
+    title: "HEEL BALM",
+    description: "75 ml",
+    price: "15 EUR",
+    category: "Bio Sculpture Proizvodi"
+  },
+  {
+    id: "bio-sculpture-mint-mask",
+    title: "MINT MASK",
+    description: "75 ml",
+    price: "15 EUR",
+    category: "Bio Sculpture Proizvodi"
+  },
+
+  // Bio Sculpture Sistemi
+  {
+    id: "bio-sculpture-evo2-gel-lak-s",
+    title: "EVO 2 GEL LAK S",
+    description: "Comby manikura jednobojni trajni lak kratkih noktiju, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
+    price: "25 EUR",
+    category: "Bio Sculpture Sistemi"
+  },
+  {
+    id: "bio-sculpture-evo2-gel-lak-l",
+    title: "EVO 2 GEL LAK L",
+    description: "Comby manikura jednobojni trajni lak dugih noktiju, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
+    price: "27 EUR",
+    category: "Bio Sculpture Sistemi"
+  },
+  {
+    id: "bio-sculpture-evo2-feet",
+    title: "EVO 2 FEET",
+    description: "Comby manikura, trajni lak na nogama i njegu s ethos bademovim uljem i kremom za pete",
+    price: "25 EUR",
+    category: "Bio Sculpture Sistemi"
+  },
+  {
+    id: "bio-sculpture-evo2-manikura",
+    title: "EVO 2 MANIKURA",
+    description: "Comby manikura, ethos baza, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
+    price: "10 EUR",
+    category: "Bio Sculpture Sistemi"
+  },
+  {
+    id: "bio-sculpture-removal",
+    title: "SKIDANJE TRAJNOG LAKA",
+    description: "Naplaćuje se samo skidanje tuđeg rada",
+    price: "3 EUR",
+    category: "Bio Sculpture Sistemi"
+  },
+  {
+    id: "bio-sculpture-repair",
+    title: "POPRAVAK 1 NOKTA",
+    description: "Popravak jednog nokta",
+    price: "3 EUR",
+    category: "Bio Sculpture Sistemi"
+  },
+  {
+    id: "bio-sculpture-extension",
+    title: "PRODULJENJE 1 NOKTA",
+    description: "Produljenje jednog nokta",
+    price: "4 EUR",
+    category: "Bio Sculpture Sistemi"
+  },
+  {
+    id: "bio-sculpture-nail-art",
+    title: "NAIL ART",
+    description: "Nail art dekoracija",
+    price: "2 EUR",
+    category: "Bio Sculpture Sistemi"
   },
 
   // Botox
@@ -266,104 +385,20 @@ export const pricingData: PricingItem[] = [
     packageDetails: "5 tretmana"
   },
 
-  // Mezoterapija Mesoject Gunom
+  // Mesosynergy
   {
-    id: "mesoject-standard",
+    id: "mesosynergy-standard",
     title: "Standard",
-    description: "1 mezoterapija lica",
-    price: "95 EUR",
-    category: "Mezoterapija Mesoject Gunom"
+    description: "1 kemijski piling Dusomal, mezoterapija lica, TKN HA3 i skin architect maska",
+    price: "380 EUR",
+    category: "Mesosynergy"
   },
   {
-    id: "mesoject-standard-package",
-    title: "STANDARD PAKET",
-    description: "4 mezoterapije lica i Hydraboost usana",
-    price: "340 EUR",
-    category: "Mezoterapija Mesoject Gunom",
-    isPackage: true,
-    packageDetails: "4 tretmana"
-  },
-  {
-    id: "mesoject-premium",
+    id: "mesosynergy-premium",
     title: "Premium",
-    description: "1 mezoterapija lica, vrata i dekoltea",
-    price: "130 EUR",
-    category: "Mezoterapija Mesoject Gunom"
-  },
-  {
-    id: "mesoject-duosomal-standard",
-    title: "Duosomal Standard",
-    description: "1 kemijski piling Duosomal, mezoterapiju lica i skin architect masku",
-    price: "130 EUR",
-    category: "Mezoterapija Mesoject Gunom"
-  },
-  {
-    id: "mesoject-duosomal-standard-package",
-    title: "Duosomal Standard Paket",
-    description: "5 kemijski piling Duosomal, mezoterapiju lica i skin architect masku",
-    price: "520 EUR",
-    category: "Mezoterapija Mesoject Gunom",
-    isPackage: true,
-    packageDetails: "5 tretmana"
-  },
-  {
-    id: "mesoject-brow-package",
-    title: "BROW PAKET",
-    description: "5 mezoterapija obrva",
-    price: "90 EUR",
-    category: "Mezoterapija Mesoject Gunom",
-    isPackage: true,
-    packageDetails: "5 tretmana"
-  },
-  {
-    id: "mesoject-hair-s",
-    title: "Hair S",
-    description: "1 mezoterapija male zone vlasišta",
-    price: "45 EUR",
-    category: "Mezoterapija Mesoject Gunom"
-  },
-  {
-    id: "mesoject-hair-s-standard",
-    title: "Hair S - Standard Paket",
-    description: "5 mezoterapija male zone vlasišta",
-    price: "200 EUR",
-    category: "Mezoterapija Mesoject Gunom",
-    isPackage: true,
-    packageDetails: "5 tretmana"
-  },
-  {
-    id: "mesoject-hair-s-premium",
-    title: "Hair S - Premium Paket",
-    description: "10 mezoterapija male zone vlasišta",
-    price: "360 EUR",
-    category: "Mezoterapija Mesoject Gunom",
-    isPackage: true,
-    packageDetails: "10 tretmana"
-  },
-  {
-    id: "mesoject-hair-l",
-    title: "Hair L",
-    description: "1 mezoterapija velike zone vlasišta",
-    price: "75 EUR",
-    category: "Mezoterapija Mesoject Gunom"
-  },
-  {
-    id: "mesoject-hair-l-standard",
-    title: "Hair L - Standard Paket",
-    description: "5 mezoterapija velike zone vlasišta",
-    price: "335 EUR",
-    category: "Mezoterapija Mesoject Gunom",
-    isPackage: true,
-    packageDetails: "5 tretmana"
-  },
-  {
-    id: "mesoject-hair-l-premium",
-    title: "Hair L - Premium Paket",
-    description: "10 mezoterapija velike zone vlasišta",
-    price: "600 EUR",
-    category: "Mezoterapija Mesoject Gunom",
-    isPackage: true,
-    packageDetails: "10 tretmana"
+    description: "2 kemijski piling Dusomal, mezoterapija lica, TKN HA3 i skin architect maska",
+    price: "640 EUR",
+    category: "Mesosynergy"
   },
 
   // Mezoterapija Dermapenom 4
@@ -493,6 +528,106 @@ export const pricingData: PricingItem[] = [
     packageDetails: "4 tretmana"
   },
 
+  // Mezoterapija Mesoject Gunom
+  {
+    id: "mesoject-standard",
+    title: "Standard",
+    description: "1 mezoterapija lica",
+    price: "95 EUR",
+    category: "Mezoterapija Mesoject Gunom"
+  },
+  {
+    id: "mesoject-standard-package",
+    title: "STANDARD PAKET",
+    description: "4 mezoterapije lica i Hydraboost usana",
+    price: "340 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "4 tretmana"
+  },
+  {
+    id: "mesoject-premium",
+    title: "Premium",
+    description: "1 mezoterapija lica, vrata i dekoltea",
+    price: "130 EUR",
+    category: "Mezoterapija Mesoject Gunom"
+  },
+  {
+    id: "mesoject-duosomal-standard",
+    title: "Duosomal Standard",
+    description: "1 kemijski piling Duosomal, mezoterapiju lica i skin architect masku",
+    price: "130 EUR",
+    category: "Mezoterapija Mesoject Gunom"
+  },
+  {
+    id: "mesoject-duosomal-standard-package",
+    title: "Duosomal Standard Paket",
+    description: "5 kemijski piling Duosomal, mezoterapiju lica i skin architect masku",
+    price: "520 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "5 tretmana"
+  },
+  {
+    id: "mesoject-brow-package",
+    title: "BROW PAKET",
+    description: "5 mezoterapija obrva",
+    price: "90 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "5 tretmana"
+  },
+  {
+    id: "mesoject-hair-s",
+    title: "Hair S",
+    description: "1 mezoterapija male zone vlasišta",
+    price: "45 EUR",
+    category: "Mezoterapija Mesoject Gunom"
+  },
+  {
+    id: "mesoject-hair-s-standard",
+    title: "Hair S - Standard Paket",
+    description: "5 mezoterapija male zone vlasišta",
+    price: "200 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "5 tretmana"
+  },
+  {
+    id: "mesoject-hair-s-premium",
+    title: "Hair S - Premium Paket",
+    description: "10 mezoterapija male zone vlasišta",
+    price: "360 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "10 tretmana"
+  },
+  {
+    id: "mesoject-hair-l",
+    title: "Hair L",
+    description: "1 mezoterapija velike zone vlasišta",
+    price: "75 EUR",
+    category: "Mezoterapija Mesoject Gunom"
+  },
+  {
+    id: "mesoject-hair-l-standard",
+    title: "Hair L - Standard Paket",
+    description: "5 mezoterapija velike zone vlasišta",
+    price: "335 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "5 tretmana"
+  },
+  {
+    id: "mesoject-hair-l-premium",
+    title: "Hair L - Premium Paket",
+    description: "10 mezoterapija velike zone vlasišta",
+    price: "600 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "10 tretmana"
+  },
+
   // Plasmage
   {
     id: "plasmage-eyes-standard",
@@ -535,6 +670,42 @@ export const pricingData: PricingItem[] = [
     description: "Terapija velikog ožiljka plasmageom",
     price: "90 EUR",
     category: "Plasmage"
+  },
+
+  // PRP
+  {
+    id: "prp-single",
+    title: "PRP",
+    description: "1 PRP tretman (4 ml)",
+    price: "265 EUR",
+    category: "PRP"
+  },
+  {
+    id: "prp-ideal",
+    title: "PRP IDEAL",
+    description: "2 PRP tretmana",
+    price: "475 EUR",
+    category: "PRP",
+    isPackage: true,
+    packageDetails: "2 tretmana"
+  },
+  {
+    id: "prp-superior",
+    title: "PRP SUPERIOR",
+    description: "3 PRP tretmana",
+    price: "675 EUR",
+    category: "PRP",
+    isPackage: true,
+    packageDetails: "3 tretmana"
+  },
+  {
+    id: "prp-classic",
+    title: "PRP CLASSIC",
+    description: "4 PRP tretmana",
+    price: "845 EUR",
+    category: "PRP",
+    isPackage: true,
+    packageDetails: "4 tretmana"
   },
 
   // RRS
@@ -667,163 +838,6 @@ export const pricingData: PricingItem[] = [
     category: "Skin Booster",
     isPackage: true,
     packageDetails: "2 tretmana"
-  },
-
-  // PRP
-  {
-    id: "prp-single",
-    title: "PRP",
-    description: "1 PRP tretman (4 ml)",
-    price: "265 EUR",
-    category: "PRP"
-  },
-  {
-    id: "prp-ideal",
-    title: "PRP IDEAL",
-    description: "2 PRP tretmana",
-    price: "475 EUR",
-    category: "PRP",
-    isPackage: true,
-    packageDetails: "2 tretmana"
-  },
-  {
-    id: "prp-superior",
-    title: "PRP SUPERIOR",
-    description: "3 PRP tretmana",
-    price: "675 EUR",
-    category: "PRP",
-    isPackage: true,
-    packageDetails: "3 tretmana"
-  },
-  {
-    id: "prp-classic",
-    title: "PRP CLASSIC",
-    description: "4 PRP tretmana",
-    price: "845 EUR",
-    category: "PRP",
-    isPackage: true,
-    packageDetails: "4 tretmana"
-  },
-
-  // Bio Sculpture
-  {
-    id: "bio-sculpture-evo2-gel-lak-s",
-    title: "EVO 2 GEL LAK S",
-    description: "Comby manikura jednobojni trajni lak kratkih noktiju, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
-    price: "25 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-evo2-gel-lak-l",
-    title: "EVO 2 GEL LAK L",
-    description: "Comby manikura jednobojni trajni lak dugih noktiju, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
-    price: "27 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-evo2-feet",
-    title: "EVO 2 FEET",
-    description: "Comby manikura, trajni lak na nogama i njegu s ethos bademovim uljem i kremom za pete",
-    price: "25 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-evo2-manikura",
-    title: "EVO 2 MANIKURA",
-    description: "Comby manikura, ethos baza, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
-    price: "10 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-removal",
-    title: "SKIDANJE TRAJNOG LAKA",
-    description: "Naplaćuje se samo skidanje tuđeg rada",
-    price: "3 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-repair",
-    title: "POPRAVAK 1 NOKTA",
-    description: "Popravak jednog nokta",
-    price: "3 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-extension",
-    title: "PRODULJENJE 1 NOKTA",
-    description: "Produljenje jednog nokta",
-    price: "4 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-nail-art",
-    title: "NAIL ART",
-    description: "Nail art dekoracija",
-    price: "2 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-almond-oil",
-    title: "ETHOS ALMOND OIL",
-    description: "14 ml",
-    price: "13 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-rosehip-oil",
-    title: "ETHOS ROSEHIP CUTICLE OIL",
-    description: "14 ml",
-    price: "13 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-blackcurrent",
-    title: "ETHOS BLACKCURRENT",
-    description: "14 ml",
-    price: "13 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-jasmine-oil",
-    title: "ETHOS JASMINE CUTICLE OIL",
-    description: "14 ml",
-    price: "13 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-refill",
-    title: "REFILL",
-    description: "1 ml",
-    price: "1 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-raspa",
-    title: "RAŠPA ORLIT EXTREME",
-    description: "100/180",
-    price: "2 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-apricot-scrub",
-    title: "APRICOT KERNEL SCRUB",
-    description: "75 ml",
-    price: "15 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-heel-balm",
-    title: "HEEL BALM",
-    description: "75 ml",
-    price: "15 EUR",
-    category: "Bio Sculpture"
-  },
-  {
-    id: "bio-sculpture-mint-mask",
-    title: "MINT MASK",
-    description: "75 ml",
-    price: "15 EUR",
-    category: "Bio Sculpture"
   },
 
   // TOSKANI Proizvodi
@@ -1029,21 +1043,5 @@ export const pricingData: PricingItem[] = [
     description: "15 ml",
     price: "55 EUR",
     category: "TOSKANI Proizvodi"
-  },
-
-  // Mesosynergy
-  {
-    id: "mesosynergy-standard",
-    title: "Standard",
-    description: "1 kemijski piling Dusomal, mezoterapija lica, TKN HA3 i skin architect maska",
-    price: "380 EUR",
-    category: "Mesosynergy"
-  },
-  {
-    id: "mesosynergy-premium",
-    title: "Premium",
-    description: "2 kemijski piling Dusomal, mezoterapija lica, TKN HA3 i skin architect maska",
-    price: "640 EUR",
-    category: "Mesosynergy"
   }
 ]; 
