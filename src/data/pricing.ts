@@ -43,14 +43,14 @@ export const pricingData: PricingItem[] = [
   // Beauty Tretmani
   {
     id: "dermaplaning",
-    title: "DERMAPLANING",
+    title: "Dermaplaning",
     description: "Čišćenje lica, dermaplaning, umirujuća maska",
     price: "70 EUR",
     category: "Beauty Tretmani"
   },
   {
     id: "facial-massage",
-    title: "MASAŽA LICA",
+    title: "Masaža Lica",
     description: "Trajanje 30min",
     price: "20 EUR",
     category: "Beauty Tretmani",
@@ -58,21 +58,21 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "firming-peptide-facial",
-    title: "FIRMING PEPTIDE FACIAL",
+    title: "Firming Peptide Facial",
     description: "Čišćenje lica, maska, serum, krema, spf",
     price: "60 EUR",
     category: "Beauty Tretmani"
   },
   {
     id: "marshmallow-facial",
-    title: "MARSHMALLOW FACIAL",
+    title: "Marshmallow Facial",
     description: "Čišćenje lica, maska, serum, krema, spf",
     price: "60 EUR",
     category: "Beauty Tretmani"
   },
   {
     id: "signature-dermaplaning",
-    title: "SIGNATURE DERMAPLANING FACIAL",
+    title: "Signature Dermaplaning Facial",
     description: "Čišćenje lica, dermaplaning, enzimski piling, Marshmallow Whip Hydrating maska, serum, krema, spf",
     price: "100 EUR",
     category: "Beauty Tretmani",
@@ -80,7 +80,7 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "beyond-botox-facial",
-    title: "BEYOND BOTOX FACIAL",
+    title: "Beyond Botox Facial",
     description: "Čišćenje lica, dermaplaning, kemijski piling, Firming peptide maska, okoloočna njega, serum, krema, spf",
     price: "200 EUR",
     category: "Beauty Tretmani"
@@ -130,35 +130,35 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "brow-lift",
-    title: "BROW LIFT",
+    title: "Brow Lift",
     description: "Laminacija i bojanje obrva",
     price: "25 EUR",
     category: "Beauty Tretmani"
   },
   {
     id: "brow-shaping",
-    title: "OBLIKOVANJE OBRVA",
+    title: "Oblikovanje Obrva",
     description: "Čupanje obrva pincetom",
     price: "7 EUR",
     category: "Beauty Tretmani"
   },
   {
     id: "hd-brows",
-    title: "HD BROWS",
+    title: "HD Brows",
     description: "Oblikovanje i bojanje obrva",
     price: "10 EUR",
     category: "Beauty Tretmani"
   },
   {
     id: "brow-tint",
-    title: "BOJANJE OBRVA ILI TREPAVICA",
+    title: "Bojanje Obrva ili Trepavica",
     description: "Profesionalno bojanje obrva ili trepavica",
     price: "4 EUR",
     category: "Beauty Tretmani"
   },
   {
     id: "brow-lash-tint",
-    title: "BOJANJE OBRVA I TREPAVICA",
+    title: "Bojanje Obrva i Trepavica",
     description: "Profesionalno bojanje obrva i trepavica",
     price: "7 EUR",
     category: "Beauty Tretmani"
@@ -167,63 +167,63 @@ export const pricingData: PricingItem[] = [
   // Bio Sculpture Proizvodi
   {
     id: "bio-sculpture-almond-oil",
-    title: "ETHOS ALMOND OIL",
+    title: "Ethos Almond Oil",
     description: "14 ml",
     price: "13 EUR",
     category: "Bio Sculpture Proizvodi"
   },
   {
     id: "bio-sculpture-rosehip-oil",
-    title: "ETHOS ROSEHIP CUTICLE OIL",
+    title: "Ethos Rosehip Cuticle Oil",
     description: "14 ml",
     price: "13 EUR",
     category: "Bio Sculpture Proizvodi"
   },
   {
     id: "bio-sculpture-blackcurrent",
-    title: "ETHOS BLACKCURRENT",
+    title: "Ethos Blackcurrent",
     description: "14 ml",
     price: "13 EUR",
     category: "Bio Sculpture Proizvodi"
   },
   {
     id: "bio-sculpture-jasmine-oil",
-    title: "ETHOS JASMINE CUTICLE OIL",
+    title: "Ethos Jasmine Cuticle Oil",
     description: "14 ml",
     price: "13 EUR",
     category: "Bio Sculpture Proizvodi"
   },
   {
     id: "bio-sculpture-refill",
-    title: "REFILL",
+    title: "Refill",
     description: "1 ml",
     price: "1 EUR",
     category: "Bio Sculpture Proizvodi"
   },
   {
     id: "bio-sculpture-raspa",
-    title: "RAŠPA ORLIT EXTREME",
+    title: "Rašpa Orlit Extreme",
     description: "100/180",
     price: "2 EUR",
     category: "Bio Sculpture Proizvodi"
   },
   {
     id: "bio-sculpture-apricot-scrub",
-    title: "APRICOT KERNEL SCRUB",
+    title: "Apricot Kernel Scrub",
     description: "75 ml",
     price: "15 EUR",
     category: "Bio Sculpture Proizvodi"
   },
   {
     id: "bio-sculpture-heel-balm",
-    title: "HEEL BALM",
+    title: "Heel Balm",
     description: "75 ml",
     price: "15 EUR",
     category: "Bio Sculpture Proizvodi"
   },
   {
     id: "bio-sculpture-mint-mask",
-    title: "MINT MASK",
+    title: "Mint Mask",
     description: "75 ml",
     price: "15 EUR",
     category: "Bio Sculpture Proizvodi"
@@ -232,56 +232,56 @@ export const pricingData: PricingItem[] = [
   // Bio Sculpture Sistemi
   {
     id: "bio-sculpture-evo2-gel-lak-s",
-    title: "EVO 2 GEL LAK S",
+    title: "Evo 2 Gel Lak S",
     description: "Comby manikura jednobojni trajni lak kratkih noktiju, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
     price: "25 EUR",
     category: "Bio Sculpture Sistemi"
   },
   {
     id: "bio-sculpture-evo2-gel-lak-l",
-    title: "EVO 2 GEL LAK L",
+    title: "Evo 2 Gel Lak L",
     description: "Comby manikura jednobojni trajni lak dugih noktiju, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
     price: "27 EUR",
     category: "Bio Sculpture Sistemi"
   },
   {
     id: "bio-sculpture-evo2-feet",
-    title: "EVO 2 FEET",
+    title: "Evo 2 Feet",
     description: "Comby manikura, trajni lak na nogama i njegu s ethos bademovim uljem i kremom za pete",
     price: "25 EUR",
     category: "Bio Sculpture Sistemi"
   },
   {
     id: "bio-sculpture-evo2-manikura",
-    title: "EVO 2 MANIKURA",
+    title: "Evo 2 Manikura",
     description: "Comby manikura, ethos baza, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
     price: "10 EUR",
     category: "Bio Sculpture Sistemi"
   },
   {
     id: "bio-sculpture-removal",
-    title: "SKIDANJE TRAJNOG LAKA",
+    title: "Skidanje Trajnog Laka",
     description: "Naplaćuje se samo skidanje tuđeg rada",
     price: "3 EUR",
     category: "Bio Sculpture Sistemi"
   },
   {
     id: "bio-sculpture-repair",
-    title: "POPRAVAK 1 NOKTA",
+    title: "Popravak 1 Nokta",
     description: "Popravak jednog nokta",
     price: "3 EUR",
     category: "Bio Sculpture Sistemi"
   },
   {
     id: "bio-sculpture-extension",
-    title: "PRODULJENJE 1 NOKTA",
+    title: "Produljenje 1 Nokta",
     description: "Produljenje jednog nokta",
     price: "4 EUR",
     category: "Bio Sculpture Sistemi"
   },
   {
     id: "bio-sculpture-nail-art",
-    title: "NAIL ART",
+    title: "Nail Art",
     description: "Nail art dekoracija",
     price: "2 EUR",
     category: "Bio Sculpture Sistemi"
@@ -290,21 +290,21 @@ export const pricingData: PricingItem[] = [
   // Botox
   {
     id: "botox-25",
-    title: "BOTOX 25",
+    title: "Botox 25",
     description: "25 jedinica botoxa",
     price: "105 EUR",
     category: "Botox"
   },
   {
     id: "botox-50",
-    title: "BOTOX 50",
+    title: "Botox 50",
     description: "50 jedinica botoxa",
     price: "210 EUR",
     category: "Botox"
   },
   {
     id: "botox-100",
-    title: "BOTOX 100",
+    title: "Botox 100",
     description: "100 jedinica botoxa",
     price: "420 EUR",
     category: "Botox"
@@ -313,14 +313,14 @@ export const pricingData: PricingItem[] = [
   // Dermalni Fileri
   {
     id: "aliaxin",
-    title: "ALIAXIN",
+    title: "Aliaxin",
     description: "1 ml",
     price: "315 EUR",
     category: "Dermalni Fileri"
   },
   {
     id: "skin-architect-filler",
-    title: "SKIN ARCHITECT FILLER",
+    title: "Skin Architect Filler",
     description: "1 ml",
     price: "315 EUR",
     category: "Dermalni Fileri"
@@ -329,7 +329,7 @@ export const pricingData: PricingItem[] = [
   // Hijaluronidaza
   {
     id: "hyaluronidase",
-    title: "HIJALURONIDAZA",
+    title: "Hijaluronidaza",
     description: "Enzim za razgradnju hijaluronske kiseline",
     price: "53 EUR",
     category: "Hijaluronidaza"
@@ -345,7 +345,7 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "chemical-peel-standard-package",
-    title: "Standard paket",
+    title: "Standard Paket",
     description: "4 tretmana kemijskog pilinga lica",
     price: "195 EUR",
     category: "Kemijski Piling",
@@ -361,7 +361,7 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "chemical-peel-premium-package",
-    title: "Premium paket",
+    title: "Premium Paket",
     description: "4 tretmana kemijskog pilinga lica, vrata i dekoltea",
     price: "270 EUR",
     category: "Kemijski Piling",
@@ -370,14 +370,14 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "chemical-peel-duosomal",
-    title: "Dusomal",
+    title: "Duosomal",
     description: "1 tretman kemijskog pilinga duosomal",
     price: "65 EUR",
     category: "Kemijski Piling"
   },
   {
     id: "chemical-peel-duosomal-package",
-    title: "Duosomal paket",
+    title: "Duosomal Paket",
     description: "5 tretmana kemijskog pilinga Duosomal",
     price: "290 EUR",
     category: "Kemijski Piling",
@@ -538,7 +538,7 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "mesoject-standard-package",
-    title: "STANDARD PAKET",
+    title: "Standard Paket",
     description: "4 mezoterapije lica i Hydraboost usana",
     price: "340 EUR",
     category: "Mezoterapija Mesoject Gunom",
@@ -570,7 +570,7 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "mesoject-brow-package",
-    title: "BROW PAKET",
+    title: "Brow Paket",
     description: "5 mezoterapija obrva",
     price: "90 EUR",
     category: "Mezoterapija Mesoject Gunom",
@@ -631,42 +631,42 @@ export const pricingData: PricingItem[] = [
   // Plasmage
   {
     id: "plasmage-eyes-standard",
-    title: "EYES STANDARD",
+    title: "Eyes Standard",
     description: "Tretman gornjeg ili donjeg kapka",
     price: "635 EUR",
     category: "Plasmage"
   },
   {
     id: "plasmage-eyes-premium",
-    title: "EYES PREMIUM",
+    title: "Eyes Premium",
     description: "Tretman gornjeg i donjeg kapka",
     price: "885 EUR",
     category: "Plasmage"
   },
   {
     id: "plasmage-benign-removal",
-    title: "UKLANJANJE DOBROĆUDNIH PROMJENA",
+    title: "Uklanjanje Dobroćudnih Promjena",
     description: "Uklanjanje 1 promjene",
     price: "20 EUR",
     category: "Plasmage"
   },
   {
     id: "plasmage-anti-age",
-    title: "ANTI-AGE TRETMAN",
+    title: "Anti-Age Tretman",
     description: "Tretman uklanjanja bora plasmageom",
     price: "300 EUR",
     category: "Plasmage"
   },
   {
     id: "plasmage-scar-s",
-    title: "SCAR S",
+    title: "Scar S",
     description: "Terapija malog ožiljka plasmageom",
     price: "50 EUR",
     category: "Plasmage"
   },
   {
     id: "plasmage-scar-l",
-    title: "SCAR L",
+    title: "Scar L",
     description: "Terapija velikog ožiljka plasmageom",
     price: "90 EUR",
     category: "Plasmage"
@@ -682,7 +682,7 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "prp-ideal",
-    title: "PRP IDEAL",
+    title: "PRP Ideal",
     description: "2 PRP tretmana",
     price: "475 EUR",
     category: "PRP",
@@ -691,7 +691,7 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "prp-superior",
-    title: "PRP SUPERIOR",
+    title: "PRP Superior",
     description: "3 PRP tretmana",
     price: "675 EUR",
     category: "PRP",
@@ -700,7 +700,7 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "prp-classic",
-    title: "PRP CLASSIC",
+    title: "PRP Classic",
     description: "4 PRP tretmana",
     price: "845 EUR",
     category: "PRP",
@@ -711,14 +711,14 @@ export const pricingData: PricingItem[] = [
   // RRS
   {
     id: "rrs-xl-hair",
-    title: "RRS XL HAIR",
+    title: "RRS XL Hair",
     description: "1 tretman vlasišta",
     price: "85 EUR",
     category: "RRS"
   },
   {
     id: "rrs-xl-hair-package",
-    title: "RRS XL HAIR",
+    title: "RRS XL Hair",
     description: "5 tretmana vlasišta",
     price: "380 EUR",
     category: "RRS",
@@ -727,14 +727,14 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "rrs-ha-eyes",
-    title: "RRS HA EYES",
+    title: "RRS HA Eyes",
     description: "1 tretman okoloočnog područja",
     price: "75 EUR",
     category: "RRS"
   },
   {
     id: "rrs-ha-eyes-package",
-    title: "RRS HA EYES PAKET",
+    title: "RRS HA Eyes Paket",
     description: "4 tretmana okoloočnog područja",
     price: "270 EUR",
     category: "RRS",
@@ -743,14 +743,14 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "rrs-hyalift",
-    title: "RRS HYALIFT",
+    title: "RRS Hyalift",
     description: "1 ampula RRS Hyalift",
     price: "160 EUR",
     category: "RRS"
   },
   {
     id: "rrs-hyalift-package",
-    title: "RRS HYALIFT PAKET",
+    title: "RRS Hyalift Paket",
     description: "4 ampule RRS Hyalift",
     price: "575 EUR",
     category: "RRS",
@@ -759,21 +759,21 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "rrs-silisorg",
-    title: "RRS SILISORG/SILISORG HA",
+    title: "RRS Silisorg/Silisorg HA",
     description: "1 ampula",
     price: "80 EUR",
     category: "RRS"
   },
   {
     id: "rrs-tensor-lift",
-    title: "RRS TENSOR LIFT",
+    title: "RRS Tensor Lift",
     description: "1 ampula",
     price: "160 EUR",
     category: "RRS"
   },
   {
     id: "rrs-tensor-lift-package",
-    title: "RRS TENSOR LIFT PAKET",
+    title: "RRS Tensor Lift Paket",
     description: "4 ampule",
     price: "575 EUR",
     category: "RRS",
@@ -816,7 +816,7 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "skin-booster-profhilo-package",
-    title: "Profhilo paket",
+    title: "Profhilo Paket",
     description: "2 tretmana Profhilo",
     price: "635 EUR",
     category: "Skin Booster",
@@ -843,112 +843,112 @@ export const pricingData: PricingItem[] = [
   // TOSKANI Proizvodi
   {
     id: "energizing-cleanser",
-    title: "ENERGIZING CLEANSER GEL",
+    title: "Energizing Cleanser Gel",
     description: "200 ml",
     price: "40 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "purifying-cleanser",
-    title: "PURIFYING CLEANSER",
+    title: "Purifying Cleanser",
     description: "200 ml",
     price: "44 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "bamboo-toner",
-    title: "BAMBOO TONER TONIK",
+    title: "Bamboo Toner Tonik",
     description: "200 ml",
     price: "28 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "nutritive-scrub",
-    title: "NUTRITIVE SCRUB",
+    title: "Nutritive Scrub",
     description: "200 ml",
     price: "44 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "purifying-scrub",
-    title: "PURIFYING SCRUB",
+    title: "Purifying Scrub",
     description: "200 ml",
     price: "44 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "antistress-mask",
-    title: "ANTISTRESS MASK",
+    title: "Antistress Mask",
     description: "200 ml",
     price: "65 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "total-recovery-gel",
-    title: "TOTAL RECOVERY GEL",
+    title: "Total Recovery Gel",
     description: "50 ml",
     price: "37 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "total-recovery-cream",
-    title: "TOTAL RECOVERY CREAM",
+    title: "Total Recovery Cream",
     description: "50 ml",
     price: "60 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "anti-pollution-cream",
-    title: "ANTI-POLLUTION TOTAL DEFENSE CREAM 50+",
+    title: "Anti-Pollution Total Defense Cream 50+",
     description: "50 ml",
     price: "65 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "sun-protection",
-    title: "SUN PROTECTION CREME SPF 50",
+    title: "Sun Protection Creme SPF 50",
     description: "50 ml",
     price: "35 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "radiance-daily-cream",
-    title: "RADIANCE DAILY CREAM SPF 30+",
+    title: "Radiance Daily Cream SPF 30+",
     description: "50 ml",
     price: "65 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "anti-ageing-eye",
-    title: "ANTI AGEING EYE CONTOUR",
+    title: "Anti Ageing Eye Contour",
     description: "15 ml",
     price: "45 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "radiance-eye",
-    title: "RADIANCE EYE CONTOUR",
+    title: "Radiance Eye Contour",
     description: "15 ml",
     price: "65 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "radiance-mesoserum",
-    title: "RADIANCE ULTIMATE MESOSERUM",
+    title: "Radiance Ultimate Mesoserum",
     description: "30 ml",
     price: "85 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "purifying-serum",
-    title: "PURIFYING INTENSIVE SERUM",
+    title: "Purifying Intensive Serum",
     description: "15 ml",
     price: "45 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "purifying-cream",
-    title: "PURIFYING CREAM",
+    title: "Purifying Cream",
     description: "50 ml",
     price: "65 EUR",
     category: "TOSKANI Proizvodi"
@@ -962,84 +962,84 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "skin-architect-cream",
-    title: "SKIN ARCHITECT CREAM",
+    title: "Skin Architect Cream",
     description: "50 ml",
     price: "70 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "night-reverse-serum",
-    title: "NIGHT REVERSE ADVANCED SERUM",
+    title: "Night Reverse Advanced Serum",
     description: "30 ml",
     price: "87 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "night-reverse-cream",
-    title: "NIGHT REVERSE INTENSIVE CREAM & MASK",
+    title: "Night Reverse Intensive Cream & Mask",
     description: "50 ml",
     price: "80 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "anti-hair-loss",
-    title: "ANTI-HAIR LOSS LOTION",
+    title: "Anti-Hair Loss Lotion",
     description: "100 ml",
     price: "37 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "densihair-boost",
-    title: "DENSIHAIR BOOST KAPSULE",
+    title: "Densihair Boost Kapsule",
     description: "30 kapsula",
     price: "38 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "glacier-pro-age-cream",
-    title: "GLACIER PRO AGE KREMA",
+    title: "Glacier Pro Age Krema",
     description: "50 ml",
     price: "70 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "glacier-pro-age-serum",
-    title: "GLACIER PRO AGE SERUM",
+    title: "Glacier Pro Age Serum",
     description: "30 ml",
     price: "75 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "retin-pro-age-cream",
-    title: "RETIN PRO AGE KREMA",
+    title: "Retin Pro Age Krema",
     description: "50 ml",
     price: "75 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "retin-pro-age-serum",
-    title: "RETIN PRO AGE SERUM",
+    title: "Retin Pro Age Serum",
     description: "30 ml",
     price: "80 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "unique-pro-age-cream",
-    title: "UNIQUE PRO AGE KREMA",
+    title: "Unique Pro Age Krema",
     description: "50 ml",
     price: "75 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "unique-pro-age-serum",
-    title: "UNIQUE PRO AGE SERUM",
+    title: "Unique Pro Age Serum",
     description: "30 ml",
     price: "80 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "myotec-eye-lift",
-    title: "MYOTEC EYE LIFT KREMA",
+    title: "Myotec Eye Lift Krema",
     description: "15 ml",
     price: "55 EUR",
     category: "TOSKANI Proizvodi"
