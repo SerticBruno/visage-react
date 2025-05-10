@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import RelatedArticles from '@/components/blog/RelatedArticles';
 import { FaCalendarAlt, FaUser, FaTag } from 'react-icons/fa';
-import { formatDate } from '@/lib/utils';
+import { formatDate, toSlug } from '@/lib/utils';
 import { ElementType } from 'react';
 import { TextSpan, LinkSpan, TextContent, ImageContent, HeadingContent, ContentItem } from '@/data/types';
 import Link from 'next/link';
@@ -99,7 +99,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="flex items-center gap-2">
                 <FaUser className="w-4 h-4" />
                 <InteractiveLink 
-                  href={`/blog/autor/${encodeURIComponent(post.author)}`}
+                  href={`/blog/autor/${toSlug(post.author)}`}
                   className="hover:text-slate-700 transition-colors"
                 >
                   {post.author}
@@ -116,7 +116,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               {post.tags.map((tag) => (
                 <InteractiveLink
                   key={tag}
-                  href={`/blog/kategorija/${tag}`}
+                  href={`/blog/kategorija/${toSlug(tag)}`}
                   className="px-4 py-2 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-slate-200 transition-all duration-300 hover:shadow-sm"
                 >
                   {tag}

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { FaCalendarAlt, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa';
 import Link from 'next/link';
 import InteractiveLink from '@/components/blog/InteractiveLink';
-import { formatDate } from '@/lib/utils';
+import { formatDate, toSlug } from '@/lib/utils';
 
 interface AuthorPageProps {
   params: {
@@ -13,12 +13,14 @@ interface AuthorPageProps {
 }
 
 export default function AuthorPage({ params }: AuthorPageProps) {
-  const decodedAuthor = decodeURIComponent(params.author);
-  const authorPosts = blogPosts.filter(post => post.author === decodedAuthor);
-
-  if (authorPosts.length === 0) {
+  // Find the author by matching the slug
+  const author = blogPosts.find(post => toSlug(post.author) === params.author)?.author;
+  
+  if (!author) {
     notFound();
   }
+
+  const authorPosts = blogPosts.filter(post => post.author === author);
 
   const totalPosts = authorPosts.length;
   const latestPost = authorPosts[0];
@@ -26,17 +28,6 @@ export default function AuthorPage({ params }: AuthorPageProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Back Button */}
-      <div className="container mx-auto px-4 pt-8">
-        <Link 
-          href="/blog"
-          className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
-        >
-          <FaArrowLeft className="w-4 h-4" />
-          <span>Povratak na blog</span>
-        </Link>
-      </div>
-
       {/* Author Header */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
@@ -45,15 +36,14 @@ export default function AuthorPage({ params }: AuthorPageProps) {
               <div className="relative w-32 h-32 rounded-full overflow-hidden">
                 <Image
                   src={`/images/authors/author.webp`}
-                  // src={`/images/team/${decodedAuthor.toLowerCase().replace(/\s+/g, '-')}.webp`}
-                  alt={decodedAuthor}
+                  alt={author}
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="flex-1 text-center md:text-left">
                 <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                  {decodedAuthor}
+                  {author}
                 </h1>
                 <p className="text-slate-600 mb-6">
                   Autor {totalPosts} {totalPosts === 1 ? 'članka' : 'članaka'} na našem blogu
@@ -62,7 +52,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
                   {allTags.map((tag) => (
                     <InteractiveLink
                       key={tag}
-                      href={`/blog/kategorija/${tag}`}
+                      href={`/blog/kategorija/${toSlug(tag)}`}
                       className="px-4 py-2 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-slate-200 transition-all duration-300 hover:shadow-sm"
                     >
                       {tag}
@@ -98,7 +88,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
                       {latestPost.tags.map((tag) => (
                         <InteractiveLink
                           key={tag}
-                          href={`/blog/kategorija/${tag}`}
+                          href={`/blog/kategorija/${toSlug(tag)}`}
                           className="hover:text-slate-900 transition-colors"
                         >
                           {tag}
@@ -125,7 +115,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
 
           {/* All Posts */}
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Svi članci</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6">Svi članci autora - {author}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {authorPosts.map((post) => (
                 <article key={post.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -161,7 +151,7 @@ export default function AuthorPage({ params }: AuthorPageProps) {
                       {post.tags.map((tag) => (
                         <InteractiveLink
                           key={tag}
-                          href={`/blog/kategorija/${tag}`}
+                          href={`/blog/kategorija/${toSlug(tag)}`}
                           className="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-slate-200 transition-all duration-300 hover:shadow-sm"
                         >
                           {tag}
@@ -172,6 +162,17 @@ export default function AuthorPage({ params }: AuthorPageProps) {
                 </article>
               ))}
             </div>
+          </div>
+
+          {/* Back Button */}
+          <div className="mt-12 text-center">
+            <Link 
+              href="/blog"
+              className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              <FaArrowLeft className="w-4 h-4" />
+              <span>Povratak na blog</span>
+            </Link>
           </div>
         </div>
       </div>

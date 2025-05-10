@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { FaCalendarAlt, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa';
 import Link from 'next/link';
 import InteractiveLink from '@/components/blog/InteractiveLink';
-import { formatDate } from '@/lib/utils';
+import { formatDate, toSlug } from '@/lib/utils';
 
 interface CategoryPageProps {
   params: {
@@ -13,14 +13,18 @@ interface CategoryPageProps {
 }
 
 export default function CategoryPage({ params }: CategoryPageProps) {
-  const decodedTag = decodeURIComponent(params.tag);
-  const categoryPosts = blogPosts.filter(post => 
-    post.tags.some(tag => tag === decodedTag)
-  );
-
-  if (categoryPosts.length === 0) {
+  // Find the tag by matching the slug
+  const tag = blogPosts
+    .flatMap(post => post.tags)
+    .find(t => toSlug(t) === params.tag);
+  
+  if (!tag) {
     notFound();
   }
+
+  const categoryPosts = blogPosts.filter(post => 
+    post.tags.some(t => t === tag)
+  );
 
   const totalPosts = categoryPosts.length;
   const latestPost = categoryPosts[0];
@@ -28,17 +32,6 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Back Button */}
-      <div className="container mx-auto px-4 pt-8">
-        <Link 
-          href="/blog"
-          className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
-        >
-          <FaArrowLeft className="w-4 h-4" />
-          <span>Povratak na blog</span>
-        </Link>
-      </div>
-
       {/* Category Header */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
@@ -48,7 +41,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 <FaTag className="w-8 h-8 text-slate-700" />
               </div>
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                {decodedTag}
+                {tag}
               </h1>
               <p className="text-slate-600 mb-6">
                 {totalPosts} {totalPosts === 1 ? 'članak' : 'članaka'} u ovoj kategoriji
@@ -57,7 +50,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 {allAuthors.map((author) => (
                   <InteractiveLink
                     key={author}
-                    href={`/blog/autor/${encodeURIComponent(author)}`}
+                    href={`/blog/autor/${toSlug(author)}`}
                     className="px-4 py-2 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-slate-200 transition-all duration-300 hover:shadow-sm"
                   >
                     {author}
@@ -90,7 +83,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     <div className="flex items-center gap-2">
                       <FaUser className="w-4 h-4" />
                       <InteractiveLink
-                        href={`/blog/autor/${encodeURIComponent(latestPost.author)}`}
+                        href={`/blog/autor/${toSlug(latestPost.author)}`}
                         className="hover:text-slate-900 transition-colors"
                       >
                         {latestPost.author}
@@ -116,7 +109,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
           {/* All Posts */}
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Svi članci</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6">Svi članci u kategoriji - {tag}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {categoryPosts.map((post) => (
                 <article key={post.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -139,7 +132,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <div className="flex items-center gap-2">
                         <FaUser className="w-4 h-4" />
                         <InteractiveLink
-                          href={`/blog/autor/${encodeURIComponent(post.author)}`}
+                          href={`/blog/autor/${toSlug(post.author)}`}
                           className="hover:text-slate-900 transition-colors"
                         >
                           {post.author}
@@ -161,7 +154,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       {post.tags.map((tag) => (
                         <InteractiveLink
                           key={tag}
-                          href={`/blog/kategorija/${tag}`}
+                          href={`/blog/kategorija/${toSlug(tag)}`}
                           className="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-slate-200 transition-all duration-300 hover:shadow-sm"
                         >
                           {tag}
@@ -172,6 +165,17 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 </article>
               ))}
             </div>
+          </div>
+
+          {/* Back Button */}
+          <div className="mt-12 text-center">
+            <Link 
+              href="/blog"
+              className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              <FaArrowLeft className="w-4 h-4" />
+              <span>Povratak na blog</span>
+            </Link>
           </div>
         </div>
       </div>

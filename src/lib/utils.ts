@@ -19,4 +19,13 @@ export function formatDate(date: Date): string {
   const year = date.getFullYear();
 
   return `${day}. ${months[month as keyof typeof months]} ${year}.`;
+}
+
+export function toSlug(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+    .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric chars with hyphens
+    .replace(/^-+|-+$/g, '') // Remove leading/trailing hyphens
 } 
