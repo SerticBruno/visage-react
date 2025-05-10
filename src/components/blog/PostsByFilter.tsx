@@ -1,7 +1,7 @@
 import { BlogPost } from '@/data/types';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaCalendarAlt, FaUser, FaTag } from 'react-icons/fa';
+import { FaCalendarAlt, FaUser } from 'react-icons/fa';
 import InteractiveLink from './InteractiveLink';
 
 interface PostsByFilterProps {

@@ -16,6 +16,7 @@ export const dermalFillers: Service = {
   heroImage: '/images/services/botox-face-girl.webp',
   metaDescription: 'Dermalni fileri u VISAGE studiju. Volumizacija i obnavljanje kontura lica. Prirodni i dugotrajni rezultati.',
   metaKeywords: 'dermalni fileri, volumizacija lica, konture lica, estetski studio Sisak, VISAGE studio',
+  tags: ['dermalni-fileri', 'volumizacija', 'konture-lica', 'minimalno-invazivni'],
   steps: [
     { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },

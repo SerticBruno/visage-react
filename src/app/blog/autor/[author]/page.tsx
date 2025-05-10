@@ -1,20 +1,21 @@
 import { blogPosts } from '@/data/posts';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { FaCalendarAlt, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa';
+import { FaCalendarAlt, FaTag, FaArrowLeft } from 'react-icons/fa';
 import Link from 'next/link';
 import InteractiveLink from '@/components/blog/InteractiveLink';
 import { formatDate, toSlug } from '@/lib/utils';
 
 interface AuthorPageProps {
-  params: {
+  params: Promise<{
     author: string;
-  };
+  }>;
 }
 
-export default function AuthorPage({ params }: AuthorPageProps) {
+export default async function AuthorPage({ params }: AuthorPageProps) {
+  const resolvedParams = await params;
   // Find the author by matching the slug
-  const author = blogPosts.find(post => toSlug(post.author) === params.author)?.author;
+  const author = blogPosts.find(post => toSlug(post.author) === resolvedParams.author)?.author;
   
   if (!author) {
     notFound();

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Service } from '@/data/services/types';
-import { FaRegFileAlt, FaUsers, FaRegEdit, FaRegClock, FaRegHospital, FaRegFile, FaHandHoldingUsd, FaCheck, FaExclamationTriangle } from 'react-icons/fa';
+import { FaRegFileAlt, FaUsers, FaRegEdit, FaRegClock, FaRegHospital, FaRegFile, FaHandHoldingUsd, FaCheck } from 'react-icons/fa';
 
 interface ServiceDetailsSectionProps {
   service: Service;

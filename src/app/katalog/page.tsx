@@ -6,7 +6,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
 import { products, productCategories, type Product } from '@/data/products';
-import { FaSearch, FaStar, FaTimes, FaSpinner } from 'react-icons/fa';
+import { FaSearch, FaStar, FaTimes } from 'react-icons/fa';
 import { FaTag, FaFire, FaLeaf } from 'react-icons/fa6';
 import Image from 'next/image';
 

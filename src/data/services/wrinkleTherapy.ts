@@ -16,6 +16,7 @@ export const wrinkleTherapy: Service = {
   heroImage: '/images/services/toskani-woman.webp',
   metaDescription: 'Terapija bora lica u VISAGE studiju. Smanjite i spriječite bore uz pomoć naprednih metoda. Prirodni i dugotrajni rezultati.',
   metaKeywords: 'terapija bora, bore lica, prevencija bora, estetski studio Sisak, VISAGE studio',
+  tags: ['terapija-bora', 'prevencija-bora', 'anti-aging', 'nježni-tretmani'],
   steps: [
     { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },

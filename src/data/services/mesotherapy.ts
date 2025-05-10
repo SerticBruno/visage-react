@@ -17,6 +17,7 @@ export const mesotherapy: Service = {
   heroImage: '/images/services/botox-face-girl.webp',
   metaDescription: 'Profesionalna mezoterapija u VISAGE studiju u Siska. Dubinska hidratacija i revitalizacija kože uz pomoć mikroinjekcija.',
   metaKeywords: 'mezoterapija, hidratacija kože, mikroinjekcije, estetski studio Sisak, VISAGE studio',
+  tags: ['mezoterapija', 'hidratacija', 'mikroinjekcije', 'revitalizacija'],
   steps: [
     { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },

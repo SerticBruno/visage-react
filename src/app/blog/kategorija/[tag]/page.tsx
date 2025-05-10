@@ -6,29 +6,26 @@ import Link from 'next/link';
 import InteractiveLink from '@/components/blog/InteractiveLink';
 import { formatDate, toSlug } from '@/lib/utils';
 
-interface CategoryPageProps {
-  params: {
+interface TagPageProps {
+  params: Promise<{
     tag: string;
-  };
+  }>;
 }
 
-export default function CategoryPage({ params }: CategoryPageProps) {
+export default async function TagPage({ params }: TagPageProps) {
+  const resolvedParams = await params;
   // Find the tag by matching the slug
-  const tag = blogPosts
-    .flatMap(post => post.tags)
-    .find(t => toSlug(t) === params.tag);
+  const tag = blogPosts.find(post => post.tags.some(t => toSlug(t) === resolvedParams.tag))?.tags.find(t => toSlug(t) === resolvedParams.tag);
   
   if (!tag) {
     notFound();
   }
 
-  const categoryPosts = blogPosts.filter(post => 
-    post.tags.some(t => t === tag)
-  );
+  const tagPosts = blogPosts.filter(post => post.tags.includes(tag));
 
-  const totalPosts = categoryPosts.length;
-  const latestPost = categoryPosts[0];
-  const allAuthors = Array.from(new Set(categoryPosts.map(post => post.author)));
+  const totalPosts = tagPosts.length;
+  const latestPost = tagPosts[0];
+  const allAuthors = Array.from(new Set(tagPosts.map(post => post.author)));
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -111,7 +108,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           <div>
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Svi članci u kategoriji - {tag}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {categoryPosts.map((post) => (
+              {tagPosts.map((post) => (
                 <article key={post.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="relative aspect-[16/9] w-full">
                     <Link href={`/blog/${post.slug}`}>

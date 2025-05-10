@@ -16,6 +16,7 @@ export const bioSculpture: Service = {
   heroImage: '/images/services/manikura.webp',
   metaDescription: 'Bio Sculpture sistemi u VISAGE studiju. Profesionalna njega i ukrašavanje noktiju. Vrhunska kvaliteta i dugotrajni rezultati.',
   metaKeywords: 'bio sculpture, nokti, manikura, estetski studio Sisak, VISAGE studio',
+  tags: ['bio-sculpture', 'nokti', 'manikura', 'nježni-tretmani'],
   steps: [
     { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },

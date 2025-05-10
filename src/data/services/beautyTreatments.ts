@@ -16,6 +16,7 @@ export const beautyTreatments: Service = {
   heroImage: '/images/services/TKNHA3_.webp',
   metaDescription: 'Beauty tretmani u VISAGE studiju. Luksuzni tretmani za lice i tijelo. Potpuno opuštanje i njega.',
   metaKeywords: 'beauty tretmani, njega kože, opuštanje, estetski studio Sisak, VISAGE studio',
+  tags: ['beauty-tretmani', 'opuštanje', 'njega-kože', 'luksuzni-tretmani'],
   steps: [
     { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },

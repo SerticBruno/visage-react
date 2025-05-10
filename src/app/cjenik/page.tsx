@@ -32,7 +32,7 @@ export default function PricingPage() {
         groups[item.category].push(item);
       });
       return groups;
-    }, [filteredItems]);
+    }, []);
 
     return (
       <div className="overflow-hidden rounded-lg border border-gray-200">

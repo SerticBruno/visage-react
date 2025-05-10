@@ -1,7 +1,8 @@
 'use client';
 
-import { FaArrowRight, FaEnvelope } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const SubscriptionCTASection = () => {
   return (
@@ -31,13 +32,12 @@ const SubscriptionCTASection = () => {
                   Pretplatite se
                   <FaEnvelope className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <a
-                  href="/blog"
-                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-gray-900 border-2 border-gray-200 rounded-lg font-semibold hover:bg-gray-50 transition-colors group text-sm sm:text-base"
+                <Link 
+                  href="/blog/"
+                  className="text-blue-600 hover:text-blue-800 underline"
                 >
                   Pročitajte više
-                  <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </div>
 

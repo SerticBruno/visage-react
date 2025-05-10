@@ -1,10 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaWhatsapp } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaClock, FaWhatsapp } from 'react-icons/fa';
+import { IconType } from 'react-icons';
 
 const ContactInfoCard = ({ icon: Icon, title, content, link, linkText }: { 
-  icon: any, 
+  icon: IconType, 
   title: string, 
   content: string | string[], 
   link?: string,

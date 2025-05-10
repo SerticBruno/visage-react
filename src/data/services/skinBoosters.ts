@@ -16,6 +16,7 @@ export const skinBoosters: Service = {
   heroImage: '/images/services/toskani-hero.webp',
   metaDescription: 'Skin boosteri u VISAGE studiju. Duboka hidratacija i revitalizacija kože. Vidljivi i dugotrajni rezultati.',
   metaKeywords: 'skin boosteri, hidratacija kože, revitalizacija kože, estetski studio Sisak, VISAGE studio',
+  tags: ['skin-boosteri', 'hidratacija', 'revitalizacija', 'minimalno-invazivni'],
   steps: [
     { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },

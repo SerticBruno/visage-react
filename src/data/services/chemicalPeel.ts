@@ -17,6 +17,7 @@ export const chemicalPeel: Service = {
   heroImage: '/images/services/kemijski-piling/toskani-bg.webp',
   metaDescription: 'Profesionalni kemijski piling u VISAGE studiju u Siska. Obnovite svoju kožu uz pomoć naprednih kemijskih pilinzi TOSKANI. Rezultati odmah vidljivi.',
   metaKeywords: 'kemijski piling, piling lica, obnova kože, estetski studio Sisak, VISAGE studio, TOSKANI piling, kemijski piling Sisak',
+  tags: ['kemijski-piling', 'piling', 'obnova-kože', 'nježni-tretmani'],
   steps: [
     { 
       id: 'opis-zahvata', 

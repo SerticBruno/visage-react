@@ -9,7 +9,6 @@ interface ServiceContentSectionProps {
   imageSrc: string;
   imageAlt: string;
   benefits?: readonly string[];
-  reverse?: boolean;
 }
 
 export default function ServiceContentSection({
@@ -18,7 +17,6 @@ export default function ServiceContentSection({
   imageSrc,
   imageAlt,
   benefits = [],
-  reverse = false
 }: ServiceContentSectionProps) {
   return (
     <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">

@@ -2,16 +2,32 @@ import { blogPosts } from '@/data/posts';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import RelatedArticles from '@/components/blog/RelatedArticles';
-import { FaCalendarAlt, FaUser, FaTag } from 'react-icons/fa';
+import { FaCalendarAlt, FaUser } from 'react-icons/fa';
 import { formatDate, toSlug } from '@/lib/utils';
 import { ElementType } from 'react';
-import { TextSpan, LinkSpan, TextContent, ImageContent, HeadingContent, ContentItem } from '@/data/types';
-import Link from 'next/link';
+import { TextContent } from '@/data/types';
 import InteractiveLink from '@/components/blog/InteractiveLink';
+import { Metadata } from 'next';
 
-interface BlogPostPageProps {
-  params: {
-    slug: string;
+type SegmentParams = {
+  slug: string;
+}
+
+export async function generateMetadata(
+  props: { params: Promise<SegmentParams> }
+): Promise<Metadata> {
+  const params = await props.params;
+  const post = blogPosts.find(p => p.slug === params.slug);
+  
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
   };
 }
 
@@ -64,7 +80,10 @@ function renderTextContent(content: TextContent, index: number) {
   );
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage(
+  props: { params: Promise<SegmentParams> }
+) {
+  const params = await props.params;
   const post = blogPosts.find(p => p.slug === params.slug);
 
   if (!post) {

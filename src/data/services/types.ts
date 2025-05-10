@@ -1,5 +1,3 @@
-import { IconType } from 'react-icons';
-
 export type ServiceStep = {
   id: string;
   label: string;
@@ -28,6 +26,7 @@ export interface Service {
     [key: string]: string;
   };
   treatmentSteps?: TreatmentStep[];
+  tags: string[];
 }
 
 export type Services = {

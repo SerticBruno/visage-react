@@ -16,6 +16,7 @@ export const plasmage: Service = {
   heroImage: '/images/services/plasmage-hero.webp',
   metaDescription: 'Plasmage terapija u VISAGE studiju. Lifting i obnavljanje kože uz pomoć plazme. Sigurna i učinkovita metoda.',
   metaKeywords: 'plasmage, lifting kože, plazma, estetski studio Sisak, VISAGE studio',
+  tags: ['plasmage', 'lifting', 'plazma', 'minimalno-invazivni'],
   steps: [
     { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
