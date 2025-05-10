@@ -2,12 +2,13 @@ import { blogPosts } from '@/data/posts';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import RelatedArticles from '@/components/blog/RelatedArticles';
-import { FaCalendarAlt, FaUser } from 'react-icons/fa';
+import { FaCalendarAlt, FaUser, FaArrowLeft } from 'react-icons/fa';
 import { formatDate, toSlug } from '@/lib/utils';
 import { ElementType } from 'react';
 import { TextContent } from '@/data/types';
 import InteractiveLink from '@/components/blog/InteractiveLink';
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 type SegmentParams = {
   slug: string;

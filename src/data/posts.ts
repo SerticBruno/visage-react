@@ -584,5 +584,134 @@ export const blogPosts: BlogPost[] = [
     author: 'dr. Ana Horvat',
     tags: ['Anti-aging', 'Estetska medicina', 'Njega kože'],
     image: '/images/services/botox-face-girl.webp'
+  },
+  {
+    id: 10,
+    title: 'Plasmage - najnoviji trend u estetskoj medicini',
+    slug: 'plasmage-najnoviji-trend',
+    excerpt: 'Otkrijte revolucionarnu Plasmage tehnologiju koja kombinira plazmu i radiofrekvenciju za izvanredne rezultate u estetskoj medicini.',
+    content: [
+      {
+        type: 'heading',
+        level: 1,
+        text: 'Plasmage - najnoviji trend u estetskoj medicini'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Plasmage je ' },
+          { type: 'text', text: 'revolucionarna tehnologija', style: 'bold' },
+          { type: 'text', text: ' koja kombinira prednosti plazma terapije i radiofrekvencije za postizanje izvanrednih rezultata u estetskoj medicini. Ova inovativna metoda predstavlja novi standard u neinvazivnim tretmanima za mladolik izgled.' }
+        ]
+      },
+      {
+        type: 'image',
+        src: '/images/services/plasmage-hero.webp',
+        alt: 'Plasmage tretman',
+        caption: 'Plasmage - revolucionarna kombinacija plazme i radiofrekvencije'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Kako radi Plasmage?'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Plasmage tehnologija koristi jedinstvenu kombinaciju:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Plazma terapije', style: 'bold' },
+          { type: 'text', text: ' - prirodni faktori rasta iz vaše krvi' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Radiofrekvencije', style: 'bold' },
+          { type: 'text', text: ' - kontrolirano zagrijavanje za stimulaciju kolagena' },
+          { type: 'text', text: '\n\nOva sinergija omogućuje dubinsku regeneraciju kože i postizanje rezultata koji su prethodno bili mogući samo uz invazivne zahvate.' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Prednosti Plasmage tretmana'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Plasmage nudi brojne prednosti u odnosu na tradicionalne metode:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Dubinska regeneracija', style: 'bold' },
+          { type: 'text', text: ' - stimulacija proizvodnje kolagena i elastina' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Prirodni rezultati', style: 'bold' },
+          { type: 'text', text: ' - bez umjetnog izgleda' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Minimalno vrijeme oporavka', style: 'bold' },
+          { type: 'text', text: ' - brz povratak normalnim aktivnostima' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Dugotrajni učinak', style: 'bold' },
+          { type: 'text', text: ' - rezultati traju do 18 mjeseci' }
+        ]
+      },
+      {
+        type: 'image',
+        src: '/images/services/MYV_selfie_details.webp',
+        alt: 'Rezultati Plasmage tretmana',
+        caption: 'Vidljivi rezultati nakon serije Plasmage tretmana'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Specifične primjene'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Plasmage je posebno učinkovit za:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Lifting lica', style: 'bold' },
+          { type: 'text', text: ' - prirodno podizanje i toniziranje' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Redukcija bora', style: 'bold' },
+          { type: 'text', text: ' - smanjenje fine linija i dubokih bora' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Poboljšanje teksture kože', style: 'bold' },
+          { type: 'text', text: ' - glatka i sjajna koža' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Tretman ožiljaka', style: 'bold' },
+          { type: 'text', text: ' - poboljšanje izgleda ožiljaka' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Protokol tretmana'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Za optimalne rezultate, preporučujemo:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Inicijalna serija', style: 'bold' },
+          { type: 'text', text: ' - 3-4 tretmana u razmaku od 4-6 tjedana' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Održavanje', style: 'bold' },
+          { type: 'text', text: ' - 1-2 tretmana godišnje' },
+          { type: 'text', text: '\n\nSvaki tretman traje oko 60-90 minuta, a rezultati se postupno poboljšavaju tijekom nekoliko tjedana.' }
+        ]
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Plasmage predstavlja ' },
+          { type: 'text', text: 'budućnost estetske medicine', style: 'bold' },
+          { type: 'text', text: ', kombinirajući najbolje od prirodnih i tehnoloških rješenja za postizanje izvanrednih rezultata. Za više informacija o ' },
+          { type: 'link', text: 'cijenama i rasporedu tretmana', href: '/cjenik' },
+          { type: 'text', text: ', kontaktirajte nas ili posjetite našu stranicu s cjenikom.' }
+        ]
+      }
+    ],
+    date: new Date('2024-05-30'),
+    author: 'dr. Ana Horvat',
+    tags: ['Plasmage', 'Anti-aging', 'Estetska medicina', 'Radiofrekvencija'],
+    image: '/images/services/plasmage-hero.webp'
   }
 ]; 

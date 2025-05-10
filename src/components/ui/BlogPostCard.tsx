@@ -27,7 +27,10 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
           />
         </div>
         <div className="p-6 flex flex-col flex-grow">
-          <div className="flex flex-wrap gap-2 mb-3">
+          <h2 className="text-xl font-semibold mb-3 text-slate-900 group-hover:text-slate-700 transition-colors">
+            {post.title}
+          </h2>
+          <div className="flex flex-wrap gap-2 mb-4">
             {post.tags.map((tag) => (
               <span
                 key={tag}
@@ -37,9 +40,6 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
               </span>
             ))}
           </div>
-          <h2 className="text-xl font-semibold mb-2 text-slate-900 group-hover:text-slate-700 transition-colors line-clamp-2">
-            {post.title}
-          </h2>
           <p className="text-slate-600 mb-4 line-clamp-3 flex-grow">{post.excerpt}</p>
           <div className="flex items-center justify-between text-sm text-slate-500 mt-auto">
             <span>{post.author}</span>

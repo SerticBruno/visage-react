@@ -103,10 +103,19 @@ export default function RelatedArticles({ currentPost, allPosts }: RelatedArticl
       </div>
 
       {/* Related Articles */}
-      <div>
-        <h2 className="text-2xl font-bold mb-6">
-          {relatedPosts.length > 0 ? 'Slični članci' : 'Najnoviji članci'}
-        </h2>
+      <div className="bg-white rounded-2xl shadow-lg p-8 border border-slate-100">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold">
+            {relatedPosts.length > 0 ? 'Slični članci' : 'Najnoviji članci'}
+          </h2>
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
+          >
+            <FaArrowLeft className="w-4 h-4" />
+            <span>Pogledajte sve članke</span>
+          </Link>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {displayPosts.map((post) => (
             <Link
@@ -136,4 +145,4 @@ export default function RelatedArticles({ currentPost, allPosts }: RelatedArticl
       </div>
     </div>
   );
-} 
+}
