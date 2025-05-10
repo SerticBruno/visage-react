@@ -95,7 +95,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5"></div>
       

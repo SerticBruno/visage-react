@@ -47,7 +47,7 @@ export default function ServiceSlider() {
 
   return (
     <div 
-      className="relative w-full overflow-hidden bg-gradient-to-b from-white to-slate-50 py-16"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-gray-50 to-white py-16"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
