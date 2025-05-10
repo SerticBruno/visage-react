@@ -39,7 +39,7 @@ export default function PostsByFilter({ posts, filterType, filterValue }: PostsB
                     <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
                       <div className="flex items-center gap-2">
                         <FaCalendarAlt className="w-4 h-4" />
-                        <span>{post.date}</span>
+                        <span>{post.date.toLocaleDateString('hr-HR', { day: '2-digit', month: '2-digit', year: 'numeric' })}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <FaUser className="w-4 h-4" />

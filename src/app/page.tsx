@@ -8,6 +8,7 @@ import PopularItemsSection from '@/components/sections/PopularItemsSection';
 import FAQSection from '@/components/sections/FAQSection';
 import { popularServices } from '@/data/popularServices';
 import { popularProducts } from '@/data/popularProducts';
+import ServiceSlider from '@/components/ui/ServiceSlider';
 
 export default function Home() {
   return (
@@ -35,9 +36,10 @@ export default function Home() {
         viewAllText="Pogledajte sve proizvode"
         background="white"
       />
-      <PartnersSlider />
-      <FAQSection />
+      <ServiceSlider />
       <CTASection />
+      <FAQSection />
+      <PartnersSlider />
       <ContactSection />
     </main>
   );
