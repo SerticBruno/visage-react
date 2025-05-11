@@ -8,6 +8,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import { FaSearch, FaSort, FaSortAmountDown, FaSortAmountUp } from 'react-icons/fa';
 import BlogPostCard from '@/components/ui/BlogPostCard';
 import ContactSection from '@/components/sections/ContactSection';
+import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 
 const POSTS_PER_PAGE = 6;
 
@@ -370,6 +371,7 @@ export default function BlogPage() {
           </div>
         </div>
       </div>
+      <NewsletterCTASection/>
       <ContactSection/>
     </div>
   );

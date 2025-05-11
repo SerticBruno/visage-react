@@ -5,6 +5,8 @@ import { FaCalendarAlt, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa';
 import Link from 'next/link';
 import InteractiveLink from '@/components/blog/InteractiveLink';
 import { formatDate, toSlug } from '@/lib/utils';
+import ContactSection from '@/components/sections/ContactSection';
+import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 
 interface TagPageProps {
   params: Promise<{
@@ -176,6 +178,8 @@ export default async function TagPage({ params }: TagPageProps) {
           </div>
         </div>
       </div>
+      <NewsletterCTASection/>
+      <ContactSection/>
     </div>
   );
 } 

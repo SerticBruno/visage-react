@@ -5,6 +5,8 @@ import { FaCalendarAlt, FaTag, FaArrowLeft } from 'react-icons/fa';
 import Link from 'next/link';
 import InteractiveLink from '@/components/blog/InteractiveLink';
 import { formatDate, toSlug } from '@/lib/utils';
+import ContactSection from '@/components/sections/ContactSection';
+import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 
 interface AuthorPageProps {
   params: Promise<{
@@ -177,6 +179,8 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
           </div>
         </div>
       </div>
+      <NewsletterCTASection/>
+      <ContactSection/>
     </div>
   );
 } 

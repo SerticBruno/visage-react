@@ -10,6 +10,7 @@ import InteractiveLink from '@/components/blog/InteractiveLink';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import ContactSection from '@/components/sections/ContactSection';
+import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 
 type SegmentParams = {
   slug: string;
@@ -200,6 +201,8 @@ export default async function BlogPostPage(
           </div>
         </div>
       </div>
+      <NewsletterCTASection/>
+      <ContactSection/>
     </div>
   );
 } 
