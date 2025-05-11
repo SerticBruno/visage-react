@@ -34,17 +34,14 @@ const Footer = () => {
           <div>
             <Link href="/" className="inline-block mb-6">
               <div className="flex items-center gap-3 group">
-                <div className="relative w-12 h-12">
-                  <div className="absolute -inset-1 bg-gray-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    <Image
-                      src="/images/LogoV.webp"
-                      alt="VISAGE Studio"
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 relative transform group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
+                <div className="relative">
+                  <Image
+                    src="/images/LogoV.webp"
+                    alt="VISAGE Studio"
+                    width={40}
+                    height={40}
+                    className="h-10 w-auto relative transform group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-2xl font-bold leading-none text-white group-hover:text-gray-200 transition-colors">VISAGE</span>

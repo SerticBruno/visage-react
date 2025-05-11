@@ -57,7 +57,6 @@ export default function Header() {
             className="group flex items-center gap-3 text-gray-800 hover:text-gray-900 transition-all duration-300"
           >
             <div className="relative">
-              <div className="absolute -inset-1 bg-gray-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <Image
                 src="/images/LogoV.webp"
                 alt="VISAGE Studio"
