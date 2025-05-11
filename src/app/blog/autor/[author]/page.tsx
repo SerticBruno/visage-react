@@ -7,11 +7,45 @@ import InteractiveLink from '@/components/blog/InteractiveLink';
 import { formatDate, toSlug } from '@/lib/utils';
 import ContactSection from '@/components/sections/ContactSection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
+import { Metadata } from 'next';
 
 interface AuthorPageProps {
   params: Promise<{
     author: string;
   }>;
+}
+
+export async function generateMetadata(
+  props: AuthorPageProps
+): Promise<Metadata> {
+  const resolvedParams = await props.params;
+  const author = blogPosts.find(post => toSlug(post.author) === resolvedParams.author)?.author;
+  
+  if (!author) {
+    return {
+      title: 'Autor nije pronađen',
+    };
+  }
+
+  const authorPosts = blogPosts.filter(post => post.author === author);
+  const totalPosts = authorPosts.length;
+
+  return {
+    title: `${author} - Blog - VISAGE Studio`,
+    description: `Pregledajte ${totalPosts} ${totalPosts === 1 ? 'članak' : 'članaka'} autora ${author} na blogu VISAGE Studija. Stručni članci o estetskoj medicini i kozmetičkim tretmanima.`,
+    openGraph: {
+      title: `${author} - Blog - VISAGE Studio`,
+      description: `Pregledajte ${totalPosts} ${totalPosts === 1 ? 'članak' : 'članaka'} autora ${author} na blogu VISAGE Studija. Stručni članci o estetskoj medicini i kozmetičkim tretmanima.`,
+      images: [
+        {
+          url: "/images/services/toskani-woman.webp",
+          width: 1200,
+          height: 630,
+          alt: `VISAGE Studio - Blog - ${author}`
+        }
+      ]
+    }
+  };
 }
 
 export default async function AuthorPage({ params }: AuthorPageProps) {

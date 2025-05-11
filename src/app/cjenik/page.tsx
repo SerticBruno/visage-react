@@ -6,6 +6,24 @@ import { FaSearch, FaStar, FaBox } from 'react-icons/fa';
 import React from 'react';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Cjenik - VISAGE Studio",
+  description: "Pregledajte cjenik usluga VISAGE Studija. Transparentne cijene za sve naše tretmane i usluge estetske medicine.",
+  openGraph: {
+    title: "Cjenik - VISAGE Studio",
+    description: "Pregledajte cjenik usluga VISAGE Studija. Transparentne cijene za sve naše tretmane i usluge estetske medicine.",
+    images: [
+      {
+        url: "/images/services/toskani-woman.webp",
+        width: 1200,
+        height: 630,
+        alt: "VISAGE Studio - Cjenik"
+      }
+    ]
+  }
+};
 
 export default function PricingPage() {
   const [searchTerm, setSearchTerm] = useState('');

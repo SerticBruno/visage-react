@@ -9,6 +9,7 @@ import { FaSearch, FaSort, FaSortAmountDown, FaSortAmountUp } from 'react-icons/
 import BlogPostCard from '@/components/ui/BlogPostCard';
 import ContactSection from '@/components/sections/ContactSection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
+import { Metadata } from 'next';
 
 const POSTS_PER_PAGE = 6;
 
@@ -17,6 +18,23 @@ const allTags = Array.from(new Set(blogPosts.flatMap(post => post.tags)));
 const allAuthors = Array.from(new Set(blogPosts.map(post => post.author)));
 
 type SortOption = 'newest' | 'oldest' | 'title-asc' | 'title-desc';
+
+export const metadata: Metadata = {
+  title: "Blog - VISAGE Studio",
+  description: "Otkrijte najnovije vijesti, savjete i informacije o estetskoj medicini i kozmetičkim tretmanima. Pratite naš blog za stručne članke i korisne savjete.",
+  openGraph: {
+    title: "Blog - VISAGE Studio",
+    description: "Otkrijte najnovije vijesti, savjete i informacije o estetskoj medicini i kozmetičkim tretmanima. Pratite naš blog za stručne članke i korisne savjete.",
+    images: [
+      {
+        url: "/images/services/toskani-woman.webp",
+        width: 1200,
+        height: 630,
+        alt: "VISAGE Studio - Blog"
+      }
+    ]
+  }
+};
 
 export default function BlogPage() {
   const [currentPage, setCurrentPage] = useState(1);

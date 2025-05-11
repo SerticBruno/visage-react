@@ -11,6 +11,24 @@ import { popularServices } from '@/data/popularServices';
 import { popularProducts } from '@/data/popularProducts';
 import { blogPosts } from '@/data/posts';
 import ServiceSlider from '@/components/ui/ServiceSlider';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "VISAGE Studio - Estetski studio Sisak",
+  description: "VISAGE Studio je vodeći estetski studio u centru Siska, certificirani predstavnik za TOSKANI. Pružamo profesionalne usluge estetske medicine i kozmetičke tretmane.",
+  openGraph: {
+    title: "VISAGE Studio - Estetski studio Sisak",
+    description: "VISAGE Studio je vodeći estetski studio u centru Siska, certificirani predstavnik za TOSKANI. Pružamo profesionalne usluge estetske medicine i kozmetičke tretmane.",
+    images: [
+      {
+        url: "/images/services/toskani-woman.webp",
+        width: 1200,
+        height: 630,
+        alt: "VISAGE Studio - Estetski studio Sisak"
+      }
+    ]
+  }
+};
 
 export default function Home() {
   // Get the 3 most recent blog posts
