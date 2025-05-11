@@ -2,8 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { blogPosts } from '@/data/posts';
-import Link from 'next/link';
-import Image from 'next/image';
 import HeroSection from '@/components/sections/HeroSection';
 import { FaSearch, FaSort, FaSortAmountDown, FaSortAmountUp } from 'react-icons/fa';
 import BlogPostCard from '@/components/ui/BlogPostCard';
