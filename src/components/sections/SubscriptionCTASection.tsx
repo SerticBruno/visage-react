@@ -7,9 +7,6 @@ import Link from 'next/link';
 const SubscriptionCTASection = () => {
   return (
     <section className="relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5"></div>
-      
       {/* Decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-pink-100 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-100 rounded-full opacity-20 blur-3xl"></div>
