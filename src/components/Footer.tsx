@@ -20,6 +20,7 @@ const Footer = () => {
       setSubmitStatus('success');
       setEmail('');
     } catch (error) {
+      console.error('Newsletter subscription error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -27,8 +28,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-gray-800 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>

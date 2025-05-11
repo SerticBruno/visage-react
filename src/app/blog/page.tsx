@@ -132,14 +132,6 @@ export default function BlogPage() {
     requestAnimationFrame(scrollToPosts);
   };
 
-  const formatDate = (date: Date) => {
-    return new Date(date).toLocaleDateString('hr-HR', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
-  };
-
   const handleCategoriesScroll = () => {
     const scrollTop = categoriesRef.current?.scrollTop || 0;
     const scrollHeight = categoriesRef.current?.scrollHeight || 0;

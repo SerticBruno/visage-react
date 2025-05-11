@@ -6,13 +6,11 @@ import { FaSearch, FaStar, FaBox } from 'react-icons/fa';
 import React from 'react';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
-import CTASection from '@/components/sections/CTASection';
-import { services } from '@/data/services';
 
 export default function PricingPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [isScrolling, setIsScrolling] = useState(false);
+  const [isScrolling] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
   const [showGradient, setShowGradient] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
