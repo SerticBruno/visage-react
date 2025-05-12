@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { BlogPost } from '@/data/types';
 import BlogPostCard from '@/components/ui/BlogPostCard';
@@ -15,6 +15,9 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [visiblePosts, setVisiblePosts] = useState(1);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
@@ -53,25 +56,43 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
+    setIsDragging(true);
+    setDragOffset(0);
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    if (!touchStart) return;
+    
+    const currentTouch = e.targetTouches[0].clientX;
+    const diff = currentTouch - touchStart;
+    setDragOffset(diff);
+    setTouchEnd(currentTouch);
   };
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
     
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
+    const distance = touchEnd - touchStart;
+    const isLeftSwipe = distance < -minSwipeDistance;
+    const isRightSwipe = distance > minSwipeDistance;
 
     if (isLeftSwipe) {
       nextSlide();
-    }
-    if (isRightSwipe) {
+    } else if (isRightSwipe) {
       prevSlide();
     }
+
+    setIsDragging(false);
+    setDragOffset(0);
+  };
+
+  const getTransform = () => {
+    if (!containerRef.current) return `translateX(-${currentIndex * (100 / visiblePosts)}%)`;
+    
+    const containerWidth = containerRef.current.offsetWidth;
+    const baseTransform = currentIndex * (100 / visiblePosts);
+    const dragPercentage = (dragOffset / containerWidth) * 100;
+    return `translateX(calc(-${baseTransform}% + ${dragPercentage}%))`;
   };
 
   return (
@@ -104,14 +125,18 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
 
           {/* Slides Container */}
           <div 
+            ref={containerRef}
             className="relative overflow-hidden"
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
           >
             <div 
-              className="flex transition-transform duration-700 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * (100 / visiblePosts)}%)` }}
+              className="flex transition-transform duration-300 ease-out"
+              style={{ 
+                transform: getTransform(),
+                transition: isDragging ? 'none' : 'transform 300ms ease-out'
+              }}
             >
               {posts.map((post, index) => (
                 <div
