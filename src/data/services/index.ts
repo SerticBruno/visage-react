@@ -2,7 +2,7 @@ import { Services } from './types';
 import { chemicalPeel } from './chemicalPeel';
 import { mesotherapy } from './mesotherapy';
 import { prp } from './prp';
-import { skinBoosters } from './skinBoosters';
+import { skinBoosteri } from './skinBoosters';
 import { dermalFillers } from './dermalFillers';
 import { plasmage } from './plasmage';
 import { wrinkleTherapy } from './wrinkleTherapy';
@@ -13,7 +13,7 @@ export const services: Services = {
   'kemijski-piling': chemicalPeel,
   'mezoterapija': mesotherapy,
   'prp': prp,
-  'skin-boosters': skinBoosters,
+  'skin-boosteri': skinBoosteri,
   'dermalni-fileri': dermalFillers,
   'plasmage': plasmage,
   'terapija-bora-lica': wrinkleTherapy,
