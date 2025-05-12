@@ -65,22 +65,18 @@ export default function ServiceSlider() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-slate-800 p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer ${
-              isHovering ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-            }`}
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-slate-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer opacity-100"
             aria-label="Previous service"
           >
-            <FaChevronLeft className="w-5 h-5" />
+            <FaChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
           </button>
           
           <button
             onClick={nextSlide}
-            className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-slate-800 p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer ${
-              isHovering ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
-            }`}
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-slate-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer opacity-100"
             aria-label="Next service"
           >
-            <FaChevronRight className="w-5 h-5" />
+            <FaChevronRight className="w-4 h-4 md:w-5 md:h-5" />
           </button>
 
           {/* Slides Container */}
