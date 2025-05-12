@@ -1,8 +1,24 @@
 export const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
 
+interface DataLayerEvent {
+  event: string;
+  page?: string;
+  eventAction?: string;
+  eventCategory?: string;
+  eventLabel?: string;
+  eventValue?: number;
+  consent_state?: {
+    analytics_storage: 'granted' | 'denied';
+    ad_storage: 'granted' | 'denied';
+    functionality_storage: 'granted' | 'denied';
+    personalization_storage: 'granted' | 'denied';
+    security_storage: 'granted' | 'denied';
+  };
+}
+
 declare global {
   interface Window {
-    dataLayer: any[]
+    dataLayer: DataLayerEvent[];
   }
 }
 
