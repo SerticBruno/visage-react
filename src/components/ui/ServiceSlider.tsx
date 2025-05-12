@@ -1,24 +1,22 @@
 'use client'
 
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaChevronLeft, FaChevronRight, FaArrowRight, FaCheck } from 'react-icons/fa';
+import { FaArrowRight, FaCheck } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import { services } from '@/data/services';
 import { Service } from '@/data/services/types';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 export default function ServiceSlider() {
   const servicesArray = Object.values(services);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [visibleServices, setVisibleServices] = useState(1);
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragOffset, setDragOffset] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Minimum swipe distance (in px)
-  const minSwipeDistance = 50;
 
   useEffect(() => {
     const updateVisibleServices = () => {
@@ -36,63 +34,6 @@ export default function ServiceSlider() {
     return () => window.removeEventListener('resize', updateVisibleServices);
   }, []);
 
-  const totalPages = Math.ceil(servicesArray.length / visibleServices);
-  const currentPage = Math.floor(currentIndex / visibleServices) + 1;
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex >= servicesArray.length - visibleServices ? 0 : prevIndex + 1
-    );
-  }, [servicesArray.length, visibleServices]);
-
-  const prevSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? servicesArray.length - visibleServices : prevIndex - 1
-    );
-  }, [servicesArray.length, visibleServices]);
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-    setIsDragging(true);
-    setDragOffset(0);
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    if (!touchStart) return;
-    
-    const currentTouch = e.targetTouches[0].clientX;
-    const diff = currentTouch - touchStart;
-    setDragOffset(diff);
-    setTouchEnd(currentTouch);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    
-    const distance = touchEnd - touchStart;
-    const isLeftSwipe = distance < -minSwipeDistance;
-    const isRightSwipe = distance > minSwipeDistance;
-
-    if (isLeftSwipe) {
-      nextSlide();
-    } else if (isRightSwipe) {
-      prevSlide();
-    }
-
-    setIsDragging(false);
-    setDragOffset(0);
-  };
-
-  const getTransform = () => {
-    if (!containerRef.current) return `translateX(-${currentIndex * (100 / visibleServices)}%)`;
-    
-    const containerWidth = containerRef.current.offsetWidth;
-    const baseTransform = currentIndex * (100 / visibleServices);
-    const dragPercentage = (dragOffset / containerWidth) * 100;
-    return `translateX(calc(-${baseTransform}% + ${dragPercentage}%))`;
-  };
-
   return (
     <div className="relative w-full py-20">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -106,42 +47,49 @@ export default function ServiceSlider() {
         </div>
         
         <div className="relative">
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-slate-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer opacity-100"
-            aria-label="Previous service"
-          >
-            <FaChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
-          </button>
-          
-          <button
-            onClick={nextSlide}
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-slate-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer opacity-100"
-            aria-label="Next service"
-          >
-            <FaChevronRight className="w-4 h-4 md:w-5 md:h-5" />
-          </button>
+          {/* Custom Navigation Buttons */}
+          <div className="hidden lg:block">
+            <button
+              className="swiper-button-prev !w-12 !h-12 !bg-white/90 hover:!bg-white !text-slate-800 !rounded-full !shadow-lg transition-all duration-300 hover:!scale-110 after:!text-xl after:!font-bold"
+              aria-label="Previous service"
+            />
+            <button
+              className="swiper-button-next !w-12 !h-12 !bg-white/90 hover:!bg-white !text-slate-800 !rounded-full !shadow-lg transition-all duration-300 hover:!scale-110 after:!text-xl after:!font-bold"
+              aria-label="Next service"
+            />
+          </div>
 
-          {/* Slides Container */}
-          <div 
-            ref={containerRef}
-            className="relative overflow-hidden pb-8"
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={24}
+            slidesPerView={visibleServices}
+            navigation={{
+              enabled: true,
+              prevEl: '.swiper-button-prev',
+              nextEl: '.swiper-button-next',
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            className="pb-12"
+            breakpoints={{
+              320: {
+                spaceBetween: 16,
+              },
+              768: {
+                spaceBetween: 24,
+              },
+              1024: {
+                spaceBetween: 32,
+              },
+            }}
           >
-            <div 
-              className="flex transition-transform duration-300 ease-out"
-              style={{ 
-                transform: getTransform(),
-                transition: isDragging ? 'none' : 'transform 300ms ease-out'
-              }}
-            >
-              {servicesArray.map((service: Service, index: number) => (
-                <div
-                  key={`slide-${service.id}`}
-                  className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
+            {servicesArray.map((service: Service) => (
+              <SwiperSlide key={`slide-${service.id}`}>
+                <Link 
+                  href={`/usluge/${service.id}`}
+                  className="block h-full"
                 >
                   <div className="group h-[480px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300">
                     <div className="flex flex-col h-full">
@@ -152,7 +100,7 @@ export default function ServiceSlider() {
                           alt={service.title}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          priority={index === 0}
+                          priority={service.id === servicesArray[0].id}
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -181,39 +129,78 @@ export default function ServiceSlider() {
                             ))}
                           </div>
 
-                          <Link
-                            href={`/usluge/${service.id}`}
+                          <div
                             className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-800 to-slate-700 text-white rounded-xl hover:from-slate-700 hover:to-slate-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <span className="font-medium">Saznaj više</span>
                             <FaArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                          </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Dots Navigation */}
-          <div className="flex justify-center gap-3 mt-8">
-            {Array.from({ length: Math.ceil(servicesArray.length / visibleServices) }).map((_, index) => (
-              <button
-                key={`dot-${index}`}
-                onClick={() => setCurrentIndex(index * visibleServices)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentPage === index + 1
-                    ? 'bg-slate-800 scale-125'
-                    : 'bg-slate-300 hover:bg-slate-400'
-                }`}
-                aria-label={`Go to page ${index + 1}`}
-              />
+                </Link>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </div>
+
+      <style jsx global>{`
+        .swiper-button-prev,
+        .swiper-button-next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #1e293b;
+        }
+
+        .swiper-button-prev {
+          left: -60px;
+        }
+
+        .swiper-button-next {
+          right: -60px;
+        }
+
+        .swiper-button-disabled {
+          opacity: 0.35;
+          cursor: auto;
+          pointer-events: none;
+        }
+
+        .swiper-pagination {
+          position: relative;
+          bottom: 0;
+          margin-top: 2rem;
+        }
+
+        .swiper-pagination-bullet {
+          width: 10px;
+          height: 10px;
+          background: #cbd5e1;
+          opacity: 1;
+          transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+          background: #1e293b;
+          transform: scale(1.25);
+        }
+
+        @media (max-width: 1024px) {
+          .swiper-button-prev,
+          .swiper-button-next {
+            display: none;
+          }
+        }
+      `}</style>
     </div>
   );
 } 
