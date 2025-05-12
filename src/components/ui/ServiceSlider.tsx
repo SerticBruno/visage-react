@@ -12,6 +12,35 @@ export default function ServiceSlider() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
   const [isHovering, setIsHovering] = useState<boolean>(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    }
+    if (isRightSwipe) {
+      prevSlide();
+    }
+  };
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex: number) => 
@@ -80,7 +109,12 @@ export default function ServiceSlider() {
           </button>
 
           {/* Slides Container */}
-          <div className="relative h-[600px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl">
+          <div 
+            className="relative h-[600px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             {servicesArray.map((service: Service, index: number) => (
               <div
                 key={`slide-${service.id}`}
