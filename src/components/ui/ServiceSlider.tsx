@@ -79,7 +79,6 @@ export default function ServiceSlider() {
             onSlideChange={(swiper) => {
               setCurrentPage(Math.floor(swiper.realIndex / visibleServices) + 1);
             }}
-            className="pb-12"
             breakpoints={{
               320: {
                 spaceBetween: 16,
@@ -99,7 +98,7 @@ export default function ServiceSlider() {
               <SwiperSlide key={`slide-${service.id}`}>
                 <Link 
                   href={`/usluge/${service.id}`}
-                  className="block h-full"
+                  className="block h-full pb-8 px-4"
                 >
                   <div className="group h-[480px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300">
                     <div className="flex flex-col h-full">
