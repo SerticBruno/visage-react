@@ -16,9 +16,9 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
   };
 
   return (
-    <Link href={`/blog/${post.slug}`} className="block group h-full">
+    <Link href={`/blog/${post.slug}`} className="block h-full">
       <article className="bg-gradient-to-b from-white to-slate-50 rounded-xl shadow-sm overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 cursor-pointer h-full flex flex-col">
-        <div className="relative h-48 w-full bg-slate-50 overflow-hidden flex-shrink-0">
+        <div className="relative h-64 w-full bg-slate-50 overflow-hidden flex-shrink-0">
           <Image
             src={post.image}
             alt={post.title}
@@ -40,8 +40,8 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
               </span>
             ))}
           </div>
-          <p className="text-slate-600 mb-4 line-clamp-3 flex-grow">{post.excerpt}</p>
-          <div className="flex items-center justify-between text-sm text-slate-500 mt-auto">
+          <p className="text-slate-600 mb-4 flex-grow">{post.excerpt}</p>
+          <div className="flex items-center justify-between text-sm text-slate-500 mt-auto pt-4 border-t border-slate-100">
             <span>{post.author}</span>
             <time>{formatDate(post.date)}</time>
           </div>

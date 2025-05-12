@@ -5,22 +5,19 @@ import Link from 'next/link';
 import { BlogPost } from '@/data/types';
 import BlogPostCard from '@/components/ui/BlogPostCard';
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
 
 interface FeaturedBlogsSectionProps {
   posts: BlogPost[];
 }
 
 export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProps) {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [visiblePosts, setVisiblePosts] = useState(1);
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragOffset, setDragOffset] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Minimum swipe distance (in px)
-  const minSwipeDistance = 50;
+  const [currentPage, setCurrentPage] = useState(1);
+  const swiperRef = useRef<SwiperType | null>(null);
+  const totalPages = Math.ceil(posts.length / visiblePosts);
 
   useEffect(() => {
     const updateVisiblePosts = () => {
@@ -38,61 +35,23 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
     return () => window.removeEventListener('resize', updateVisiblePosts);
   }, []);
 
-  const totalPages = Math.ceil(posts.length / visiblePosts);
-  const currentPage = Math.floor(currentIndex / visiblePosts) + 1;
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex >= posts.length - visiblePosts ? 0 : prevIndex + 1
-    );
-  }, [posts.length, visiblePosts]);
-
-  const prevSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? posts.length - visiblePosts : prevIndex - 1
-    );
-  }, [posts.length, visiblePosts]);
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-    setIsDragging(true);
-    setDragOffset(0);
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    if (!touchStart) return;
-    
-    const currentTouch = e.targetTouches[0].clientX;
-    const diff = currentTouch - touchStart;
-    setDragOffset(diff);
-    setTouchEnd(currentTouch);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    
-    const distance = touchEnd - touchStart;
-    const isLeftSwipe = distance < -minSwipeDistance;
-    const isRightSwipe = distance > minSwipeDistance;
-
-    if (isLeftSwipe) {
-      nextSlide();
-    } else if (isRightSwipe) {
-      prevSlide();
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
     }
-
-    setIsDragging(false);
-    setDragOffset(0);
   };
 
-  const getTransform = () => {
-    if (!containerRef.current) return `translateX(-${currentIndex * (100 / visiblePosts)}%)`;
-    
-    const containerWidth = containerRef.current.offsetWidth;
-    const baseTransform = currentIndex * (100 / visiblePosts);
-    const dragPercentage = (dragOffset / containerWidth) * 100;
-    return `translateX(calc(-${baseTransform}% + ${dragPercentage}%))`;
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
+
+  const goToPage = (pageIndex: number) => {
+    if (swiperRef.current) {
+      const targetIndex = pageIndex * visiblePosts;
+      swiperRef.current.slideToLoop(targetIndex);
+    }
   };
 
   return (
@@ -106,63 +65,74 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
         </div>
 
         <div className="relative max-w-7xl mx-auto">
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-slate-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer opacity-100"
-            aria-label="Previous post"
+          {/* Swiper Container */}
+          <Swiper
+            spaceBetween={24}
+            slidesPerView={visiblePosts}
+            loop={true}
+            loopAdditionalSlides={visiblePosts}
+            watchSlidesProgress={true}
+            onBeforeInit={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            onSlideChange={(swiper) => {
+              setCurrentPage(Math.floor(swiper.realIndex / visiblePosts) + 1);
+            }}
+            breakpoints={{
+              320: {
+                spaceBetween: 16,
+                slidesPerView: 1,
+              },
+              768: {
+                spaceBetween: 24,
+                slidesPerView: 2,
+              },
+              1024: {
+                spaceBetween: 32,
+                slidesPerView: 3,
+              },
+            }}
           >
-            <FaChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
-          </button>
-          
-          <button
-            onClick={nextSlide}
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-slate-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer opacity-100"
-            aria-label="Next post"
-          >
-            <FaChevronRight className="w-4 h-4 md:w-5 md:h-5" />
-          </button>
-
-          {/* Slides Container */}
-          <div 
-            ref={containerRef}
-            className="relative overflow-hidden pb-8"
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
-          >
-            <div 
-              className="flex transition-transform duration-300 ease-out"
-              style={{ 
-                transform: getTransform(),
-                transition: isDragging ? 'none' : 'transform 300ms ease-out'
-              }}
-            >
-              {posts.map((post, index) => (
-                <div
-                  key={post.id}
-                  className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4"
-                >
+            {posts.map((post) => (
+              <SwiperSlide key={post.id} className='pb-8'>
+                <div className="px-4 h-[600px]">
                   <BlogPostCard post={post} />
                 </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Navigation and Pagination */}
+          <div className="flex items-center justify-center gap-6 mt-8">
+            <button
+              onClick={handlePrev}
+              className="w-8 h-8 bg-white/90 hover:bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              aria-label="Previous post"
+            >
+              <FaChevronLeft className="w-4 h-4" />
+            </button>
+            <div className="flex items-center gap-2 text-slate-800 font-medium">
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToPage(index)}
+                  className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 cursor-pointer ${
+                    currentPage === index + 1
+                      ? 'bg-slate-800 text-white'
+                      : 'hover:bg-slate-100'
+                  }`}
+                >
+                  {index + 1}
+                </button>
               ))}
             </div>
-          </div>
-
-          {/* Dots Navigation */}
-          <div className="flex justify-center gap-3 mt-8">
-            {Array.from({ length: Math.ceil(posts.length / visiblePosts) }).map((_, index) => (
-              <button
-                key={`dot-${index}`}
-                onClick={() => setCurrentIndex(index * visiblePosts)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentPage === index + 1
-                    ? 'bg-slate-800 scale-125'
-                    : 'bg-slate-300 hover:bg-slate-400'
-                }`}
-                aria-label={`Go to page ${index + 1}`}
-              />
-            ))}
+            <button
+              onClick={handleNext}
+              className="w-8 h-8 bg-white/90 hover:bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              aria-label="Next post"
+            >
+              <FaChevronRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
 
