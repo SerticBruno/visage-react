@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { BlogPost } from '@/data/types';
 import BlogPostCard from '@/components/ui/BlogPostCard';
