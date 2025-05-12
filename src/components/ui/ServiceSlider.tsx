@@ -65,7 +65,7 @@ export default function ServiceSlider() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-slate-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer opacity-100"
+            className="absolute left-2 md:left-4 top-[250px] md:top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-slate-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer opacity-100"
             aria-label="Previous service"
           >
             <FaChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
@@ -73,14 +73,14 @@ export default function ServiceSlider() {
           
           <button
             onClick={nextSlide}
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-slate-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer opacity-100"
+            className="absolute right-2 md:right-4 top-[250px] md:top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-slate-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer opacity-100"
             aria-label="Next service"
           >
             <FaChevronRight className="w-4 h-4 md:w-5 md:h-5" />
           </button>
 
           {/* Slides Container */}
-          <div className="relative h-[400px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative h-[600px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl">
             {servicesArray.map((service: Service, index: number) => (
               <div
                 key={`slide-${service.id}`}
@@ -106,7 +106,7 @@ export default function ServiceSlider() {
                   </div>
 
                   {/* Content Section */}
-                  <div className="flex flex-col justify-center p-6 md:p-8 bg-white">
+                  <div className="flex flex-col justify-center p-6 md:p-8 bg-white overflow-y-auto">
                     <div className="max-w-lg">
                       <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
                         {service.title}
