@@ -126,7 +126,7 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
           {/* Slides Container */}
           <div 
             ref={containerRef}
-            className="relative overflow-hidden"
+            className="relative overflow-hidden pb-8"
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
