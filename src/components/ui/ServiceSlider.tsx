@@ -1,22 +1,23 @@
 'use client'
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowRight, FaCheck } from 'react-icons/fa';
+import { FaArrowRight, FaCheck, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
 import { services } from '@/data/services';
 import { Service } from '@/data/services/types';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 export default function ServiceSlider() {
   const servicesArray = Object.values(services);
   const [visibleServices, setVisibleServices] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const swiperRef = useRef<SwiperType | null>(null);
+  const totalPages = Math.ceil(servicesArray.length / visibleServices);
 
   useEffect(() => {
     const updateVisibleServices = () => {
@@ -34,6 +35,25 @@ export default function ServiceSlider() {
     return () => window.removeEventListener('resize', updateVisibleServices);
   }, []);
 
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
+
+  const goToPage = (pageIndex: number) => {
+    if (swiperRef.current) {
+      const targetIndex = pageIndex * visibleServices;
+      swiperRef.current.slideToLoop(targetIndex);
+    }
+  };
+
   return (
     <div className="relative w-full py-20">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -47,41 +67,31 @@ export default function ServiceSlider() {
         </div>
         
         <div className="relative">
-          {/* Custom Navigation Buttons */}
-          <div className="hidden lg:block">
-            <button
-              className="swiper-button-prev !w-12 !h-12 !bg-white/90 hover:!bg-white !text-slate-800 !rounded-full !shadow-lg transition-all duration-300 hover:!scale-110 after:!text-xl after:!font-bold"
-              aria-label="Previous service"
-            />
-            <button
-              className="swiper-button-next !w-12 !h-12 !bg-white/90 hover:!bg-white !text-slate-800 !rounded-full !shadow-lg transition-all duration-300 hover:!scale-110 after:!text-xl after:!font-bold"
-              aria-label="Next service"
-            />
-          </div>
-
           <Swiper
-            modules={[Navigation, Pagination]}
             spaceBetween={24}
             slidesPerView={visibleServices}
-            navigation={{
-              enabled: true,
-              prevEl: '.swiper-button-prev',
-              nextEl: '.swiper-button-next',
+            loop={true}
+            loopAdditionalSlides={visibleServices}
+            watchSlidesProgress={true}
+            onBeforeInit={(swiper) => {
+              swiperRef.current = swiper;
             }}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
+            onSlideChange={(swiper) => {
+              setCurrentPage(Math.floor(swiper.realIndex / visibleServices) + 1);
             }}
             className="pb-12"
             breakpoints={{
               320: {
                 spaceBetween: 16,
+                slidesPerView: 1,
               },
               768: {
                 spaceBetween: 24,
+                slidesPerView: 2,
               },
               1024: {
                 spaceBetween: 32,
+                slidesPerView: 3,
               },
             }}
           >
@@ -144,63 +154,41 @@ export default function ServiceSlider() {
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {/* Custom Navigation Controls */}
+          <div className="flex items-center justify-center gap-6 mt-8">
+            <button
+              onClick={handlePrev}
+              className="w-8 h-8 bg-white/90 hover:bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              aria-label="Previous service"
+            >
+              <FaChevronLeft className="w-4 h-4" />
+            </button>
+            <div className="flex items-center gap-2 text-slate-800 font-medium">
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToPage(index)}
+                  className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 cursor-pointer ${
+                    currentPage === index + 1
+                      ? 'bg-slate-800 text-white'
+                      : 'hover:bg-slate-100'
+                  }`}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+            <button
+              onClick={handleNext}
+              className="w-8 h-8 bg-white/90 hover:bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              aria-label="Next service"
+            >
+              <FaChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
-
-      <style jsx global>{`
-        .swiper-button-prev,
-        .swiper-button-next {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 10;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #1e293b;
-        }
-
-        .swiper-button-prev {
-          left: -60px;
-        }
-
-        .swiper-button-next {
-          right: -60px;
-        }
-
-        .swiper-button-disabled {
-          opacity: 0.35;
-          cursor: auto;
-          pointer-events: none;
-        }
-
-        .swiper-pagination {
-          position: relative;
-          bottom: 0;
-          margin-top: 2rem;
-        }
-
-        .swiper-pagination-bullet {
-          width: 10px;
-          height: 10px;
-          background: #cbd5e1;
-          opacity: 1;
-          transition: all 0.3s ease;
-        }
-
-        .swiper-pagination-bullet-active {
-          background: #1e293b;
-          transform: scale(1.25);
-        }
-
-        @media (max-width: 1024px) {
-          .swiper-button-prev,
-          .swiper-button-next {
-            display: none;
-          }
-        }
-      `}</style>
     </div>
   );
 } 
