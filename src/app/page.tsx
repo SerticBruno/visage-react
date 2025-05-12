@@ -31,10 +31,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  // Get the 3 most recent blog posts
+  // Get the 5 most recent blog posts
   const featuredPosts = blogPosts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 3);
+    .slice(0, 8);
 
   return (
     <main>
