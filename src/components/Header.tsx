@@ -230,20 +230,28 @@ export default function Header() {
               </Link>
               
               <div className="relative">
-                <button
-                  className={`w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 flex items-center justify-between cursor-pointer text-lg ${
-                    isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
-                  }`}
-                  onClick={() => setIsServicesOpen(!isServicesOpen)}
-                >
-                  Usluge
-                  <motion.div
-                    animate={{ rotate: isServicesOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
+                <div className="flex items-center">
+                  <Link
+                    href="/usluge"
+                    className={`flex-grow px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 text-lg ${
+                      isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
+                    }`}
+                    onClick={handleMobileLinkClick}
                   >
-                    <FaChevronDown className="w-3 h-3" />
-                  </motion.div>
-                </button>
+                    Usluge
+                  </Link>
+                  <button
+                    className="p-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300"
+                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  >
+                    <motion.div
+                      animate={{ rotate: isServicesOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <FaChevronDown className="w-3 h-3" />
+                    </motion.div>
+                  </button>
+                </div>
                 
                 <AnimatePresence>
                   {isServicesOpen && (
