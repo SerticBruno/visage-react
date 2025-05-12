@@ -120,8 +120,8 @@ export default function ServiceSlider() {
                       </div>
 
                       {/* Content Section */}
-                      <div className="flex-1 p-6">
-                        <div>
+                      <div className="flex-1 p-6 flex flex-col">
+                        <div className="flex flex-col flex-grow">
                           <p className="text-base text-slate-600 mb-6 leading-relaxed line-clamp-3">
                             {service.description}
                           </p>
@@ -137,14 +137,14 @@ export default function ServiceSlider() {
                               </div>
                             ))}
                           </div>
+                        </div>
 
-                          <div
-                            className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-800 to-slate-700 text-white rounded-xl hover:from-slate-700 hover:to-slate-600 transition-all duration-300 shadow-lg hover:shadow-xl"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <span className="font-medium">Saznaj više</span>
-                            <FaArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                          </div>
+                        <div
+                          className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-800 to-slate-700 text-white rounded-xl hover:from-slate-700 hover:to-slate-600 transition-all duration-300 shadow-lg hover:shadow-xl mt-auto"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <span className="font-medium">Saznaj više</span>
+                          <FaArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </div>
                       </div>
                     </div>
@@ -163,19 +163,18 @@ export default function ServiceSlider() {
             >
               <FaChevronLeft className="w-4 h-4" />
             </button>
-            <div className="flex items-center gap-2 text-slate-800 font-medium">
+            <div className="flex items-center gap-2">
               {Array.from({ length: totalPages }).map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToPage(index)}
-                  className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 cursor-pointer ${
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                     currentPage === index + 1
-                      ? 'bg-slate-800 text-white'
-                      : 'hover:bg-slate-100'
+                      ? 'bg-slate-800 scale-125'
+                      : 'bg-slate-300 hover:bg-slate-400'
                   }`}
-                >
-                  {index + 1}
-                </button>
+                  aria-label={`Go to slide ${index + 1}`}
+                />
               ))}
             </div>
             <button

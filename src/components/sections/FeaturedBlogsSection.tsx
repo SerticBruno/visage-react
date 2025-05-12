@@ -95,7 +95,7 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
           >
             {posts.map((post) => (
               <SwiperSlide key={post.id} className='pb-8'>
-                <div className="px-4 h-[600px]">
+                <div className="px-4 h-full">
                   <BlogPostCard post={post} />
                 </div>
               </SwiperSlide>
@@ -111,19 +111,18 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
             >
               <FaChevronLeft className="w-4 h-4" />
             </button>
-            <div className="flex items-center gap-2 text-slate-800 font-medium">
+            <div className="flex items-center gap-2">
               {Array.from({ length: totalPages }).map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToPage(index)}
-                  className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 cursor-pointer ${
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                     currentPage === index + 1
-                      ? 'bg-slate-800 text-white'
-                      : 'hover:bg-slate-100'
+                      ? 'bg-slate-800 scale-125'
+                      : 'bg-slate-300 hover:bg-slate-400'
                   }`}
-                >
-                  {index + 1}
-                </button>
+                  aria-label={`Go to slide ${index + 1}`}
+                />
               ))}
             </div>
             <button
