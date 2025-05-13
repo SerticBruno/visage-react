@@ -36,7 +36,7 @@ const PopularItemsSection = ({
               className="group relative bg-gradient-to-b from-white to-slate-50 rounded-xl shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden flex flex-col h-full"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="p-4 flex flex-col items-center flex-grow">
+              <div className="p-4 flex flex-col items-center">
                 <div className="relative w-24 h-24 md:w-32 md:h-32 mb-4 md:mb-6 rounded-full overflow-hidden ring-2 ring-slate-100 group-hover:ring-slate-200 transition-all duration-300">
                   <Image
                     src={item.image}
@@ -48,10 +48,10 @@ const PopularItemsSection = ({
                 <h3 className="text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-4 text-center group-hover:text-slate-900 transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-sm md:text-base text-slate-600 text-center mb-4 md:mb-6">
+                <p className="text-sm md:text-base text-slate-600 text-center mb-4">
                   {item.description}
                 </p>
-                <div className="w-full space-y-2 md:space-y-3 mb-4 md:mb-6">
+                <div className="hidden lg:block w-full space-y-2 md:space-y-3 mb-4">
                   {item.features.map((feature, index) => (
                     <div key={index} className="flex items-center group/feature">
                       <svg className="w-4 h-4 md:w-5 md:h-5 text-emerald-500 mr-2 flex-shrink-0 transition-transform duration-300 group-hover/feature:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,9 +62,11 @@ const PopularItemsSection = ({
                   ))}
                 </div>
               </div>
-              <div className="p-4 border-t border-slate-100 mt-auto">
-                <div className="text-center text-sm md:text-base text-slate-600 group-hover:text-slate-900 transition-colors duration-300">
-                  Saznajte više
+              <div className="p-3 border-t border-slate-100 mt-auto">
+                <div className="text-center text-sm md:text-base font-medium bg-gradient-to-r from-slate-50 to-white rounded-lg py-2 px-4 group-hover:from-slate-100 group-hover:to-slate-50 transition-all duration-300">
+                  <span className="text-slate-700 group-hover:text-slate-900 transition-colors duration-300">
+                    Saznajte više
+                  </span>
                   <svg 
                     className="w-4 h-4 ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1" 
                     fill="none" 
