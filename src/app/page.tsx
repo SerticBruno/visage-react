@@ -40,7 +40,7 @@ export default function Home() {
     <main>
       <HeroSection
         title="VISAGE studio"
-        description="Estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI"
+        description="Estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI, Circadia, Dp Dermaceuticals i Skymedic"
         image="/images/services/toskani-woman.webp"
         ctaText="Zakažite termin"
         ctaLink="/kontakt"
