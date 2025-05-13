@@ -41,7 +41,7 @@ export default function ServicesSection() {
           {/* CTA Card */}
           <Link
             href="/kontakt"
-            className="group relative bg-gradient-to-br from-slate-700 to-slate-900 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+            className="group relative bg-gradient-to-br from-slate-700 to-slate-900 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 lg:hidden xl:hidden"
           >
             <div className="relative h-48 md:h-64 flex items-center justify-center p-4 md:p-6 text-center">
               <div className="absolute inset-0 bg-black/20" />
