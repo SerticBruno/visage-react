@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,6 +9,11 @@ import { Analytics } from '@vercel/analytics/react';
 import CookieConsent from "@/components/CookieConsent";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const versailles = localFont({
+  src: '../../public/fonts/Versailles.ttf',
+  variable: '--font-versailles',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://visage-studio.hr'),
@@ -70,7 +76,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="hr">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${versailles.variable}`}>
         <GoogleTagManager />
         <Header />
         <main className="pt-16">
