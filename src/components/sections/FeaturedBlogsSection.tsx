@@ -55,11 +55,11 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Izdvojeni članci</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Izdvojeni članci</h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Otkrijte najnovije savjete i trendove iz svijeta estetske medicine. Naši stručnjaci dijele svoje znanje i iskustvo kroz detaljne članke o najmodernijim tretmanima i tehnikama.
           </p>
         </div>
@@ -96,7 +96,9 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
             {posts.map((post) => (
               <SwiperSlide key={post.id} className='pb-8'>
                 <div className="px-4 h-full">
-                  <BlogPostCard post={post} />
+                  <div className="bg-gradient-to-b from-white to-slate-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <BlogPostCard post={post} />
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
@@ -106,7 +108,7 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
           <div className="flex items-center justify-center gap-6 mt-8">
             <button
               onClick={handlePrev}
-              className="w-8 h-8 bg-white/90 hover:bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              className="w-8 h-8 bg-gradient-to-b from-white to-slate-50 hover:from-slate-50 hover:to-slate-100 text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
               aria-label="Previous post"
             >
               <FaChevronLeft className="w-4 h-4" />
@@ -127,7 +129,7 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
             </div>
             <button
               onClick={handleNext}
-              className="w-8 h-8 bg-white/90 hover:bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              className="w-8 h-8 bg-gradient-to-b from-white to-slate-50 hover:from-slate-50 hover:to-slate-100 text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
               aria-label="Next post"
             >
               <FaChevronRight className="w-4 h-4" />

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const NewsletterCTASection = () => {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
@@ -43,10 +43,6 @@ const NewsletterCTASection = () => {
               Prijavi se
             </button>
           </form>
-
-          <p className="mt-4 text-sm text-slate-300">
-            Vaša email adresa je sigurna. Možete se odjaviti u bilo kojem trenutku.
-          </p>
         </div>
       </div>
     </section>

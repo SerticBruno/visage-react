@@ -55,7 +55,7 @@ export default function ServiceSlider() {
   };
 
   return (
-    <div className="relative w-full py-20">
+    <div className="relative w-full py-16 bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
@@ -100,7 +100,7 @@ export default function ServiceSlider() {
                   href={`/usluge/${service.id}`}
                   className="block h-full pb-8 px-4"
                 >
-                  <div className="group h-[480px] rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="group h-[480px] rounded-2xl overflow-hidden bg-gradient-to-b from-white to-slate-50 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div className="flex flex-col h-full">
                       {/* Image Section */}
                       <div className="relative h-[200px] overflow-hidden">
