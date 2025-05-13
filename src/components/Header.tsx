@@ -73,7 +73,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-8">
             <Link 
               href="/" 
               className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
@@ -170,7 +170,7 @@ export default function Header() {
 
           {/* Mobile Navigation Button */}
           <button
-            className="md:hidden text-gray-700 hover:text-gray-900 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+            className="lg:hidden text-gray-700 hover:text-gray-900 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
             onClick={(e) => {
               e.preventDefault();
               setIsMenuOpen(!isMenuOpen);
@@ -210,7 +210,7 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden fixed top-20 left-0 right-0 bg-white border-t border-gray-100 overflow-hidden"
+            className="lg:hidden fixed top-20 left-0 right-0 bg-white border-t border-gray-100 overflow-hidden"
           >
             <motion.div 
               className="px-2 pt-2 pb-3 space-y-1"
