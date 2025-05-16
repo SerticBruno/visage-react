@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Service } from '@/data/services/types';
-import { FaRegFileAlt, FaUsers, FaRegEdit, FaRegClock, FaRegHospital, FaRegFile, FaHandHoldingUsd, FaCheck } from 'react-icons/fa';
+import { FaRegFileAlt, FaUsers, FaRegEdit, FaRegClock, FaRegHospital, FaRegFile, FaHandHoldingUsd, FaCheck, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 interface ServiceDetailsSectionProps {
   service: Service;
@@ -22,6 +22,26 @@ const tabIcons = {
 
 export default function ServiceDetailsSection({ service }: ServiceDetailsSectionProps) {
   const [activeTab, setActiveTab] = useState(service.steps[0].id);
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const handleNext = () => {
+    const currentIndex = service.steps.findIndex(step => step.id === activeTab);
+    if (currentIndex < service.steps.length - 1) {
+      setActiveTab(service.steps[currentIndex + 1].id);
+      // Scroll the slider
+      if (sliderRef.current) {
+        const scrollAmount = 84; // 80px (min-w-[80px]) + 16px (space-x-4)
+        sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handlePrevious = () => {
+    const currentIndex = service.steps.findIndex(step => step.id === activeTab);
+    if (currentIndex > 0) {
+      setActiveTab(service.steps[currentIndex - 1].id);
+    }
+  };
 
   const formatContent = (content: string) => {
     // Split content into paragraphs
@@ -89,38 +109,104 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Tabs Navigation */}
-        <div className="border-b border-gray-200 mb-8">
-          <nav className="-mb-px flex space-x-8 overflow-x-auto pb-4 scrollbar-hide">
-            {service.steps.map((step) => {
-              const Icon = tabIcons[step.id as keyof typeof tabIcons];
-              return (
-                <motion.button
-                  key={step.id}
-                  onClick={() => setActiveTab(step.id)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`
-                    whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-all duration-300 cursor-pointer
-                    ${activeTab === step.id
-                      ? 'border-slate-600 text-slate-700 bg-gradient-to-b from-white to-slate-50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]'
-                      : 'border-transparent text-gray-500 hover:text-slate-700 hover:border-slate-300 hover:bg-gradient-to-b hover:from-white hover:to-slate-50/50'
-                    }
-                  `}
-                >
-                  <div className="flex items-center space-x-2">
-                    <Icon className="h-5 w-5" />
-                    <span>{step.label}</span>
+    <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
+      <div className="container mx-auto px-4 max-w-7xl">
+        {/* Mobile Step Navigation */}
+        <div className="lg:hidden mb-8">
+          <div className="relative">
+            {/* Step List */}
+            <div ref={sliderRef} className="flex overflow-x-auto pb-4 scrollbar-hide pt-2">
+              <div className="flex space-x-4 px-4">
+                {service.steps.map((step, index) => (
+                  <div
+                    key={step.id}
+                    className="flex-shrink-0"
+                  >
+                    <button
+                      onClick={() => setActiveTab(step.id)}
+                      className={`flex flex-col items-center min-w-[80px] transition-all duration-200 ${
+                        activeTab === step.id ? 'opacity-100' : 'opacity-60'
+                      }`}
+                    >
+                      <div className={`
+                        w-12 h-12 rounded-full flex items-center justify-center mb-2
+                        transition-all duration-200
+                        ${activeTab === step.id 
+                          ? 'bg-gradient-to-br from-slate-800 to-slate-700 text-white scale-110 shadow-lg' 
+                          : 'bg-white text-slate-600 shadow-md'
+                        }
+                      `}>
+                        {React.createElement(tabIcons[step.id as keyof typeof tabIcons], {
+                          className: "w-5 h-5"
+                        })}
+                      </div>
+                      <span className={`
+                        text-sm font-medium text-center
+                        ${activeTab === step.id ? 'text-slate-800' : 'text-slate-600'}
+                      `}>
+                        {step.label}
+                      </span>
+                    </button>
                   </div>
-                </motion.button>
-              );
-            })}
-          </nav>
+                ))}
+              </div>
+            </div>
+
+            {/* Progress Bar */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-100">
+              <div 
+                className="h-full bg-slate-700 transition-all duration-300"
+                style={{ 
+                  width: `${((service.steps.findIndex(step => step.id === activeTab) + 1) / service.steps.length) * 100}%` 
+                }}
+              />
+            </div>
+
+            {/* Scroll Indicator */}
+            <div className="absolute right-4 -bottom-6">
+              <button 
+                onClick={handleNext}
+                disabled={service.steps.findIndex(step => step.id === activeTab) === service.steps.length - 1}
+                className="flex items-center text-slate-400 hover:text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+              >
+                <span className="text-sm font-medium mr-1">Sljedeći korak</span>
+                <FaChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Tab Content */}
+        {/* Desktop Tabs */}
+        <div className="hidden lg:block">
+          <div className="border-b border-gray-200 mb-8">
+            <nav className="-mb-px flex space-x-8 overflow-x-auto pb-4 scrollbar-hide">
+              {service.steps.map((step) => {
+                const Icon = tabIcons[step.id as keyof typeof tabIcons];
+                return (
+                  <motion.button
+                    key={step.id}
+                    onClick={() => setActiveTab(step.id)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`
+                      whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-all duration-300 cursor-pointer
+                      ${activeTab === step.id
+                        ? 'border-slate-600 text-slate-700 bg-gradient-to-b from-white to-slate-50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]'
+                        : 'border-transparent text-gray-500 hover:text-slate-700 hover:border-slate-300 hover:bg-gradient-to-b hover:from-white hover:to-slate-50/50'
+                      }
+                    `}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <Icon className="h-5 w-5" />
+                      <span>{step.label}</span>
+                    </div>
+                  </motion.button>
+                );
+              })}
+            </nav>
+          </div>
+        </div>
+
         <div className="mt-8">
           <AnimatePresence mode="wait">
             {service.steps.map((step) => (
@@ -145,7 +231,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                             className: "h-6 w-6 text-slate-700"
                           })}
                         </div>
-                        <h3 className="text-2xl font-bold text-gray-900">{step.label}</h3>
+                        <h3 className="text-xl font-bold text-gray-900">{step.label}</h3>
                       </motion.div>
                       <motion.div 
                         initial={{ opacity: 0 }}
