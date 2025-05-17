@@ -12,16 +12,32 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // Handle desktop services dropdown
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+
+      // Handle mobile menu
+      if (isMenuOpen && mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+        setIsServicesOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, []);
+  }, [isMenuOpen]);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
@@ -206,6 +222,7 @@ export default function Header() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
+            ref={mobileMenuRef}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
