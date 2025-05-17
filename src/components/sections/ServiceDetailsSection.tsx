@@ -115,7 +115,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
         <div className="lg:hidden mb-8">
           <div className="relative">
             {/* Step List */}
-            <div ref={sliderRef} className="flex overflow-x-auto pb-4 scrollbar-hide pt-2">
+            <div ref={sliderRef} className="flex overflow-x-auto pb-4 pt-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               <div className="flex space-x-4 px-4">
                 {service.steps.map((step, index) => (
                   <div
@@ -153,7 +153,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
             </div>
 
             {/* Progress Bar */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-100">
+            <div className="h-1 bg-slate-100">
               <div 
                 className="h-full bg-slate-700 transition-all duration-300"
                 style={{ 
@@ -162,8 +162,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
               />
             </div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute right-4 -bottom-6">
+            {/* Next Step Button */}
+            <div className="flex justify-end mt-6">
               <button 
                 onClick={handleNext}
                 disabled={service.steps.findIndex(step => step.id === activeTab) === service.steps.length - 1}
@@ -303,4 +303,4 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
       </div>
     </section>
   );
-} 
+}
