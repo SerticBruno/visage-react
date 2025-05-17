@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Service } from '@/data/services/types';
-import { FaRegFileAlt, FaUsers, FaRegEdit, FaRegClock, FaRegHospital, FaRegFile, FaHandHoldingUsd, FaCheck, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaRegFileAlt, FaUsers, FaRegEdit, FaRegClock, FaRegHospital, FaRegFile, FaHandHoldingUsd, FaCheck, FaChevronRight } from 'react-icons/fa';
 
 interface ServiceDetailsSectionProps {
   service: Service;
@@ -33,13 +33,6 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
         const scrollAmount = 84; // 80px (min-w-[80px]) + 16px (space-x-4)
         sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
       }
-    }
-  };
-
-  const handlePrevious = () => {
-    const currentIndex = service.steps.findIndex(step => step.id === activeTab);
-    if (currentIndex > 0) {
-      setActiveTab(service.steps[currentIndex - 1].id);
     }
   };
 
@@ -117,7 +110,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
             {/* Step List */}
             <div ref={sliderRef} className="flex overflow-x-auto pb-4 pt-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               <div className="flex space-x-4 px-4">
-                {service.steps.map((step, index) => (
+                {service.steps.map((step) => (
                   <div
                     key={step.id}
                     className="flex-shrink-0"
