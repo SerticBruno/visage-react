@@ -140,7 +140,7 @@ export default function ServiceSlider() {
                         </div>
 
                         <div
-                          className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-800 to-slate-700 text-white rounded-xl hover:from-slate-700 hover:to-slate-600 transition-all duration-300 shadow-lg hover:shadow-xl mt-auto"
+                          className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-800 to-slate-700 text-white rounded-xl hover:from-slate-700 hover:to-slate-600 transition-all duration-300 shadow-lg hover:shadow-xl mt-auto w-fit"
                           onClick={(e) => e.stopPropagation()}
                         >
                           <span className="font-medium">Saznaj više</span>
