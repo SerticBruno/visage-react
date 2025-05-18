@@ -1,14 +1,32 @@
 'use client';
 
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Image from 'next/image';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import type { Swiper as SwiperType } from 'swiper';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const PartnersSlider = () => {
+  const swiperRef = React.useRef<SwiperType | null>(null);
+
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
+
   const partners = [
     {
       id: 1,
@@ -77,10 +95,13 @@ const PartnersSlider = () => {
           <div className="absolute inset-y-0 right-0 w-24 z-10"></div>
           
           <Swiper
-            modules={[Autoplay, Pagination]}
+            modules={[Autoplay, Pagination, Navigation]}
             spaceBetween={60}
             slidesPerView={1}
             wrapperClass="!pb-3"
+            onBeforeInit={(swiper) => {
+              swiperRef.current = swiper;
+            }}
             breakpoints={{
               640: {
                 slidesPerView: 2,
@@ -133,14 +154,31 @@ const PartnersSlider = () => {
             ))}
           </Swiper>
           
-          <div className="swiper-pagination mt-16 !relative !bottom-0 !top-auto"></div>
+          {/* Navigation Controls */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <button
+              onClick={handlePrev}
+              className="w-8 h-8 bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              aria-label="Previous partner"
+            >
+              <FaChevronLeft className="w-4 h-4" />
+            </button>
+            <div className="swiper-pagination !relative !bottom-0 !top-auto !w-auto !mx-4"></div>
+            <button
+              onClick={handleNext}
+              className="w-8 h-8 bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              aria-label="Next partner"
+            >
+              <FaChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
 
       <style jsx global>{`
         .swiper-pagination {
           position: relative !important;
-          margin-top: 4rem !important;
+          margin-top: 0 !important;
         }
         .swiper-pagination-bullet {
           width: 12px !important;
