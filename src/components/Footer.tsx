@@ -37,7 +37,7 @@ const Footer = () => {
               <div className="flex items-center gap-3 group">
                 <div className="relative">
                   <Image
-                    src="/images/LogoV.webp"
+                    src="/images/LogoV-white.webp"
                     alt="VISAGE Studio"
                     width={48}
                     height={48}
