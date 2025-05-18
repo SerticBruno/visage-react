@@ -74,7 +74,7 @@ export default function Header() {
           >
             <div className="relative flex items-center">
               <Image
-                src="/images/LogoV.webp"
+                src="/images/LogoV.png"
                 alt="VISAGE Studio"
                 width={48}
                 height={48}
