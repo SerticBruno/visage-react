@@ -129,7 +129,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     date: new Date('2024-03-15T00:00:00.000Z'),
-    author: 'Dr. T. Torinek',
+    author: 'dr T. Torinek',
     tags: ['Plazma terapija', 'Anti-aging', 'Estetska medicina'],
     image: '/images/services/MYV_selfie_details.webp'
   },
@@ -333,7 +333,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     date: new Date('2024-05-07'),
-    author: 'Dr. T. Torinek',
+    author: 'dr T. Torinek',
     tags: ['Mesoterapija', 'Hidratacija', 'Anti-aging'],
     image: '/images/services/Mesoterapia-transdermica-facial.webp'
   },
@@ -425,7 +425,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     date: new Date('2024-05-11'),
-    author: 'Dr. T. Torinek',
+    author: 'dr T. Torinek',
     tags: ['Muška njega', 'Kozmetika', 'Anti-aging'],
     image: '/images/services/botox-face-girl.webp'
   },
@@ -529,7 +529,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     date: new Date('2024-05-20'),
-    author: 'Dr. T. Torinek',
+    author: 'dr T. Torinek',
     tags: ['Zimska njega', 'Hidratacija', 'Njega kože'],
     image: '/images/services/MYV_selfie_details.webp'
   },
@@ -581,7 +581,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     date: new Date('2024-05-25'),
-    author: 'Dr. T. Torinek',
+    author: 'dr T. Torinek',
     tags: ['Anti-aging', 'Estetska medicina', 'Njega kože'],
     image: '/images/services/botox-face-girl.webp'
   },
@@ -710,7 +710,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     date: new Date('2024-05-30'),
-    author: 'Dr. T. Torinek',
+    author: 'dr T. Torinek',
     tags: ['Plasmage', 'Anti-aging', 'Estetska medicina', 'Radiofrekvencija'],
     image: '/images/services/plasmage-hero.webp'
   }
