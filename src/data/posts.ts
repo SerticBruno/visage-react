@@ -129,7 +129,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     date: new Date('2024-03-15T00:00:00.000Z'),
-    author: 'dr. Ana Horvat',
+    author: 'dr. Tatjana Torinek',
     tags: ['Plazma terapija', 'Anti-aging', 'Estetska medicina'],
     image: '/images/services/MYV_selfie_details.webp'
   },
@@ -208,7 +208,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     date: new Date('2024-03-20'),
-    author: 'Maja Kovač',
+    author: 'Mia Torinek',
     tags: ['Obrve', 'Trepavice', 'Laminacija'],
     image: '/images/services/obrve-i-trepavice.webp'
   },
@@ -581,7 +581,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     date: new Date('2024-05-25'),
-    author: 'dr. Ana Horvat',
+    author: 'dr. Tatjana Torinek',
     tags: ['Anti-aging', 'Estetska medicina', 'Njega kože'],
     image: '/images/services/botox-face-girl.webp'
   },
@@ -710,7 +710,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     date: new Date('2024-05-30'),
-    author: 'dr. Ana Horvat',
+    author: 'dr. Tatjana Torinek',
     tags: ['Plasmage', 'Anti-aging', 'Estetska medicina', 'Radiofrekvencija'],
     image: '/images/services/plasmage-hero.webp'
   }
