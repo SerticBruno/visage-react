@@ -185,13 +185,6 @@ const ContactSection = () => {
 
           {/* Contact Info and Map - Right side */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-            {/* Contact Information Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              {contactInfo.map((info, index) => (
-                <ContactInfoCard key={index} {...info} />
-              ))}
-            </div>
-
             {/* Google Maps */}
             <div className="h-64 sm:h-80 lg:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl">
               <iframe
@@ -203,6 +196,13 @@ const ContactSection = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
+            </div>
+
+            {/* Contact Information Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {contactInfo.map((info, index) => (
+                <ContactInfoCard key={index} {...info} />
+              ))}
             </div>
           </div>
         </div>
