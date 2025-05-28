@@ -35,8 +35,8 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-1 rounded-full text-sm"
-                style={{ background: 'rgb(241, 245, 249)', color: 'rgb(71, 85, 105)' }}
+                className="px-2 py-1 rounded-full text-sm font-medium"
+                style={{ background: 'rgb(226, 232, 240)', color: 'rgb(51, 65, 85)' }}
               >
                 {tag}
               </span>
