@@ -183,7 +183,7 @@ const Footer = () => {
                 <span>091 110 50 20</span>
               </a>
               <div className="space-y-1">
-                <p className="text-gray-300">Ulica Stjepana i Antuna Radića 37,</p>
+                <p className="text-gray-300">Ulica Stjepana i Antuna Radića 49,</p>
                 <p className="text-gray-300">44 000, Sisak</p>
               </div>
             </div>

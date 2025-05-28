@@ -71,7 +71,7 @@ const ContactSection = () => {
     {
       icon: FaMapMarkerAlt,
       title: 'Adresa',
-      content: ['Ulica Stjepana i Antuna Radića 37', '44 000, Sisak']
+      content: ['Ulica Stjepana i Antuna Radića 49', '44 000, Sisak']
     },
     {
       icon: FaClock,
@@ -185,17 +185,10 @@ const ContactSection = () => {
 
           {/* Contact Info and Map - Right side */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-            {/* Contact Information Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              {contactInfo.map((info, index) => (
-                <ContactInfoCard key={index} {...info} />
-              ))}
-            </div>
-
             {/* Google Maps */}
             <div className="h-64 sm:h-80 lg:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.9999999999995!2d16.371999999999998!3d45.483999999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4766a7a7a7a7a7a7%3A0x7a7a7a7a7a7a7a7a!2sUlica%20Stjepana%20i%20Antuna%20Radi%C4%87a%2037%2C%2044000%2C%20Sisak!5e0!3m2!1shr!2shr!4v1234567890!5m2!1shr!2shr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.9999999999995!2d16.371999999999998!3d45.483999999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4766a7a7a7a7a7a7%3A0x7a7a7a7a7a7a7a7a!2sUlica%20Stjepana%20i%20Antuna%20Radi%C4%87a%2049%2C%2044000%2C%20Sisak!5e0!3m2!1shr!2shr!4v1234567890!5m2!1shr!2shr"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -203,6 +196,12 @@ const ContactSection = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
+            </div>
+            {/* Contact Information Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {contactInfo.map((info, index) => (
+                <ContactInfoCard key={index} {...info} />
+              ))}
             </div>
           </div>
         </div>
