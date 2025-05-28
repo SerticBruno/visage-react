@@ -86,7 +86,7 @@ export default function ServiceSlider({
             <div className="flex items-center justify-center gap-6 mt-8">
               <button
                 onClick={handlePrev}
-                className="w-8 h-8 bg-white/90 hover:bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+                className="w-8 h-8 bg-white hover:bg-white text-[#1e293b] rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
                 aria-label="Previous service"
               >
                 <FaChevronLeft className="w-4 h-4" />
@@ -98,8 +98,8 @@ export default function ServiceSlider({
                     onClick={() => goToPage(index)}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                       currentPage === index + 1
-                        ? 'bg-slate-800 scale-125'
-                        : 'bg-slate-300 hover:bg-slate-400'
+                        ? 'bg-[#1e293b] scale-125'
+                        : 'bg-[#cbd5e1] hover:bg-[#94a3b8]'
                     }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
@@ -107,7 +107,7 @@ export default function ServiceSlider({
               </div>
               <button
                 onClick={handleNext}
-                className="w-8 h-8 bg-white/90 hover:bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+                className="w-8 h-8 bg-white hover:bg-white text-[#1e293b] rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
                 aria-label="Next service"
               >
                 <FaChevronRight className="w-4 h-4" />
@@ -127,7 +127,7 @@ export default function ServiceSlider({
             <div className="flex justify-center mt-12">
               <Link
                 href={viewAllLink}
-                className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-800 to-slate-700 text-white rounded-xl hover:from-slate-700 hover:to-slate-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="group inline-flex items-center gap-2 px-6 py-3 bg-[#1e293b] text-white rounded-xl hover:bg-[#334155] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 <span className="font-medium">{viewAllText}</span>
                 <FaArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
