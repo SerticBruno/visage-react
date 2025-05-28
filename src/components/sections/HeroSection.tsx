@@ -113,9 +113,16 @@ const HeroSection = ({
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-              {title}
-            </h1>
+            <div className="flex flex-col items-center">
+              <div className="relative w-full flex justify-center">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-[0.6em] text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-['Versailles'] pl-[0.6em]">
+                  VISAGE
+                </h1>
+              </div>
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-normal leading-tight tracking-[0.1em] text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-['Noto_Serif_Display'] mt-2">
+                studio
+              </h2>
+            </div>
           </motion.div>
 
           <motion.div
@@ -124,7 +131,7 @@ const HeroSection = ({
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mb-12"
           >
-            <p className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto text-gray-100 leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
+            <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-gray-100 leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
               {description}
             </p>
           </motion.div>
