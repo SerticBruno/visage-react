@@ -69,6 +69,16 @@ export default function Header() {
     return currentPath.startsWith(path);
   };
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (isActive(path)) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <header className="fixed w-full bg-[linear-gradient(to_right,#f9fafb,#f9fafb,#f3f4f6)] shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,6 +86,7 @@ export default function Header() {
           <Link 
             href="/" 
             className="group flex items-center gap-3 text-gray-800 hover:text-gray-900 transition-all duration-300"
+            onClick={(e) => handleLinkClick(e, '/')}
           >
             <div className="relative flex items-center">
               <Image
@@ -100,6 +111,7 @@ export default function Header() {
               className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
                 isActive('/') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
+              onClick={(e) => handleLinkClick(e, '/')}
             >
               Početna
             </Link>
@@ -115,7 +127,7 @@ export default function Header() {
                 className={`text-gray-700 hover:text-gray-900 transition-all duration-300 flex items-center gap-1 cursor-pointer relative group text-lg ${
                   isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
                 }`}
-                onClick={() => setIsServicesOpen(false)}
+                onClick={(e) => handleLinkClick(e, '/usluge')}
               >
                 Usluge
                 <FaChevronDown className={`w-3 h-3 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
@@ -134,7 +146,7 @@ export default function Header() {
                       className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-300 transform hover:translate-x-1 ${
                         isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold bg-gray-50' : ''
                       }`}
-                      onClick={() => setIsServicesOpen(false)}
+                      onClick={(e) => handleLinkClick(e, `/usluge/${pageName}`)}
                     >
                       {service.title}
                     </Link>
@@ -148,6 +160,7 @@ export default function Header() {
               className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
                 isActive('/katalog') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
+              onClick={(e) => handleLinkClick(e, '/katalog')}
             >
               Katalog
             </Link>
@@ -157,6 +170,7 @@ export default function Header() {
               className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
                 isActive('/cjenik') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
+              onClick={(e) => handleLinkClick(e, '/cjenik')}
             >
               Cjenik
             </Link>
@@ -166,6 +180,7 @@ export default function Header() {
               className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
                 isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
+              onClick={(e) => handleLinkClick(e, '/blog')}
             >
               Blog
             </Link>
@@ -175,6 +190,7 @@ export default function Header() {
               className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
                 isActive('/o-nama') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
+              onClick={(e) => handleLinkClick(e, '/o-nama')}
             >
               O nama
             </Link>
@@ -184,6 +200,7 @@ export default function Header() {
               className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
                 isActive('/kontakt') ? 'text-gray-900 font-bold' : 'font-medium'
               }`}
+              onClick={(e) => handleLinkClick(e, '/kontakt')}
             >
               Kontakt
             </Link>
@@ -298,7 +315,7 @@ export default function Header() {
                               className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-base ${
                                 isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold' : ''
                               }`}
-                              onClick={handleMobileLinkClick}
+                              onClick={(e) => handleLinkClick(e, `/usluge/${pageName}`)}
                             >
                               {service.title}
                             </Link>
@@ -321,7 +338,7 @@ export default function Header() {
                   className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
                     isActive('/katalog') ? 'text-gray-900 font-bold' : 'font-medium'
                   }`}
-                  onClick={handleMobileLinkClick}
+                  onClick={(e) => handleLinkClick(e, '/katalog')}
                 >
                   Katalog
                 </Link>
@@ -338,7 +355,7 @@ export default function Header() {
                   className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
                     isActive('/cjenik') ? 'text-gray-900 font-bold' : 'font-medium'
                   }`}
-                  onClick={handleMobileLinkClick}
+                  onClick={(e) => handleLinkClick(e, '/cjenik')}
                 >
                   Cjenik
                 </Link>
@@ -355,7 +372,7 @@ export default function Header() {
                   className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
                     isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
                   }`}
-                  onClick={handleMobileLinkClick}
+                  onClick={(e) => handleLinkClick(e, '/blog')}
                 >
                   Blog
                 </Link>
@@ -372,7 +389,7 @@ export default function Header() {
                   className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
                     isActive('/o-nama') ? 'text-gray-900 font-bold' : 'font-medium'
                   }`}
-                  onClick={handleMobileLinkClick}
+                  onClick={(e) => handleLinkClick(e, '/o-nama')}
                 >
                   O nama
                 </Link>
@@ -389,7 +406,7 @@ export default function Header() {
                   className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
                     isActive('/kontakt') ? 'text-gray-900 font-bold' : 'font-medium'
                   }`}
-                  onClick={handleMobileLinkClick}
+                  onClick={(e) => handleLinkClick(e, '/kontakt')}
                 >
                   Kontakt
                 </Link>
