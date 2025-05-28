@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 const AboutContent = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Our Story Section - First Section */}
         <motion.div
@@ -21,13 +21,20 @@ const AboutContent = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6">Naša priča</h2>
               <p className="text-gray-600 mb-4">
-                VISAGE Studio je estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI.
-                Naša misija je pružiti vrhunsku uslugu u području estetske medicine, koristeći najmodernije tehnologije
-                i najkvalitetnije proizvode.
+                Utemeljeni smo 2023. godine u Sisku. Visage studio je estetski studio specijaliziran za nekiruršku estetsku medicinu.
+                U Visage studiju smo posvećeni regeneriranju kože, poboljšanju zdravlja kože i zaustavljanju znakova starenja. 
+                Nudimo individualni pristup i tretmane prilagođavamo vašim željama i potrebama.
               </p>
               <p className="text-gray-600 mb-4">
-                Kod nas možete, po prvi put u Sisku, obavljati jedne od najpopularnijih neinvazivnih tretmana:
-                Plasmage i Mesoject Gun mezoterapija koja je dobila Gracia Award za BEST OF BEAUTY 2023.g.
+                Uporabom najsuvremenijih tehnologija i metoda, Visage studio pruža najnovije tretmane i zahvate za regeneriranje kože. 
+                Kod nas, prvi put u Sisku, možete napraviti bleferoplazmu, postupak uklanjanja viška kože s gornjeg i donjeg kapka korištenjem tehnologije frakcijske plazme.
+              </p>
+              <p className="text-gray-600 mb-4">
+                Također, nudimo mezoterapiju Dermapenom 4 i Mesoject Gunom te možemo tretirati čak i najosjetljiviju kožu.
+                U Visage studiju nudimo mezoterapiju egzosomima i polinukleotidima te aktiviramo prirodnu sposobnost kože da se sama regenerira
+              </p>
+              <p className="text-gray-600 mb-4">
+                U našem studiju možete, uz savjet kozmetologinje, kupiti dermokozmetičke proizvode i suplemente za njegu lica, tijela i vlasišta renomiranih svjetskih marki.
               </p>
             </div>
             <div className="relative h-96">
@@ -59,8 +66,9 @@ const AboutContent = () => {
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-semibold">Ime Prezime</h3>
-              <p className="text-gray-600">Estetski tehničar</p>
+              <h3 className="text-xl font-semibold">Tatjana Torinek</h3>
+              <p className="text-gray-600 pt-3">Tatjana Torinek je diplomirala 1992. godine na Medicinskom fakultetu u Zagrebu, a od tada se bavi obiteljskom medicinom. Završila je specijalizaciju iz Obiteljske medicine i uspješno vodi svoju ambulantu već 18 godina. Estetskom medicinom se počela baviti prije 4 godine te se specijalizirala za obavljanje nekirurških estetskih tretmana. Prošla je brojne edukacije i tečajeve te redovito prisustvuje kongresima i predavanjima iz estetske medicine.
+              Omiljeni tretmani su joj mezoterapija egzosomima, skin boosteri i plasmage</p>
             </div>
 
             <div className="text-center group">
@@ -72,8 +80,9 @@ const AboutContent = () => {
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-semibold">Ime Prezime</h3>
-              <p className="text-gray-600">Estetski tehničar</p>
+              <h3 className="text-xl font-semibold">Mia Torinek</h3>
+              <p className="text-gray-600">Mia Torinek je diplomirala marketing na Ekonomskom fakultetu u Zagrebu. Osnovala je Visage studio 2023. godine skupa s majkom Tatjanom. 2024. godine je završila prekvalifikaciju za kozmetičara te se specijalizira za obavljanje neinvazivnih estetskih tretmana. Redovito odlazi na edukacije, tečajeve, radionice i kongrese iz estetske medicine te je uvijek u toku s trendovima.
+              Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
             </div>
 
             <div className="text-center group">
@@ -85,113 +94,9 @@ const AboutContent = () => {
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-semibold">Ime Prezime</h3>
-              <p className="text-gray-600">Estetski tehničar</p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Vision, Mission, Values Section - Third Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold mb-8 text-center">Naše vrijednosti</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-slate-50 to-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-3 rounded-full mr-4">
-                  <FaAward className="text-2xl text-slate-700" />
-                </div>
-                <h3 className="text-xl font-semibold">Vizija</h3>
-              </div>
-              <p className="text-gray-600">
-                Biti vodeći estetski studio u regiji, poznat po inovativnim tretmanima i izvrsnoj usluzi.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-slate-50 to-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-3 rounded-full mr-4">
-                  <GiHealthNormal className="text-2xl text-slate-700" />
-                </div>
-                <h3 className="text-xl font-semibold">Misija</h3>
-              </div>
-              <p className="text-gray-600">
-                Pružiti klijentima najbolje moguće tretmane koristeći najmoderniju tehnologiju i iskustvo naših stručnjaka.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-slate-50 to-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-3 rounded-full mr-4">
-                  <FaHandHoldingHeart className="text-2xl text-slate-700" />
-                </div>
-                <h3 className="text-xl font-semibold">Vrijednosti</h3>
-              </div>
-              <p className="text-gray-600">
-                Profesionalizam, pouzdanost, inovativnost i individualni pristup svakom klijentu.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Why Choose Us Section - Final Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <h2 className="text-3xl font-bold mb-8 text-center">Zašto odabrati nas?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0">
-                <div className="bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-3 rounded-full">
-                  <FaUserMd className="text-xl text-slate-700" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Certificirani stručnjaci</h3>
-                <p className="text-gray-600">Naš tim čine iskusni stručnjaci s dugogodišnjim iskustvom u estetskoj medicini.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0">
-                <div className="bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-3 rounded-full">
-                  <MdHealthAndSafety className="text-xl text-slate-700" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Najmodernija oprema</h3>
-                <p className="text-gray-600">Koristimo najnoviju tehnologiju i opremu vrhunskih proizvođača.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0">
-                <div className="bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-3 rounded-full">
-                  <FaStar className="text-xl text-slate-700" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Individualni pristup</h3>
-                <p className="text-gray-600">Svakom klijentu prilazimo individualno, prilagođavajući tretmane njihovim potrebama.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0">
-                <div className="bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-3 rounded-full">
-                  <FaCheck className="text-xl text-slate-700" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Sigurnost i kvaliteta</h3>
-                <p className="text-gray-600">Strogo se pridržavamo svih sigurnosnih standarda i koristimo najkvalitetnije proizvode.</p>
-              </div>
+              <h3 className="text-xl font-semibold">Helena Torinek</h3>
+              <p className="text-gray-600">Estetski tehničar lorem kozmetičara te se specijalizira za obavljanje neinvazivnih estetskih tretmana. Redovito odlazi na edukacije, tečajeve, radionice i kongrese iz estetske medicine te je uvijek u toku s trendovima.
+              Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
             </div>
           </div>
         </motion.div>
