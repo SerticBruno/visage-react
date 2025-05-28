@@ -11,6 +11,8 @@ import { popularProducts } from '@/data/popularProducts';
 import { blogPosts } from '@/data/posts';
 import ServiceSlider from '@/components/ui/ServiceSlider';
 import { Metadata } from 'next';
+import { services } from '@/data/services';
+import { popularServices } from '@/data/popularServices';
 import PopularServices from '@/components/sections/PopularServices';
 
 export const metadata: Metadata = {
@@ -36,6 +38,38 @@ export default function Home() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 8);
 
+  // Convert popular services to match Service type
+  const popularServicesData = popularServices.map(service => ({
+    id: service.link.split('/').pop() || '',
+    title: service.title,
+    description: service.description,
+    longDescription: service.description,
+    image: service.image,
+    heroImage: service.image,
+    benefits: service.features,
+    metaDescription: service.description,
+    metaKeywords: '',
+    steps: [],
+    stepContents: {},
+    tags: []
+  }));
+
+  // Convert popular products to match Service type
+  const popularProductsData = popularProducts.map(product => ({
+    id: product.link.split('/').pop() || '',
+    title: product.title,
+    description: product.description,
+    longDescription: product.description,
+    image: product.image,
+    heroImage: product.image,
+    benefits: product.features,
+    metaDescription: product.description,
+    metaKeywords: '',
+    steps: [],
+    stepContents: {},
+    tags: []
+  }));
+
   return (
     <main>
       <HeroSection
@@ -46,23 +80,28 @@ export default function Home() {
         ctaLink="/kontakt"
       />
       <AboutSection />
-      <PopularServices/>
-      {/* <PopularItemsSection
-        title="Popularni tretmani"
-        items={popularServices}
+      <ServiceSlider 
+        services={popularServicesData}
+        title="Popularne usluge"
+        description="Otkrijte naše najtraženije tretmane za lice i tijelo"
+        showViewAll={true}
         viewAllLink="/usluge"
-        viewAllText="Pogledajte sve tretmane"
-        background="gray"
-      /> */}
+        viewAllText="Pogledajte sve usluge"
+      />
       <NewsletterCTASection />
-      <PopularItemsSection
+      <ServiceSlider 
+        services={popularProductsData}
         title="Popularni proizvodi"
-        items={popularProducts}
+        description="Otkrijte naše najtraženije proizvode za njegu kože"
+        showViewAll={true}
         viewAllLink="/proizvodi"
         viewAllText="Pogledajte sve proizvode"
-        background="white"
       />
-      <ServiceSlider />
+      <ServiceSlider 
+        services={Object.values(services)}
+        title="Sve usluge"
+        description="Pregledajte našu kompletnu paletu profesionalnih tretmana"
+      />
       <CTASection />
       <FeaturedBlogsSection posts={featuredPosts} />
       <FAQSection />
