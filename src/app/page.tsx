@@ -7,7 +7,6 @@ import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import PopularItemsSection from '@/components/sections/PopularItemsSection';
 import FAQSection from '@/components/sections/FAQSection';
 import FeaturedBlogsSection from '@/components/sections/FeaturedBlogsSection';
-import { popularServices } from '@/data/popularServices';
 import { popularProducts } from '@/data/popularProducts';
 import { blogPosts } from '@/data/posts';
 import ServiceSlider from '@/components/ui/ServiceSlider';
