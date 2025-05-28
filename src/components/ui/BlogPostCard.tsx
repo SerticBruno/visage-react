@@ -35,7 +35,8 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="bg-slate-100 text-slate-600 px-2 py-1 rounded-full text-sm"
+                className="px-2 py-1 rounded-full text-sm"
+                style={{ background: 'rgb(241, 245, 249)', color: 'rgb(71, 85, 105)' }}
               >
                 {tag}
               </span>
@@ -49,7 +50,8 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
             <time>{formatDate(post.date)}</time>
           </div>
           <div
-            className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-800 to-slate-700 text-white rounded-xl hover:from-slate-700 hover:to-slate-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="group inline-flex items-center gap-2 px-6 py-3 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+            style={{ background: 'linear-gradient(to right, rgb(15, 23, 42), rgb(30, 41, 59))' }}
             onClick={(e) => e.stopPropagation()}
           >
             <span className="font-medium">Pročitajte više</span>

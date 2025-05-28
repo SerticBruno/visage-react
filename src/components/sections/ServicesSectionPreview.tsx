@@ -78,19 +78,19 @@ export default function ServicesSectionPreview() {
               <SwiperSlide key={pageName}>
                 <Link
                   href={`/usluge/${pageName}`}
-                  className="group relative bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 block"
+                  className="group relative bg-white rounded-lg shadow-lg overflow-hidden block"
                 >
                   <div className="relative h-48 md:h-64">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover transition-opacity duration-300 group-hover:opacity-90"
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
-                      <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2">{service.title}</h3>
-                      <p className="text-sm md:text-base text-white/90 line-clamp-2 md:line-clamp-none">{service.description}</p>
+                    <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 transition-transform duration-300 group-hover:-translate-y-1">
+                      <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2 transition-all duration-300 group-hover:text-white/100">{service.title}</h3>
+                      <p className="text-sm md:text-base text-white/90 line-clamp-2 md:line-clamp-none transition-all duration-300 group-hover:text-white">{service.description}</p>
                     </div>
                   </div>
                 </Link>
