@@ -4,16 +4,13 @@ import PartnersSlider from '@/components/sections/PartnersSlider';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
-import PopularItemsSection from '@/components/sections/PopularItemsSection';
 import FAQSection from '@/components/sections/FAQSection';
 import FeaturedBlogsSection from '@/components/sections/FeaturedBlogsSection';
 import { popularProducts } from '@/data/popularProducts';
 import { blogPosts } from '@/data/posts';
 import ServiceSlider from '@/components/ui/ServiceSlider';
 import { Metadata } from 'next';
-import { services } from '@/data/services';
 import { popularServices } from '@/data/popularServices';
-import PopularServices from '@/components/sections/PopularServices';
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
 
 export const metadata: Metadata = {
@@ -75,7 +72,7 @@ export default function Home() {
     <main>
       <HeroSection
         title="VISAGE studio"
-        description="Estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI, Circadia, Dp Dermaceuticals i Skymedic"
+        description="Estetski studio specijaliziran za nekirurške estetske tretmane lica koji su prilagođeni vašim potrebama"
         image="/images/services/toskani-woman.webp"
         ctaText="Zakažite termin"
         ctaLink="/kontakt"
