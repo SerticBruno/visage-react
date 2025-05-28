@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { FaArrowRight, FaCalendarAlt } from 'react-icons/fa';
 import Image from 'next/image';
+import { getGradientClasses } from '@/config/theme';
 
 interface CTASectionProps {
   title?: string;
@@ -18,7 +19,7 @@ const CTASection = ({
   ctaLink = "/kontakt"
 }: CTASectionProps) => {
   return (
-    <section className="py-16 bg-gradient-to-b from-[#e5e7eb] to-white">
+    <section className={`relative overflow-hidden py-16 ${getGradientClasses('to-b', true)}`}>
       {/* Decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-pink-100 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-100 rounded-full opacity-20 blur-3xl"></div>
