@@ -11,27 +11,23 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
   {
     question: "Koje usluge nudite?",
-    answer: "Nudimo širok spektar estetskih tretmana uključujući njegu lica, tretmane za tijelo, depilaciju, manikuru i pedikuru. Također smo certificirani predstavnik za TOSKANI proizvode."
+    answer: "Nudimo širok spektar nekirurških estetskih usluga: mezoterapija, skin boosteri, PRP tretman, dermalni fileri, botox, plasmage, kemijski piling. Nadalje nudimo sljedeće beauty tretmane: Circadia Signature Dermaplaning facial, Circadia Beyond Botox Facial, Circadia Marshmallow Facial, Circadia Firming Peptide Facial i Dermalux Flex fototerapiju."
   },
   {
-    question: "Koliko unaprijed trebam rezervirati termin?",
-    answer: "Preporučujemo rezervaciju najmanje 2-3 dana unaprijed, posebno za popularne tretmane i vikende. Za neke specijalne tretmane možda će biti potrebno i više vremena."
+    question: "Gdje mogu dogovoriti termin?",
+    answer: "Termin možete dogovoriti preko naših društvenih mreža, putem našeg Whatsappa i maila na službenoj web stranici."
   },
   {
-    question: "Kakve su cijene vaših usluga?",
-    answer: "Cijene variraju ovisno o vrsti tretmana i trajanju. Detaljan cjenik možete pronaći na stranici Cjenik. Za točne cijene i pakete, slobodno nas kontaktirajte."
+    question: "Koje je vaše radno vrijeme?",
+    answer: "Visage studio radi po dogovoru, što znači da morate unaprijed dogovoriti termin kako bismo Vas primili na konzultacije."
   },
   {
-    question: "Prihvaćate li poklon bonove?",
-    answer: "Da, nudimo poklon bonove za sve naše usluge. Poklon bon možete kupiti u salonu ili online. Bon vrijedi 12 mjeseci od dana kupnje."
+    question: "Koje načine plaćanja prihvaćate?",
+    answer: "Prihvaćamo gotovinsko plaćanje, kartično plaćanje i plaćanje na rate. Jednkratno kartično plaćanje je moguće za Visa, Master, Maestro i Diners kartice. Plaćanje na rate je moguće za Visa, Master i Maestro kartice od 2 do 6 rata (*samo kartice izdane od Erste banke, HPB, Agram banke, Istarske kreditne banke i Slatinske banke) te za Diners kartice od 2 do 12 rata bez kamata."
   },
   {
-    question: "Imate li parking?",
-    answer: "Da, imamo ograničen broj parking mjesta ispred salona. Također, u blizini se nalazi javni parking."
-  },
-  {
-    question: "Kakva je vaša politika otkazivanja?",
-    answer: "Molimo vas da otkazujete termin najmanje 24 sata unaprijed. Za otkazivanje u roku manjem od 24 sata može se naplatiti 50% vrijednosti tretmana."
+    question: "Koje su cijene vaših usluga?",
+    answer: "Cijene usluga variraju ovisno o vrsti tretmana i trajanju tretmana. Detaljan cjenik možete pogledati na našoj službenoj web stranici i društvenim mrežama."
   }
 ];
 

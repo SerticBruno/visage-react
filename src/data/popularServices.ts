@@ -2,7 +2,7 @@ export const popularServices = [
   {
     title: 'SKIN BOOSTERI',
     description: 'Dubinska hidratacija i revitalizacija kože',
-    image: '/images/products/skin-architect-linija.webp',
+    image: '/images/services/TKNHA3_.webp',
     link: '/usluge/skin-boosteri',
     features: [
       'biostimulira proizvodnju kolagena i elastina',
@@ -14,7 +14,7 @@ export const popularServices = [
   {
     title: 'MEZOTERAPIJA',
     description: 'Dubinska njega za vašu kožu',
-    image: '/images/services/Mesoterapia-transdermica-facial.webp',
+    image: '/images/services/toskani-hero.webp',
     link: '/usluge/mezoterapija',
     features: [
       'poboljšanje kvalitete kože i vlasišta',
@@ -38,7 +38,7 @@ export const popularServices = [
   {
     title: 'PRP',
     description: 'Prirodna obnova i regeneracija kože',
-    image: '/images/services/TKNHA3_.webp',
+    image: '/images/services/Mesoterapia-transdermica-facial.webp',
     link: '/usluge/prp',
     features: [
       'prirodna i dugotrajna regeneracija kože i vlasišta',

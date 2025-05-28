@@ -4,10 +4,10 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Kontakt - VISAGE Studio",
-  description: "Kontaktirajte VISAGE Studio u Siska. Zakažite termin za tretman ili saznajte više o našim uslugama. Dostupni smo za sve vaše upite.",
+  description: "Kontaktirajte VISAGE Studio u Siska. Dogovorite termin za tretman ili saznajte više o našim uslugama. Dostupni smo za sve vaše upite.",
   openGraph: {
     title: "Kontakt - VISAGE Studio",
-    description: "Kontaktirajte VISAGE Studio u Siska. Zakažite termin za tretman ili saznajte više o našim uslugama. Dostupni smo za sve vaše upite.",
+    description: "Kontaktirajte VISAGE Studio u Siska. Dogovorite termin za tretman ili saznajte više o našim uslugama. Dostupni smo za sve vaše upite.",
     images: [
       {
         url: "/images/services/toskani-woman.webp",

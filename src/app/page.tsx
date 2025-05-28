@@ -74,7 +74,7 @@ export default function Home() {
         title="VISAGE studio"
         description="Estetski studio specijaliziran za nekirurške estetske tretmane lica koji su prilagođeni vašim potrebama"
         image="/images/services/toskani-woman.webp"
-        ctaText="Zakažite termin"
+        ctaText="Dogovorite termin"
         ctaLink="/kontakt"
       />
       <AboutSection />

@@ -82,6 +82,6 @@ Cijene uključuju:
 - Naknadnu njegu kože
 - Savjete za kućnu njegu
 
-Za više informacija o cijenama i mogućnostima plaćanja, kontaktirajte nas.`
+Za više informacija o cijenama i mogućnostima plaćanja, dogovorite termin.`
   }
 }; 

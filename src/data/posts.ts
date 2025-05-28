@@ -124,7 +124,7 @@ export const blogPosts: BlogPost[] = [
           { type: 'text', text: '12-18 mjeseci', style: 'bold' },
           { type: 'text', text: '. Za više informacija o ' },
           { type: 'link', text: 'cijenama i rasporedu tretmana', href: '/cjenik' },
-          { type: 'text', text: ', kontaktirajte nas ili posjetite našu stranicu s cjenikom.' }
+          { type: 'text', text: ', dogovorite termin ili posjetite našu stranicu s cjenikom.' }
         ]
       }
     ],
@@ -705,7 +705,7 @@ export const blogPosts: BlogPost[] = [
           { type: 'text', text: 'budućnost estetske medicine', style: 'bold' },
           { type: 'text', text: ', kombinirajući najbolje od prirodnih i tehnoloških rješenja za postizanje izvanrednih rezultata. Za više informacija o ' },
           { type: 'link', text: 'cijenama i rasporedu tretmana', href: '/cjenik' },
-          { type: 'text', text: ', kontaktirajte nas ili posjetite našu stranicu s cjenikom.' }
+          { type: 'text', text: ', dogovorite termin ili posjetite našu stranicu s cjenikom.' }
         ]
       }
     ],
