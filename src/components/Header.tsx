@@ -70,7 +70,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed w-full bg-gradient-to-r from-gray-50 via-gray-50 to-gray-100 shadow-sm z-50">
+    <header className="fixed w-full bg-[linear-gradient(to_right,#f9fafb,#f9fafb,#f3f4f6)] shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link 
