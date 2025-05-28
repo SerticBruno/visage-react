@@ -76,6 +76,7 @@ export default function Home() {
         image="/images/services/toskani-woman.webp"
         ctaText="Dogovorite termin"
         ctaLink="/kontakt"
+        variant="home"
       />
       <AboutSection />
       <ServiceSlider 
