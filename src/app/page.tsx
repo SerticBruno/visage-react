@@ -12,6 +12,7 @@ import { popularProducts } from '@/data/popularProducts';
 import { blogPosts } from '@/data/posts';
 import ServiceSlider from '@/components/ui/ServiceSlider';
 import { Metadata } from 'next';
+import PopularServices from '@/components/sections/PopularServices';
 
 export const metadata: Metadata = {
   title: "VISAGE Studio - Estetski studio Sisak",
@@ -46,13 +47,14 @@ export default function Home() {
         ctaLink="/kontakt"
       />
       <AboutSection />
-      <PopularItemsSection
+      <PopularServices/>
+      {/* <PopularItemsSection
         title="Popularni tretmani"
         items={popularServices}
         viewAllLink="/usluge"
         viewAllText="Pogledajte sve tretmane"
         background="gray"
-      />
+      /> */}
       <NewsletterCTASection />
       <PopularItemsSection
         title="Popularni proizvodi"
