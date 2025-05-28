@@ -80,7 +80,7 @@ export default function Home() {
       <AboutSection />
       <ServiceSlider 
         services={popularServicesData}
-        title="Popularne usluge"
+        title="Popularni tretmani"
         description="Otkrijte naše najtraženije tretmane za lice i tijelo"
         showViewAll={true}
         viewAllLink="/usluge"
