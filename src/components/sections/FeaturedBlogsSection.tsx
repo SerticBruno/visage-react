@@ -55,7 +55,7 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-16" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Izdvojeni članci</h2>
@@ -96,7 +96,7 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
             {posts.map((post) => (
               <SwiperSlide key={post.id} className='pb-8'>
                 <div className="px-4 h-full">
-                  <div className="bg-gradient-to-b from-white to-slate-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
                     <BlogPostCard post={post} />
                   </div>
                 </div>
@@ -108,7 +108,8 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
           <div className="flex items-center justify-center gap-6 mt-8">
             <button
               onClick={handlePrev}
-              className="w-8 h-8 bg-gradient-to-b from-white to-slate-50 hover:from-slate-50 hover:to-slate-100 text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              className="w-8 h-8 text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}
               aria-label="Previous post"
             >
               <FaChevronLeft className="w-4 h-4" />
@@ -129,7 +130,8 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
             </div>
             <button
               onClick={handleNext}
-              className="w-8 h-8 bg-gradient-to-b from-white to-slate-50 hover:from-slate-50 hover:to-slate-100 text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              className="w-8 h-8 text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}
               aria-label="Next post"
             >
               <FaChevronRight className="w-4 h-4" />
@@ -140,7 +142,8 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
         <div className="flex justify-center mt-12">
           <Link
             href="/blog"
-            className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-800 to-slate-700 text-white rounded-xl hover:from-slate-700 hover:to-slate-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="group inline-flex items-center gap-2 px-6 py-3 text-white rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+            style={{ background: 'linear-gradient(to right, rgb(15, 23, 42), rgb(30, 41, 59))' }}
           >
             <span className="font-medium">Pogledajte sve članke</span>
             <FaArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

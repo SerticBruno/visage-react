@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 
 interface HeroSectionProps {
   title: string;
@@ -11,6 +12,7 @@ interface HeroSectionProps {
   image: string;
   ctaText?: string;
   ctaLink?: string;
+  variant?: 'home' | 'default';
 }
 
 const HeroSection = ({
@@ -19,7 +21,21 @@ const HeroSection = ({
   image,
   ctaText,
   ctaLink,
+  variant = 'default',
 }: HeroSectionProps) => {
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      // Start fading out when user scrolls past 100px
+      setShowScrollIndicator(scrollPosition < 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleScrollDown = () => {
     // Find the current hero section
     const heroSection = document.querySelector('section');
@@ -31,11 +47,31 @@ const HeroSection = ({
         const navHeight = 80;
         const nextSectionTop = nextSection.getBoundingClientRect().top + window.pageYOffset;
         
-        // Scroll to the section with offset for navigation
-        window.scrollTo({
-          top: nextSectionTop - navHeight,
-          behavior: 'smooth'
-        });
+        // Store the target position
+        const targetPosition = nextSectionTop - navHeight;
+        
+        // Start the scroll animation
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 1000; // 1 second duration
+        let startTime: number | null = null;
+
+        const animation = (currentTime: number) => {
+          if (startTime === null) startTime = currentTime;
+          const timeElapsed = currentTime - startTime;
+          const progress = Math.min(timeElapsed / duration, 1);
+          
+          // Easing function for smooth animation
+          const easeInOutCubic = (t: number) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+          
+          window.scrollTo(0, startPosition + distance * easeInOutCubic(progress));
+          
+          if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+          }
+        };
+
+        requestAnimationFrame(animation);
       } else {
         // If no next section is found, scroll to the top of the page
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -68,7 +104,7 @@ const HeroSection = ({
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))' }} />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center flex-grow w-full px-4 py-16">
@@ -79,9 +115,22 @@ const HeroSection = ({
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-              {title}
-            </h1>
+            {variant === 'home' ? (
+              <div className="flex flex-col items-center">
+                <div className="relative w-full flex justify-center">
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-[0.6em] text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-['Versailles'] pl-[0.6em]">
+                    VISAGE
+                  </h1>
+                </div>
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-normal leading-tight tracking-[0.1em] text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-['Noto_Serif_Display'] mt-2">
+                  studio
+                </h2>
+              </div>
+            ) : (
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                {title}
+              </h1>
+            )}
           </motion.div>
 
           <motion.div
@@ -116,17 +165,19 @@ const HeroSection = ({
         {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
+          animate={{ opacity: showScrollIndicator ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
           className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
         >
           <button
             onClick={handleScrollDown}
-            className="group flex flex-col items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
+            disabled={!showScrollIndicator}
+            className={`group flex flex-col items-center gap-3 transition-opacity ${
+              showScrollIndicator 
+                ? 'cursor-pointer hover:opacity-80' 
+                : 'cursor-default pointer-events-none'
+            }`}
           >
-            <span className="text-sm font-medium text-gray-200 uppercase tracking-wider drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)] group-hover:text-white transition-colors">
-              Scroll Down
-            </span>
             <div className="w-6 h-12 border-2 border-gray-200 rounded-full p-1.5 group-hover:border-white transition-colors">
               <motion.div
                 animate={{

@@ -79,7 +79,7 @@ const PartnersSlider = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-16" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -183,7 +183,7 @@ const PartnersSlider = () => {
         .swiper-pagination-bullet {
           width: 12px !important;
           height: 12px !important;
-          background: #E2E8F0 !important;
+          background: #94A3B8 !important;
           opacity: 1 !important;
           transition: all 0.3s ease !important;
           margin: 0 8px !important;
@@ -193,7 +193,7 @@ const PartnersSlider = () => {
           transform: scale(1.3) !important;
         }
         .swiper-pagination-bullet:hover {
-          background: #CBD5E1 !important;
+          background: #64748B !important;
         }
       `}</style>
     </section>

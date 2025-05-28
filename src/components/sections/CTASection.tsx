@@ -18,13 +18,13 @@ const CTASection = ({
   ctaLink = "/kontakt"
 }: CTASectionProps) => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+    <section className={`relative overflow-hidden py-16 lg:py-32 bg-gradient-to-b from-[#e5e7eb] to-white`}>
       {/* Decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-pink-100 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-100 rounded-full opacity-20 blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 relative">
-        <div className="bg-gradient-to-b from-white to-slate-50 rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-32 relative">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Content */}
             <div className="p-6 sm:p-8 lg:p-16 order-2 lg:order-1">
@@ -37,7 +37,8 @@ const CTASection = ({
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   href={ctaLink}
-                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-slate-800 to-slate-700 text-white rounded-lg font-semibold hover:from-slate-700 hover:to-slate-600 transition-all duration-300 group text-sm sm:text-base shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-white rounded-lg font-semibold transition-all duration-300 group text-sm sm:text-base shadow-lg hover:shadow-xl"
+                  style={{ background: 'linear-gradient(to right, rgb(15, 23, 42), rgb(30, 41, 59))' }}
                 >
                   {ctaText}
                   <FaCalendarAlt className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -62,7 +63,7 @@ const CTASection = ({
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 to-slate-800/80"></div>
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8))' }}></div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-8">
                 <div className="text-center text-white">

@@ -15,7 +15,7 @@ const NewsletterCTASection = () => {
             quality={100}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 to-slate-800/80"></div>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8))' }}></div>
         </div>
       </div>
 
@@ -38,7 +38,8 @@ const NewsletterCTASection = () => {
             />
             <button
               type="submit"
-              className="px-8 py-3 bg-gradient-to-r from-slate-700 to-slate-800 text-white rounded-full font-semibold hover:from-slate-800 hover:to-slate-900 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg cursor-pointer"
+              className="px-8 py-3 text-white rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg cursor-pointer"
+              style={{ background: 'linear-gradient(to right, rgb(30, 41, 59), rgb(15, 23, 42))' }}
             >
               Prijavi se
             </button>

@@ -4,14 +4,14 @@ import PartnersSlider from '@/components/sections/PartnersSlider';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
-import PopularItemsSection from '@/components/sections/PopularItemsSection';
 import FAQSection from '@/components/sections/FAQSection';
 import FeaturedBlogsSection from '@/components/sections/FeaturedBlogsSection';
-import { popularServices } from '@/data/popularServices';
 import { popularProducts } from '@/data/popularProducts';
 import { blogPosts } from '@/data/posts';
 import ServiceSlider from '@/components/ui/ServiceSlider';
 import { Metadata } from 'next';
+import { popularServices } from '@/data/popularServices';
+import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
 
 export const metadata: Metadata = {
   title: "VISAGE Studio - Estetski studio Sisak",
@@ -36,32 +36,67 @@ export default function Home() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 8);
 
+  // Convert popular services to match Service type
+  const popularServicesData = popularServices.map(service => ({
+    id: service.link.split('/').pop() || '',
+    title: service.title,
+    description: service.description,
+    longDescription: service.description,
+    image: service.image,
+    heroImage: service.image,
+    benefits: service.features,
+    metaDescription: service.description,
+    metaKeywords: '',
+    steps: [],
+    stepContents: {},
+    tags: []
+  }));
+
+  // Convert popular products to match Service type
+  const popularProductsData = popularProducts.map(product => ({
+    id: product.link.split('/').pop() || '',
+    title: product.title,
+    description: product.description,
+    longDescription: product.description,
+    image: product.image,
+    heroImage: product.image,
+    benefits: product.features,
+    metaDescription: product.description,
+    metaKeywords: '',
+    steps: [],
+    stepContents: {},
+    tags: []
+  }));
+
   return (
     <main>
       <HeroSection
         title="VISAGE studio"
-        description="Estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI, Circadia, Dp Dermaceuticals i Skymedic"
+        description="Estetski studio specijaliziran za nekirurške estetske tretmane lica koji su prilagođeni vašim potrebama"
         image="/images/services/toskani-woman.webp"
-        ctaText="Zakažite termin"
+        ctaText="Dogovorite termin"
         ctaLink="/kontakt"
+        variant="home"
       />
       <AboutSection />
-      <PopularItemsSection
+      <ServiceSlider 
+        services={popularServicesData}
         title="Popularni tretmani"
-        items={popularServices}
+        description="Otkrijte naše najtraženije tretmane za lice i tijelo"
+        showViewAll={true}
         viewAllLink="/usluge"
-        viewAllText="Pogledajte sve tretmane"
-        background="gray"
+        viewAllText="Pogledajte sve usluge"
       />
       <NewsletterCTASection />
-      <PopularItemsSection
+      <ServiceSlider 
+        services={popularProductsData}
         title="Popularni proizvodi"
-        items={popularProducts}
+        description="Otkrijte naše najtraženije proizvode za njegu kože"
+        showViewAll={true}
         viewAllLink="/proizvodi"
         viewAllText="Pogledajte sve proizvode"
-        background="white"
       />
-      <ServiceSlider />
+      <ServicesSectionPreview/>
       <CTASection />
       <FeaturedBlogsSection posts={featuredPosts} />
       <FAQSection />

@@ -1,50 +1,50 @@
 export const popularProducts = [
   {
-    title: 'ALMOND OIL',
-    description: 'Prirodno bademovo ulje za negu kože i kose',
+    title: 'TOSKANI Sun Shiel-D',
+    description: 'Inovativna i napredna zaštita od sunca',
     image: '/images/products/Almond-Oil-12.webp',
     link: '/proizvodi/almond-oil',
     features: [
-      '100% prirodno',
-      'Bogato vitaminima',
-      'Dubinsko hidrira',
-      'Za sve tipove kože'
+      'omogućuje sintezu vitamina D',
+      'visoka zaštita 50(plus napiši kao znak) od sunca',
+      'štiti kožu od UVA, UVB, IR i HEV zračenja',
+      'održava kožu čvrstom, sjajnom i hidratiziranom'
     ]
   },
   {
-    title: 'ANTI HAIR LOSS',
-    description: 'Serum protiv opadanja kose',
+    title: 'CIRCADIA Emergency Eye Lift',
+    description: 'Napredna njega za okoloočno područje',
     image: '/images/products/anti-hair-loss-background.webp',
     link: '/proizvodi/anti-hair-loss',
     features: [
-      'Jača folikule',
-      'Sprečava opadanje',
-      'Podstiče rast',
-      'Prirodna formula'
+      'trenutno zateže i učvršćuje područje oko očiju',
+      'hidratizira i popunjava fine linije i bore',
+      'dužim korištenjem pomlađuje područje oko očiju',
+      'namijenjen svim tipovima kože'
     ]
   },
   {
-    title: 'TOSKANI',
-    description: 'Premium linija proizvoda za negu',
+    title: 'CIRCADIA Serum 71',
+    description: 'Anti-aging serum koji sadrži traneksamičnu, azelaičnu i mandeličnu kiselinu',
     image: '/images/products/toskani-products.webp',
     link: '/proizvodi/toskani',
     features: [
-      'Italijanski brend',
-      'Luksuzna formula',
-      'Profesionalna linija',
-      'Vrhunski rezultati'
+      'sadrži najstabilniji oblik vitamina C',
+      'posvjetljuje i učvršćuje kožu',
+      'zaštita kože od slobodnih radikala',
+      'potiče sintezu kolagena i elastina'
     ]
   },
   {
-    title: 'SKIN ARCHITECT',
-    description: 'Profesionalna linija za negu kože',
+    title: 'TOSKANI Skin Architect krema',
+    description: 'Visoko koncetrirana krema protiv bora',
     image: '/images/products/skin-architect-linija.webp',
     link: '/proizvodi/skin-architect',
     features: [
-      'Napredna formula',
-      'Dermatološki testirano',
-      'Prirodni sastojci',
-      'Dokazana efikasnost'
+      'poboljšanje izgleda finih linija i bora',
+      'odgađa učinke starenja kože',
+      'pruža snažno hidratantno i hranjivo djelovanje',
+      'pruža lifting učinak i vraća elastičnost koži'
     ]
   }
 ]; 

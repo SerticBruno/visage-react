@@ -28,7 +28,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="text-white" style={{ background: 'linear-gradient(to bottom, rgb(17, 24, 39), rgb(31, 41, 55))' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
@@ -86,7 +86,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold mb-6 text-white">
               Brzi linkovi
             </h3>
             <ul className="space-y-4">
@@ -149,7 +149,7 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold mb-6 text-white">
               Kontakt
             </h3>
             <div className="space-y-4">
@@ -183,7 +183,7 @@ const Footer = () => {
                 <span>091 110 50 20</span>
               </a>
               <div className="space-y-1">
-                <p className="text-gray-300">Ulica Stjepana i Antuna Radića 37,</p>
+                <p className="text-gray-300">Ulica Stjepana i Antuna Radića 49,</p>
                 <p className="text-gray-300">44 000, Sisak</p>
               </div>
             </div>
@@ -191,7 +191,7 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold mb-6 text-white">
               Newsletter
             </h3>
             <p className="text-gray-300 mb-6 text-lg">
@@ -210,7 +210,8 @@ const Footer = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white rounded-lg transition-all duration-300 font-medium transform hover:-translate-y-0.5 hover:shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="w-full px-6 py-3 text-white rounded-lg transition-all duration-300 font-medium transform hover:-translate-y-0.5 hover:shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  style={{ background: 'linear-gradient(to right, rgb(15, 23, 42), rgb(30, 41, 59))' }}
                 >
                   {isSubmitting ? (
                     <span className="animate-pulse">Slanje...</span>

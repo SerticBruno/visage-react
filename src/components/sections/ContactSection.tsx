@@ -12,11 +12,30 @@ const ContactInfoCard = ({ icon: Icon, title, content, link, linkText }: {
   linkText?: string 
 }) => {
   const CardContent = () => (
-    <div className="flex items-start space-x-3 sm:space-x-4">
-      <div className="relative">
-        <div className="absolute -inset-1.5 sm:-inset-2 bg-gray-100 rounded-full opacity-50"></div>
-        <div className="relative bg-white p-2 sm:p-3 rounded-full border-2 border-gray-100">
-          <Icon size={20} className="text-gray-900" />
+    <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-4 sm:p-6 hover:shadow-2xl transition-shadow duration-300 h-full">
+      <div className="flex items-start space-x-3 sm:space-x-4 h-full">
+        <div className="relative flex-shrink-0">
+          <div className="absolute -inset-1.5 sm:-inset-2 bg-gray-100 rounded-full opacity-50"></div>
+          <div className="relative bg-white p-2 sm:p-3 rounded-full border-2 border-gray-100">
+            <Icon size={20} className="text-gray-900" />
+          </div>
+        </div>
+        <div className="flex flex-col flex-grow">
+          <h4 className="font-semibold text-gray-900 text-sm sm:text-base mb-1 sm:mb-2">{title}</h4>
+          <div className="flex-grow">
+            {Array.isArray(content) ? (
+              content.map((line, index) => (
+                <p key={index} className="text-gray-600 text-sm sm:text-base">{line}</p>
+              ))
+            ) : (
+              <p className="text-gray-600 text-sm sm:text-base">{content}</p>
+            )}
+          </div>
+          {linkText && (
+            <span className="mt-1 sm:mt-2 inline-block text-gray-900 hover:text-gray-700 transition-colors font-medium text-sm sm:text-base">
+              {linkText}
+            </span>
+          )}
         </div>
       </div>
       <div>
@@ -83,9 +102,9 @@ const ContactSection = () => {
     {
       icon: FaMapMarkerAlt,
       title: 'Adresa',
-      content: ['Ulica Stjepana i Antuna Radića 37', '44 000, Sisak'],
-      link: 'https://www.google.com/maps/search/?api=1&query=Ulica+Stjepana+i+Antuna+Radića+37,+Sisak',
-      linkText: 'Otvori na Google Maps'
+      content: ['Ulica Stjepana i Antuna Radića 49', '44 000, Sisak'],
+      link: 'https://www.google.com/maps/dir//Ulica+Stjepana+i+Antuna+Radića+49,+44000,+Sisak/@45.4839999,16.3719999,17z',
+      linkText: 'Pronađite nas'
     },
     {
       icon: FaClock,
@@ -109,10 +128,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-16" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Kontaktirajte nas</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Dogovorite termin</h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             Javite nam se putem kontakt obrasca ili nas posjetite u našem salonu
           </p>
@@ -202,7 +221,7 @@ const ContactSection = () => {
             {/* Google Maps */}
             <div className="h-64 sm:h-80 lg:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.9999999999995!2d16.371999999999998!3d45.483999999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4766a7a7a7a7a7a7%3A0x7a7a7a7a7a7a7a7a!2sUlica%20Stjepana%20i%20Antuna%20Radi%C4%87a%2037%2C%2044000%2C%20Sisak!5e0!3m2!1shr!2shr!4v1234567890!5m2!1shr!2shr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.9999999999995!2d16.371999999999998!3d45.483999999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4766a7a7a7a7a7a7%3A0x7a7a7a7a7a7a7a7a!2sUlica%20Stjepana%20i%20Antuna%20Radi%C4%87a%2049%2C%2044000%2C%20Sisak!5e0!3m2!1shr!2shr!4v1234567890!5m2!1shr!2shr"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -211,7 +230,6 @@ const ContactSection = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-
             {/* Contact Information Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {contactInfo.map((info, index) => (
