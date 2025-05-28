@@ -11,10 +11,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [currentPath, setCurrentPath] = useState('');
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setCurrentPath(pathname);
+  }, [pathname]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -59,13 +64,13 @@ export default function Header() {
 
   const isActive = (path: string) => {
     if (path === '/') {
-      return pathname === path;
+      return currentPath === path;
     }
-    return pathname.startsWith(path);
+    return currentPath.startsWith(path);
   };
 
   return (
-    <header className="fixed w-full bg-gradient-to-r from-gray-50 to-gray-100 shadow-sm z-50">
+    <header className="fixed w-full bg-gradient-to-r from-gray-50 via-gray-50 to-gray-100 shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link 
