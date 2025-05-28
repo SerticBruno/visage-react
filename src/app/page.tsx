@@ -14,6 +14,7 @@ import { Metadata } from 'next';
 import { services } from '@/data/services';
 import { popularServices } from '@/data/popularServices';
 import PopularServices from '@/components/sections/PopularServices';
+import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
 
 export const metadata: Metadata = {
   title: "VISAGE Studio - Estetski studio Sisak",
@@ -97,11 +98,7 @@ export default function Home() {
         viewAllLink="/proizvodi"
         viewAllText="Pogledajte sve proizvode"
       />
-      <ServiceSlider 
-        services={Object.values(services)}
-        title="Sve usluge"
-        description="Pregledajte našu kompletnu paletu profesionalnih tretmana"
-      />
+      <ServicesSectionPreview/>
       <CTASection />
       <FeaturedBlogsSection posts={featuredPosts} />
       <FAQSection />
