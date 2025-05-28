@@ -37,7 +37,8 @@ const CTASection = ({
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   href={ctaLink}
-                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-slate-800 to-slate-700 text-white rounded-lg font-semibold hover:from-slate-700 hover:to-slate-600 transition-all duration-300 group text-sm sm:text-base shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-white rounded-lg font-semibold transition-all duration-300 group text-sm sm:text-base shadow-lg hover:shadow-xl"
+                  style={{ background: 'linear-gradient(to right, rgb(15, 23, 42), rgb(30, 41, 59))' }}
                 >
                   {ctaText}
                   <FaCalendarAlt className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -62,7 +63,7 @@ const CTASection = ({
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 to-slate-800/80"></div>
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8))' }}></div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-8">
                 <div className="text-center text-white">
