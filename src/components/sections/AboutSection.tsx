@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const AboutSection = () => {
   return (
-    <section className="py-16">
+    <section className="py-16" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>

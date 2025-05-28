@@ -43,7 +43,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-16 bg-gradient-to-b from-[#e5e7eb] to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 mb-6 shadow-md ring-1 ring-slate-200/50">

@@ -18,7 +18,7 @@ const CTASection = ({
   ctaLink = "/kontakt"
 }: CTASectionProps) => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-16 bg-gradient-to-b from-[#e5e7eb] to-white">
       {/* Decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-pink-100 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-100 rounded-full opacity-20 blur-3xl"></div>

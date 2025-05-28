@@ -55,7 +55,7 @@ export default function ServiceSlider() {
   };
 
   return (
-    <div className="relative w-full py-16 bg-gradient-to-b from-slate-50 to-white">
+    <div className="relative w-full py-16 bg-gradient-to-b from-white to-[#e5e7eb]">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
