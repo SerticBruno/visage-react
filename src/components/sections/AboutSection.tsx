@@ -9,11 +9,10 @@ const AboutSection = () => {
           <div>
             <h2 className="text-3xl font-bold mb-6">O nama</h2>
             <p className="text-gray-600 mb-4">
-              VISAGE Studio je estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI.
+              VISAGE Studio je estetski studio u centru Siska specijaliziran za nekirurške estetske tretmane.
             </p>
             <p className="text-gray-600 mb-4">
-              Kod nas možete, po prvi put u Sisku, obavljati jedne od najpopularnijih neinvazivnih tretmana:
-              Plasmage i Mesoject Gun mezoterapija koja je dobila Gracia Award za BEST OF BEAUTY 2023.g.
+              Kod nas možete, po prvi put u Sisku, obavljati neke od najpopularnijih neinvazivnih tretmana: mezoterapiju Mesoject Gunom i Dermpenom 4 te bleferoplazmu Plasmage uređajem.
             </p>
             <Link
               href="/o-nama"
