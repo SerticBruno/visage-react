@@ -102,7 +102,7 @@ const HeroSection = ({
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))' }} />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center flex-grow w-full px-4 py-16">
