@@ -4,9 +4,15 @@ export const chemicalPeel: Service = {
   id: 'kemijski-piling',
   title: 'Kemijski Piling',
   description: 'Otkrijte tajnu blistave kože uz TOSKANI pilinge',
-  longDescription: `TOSKANI kemijski piling pružit će vam upravo to, svjež, zdrav i mladenački izgled kože. Kemijski piling je tehnika koja se koristi za poboljšanje izgleda kože putem kontroliranog kemijskog oštećenja određenih slojeva epiderme ili dermisa. Ova tehnika je ključan korak u njezi kože, jer uklanja mrtve stanice s površine kože, potiče regeneraciju stanica te smanjuje pojavu nepravilnosti poput hiperpigmentacija, preranog starenja, akni i proširenih pora. Koristi se najčešće u sinergiji s drugim estetskim tretmanima: mezoterapija, PRP tretman i skinboosteri.
+  longDescription: `TOSKANI kemijski piling pružit će vam upravo to, svjež, zdrav i mladenački izgled kože.
 
-  U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama koristeći kombinaciju nježnih kiselina kako bismo postigli optimalne rezultate..`,
+Kemijski piling je tehnika koja se koristi za poboljšanje izgleda kože putem kontroliranog kemijskog oštećenja određenih slojeva epiderme ili dermisa.
+
+Ova tehnika je ključan korak u njezi kože, jer uklanja mrtve stanice s površine kože, potiče regeneraciju stanica te smanjuje pojavu nepravilnosti poput hiperpigmentacija, preranog starenja, akni i proširenih pora.
+
+Koristi se najčešće u sinergiji s drugim estetskim tretmanima: mezoterapija, PRP tretman i skinboosteri.
+
+U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama koristeći kombinaciju nježnih kiselina kako bismo postigli optimalne rezultate.`,
   benefits: [
   ],
   image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp',

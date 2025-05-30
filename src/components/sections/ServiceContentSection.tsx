@@ -34,7 +34,7 @@ export default function ServiceContentSection({
           
           <div>
             <h1 className="text-4xl font-bold text-gray-900 mb-6">{title}</h1>
-            <p className="text-xl text-gray-600 mb-8">{description}</p>
+            <p className="text-xl text-gray-600 mb-8 whitespace-pre-line">{description}</p>
             
             {benefits.length > 0 && (
               <div className="mb-8">
