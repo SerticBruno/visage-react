@@ -42,27 +42,62 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
     
     return sections.map((section, sectionIdx) => {
       const lines = section.split('\n');
-      const introText = lines.find(line => !line.trim().match(/^[0-9]+\./) && !line.trim().startsWith('- '));
-      const orderedListItems = lines.filter(line => line.trim().match(/^[0-9]+\./));
-      const bulletPoints = lines.filter(line => line.trim().startsWith('- '));
       
-      return (
-        <div key={sectionIdx} className="mb-6">
-          {introText && <p className="text-gray-600 mb-4 leading-relaxed">{introText}</p>}
-          
-          {orderedListItems.length > 0 && (
+      // If the section starts with a title/intro text
+      if (lines[0] && !lines[0].trim().startsWith('- ') && !lines[0].trim().match(/^[0-9]+\./)) {
+        const introText = lines[0];
+        const orderedListItems = lines.slice(1).filter(line => line.trim().match(/^[0-9]+\./));
+        const bulletPoints = lines.slice(1).filter(line => line.trim().startsWith('- '));
+        
+        return (
+          <div key={sectionIdx} className="mb-6">
+            <p className="text-gray-600 mb-4 leading-relaxed">{introText}</p>
+            {orderedListItems.length > 0 && (
+              <ol className="space-y-3 list-decimal pl-6 mb-4">
+                {orderedListItems.map((item, itemIdx) => (
+                  <li key={itemIdx} className="text-gray-600">
+                    {item.replace(/^[0-9]+\.\s*/, '')}
+                  </li>
+                ))}
+              </ol>
+            )}
+            {bulletPoints.length > 0 && (
+              <ul className="space-y-3">
+                {bulletPoints.map((item, itemIdx) => (
+                  <li key={itemIdx} className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                      <FaCheck className="h-4 w-4 text-slate-700" />
+                    </div>
+                    <span className="text-gray-600">{item.replace('- ', '')}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        );
+      }
+      
+      // If the section is just ordered list items
+      if (lines.every(line => line.trim().match(/^[0-9]+\./))) {
+        return (
+          <div key={sectionIdx} className="mb-6">
             <ol className="space-y-3 list-decimal pl-6">
-              {orderedListItems.map((item, itemIdx) => (
+              {lines.map((item, itemIdx) => (
                 <li key={itemIdx} className="text-gray-600">
                   {item.replace(/^[0-9]+\.\s*/, '')}
                 </li>
               ))}
             </ol>
-          )}
-          
-          {bulletPoints.length > 0 && (
-            <ul className="space-y-3 mt-4">
-              {bulletPoints.map((item, itemIdx) => (
+          </div>
+        );
+      }
+      
+      // If the section is just bullet points
+      if (lines.every(line => line.trim().startsWith('- '))) {
+        return (
+          <div key={sectionIdx} className="mb-6">
+            <ul className="space-y-3">
+              {lines.map((item, itemIdx) => (
                 <li key={itemIdx} className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
                     <FaCheck className="h-4 w-4 text-slate-700" />
@@ -71,13 +106,12 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                 </li>
               ))}
             </ul>
-          )}
-          
-          {!orderedListItems.length && !bulletPoints.length && (
-            <p className="text-gray-600 leading-relaxed">{section}</p>
-          )}
-        </div>
-      );
+          </div>
+        );
+      }
+      
+      // Regular paragraph
+      return <p key={sectionIdx} className="text-gray-600 mb-6 leading-relaxed">{section}</p>;
     });
   };
 
@@ -99,10 +133,10 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
               transition={{ delay: 0.1 * idx }}
               className="relative pl-12"
             >
-              <div className="absolute left-0 top-0 h-8 w-8 rounded-full bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400 flex items-center justify-center shadow-lg ring-2 ring-white">
-                <span className="text-slate-700 font-semibold">{number}</span>
+              <div className="absolute left-0 top-0 flex items-center h-full">
+                <span className="text-2xl font-bold text-slate-700">{number}.</span>
               </div>
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-slate-200 hover:bg-gradient-to-br hover:from-white hover:to-slate-50/50">
+              <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
                 <p className="text-gray-600 leading-relaxed">{description}</p>
               </div>
