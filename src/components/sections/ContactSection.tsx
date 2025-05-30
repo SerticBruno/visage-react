@@ -12,42 +12,25 @@ const ContactInfoCard = ({ icon: Icon, title, content, link, linkText }: {
   linkText?: string 
 }) => {
   const CardContent = () => (
-    <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-4 sm:p-6 hover:shadow-2xl transition-shadow duration-300 h-full">
-      <div className="flex items-start space-x-3 sm:space-x-4 h-full">
-        <div className="relative flex-shrink-0">
-          <div className="absolute -inset-1.5 sm:-inset-2 bg-gray-100 rounded-full opacity-50"></div>
-          <div className="relative bg-white p-2 sm:p-3 rounded-full border-2 border-gray-100">
-            <Icon size={20} className="text-gray-900" />
-          </div>
-        </div>
-        <div className="flex flex-col flex-grow">
-          <h4 className="font-semibold text-gray-900 text-sm sm:text-base mb-1 sm:mb-2">{title}</h4>
-          <div className="flex-grow">
-            {Array.isArray(content) ? (
-              content.map((line, index) => (
-                <p key={index} className="text-gray-600 text-sm sm:text-base">{line}</p>
-              ))
-            ) : (
-              <p className="text-gray-600 text-sm sm:text-base">{content}</p>
-            )}
-          </div>
-          {linkText && (
-            <span className="mt-1 sm:mt-2 inline-block text-gray-900 hover:text-gray-700 transition-colors font-medium text-sm sm:text-base">
-              {linkText}
-            </span>
-          )}
+    <div className="flex items-start space-x-3 sm:space-x-4 h-full">
+      <div className="relative flex-shrink-0">
+        <div className="absolute -inset-1.5 sm:-inset-2 bg-gray-100 rounded-full opacity-50"></div>
+        <div className="relative bg-white p-2 sm:p-3 rounded-full border-2 border-gray-100">
+          <Icon size={20} className="text-gray-900" />
         </div>
       </div>
-      <div>
+      <div className="flex flex-col flex-grow">
         <h4 className="font-semibold text-gray-900 text-sm sm:text-base mb-1 sm:mb-2">{title}</h4>
-        {Array.isArray(content) ? (
-          content.map((line, index) => (
-            <p key={index} className="text-gray-600 text-sm sm:text-base">{line}</p>
-          ))
-        ) : (
-          <p className="text-gray-600 text-sm sm:text-base">{content}</p>
-        )}
-        {linkText && !link && (
+        <div className="flex-grow">
+          {Array.isArray(content) ? (
+            content.map((line, index) => (
+              <p key={index} className="text-gray-600 text-sm sm:text-base">{line}</p>
+            ))
+          ) : (
+            <p className="text-gray-600 text-sm sm:text-base">{content}</p>
+          )}
+        </div>
+        {linkText && (
           <span className="mt-1 sm:mt-2 inline-block text-gray-900 hover:text-gray-700 transition-colors font-medium text-sm sm:text-base">
             {linkText}
           </span>
