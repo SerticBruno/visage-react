@@ -171,18 +171,15 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         w-12 h-12 rounded-full flex items-center justify-center mb-2
                         transition-all duration-200
                         ${activeTab === step.id 
-                          ? 'bg-gradient-to-br from-slate-800 to-slate-700 text-white scale-110 shadow-lg' 
-                          : 'bg-white text-slate-600 shadow-md'
+                          ? 'bg-gradient-to-br from-black to-gray-800 text-white scale-110 shadow-lg' 
+                          : 'bg-white text-black shadow-md'
                         }
                       `}>
                         {React.createElement(tabIcons[step.id as keyof typeof tabIcons], {
                           className: "w-5 h-5"
                         })}
                       </div>
-                      <span className={`
-                        text-sm font-medium text-center
-                        ${activeTab === step.id ? 'text-slate-800' : 'text-slate-600'}
-                      `}>
+                      <span className="text-sm font-medium text-center text-black">
                         {step.label}
                       </span>
                     </button>
@@ -192,9 +189,9 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
             </div>
 
             {/* Progress Bar */}
-            <div className="h-1 bg-slate-100">
+            <div className="h-1 bg-gray-100">
               <div 
-                className="h-full bg-slate-700 transition-all duration-300"
+                className="h-full bg-black transition-all duration-300"
                 style={{ 
                   width: `${((service.steps.findIndex(step => step.id === activeTab) + 1) / service.steps.length) * 100}%` 
                 }}
@@ -230,8 +227,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                     className={`
                       whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-all duration-300 cursor-pointer
                       ${activeTab === step.id
-                        ? 'border-slate-600 text-slate-700 bg-gradient-to-b from-white to-slate-50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]'
-                        : 'border-transparent text-gray-500 hover:text-slate-700 hover:border-slate-300 hover:bg-gradient-to-b hover:from-white hover:to-slate-50/50'
+                        ? 'border-black text-black'
+                        : 'border-transparent text-black hover:border-gray-300'
                       }
                     `}
                   >
@@ -265,9 +262,9 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         transition={{ delay: 0.15 }}
                         className="flex items-center space-x-3 mb-6"
                       >
-                        <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center shadow-md ring-1 ring-slate-200/50">
+                        <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 flex items-center justify-center shadow-md ring-1 ring-gray-200/50">
                           {React.createElement(tabIcons[step.id as keyof typeof tabIcons], {
-                            className: "h-6 w-6 text-slate-700"
+                            className: "h-6 w-6 text-black"
                           })}
                         </div>
                         <h3 className="text-xl font-bold text-gray-900">{step.label}</h3>

@@ -65,7 +65,8 @@ U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama kor
     }
   ],
   stepContents: {
-    'prednosti': `- Uklanja mrtve stanice i nečistoće s kože
+    'prednosti': `Prednosti kemijskog pilinga:
+- Uklanja mrtve stanice i nečistoće s kože
 - Poboljšava izgled kože sklone aknama, poboljšava čvrstoću i zaglađuje teksturu kože
 - Ublažava hiperpigmentacije
 - Umanjuje učinke fotostarenja
