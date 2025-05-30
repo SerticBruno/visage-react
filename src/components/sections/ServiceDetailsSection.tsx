@@ -37,20 +37,31 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   };
 
   const formatContent = (content: string) => {
-    // Split content into paragraphs
-    const paragraphs = content.split('\n\n');
+    // Split content into sections (separated by double newlines)
+    const sections = content.split('\n\n');
     
-    return paragraphs.map((paragraph, idx) => {
-      // Check if paragraph contains bullet points
-      if (paragraph.includes('- ')) {
-        const lines = paragraph.split('\n');
-        const introText = lines.find(line => !line.trim().startsWith('- '));
-        const bulletPoints = lines.filter(line => line.trim().startsWith('- '));
-        
-        return (
-          <div key={idx} className="mb-6">
-            {introText && <p className="text-gray-600 mb-4 leading-relaxed">{introText}</p>}
-            <ul className="space-y-3">
+    return sections.map((section, sectionIdx) => {
+      const lines = section.split('\n');
+      const introText = lines.find(line => !line.trim().match(/^[0-9]+\./) && !line.trim().startsWith('- '));
+      const orderedListItems = lines.filter(line => line.trim().match(/^[0-9]+\./));
+      const bulletPoints = lines.filter(line => line.trim().startsWith('- '));
+      
+      return (
+        <div key={sectionIdx} className="mb-6">
+          {introText && <p className="text-gray-600 mb-4 leading-relaxed">{introText}</p>}
+          
+          {orderedListItems.length > 0 && (
+            <ol className="space-y-3 list-decimal pl-6">
+              {orderedListItems.map((item, itemIdx) => (
+                <li key={itemIdx} className="text-gray-600">
+                  {item.replace(/^[0-9]+\.\s*/, '')}
+                </li>
+              ))}
+            </ol>
+          )}
+          
+          {bulletPoints.length > 0 && (
+            <ul className="space-y-3 mt-4">
               {bulletPoints.map((item, itemIdx) => (
                 <li key={itemIdx} className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
@@ -60,12 +71,13 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                 </li>
               ))}
             </ul>
-          </div>
-        );
-      }
-      
-      // Regular paragraph
-      return <p key={idx} className="text-gray-600 mb-6 leading-relaxed">{paragraph}</p>;
+          )}
+          
+          {!orderedListItems.length && !bulletPoints.length && (
+            <p className="text-gray-600 leading-relaxed">{section}</p>
+          )}
+        </div>
+      );
     });
   };
 
