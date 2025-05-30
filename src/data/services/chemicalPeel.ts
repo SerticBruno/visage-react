@@ -16,8 +16,8 @@ export const chemicalPeel: Service = {
   tags: ['kemijski-piling', 'piling', 'obnova-kože', 'nježni-tretmani'],
   steps: [
     { 
-      id: 'opis-zahvata', 
-      label: 'Opis zahvata', 
+      id: 'prednosti', 
+      label: 'Prednosti', 
       icon: 'FaRegFileAlt',
       image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp'
     },
@@ -46,8 +46,8 @@ export const chemicalPeel: Service = {
       image: '/images/services/kemijski-piling/toskani-bg.webp'
     },
     { 
-      id: 'mjere-opreza', 
-      label: 'Mjere opreza', 
+      id: 'nakon-tretmana', 
+      label: 'Nakon tretmana', 
       icon: 'FaRegFile',
       image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp'
     },
@@ -59,7 +59,7 @@ export const chemicalPeel: Service = {
     }
   ],
   stepContents: {
-    'opis-zahvata': `- Uklanja mrtve stanice i nečistoće s kože
+    'prednosti': `- Uklanja mrtve stanice i nečistoće s kože
 - Poboljšava izgled kože sklone aknama, poboljšava čvrstoću i zaglađuje teksturu kože
 - Ublažava hiperpigmentacije
 - Umanjuje učinke fotostarenja
@@ -90,8 +90,8 @@ Tjedan dana prije tretmana:
 3. Završna njega - Nanošenje Toskani Antistress maske koja ima umirujuća svojstva za kožu i držanje iste 10ak minuta, nanošenje Toskani Total Recovery Gela koji pomaže regeneraciji kože i nanošenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.
 
 4. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade kemijski piling preporučamo korištenje Toskani Total Recovery Gela i obavezno je korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.`,
-    'oporavak': 'Nuspojave mogu uključivati:\n- Crvenilo\n- Osjetljivost\n- Peckanje\n- Stvaranje ljuskica\n- Perutanje kože',
-    'mjere-opreza': 'Mjere opreze su važne za održavanje rezultata i prevenciju komplikacija.',
+    'oporavak': 'Oporavak može trajati nekoliko dana, uz blago crvenilo i ljuštenje kože. Nuspojave mogu uključivati:\n- Crvenilo\n- Osjetljivost\n- Peckanje\n- Stvaranje ljuskica\n- Perutanje kože',
+    'nakon-tretmana': 'Mjere opreze su važne za održavanje rezultata i prevenciju komplikacija.',
     'cijena': 'Cijena ovisi o tipu pilinga i broju potrebnih tretmana.'
   }
 }; 

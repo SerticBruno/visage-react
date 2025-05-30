@@ -18,16 +18,16 @@ export const beautyTreatments: Service = {
   metaKeywords: 'beauty tretmani, njega kože, opuštanje, estetski studio Sisak, VISAGE studio',
   tags: ['beauty-tretmani', 'opuštanje', 'njega-kože', 'luksuzni-tretmani'],
   steps: [
-    { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+    { id: 'prednosti', label: 'Prednosti', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
     { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
     { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
     { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
-    { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+    { id: 'nakon-tretmana', label: 'Nakon tretmana', icon: 'FaRegFile' },
     { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
   ],
   stepContents: {
-    'opis-zahvata': `Beauty tretmani su luksuzni tretmani za lice i tijelo koji pružaju potpuno opuštanje i njegu. Koristimo najkvalitetnije proizvode za maksimalne rezultate.
+    'prednosti': `Beauty tretmani su luksuzni tretmani za lice i tijelo koji pružaju potpuno opuštanje i njegu. Koristimo najkvalitetnije proizvode za maksimalne rezultate.
 
 U VISAGE studiju nudimo različite vrste beauty tretmana, prilagođene vašim potrebama i željama. Svaki tretman je jedinstveno iskustvo koje će vas osvježiti i revitalizirati.`,
     'kandidati': `Beauty tretmani su idealni za osobe koje žele:
@@ -64,7 +64,7 @@ Dan prije tretmana:
 - Redovito koristiti preporučene proizvode za njegu
 
 Redoviti tretmani svakih 4-6 tjedana daju najbolje rezultate.`,
-    'mjere-opreza': `Važne mjere opreza:
+    'nakon-tretmana': `Važne mjere opreza:
 - Izbjegavati izravno sunce 24 sata nakon tretmana
 - Koristiti zaštitni krem s visokim SPF-om
 - Izbjegavati korištenje agresivnih proizvoda za njegu kože

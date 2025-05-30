@@ -11,12 +11,12 @@ interface ServiceDetailsSectionProps {
 }
 
 const tabIcons = {
-  'opis-zahvata': FaRegFileAlt,
+  'prednosti': FaRegFileAlt,
   'kandidati': FaUsers,
   'priprema': FaRegEdit,
   'tijek-zahvata': FaRegClock,
   'oporavak': FaRegHospital,
-  'mjere-opreza': FaRegFile,
+  'nakon-tretmana': FaRegFile,
   'cijena': FaHandHoldingUsd
 };
 
@@ -240,7 +240,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                     </div>
 
                     {/* Benefits Cards */}
-                    {activeTab === 'opis-zahvata' && (
+                    {activeTab === 'prednosti' && (
                       <motion.div 
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -271,7 +271,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                     )}
 
                     {/* Image for other tabs */}
-                    {activeTab !== 'opis-zahvata' && (
+                    {activeTab !== 'prednosti' && (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}

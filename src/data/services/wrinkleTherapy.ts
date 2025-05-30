@@ -23,11 +23,11 @@ export const wrinkleTherapy: Service = {
     { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
     { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
     { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
-    { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+    { id: 'nakon-tretmana', label: 'Nakon tretmana', icon: 'FaRegFile' },
     { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
   ],
   stepContents: {
-    'opis-zahvata': `Terapija bora lica je specijalizirana metoda za smanjenje i prevenciju bora. Koristimo napredne tehnike i proizvode za optimalne rezultate.
+    'prednosti': `Terapija bora lica je specijalizirana metoda za smanjenje i prevenciju bora. Koristimo napredne tehnike i proizvode za optimalne rezultate.
 
 U VISAGE studiju koristimo najkvalitetnije proizvode i tehnike za terapiju bora, prilagođene vašem tipu kože i specifičnim potrebama. Postupak je siguran i učinkovit, a rezultati su vidljivi već nakon prvog tretmana.`,
     'kandidati': `Terapija bora je idealna za osobe koje žele:
@@ -65,7 +65,7 @@ Tjedan dana prije tretmana:
 - Redovito koristiti preporučene proizvode za njegu
 
 Redoviti tretmani svakih 4-6 tjedana daju najbolje rezultate.`,
-    'mjere-opreza': `Važne mjere opreza:
+    'nakon-tretmana': `Važne mjere opreza:
 - Izbjegavati izravno sunce 2 tjedna nakon tretmana
 - Koristiti zaštitni krem s visokim SPF-om
 - Izbjegavati korištenje agresivnih proizvoda za njegu kože
