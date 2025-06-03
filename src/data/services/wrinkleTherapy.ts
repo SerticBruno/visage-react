@@ -6,19 +6,15 @@ export const wrinkleTherapy: Service = {
   description: 'Efikasna terapija za smanjenje bora',
   longDescription: 'Terapija bora lica je specijalizirana metoda za smanjenje i prevenciju bora. Koristimo napredne tehnike i proizvode za optimalne rezultate.',
   benefits: [
-    'Smanjivanje bora',
-    'Prevencija novih bora',
-    'Poboljšava ton kože',
-    'Poboljšava elastičnost',
-    'Prirodni izgled'
   ],
   image: '/images/services/manikura.webp',
   heroImage: '/images/services/toskani-woman.webp',
   metaDescription: 'Terapija bora lica u VISAGE studiju. Smanjite i spriječite bore uz pomoć naprednih metoda. Prirodni i dugotrajni rezultati.',
   metaKeywords: 'terapija bora, bore lica, prevencija bora, estetski studio Sisak, VISAGE studio',
   tags: ['terapija-bora', 'prevencija-bora', 'anti-aging', 'nježni-tretmani'],
+  pricingCategory: 'RRS',
   steps: [
-    { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+    { id: 'prednosti', label: 'Prednosti', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
     { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
     { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },

@@ -6,19 +6,15 @@ export const skinBoosteri: Service = {
   description: 'Napredni skin boosteri za hidrataciju i revitalizaciju',
   longDescription: 'Skin boosteri su napredni tretmani koji pružaju duboku hidrataciju i revitalizaciju kože. Ova metoda koristi visokokvalitetne sastojke za dugotrajno poboljšanje kvalitete kože.',
   benefits: [
-    'Duboka hidratacija kože',
-    'Poboljšava ton i sjaj kože',
-    'Smanjuje fine linije',
-    'Poboljšava elastičnost kože',
-    'Dugotrajni rezultati'
   ],
   image: '/images/services/obrve-i-trepavice.webp',
   heroImage: '/images/services/toskani-hero.webp',
   metaDescription: 'Skin boosteri u VISAGE studiju. Duboka hidratacija i revitalizacija kože. Vidljivi i dugotrajni rezultati.',
   metaKeywords: 'skin boosteri, hidratacija kože, revitalizacija kože, estetski studio Sisak, VISAGE studio',
   tags: ['skin-boosteri', 'hidratacija', 'revitalizacija', 'minimalno-invazivni'],
+  pricingCategory: 'Skin Boosteri',
   steps: [
-    { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+    { id: 'prednosti', label: 'Prednosti', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
     { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
     { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },

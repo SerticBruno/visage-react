@@ -6,19 +6,15 @@ export const prp: Service = {
   description: 'PRP terapija za poticanje prirodne regeneracije',
   longDescription: 'PRP (Platelet Rich Plasma) terapija je revolucionarna metoda koja koristi vlastite trombocite pacijenta za poticanje prirodne regeneracije kože. Ova metoda je potpuno prirodna i sigurna.',
   benefits: [
-    'Potiče prirodnu regeneraciju kože',
-    'Poboljšava ton i teksturu kože',
-    'Smanjuje fine linije i bore',
-    'Poboljšava kvalitetu kože',
-    'Potpuno prirodna metoda'
   ],
   image: '/images/services/plasmage-hero.webp',
   heroImage: '/images/services/MYV_selfie_details.webp',
   metaDescription: 'PRP terapija u VISAGE studiju. Koristite vlastite trombocite za regeneraciju kože. Prirodna i sigurna metoda.',
   metaKeywords: 'PRP terapija, regeneracija kože, trombociti, estetski studio Sisak, VISAGE studio',
   tags: ['prp', 'regeneracija', 'prirodni-tretmani', 'minimalno-invazivni'],
+  pricingCategory: 'PRP',
   steps: [
-    { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+    { id: 'prednosti', label: 'Prednosti', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
     { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
     { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
