@@ -155,7 +155,7 @@ export default function PricingPage() {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1" ref={contentRef}>
+          <div className="flex-1 bg-gradient-to-br from-gray-50 via-white to-gray-50 rounded-lg p-6" ref={contentRef}>
             {/* Content View */}
             <div className={`transition-opacity duration-300 ${isScrolling || isFiltering ? 'opacity-25' : 'opacity-100'}`}>
               <div className="space-y-6">

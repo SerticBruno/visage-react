@@ -72,7 +72,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         benefits={currentService.benefits}
       />
       <ServiceDetailsSection service={currentService} />
-      <CTASection />
+      <CTASection gradientDirection='t' />
       <RelatedServicesSection
         currentService={currentService}
         relatedServices={relatedServices}

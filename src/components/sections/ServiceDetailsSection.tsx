@@ -215,7 +215,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-slate-50">
+    <section className="py-16 bg-gradient-to-b from-white to-[#e5e7eb]">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Mobile Step Navigation */}
         <div className="lg:hidden mb-8">
