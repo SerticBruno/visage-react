@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Service } from '@/data/services/types';
 import { FaRegFileAlt, FaUsers, FaRegEdit, FaRegClock, FaRegHospital, FaRegFile, FaHandHoldingUsd, FaCheck, FaChevronRight, FaStar, FaBox } from 'react-icons/fa';
-import { pricingData, PricingItem } from '@/data/pricing';
+import { pricingData } from '@/data/pricing';
 
 interface ServiceDetailsSectionProps {
   service: Service;
