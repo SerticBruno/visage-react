@@ -23,11 +23,11 @@ export const dermalFillers: Service = {
     { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
     { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
     { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
-    { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+    { id: 'nakon-tretmana', label: 'Nakon tretmana', icon: 'FaRegFile' },
     { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
   ],
   stepContents: {
-    'opis-zahvata': `Dermalni fileri su napredna metoda za volumizaciju i obnavljanje kontura lica. Koriste se visokokvalitetni proizvodi koji su sigurni i daju prirodne rezultate.
+    'prednosti': `Dermalni fileri su napredna metoda za volumizaciju i obnavljanje kontura lica. Koriste se visokokvalitetni proizvodi koji su sigurni i daju prirodne rezultate.
 
 U VISAGE studiju koristimo najkvalitetnije dermalne filere, prilagođene vašem tipu kože i specifičnim potrebama. Postupak je siguran i učinkovit, a rezultati su vidljivi odmah nakon tretmana.`,
     'kandidati': `Dermalni fileri su idealni za osobe koje žele:
@@ -59,7 +59,7 @@ Tjedan dana prije tretmana:
 
 5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata i prevenciju komplikacija.`,
     'oporavak': 'Nakon tretmana:\n- Blago crvenilo koje nestaje u roku od 24h\n- Moguća osjetljivost kože\n- Potrebno je izbjegavati sunčanje\n- Pratiti upute terapeuta za njegu',
-    'mjere-opreza': 'Mjere opreze su važne za održavanje rezultata i prevenciju komplikacija.',
+    'nakon-tretmana': 'Mjere opreze su važne za održavanje rezultata i prevenciju komplikacija.',
     'cijena': 'Cijena tretmana dermalnim filerima ovisi o mnogim faktorima, uključujući lokaciju, stručnost i količinu filera.'
   },
   treatmentSteps: [

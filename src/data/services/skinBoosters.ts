@@ -23,11 +23,11 @@ export const skinBoosteri: Service = {
     { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
     { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
     { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
-    { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+    { id: 'nakon-tretmana', label: 'Nakon tretmana', icon: 'FaRegFile' },
     { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
   ],
   stepContents: {
-    'opis-zahvata': `Skin boosteri su napredni tretmani koji pružaju duboku hidrataciju i revitalizaciju kože. Ova metoda koristi visokokvalitetne sastojke za dugotrajno poboljšanje kvalitete kože.
+    'prednosti': `Skin boosteri su napredni tretmani koji pružaju duboku hidrataciju i revitalizaciju kože. Ova metoda koristi visokokvalitetne sastojke za dugotrajno poboljšanje kvalitete kože.
 
 U VISAGE studiju koristimo najkvalitetnije skin boostere, prilagođene vašem tipu kože i specifičnim potrebama. Postupak je siguran i učinkovit, a rezultati su vidljivi već nakon prvog tretmana.`,
     'kandidati': `Skin boosteri su idealni za osobe koje žele:
@@ -65,7 +65,7 @@ Tjedan dana prije tretmana:
 - Piti dovoljno vode za optimalnu hidrataciju
 
 Redoviti tretmani svakih 4-6 tjedana daju najbolje rezultate.`,
-    'mjere-opreza': `Važne mjere opreza:
+    'nakon-tretmana': `Važne mjere opreza:
 - Izbjegavati izravno sunce 2 tjedna nakon tretmana
 - Koristiti zaštitni krem s visokim SPF-om
 - Izbjegavati korištenje agresivnih proizvoda za njegu kože

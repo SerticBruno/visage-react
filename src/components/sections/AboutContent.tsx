@@ -1,9 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { FaAward, FaUserMd, FaHandHoldingHeart, FaCheck, FaStar } from 'react-icons/fa';
-import { GiHealthNormal } from 'react-icons/gi';
-import { MdHealthAndSafety } from 'react-icons/md';
 import { motion } from 'framer-motion';
 
 const AboutContent = () => {

@@ -23,11 +23,11 @@ export const prp: Service = {
     { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
     { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
     { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
-    { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+    { id: 'nakon-tretmana', label: 'Nakon tretmana', icon: 'FaRegFile' },
     { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
   ],
   stepContents: {
-    'opis-zahvata': `PRP (Platelet Rich Plasma) terapija je revolucionarna metoda koja koristi vlastite trombocite pacijenta za poticanje prirodne regeneracije kože. Ova metoda je potpuno prirodna i sigurna, jer koristi vlastite stanice pacijenta.
+    'prednosti': `PRP (Platelet Rich Plasma) terapija je revolucionarna metoda koja koristi vlastite trombocite pacijenta za poticanje prirodne regeneracije kože. Ova metoda je potpuno prirodna i sigurna, jer koristi vlastite stanice pacijenta.
 
 U VISAGE studiju koristimo najnapredniju opremu za pripremu PRP-a, što osigurava optimalnu koncentraciju trombocita i maksimalne rezultate. Postupak je siguran i učinkovit, a rezultati su vidljivi već nakon prvog tretmana.`,
     'kandidati': `PRP terapija je idealna za osobe koje žele:
@@ -66,7 +66,7 @@ Tjedan dana prije tretmana:
 - Piti dovoljno vode za optimalnu hidrataciju
 
 Redoviti tretmani svakih 4-6 tjedana daju najbolje rezultate.`,
-    'mjere-opreza': `Važne mjere opreza:
+    'nakon-tretmana': `Važne mjere opreza:
 - Izbjegavati izravno sunce 2 tjedna nakon tretmana
 - Koristiti zaštitni krem s visokim SPF-om
 - Izbjegavati korištenje agresivnih proizvoda za njegu kože

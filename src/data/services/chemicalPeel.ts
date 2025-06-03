@@ -4,7 +4,15 @@ export const chemicalPeel: Service = {
   id: 'kemijski-piling',
   title: 'Kemijski Piling',
   description: 'Otkrijte tajnu blistave kože uz TOSKANI pilinge',
-  longDescription: 'Želite li postići ujednačen ten, smanjiti vidljivost pora ili se riješiti nepravilnosti? TOSKANI kemijski piling pružit će vam upravo to, svjež, zdrav i mladenački izgled kože.Kemijski piling je tehnika koja se koristi za poboljšanje izgleda kože putem kontroliranog kemijskog oštećenja određenih slojeva epiderme ili dermisa. Ova tehnika je ključan korak u njezi kože, jer uklanja mrtve stanice s površine kože, potiče regeneraciju stanica te smanjuje pojavu nepravilnosti poput hiperpigmentacija, preranog starenja, akni i proširenih pora. Koristi se najčešće u sinergiji s drugim estetskim tretmanima: mezoterapija, PRP tretman i skinboosteri. U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama koristeći kombinaciju nježnih kiselina kako bismo postigli optimalne rezultate.',
+  longDescription: `TOSKANI kemijski piling pružit će vam upravo to, svjež, zdrav i mladenački izgled kože.
+
+Kemijski piling je tehnika koja se koristi za poboljšanje izgleda kože putem kontroliranog kemijskog oštećenja određenih slojeva epiderme ili dermisa.
+
+Ova tehnika je ključan korak u njezi kože, jer uklanja mrtve stanice s površine kože, potiče regeneraciju stanica te smanjuje pojavu nepravilnosti poput hiperpigmentacija, preranog starenja, akni i proširenih pora.
+
+Koristi se najčešće u sinergiji s drugim estetskim tretmanima: mezoterapija, PRP tretman i skinboosteri.
+
+U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama koristeći kombinaciju nježnih kiselina kako bismo postigli optimalne rezultate.`,
   benefits: [
   ],
   image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp',
@@ -14,8 +22,8 @@ export const chemicalPeel: Service = {
   tags: ['kemijski-piling', 'piling', 'obnova-kože', 'nježni-tretmani'],
   steps: [
     { 
-      id: 'opis-zahvata', 
-      label: 'Opis zahvata', 
+      id: 'prednosti', 
+      label: 'Prednosti', 
       icon: 'FaRegFileAlt',
       image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp'
     },
@@ -44,8 +52,8 @@ export const chemicalPeel: Service = {
       image: '/images/services/kemijski-piling/toskani-bg.webp'
     },
     { 
-      id: 'mjere-opreza', 
-      label: 'Mjere opreza', 
+      id: 'nakon-tretmana', 
+      label: 'Nakon tretmana', 
       icon: 'FaRegFile',
       image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp'
     },
@@ -57,38 +65,50 @@ export const chemicalPeel: Service = {
     }
   ],
   stepContents: {
-    'opis-zahvata': `Kemijski piling je napredna estetska procedura koja koristi kemijske spojeve za uklanjanje mrtvih stanica s površine kože. Postupak potiče prirodnu regeneraciju kože, poboljšava ton i teksturu, te pomaže u smanjenju bora i ožiljaka.
-
-U VISAGE studiju koristimo najkvalitetnije proizvode za kemijski piling, prilagođene vašem tipu kože i specifičnim potrebama. Postupak je siguran i učinkovit, a rezultati su vidljivi već nakon prvog tretmana.`,
+    'prednosti': `Prednosti kemijskog pilinga:
+- Uklanja mrtve stanice i nečistoće s kože
+- Poboljšava izgled kože sklone aknama, poboljšava čvrstoću i zaglađuje teksturu kože
+- Ublažava hiperpigmentacije
+- Umanjuje učinke fotostarenja
+- Minimalno neugodan tretman.`,
     'kandidati': `Kemijski piling je idealan za osobe koje žele:
 - Poboljšati ton i teksturu kože
 - Smanjiti fine linije i bore
-- Ukloniti ožiljke od akni
-- Poboljšati apsorpciju proizvoda za njegu kože
+- Ublažiti nepravilnosti od akni
+- Ublažiti hiperpigmentacije
+- Poboljšati apsorpciju kozmetičkih proizvoda
 - Osvježiti i revitalizirati kožu`,
     'priprema': `Prije kemijskog pilinga potrebno je:
-1. Konzultacija s našim stručnjacima za procjenu stanja kože
+1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
 2. Preporuka odgovarajućeg tipa pilinga za vaš tip kože
 3. Preporuka broja tretmana za optimalne rezultate
 4. Upute za pripremu kože prije tretmana
 
 Tjedan dana prije tretmana:
 - Izbjegavati izlaganje suncu
-- Prekinuti korištenje agresivnih proizvoda za njegu kože
-- Piti dovoljno vode za optimalnu hidrataciju kože`,
+- Prekinuti korištenje agresivnih proizvoda za njegu kože (npr. retinol)
+- Ne smijete laserski uklanjati dlačice`,
     'tijek-zahvata': `Tretman kemijskim pilingom je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg tipa pilinga, plan tretmana i objašnjenje postupka. Ova faza je ključna za postizanje optimalnih rezultata.
+1. Priprema kože - Čišćenje kože s Toskani Energizing Cleanserom, odmašćivanje kože i zaštita madeža.
 
-2. Priprema kože (15 min) - Dubinsko čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože. Ova faza osigurava optimalne uvjete za primjenu pilinga.
+2. Priprema kemijskog pilinga - Nanošenje kemijskog pilinga, praćenje reakcije kože i neutralizacija pilinga.
 
-3. Primjena pilinga (20-30 min) - Precizna primjena kemijskog pilinga, praćenje reakcije kože, neutralizacija pilinga i masiranje. Ova faza zahtijeva maksimalnu preciznost i stručnost.
+3. Završna njega - Nanošenje Toskani Antistress maske koja ima umirujuća svojstva za kožu i držanje iste 10ak minuta, nanošenje Toskani Total Recovery Gela koji pomaže regeneraciji kože i nanošenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.
 
-4. Završni koraci (15 min) - Primjena umirujućih proizvoda, regenerativnih seruma, zaštitnog krema i fotografiranje prije/nakon. Ova faza osigurava optimalno oporavak kože.
+4. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade kemijski piling preporučamo korištenje Toskani Total Recovery Gela i obavezno je korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.`,
+    'oporavak': 'Oporavak može trajati nekoliko dana, uz blago crvenilo i ljuštenje kože. Nuspojave mogu uključivati:\n- Crvenilo\n- Osjetljivost\n- Peckanje\n- Stvaranje ljuskica\n- Perutanje kože',
+    'nakon-tretmana': `Nakon kemijskog pilinga važno je:
 
-5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata.`,
-    'oporavak': 'Nakon tretmana:\n- Blago crvenilo koje nestaje u roku od 24h\n- Moguća osjetljivost kože\n- Potrebno je izbjegavati sunčanje\n- Pratiti upute terapeuta za njegu',
-    'mjere-opreza': 'Mjere opreze su važne za održavanje rezultata i prevenciju komplikacija.',
-    'cijena': 'Cijena tretmana kemijskim pilingom ovisi o mnogim faktorima, uključujući lokaciju, stručnost i tip pilinga.'
+- Zaštita od sunca - Obavezno koristite kremu sa zaštitnim faktorom SPF 50+ i izbjegavajte izravno izlaganje suncu.
+
+- Njega kože - Koristite blage proizvode za čišćenje i hidrataciju kože, izbjegavajte agresivne proizvode.
+
+- Izbjegavanje dodatnih tretmana - Tjedan dana nakon pilinga izbjegavajte druge estetske tretmane.
+
+- Redovno praćenje - Pratite stanje kože i javite se ako primijetite bilo kakve neobične reakcije.
+
+- Preporučeni proizvodi - Nastavite koristiti Toskani Total Recovery Gel i Toskani Sun Shiel-D SPF 50+ za optimalne rezultate.`,
+    'cijena': 'Cijena ovisi o tipu pilinga i broju potrebnih tretmana.'
   }
 }; 

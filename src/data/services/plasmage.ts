@@ -18,16 +18,16 @@ export const plasmage: Service = {
   metaKeywords: 'plasmage, lifting kože, plazma, estetski studio Sisak, VISAGE studio',
   tags: ['plasmage', 'lifting', 'plazma', 'minimalno-invazivni'],
   steps: [
-    { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+    { id: 'prednosti', label: 'Prednosti', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
     { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
     { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
     { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
-    { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+    { id: 'nakon-tretmana', label: 'Nakon tretmana', icon: 'FaRegFile' },
     { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
   ],
   stepContents: {
-    'opis-zahvata': `Plasmage je revolucionarna metoda koja koristi plazmu za lifting i obnavljanje kože. Ova metoda je minimalno invazivna i daje izvanredne rezultate.
+    'prednosti': `Plasmage je revolucionarna metoda koja koristi plazmu za lifting i obnavljanje kože. Ova metoda je minimalno invazivna i daje izvanredne rezultate.
 
 U VISAGE studiju koristimo najnapredniju Plasmage opremu, što osigurava optimalne rezultate. Postupak je siguran i učinkovit, a rezultati su vidljivi već nakon prvog tretmana.`,
     'kandidati': `Plasmage je napredni tretman koji koristi plazmu za lifting i obnavljanje kože. Idealni kandidati su osobe koje žele poboljšati izgled svoje kože, ali i one koje imaju specifične probleme koje žele riješiti. Prije tretmana, svaki klijent prolazi detaljnu konzultaciju s našim stručnjacima kako bismo osigurali sigurnost i optimalne rezultate.
@@ -71,7 +71,7 @@ Tjedan dana prije tretmana:
 - Izbjegavati intenzivnu fizičku aktivnost 48 sati
 
 Redoviti tretmani svakih 4-6 tjedana daju najbolje rezultate.`,
-    'mjere-opreza': `Važne mjere opreza:
+    'nakon-tretmana': `Važne mjere opreza:
 - Izbjegavati izravno sunce 2 tjedna nakon tretmana
 - Koristiti zaštitni krem s visokim SPF-om
 - Izbjegavati korištenje agresivnih proizvoda za njegu kože

@@ -18,16 +18,16 @@ export const bioSculpture: Service = {
   metaKeywords: 'bio sculpture, nokti, manikura, estetski studio Sisak, VISAGE studio',
   tags: ['bio-sculpture', 'nokti', 'manikura', 'nježni-tretmani'],
   steps: [
-    { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+    { id: 'prednosti', label: 'Prednosti', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
     { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
     { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
     { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
-    { id: 'mjere-opreza', label: 'Mjere opreza', icon: 'FaRegFile' },
+    { id: 'nakon-tretmana', label: 'Nakon tretmana', icon: 'FaRegFile' },
     { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
   ],
   stepContents: {
-    'opis-zahvata': `Bio Sculpture je vrhunski sistem za njegu i ukrašavanje noktiju koji koristi prirodne sastojke i napredne tehnike. Ova metoda pruža dugotrajne rezultate i prirodan izgled.
+    'prednosti': `Bio Sculpture je vrhunski sistem za njegu i ukrašavanje noktiju koji koristi prirodne sastojke i napredne tehnike. Ova metoda pruža dugotrajne rezultate i prirodan izgled.
 
 U VISAGE studiju koristimo originalne Bio Sculpture proizvode i tehnike, što osigurava najbolju kvalitetu i trajnost. Svaki tretman je prilagođen vašim potrebama i željama.`,
     'kandidati': `Bio Sculpture je idealan za osobe koje žele:
@@ -64,7 +64,7 @@ Dan prije tretmana:
 - Dolaziti na redovite kontrole
 
 Redoviti tretmani svakih 2-3 tjedna održavaju najbolje rezultate.`,
-    'mjere-opreza': `Važne mjere opreza:
+    'nakon-tretmana': `Važne mjere opreza:
 - Izbjegavati vodu 2 sata nakon tretmana
 - Koristiti zaštitne rukavice pri čišćenju
 - Izbjegavati agresivne kemikalije

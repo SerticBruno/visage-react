@@ -11,12 +11,12 @@ interface ServiceDetailsSectionProps {
 }
 
 const tabIcons = {
-  'opis-zahvata': FaRegFileAlt,
+  'prednosti': FaRegFileAlt,
   'kandidati': FaUsers,
   'priprema': FaRegEdit,
   'tijek-zahvata': FaRegClock,
   'oporavak': FaRegHospital,
-  'mjere-opreza': FaRegFile,
+  'nakon-tretmana': FaRegFile,
   'cijena': FaHandHoldingUsd
 };
 
@@ -37,21 +37,67 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   };
 
   const formatContent = (content: string) => {
-    // Split content into paragraphs
-    const paragraphs = content.split('\n\n');
+    // Split content into sections (separated by double newlines)
+    const sections = content.split('\n\n');
     
-    return paragraphs.map((paragraph, idx) => {
-      // Check if paragraph contains bullet points
-      if (paragraph.includes('- ')) {
-        const lines = paragraph.split('\n');
-        const introText = lines.find(line => !line.trim().startsWith('- '));
-        const bulletPoints = lines.filter(line => line.trim().startsWith('- '));
+    return sections.map((section, sectionIdx) => {
+      const lines = section.split('\n');
+      
+      // If the section starts with a title/intro text
+      if (lines[0] && !lines[0].trim().startsWith('- ') && !lines[0].trim().match(/^[0-9]+\./)) {
+        const introText = lines[0];
+        const orderedListItems = lines.slice(1).filter(line => line.trim().match(/^[0-9]+\./));
+        const bulletPoints = lines.slice(1).filter(line => line.trim().startsWith('- '));
         
         return (
-          <div key={idx} className="mb-6">
-            {introText && <p className="text-gray-600 mb-4 leading-relaxed">{introText}</p>}
+          <div key={sectionIdx} className="mb-6">
+            <p className="text-gray-600 mb-4 leading-relaxed">{introText}</p>
+            {orderedListItems.length > 0 && (
+              <ol className="space-y-3 list-decimal pl-6 mb-4">
+                {orderedListItems.map((item, itemIdx) => (
+                  <li key={itemIdx} className="text-gray-600">
+                    {item.replace(/^[0-9]+\.\s*/, '')}
+                  </li>
+                ))}
+              </ol>
+            )}
+            {bulletPoints.length > 0 && (
+              <ul className="space-y-3">
+                {bulletPoints.map((item, itemIdx) => (
+                  <li key={itemIdx} className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                      <FaCheck className="h-4 w-4 text-slate-700" />
+                    </div>
+                    <span className="text-gray-600">{item.replace('- ', '')}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        );
+      }
+      
+      // If the section is just ordered list items
+      if (lines.every(line => line.trim().match(/^[0-9]+\./))) {
+        return (
+          <div key={sectionIdx} className="mb-6">
+            <ol className="space-y-3 list-decimal pl-6">
+              {lines.map((item, itemIdx) => (
+                <li key={itemIdx} className="text-gray-600">
+                  {item.replace(/^[0-9]+\.\s*/, '')}
+                </li>
+              ))}
+            </ol>
+          </div>
+        );
+      }
+      
+      // If the section is just bullet points
+      if (lines.every(line => line.trim().startsWith('- '))) {
+        return (
+          <div key={sectionIdx} className="mb-6">
             <ul className="space-y-3">
-              {bulletPoints.map((item, itemIdx) => (
+              {lines.map((item, itemIdx) => (
                 <li key={itemIdx} className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
                     <FaCheck className="h-4 w-4 text-slate-700" />
@@ -65,7 +111,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
       }
       
       // Regular paragraph
-      return <p key={idx} className="text-gray-600 mb-6 leading-relaxed">{paragraph}</p>;
+      return <p key={sectionIdx} className="text-gray-600 mb-6 leading-relaxed">{section}</p>;
     });
   };
 
@@ -87,10 +133,10 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
               transition={{ delay: 0.1 * idx }}
               className="relative pl-12"
             >
-              <div className="absolute left-0 top-0 h-8 w-8 rounded-full bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400 flex items-center justify-center shadow-lg ring-2 ring-white">
-                <span className="text-slate-700 font-semibold">{number}</span>
+              <div className="absolute left-0 top-0 flex items-center h-full">
+                <span className="text-2xl font-bold text-slate-700">{number}.</span>
               </div>
-              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:border-slate-200 hover:bg-gradient-to-br hover:from-white hover:to-slate-50/50">
+              <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
                 <p className="text-gray-600 leading-relaxed">{description}</p>
               </div>
@@ -125,18 +171,15 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         w-12 h-12 rounded-full flex items-center justify-center mb-2
                         transition-all duration-200
                         ${activeTab === step.id 
-                          ? 'bg-gradient-to-br from-slate-800 to-slate-700 text-white scale-110 shadow-lg' 
-                          : 'bg-white text-slate-600 shadow-md'
+                          ? 'bg-gradient-to-br from-black to-gray-800 text-white scale-110 shadow-lg' 
+                          : 'bg-white text-black shadow-md'
                         }
                       `}>
                         {React.createElement(tabIcons[step.id as keyof typeof tabIcons], {
                           className: "w-5 h-5"
                         })}
                       </div>
-                      <span className={`
-                        text-sm font-medium text-center
-                        ${activeTab === step.id ? 'text-slate-800' : 'text-slate-600'}
-                      `}>
+                      <span className="text-sm font-medium text-center text-black">
                         {step.label}
                       </span>
                     </button>
@@ -146,9 +189,9 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
             </div>
 
             {/* Progress Bar */}
-            <div className="h-1 bg-slate-100">
+            <div className="h-1 bg-gray-100">
               <div 
-                className="h-full bg-slate-700 transition-all duration-300"
+                className="h-full bg-black transition-all duration-300"
                 style={{ 
                   width: `${((service.steps.findIndex(step => step.id === activeTab) + 1) / service.steps.length) * 100}%` 
                 }}
@@ -184,8 +227,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                     className={`
                       whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-all duration-300 cursor-pointer
                       ${activeTab === step.id
-                        ? 'border-slate-600 text-slate-700 bg-gradient-to-b from-white to-slate-50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]'
-                        : 'border-transparent text-gray-500 hover:text-slate-700 hover:border-slate-300 hover:bg-gradient-to-b hover:from-white hover:to-slate-50/50'
+                        ? 'border-black text-black'
+                        : 'border-transparent text-black hover:border-gray-300'
                       }
                     `}
                   >
@@ -219,9 +262,9 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         transition={{ delay: 0.15 }}
                         className="flex items-center space-x-3 mb-6"
                       >
-                        <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center shadow-md ring-1 ring-slate-200/50">
+                        <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 flex items-center justify-center shadow-md ring-1 ring-gray-200/50">
                           {React.createElement(tabIcons[step.id as keyof typeof tabIcons], {
-                            className: "h-6 w-6 text-slate-700"
+                            className: "h-6 w-6 text-black"
                           })}
                         </div>
                         <h3 className="text-xl font-bold text-gray-900">{step.label}</h3>
@@ -240,7 +283,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                     </div>
 
                     {/* Benefits Cards */}
-                    {activeTab === 'opis-zahvata' && (
+                    {activeTab === 'prednosti' && (
                       <motion.div 
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -271,7 +314,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                     )}
 
                     {/* Image for other tabs */}
-                    {activeTab !== 'opis-zahvata' && (
+                    {activeTab !== 'prednosti' && (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
