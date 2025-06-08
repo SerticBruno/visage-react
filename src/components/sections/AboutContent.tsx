@@ -54,7 +54,7 @@ const AboutContent = () => {
         >
           <h2 className="text-3xl font-bold mb-8 text-center">Naš tim</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center group">
+            <div className="group">
               <div className="relative h-64 w-64 mx-auto mb-4 rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
                 <Image
                   src="/images/services/plasmage-hero.webp"
@@ -63,12 +63,15 @@ const AboutContent = () => {
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-semibold">Tatjana Torinek</h3>
-              <p className="text-gray-600 pt-3">Tatjana Torinek je diplomirala 1992. godine na Medicinskom fakultetu u Zagrebu, a od tada se bavi obiteljskom medicinom. Završila je specijalizaciju iz Obiteljske medicine i uspješno vodi svoju ambulantu već 18 godina. Estetskom medicinom se počela baviti prije 4 godine te se specijalizirala za obavljanje nekirurških estetskih tretmana. Prošla je brojne edukacije i tečajeve te redovito prisustvuje kongresima i predavanjima iz estetske medicine.
-              Omiljeni tretmani su joj mezoterapija egzosomima, skin boosteri i plasmage</p>
+              <h3 className="text-center text-xl font-semibold">Tatjana Torinek</h3>
+              <p className="text-gray-600 pt-3">dr. spec. med. obiteljske medicine</p>
+              <p className="text-gray-600 pt-3">član HDEM-a</p>
+              <p className="text-gray-600 pt-3">Omiljeni tretmani: mezoterapija egzosomima, skin boosteri i plasmage</p>
+              
+               
             </div>
 
-            <div className="text-center group">
+            <div className="group">
               <div className="relative h-64 w-64 mx-auto mb-4 rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
                 <Image
                   src="/images/services/manikura.webp"
@@ -77,12 +80,14 @@ const AboutContent = () => {
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-semibold">Mia Torinek</h3>
-              <p className="text-gray-600">Mia Torinek je diplomirala marketing na Ekonomskom fakultetu u Zagrebu. Osnovala je Visage studio 2023. godine skupa s majkom Tatjanom. 2024. godine je završila prekvalifikaciju za kozmetičara te se specijalizira za obavljanje neinvazivnih estetskih tretmana. Redovito odlazi na edukacije, tečajeve, radionice i kongrese iz estetske medicine te je uvijek u toku s trendovima.
-              Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
+              <h3 className="text-xl text-center font-semibold">Mia Torinek</h3>
+              <p className="text-gray-600 pt-3">mag. oec. smjer marketing</p>
+              <p className="text-gray-600 pt-3">kozmetičar</p>
+              <p className="text-gray-600 pt-3">Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
+
             </div>
 
-            <div className="text-center group">
+            <div className="group">
               <div className="relative h-64 w-64 mx-auto mb-4 rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
                 <Image
                   src="/images/services/TKNHA3_.webp"
@@ -91,12 +96,21 @@ const AboutContent = () => {
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-semibold">Helena Torinek</h3>
-              <p className="text-gray-600">Estetski tehničar lorem kozmetičara te se specijalizira za obavljanje neinvazivnih estetskih tretmana. Redovito odlazi na edukacije, tečajeve, radionice i kongrese iz estetske medicine te je uvijek u toku s trendovima.
-              Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
+              <h3 className="text-center text-xl font-semibold">Helena Torinek</h3>
+              <p className="text-gray-600 pt-3">mag. oec. smjer marketing</p>
+              <p className="text-gray-600 pt-3">kozmetičar</p>
+              <p className="text-gray-600 pt-3">Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
             </div>
           </div>
         </motion.div>
+        <p className="text-gray-600 pt-3">Tatjana Torinek je diplomirala 1992. godine na Medicinskom fakultetu u Zagrebu, a od tada se bavi obiteljskom medicinom. Završila je specijalizaciju iz Obiteljske medicine i uspješno vodi svoju ambulantu već 18 godina. Estetskom medicinom se počela baviti prije 4 godine te se specijalizirala za obavljanje nekirurških estetskih tretmana. Prošla je brojne edukacije i tečajeve te redovito prisustvuje kongresima i predavanjima iz estetske medicine.</p>
+            
+        
+        <p className="text-gray-600">Mia Torinek je diplomirala marketing na Ekonomskom fakultetu u Zagrebu. Osnovala je Visage studio 2023. godine skupa s majkom Tatjanom. 2024. godine je završila prekvalifikaciju za kozmetičara te se specijalizira za obavljanje neinvazivnih estetskih tretmana. Redovito odlazi na edukacije, tečajeve, radionice i kongrese iz estetske medicine te je uvijek u toku s trendovima.
+        </p>
+            
+        <p className="text-gray-600">Estetski tehničar lorem kozmetičara te se specijalizira za obavljanje neinvazivnih estetskih tretmana. Redovito odlazi na edukacije, tečajeve, radionice i kongrese iz estetske medicine te je uvijek u toku s trendovima.
+        Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
       </div>
     </section>
   );
