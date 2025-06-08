@@ -5,14 +5,14 @@ import { motion } from 'framer-motion';
 
 const AboutContent = () => {
   return (
-    <section className="py-16" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
+    <section className="pt-16" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Our Story Section - First Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-16"
+          className="mb-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -50,7 +50,7 @@ const AboutContent = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-16"
+          className="mb-8"
         >
           <h2 className="text-3xl font-bold mb-12 text-center">Naš tim</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -112,7 +112,7 @@ const AboutContent = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mb-16"
+          className="mt-24"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[500px]">
