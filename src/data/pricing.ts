@@ -26,7 +26,7 @@ export const pricingCategories = [
   "Plasmage",
   "PRP",
   "RRS",
-  "Skin Booster",
+  "Skin Boosterii",
   "TOSKANI Proizvodi"
 ];
 
@@ -781,20 +781,20 @@ export const pricingData: PricingItem[] = [
     packageDetails: "4 ampule"
   },
 
-  // Skin Booster
+  // Skin Boosteri
   {
     id: "skin-booster-tkn-ha3",
     title: "TKN HA3",
     description: "1 tretman TKN HA3",
     price: "265 EUR",
-    category: "Skin Booster"
+    category: "Skin Boosteri"
   },
   {
     id: "skin-booster-tkn-ha3-standard",
     title: "TKN HA3 - Standard Paket",
     description: "2 tretmana TKN HA3",
     price: "475 EUR",
-    category: "Skin Booster",
+    category: "Skin Boosteri",
     isPackage: true,
     packageDetails: "2 tretmana"
   },
@@ -803,7 +803,7 @@ export const pricingData: PricingItem[] = [
     title: "TKN HA3 - Premium Paket",
     description: "Premium paket - 3 tretmana TKN HA3",
     price: "640 EUR",
-    category: "Skin Booster",
+    category: "Skin Boosteri",
     isPackage: true,
     packageDetails: "3 tretmana"
   },
@@ -812,14 +812,14 @@ export const pricingData: PricingItem[] = [
     title: "Profhilo",
     description: "1 tretman Profhilo",
     price: "340 EUR",
-    category: "Skin Booster"
+    category: "Skin Boosteri"
   },
   {
     id: "skin-booster-profhilo-package",
     title: "Profhilo Paket",
     description: "2 tretmana Profhilo",
     price: "635 EUR",
-    category: "Skin Booster",
+    category: "Skin Boosteri",
     isPackage: true,
     packageDetails: "2 tretmana"
   },
@@ -828,14 +828,14 @@ export const pricingData: PricingItem[] = [
     title: "RRS HA Long Lasting",
     description: "1 tretman RRS HA Long Lasting",
     price: "285 EUR",
-    category: "Skin Booster"
+    category: "Skin Boosteri"
   },
   {
     id: "skin-booster-rrs-ha-package",
     title: "RRS HA Long Lasting Paket",
     description: "2 tretmana RRS HA Long Lasting",
     price: "500 EUR",
-    category: "Skin Booster",
+    category: "Skin Boosteri",
     isPackage: true,
     packageDetails: "2 tretmana"
   },

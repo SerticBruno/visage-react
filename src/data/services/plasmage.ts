@@ -6,17 +6,13 @@ export const plasmage: Service = {
   description: 'Napredna Plasmage terapija za lifting kože',
   longDescription: 'Plasmage je revolucionarna metoda koja koristi plazmu za lifting i obnavljanje kože. Ova metoda je minimalno invazivna i daje izvanredne rezultate.',
   benefits: [
-    'Lifting kože',
-    'Poboljšava ton i teksturu',
-    'Smanjuje fine linije',
-    'Poboljšava elastičnost',
-    'Minimalno invazivna metoda'
   ],
   image: '/images/services/toskani-woman.webp',
   heroImage: '/images/services/plasmage-hero.webp',
   metaDescription: 'Plasmage terapija u VISAGE studiju. Lifting i obnavljanje kože uz pomoć plazme. Sigurna i učinkovita metoda.',
   metaKeywords: 'plasmage, lifting kože, plazma, estetski studio Sisak, VISAGE studio',
   tags: ['plasmage', 'lifting', 'plazma', 'minimalno-invazivni'],
+  pricingCategory: 'Plasmage',
   steps: [
     { id: 'prednosti', label: 'Prednosti', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },

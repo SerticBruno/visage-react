@@ -27,6 +27,7 @@ export interface Service {
   };
   treatmentSteps?: TreatmentStep[];
   tags: string[];
+  pricingCategory?: string;
 }
 
 export type Services = {

@@ -4,7 +4,8 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Service } from '@/data/services/types';
-import { FaRegFileAlt, FaUsers, FaRegEdit, FaRegClock, FaRegHospital, FaRegFile, FaHandHoldingUsd, FaCheck, FaChevronRight } from 'react-icons/fa';
+import { FaRegFileAlt, FaUsers, FaRegEdit, FaRegClock, FaRegHospital, FaRegFile, FaHandHoldingUsd, FaCheck, FaChevronRight, FaStar, FaBox } from 'react-icons/fa';
+import { pricingData } from '@/data/pricing';
 
 interface ServiceDetailsSectionProps {
   service: Service;
@@ -18,6 +19,72 @@ const tabIcons = {
   'oporavak': FaRegHospital,
   'nakon-tretmana': FaRegFile,
   'cijena': FaHandHoldingUsd
+};
+
+const renderPricingTable = (service: Service) => {
+  // For mesotherapy, we want to show multiple categories
+  const categories = service.id === 'mezoterapija' 
+    ? ['Mesosynergy', 'Mezoterapija Dermapenom 4', 'Mezoterapija Mesoject Gunom']
+    : [service.pricingCategory];
+
+  return (
+    <div className="space-y-12">
+      {categories.map((category) => {
+        const relevantPricingItems = pricingData.filter(item => item.category === category);
+
+        if (relevantPricingItems.length === 0) {
+          return null;
+        }
+
+        return (
+          <div key={category} className="space-y-6">
+            <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+              <div className="bg-gray-50 px-6 py-3 border-b border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-900">{category}</h3>
+              </div>
+              <div className="divide-y divide-gray-200">
+                {relevantPricingItems.map((item) => (
+                  <div key={item.id} className="p-6 hover:bg-gray-50 transition-colors duration-150">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <div className="flex-1">
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <h4 className="text-base font-medium text-gray-900">{item.title}</h4>
+                          {item.isPackage && (
+                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                              <FaBox className="mr-1" />
+                              Paket
+                            </span>
+                          )}
+                          {item.isPopular && (
+                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
+                              <FaStar className="mr-1" />
+                              Popularno
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-gray-600">{item.description}</p>
+                      </div>
+                      <div className="flex items-center justify-between sm:justify-end gap-4">
+                        <div className="text-base font-medium text-gray-900">{item.price}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+      <div className="mt-8 text-center">
+        <p className="text-gray-600 mb-4">
+          * Cijene su informativne i mogu varirati ovisno o specifičnim zahtjevima
+        </p>
+        <p className="text-gray-600">
+          Za više informacija i rezervacije, slobodno nas kontaktirajte
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default function ServiceDetailsSection({ service }: ServiceDetailsSectionProps) {
@@ -148,7 +215,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-16 bg-gradient-to-b from-white to-[#e5e7eb]">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Mobile Step Navigation */}
         <div className="lg:hidden mb-8">
@@ -275,7 +342,16 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         transition={{ delay: 0.3 }}
                         className="prose prose-indigo max-w-none"
                       >
-                        {activeTab === 'tijek-zahvata' 
+                        {activeTab === 'cijena' ? (
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.3 }}
+                            className="prose prose-indigo max-w-none"
+                          >
+                            {renderPricingTable(service)}
+                          </motion.div>
+                        ) : activeTab === 'tijek-zahvata' 
                           ? renderTreatmentSteps(service.stepContents[step.id])
                           : formatContent(service.stepContents[step.id])
                         }

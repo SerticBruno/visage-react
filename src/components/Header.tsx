@@ -99,8 +99,8 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col items-center justify-center h-12 leading-none">
-              <span className="text-2xl font-bold leading-none transform group-hover:translate-x-0.5 transition-transform duration-300" style={{ fontFamily: 'Versailles' }}>VISAGE</span>
-              <span className="text-base md:text-lg text-gray-600 font-medium leading-none transform group-hover:translate-x-0.5 transition-transform duration-300" style={{ fontFamily: 'Noto Serif Display' }}>studio</span>
+              <span className="text-black text-2xl font-bold leading-none transform group-hover:translate-x-0.5 transition-transform duration-300" style={{ fontFamily: 'Versailles' }}>VISAGE</span>
+              <span className="text-black text-base md:text-lg font-medium leading-none transform group-hover:translate-x-0.5 transition-transform duration-300" style={{ fontFamily: 'Noto Serif Display' }}>studio</span>
             </div>
           </Link>
 

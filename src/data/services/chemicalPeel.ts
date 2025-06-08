@@ -4,7 +4,7 @@ export const chemicalPeel: Service = {
   id: 'kemijski-piling',
   title: 'Kemijski Piling',
   description: 'Otkrijte tajnu blistave kože uz TOSKANI pilinge',
-  longDescription: `TOSKANI kemijski piling pružit će vam upravo to, svjež, zdrav i mladenački izgled kože.
+  longDescription: `Želite li postići ujednačen ten, smanjiti vidljivost pora ili se riješiti nepravilnosti? TOSKANI kemijski piling pružit će vam upravo to, svjež, zdrav i mladenački izgled kože.
 
 Kemijski piling je tehnika koja se koristi za poboljšanje izgleda kože putem kontroliranog kemijskog oštećenja određenih slojeva epiderme ili dermisa.
 
@@ -20,6 +20,7 @@ U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama kor
   metaDescription: 'Profesionalni kemijski piling u VISAGE studiju u Siska. Obnovite svoju kožu uz pomoć naprednih kemijskih pilinzi TOSKANI. Rezultati odmah vidljivi.',
   metaKeywords: 'kemijski piling, piling lica, obnova kože, estetski studio Sisak, VISAGE studio, TOSKANI piling, kemijski piling Sisak',
   tags: ['kemijski-piling', 'piling', 'obnova-kože', 'nježni-tretmani'],
+  pricingCategory: 'Kemijski Piling',
   steps: [
     { 
       id: 'prednosti', 
@@ -70,7 +71,7 @@ U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama kor
 - Poboljšava izgled kože sklone aknama, poboljšava čvrstoću i zaglađuje teksturu kože
 - Ublažava hiperpigmentacije
 - Umanjuje učinke fotostarenja
-- Minimalno neugodan tretman.`,
+- Minimalno neugodan tretman`,
     'kandidati': `Kemijski piling je idealan za osobe koje žele:
 - Poboljšati ton i teksturu kože
 - Smanjiti fine linije i bore
@@ -97,7 +98,7 @@ Tjedan dana prije tretmana:
 3. Završna njega - Nanošenje Toskani Antistress maske koja ima umirujuća svojstva za kožu i držanje iste 10ak minuta, nanošenje Toskani Total Recovery Gela koji pomaže regeneraciji kože i nanošenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.
 
 4. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade kemijski piling preporučamo korištenje Toskani Total Recovery Gela i obavezno je korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.`,
-    'oporavak': 'Oporavak može trajati nekoliko dana, uz blago crvenilo i ljuštenje kože. Nuspojave mogu uključivati:\n- Crvenilo\n- Osjetljivost\n- Peckanje\n- Stvaranje ljuskica\n- Perutanje kože',
+    'oporavak': 'Oporavak može trajati nekoliko dana, uz blago crvenilo i ljuštenje kože. Nuspojave mogu uključivati:\n1. Crvenilo\n2. Osjetljivost\n3. Peckanje\n4. Stvaranje ljuskica\n5. Perutanje kože',
     'nakon-tretmana': `Nakon kemijskog pilinga važno je:
 
 - Zaštita od sunca - Obavezno koristite kremu sa zaštitnim faktorom SPF 50+ i izbjegavajte izravno izlaganje suncu.

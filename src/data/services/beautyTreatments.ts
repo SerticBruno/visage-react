@@ -6,17 +6,13 @@ export const beautyTreatments: Service = {
   description: 'Luksuzni beauty tretmani za potpuno opuštanje',
   longDescription: 'Beauty tretmani su luksuzni tretmani za lice i tijelo koji pružaju potpuno opuštanje i njegu. Koristimo najkvalitetnije proizvode za maksimalne rezultate.',
   benefits: [
-    'Potpuno opuštanje',
-    'Duboka njega kože',
-    'Poboljšava ton kože',
-    'Poboljšava hidrataciju',
-    'Luksuzno iskustvo'
   ],
   image: '/images/services/socialmedia_peelings_combined.webp',
   heroImage: '/images/services/TKNHA3_.webp',
   metaDescription: 'Beauty tretmani u VISAGE studiju. Luksuzni tretmani za lice i tijelo. Potpuno opuštanje i njega.',
   metaKeywords: 'beauty tretmani, njega kože, opuštanje, estetski studio Sisak, VISAGE studio',
   tags: ['beauty-tretmani', 'opuštanje', 'njega-kože', 'luksuzni-tretmani'],
+  pricingCategory: 'Beauty Tretmani',
   steps: [
     { id: 'prednosti', label: 'Prednosti', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },

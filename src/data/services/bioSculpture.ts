@@ -6,17 +6,13 @@ export const bioSculpture: Service = {
   description: 'Profesionalni Bio Sculpture sistemi za nokte',
   longDescription: 'Bio Sculpture je vrhunski sistem za njegu i ukrašavanje noktiju. Koristimo najkvalitetnije proizvode i tehnike za savršene rezultate.',
   benefits: [
-    'Profesionalna njega noktiju',
-    'Dugotrajni rezultati',
-    'Širok izbor boja i dizajna',
-    'Prirodan izgled',
-    'Visoka kvaliteta'
   ],
   image: '/images/services/Mesoterapia-transdermica-facial.webp',
   heroImage: '/images/services/manikura.webp',
   metaDescription: 'Bio Sculpture sistemi u VISAGE studiju. Profesionalna njega i ukrašavanje noktiju. Vrhunska kvaliteta i dugotrajni rezultati.',
   metaKeywords: 'bio sculpture, nokti, manikura, estetski studio Sisak, VISAGE studio',
   tags: ['bio-sculpture', 'nokti', 'manikura', 'nježni-tretmani'],
+  pricingCategory: 'Bio Sculpture Sistemi',
   steps: [
     { id: 'prednosti', label: 'Prednosti', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },

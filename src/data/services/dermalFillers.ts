@@ -6,19 +6,15 @@ export const dermalFillers: Service = {
   description: 'Profesionalni dermalni fileri za volumizaciju',
   longDescription: 'Dermalni fileri su napredna metoda za volumizaciju i obnavljanje kontura lica. Koriste se visokokvalitetni proizvodi koji su sigurni i daju prirodne rezultate.',
   benefits: [
-    'Volumizacija lica',
-    'Popravljanje kontura',
-    'Smanjivanje bora',
-    'Prirodni izgled',
-    'Dugotrajni rezultati'
   ],
   image: '/images/services/TKNHA3_.webp',
   heroImage: '/images/services/botox-face-girl.webp',
   metaDescription: 'Dermalni fileri u VISAGE studiju. Volumizacija i obnavljanje kontura lica. Prirodni i dugotrajni rezultati.',
   metaKeywords: 'dermalni fileri, volumizacija lica, konture lica, estetski studio Sisak, VISAGE studio',
   tags: ['dermalni-fileri', 'volumizacija', 'konture-lica', 'minimalno-invazivni'],
+  pricingCategory: 'Dermalni Fileri',
   steps: [
-    { id: 'opis-zahvata', label: 'Opis zahvata', icon: 'FaRegFileAlt' },
+    { id: 'prednosti', label: 'Prednosti', icon: 'FaRegFileAlt' },
     { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
     { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
     { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
