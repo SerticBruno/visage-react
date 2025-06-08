@@ -52,10 +52,10 @@ const AboutContent = () => {
           transition={{ delay: 0.2 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Naš tim</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group">
-              <div className="relative h-64 w-64 mx-auto mb-4 rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
+          <h2 className="text-3xl font-bold mb-12 text-center">Naš tim</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="relative h-72 w-full mx-auto mb-6 rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
                 <Image
                   src="/images/services/plasmage-hero.webp"
                   alt="Team member"
@@ -63,16 +63,16 @@ const AboutContent = () => {
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-center text-xl font-semibold">Tatjana Torinek</h3>
-              <p className="text-gray-600 pt-3">dr. spec. med. obiteljske medicine</p>
-              <p className="text-gray-600 pt-3">član HDEM-a</p>
-              <p className="text-gray-600 pt-3">Omiljeni tretmani: mezoterapija egzosomima, skin boosteri i plasmage</p>
-              
-               
+              <h3 className="text-center text-xl font-semibold mb-2">Tatjana Torinek</h3>
+              <div className="space-y-2 text-center">
+                <p className="text-gray-600">dr. spec. med. obiteljske medicine</p>
+                <p className="text-gray-600">član HDEM-a</p>
+                <p className="text-gray-600 italic mt-4">Omiljeni tretmani: mezoterapija egzosomima, skin boosteri i plasmage</p>
+              </div>
             </div>
 
-            <div className="group">
-              <div className="relative h-64 w-64 mx-auto mb-4 rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
+            <div className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="relative h-72 w-full mx-auto mb-6 rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
                 <Image
                   src="/images/services/manikura.webp"
                   alt="Team member"
@@ -80,15 +80,16 @@ const AboutContent = () => {
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl text-center font-semibold">Mia Torinek</h3>
-              <p className="text-gray-600 pt-3">mag. oec. smjer marketing</p>
-              <p className="text-gray-600 pt-3">kozmetičar</p>
-              <p className="text-gray-600 pt-3">Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
-
+              <h3 className="text-center text-xl font-semibold mb-2">Mia Torinek</h3>
+              <div className="space-y-2 text-center">
+                <p className="text-gray-600">mag. oec. smjer marketing</p>
+                <p className="text-gray-600">kozmetičar</p>
+                <p className="text-gray-600 italic mt-4">Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
+              </div>
             </div>
 
-            <div className="group">
-              <div className="relative h-64 w-64 mx-auto mb-4 rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
+            <div className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="relative h-72 w-full mx-auto mb-6 rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
                 <Image
                   src="/images/services/TKNHA3_.webp"
                   alt="Team member"
@@ -96,10 +97,12 @@ const AboutContent = () => {
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-center text-xl font-semibold">Helena Torinek</h3>
-              <p className="text-gray-600 pt-3">mag. oec. smjer marketing</p>
-              <p className="text-gray-600 pt-3">kozmetičar</p>
-              <p className="text-gray-600 pt-3">Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
+              <h3 className="text-center text-xl font-semibold mb-2">Helena Torinek</h3>
+              <div className="space-y-2 text-center">
+                <p className="text-gray-600">mag. oec. smjer marketing</p>
+                <p className="text-gray-600">kozmetičar</p>
+                <p className="text-gray-600 italic mt-4">Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
+              </div>
             </div>
           </div>
         </motion.div>
