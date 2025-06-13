@@ -191,7 +191,7 @@ export default function BlogPage() {
                   <div 
                     ref={categoriesRef}
                     onScroll={handleCategoriesScroll}
-                    className="absolute inset-0 overflow-y-auto pr-2 space-y-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+                    className="absolute inset-0 overflow-y-auto pr-4 space-y-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
                   >
                     {/* Sort Options */}
                     <div>
