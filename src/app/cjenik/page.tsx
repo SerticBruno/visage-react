@@ -6,6 +6,7 @@ import { FaSearch, FaStar, FaBox } from 'react-icons/fa';
 import React from 'react';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
+import CTASection from '@/components/sections/CTASection';
 
 export default function PricingPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -86,7 +87,7 @@ export default function PricingPage() {
         description="Pronađite savršenu uslugu za vaše potrebe. Naš cjenik je transparentan i jasno prikazuje sve naše usluge i njihove cijene."
         image="/images/services/cjenik-hero.webp"
       />
-      <div className="w-full" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
+      <div className="w-full" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar with Filters */}
@@ -222,6 +223,7 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
+      <CTASection />
       <ContactSection/>
     </main>
   );

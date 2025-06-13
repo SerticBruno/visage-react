@@ -63,7 +63,7 @@ export default function Header() {
   };
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    if (isActive(path)) {
+    if (isActive(path) && path !== '/usluge') {
       e.preventDefault();
       window.scrollTo({
         top: 0,
@@ -113,22 +113,32 @@ export default function Header() {
             <div
               className="relative"
               ref={dropdownRef}
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <button
-                type="button"
-                onClick={toggleServices}
-                className={`text-gray-700 hover:text-gray-900 transition-all duration-300 flex items-center gap-1 cursor-pointer relative group text-lg ${
-                  isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
-                }`}
-                aria-expanded={isServicesOpen}
-                aria-controls="services-menu"
-              >
-                Usluge
-                <FaChevronDown 
-                  className={`w-3 h-3 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} 
-                  aria-hidden="true"
-                />
-              </button>
+              <div className="flex items-center gap-1">
+                <Link 
+                  href="/usluge" 
+                  className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
+                    isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
+                  }`}
+                  onClick={(e) => handleLinkClick(e, '/usluge')}
+                >
+                  Usluge
+                </Link>
+                <button
+                  type="button"
+                  onClick={toggleServices}
+                  className="text-gray-700 hover:text-gray-900 transition-all duration-300 cursor-pointer"
+                  aria-expanded={isServicesOpen}
+                  aria-controls="services-menu"
+                >
+                  <FaChevronDown 
+                    className={`w-3 h-3 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} 
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
               
               <AnimatePresence>
                 {isServicesOpen && (

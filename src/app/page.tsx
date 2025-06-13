@@ -93,7 +93,7 @@ export default function Home() {
         title="Popularni proizvodi"
         description="Otkrijte naše najtraženije proizvode za njegu kože"
         showViewAll={true}
-        viewAllLink="/proizvodi"
+        viewAllLink="/katalog"
         viewAllText="Pogledajte sve proizvode"
       />
       <ServicesSectionPreview/>
@@ -101,7 +101,7 @@ export default function Home() {
       <FeaturedBlogsSection posts={featuredPosts} />
       <FAQSection />
       <PartnersSlider />
-      <ContactSection />
+      <ContactSection hasTopPadding={false}/>
     </main>
   );
 }

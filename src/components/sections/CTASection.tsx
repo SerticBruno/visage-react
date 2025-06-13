@@ -9,6 +9,8 @@ interface CTASectionProps {
   description?: string;
   ctaText?: string;
   ctaLink?: string;
+  secondaryCtaText?: string;
+  secondaryCtaLink?: string;
   gradientDirection?: 't' | 'b';
   hasPadding?: boolean;
 }
@@ -18,6 +20,8 @@ const CTASection = ({
   description = "Doživite vrhunsku uslugu u našem salonu. Rezervirajte termin i prepustite se stručnom timu koji će se pobrinuti za vašu ljepotu.",
   ctaText = "Rezervirajte termin",
   ctaLink = "/kontakt",
+  secondaryCtaText = "Pogledajte usluge",
+  secondaryCtaLink = "/usluge",
   gradientDirection = 'b',
   hasPadding = true
 }: CTASectionProps) => {
@@ -44,10 +48,10 @@ const CTASection = ({
                   <FaCalendarAlt className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  href="/usluge"
+                  href={secondaryCtaLink}
                   className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-b from-white to-slate-50 text-slate-900 border-2 border-slate-200 rounded-lg font-semibold hover:from-slate-50 hover:to-slate-100 transition-all duration-300 group text-sm sm:text-base shadow-sm hover:shadow-md"
                 >
-                  Pogledajte usluge
+                  {secondaryCtaText}
                   <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
