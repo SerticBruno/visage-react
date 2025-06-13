@@ -10,9 +10,9 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import 'swiper/css';
 
 export default function ServicesSectionPreview() {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperType | null>(null);
-  const totalPages = Math.ceil(Object.keys(services).length / 3);
+  const totalSlides = Object.keys(services).length;
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -26,10 +26,9 @@ export default function ServicesSectionPreview() {
     }
   };
 
-  const goToPage = (pageIndex: number) => {
+  const goToSlide = (index: number) => {
     if (swiperRef.current) {
-      const targetIndex = pageIndex * 3;
-      swiperRef.current.slideToLoop(targetIndex);
+      swiperRef.current.slideTo(index);
     }
   };
 
@@ -50,13 +49,12 @@ export default function ServicesSectionPreview() {
             spaceBetween={24}
             slidesPerView={1}
             loop={true}
-            loopAdditionalSlides={3}
             watchSlidesProgress={true}
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
             onSlideChange={(swiper) => {
-              setCurrentPage(Math.floor(swiper.realIndex / 3) + 1);
+              setActiveIndex(swiper.realIndex);
             }}
             breakpoints={{
               320: {
@@ -90,7 +88,6 @@ export default function ServicesSectionPreview() {
                     <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)' }} />
                     <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 transition-transform duration-300 group-hover:-translate-y-1">
                       <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2 transition-all duration-300">{service.title}</h3>
-                      <p className="text-sm md:text-base text-white transition-all duration-300" style={{ opacity: 0.9 }}>{service.description}</p>
                     </div>
                   </div>
                 </Link>
@@ -108,12 +105,12 @@ export default function ServicesSectionPreview() {
               <FaChevronLeft className="w-4 h-4" />
             </button>
             <div className="flex items-center gap-2">
-              {Array.from({ length: totalPages }).map((_, index) => (
+              {Array.from({ length: totalSlides }).map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => goToPage(index)}
+                  onClick={() => goToSlide(index)}
                   className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    currentPage === index + 1
+                    activeIndex === index
                       ? 'bg-slate-800 scale-125'
                       : 'bg-slate-300 hover:bg-slate-400'
                   }`}
