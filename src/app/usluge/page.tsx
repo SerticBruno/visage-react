@@ -31,7 +31,7 @@ export default function ServicesPage() {
       />
       <ServicesSection />
       <CTASection hasPadding={false}/>
-      <ContactSection />
+      <ContactSection hasTopPadding={false}/>
     </main>
   );
 } 

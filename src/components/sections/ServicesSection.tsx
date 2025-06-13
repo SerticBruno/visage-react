@@ -4,7 +4,7 @@ import { services } from '@/data/services';
 
 export default function ServicesSection() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -32,7 +32,6 @@ export default function ServicesSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
                   <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2">{service.title}</h3>
-                  <p className="text-sm md:text-base text-white/90 line-clamp-2 md:line-clamp-none">{service.description}</p>
                 </div>
               </div>
             </Link>
