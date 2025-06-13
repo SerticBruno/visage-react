@@ -34,7 +34,7 @@ export default function ServicesSectionPreview() {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#e5e7eb]">
+    <section className="px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#e5e7eb]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -99,7 +99,7 @@ export default function ServicesSectionPreview() {
           </Swiper>
 
           {/* Navigation and Pagination */}
-          <div className="flex items-center justify-center gap-6 mt-8">
+          <div className="flex items-center justify-center gap-6 mt-8 pb-4">
             <button
               onClick={handlePrev}
               className="w-8 h-8 bg-gradient-to-b from-white to-[#e5e7eb] hover:from-slate-50 hover:to-slate-100 text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"

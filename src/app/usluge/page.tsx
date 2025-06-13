@@ -30,7 +30,7 @@ export default function ServicesPage() {
         image="/images/services/usluge-hero.webp"
       />
       <ServicesSection />
-      <CTASection />
+      <CTASection hasPadding={false}/>
       <ContactSection />
     </main>
   );

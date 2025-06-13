@@ -59,7 +59,7 @@ const ContactInfoCard = ({ icon: Icon, title, content, link, linkText }: {
   );
 };
 
-const ContactSection = () => {
+const ContactSection = ({ hasTopPadding = true }: { hasTopPadding?: boolean }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -111,8 +111,8 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="py-16" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+    <section style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${hasTopPadding ? 'pt-16' : ''} pb-16 relative`}>
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Dogovorite termin</h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">

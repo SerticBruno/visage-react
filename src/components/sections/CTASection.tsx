@@ -10,6 +10,7 @@ interface CTASectionProps {
   ctaText?: string;
   ctaLink?: string;
   gradientDirection?: 't' | 'b';
+  hasPadding?: boolean;
 }
 
 const CTASection = ({
@@ -17,10 +18,11 @@ const CTASection = ({
   description = "Doživite vrhunsku uslugu u našem salonu. Rezervirajte termin i prepustite se stručnom timu koji će se pobrinuti za vašu ljepotu.",
   ctaText = "Rezervirajte termin",
   ctaLink = "/kontakt",
-  gradientDirection = 'b'
+  gradientDirection = 'b',
+  hasPadding = true
 }: CTASectionProps) => {
   return (
-    <section className={`relative overflow-hidden py-16 bg-gradient-to-${gradientDirection} from-white to-[#e5e7eb]`}>
+    <section className={`relative overflow-hidden ${hasPadding ? 'py-16' : 'pb-16'} bg-gradient-to-${gradientDirection} from-white to-[#e5e7eb]`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
