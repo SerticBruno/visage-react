@@ -51,18 +51,9 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-gray-300 mb-6">
-              Certificirani predstavnik za TOSKANI u centru Siska. Pružamo profesionalne usluge estetske medicine i kozmetičkih tretmana.
+              Estetski studio specijaliziran za nekirurške estetske tretmane lica koji su prilagođeni vašim potrebama.
             </p>
             <div className="flex space-x-4">
-              <a
-                href="https://facebook.com/visagestudio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors transform hover:scale-110"
-                aria-label="Facebook"
-              >
-                <FaFacebook size={24} />
-              </a>
               <a
                 href="https://instagram.com/visagestudio"
                 target="_blank"
@@ -80,6 +71,15 @@ const Footer = () => {
                 aria-label="WhatsApp"
               >
                 <FaWhatsapp size={24} />
+              </a>
+              <a
+                href="https://facebook.com/visagestudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors transform hover:scale-110"
+                aria-label="Facebook"
+              >
+                <FaFacebook size={24} />
               </a>
             </div>
           </div>
@@ -210,8 +210,11 @@ const Footer = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-6 py-3 text-white rounded-lg transition-all duration-300 font-medium transform hover:-translate-y-0.5 hover:shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                  style={{ background: 'linear-gradient(to right, rgb(15, 23, 42), rgb(30, 41, 59))' }}
+                  className="w-full px-6 py-3 text-gray-800 rounded-lg transition-all duration-300 font-medium transform hover:-translate-y-0.5 hover:shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center group hover:bg-gray-100"
+                  style={{ 
+                    background: 'rgb(247, 247, 247)',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                  }}
                 >
                   {isSubmitting ? (
                     <span className="animate-pulse">Slanje...</span>

@@ -90,9 +90,11 @@ const ContactSection = ({ hasTopPadding = true }: { hasTopPadding?: boolean }) =
       linkText: 'Pronađite nas'
     },
     {
-      icon: FaClock,
-      title: 'Radno vrijeme',
-      content: ['Pon-Pet: 09:00 - 20:00', 'Sub: 09:00 - 15:00']
+      icon: FaWhatsapp,
+      title: 'WhatsApp',
+      content: 'Javite nam se putem WhatsAppa',
+      link: 'https://wa.me/385911105020',
+      linkText: 'Pošaljite poruku'
     },
     {
       icon: FaPhone,
@@ -102,11 +104,9 @@ const ContactSection = ({ hasTopPadding = true }: { hasTopPadding?: boolean }) =
       linkText: 'Nazovite nas'
     },
     {
-      icon: FaWhatsapp,
-      title: 'WhatsApp',
-      content: 'Javite nam se putem WhatsAppa',
-      link: 'https://wa.me/385911105020',
-      linkText: 'Pošaljite poruku'
+      icon: FaClock,
+      title: 'Radno vrijeme',
+      content: ['Po dogovoru']
     }
   ];
 
@@ -116,7 +116,7 @@ const ContactSection = ({ hasTopPadding = true }: { hasTopPadding?: boolean }) =
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Dogovorite termin</h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-            Javite nam se putem kontakt obrasca ili nas posjetite u našem salonu
+            Javite nam se putem kontakt obrasca ili preko društvenih mreža
           </p>
         </div>
 
