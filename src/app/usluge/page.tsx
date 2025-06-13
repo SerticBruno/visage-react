@@ -30,8 +30,8 @@ export default function ServicesPage() {
         image="/images/services/usluge-hero.webp"
       />
       <ServicesSection />
-      <CTASection />
-      <ContactSection />
+      <CTASection hasPadding={false} secondaryCtaText="Saznajte više o nama" secondaryCtaLink="/o-nama" />
+      <ContactSection hasTopPadding={false}/>
     </main>
   );
 } 

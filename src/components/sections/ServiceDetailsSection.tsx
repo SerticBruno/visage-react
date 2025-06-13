@@ -103,6 +103,32 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
     }
   };
 
+  const handlePrevious = () => {
+    const currentIndex = service.steps.findIndex(step => step.id === activeTab);
+    if (currentIndex > 0) {
+      setActiveTab(service.steps[currentIndex - 1].id);
+      // Scroll the slider
+      if (sliderRef.current) {
+        const scrollAmount = -84; // 80px (min-w-[80px]) + 16px (space-x-4)
+        sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+  };
+
+  const scrollToActiveStep = () => {
+    if (sliderRef.current) {
+      const activeStep = sliderRef.current.querySelector(`[data-step-id="${activeTab}"]`);
+      if (activeStep) {
+        activeStep.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  };
+
+  // Call scrollToActiveStep when activeTab changes
+  React.useEffect(() => {
+    scrollToActiveStep();
+  }, [activeTab]);
+
   const formatContent = (content: string) => {
     // Split content into sections (separated by double newlines)
     const sections = content.split('\n\n');
@@ -215,7 +241,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-[#e5e7eb]">
+    <section className="bg-gradient-to-b from-white to-[#e5e7eb]">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Mobile Step Navigation */}
         <div className="lg:hidden mb-8">
@@ -227,6 +253,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                   <div
                     key={step.id}
                     className="flex-shrink-0"
+                    data-step-id={step.id}
                   >
                     <button
                       onClick={() => setActiveTab(step.id)}
@@ -265,14 +292,25 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
               />
             </div>
 
-            {/* Next Step Button */}
-            <div className="flex justify-end mt-6">
+            {/* Navigation Buttons */}
+            <div className="flex items-center justify-between mt-6">
+              <button 
+                onClick={handlePrevious}
+                disabled={service.steps.findIndex(step => step.id === activeTab) === 0}
+                className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-md text-slate-400 hover:text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+              >
+                <FaChevronRight className="w-4 h-4 rotate-180" />
+              </button>
+
+              <div className="text-sm font-medium text-slate-600">
+                {service.steps.findIndex(step => step.id === activeTab) + 1} / {service.steps.length}
+              </div>
+
               <button 
                 onClick={handleNext}
                 disabled={service.steps.findIndex(step => step.id === activeTab) === service.steps.length - 1}
-                className="flex items-center text-slate-400 hover:text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+                className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-md text-slate-400 hover:text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
               >
-                <span className="text-sm font-medium mr-1">Sljedeći korak</span>
                 <FaChevronRight className="w-4 h-4" />
               </button>
             </div>

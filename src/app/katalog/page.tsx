@@ -551,7 +551,7 @@ export default function KatalogPage() {
         </Transition>
       </div>
       <CTASection />
-      <ContactSection />
+      <ContactSection hasTopPadding={false} />
     </main>
   );
 } 

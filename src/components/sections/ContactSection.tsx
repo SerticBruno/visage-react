@@ -59,7 +59,7 @@ const ContactInfoCard = ({ icon: Icon, title, content, link, linkText }: {
   );
 };
 
-const ContactSection = () => {
+const ContactSection = ({ hasTopPadding = true }: { hasTopPadding?: boolean }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -90,9 +90,11 @@ const ContactSection = () => {
       linkText: 'Pronađite nas'
     },
     {
-      icon: FaClock,
-      title: 'Radno vrijeme',
-      content: ['Pon-Pet: 09:00 - 20:00', 'Sub: 09:00 - 15:00']
+      icon: FaWhatsapp,
+      title: 'WhatsApp',
+      content: 'Javite nam se putem WhatsAppa',
+      link: 'https://wa.me/385911105020',
+      linkText: 'Pošaljite poruku'
     },
     {
       icon: FaPhone,
@@ -102,21 +104,19 @@ const ContactSection = () => {
       linkText: 'Nazovite nas'
     },
     {
-      icon: FaWhatsapp,
-      title: 'WhatsApp',
-      content: 'Javite nam se putem WhatsAppa',
-      link: 'https://wa.me/385911105020',
-      linkText: 'Pošaljite poruku'
+      icon: FaClock,
+      title: 'Radno vrijeme',
+      content: ['Po dogovoru']
     }
   ];
 
   return (
-    <section className="py-16" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+    <section style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${hasTopPadding ? 'pt-16' : ''} pb-12 relative`}>
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Dogovorite termin</h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-            Javite nam se putem kontakt obrasca ili nas posjetite u našem salonu
+            Javite nam se putem kontakt obrasca ili preko društvenih mreža
           </p>
         </div>
 

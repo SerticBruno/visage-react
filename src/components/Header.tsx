@@ -14,7 +14,7 @@ export default function Header() {
   const [currentPath, setCurrentPath] = useState('');
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -23,13 +23,11 @@ export default function Header() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Handle desktop services dropdown
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsServicesOpen(false);
-      }
-
-      // Handle mobile menu
-      if (isMenuOpen && mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+      if (isMenuOpen && 
+          mobileMenuRef.current && 
+          !mobileMenuRef.current.contains(event.target as Node) &&
+          menuButtonRef.current &&
+          !menuButtonRef.current.contains(event.target as Node)) {
         setIsMenuOpen(false);
         setIsServicesOpen(false);
       }
@@ -38,26 +36,21 @@ export default function Header() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
     };
   }, [isMenuOpen]);
 
-  const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setIsServicesOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
       setIsServicesOpen(false);
-    }, 200);
+    }
   };
 
-  const handleMobileLinkClick = () => {
+  const toggleServices = () => {
+    setIsServicesOpen(!isServicesOpen);
+  };
+
+  const closeAllMenus = () => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
   };
@@ -70,13 +63,14 @@ export default function Header() {
   };
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    if (isActive(path)) {
+    if (isActive(path) && path !== '/usluge') {
       e.preventDefault();
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
     }
+    closeAllMenus();
   };
 
   return (
@@ -118,41 +112,62 @@ export default function Header() {
             
             <div
               className="relative"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
               ref={dropdownRef}
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <Link
-                href="/usluge"
-                className={`text-gray-700 hover:text-gray-900 transition-all duration-300 flex items-center gap-1 cursor-pointer relative group text-lg ${
-                  isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
-                }`}
-                onClick={(e) => handleLinkClick(e, '/usluge')}
-              >
-                Usluge
-                <FaChevronDown className={`w-3 h-3 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
-              </Link>
-              
-              {isServicesOpen && (
-                <div 
-                  className="absolute left-0 mt-3 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100 transform transition-all duration-300 origin-top"
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
+              <div className="flex items-center gap-1">
+                <Link 
+                  href="/usluge" 
+                  className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
+                    isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
+                  }`}
+                  onClick={(e) => handleLinkClick(e, '/usluge')}
                 >
-                  {Object.entries(services).map(([pageName, service]) => (
-                    <Link
-                      key={pageName}
-                      href={`/usluge/${pageName}`}
-                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-300 transform hover:translate-x-1 ${
-                        isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold bg-gray-50' : ''
-                      }`}
-                      onClick={(e) => handleLinkClick(e, `/usluge/${pageName}`)}
-                    >
-                      {service.title}
-                    </Link>
-                  ))}
-                </div>
-              )}
+                  Usluge
+                </Link>
+                <button
+                  type="button"
+                  onClick={toggleServices}
+                  className="text-gray-700 hover:text-gray-900 transition-all duration-300 cursor-pointer"
+                  aria-expanded={isServicesOpen}
+                  aria-controls="services-menu"
+                >
+                  <FaChevronDown 
+                    className={`w-3 h-3 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} 
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+              
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div 
+                    id="services-menu"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-0 mt-3 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100"
+                  >
+                    {Object.entries(services).map(([pageName, service]) => (
+                      <Link
+                        key={pageName}
+                        href={`/usluge/${pageName}`}
+                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-300 transform hover:translate-x-1 ${
+                          isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold bg-gray-50' : ''
+                        }`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleLinkClick(e, `/usluge/${pageName}`);
+                        }}
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
             
             <Link 
@@ -208,11 +223,10 @@ export default function Header() {
 
           {/* Mobile Navigation Button */}
           <button
+            ref={menuButtonRef}
             className="lg:hidden text-gray-700 hover:text-gray-900 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
-            onClick={(e) => {
-              e.preventDefault();
-              setIsMenuOpen(!isMenuOpen);
-            }}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
           >
             <svg
               className="h-6 w-6"
@@ -260,34 +274,37 @@ export default function Header() {
             >
               <Link
                 href="/"
-                className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
+                className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 text-lg ${
                   isActive('/') ? 'text-gray-900 font-bold' : 'font-medium'
                 }`}
-                onClick={handleMobileLinkClick}
+                onClick={(e) => handleLinkClick(e, '/')}
               >
                 Početna
               </Link>
               
               <div className="relative">
-                <div className="flex items-center">
+                <div className="flex items-center justify-between">
                   <Link
                     href="/usluge"
                     className={`flex-grow px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 text-lg ${
                       isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
                     }`}
-                    onClick={handleMobileLinkClick}
+                    onClick={(e) => handleLinkClick(e, '/usluge')}
                   >
                     Usluge
                   </Link>
                   <button
-                    className="p-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300"
-                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    type="button"
+                    onClick={toggleServices}
+                    className="px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300"
+                    aria-expanded={isServicesOpen}
+                    aria-label="Toggle services submenu"
                   >
                     <motion.div
                       animate={{ rotate: isServicesOpen ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <FaChevronDown className="w-3 h-3" />
+                      <FaChevronDown className="w-3 h-3" aria-hidden="true" />
                     </motion.div>
                   </button>
                 </div>
@@ -327,90 +344,55 @@ export default function Header() {
                 </AnimatePresence>
               </div>
 
-              <motion.div
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -20, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+              <Link
+                href="/katalog"
+                className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 text-lg ${
+                  isActive('/katalog') ? 'text-gray-900 font-bold' : 'font-medium'
+                }`}
+                onClick={(e) => handleLinkClick(e, '/katalog')}
               >
-                <Link
-                  href="/katalog"
-                  className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
-                    isActive('/katalog') ? 'text-gray-900 font-bold' : 'font-medium'
-                  }`}
-                  onClick={(e) => handleLinkClick(e, '/katalog')}
-                >
-                  Katalog
-                </Link>
-              </motion.div>
+                Katalog
+              </Link>
               
-              <motion.div
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -20, opacity: 0 }}
-                transition={{ duration: 0.2, delay: 0.1 }}
+              <Link
+                href="/cjenik"
+                className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 text-lg ${
+                  isActive('/cjenik') ? 'text-gray-900 font-bold' : 'font-medium'
+                }`}
+                onClick={(e) => handleLinkClick(e, '/cjenik')}
               >
-                <Link
-                  href="/cjenik"
-                  className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
-                    isActive('/cjenik') ? 'text-gray-900 font-bold' : 'font-medium'
-                  }`}
-                  onClick={(e) => handleLinkClick(e, '/cjenik')}
-                >
-                  Cjenik
-                </Link>
-              </motion.div>
+                Cjenik
+              </Link>
               
-              <motion.div
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -20, opacity: 0 }}
-                transition={{ duration: 0.2, delay: 0.2 }}
+              <Link
+                href="/blog"
+                className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 text-lg ${
+                  isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
+                }`}
+                onClick={(e) => handleLinkClick(e, '/blog')}
               >
-                <Link
-                  href="/blog"
-                  className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
-                    isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
-                  }`}
-                  onClick={(e) => handleLinkClick(e, '/blog')}
-                >
-                  Blog
-                </Link>
-              </motion.div>
+                Blog
+              </Link>
               
-              <motion.div
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -20, opacity: 0 }}
-                transition={{ duration: 0.2, delay: 0.3 }}
+              <Link
+                href="/o-nama"
+                className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 text-lg ${
+                  isActive('/o-nama') ? 'text-gray-900 font-bold' : 'font-medium'
+                }`}
+                onClick={(e) => handleLinkClick(e, '/o-nama')}
               >
-                <Link
-                  href="/o-nama"
-                  className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
-                    isActive('/o-nama') ? 'text-gray-900 font-bold' : 'font-medium'
-                  }`}
-                  onClick={(e) => handleLinkClick(e, '/o-nama')}
-                >
-                  O nama
-                </Link>
-              </motion.div>
+                O nama
+              </Link>
               
-              <motion.div
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -20, opacity: 0 }}
-                transition={{ duration: 0.2, delay: 0.4 }}
+              <Link
+                href="/kontakt"
+                className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 text-lg ${
+                  isActive('/kontakt') ? 'text-gray-900 font-bold' : 'font-medium'
+                }`}
+                onClick={(e) => handleLinkClick(e, '/kontakt')}
               >
-                <Link
-                  href="/kontakt"
-                  className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-lg ${
-                    isActive('/kontakt') ? 'text-gray-900 font-bold' : 'font-medium'
-                  }`}
-                  onClick={(e) => handleLinkClick(e, '/kontakt')}
-                >
-                  Kontakt
-                </Link>
-              </motion.div>
+                Kontakt
+              </Link>
             </motion.div>
           </motion.div>
         )}

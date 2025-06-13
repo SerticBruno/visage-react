@@ -6,12 +6,14 @@ import CTASection from '@/components/sections/CTASection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import FAQSection from '@/components/sections/FAQSection';
 import FeaturedBlogsSection from '@/components/sections/FeaturedBlogsSection';
+import ComboPackagesSection from '@/components/sections/ComboPackagesSection';
 import { popularProducts } from '@/data/popularProducts';
 import { blogPosts } from '@/data/posts';
 import ServiceSlider from '@/components/ui/ServiceSlider';
 import { Metadata } from 'next';
 import { popularServices } from '@/data/popularServices';
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
+import ComboPackagesInlineSection from '@/components/sections/ComboPackagesInlineSection';
 
 export const metadata: Metadata = {
   title: "VISAGE Studio - Estetski studio Sisak",
@@ -87,13 +89,15 @@ export default function Home() {
         viewAllLink="/usluge"
         viewAllText="Pogledajte sve usluge"
       />
+      <ComboPackagesInlineSection />
+      <ComboPackagesSection />
       <NewsletterCTASection />
       <ServiceSlider 
         services={popularProductsData}
         title="Popularni proizvodi"
         description="Otkrijte naše najtraženije proizvode za njegu kože"
         showViewAll={true}
-        viewAllLink="/proizvodi"
+        viewAllLink="/katalog"
         viewAllText="Pogledajte sve proizvode"
       />
       <ServicesSectionPreview/>
@@ -101,7 +105,7 @@ export default function Home() {
       <FeaturedBlogsSection posts={featuredPosts} />
       <FAQSection />
       <PartnersSlider />
-      <ContactSection />
+      <ContactSection hasTopPadding={false}/>
     </main>
   );
 }

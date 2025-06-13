@@ -55,7 +55,7 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
   };
 
   return (
-    <section className="py-16" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
+    <section style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Izdvojeni članci</h2>
