@@ -22,19 +22,9 @@ export default function ServiceContentSection({
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="relative h-[400px] lg:h-[600px] rounded-lg overflow-hidden">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-          
-          <div>
+          <div className="order-1 lg:order-2">
             <h1 className="text-4xl font-bold text-gray-900 mb-6">{title}</h1>
-            <p className="text-xl text-gray-600 mb-8 whitespace-pre-line">{description}</p>
+            <p className="text-l text-gray-600 mb-8 whitespace-pre-line">{description}</p>
             
             {benefits.length > 0 && (
               <div className="mb-8">
@@ -58,6 +48,16 @@ export default function ServiceContentSection({
             >
               Dogovorite termin
             </Link>
+          </div>
+
+          <div className="relative h-[400px] lg:h-[600px] rounded-lg overflow-hidden order-2 lg:order-1">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </div>
