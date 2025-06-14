@@ -34,10 +34,10 @@ export default function ComboPackagesInlineSection() {
                 </div>
 
                 <div className="mb-6 md:mb-8">
-                  <div className="flex flex-wrap justify-center items-stretch gap-3 md:gap-4">
+                  <div className="flex flex-col items-center gap-4 md:gap-6">
                     {pkg.services.map((service, index) => (
                       <React.Fragment key={service.id}>
-                        <div className="flex flex-col items-center gap-2 md:gap-3 w-40 md:w-48 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-48 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-4 shadow-sm hover:shadow-md transition-shadow">
                           <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
                             <Image
                               src={service.image}
@@ -59,7 +59,7 @@ export default function ComboPackagesInlineSection() {
                           </div>
                         </div>
                         {index < pkg.services.length - 1 && (
-                          <div className="flex items-center">
+                          <div className="flex items-center justify-center">
                             <div className="bg-primary/10 rounded-full p-2 md:p-3 shadow-sm">
                               <FaPlus className="text-primary text-lg md:text-xl" />
                             </div>
@@ -71,17 +71,15 @@ export default function ComboPackagesInlineSection() {
                     {pkg.products && pkg.products.length > 0 && (
                       <>
                         {pkg.services.length > 0 && (
-                          <div className="flex items-center">
-                            <div className="h-24 md:h-32 w-0.5 bg-gray-200 mx-2 md:mx-4"></div>
+                          <div className="flex items-center justify-center">
                             <div className="bg-primary/10 rounded-full p-2 md:p-3 shadow-sm">
                               <FaPlus className="text-primary text-lg md:text-xl" />
                             </div>
-                            <div className="h-24 md:h-32 w-0.5 bg-gray-200 mx-2 md:mx-4"></div>
                           </div>
                         )}
                         {pkg.products.map((product, index) => (
                           <React.Fragment key={product.id}>
-                            <div className="flex flex-col items-center gap-2 md:gap-3 w-40 md:w-48 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-4 shadow-sm hover:shadow-md transition-shadow">
+                            <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-48 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-4 shadow-sm hover:shadow-md transition-shadow">
                               <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                 <Image
                                   src={product.image}
@@ -103,7 +101,7 @@ export default function ComboPackagesInlineSection() {
                               </div>
                             </div>
                             {index < pkg.products!.length - 1 && (
-                              <div className="flex items-center">
+                              <div className="flex items-center justify-center">
                                 <div className="bg-primary/10 rounded-full p-2 md:p-3 shadow-sm">
                                   <FaPlus className="text-primary text-lg md:text-xl" />
                                 </div>

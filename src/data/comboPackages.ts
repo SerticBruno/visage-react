@@ -72,42 +72,42 @@ export const comboPackages: ComboPackage[] = [
     ],
     isPopular: true
   },
-  {
-    id: "anti-age-combo",
-    title: "Anti-Age Combo",
-    description: "Napredni paket za mladolik izgled",
-    image: "/images/services/toskani-woman.webp",
-    price: "680 EUR",
-    oldPrice: "780 EUR",
-    services: [
-      { 
-        id: "kemijski-piling", 
-        title: "Kemijski Piling", 
-        quantity: 2,
-        image: "/images/services/kemijski-piling/toskani-peelings.webp",
-        shortDescription: "Obnova kože"
-      },
-      { 
-        id: "mezoterapija", 
-        title: "Mezoterapija", 
-        quantity: 2,
-        image: "/images/services/Mesoterapia-transdermica-facial.webp",
-        shortDescription: "Dubinska hidratacija"
-      },
-      { 
-        id: "skin-booster-profhilo", 
-        title: "Profhilo", 
-        quantity: 1,
-        image: "/images/services/toskani-woman.webp",
-        shortDescription: "Napredna hidratacija"
-      }
-    ],
-    benefits: [
-      "Dubinska regeneracija kože",
-      "Poboljšana elastičnost",
-      "Smanjenje bora",
-      "Svježiji i mladolikiji izgled"
-    ],
-    isLimited: true
-  }
+  // {
+  //   id: "anti-age-combo",
+  //   title: "Anti-Age Combo",
+  //   description: "Napredni paket za mladolik izgled",
+  //   image: "/images/services/toskani-woman.webp",
+  //   price: "680 EUR",
+  //   oldPrice: "780 EUR",
+  //   services: [
+  //     { 
+  //       id: "kemijski-piling", 
+  //       title: "Kemijski Piling", 
+  //       quantity: 2,
+  //       image: "/images/services/kemijski-piling/toskani-peelings.webp",
+  //       shortDescription: "Obnova kože"
+  //     },
+  //     { 
+  //       id: "mezoterapija", 
+  //       title: "Mezoterapija", 
+  //       quantity: 2,
+  //       image: "/images/services/Mesoterapia-transdermica-facial.webp",
+  //       shortDescription: "Dubinska hidratacija"
+  //     },
+  //     { 
+  //       id: "skin-booster-profhilo", 
+  //       title: "Profhilo", 
+  //       quantity: 1,
+  //       image: "/images/services/toskani-woman.webp",
+  //       shortDescription: "Napredna hidratacija"
+  //     }
+  //   ],
+  //   benefits: [
+  //     "Dubinska regeneracija kože",
+  //     "Poboljšana elastičnost",
+  //     "Smanjenje bora",
+  //     "Svježiji i mladolikiji izgled"
+  //   ],
+  //   isLimited: true
+  // }
 ]; 

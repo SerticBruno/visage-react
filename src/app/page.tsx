@@ -13,6 +13,7 @@ import ServiceSlider from '@/components/ui/ServiceSlider';
 import { Metadata } from 'next';
 import { popularServices } from '@/data/popularServices';
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
+import ComboPackagesInlineSection from '@/components/sections/ComboPackagesInlineSection';
 // import ComboPackagesInlineSection from '@/components/sections/ComboPackagesInlineSection';
 
 export const metadata: Metadata = {
@@ -89,7 +90,7 @@ export default function Home() {
         viewAllLink="/usluge"
         viewAllText="Pogledajte sve usluge"
       />
-      {/* <ComboPackagesInlineSection /> */}
+      <ComboPackagesInlineSection />
       {/* <ComboPackagesSection /> */}
       <NewsletterCTASection />
       <ServiceSlider 
