@@ -154,23 +154,6 @@ export const products: Product[] = [
     tags: ['maska', 'umirujuća svojstva', 'hidratacija', 'svi tipovi kože']
   },
   {
-    id: '7',
-    title: 'Total Recovery Cream',
-    description: 'Zaštitna, hidratantna i hranjiva krema koja pruža moćnu regeneraciju suhe i normalne kože.',
-    category: 'Krema',
-    image: '/images/products/toskanitotalrecoverycream.webp',
-    price: '60 €',
-    oldPrice: '70 €',
-    volume: '50 ml',
-    activeIngredients: ['Acetil dipeptid-3 aminoheksanoat', 'Acetil heksapeptid-46', 'Allantoin', 'Betaine', 'Bisabolol', 'Diaminopropionoyl Tripeptide-33', 'Resveratrol', 'Tokoferol'],
-    application: [
-      'Uklonite šminku i očistite kožu energizirajućim sredstvom za čišćenje',
-      'Nanesite kremu za oporavak po cijelom licu i brzo se razmažite',
-      'Nanesite proizvod laganim tapkanjem prstiju po površini lica pola minute'
-    ],
-    tags: ['hidratacija', 'protiv iritacija', 'suha koža', 'normalna koža', 'dnevna njega']
-  },
-  {
     id: '8',
     title: 'Total Recovery Gel',
     description: 'Obnavljajući, hidratantni i umirujući gel s aloe verom za mješovitu i masnu kožu.',
@@ -188,39 +171,6 @@ export const products: Product[] = [
     tags: ['hidratacija', 'protiv iritacija', 'masna koža', 'mješovita koža', 'dnevna njega']
   },
   {
-    id: '9',
-    title: 'Anti Pollution Total Defense Cream 50+',
-    description: 'Inovativna dnevna krema za sve tipove kože koja nudi višestruku zaštitu.',
-    category: 'Krema',
-    image: '/images/products/toskaniAntipollution_Total_Defense.webp',
-    price: '65 €',
-    oldPrice: '75 €',
-    volume: '50 ml',
-    activeIngredients: ['Amid acetil heksapeptida-51', 'Peptidi', 'Probiotici', 'Shea Maslac', 'Tara i suncokretov ekstrakt', 'UV filteri', 'Vitamin E'],
-    application: [
-      'Jednom dnevno, ujutro',
-      'Koža koja je jako izložena zagađenju i zračenjima, nanijeti koliko god puta dnevno je potrebno'
-    ],
-    tags: ['spf', 'zaštita od slobodnih radikala', 'dnevna njega', 'svi tipovi kože']
-  },
-  {
-    id: '10',
-    title: 'Sun Protection Cream SPF 50+',
-    description: 'Ultra intenzivna krema za zaštitu od sunca 50+ i hidratantna nemasna krema u jednom proizvodu.',
-    category: 'Zaštita od sunca',
-    image: '/images/products/toskanisunprotectioncream.webp',
-    price: '35 €',
-    oldPrice: '45 €',
-    volume: '50 ml',
-    activeIngredients: ['Allantoin', 'Ekstrakt mimoze Tenuiflora', 'Urea', 'Vitamin E'],
-    application: [
-      'Nanesite barem jedan sloj TKN zaštite od sunca SPF 50+ na lice i/ili tijelo 15 do 30 minuta prije izlaska na otvoreno',
-      'Za nanošenje kreme iscijedite iz zaštitine pumpice proizvod u dlan',
-      'Širite je po cijeloj koži koja će biti izložena suncu'
-    ],
-    tags: ['spf', 'dnevna njega', 'suha koža', 'normalna koža']
-  },
-  {
     id: '11',
     title: 'Radiance Daily Cream SPF 30+',
     description: 'Krema za svakodnevnu upotrebu koja je namijenjena ispravljanju znakova fotostarenja.',
@@ -236,18 +186,6 @@ export const products: Product[] = [
       'Nanesite proizvod laganim tapkanjem prstiju 2-3 kapi po površini lica'
     ],
     tags: ['spf', 'hiperpigmentacije', 'fotostarenje', 'dnevna njega', 'svi tipovi kože']
-  },
-  {
-    id: '12',
-    title: 'Anti Ageing Eye Contour',
-    description: 'Posebno formuliran hidratantni serum za smanjenje umora, tretiranje bora, osvježavanje područja oko očiju.',
-    category: 'Oko očiju',
-    image: '/images/products/toskaniantiagingeyecontour.webp',
-    price: '45 €',
-    oldPrice: '55 €',
-    volume: '15 ml',
-    activeIngredients: ['Acetyl Hexapeptide-8', 'DMAE', 'Ekstrakti Ginkgo Bilobe', 'Hijaluronska kiselina', 'Maslinovo ulje', 'Organski silicij'],
-    tags: ['okoloočna njega', 'anti-age', 'ublažavanje finih linija']
   },
   {
     id: '13',
@@ -363,7 +301,7 @@ export const products: Product[] = [
     activeIngredients: ['Probiotici', 'algae extract', 'Byfida ferment Lysate', 'tetrapeptide-26', 'TRC (Total Restoring Complex)'],
     application: [
       'Uklonite šminku i očistite kožu pomoću Energizing Cleansera',
-      'Nanesite Anti Anging Eye Contour na područje oko očiju',
+      'Nanesite Night Reverse Advanced Serum na područje oko očiju',
       'Nanesite jednu ili dvije kapljice Night Reverse seruma u malu količinu Skin Architect kreme'
     ],
     tags: ['serum', 'noćna njega', 'anti-age', 'svi tipovi kože', 'suha koža', 'dehidrirana koža']

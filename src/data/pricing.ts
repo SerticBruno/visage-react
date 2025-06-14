@@ -26,7 +26,7 @@ export const pricingCategories = [
   "Plasmage",
   "PRP",
   "RRS",
-  "Skin Boosterii",
+  "Skin Boosteri",
   "TOSKANI Proizvodi"
 ];
 
@@ -891,13 +891,6 @@ export const pricingData: PricingItem[] = [
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "total-recovery-cream",
-    title: "Total Recovery Cream",
-    description: "50 ml",
-    price: "60 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
     id: "anti-pollution-cream",
     title: "Anti-Pollution Total Defense Cream 50+",
     description: "50 ml",
@@ -916,13 +909,6 @@ export const pricingData: PricingItem[] = [
     title: "Radiance Daily Cream SPF 30+",
     description: "50 ml",
     price: "65 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "anti-ageing-eye",
-    title: "Anti Ageing Eye Contour",
-    description: "15 ml",
-    price: "45 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
