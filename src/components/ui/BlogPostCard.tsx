@@ -28,7 +28,7 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
           />
         </div>
         <div className="p-6 flex flex-col">
-          <h2 className="text-xl font-semibold mb-3 text-slate-900 group-hover:text-slate-700 transition-colors line-clamp-2">
+          <h2 className="text-xl font-semibold mb-3 text-slate-900 group-hover:text-slate-700 transition-colors">
             {post.title}
           </h2>
           <div className="flex flex-wrap gap-2 mb-4">
@@ -42,7 +42,7 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
               </span>
             ))}
           </div>
-          <p className="text-slate-600 mb-4 line-clamp-3">{post.excerpt}</p>
+          <p className="text-slate-600 mb-4">{post.excerpt}</p>
         </div>
         <div className="p-6 pt-0">
           <div className="flex items-center justify-between text-sm text-slate-500 pt-4 border-t border-slate-100 mb-4">
