@@ -115,19 +115,19 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
     }
   };
 
-  const scrollToActiveStep = () => {
+  const scrollToActiveStep = React.useCallback(() => {
     if (sliderRef.current) {
       const activeStep = sliderRef.current.querySelector(`[data-step-id="${activeTab}"]`);
       if (activeStep) {
         activeStep.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       }
     }
-  };
+  }, [activeTab]);
 
   // Call scrollToActiveStep when activeTab changes
   React.useEffect(() => {
     scrollToActiveStep();
-  }, [activeTab]);
+  }, [activeTab, scrollToActiveStep]);
 
   const formatContent = (content: string) => {
     // Split content into sections (separated by double newlines)
