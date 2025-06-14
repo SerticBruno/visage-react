@@ -68,15 +68,15 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
           {/* Swiper Container */}
           <Swiper
             spaceBetween={24}
-            slidesPerView={visiblePosts}
+            slidesPerView={3}
             loop={true}
-            loopAdditionalSlides={visiblePosts}
+            loopAdditionalSlides={3}
             watchSlidesProgress={true}
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
             onSlideChange={(swiper) => {
-              setCurrentPage(Math.floor(swiper.realIndex / visiblePosts) + 1);
+              setCurrentPage(Math.floor(swiper.realIndex / 3) + 1);
             }}
             breakpoints={{
               320: {
@@ -92,13 +92,12 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
                 slidesPerView: 3,
               },
             }}
+            className="overflow-hidden"
           >
             {posts.map((post) => (
-              <SwiperSlide key={post.id} className='pb-8'>
-                <div className="px-4 h-full">
-                  <div className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
-                    <BlogPostCard post={post} />
-                  </div>
+              <SwiperSlide key={post.id} className="!h-auto">
+                <div className="h-full flex pb-8">
+                  <BlogPostCard post={post} />
                 </div>
               </SwiperSlide>
             ))}
