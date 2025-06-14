@@ -96,7 +96,7 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
           >
             {posts.map((post) => (
               <SwiperSlide key={post.id} className="!h-auto">
-                <div className="h-full flex pb-8">
+                <div className="h-full flex pb-8 px-2">
                   <BlogPostCard post={post} />
                 </div>
               </SwiperSlide>

@@ -73,11 +73,13 @@ export default function ServiceSlider({
               onSlideChange={(swiper) => {
                 setCurrentPage(swiper.realIndex + 1);
               }}
-              className="pb-8"
+              className="pb-8 overflow-hidden"
             >
               {services.map((service: Service) => (
-                <SwiperSlide key={`slide-${service.id}`}>
-                  <ServiceCard service={service} className="pb-8 px-4" />
+                <SwiperSlide key={`slide-${service.id}`} className="!h-auto">
+                  <div className="h-full pb-8 px-3">
+                    <ServiceCard service={service} className="h-full" />
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>
