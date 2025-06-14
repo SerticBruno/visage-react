@@ -89,8 +89,8 @@ export default function Home() {
         viewAllLink="/usluge"
         viewAllText="Pogledajte sve usluge"
       />
-      <ComboPackagesInlineSection />
-      <ComboPackagesSection />
+      {/* <ComboPackagesInlineSection /> */}
+      {/* <ComboPackagesSection /> */}
       <NewsletterCTASection />
       <ServiceSlider 
         services={popularProductsData}
