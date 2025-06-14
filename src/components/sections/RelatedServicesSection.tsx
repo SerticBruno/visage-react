@@ -108,11 +108,11 @@ export default function RelatedServicesSection({ currentService, relatedServices
                   slidesPerView: 2,
                 }
               }}
-              className="pb-16"
+              className="pb-16 overflow-hidden"
             >
               {validServices.map((service) => (
-                <SwiperSlide key={service.id}>
-                  <div className="px-4 pb-4">
+                <SwiperSlide key={service.id} className="!h-auto">
+                  <div className="h-full pb-8 px-3">
                     <Link 
                       href={`/usluge/${service.id}`}
                       className="block h-full"
