@@ -15,13 +15,13 @@ export default function ComboPackagesInlineSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:gap-12 max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-8 max-w-7xl mx-auto overflow-x-auto">
           {comboPackages.map((pkg) => (
             <div
               key={pkg.id}
-              className="bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1"
+              className="bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 flex-shrink-0 md:flex-1 lg:flex-1"
             >
-              <div className="p-4 md:p-8" style={{ background: 'linear-gradient(to bottom,rgb(233, 234, 235),#f0f0f0)' }}>
+              <div className="p-4 md:p-6 lg:p-8 h-full flex flex-col" style={{ background: 'linear-gradient(to bottom,rgb(233, 234, 235),#f0f0f0)' }}>
                 <div className="text-center mb-6 md:mb-8">
                   <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{pkg.title}</h3>
                   <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg">{pkg.description}</p>
@@ -33,12 +33,12 @@ export default function ComboPackagesInlineSection() {
                   </div>
                 </div>
 
-                <div className="mb-6 md:mb-8">
-                  <div className="flex flex-col items-center gap-4 md:gap-6">
+                <div className="mb-6 md:mb-8 flex-1">
+                  <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-3 lg:gap-4">
                     {pkg.services.map((service, index) => (
                       <React.Fragment key={service.id}>
-                        <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-48 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-4 shadow-sm hover:shadow-md transition-shadow">
-                          <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                        <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-32 lg:w-36 xl:w-40 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-md transition-shadow">
+                          <div className="relative w-20 h-20 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
                             <Image
                               src={service.image}
                               alt={service.title}
@@ -48,20 +48,20 @@ export default function ComboPackagesInlineSection() {
                           </div>
                           <div className="text-center">
                             <div className="flex items-center justify-center gap-1 md:gap-2">
-                              <h5 className="font-medium text-sm md:text-base">{service.title}</h5>
+                              <h5 className="font-medium text-sm md:text-xs lg:text-sm">{service.title}</h5>
                               {service.quantity > 1 && (
-                                <span className="text-xs md:text-sm text-primary font-medium">x{service.quantity}</span>
+                                <span className="text-xs md:text-xs lg:text-sm text-primary font-medium">x{service.quantity}</span>
                               )}
                             </div>
                             {service.shortDescription && (
-                              <p className="text-xs md:text-sm text-gray-600 mt-1">{service.shortDescription}</p>
+                              <p className="text-xs md:text-xs lg:text-sm text-gray-600 mt-1">{service.shortDescription}</p>
                             )}
                           </div>
                         </div>
                         {index < pkg.services.length - 1 && (
                           <div className="flex items-center justify-center">
-                            <div className="bg-primary/10 rounded-full p-2 md:p-3 shadow-sm">
-                              <FaPlus className="text-primary text-lg md:text-xl" />
+                            <div className="bg-primary/10 rounded-full p-1.5 md:p-1.5 lg:p-2 shadow-sm">
+                              <FaPlus className="text-primary text-sm md:text-sm lg:text-base" />
                             </div>
                           </div>
                         )}
@@ -72,15 +72,15 @@ export default function ComboPackagesInlineSection() {
                       <>
                         {pkg.services.length > 0 && (
                           <div className="flex items-center justify-center">
-                            <div className="bg-primary/10 rounded-full p-2 md:p-3 shadow-sm">
-                              <FaPlus className="text-primary text-lg md:text-xl" />
+                            <div className="bg-primary/10 rounded-full p-1.5 md:p-1.5 lg:p-2 shadow-sm">
+                              <FaPlus className="text-primary text-sm md:text-sm lg:text-base" />
                             </div>
                           </div>
                         )}
                         {pkg.products.map((product, index) => (
                           <React.Fragment key={product.id}>
-                            <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-48 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-4 shadow-sm hover:shadow-md transition-shadow">
-                              <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                            <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-32 lg:w-36 xl:w-40 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-md transition-shadow">
+                              <div className="relative w-20 h-20 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                 <Image
                                   src={product.image}
                                   alt={product.title}
@@ -90,20 +90,20 @@ export default function ComboPackagesInlineSection() {
                               </div>
                               <div className="text-center">
                                 <div className="flex items-center justify-center gap-1 md:gap-2">
-                                  <h5 className="font-medium text-sm md:text-base">{product.title}</h5>
+                                  <h5 className="font-medium text-sm md:text-xs lg:text-sm">{product.title}</h5>
                                   {product.quantity > 1 && (
-                                    <span className="text-xs md:text-sm text-primary font-medium">x{product.quantity}</span>
+                                    <span className="text-xs md:text-xs lg:text-sm text-primary font-medium">x{product.quantity}</span>
                                   )}
                                 </div>
                                 {product.shortDescription && (
-                                  <p className="text-xs md:text-sm text-gray-600 mt-1">{product.shortDescription}</p>
+                                  <p className="text-xs md:text-xs lg:text-sm text-gray-600 mt-1">{product.shortDescription}</p>
                                 )}
                               </div>
                             </div>
                             {index < pkg.products!.length - 1 && (
                               <div className="flex items-center justify-center">
-                                <div className="bg-primary/10 rounded-full p-2 md:p-3 shadow-sm">
-                                  <FaPlus className="text-primary text-lg md:text-xl" />
+                                <div className="bg-primary/10 rounded-full p-1.5 md:p-1.5 lg:p-2 shadow-sm">
+                                  <FaPlus className="text-primary text-sm md:text-sm lg:text-base" />
                                 </div>
                               </div>
                             )}
@@ -126,7 +126,7 @@ export default function ComboPackagesInlineSection() {
                   </ul>
                 </div>
 
-                <div className="flex justify-center mt-8">
+                <div className="flex justify-center mt-auto">
                   <Link
                     href="/kontakt"
                     className="group inline-flex items-center gap-2 px-6 py-3 bg-[#1e293b] text-white rounded-xl hover:bg-[#334155] transition-all duration-300 shadow-lg hover:shadow-xl font-medium"
