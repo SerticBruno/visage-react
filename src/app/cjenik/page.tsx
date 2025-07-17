@@ -11,20 +11,22 @@ import CTASection from '@/components/sections/CTASection';
 export default function PricingPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedBadges, setSelectedBadges] = useState<string[]>([]);
   const [isScrolling] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
-  const [showGradient, setShowGradient] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
-  const categoriesRef = useRef<HTMLDivElement>(null);
 
   const filteredItems = useMemo(() => {
     return pricingData.filter(item => {
       const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           item.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(item.category);
-      return matchesSearch && matchesCategory;
+      const matchesBadges = selectedBadges.length === 0 || 
+        (selectedBadges.includes('popular') && item.isPopular) ||
+        (selectedBadges.includes('package') && item.isPackage);
+      return matchesSearch && matchesCategory && matchesBadges;
     });
-  }, [searchTerm, selectedCategories]);
+  }, [searchTerm, selectedCategories, selectedBadges]);
 
   // Reset filtering state after a delay
   useEffect(() => {
@@ -57,16 +59,20 @@ export default function PricingPage() {
     requestAnimationFrame(scrollToContent);
   };
 
+  const toggleBadge = (badge: string) => {
+    setIsFiltering(true);
+    setSelectedBadges(prev => 
+      prev.includes(badge)
+        ? prev.filter(b => b !== badge)
+        : [...prev, badge]
+    );
+    requestAnimationFrame(scrollToContent);
+  };
+
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsFiltering(true);
     setSearchTerm(e.target.value);
     requestAnimationFrame(scrollToContent);
-  };
-
-  const handleCategoriesScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
-    // Show gradient if we're not at the bottom (with a small threshold)
-    setShowGradient(scrollHeight - scrollTop - clientHeight > 10);
   };
 
   const groupedItems = useMemo(() => {
@@ -92,11 +98,11 @@ export default function PricingPage() {
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar with Filters */}
             <div className="lg:w-64 flex-shrink-0">
-              <div className="bg-white rounded-lg shadow-md p-6 sticky top-24">
+              <div className="bg-white rounded-lg shadow-md p-6 sticky top-24 space-y-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Filtriraj usluge</h3>
                 
-                {/* Search - Always visible */}
-                <div className="mb-6">
+                {/* Search */}
+                <div>
                   <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-2">
                     Pretraži usluge
                   </label>
@@ -113,42 +119,63 @@ export default function PricingPage() {
                   </div>
                 </div>
 
-                {/* Categories - Scrollable */}
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                {/* Categories Section */}
+                <div className="border-t border-gray-200 pt-6">
+                  <label className="block text-sm font-medium text-gray-700 mb-3">
                     Kategorije
                   </label>
-                  <div className="relative">
-                    <div 
-                      ref={categoriesRef}
-                      onScroll={handleCategoriesScroll}
-                      className="max-h-[300px] overflow-y-auto pr-2 space-y-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
-                    >
-                      {pricingCategories.map((category) => (
-                        <label key={category} className="flex items-start space-x-2 cursor-pointer group">
-                          <div className="pt-0.5">
-                            <input
-                              type="checkbox"
-                              checked={selectedCategories.includes(category)}
-                              onChange={() => toggleCategory(category)}
-                              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                            />
-                          </div>
-                          <span className="text-sm text-gray-700 group-hover:text-gray-900">{category}</span>
-                        </label>
-                      ))}
-                    </div>
-                    {/* Gradient overlay to indicate scrollable content */}
-                    <div 
-                      className={`absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent pointer-events-none transition-opacity duration-200 ${
-                        showGradient ? 'opacity-100' : 'opacity-0'
-                      }`} 
-                    />
+                  <div className="space-y-2 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+                    {pricingCategories.map((category) => (
+                      <label key={category} className="flex items-start space-x-2 cursor-pointer group">
+                        <div className="pt-0.5">
+                          <input
+                            type="checkbox"
+                            checked={selectedCategories.includes(category)}
+                            onChange={() => toggleCategory(category)}
+                            className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                          />
+                        </div>
+                        <span className="text-sm text-gray-700 group-hover:text-gray-900">{category}</span>
+                      </label>
+                    ))}
                   </div>
                 </div>
 
-                {/* Results Count - Always visible */}
-                <div className="mt-6 pt-6 border-t border-gray-200">
+                {/* Badges Filter Section */}
+                <div className="border-t border-gray-200 pt-6">
+                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                    Oznake
+                  </label>
+                  <div className="space-y-2">
+                    <label className="flex items-center space-x-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={selectedBadges.includes('popular')}
+                        onChange={() => toggleBadge('popular')}
+                        className="h-4 w-4 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded"
+                      />
+                      <span className="text-sm text-gray-700 flex items-center gap-1">
+                        <FaStar className="w-3 h-3 text-yellow-500" />
+                        Popularno
+                      </span>
+                    </label>
+                    <label className="flex items-center space-x-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={selectedBadges.includes('package')}
+                        onChange={() => toggleBadge('package')}
+                        className="h-4 w-4 text-green-500 focus:ring-green-500 border-gray-300 rounded"
+                      />
+                      <span className="text-sm text-gray-700 flex items-center gap-1">
+                        <FaBox className="w-3 h-3 text-green-500" />
+                        Paket
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                {/* Results Count */}
+                <div className="border-t border-gray-200 pt-6">
                   <p className="text-sm text-gray-600">
                     Pronađeno usluga: <span className="font-semibold">{filteredItems.length}</span>
                   </p>
