@@ -14,7 +14,6 @@ const PrivacyPolicy = () => {
       <HeroSection
         title="Politika privatnosti"
         description="Vaša privatnost nam je važna. Saznajte kako štitimo i koristimo vaše osobne podatke."
-        image="/images/services/hero-blog.jpg"
       />
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

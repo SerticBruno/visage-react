@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 interface HeroSectionProps {
   title: string;
   description: string;
-  image: string;
+  image?: string;
   ctaText?: string;
   ctaLink?: string;
   variant?: 'home' | 'default';
@@ -83,30 +83,34 @@ const HeroSection = ({
 
   return (
     <section className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden">
-      {/* Background Image with Parallax Effect */}
+      {/* Background Image with Parallax Effect or Navy Blue Background */}
       <div className="absolute inset-0 z-0">
-        <div className="relative w-full h-full">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover transform scale-105"
-            priority
-            quality={100}
-            sizes="100vw"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-            }}
-          />
-        </div>
+        {image ? (
+          <div className="relative w-full h-full">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-cover transform scale-105"
+              priority
+              quality={100}
+              sizes="100vw"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+              }}
+            />
+          </div>
+        ) : (
+          <div className="w-full h-full" style={{ backgroundColor: '#0f172a' }} />
+        )}
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))' }} />
+      <div className="absolute inset-0" style={{ background: image ? 'linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))' : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3))' }} />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center flex-grow w-full px-4 py-16">
