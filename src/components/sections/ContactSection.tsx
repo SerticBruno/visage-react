@@ -66,11 +66,41 @@ const ContactSection = ({ hasTopPadding = true }: { hasTopPadding?: boolean }) =
     phone: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle the form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setSubmitMessage('Poruka je uspješno poslana! Javit ćemo vam se u najkraćem mogućem roku.');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+        setSubmitMessage(result.error || 'Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovno.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage('Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovno.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -125,77 +155,116 @@ const ContactSection = ({ hasTopPadding = true }: { hasTopPadding?: boolean }) =
           <div className="lg:col-span-5">
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-6 sm:p-8 h-full flex flex-col">
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">Pošaljite nam poruku</h3>
-              <form onSubmit={handleSubmit} className="flex flex-col h-full">
-                <div className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Ime i prezime
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors text-sm sm:text-base"
-                      required
-                    />
+              
+              {submitStatus === 'success' ? (
+                <div className="flex flex-col items-center justify-center h-full text-center py-8">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors text-sm sm:text-base"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                      Telefon
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors text-sm sm:text-base"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-4 pt-4 flex-grow">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Poruka
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full h-full min-h-[200px] px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors text-sm sm:text-base resize-none"
-                    required
-                  ></textarea>
-                </div>
-
-                <div className="mt-6 pt-6">
+                  <h4 className="text-xl font-semibold text-gray-900 mb-3">Hvala vam!</h4>
+                  <p className="text-gray-600 mb-6 max-w-sm">
+                    Vaša poruka je uspješno poslana. Javit ćemo vam se u najkraćem mogućem roku.
+                  </p>
                   <button
-                    type="submit"
-                    className="w-full bg-gray-900 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors text-sm sm:text-base cursor-pointer"
+                    onClick={() => {
+                      setSubmitStatus('idle');
+                      setSubmitMessage('');
+                    }}
+                    className="px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
                   >
-                    Pošalji poruku
+                    Pošaljite novu poruku
                   </button>
                 </div>
-              </form>
+              ) : (
+                <form onSubmit={handleSubmit} className="flex flex-col h-full">
+                  <div className={`space-y-4 transition-all duration-500 ${
+                    submitStatus === 'error' ? 'opacity-50 scale-95' : ''
+                  }`}>
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                        Ime i prezime
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors text-sm sm:text-base"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors text-sm sm:text-base"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                        Telefon
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors text-sm sm:text-base"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className={`mt-4 pt-4 flex-grow transition-all duration-500 ${
+                    submitStatus === 'error' ? 'opacity-50 scale-95' : ''
+                  }`}>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                      Poruka
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full h-full min-h-[200px] px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors text-sm sm:text-base resize-none"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div className="mt-6 pt-6">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className={`w-full px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold transition-colors text-sm sm:text-base ${
+                        isSubmitting
+                          ? 'bg-gray-400 cursor-not-allowed'
+                          : 'bg-gray-900 hover:bg-gray-800 cursor-pointer'
+                      } text-white`}
+                    >
+                      {isSubmitting ? 'Slanje...' : 'Pošalji poruku'}
+                    </button>
+                    
+                    {submitStatus === 'error' && (
+                      <div className="mt-4 p-3 rounded-lg text-sm bg-red-50 text-red-800 border border-red-200">
+                        {submitMessage}
+                      </div>
+                    )}
+                  </div>
+                </form>
+              )}
             </div>
           </div>
 
