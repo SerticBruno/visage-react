@@ -19,10 +19,8 @@ export default function KatalogPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isScrolling, setIsScrolling] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
-  const [showGradient, setShowGradient] = useState(true);
   const productsPerPage = 9;
   const productsRef = useRef<HTMLDivElement>(null);
-  const categoriesRef = useRef<HTMLDivElement>(null);
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -119,11 +117,7 @@ export default function KatalogPage() {
     setIsModalOpen(true);
   };
 
-  const handleCategoriesScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
-    // Show gradient if we're not at the bottom (with a small threshold)
-    setShowGradient(scrollHeight - scrollTop - clientHeight > 10);
-  };
+
 
   return (
     <main>
@@ -145,11 +139,11 @@ export default function KatalogPage() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar with Filters */}
           <div className="lg:w-64 flex-shrink-0">
-            <div className="bg-white rounded-lg shadow-md p-6 sticky top-24">
+            <div className="bg-white rounded-lg shadow-md p-6 sticky top-24 space-y-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Filtriraj proizvode</h3>
               
               {/* Search */}
-              <div className="mb-6">
+              <div>
                 <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-2">
                   Pretraži proizvode
                 </label>
@@ -166,90 +160,75 @@ export default function KatalogPage() {
                 </div>
               </div>
 
-              {/* Scrollable Filters Container */}
-              <div className="relative h-[300px]">
-                <div 
-                  ref={categoriesRef}
-                  onScroll={handleCategoriesScroll}
-                  className="absolute inset-0 overflow-y-auto pr-2 space-y-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
-                >
-                  {/* Categories */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Kategorije
+              {/* Categories Section */}
+              <div className="border-t border-gray-200 pt-6">
+                <label className="block text-sm font-medium text-gray-700 mb-3">
+                  Kategorije
+                </label>
+                <div className="space-y-2 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+                  {productCategories.map((category) => (
+                    <label key={category} className="flex items-start space-x-2 cursor-pointer group">
+                      <div className="pt-0.5">
+                        <input
+                          type="checkbox"
+                          checked={selectedCategories.includes(category)}
+                          onChange={() => toggleCategory(category)}
+                          className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                        />
+                      </div>
+                      <span className="text-sm text-gray-700 group-hover:text-gray-900">{category}</span>
                     </label>
-                    <div className="space-y-2">
-                      {productCategories.map((category) => (
-                        <label key={category} className="flex items-start space-x-2 cursor-pointer group">
-                          <div className="pt-0.5">
-                            <input
-                              type="checkbox"
-                              checked={selectedCategories.includes(category)}
-                              onChange={() => toggleCategory(category)}
-                              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                            />
-                          </div>
-                          <span className="text-sm text-gray-700 group-hover:text-gray-900">{category}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Badges Filter */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Oznake
-                    </label>
-                    <div className="space-y-2">
-                      <label className="flex items-center space-x-2 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={selectedBadges.includes('new')}
-                          onChange={() => toggleBadge('new')}
-                          className="h-4 w-4 text-green-500 focus:ring-green-500 border-gray-300 rounded"
-                        />
-                        <span className="text-sm text-gray-700 flex items-center gap-1">
-                          <FaLeaf className="w-3 h-3 text-green-500" />
-                          Novo
-                        </span>
-                      </label>
-                      <label className="flex items-center space-x-2 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={selectedBadges.includes('sale')}
-                          onChange={() => toggleBadge('sale')}
-                          className="h-4 w-4 text-red-500 focus:ring-red-500 border-gray-300 rounded"
-                        />
-                        <span className="text-sm text-gray-700 flex items-center gap-1">
-                          <FaTag className="w-3 h-3 text-red-500" />
-                          Akcija
-                        </span>
-                      </label>
-                      <label className="flex items-center space-x-2 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={selectedBadges.includes('limited')}
-                          onChange={() => toggleBadge('limited')}
-                          className="h-4 w-4 text-purple-500 focus:ring-purple-500 border-gray-300 rounded"
-                        />
-                        <span className="text-sm text-gray-700 flex items-center gap-1">
-                          <FaFire className="w-3 h-3 text-purple-500" />
-                          Limitirano
-                        </span>
-                      </label>
-                    </div>
-                  </div>
+                  ))}
                 </div>
-                {/* Gradient overlay to indicate scrollable content */}
-                <div 
-                  className={`absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent pointer-events-none transition-opacity duration-200 ${
-                    showGradient ? 'opacity-100' : 'opacity-0'
-                  }`} 
-                />
               </div>
 
-              {/* Results Count - Moved to bottom */}
-              <div className="mt-6 pt-6 border-t border-gray-200">
+              {/* Badges Filter Section */}
+              <div className="border-t border-gray-200 pt-6">
+                <label className="block text-sm font-medium text-gray-700 mb-3">
+                  Oznake
+                </label>
+                <div className="space-y-2">
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={selectedBadges.includes('new')}
+                      onChange={() => toggleBadge('new')}
+                      className="h-4 w-4 text-green-500 focus:ring-green-500 border-gray-300 rounded"
+                    />
+                    <span className="text-sm text-gray-700 flex items-center gap-1">
+                      <FaLeaf className="w-3 h-3 text-green-500" />
+                      Novo
+                    </span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={selectedBadges.includes('sale')}
+                      onChange={() => toggleBadge('sale')}
+                      className="h-4 w-4 text-red-500 focus:ring-red-500 border-gray-300 rounded"
+                    />
+                    <span className="text-sm text-gray-700 flex items-center gap-1">
+                      <FaTag className="w-3 h-3 text-red-500" />
+                      Akcija
+                    </span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={selectedBadges.includes('limited')}
+                      onChange={() => toggleBadge('limited')}
+                      className="h-4 w-4 text-purple-500 focus:ring-purple-500 border-gray-300 rounded"
+                    />
+                    <span className="text-sm text-gray-700 flex items-center gap-1">
+                      <FaFire className="w-3 h-3 text-purple-500" />
+                      Limitirano
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              {/* Results Count */}
+              <div className="border-t border-gray-200 pt-6">
                 <p className="text-sm text-gray-600">
                   Pronađeno proizvoda: <span className="font-semibold">{filteredProducts.length}</span>
                 </p>
