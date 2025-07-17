@@ -8,11 +8,13 @@ const Footer = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    setSubmitMessage('');
 
     try {
       const response = await fetch('/api/newsletter/subscribe', {
@@ -27,13 +29,16 @@ const Footer = () => {
 
       if (response.ok) {
         setSubmitStatus('success');
+        setSubmitMessage('Uspješno ste se prijavili na newsletter!');
         setEmail('');
       } else {
         setSubmitStatus('error');
+        setSubmitMessage(result.error || 'Došlo je do greške. Molimo pokušajte ponovno.');
       }
     } catch (error) {
       console.error('Newsletter subscription error:', error);
       setSubmitStatus('error');
+      setSubmitMessage('Došlo je do greške. Molimo pokušajte ponovno.');
     } finally {
       setIsSubmitting(false);
     }
@@ -239,10 +244,10 @@ const Footer = () => {
                 </button>
               </div>
               {submitStatus === 'success' && (
-                <p className="text-green-400 text-sm">Uspješno ste se prijavili na newsletter!</p>
+                <p className="text-green-400 text-sm">{submitMessage}</p>
               )}
               {submitStatus === 'error' && (
-                <p className="text-red-400 text-sm">Došlo je do greške. Molimo pokušajte ponovno.</p>
+                <p className="text-red-400 text-sm">{submitMessage}</p>
               )}
             </form>
           </div>
