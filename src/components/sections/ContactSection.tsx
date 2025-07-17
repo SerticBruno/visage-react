@@ -95,7 +95,7 @@ const ContactSection = ({ hasTopPadding = true }: { hasTopPadding?: boolean }) =
         setSubmitStatus('error');
         setSubmitMessage(result.error || 'Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovno.');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
       setSubmitMessage('Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovno.');
     } finally {
