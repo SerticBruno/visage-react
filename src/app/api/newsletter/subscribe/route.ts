@@ -1,6 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 import * as SibApiV3Sdk from '@getbrevo/brevo';
 
+// Type for Brevo API errors
+interface BrevoError {
+  code?: number;
+  message?: string;
+  response?: {
+    data?: {
+      message?: string;
+    };
+  };
+  body?: {
+    message?: string;
+  };
+}
+
 export async function POST(request: NextRequest) {
   try {
     const { email } = await request.json();
@@ -40,7 +54,7 @@ export async function POST(request: NextRequest) {
           );
         }
       }
-    } catch (getError: any) {
+    } catch {
       // Contact doesn't exist, which is fine - we'll create it
       console.log('Contact not found, will create new one');
     }
@@ -68,18 +82,19 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     );
 
-  } catch (error: any) {
+  } catch (error) {
+    const brevoError = error as BrevoError;
     console.error('Newsletter subscription error:', error);
     console.error('Error details:', {
-      code: error.code,
-      message: error.message,
-      response: error.response?.data,
-      body: error.body
+      code: brevoError.code,
+      message: brevoError.message,
+      response: brevoError.response?.data,
+      body: brevoError.body
     });
     
     // Handle specific Brevo errors
-    if (error.code === 400) {
-      const errorMessage = error.message || error.response?.data?.message || error.body?.message || '';
+    if (brevoError.code === 400) {
+      const errorMessage = brevoError.message || brevoError.response?.data?.message || brevoError.body?.message || '';
       const lowerMessage = errorMessage.toLowerCase();
       
       if (lowerMessage.includes('contact already exists') || 
@@ -97,7 +112,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (error.code === 401) {
+    if (brevoError.code === 401) {
       return NextResponse.json(
         { error: 'Greška pri autentifikaciji newsletter usluge' },
         { status: 500 }
@@ -105,7 +120,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if it's a 409 conflict (duplicate)
-    if (error.code === 409) {
+    if (brevoError.code === 409) {
       return NextResponse.json(
         { error: 'Ova email adresa je već pretplaćena na naš newsletter' },
         { status: 400 }

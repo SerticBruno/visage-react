@@ -42,8 +42,8 @@ export default function ComboPackagesInlineSection() {
                   <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-3 lg:gap-4">
                     {pkg.services.map((service, index) => (
                       <React.Fragment key={service.id}>
-                        <Link href={`/usluge/${service.id}`} className="group">
-                          <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-32 lg:w-36 xl:w-40 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                        <Link href={`/usluge/${service.id}`} className="group w-full">
+                          <div className="flex flex-col items-center gap-2 md:gap-3 w-full h-48 md:h-52 lg:h-56 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                             <div className="relative w-20 h-20 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
                               <Image
                                 src={service.image}
@@ -86,8 +86,8 @@ export default function ComboPackagesInlineSection() {
                         )}
                         {pkg.products.map((product, index) => (
                           <React.Fragment key={product.id}>
-                            <Link href={`/katalog/${product.id}`} className="group">
-                              <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-32 lg:w-36 xl:w-40 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                            <Link href={`/katalog/${product.id}`} className="group w-full">
+                              <div className="flex flex-col items-center gap-2 md:gap-3 w-full h-48 md:h-52 lg:h-56 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                                 <div className="relative w-20 h-20 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                   <Image
                                     src={product.image}
@@ -121,18 +121,6 @@ export default function ComboPackagesInlineSection() {
                       </>
                     )}
                   </div>
-                </div>
-
-                <div className="mb-6 md:mb-8">
-                  <h4 className="font-semibold mb-3 md:mb-4 text-center text-sm md:text-xs lg:text-sm">Prednosti:</h4>
-                  <ul className="flex flex-wrap justify-center gap-2 md:gap-3">
-                    {pkg.benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-center text-gray-700 bg-gray-50 px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-sm hover:shadow-md transition-shadow text-xs md:text-xs lg:text-sm">
-                        <FaCheck className="text-primary mr-1.5 md:mr-2 flex-shrink-0 text-xs md:text-xs lg:text-sm" />
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
 
                 <div className="flex justify-center mt-auto">
