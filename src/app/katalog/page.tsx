@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect, Fragment } from 'react';
+import { useState, useRef, useEffect, Fragment, Suspense } from 'react';
 import { Transition } from '@headlessui/react';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
@@ -11,7 +11,7 @@ import { FaTag, FaFire, FaLeaf } from 'react-icons/fa6';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
-export default function KatalogPage() {
+function KatalogContent() {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -140,10 +140,8 @@ export default function KatalogPage() {
     setIsModalOpen(true);
   };
 
-
-
   return (
-    <main>
+    <>
       <HeroSection
         title="Katalog proizvoda"
         description="Otkrijte našu široku ponudu proizvoda za njegu lica i tijela"
@@ -248,13 +246,6 @@ export default function KatalogPage() {
                     </span>
                   </label>
                 </div>
-              </div>
-
-              {/* Results Count */}
-              <div className="border-t border-gray-200 pt-6">
-                <p className="text-sm text-gray-600">
-                  Pronađeno proizvoda: <span className="font-semibold">{filteredProducts.length}</span>
-                </p>
               </div>
             </div>
           </div>
@@ -536,6 +527,14 @@ export default function KatalogPage() {
       </div>
       <CTASection />
       <ContactSection hasTopPadding={false} />
-    </main>
+    </>
+  );
+}
+
+export default function KatalogPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <KatalogContent />
+    </Suspense>
   );
 } 
