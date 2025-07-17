@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Katalog proizvoda - VISAGE Studio",
+  title: "Katalog proizvoda",
   description: "Pregledajte naš katalog proizvoda za njegu kože. Visokokvalitetni proizvodi TOSKANI i drugih vodećih brendova za profesionalnu i kućnu njegu.",
   openGraph: {
-    title: "Katalog proizvoda - VISAGE Studio",
+    title: "Katalog proizvoda",
     description: "Pregledajte naš katalog proizvoda za njegu kože. Visokokvalitetni proizvodi TOSKANI i drugih vodećih brendova za profesionalnu i kućnu njegu.",
     images: [
       {

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Service } from '@/data/services/types';
 import { FaRegFileAlt, FaUsers, FaRegEdit, FaRegClock, FaRegHospital, FaRegFile, FaHandHoldingUsd, FaCheck, FaChevronRight, FaStar, FaBox } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa6';
 import { pricingData } from '@/data/pricing';
 
 interface ServiceDetailsSectionProps {
@@ -16,7 +17,7 @@ const tabIcons = {
   'kandidati': FaUsers,
   'priprema': FaRegEdit,
   'tijek-zahvata': FaRegClock,
-  'oporavak': FaRegHospital,
+  'oporavak': FaHeart,
   'nakon-tretmana': FaRegFile,
   'cijena': FaHandHoldingUsd
 };

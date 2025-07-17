@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Blog - VISAGE Studio",
+  title: "Blog",
   description: "Najnovije vijesti, savjeti i informacije o estetskoj medicini i kozmetičkim tretmanima. Pratite naš blog za stručne članke i savjete za njegu kože.",
   openGraph: {
-    title: "Blog - VISAGE Studio",
+    title: "Blog",
     description: "Najnovije vijesti, savjeti i informacije o estetskoj medicini i kozmetičkim tretmanima. Pratite naš blog za stručne članke i savjete za njegu kože.",
     images: [
       {

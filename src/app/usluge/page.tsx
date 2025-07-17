@@ -5,10 +5,10 @@ import CTASection from '@/components/sections/CTASection';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Usluge - VISAGE Studio",
+  title: "Usluge",
   description: "Otkrijte našu široku ponudu tretmana za lice i tijelo. Od estetske medicine do kozmetičkih tretmana - sve za vašu ljepotu i dobrobit.",
   openGraph: {
-    title: "Usluge - VISAGE Studio",
+    title: "Usluge",
     description: "Otkrijte našu široku ponudu tretmana za lice i tijelo. Od estetske medicine do kozmetičkih tretmana - sve za vašu ljepotu i dobrobit.",
     images: [
       {

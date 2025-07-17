@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Cjenik - VISAGE Studio",
+  title: "Cjenik",
   description: "Pregledajte cjenik naših usluga. Transparentne cijene za sve tretmane estetske medicine i kozmetičke usluge.",
   openGraph: {
-    title: "Cjenik - VISAGE Studio",
+    title: "Cjenik",
     description: "Pregledajte cjenik naših usluga. Transparentne cijene za sve tretmane estetske medicine i kozmetičke usluge.",
     images: [
       {

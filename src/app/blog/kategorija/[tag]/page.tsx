@@ -31,10 +31,10 @@ export async function generateMetadata(
   const totalPosts = tagPosts.length;
 
   return {
-    title: `${tag} - Blog - VISAGE Studio`,
+    title: `${tag} - Blog`,
     description: `Pregledajte ${totalPosts} ${totalPosts === 1 ? 'članak' : 'članaka'} u kategoriji ${tag} na blogu VISAGE Studija. Stručni članci o estetskoj medicini i kozmetičkim tretmanima.`,
     openGraph: {
-      title: `${tag} - Blog - VISAGE Studio`,
+      title: `${tag} - Blog`,
       description: `Pregledajte ${totalPosts} ${totalPosts === 1 ? 'članak' : 'članaka'} u kategoriji ${tag} na blogu VISAGE Studija. Stručni članci o estetskoj medicini i kozmetičkim tretmanima.`,
       images: [
         {

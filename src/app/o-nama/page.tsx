@@ -4,10 +4,10 @@ import ContactSection from '@/components/sections/ContactSection';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "O nama - VISAGE Studio",
+  title: "O nama",
   description: "Upoznajte VISAGE Studio - vodeći estetski studio u Siska. Naš tim stručnjaka pruža najkvalitetnije usluge estetske medicine i kozmetičke tretmane.",
   openGraph: {
-    title: "O nama - VISAGE Studio",
+    title: "O nama",
     description: "Upoznajte VISAGE Studio - vodeći estetski studio u Siska. Naš tim stručnjaka pruža najkvalitetnije usluge estetske medicine i kozmetičke tretmane.",
     images: [
       {

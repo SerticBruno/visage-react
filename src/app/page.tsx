@@ -17,10 +17,10 @@ import ComboPackagesInlineSection from '@/components/sections/ComboPackagesInlin
 // import ComboPackagesInlineSection from '@/components/sections/ComboPackagesInlineSection';
 
 export const metadata: Metadata = {
-  title: "VISAGE Studio - Estetski studio Sisak",
+  title: "Estetski studio Sisak",
   description: "VISAGE Studio je vodeći estetski studio u centru Siska, certificirani predstavnik za TOSKANI. Pružamo profesionalne usluge estetske medicine i kozmetičke tretmane.",
   openGraph: {
-    title: "VISAGE Studio - Estetski studio Sisak",
+    title: "Estetski studio Sisak",
     description: "VISAGE Studio je vodeći estetski studio u centru Siska, certificirani predstavnik za TOSKANI. Pružamo profesionalne usluge estetske medicine i kozmetičke tretmane.",
     images: [
       {
