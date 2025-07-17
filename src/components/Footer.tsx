@@ -15,10 +15,22 @@ const Footer = () => {
     setSubmitStatus('idle');
 
     try {
-      // Here you would typically handle the newsletter subscription
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated API call
-      setSubmitStatus('success');
-      setEmail('');
+      const response = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setEmail('');
+      } else {
+        setSubmitStatus('error');
+      }
     } catch (error) {
       console.error('Newsletter subscription error:', error);
       setSubmitStatus('error');
