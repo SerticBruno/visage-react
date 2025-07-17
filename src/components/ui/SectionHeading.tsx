@@ -7,11 +7,11 @@ interface SectionHeadingProps {
 export default function SectionHeading({ title, description, className = '' }: SectionHeadingProps) {
   return (
     <div className={`text-center mb-12 ${className}`}>
-      <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+      <h2 className="text-4xl md:text-4xl font-bold text-slate-900 mb-4">
         {title}
       </h2>
       {description && (
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+        <p className="text-xl text-slate-600 max-w-2xl mx-auto">
           {description}
         </p>
       )}
