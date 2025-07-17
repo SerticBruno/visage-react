@@ -41,6 +41,10 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   return {
     title: service.title,
     description: service.description,
+    keywords: service.tags,
+    alternates: {
+      canonical: `https://visage-studio.hr/usluge/${resolvedParams.pageName}`,
+    },
   };
 }
 

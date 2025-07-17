@@ -33,6 +33,7 @@ export async function generateMetadata(
   return {
     title: `${tag} - Blog`,
     description: `Pregledajte ${totalPosts} ${totalPosts === 1 ? 'članak' : 'članaka'} u kategoriji ${tag} na blogu VISAGE Studija. Stručni članci o estetskoj medicini i kozmetičkim tretmanima.`,
+    keywords: [tag, "blog", "estetska medicina", "kozmetički tretmani", "VISAGE studio"],
     openGraph: {
       title: `${tag} - Blog`,
       description: `Pregledajte ${totalPosts} ${totalPosts === 1 ? 'članak' : 'članaka'} u kategoriji ${tag} na blogu VISAGE Studija. Stručni članci o estetskoj medicini i kozmetičkim tretmanima.`,

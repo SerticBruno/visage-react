@@ -17,6 +17,9 @@ const versailles = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://visage-studio.hr'),
+  alternates: {
+    canonical: 'https://visage-studio.hr',
+  },
   title: {
     default: "VISAGE Studio - Estetski studio Sisak",
     template: "%s | VISAGE Studio"
@@ -45,13 +48,17 @@ export const metadata: Metadata = {
         height: 630,
         alt: "VISAGE Studio - Estetski studio Sisak"
       }
-    ]
+    ],
+    countryName: "Croatia",
+    emails: ["info@visage-studio.hr"], // Add your email if you have one
   },
   twitter: {
     card: "summary_large_image",
     title: "VISAGE Studio - Estetski studio Sisak",
     description: "VISAGE Studio je estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI.",
-    images: ["/images/services/toskani-woman.webp"]
+    images: ["/images/services/toskani-woman.webp"],
+    creator: "@visagestudio", // Add your Twitter handle if you have one
+    site: "@visagestudio", // Add your Twitter handle if you have one
   },
   robots: {
     index: true,
@@ -66,6 +73,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "your-google-site-verification", // Add your Google verification code
+  },
+  other: {
+    'google-site-verification': 'your-google-site-verification', // Add your Google verification code
   },
 };
 

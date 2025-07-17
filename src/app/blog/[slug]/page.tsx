@@ -33,6 +33,9 @@ export async function generateMetadata(
     description: post.excerpt,
     authors: [{ name: post.author }],
     keywords: post.tags,
+    alternates: {
+      canonical: `https://visage-studio.hr/blog/${post.slug}`,
+    },
     openGraph: {
       title: `${post.title} - Blog`,
       description: post.excerpt,
