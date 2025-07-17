@@ -3,12 +3,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { FaFacebook, FaWhatsapp, FaInstagram, FaEnvelope, FaCcVisa, FaCcMastercard, FaPhone } from 'react-icons/fa';
+import CookiePreferences from './CookiePreferences';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitMessage, setSubmitMessage] = useState('');
+  const [showCookiePreferences, setShowCookiePreferences] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -159,6 +161,15 @@ const Footer = () => {
                 >
                   <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
                   Kontakt
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/privatnost" 
+                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                >
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
+                  Politika privatnosti
                 </Link>
               </li>
             </ul>
