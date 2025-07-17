@@ -15,7 +15,7 @@ export default function ComboPackagesInlineSection() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-8 max-w-7xl mx-auto overflow-x-auto">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-8 max-w-7xl mx-auto overflow-x-auto px-4 py-8">
           {comboPackages.map((pkg) => (
             <div
               key={pkg.id}
@@ -115,11 +115,11 @@ export default function ComboPackagesInlineSection() {
                 </div>
 
                 <div className="mb-6 md:mb-8">
-                  <h4 className="font-semibold mb-3 md:mb-4 text-center text-base md:text-lg">Prednosti:</h4>
+                  <h4 className="font-semibold mb-3 md:mb-4 text-center text-sm md:text-xs lg:text-sm">Prednosti:</h4>
                   <ul className="flex flex-wrap justify-center gap-2 md:gap-3">
                     {pkg.benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-center text-gray-700 bg-gray-50 px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-sm hover:shadow-md transition-shadow text-sm md:text-base">
-                        <FaCheck className="text-primary mr-1.5 md:mr-2 flex-shrink-0 text-sm md:text-base" />
+                      <li key={index} className="flex items-center text-gray-700 bg-gray-50 px-3 md:px-4 py-1.5 md:py-2 rounded-full shadow-sm hover:shadow-md transition-shadow text-xs md:text-xs lg:text-sm">
+                        <FaCheck className="text-primary mr-1.5 md:mr-2 flex-shrink-0 text-xs md:text-xs lg:text-sm" />
                         <span>{benefit}</span>
                       </li>
                     ))}
