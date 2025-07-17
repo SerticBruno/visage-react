@@ -125,7 +125,7 @@ export default function ComboPackagesInlineSection() {
 
                 <div className="flex justify-center mt-auto">
                   <Link
-                    href="/kontakt"
+                    href={`/kontakt?service=${encodeURIComponent(pkg.title)}`}
                     className="group inline-flex items-center gap-2 px-6 py-3 bg-[#1e293b] text-white rounded-xl hover:bg-[#334155] transition-all duration-300 shadow-lg hover:shadow-xl font-medium"
                   >
                     <span>Rezervirajte termin</span>

@@ -19,7 +19,14 @@ export const metadata: Metadata = {
   }
 };
 
-export default function KontaktPage() {
+interface KontaktPageProps {
+  searchParams: Promise<{ service?: string }>;
+}
+
+export default async function KontaktPage({ searchParams }: KontaktPageProps) {
+  const resolvedSearchParams = await searchParams;
+  const serviceLabel = resolvedSearchParams.service ? decodeURIComponent(resolvedSearchParams.service) : undefined;
+
   return (
     <main>
       <HeroSection
@@ -27,7 +34,7 @@ export default function KontaktPage() {
         description="Javite nam se za sve informacije i rezervacije"
         image="/images/services/kontakt-hero.webp"
       />
-      <ContactSection />
+      <ContactSection serviceLabel={serviceLabel} />
     </main>
   );
 } 

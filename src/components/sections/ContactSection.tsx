@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FaMapMarkerAlt, FaPhone, FaClock, FaWhatsapp } from 'react-icons/fa';
 import { IconType } from 'react-icons';
 
@@ -59,16 +59,36 @@ const ContactInfoCard = ({ icon: Icon, title, content, link, linkText }: {
   );
 };
 
-const ContactSection = ({ hasTopPadding = true }: { hasTopPadding?: boolean }) => {
+const ContactSection = ({ hasTopPadding = true, serviceLabel }: { hasTopPadding?: boolean, serviceLabel?: string }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: '',
+    service: serviceLabel || '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitMessage, setSubmitMessage] = useState('');
+  const formRef = useRef<HTMLDivElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to form when serviceLabel is provided
+  useEffect(() => {
+    if (serviceLabel && formRef.current) {
+      setTimeout(() => {
+        const element = formRef.current;
+        if (element) {
+          const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+          const offset = 100; // Reduced offset for more subtle scroll
+          window.scrollTo({
+            top: elementTop - offset,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  }, [serviceLabel]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -90,7 +110,15 @@ const ContactSection = ({ hasTopPadding = true }: { hasTopPadding?: boolean }) =
       if (response.ok) {
         setSubmitStatus('success');
         setSubmitMessage('Poruka je uspješno poslana! Javit ćemo vam se u najkraćem mogućem roku.');
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '', service: serviceLabel || '' });
+        
+        // Scroll to success message after a short delay
+        setTimeout(() => {
+          successRef.current?.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+          });
+        }, 100);
       } else {
         setSubmitStatus('error');
         setSubmitMessage(result.error || 'Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovno.');
@@ -152,12 +180,22 @@ const ContactSection = ({ hasTopPadding = true }: { hasTopPadding?: boolean }) =
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
           {/* Contact Form - Left side */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5" ref={formRef}>
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-6 sm:p-8 h-full flex flex-col">
+              {serviceLabel && (
+                <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span className="text-sm sm:text-base font-medium text-blue-900">
+                      Odabrani tretman: <span className="font-semibold">{serviceLabel}</span>
+                    </span>
+                  </div>
+                </div>
+              )}
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">Pošaljite nam poruku</h3>
               
               {submitStatus === 'success' ? (
-                <div className="flex flex-col items-center justify-center h-full text-center py-8">
+                <div ref={successRef} className="flex flex-col items-center justify-center h-full text-center py-8">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
                     <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

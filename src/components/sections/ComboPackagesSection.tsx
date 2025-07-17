@@ -144,7 +144,7 @@ export default function ComboPackagesSection() {
                 </div>
 
                 <Link
-                  href="/kontakt"
+                  href={`/kontakt?service=${encodeURIComponent(pkg.title)}`}
                   className="block w-full bg-primary text-white text-center py-3 rounded-lg font-medium hover:bg-primary-dark transition-colors"
                 >
                   Rezervirajte termin

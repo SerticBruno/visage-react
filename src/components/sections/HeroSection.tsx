@@ -13,6 +13,7 @@ interface HeroSectionProps {
   ctaText?: string;
   ctaLink?: string;
   variant?: 'home' | 'default';
+  serviceName?: string;
 }
 
 const HeroSection = ({
@@ -22,6 +23,7 @@ const HeroSection = ({
   ctaText,
   ctaLink,
   variant = 'default',
+  serviceName,
 }: HeroSectionProps) => {
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
@@ -152,7 +154,7 @@ const HeroSection = ({
               className="mb-16"
             >
               <Link
-                href={ctaLink}
+                href={serviceName ? `${ctaLink}?service=${encodeURIComponent(serviceName)}` : ctaLink}
                 className="group inline-flex items-center gap-3 bg-white text-gray-900 px-10 py-5 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg text-lg"
               >
                 {ctaText}

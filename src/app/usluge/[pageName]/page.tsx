@@ -67,6 +67,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         image={currentService.heroImage}
         ctaText="Rezervirajte svoj tretman"
         ctaLink="/kontakt"
+        serviceName={currentService.title}
       />
       <ServiceContentSection
         title={currentService.title}
@@ -74,6 +75,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         imageSrc={currentService.image}
         imageAlt={currentService.title}
         benefits={currentService.benefits}
+        serviceName={currentService.title}
       />
       <ServiceDetailsSection service={currentService} />
       <CTASection gradientDirection='t'/>

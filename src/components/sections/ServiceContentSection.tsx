@@ -9,6 +9,7 @@ interface ServiceContentSectionProps {
   imageSrc: string;
   imageAlt: string;
   benefits?: readonly string[];
+  serviceName?: string;
 }
 
 export default function ServiceContentSection({
@@ -17,6 +18,7 @@ export default function ServiceContentSection({
   imageSrc,
   imageAlt,
   benefits = [],
+  serviceName,
 }: ServiceContentSectionProps) {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
@@ -43,7 +45,7 @@ export default function ServiceContentSection({
             )}
 
             <Link
-              href="/kontakt"
+              href={serviceName ? `/kontakt?service=${encodeURIComponent(serviceName)}` : "/kontakt"}
               className="inline-flex items-center px-8 py-4 border border-transparent text-base font-medium rounded-xl shadow-lg text-white bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 hover:from-slate-800 hover:via-slate-900 hover:to-slate-950 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-xl ring-1 ring-slate-600/20 hover:ring-slate-600/30"
             >
               Dogovorite termin

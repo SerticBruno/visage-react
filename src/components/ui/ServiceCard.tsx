@@ -43,8 +43,8 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
             <div className="mb-6 space-y-2">
               {service.benefits.slice(0, 3).map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#dcfce7] flex items-center justify-center">
-                    <FaCheck className="w-3 h-3 text-[#059669]" />
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
+                    <FaCheck className="w-3 h-3 text-gray-600" />
                   </div>
                   <span className="text-sm text-[#1e293b]">{benefit}</span>
                 </div>
