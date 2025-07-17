@@ -9,7 +9,7 @@ export default function ComboPackagesInlineSection() {
     <section className="py-12 md:py-16" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Kombinirani Paketi</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">Kombinirani Paketi</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
             Uštedite i doživite optimalne rezultate s našim posebno kreiranim paketima tretmana
           </p>
