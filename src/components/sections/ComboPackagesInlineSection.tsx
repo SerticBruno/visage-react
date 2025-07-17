@@ -25,10 +25,15 @@ export default function ComboPackagesInlineSection() {
                 <div className="text-center mb-6 md:mb-8">
                   <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{pkg.title}</h3>
                   <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg">{pkg.description}</p>
-                  <div className="flex items-baseline justify-center gap-2 md:gap-3">
+                  <div className="flex items-center justify-center gap-2 md:gap-3">
                     <span className="text-2xl md:text-3xl font-bold text-primary">{pkg.price}</span>
                     {pkg.oldPrice && (
-                      <span className="text-lg md:text-xl text-gray-400 line-through">{pkg.oldPrice}</span>
+                      <>
+                        <span className="text-lg md:text-xl text-gray-400 line-through">{pkg.oldPrice}</span>
+                        <span className="bg-gray-300 text-gray-700 text-xs md:text-sm font-bold px-2 md:px-3 py-1 md:py-1.5 rounded-full shadow-sm">
+                          -{Math.round(((parseFloat(pkg.oldPrice.replace(' EUR', '')) - parseFloat(pkg.price.replace(' EUR', ''))) / parseFloat(pkg.oldPrice.replace(' EUR', ''))) * 100)}%
+                        </span>
+                      </>
                     )}
                   </div>
                 </div>
