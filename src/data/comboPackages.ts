@@ -54,7 +54,7 @@ export const comboPackages: ComboPackage[] = [
     ],
     products: [
       { 
-        id: "purifying-cleanser", 
+        id: "2", 
         title: "Purifying Cleanser", 
         quantity: 1,
         image: "/images/products/TOSKANIpurifyingcleanser.webp"

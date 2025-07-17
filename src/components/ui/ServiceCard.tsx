@@ -9,9 +9,22 @@ interface ServiceCardProps {
 }
 
 export default function ServiceCard({ service, className = '' }: ServiceCardProps) {
+  // Check if this is a product card by checking if the ID is numeric (product IDs are numeric)
+  const isProductCard = service.id && /^\d+$/.test(service.id);
+  
+  // Generate the appropriate link
+  const getLink = () => {
+    if (isProductCard) {
+      // For product cards, link to katalog with product ID parameter
+      return `/katalog?product=${service.id}`;
+    }
+    // For service cards, use the regular service link
+    return `/usluge/${service.id}`;
+  };
+
   return (
     <Link 
-      href={`/usluge/${service.id}`}
+      href={getLink()}
       className={`block h-full ${className}`}
     >
       <div className="group rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">

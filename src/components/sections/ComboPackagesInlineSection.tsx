@@ -87,7 +87,7 @@ export default function ComboPackagesInlineSection() {
                         )}
                         {pkg.products.map((product, index) => (
                           <React.Fragment key={product.id}>
-                            <Link href={`/katalog/${product.id}`} className="group w-full">
+                            <Link href={`/katalog?product=${product.id}`} className="group w-full">
                               <div className="flex flex-col items-center gap-2 md:gap-3 w-full h-48 md:h-52 lg:h-56 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                                 <div className="relative w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                   <Image

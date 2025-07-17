@@ -57,7 +57,7 @@ export default function Home() {
 
   // Convert popular products to match Service type
   const popularProductsData = popularProducts.map(product => ({
-    id: product.link.split('/').pop() || '',
+    id: product.id,
     title: product.title,
     description: product.description,
     longDescription: product.description,

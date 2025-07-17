@@ -9,8 +9,10 @@ import { products, productCategories, type Product } from '@/data/products';
 import { FaSearch, FaStar, FaTimes } from 'react-icons/fa';
 import { FaTag, FaFire, FaLeaf } from 'react-icons/fa6';
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 
 export default function KatalogPage() {
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedBadges, setSelectedBadges] = useState<string[]>([]);
@@ -43,6 +45,27 @@ export default function KatalogPage() {
   useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, selectedCategories]);
+
+  // Handle URL parameter for auto-opening product modal
+  useEffect(() => {
+    const productParam = searchParams.get('product');
+    if (productParam) {
+      // Direct product ID (like '2' for Purifying Cleanser)
+      const product = products.find(p => p.id === productParam);
+      if (product) {
+        setSelectedProduct(product);
+        setIsModalOpen(true);
+        // Scroll to products grid
+        setTimeout(() => {
+          scrollToProducts();
+        }, 100);
+        // Clean up the URL parameter
+        const url = new URL(window.location.href);
+        url.searchParams.delete('product');
+        window.history.replaceState({}, '', url.toString());
+      }
+    }
+  }, [searchParams]);
 
   // Reset filtering state after a delay
   useEffect(() => {
