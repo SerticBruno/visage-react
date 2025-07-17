@@ -19,7 +19,7 @@ export default function ComboPackagesInlineSection() {
           {comboPackages.map((pkg) => (
             <div
               key={pkg.id}
-              className="bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 flex-shrink-0 md:flex-1 lg:flex-1"
+              className="bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden flex-shrink-0 md:flex-1 lg:flex-1"
             >
               <div className="p-4 md:p-6 lg:p-8 h-full flex flex-col" style={{ background: 'linear-gradient(to bottom,rgb(233, 234, 235),#f0f0f0)' }}>
                 <div className="text-center mb-6 md:mb-8">
@@ -37,27 +37,29 @@ export default function ComboPackagesInlineSection() {
                   <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-3 lg:gap-4">
                     {pkg.services.map((service, index) => (
                       <React.Fragment key={service.id}>
-                        <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-32 lg:w-36 xl:w-40 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-md transition-shadow">
-                          <div className="relative w-20 h-20 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
-                            <Image
-                              src={service.image}
-                              alt={service.title}
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                          <div className="text-center">
-                            <div className="flex items-center justify-center gap-1 md:gap-2">
-                              <h5 className="font-medium text-sm md:text-xs lg:text-sm">{service.title}</h5>
-                              {service.quantity > 1 && (
-                                <span className="text-xs md:text-xs lg:text-sm text-primary font-medium">x{service.quantity}</span>
+                        <Link href={`/usluge/${service.id}`} className="group">
+                          <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-32 lg:w-36 xl:w-40 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                            <div className="relative w-20 h-20 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                              <Image
+                                src={service.image}
+                                alt={service.title}
+                                fill
+                                className="object-cover"
+                              />
+                            </div>
+                            <div className="text-center">
+                              <div className="flex items-center justify-center gap-1 md:gap-2">
+                                <h5 className="font-medium text-sm md:text-xs lg:text-sm group-hover:text-primary transition-colors">{service.title}</h5>
+                                {service.quantity > 1 && (
+                                  <span className="text-xs md:text-xs lg:text-sm text-primary font-medium">x{service.quantity}</span>
+                                )}
+                              </div>
+                              {service.shortDescription && (
+                                <p className="text-xs md:text-xs lg:text-sm text-gray-600 mt-1 group-hover:text-gray-700 transition-colors">{service.shortDescription}</p>
                               )}
                             </div>
-                            {service.shortDescription && (
-                              <p className="text-xs md:text-xs lg:text-sm text-gray-600 mt-1">{service.shortDescription}</p>
-                            )}
                           </div>
-                        </div>
+                        </Link>
                         {index < pkg.services.length - 1 && (
                           <div className="flex items-center justify-center">
                             <div className="bg-primary/10 rounded-full p-1.5 md:p-1.5 lg:p-2 shadow-sm">
@@ -79,27 +81,29 @@ export default function ComboPackagesInlineSection() {
                         )}
                         {pkg.products.map((product, index) => (
                           <React.Fragment key={product.id}>
-                            <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-32 lg:w-36 xl:w-40 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-md transition-shadow">
-                              <div className="relative w-20 h-20 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
-                                <Image
-                                  src={product.image}
-                                  alt={product.title}
-                                  fill
-                                  className="object-cover"
-                                />
-                              </div>
-                              <div className="text-center">
-                                <div className="flex items-center justify-center gap-1 md:gap-2">
-                                  <h5 className="font-medium text-sm md:text-xs lg:text-sm">{product.title}</h5>
-                                  {product.quantity > 1 && (
-                                    <span className="text-xs md:text-xs lg:text-sm text-primary font-medium">x{product.quantity}</span>
+                            <Link href={`/katalog/${product.id}`} className="group">
+                              <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-[280px] md:w-32 lg:w-36 xl:w-40 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                <div className="relative w-20 h-20 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                                  <Image
+                                    src={product.image}
+                                    alt={product.title}
+                                    fill
+                                    className="object-cover"
+                                  />
+                                </div>
+                                <div className="text-center">
+                                  <div className="flex items-center justify-center gap-1 md:gap-2">
+                                    <h5 className="font-medium text-sm md:text-xs lg:text-sm group-hover:text-primary transition-colors">{product.title}</h5>
+                                    {product.quantity > 1 && (
+                                      <span className="text-xs md:text-xs lg:text-sm text-primary font-medium">x{product.quantity}</span>
+                                    )}
+                                  </div>
+                                  {product.shortDescription && (
+                                    <p className="text-xs md:text-xs lg:text-sm text-gray-600 mt-1 group-hover:text-gray-700 transition-colors">{product.shortDescription}</p>
                                   )}
                                 </div>
-                                {product.shortDescription && (
-                                  <p className="text-xs md:text-xs lg:text-sm text-gray-600 mt-1">{product.shortDescription}</p>
-                                )}
                               </div>
-                            </div>
+                            </Link>
                             {index < pkg.products!.length - 1 && (
                               <div className="flex items-center justify-center">
                                 <div className="bg-primary/10 rounded-full p-1.5 md:p-1.5 lg:p-2 shadow-sm">
