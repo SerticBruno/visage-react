@@ -34,34 +34,30 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "520 EUR",
     services: [
       { 
-        id: "mezoterapija", 
-        title: "Mezoterapija", 
+        id: "kemijski-piling", 
+        title: "Kemijski Piling", 
         quantity: 1,
-        image: "/images/services/Mesoterapia-transdermica-facial.webp",
-        shortDescription: "Dubinska hidratacija kože"
+        image: "/images/services/kemijski-piling/tretman-kemijski-piling.webp"
       },
       { 
-        id: "mesosynergy", 
-        title: "Mesosynergy", 
+        id: "prp", 
+        title: "PRP", 
         quantity: 1,
-        image: "/images/services/toskani-woman.webp",
-        shortDescription: "Napredni tretman za regeneraciju"
+        image: "/images/services/plasmage-hero.webp"
       },
       { 
-        id: "skin-booster-tkn-ha3", 
-        title: "TKN HA3", 
+        id: "skin-boosteri", 
+        title: "Skin Boosteri", 
         quantity: 1,
-        image: "/images/services/toskani-woman.webp",
-        shortDescription: "Intenzivna hidratacija"
+        image: "/images/services/TKNHA3_.webp"
       }
     ],
     products: [
       { 
-        id: "sun-shield", 
-        title: "Toskani Sun Shiel-D SPF 50+", 
+        id: "purifying-cleanser", 
+        title: "Purifying Cleanser", 
         quantity: 1,
-        image: "/images/products/Almond-Oil-12.webp",
-        shortDescription: "Zaštita od sunca"
+        image: "/images/products/TOSKANIpurifyingcleanser.webp"
       }
     ],
     benefits: [

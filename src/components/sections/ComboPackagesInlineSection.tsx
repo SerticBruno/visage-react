@@ -19,11 +19,15 @@ export default function ComboPackagesInlineSection() {
           {comboPackages.map((pkg) => (
             <div
               key={pkg.id}
-              className="bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden flex-shrink-0 md:flex-1 lg:flex-1"
+              className="bg-white rounded-xl md:rounded-2xl shadow-lg flex-shrink-0 md:flex-1 lg:flex-1 relative"
             >
-              <div className="p-4 md:p-6 lg:p-8 h-full flex flex-col" style={{ background: 'linear-gradient(to bottom,rgb(233, 234, 235),#f0f0f0)' }}>
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg font-bold text-base md:text-lg">
+                  {pkg.title}
+                </div>
+              </div>
+              <div className="p-4 md:p-6 lg:p-8 h-full flex flex-col pt-8 md:pt-10 lg:pt-12 rounded-xl md:rounded-2xl" style={{ background: 'linear-gradient(to bottom,rgb(233, 234, 235),#f0f0f0)' }}>
                 <div className="text-center mb-6 md:mb-8">
-                  <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{pkg.title}</h3>
                   <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg">{pkg.description}</p>
                   <div className="flex items-center justify-center gap-2 md:gap-3">
                     <span className="text-2xl md:text-3xl font-bold text-primary">{pkg.price}</span>
