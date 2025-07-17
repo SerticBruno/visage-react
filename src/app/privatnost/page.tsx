@@ -29,7 +29,7 @@ const PrivacyPolicy = () => {
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">Uvod</h2>
               <p className="text-slate-700 leading-relaxed mb-4">
-                VISAGE Studio (dalje: "mi", "naš", "nas") posvećen je zaštiti vaše privatnosti. 
+                VISAGE Studio (dalje: &quot;mi&quot;, &quot;naš&quot;, &quot;nas&quot;) posvećen je zaštiti vaše privatnosti. 
                 Ova Politika privatnosti objašnjava kako prikupljamo, koristimo, čuvamo i štitimo 
                 vaše osobne podatke kada koristite naše usluge ili posjećujete našu web stranicu.
               </p>
