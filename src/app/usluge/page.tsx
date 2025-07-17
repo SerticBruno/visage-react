@@ -2,6 +2,7 @@ import ContactSection from '@/components/sections/ContactSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import HeroSection from '@/components/sections/HeroSection';
 import CTASection from '@/components/sections/CTASection';
+import ComboPackagesInlineSection from '@/components/sections/ComboPackagesInlineSection';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function ServicesPage() {
         image="/images/services/usluge-hero.webp"
       />
       <ServicesSection />
-      <CTASection hasPadding={false} secondaryCtaText="Saznajte više o nama" secondaryCtaLink="/o-nama" />
+      <ComboPackagesInlineSection />
       <ContactSection hasTopPadding={false}/>
     </main>
   );
