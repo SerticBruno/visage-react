@@ -51,7 +51,7 @@ export default function ServiceSlider({
   };
 
   return (
-    <div className="relative w-full py-16" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
+    <div className="relative w-full py-20" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
       <div className="container mx-auto px-4 max-w-7xl">
         <SectionHeading
           title={title}
