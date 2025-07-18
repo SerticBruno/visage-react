@@ -6,7 +6,6 @@ import CTASection from '@/components/sections/CTASection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import FAQSection from '@/components/sections/FAQSection';
 import FeaturedBlogsSection from '@/components/sections/FeaturedBlogsSection';
-// import ComboPackagesSection from '@/components/sections/ComboPackagesSection';
 import { popularProducts } from '@/data/popularProducts';
 import { blogPosts } from '@/data/posts';
 import ServiceSlider from '@/components/ui/ServiceSlider';
@@ -14,7 +13,6 @@ import { Metadata } from 'next';
 import { popularServices } from '@/data/popularServices';
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
 import ComboPackagesInlineSection from '@/components/sections/ComboPackagesInlineSection';
-// import ComboPackagesInlineSection from '@/components/sections/ComboPackagesInlineSection';
 
 export const metadata: Metadata = {
   title: "Estetski studio Sisak",
@@ -34,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  // Get the 5 most recent blog posts
+  // Get the 8 most recent blog posts
   const featuredPosts = blogPosts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 8);
@@ -91,7 +89,6 @@ export default function Home() {
         viewAllText="Pogledajte sve usluge"
       />
       <ComboPackagesInlineSection />
-      {/* <ComboPackagesSection /> */}
       <NewsletterCTASection />
       <ServiceSlider 
         services={popularProductsData}
