@@ -24,12 +24,12 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'Helena Torinek',
     image: '/images/services/TKNHA3_.webp',
-    title: 'mag. oec. smjer marketing',
+    title: 'dr. med. vet.',
     credentials: [
-      'mag. oec. smjer marketing',
+      'dr. med. vet.',
       'kozmetičar'
     ],
-    favoriteTreatments: 'PRP, mezoterapija polinukleotidima i skin boosteri'
+    favoriteTreatments: 'Kemijski piling, PRP i Plasmage'
   }
 ];
 
