@@ -1,137 +1,39 @@
 'use client';
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import TeamMemberCard from '@/components/ui/TeamMemberCard';
+import ContentSection from '@/components/ui/ContentSection';
+import StorySection from '@/components/ui/StorySection';
+import TeamDetailsSection from '@/components/ui/TeamDetailsSection';
+import { teamMembers, teamDetailsSection } from '@/data/team';
+import { storyContent } from '@/data/about';
 
 const AboutContent = () => {
   return (
     <section className="pt-16" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Our Story Section - First Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-8"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Naša priča</h2>
-              <p className="text-gray-600 mb-4">
-                Utemeljeni smo 2023. godine u Sisku. Visage studio je estetski studio specijaliziran za nekiruršku estetsku medicinu.
-                U Visage studiju smo posvećeni regeneriranju kože, poboljšanju zdravlja kože i zaustavljanju znakova starenja. 
-                Nudimo individualni pristup i tretmane prilagođavamo vašim željama i potrebama.
-              </p>
-              <p className="text-gray-600 mb-4">
-                Uporabom najsuvremenijih tehnologija i metoda, Visage studio pruža najnovije tretmane i zahvate za regeneriranje kože. 
-                Kod nas, prvi put u Sisku, možete napraviti bleferoplazmu, postupak uklanjanja viška kože s gornjeg i donjeg kapka korištenjem tehnologije frakcijske plazme.
-              </p>
-              <p className="text-gray-600 mb-4">
-                Također, nudimo mezoterapiju Dermapenom 4 i Mesoject Gunom te možemo tretirati čak i najosjetljiviju kožu.
-                U Visage studiju nudimo mezoterapiju egzosomima i polinukleotidima te aktiviramo prirodnu sposobnost kože da se sama regenerira
-              </p>
-              <p className="text-gray-600 mb-4">
-                U našem studiju možete, uz savjet kozmetologinje, kupiti dermokozmetičke proizvode i suplemente za njegu lica, tijela i vlasišta renomiranih svjetskih marki.
-              </p>
-            </div>
-            <div className="relative h-96">
-              <Image
-                src="/images/services/botox-face-girl.webp"
-                alt="VISAGE Studio interior"
-                fill
-                className="object-cover rounded-lg shadow-xl"
-              />
-            </div>
-          </div>
-        </motion.div>
+        <ContentSection className="mb-8">
+          <StorySection {...storyContent} />
+        </ContentSection>
 
         {/* Team Section - Second Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mb-8"
-        >
+        <ContentSection delay={0.2} className="mb-8">
           <h2 className="text-3xl font-bold mb-12 text-center">Naš tim</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="relative h-72 w-full mx-auto mb-6 rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <Image
-                  src="/images/services/plasmage-hero.webp"
-                  alt="Team member"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <h3 className="text-center text-xl font-semibold mb-2">Tatjana Torinek</h3>
-              <div className="space-y-2 text-center">
-                <p className="text-gray-600">dr. spec. med. obiteljske medicine</p>
-                <p className="text-gray-600">član HDEM-a</p>
-                <p className="text-gray-600 italic mt-4">Omiljeni tretmani: mezoterapija egzosomima, skin boosteri i plasmage</p>
-              </div>
-            </div>
-
-            <div className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="relative h-72 w-full mx-auto mb-6 rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <Image
-                  src="/images/services/manikura.webp"
-                  alt="Team member"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <h3 className="text-center text-xl font-semibold mb-2">Mia Torinek</h3>
-              <div className="space-y-2 text-center">
-                <p className="text-gray-600">mag. oec. smjer marketing</p>
-                <p className="text-gray-600">kozmetičar</p>
-                <p className="text-gray-600 italic mt-4">Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
-              </div>
-            </div>
-
-            <div className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="relative h-72 w-full mx-auto mb-6 rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <Image
-                  src="/images/services/TKNHA3_.webp"
-                  alt="Team member"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <h3 className="text-center text-xl font-semibold mb-2">Helena Torinek</h3>
-              <div className="space-y-2 text-center">
-                <p className="text-gray-600">mag. oec. smjer marketing</p>
-                <p className="text-gray-600">kozmetičar</p>
-                <p className="text-gray-600 italic mt-4">Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
-              </div>
-            </div>
+            {teamMembers.map((member, index) => (
+              <TeamMemberCard 
+                key={member.name} 
+                member={member}
+                delay={index * 0.1}
+              />
+            ))}
           </div>
-        </motion.div>
+        </ContentSection>
 
         {/* Team Members Details Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-24"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[500px]">
-              <Image
-                src="/images/services/TKNHA3_.webp"
-                alt="VISAGE Studio team"
-                fill
-                className="object-cover rounded-lg shadow-xl"
-              />
-            </div>
-            <div>
-              <p className="text-gray-600 mb-6">Tatjana Torinek je diplomirala 1992. godine na Medicinskom fakultetu u Zagrebu, a od tada se bavi obiteljskom medicinom. Završila je specijalizaciju iz Obiteljske medicine i uspješno vodi svoju ambulantu već 18 godina. Estetskom medicinom se počela baviti prije 4 godine te se specijalizirala za obavljanje nekirurških estetskih tretmana. Prošla je brojne edukacije i tečajeve te redovito prisustvuje kongresima i predavanjima iz estetske medicine.</p>
-              
-              <p className="text-gray-600 mb-6">Mia Torinek je diplomirala marketing na Ekonomskom fakultetu u Zagrebu. Osnovala je Visage studio 2023. godine skupa s majkom Tatjanom. 2024. godine je završila prekvalifikaciju za kozmetičara te se specijalizira za obavljanje neinvazivnih estetskih tretmana. Redovito odlazi na edukacije, tečajeve, radionice i kongrese iz estetske medicine te je uvijek u toku s trendovima.</p>
-              
-              <p className="text-gray-600">Helena Torinek je diplomirala marketing na Ekonomskom fakultetu u Zagrebu. Specijalizira se za obavljanje neinvazivnih estetskih tretmana. Redovito odlazi na edukacije, tečajeve, radionice i kongrese iz estetske medicine te je uvijek u toku s trendovima. Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri</p>
-            </div>
-          </div>
-        </motion.div>
+        <ContentSection delay={0.3} className="mt-24">
+          <TeamDetailsSection {...teamDetailsSection} />
+        </ContentSection>
       </div>
     </section>
   );

@@ -1,0 +1,52 @@
+import { TeamMember } from '@/components/ui/TeamMemberCard';
+
+export const teamMembers: TeamMember[] = [
+  {
+    name: 'Tatjana Torinek',
+    image: '/images/services/plasmage-hero.webp',
+    title: 'dr. spec. med. obiteljske medicine',
+    credentials: [
+      'dr. spec. med. obiteljske medicine',
+      'član HDEM-a'
+    ],
+    favoriteTreatments: 'mezoterapija egzosomima, skin boosteri i plasmage'
+  },
+  {
+    name: 'Mia Torinek',
+    image: '/images/services/manikura.webp',
+    title: 'mag. oec. smjer marketing',
+    credentials: [
+      'mag. oec. smjer marketing',
+      'kozmetičar'
+    ],
+    favoriteTreatments: 'PRP, mezoterapija polinukleotidima i skin boosteri'
+  },
+  {
+    name: 'Helena Torinek',
+    image: '/images/services/TKNHA3_.webp',
+    title: 'mag. oec. smjer marketing',
+    credentials: [
+      'mag. oec. smjer marketing',
+      'kozmetičar'
+    ],
+    favoriteTreatments: 'PRP, mezoterapija polinukleotidima i skin boosteri'
+  }
+];
+
+export const teamDetails = {
+  tatjana: 'Tatjana Torinek je diplomirala 1992. godine na Medicinskom fakultetu u Zagrebu, a od tada se bavi obiteljskom medicinom. Završila je specijalizaciju iz Obiteljske medicine i uspješno vodi svoju ambulantu već 18 godina. Estetskom medicinom se počela baviti prije 4 godine te se specijalizirala za obavljanje nekirurških estetskih tretmana. Prošla je brojne edukacije i tečajeve te redovito prisustvuje kongresima i predavanjima iz estetske medicine.',
+  mia: 'Mia Torinek je diplomirala marketing na Ekonomskom fakultetu u Zagrebu. Osnovala je Visage studio 2023. godine skupa s majkom Tatjanom. 2024. godine je završila prekvalifikaciju za kozmetičara te se specijalizira za obavljanje neinvazivnih estetskih tretmana. Redovito odlazi na edukacije, tečajeve, radionice i kongrese iz estetske medicine te je uvijek u toku s trendovima.',
+  helena: 'Helena Torinek je diplomirala marketing na Ekonomskom fakultetu u Zagrebu. Specijalizira se za obavljanje neinvazivnih estetskih tretmana. Redovito odlazi na edukacije, tečajeve, radionice i kongrese iz estetske medicine te je uvijek u toku s trendovima. Omiljeni tretmani: PRP, mezoterapija polinukleotidima i skin boosteri'
+};
+
+export const teamDetailsSection = {
+  image: {
+    src: '/images/services/TKNHA3_.webp',
+    alt: 'VISAGE Studio team'
+  },
+  details: [
+    teamDetails.tatjana,
+    teamDetails.mia,
+    teamDetails.helena
+  ]
+}; 
