@@ -29,7 +29,7 @@ export default function ServicesSection() {
                   fill
                   className="object-cover transition-all duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-300 group-hover:from-black/90 group-hover:via-black/60" />
+                <div className="absolute inset-0 bg-black/20 transition-all duration-300" />
                 
                 {/* Content Container */}
                 <div className="absolute inset-0 p-3 md:p-6 flex flex-col justify-between transition-all duration-300 group-hover:justify-start">
@@ -38,7 +38,7 @@ export default function ServicesSection() {
                     <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2 transition-all duration-300 group-hover:mb-2 md:group-hover:mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-xs md:text-sm text-gray-200 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20 md:group-hover:max-h-24 line-clamp-2 md:line-clamp-3">
+                    <p className="text-xs md:text-sm text-white opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20 md:group-hover:max-h-24 line-clamp-2 md:line-clamp-3">
                       {service.description}
                     </p>
                   </div>

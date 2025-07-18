@@ -98,7 +98,7 @@ function renderTextContent(content: TextContent, index: number) {
             <InteractiveLink
               key={`link-${index}-${spanIndex}`}
               href={span.href}
-              className="text-blue-600 hover:text-blue-800 underline"
+              className="text-gray-600 hover:text-gray-800 underline"
             >
               {span.text}
             </InteractiveLink>
