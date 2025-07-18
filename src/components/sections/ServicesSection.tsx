@@ -29,24 +29,32 @@ export default function ServicesSection() {
                   fill
                   className="object-cover transition-all duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/20 transition-all duration-300" />
+                <div className="absolute inset-0 bg-black/40 transition-all duration-300" />
                 
                 {/* Content Container */}
-                <div className="absolute inset-0 p-3 md:p-6 flex flex-col justify-between transition-all duration-300 group-hover:justify-start">
-                  {/* Title and Description */}
-                  <div className="transform transition-all duration-300 group-hover:translate-y-0">
-                    <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2 transition-all duration-300 group-hover:mb-2 md:group-hover:mb-3">
+                <div className="absolute inset-0 p-3 md:p-6 flex flex-col justify-end transition-all duration-300">
+                  {/* Title - Always visible at bottom */}
+                  <div className="transform transition-all duration-300 group-hover:opacity-0">
+                    <h3 className="text-base md:text-xl font-bold text-white">
                       {service.title}
                     </h3>
-                    <p className="text-xs md:text-sm text-white opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20 md:group-hover:max-h-24 line-clamp-2 md:line-clamp-3">
-                      {service.description}
-                    </p>
                   </div>
                   
-                  {/* See More Button */}
-                  <div className="transform translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 mt-auto">
-                    <div className="inline-flex items-center justify-center px-3 py-1.5 bg-white text-gray-900 rounded-full text-xs md:text-sm font-semibold transition-colors duration-300 group-hover:bg-gray-100">
-                      Saznajte više
+                  {/* Hover Content - Hidden by default, appears on hover */}
+                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 transform translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    {/* Hover Title */}
+                    <h3 className="text-base md:text-xl font-bold text-white mb-2">
+                      {service.title}
+                    </h3>
+                    
+                    {/* Description and Show More */}
+                    <div>
+                      <p className="text-xs md:text-sm text-white line-clamp-2 md:line-clamp-3 mb-2">
+                        {service.description}
+                      </p>
+                      <span className="text-xs md:text-sm text-white font-medium underline">
+                        Saznajte više
+                      </span>
                     </div>
                   </div>
                 </div>
