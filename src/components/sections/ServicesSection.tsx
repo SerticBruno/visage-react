@@ -20,18 +20,35 @@ export default function ServicesSection() {
             <Link
               key={pageName}
               href={`/usluge/${pageName}`}
-              className="group relative bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+              className="group relative bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:scale-105"
             >
               <div className="relative h-48 md:h-64">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover transition-opacity duration-300 group-hover:opacity-90"
+                  className="object-cover transition-all duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6">
-                  <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2">{service.title}</h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-300 group-hover:from-black/90 group-hover:via-black/60" />
+                
+                {/* Content Container */}
+                <div className="absolute inset-0 p-3 md:p-6 flex flex-col justify-between transition-all duration-300 group-hover:justify-start">
+                  {/* Title and Description */}
+                  <div className="transform transition-all duration-300 group-hover:translate-y-0">
+                    <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2 transition-all duration-300 group-hover:mb-2 md:group-hover:mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-xs md:text-sm text-gray-200 opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-20 md:group-hover:max-h-24 line-clamp-2 md:line-clamp-3">
+                      {service.description}
+                    </p>
+                  </div>
+                  
+                  {/* See More Button */}
+                  <div className="transform translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 mt-auto">
+                    <div className="inline-flex items-center justify-center px-3 py-1.5 bg-white text-gray-900 rounded-full text-xs md:text-sm font-semibold transition-colors duration-300 group-hover:bg-gray-100">
+                      Saznajte više
+                    </div>
+                  </div>
                 </div>
               </div>
             </Link>
