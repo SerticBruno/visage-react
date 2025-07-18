@@ -3,37 +3,93 @@ import { Service } from './types';
 export const wrinkleTherapy: Service = {
   id: 'terapija-bora-lica',
   title: 'Terapija bora lica',
-  description: 'Efikasna terapija za smanjenje bora',
-  longDescription: 'Terapija bora lica je specijalizirana metoda za smanjenje i prevenciju bora. Koristimo napredne tehnike i proizvode za optimalne rezultate.',
+  description: 'Efikasna terapija za smanjenje i prevenciju bora lica',
+  longDescription: `Terapija bora lica je specijalizirana metoda za smanjenje i prevenciju bora kroz napredne anti-aging tretmane. Ova revolucionarna metoda kombinira najnovije tehnologije i visokokvalitetne proizvode za optimalne rezultate.
+
+Kroz precizne tretmane, terapija bora aktivira prirodne procese regeneracije kože, potičući produkciju kolagena i elastina. Ova metoda rezultira smanjenjem vidljivosti postojećih bora, prevencijom novih bora i poboljšanjem općeg izgleda kože.
+
+Terapija bora je idealna za sve dobne skupine i pruža vidljive rezultate već nakon prvog tretmana. Posebno je učinkovita za fine linije, duboke bore, gubitak elastičnosti kože i opće poboljšanje tonusa lica.
+
+U Visage studiju koristimo najkvalitetnije proizvode i tehnike za terapiju bora, prilagođene vašem tipu kože i specifičnim potrebama. Svaki tretman je pažljivo planiran za optimalne i dugotrajne rezultate.`,
   benefits: [
   ],
   image: '/images/services/manikura.webp',
   heroImage: '/images/services/toskani-woman.webp',
-  metaDescription: 'Terapija bora lica u VISAGE studiju. Smanjite i spriječite bore uz pomoć naprednih metoda. Prirodni i dugotrajni rezultati.',
-  metaKeywords: 'terapija bora, bore lica, prevencija bora, estetski studio Sisak, VISAGE studio',
-  tags: ['terapija-bora', 'prevencija-bora', 'anti-aging', 'nježni-tretmani'],
-  pricingCategory: 'RRS',
+  metaDescription: 'Profesionalna terapija bora lica u VISAGE studiju u Siska. Smanjite i spriječite bore uz pomoć naprednih anti-aging metoda. Prirodni i dugotrajni rezultati.',
+  metaKeywords: 'terapija bora, bore lica, prevencija bora, anti-aging, estetski studio Sisak, VISAGE studio, smanjenje bora',
+  tags: ['terapija-bora', 'prevencija-bora', 'anti-aging', 'nježni-tretmani', 'lifting-lica'],
+  pricingCategory: 'Botox',
   steps: [
-    { id: 'prednosti', label: 'Prednosti', icon: 'FaRegFileAlt' },
-    { id: 'kandidati', label: 'Kandidati', icon: 'FaUsers' },
-    { id: 'priprema', label: 'Priprema', icon: 'FaRegEdit' },
-    { id: 'tijek-zahvata', label: 'Tijek zahvata', icon: 'FaRegClock' },
-    { id: 'oporavak', label: 'Oporavak', icon: 'FaRegHospital' },
-    { id: 'nakon-tretmana', label: 'Nakon tretmana', icon: 'FaRegFile' },
-    { id: 'cijena', label: 'Cijena', icon: 'FaHandHoldingUsd' }
+    { 
+      id: 'prednosti', 
+      label: 'Prednosti', 
+      icon: 'FaRegFileAlt',
+      image: '/images/services/toskani-woman.webp'
+    },
+    { 
+      id: 'kandidati', 
+      label: 'Kandidati', 
+      icon: 'FaUsers',
+      image: '/images/services/toskani-woman.webp'
+    },
+    { 
+      id: 'priprema', 
+      label: 'Priprema', 
+      icon: 'FaRegEdit',
+      image: '/images/services/toskani-woman.webp'
+    },
+    { 
+      id: 'tijek-zahvata', 
+      label: 'Tijek zahvata', 
+      icon: 'FaRegClock',
+      image: '/images/services/toskani-woman.webp'
+    },
+    { 
+      id: 'oporavak', 
+      label: 'Oporavak', 
+      icon: 'FaRegHospital',
+      image: '/images/services/toskani-woman.webp'
+    },
+    { 
+      id: 'nakon-tretmana', 
+      label: 'Nakon tretmana', 
+      icon: 'FaRegFile',
+      image: '/images/services/toskani-woman.webp'
+    },
+    { 
+      id: 'cijena', 
+      label: 'Cijena', 
+      icon: 'FaHandHoldingUsd',
+      image: '/images/services/toskani-woman.webp'
+    }
   ],
   stepContents: {
-    'prednosti': `Terapija bora lica je specijalizirana metoda za smanjenje i prevenciju bora. Koristimo napredne tehnike i proizvode za optimalne rezultate.
-
-U VISAGE studiju koristimo najkvalitetnije proizvode i tehnike za terapiju bora, prilagođene vašem tipu kože i specifičnim potrebama. Postupak je siguran i učinkovit, a rezultati su vidljivi već nakon prvog tretmana.`,
+    'prednosti': `Prednosti terapije bora lica:
+- Smanjivanje vidljivosti postojećih bora
+- Prevencija pojave novih bora
+- Poboljšanje tonusa i teksture kože
+- Poboljšanje elastičnosti kože
+- Prirodni i dugotrajni rezultati
+- Minimalno invazivni tretman
+- Vidljivi rezultati već nakon prvog tretmana
+- Sigurna metoda s minimalnim rizikom
+- Stimulacija prirodne produkcije kolagena
+- Anti-aging učinci`,
     'kandidati': `Terapija bora je idealna za osobe koje žele:
-- Smanjiti postojeće bore
+- Smanjiti postojeće bore i fine linije
 - Spriječiti pojavu novih bora
-- Poboljšati ton kože
+- Poboljšati tonus i teksturu kože
 - Poboljšati elastičnost kože
-- Postići prirodan izgled`,
+- Postići prirodan i mladenački izgled
+- Koristiti napredne anti-aging metode
+
+Pogodna je za sve dobne skupine, posebno za:
+- Osobe s vidljivim borama i finim linijama
+- Osobe s gubitkom elastičnosti kože
+- Osobe koje žele prevenciju starenja
+- Osobe koje žele poboljšati tonus lica`,
     'priprema': `Prije terapije bora potrebno je:
-1. Konzultacija s našim stručnjacima za procjenu stanja kože
+1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
 2. Preporuka odgovarajućeg tretmana za vaš tip kože
 3. Preporuka broja tretmana za optimalne rezultate
 4. Upute za pripremu kože prije tretmana
@@ -41,45 +97,49 @@ U VISAGE studiju koristimo najkvalitetnije proizvode i tehnike za terapiju bora,
 Tjedan dana prije tretmana:
 - Izbjegavati izlaganje suncu
 - Prekinuti korištenje agresivnih proizvoda za njegu kože
-- Piti dovoljno vode za optimalnu hidrataciju kože`,
+- Piti dovoljno vode za optimalnu hidrataciju kože
+- Ne smijete laserski uklanjati dlačice`,
     'tijek-zahvata': `Tretman za smanjenje bora je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-1. Konzultacija i procjena (10 min) - Detaljna analiza stanja kože, odabir odgovarajućeg tretmana, plan postupka i objašnjenje. Ova faza je ključna za postizanje optimalnih rezultata.
+1. Konzultacija i procjena - Detaljna analiza stanja kože, odabir odgovarajućeg tretmana, plan postupka i objašnjenje.
 
-2. Priprema kože (15 min) - Dubinsko čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože. Ova faza osigurava optimalne uvjete za primjenu tretmana.
+2. Priprema kože - Dubinsko čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože.
 
-3. Primjena tretmana (20-30 min) - Precizna primjena proizvoda, praćenje reakcije kože i masiranje područja. Ova faza zahtijeva maksimalnu preciznost i stručnost.
+3. Primjena tretmana - Precizna primjena proizvoda, praćenje reakcije kože i masiranje područja.
 
-4. Završni koraci (15 min) - Primjena umirujućih proizvoda, regenerativnih seruma, zaštitnog krema i fotografiranje prije/nakon. Ova faza osigurava optimalno oporavak kože.
+4. Završna njega - Primjena umirujućih proizvoda, regenerativnih seruma i zaštitnog krema s SPF faktorom.
 
-5. Naknadna kontrola (5 min) - Provjera rezultata, savjeti za njegu i planiranje sljedećeg tretmana. Ova faza je važna za održavanje rezultata.`,
-    'oporavak': `Nakon terapije bora:
-- Koža može biti osjetljiva 1-2 dana
-- Potrebno je izbjegavati izravno sunce 2 tjedna
-- Koristiti blage proizvode za njegu kože
-- Piti dovoljno vode za optimalnu hidrataciju
-- Redovito koristiti preporučene proizvode za njegu
+5. Preporuka za kućnu njegu - Preporučujemo korištenje blagih proizvoda za čišćenje, hidratantnih kremova i obavezno korištenje SPF 50+ zaštite.`,
+    'oporavak': `Oporavak može trajati 1-2 dana, uz blago crvenilo i osjetljivost kože. Nuspojave mogu uključivati:
+1. Crvenilo koje nestaje u roku od 1-2 dana
+2. Osjetljivost kože
+3. Blago peckanje na mjestima tretmana
+4. Moguća mala modrica (rijetko)
 
-Redoviti tretmani svakih 4-6 tjedana daju najbolje rezultate.`,
-    'nakon-tretmana': `Važne mjere opreza:
-- Izbjegavati izravno sunce 2 tjedna nakon tretmana
-- Koristiti zaštitni krem s visokim SPF-om
-- Izbjegavati korištenje agresivnih proizvoda za njegu kože
-- Ne češati i ne trljati kožu
-- Pratiti sve upute naših stručnjaka
+Potrebno je izbjegavati izravno sunce 2 tjedna i koristiti blage proizvode za njegu kože.`,
+    'nakon-tretmana': `Nakon terapije bora važno je:
 
-U slučaju bilo kakvih nuspojava, odmah nas kontaktirajte.`,
-    'cijena': `Cijena terapije bora:
-- Pojedinačni tretman: 450 kn
-- Paket od 3 tretmana: 1.200 kn
-- Paket od 6 tretmana: 2.200 kn
+- Zaštita od sunca - Obavezno koristite kremu sa zaštitnim faktorom SPF 50+ i izbjegavajte izravno izlaganje suncu 2 tjedna.
 
-Cijene uključuju:
-- Konzultaciju s našim stručnjacima
-- Tretman terapijom bora
-- Naknadnu njegu kože
-- Savjete za kućnu njegu
+- Njega kože - Koristite blage proizvode za čišćenje i hidrataciju kože, izbjegavajte agresivne proizvode.
 
-Za više informacija o cijenama i mogućnostima plaćanja, dogovorite termin.`
+- Izbjegavanje dodatnih tretmana - Tjedan dana nakon tretmana izbjegavajte druge estetske tretmane.
+
+- Redovito praćenje - Pratite stanje kože i javite se ako primijetite bilo kakve neobične reakcije.
+
+- Kontinuirana njega - Redovito koristite preporučene proizvode za njegu za održavanje rezultata.`,
+    'cijena': `Cijena terapije bora ovisi o količini potrebnog Botoxa i području tretmana. Naši Botox tretmani uključuju:
+
+- Botox 25 - 25 jedinica Botoxa za manje područja (npr. međuobrvno područje)
+- Botox 50 - 50 jedinica Botoxa za srednja područja (npr. čelo i međuobrvno područje)
+- Botox 100 - 100 jedinica Botoxa za veća područja (npr. čelo, međuobrvno područje, očne vijuge)
+
+Botox je najučinkovitiji za:
+- Smanjenje horizontalnih bora na čelu
+- Smanjenje vertikalnih bora između obrva
+- Smanjenje bora oko očiju (vrančići)
+- Lifting obrva
+
+Za optimalne rezultate preporučujemo redovite tretmane svakih 4-6 mjeseci. Za detaljne informacije o cijenama i mogućnostima plaćanja, dogovorite termin.`
   }
 }; 
