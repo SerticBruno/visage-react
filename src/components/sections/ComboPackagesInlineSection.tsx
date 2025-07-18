@@ -46,9 +46,9 @@ export default function ComboPackagesInlineSection() {
                   <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-3 lg:gap-4">
                     {pkg.services.map((service, index) => (
                       <React.Fragment key={service.id}>
-                        <Link href={`/usluge/${service.id}`} className="group w-full">
-                          <div className="flex flex-col items-center gap-1 md:gap-2 w-full h-40 md:h-44 lg:h-48 bg-gray-50 rounded-lg md:rounded-xl p-2 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                            <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                        <Link href={`/usluge/${service.id}`} className="group w-full flex justify-center">
+                          <div className="flex flex-col items-center justify-between w-[70%] md:w-full h-48 md:h-44 lg:h-48 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                            <div className="relative w-[70%] h-32 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105 mt-1 md:mt-0">
                               <Image
                                 src={service.image}
                                 alt={service.title}
@@ -56,7 +56,7 @@ export default function ComboPackagesInlineSection() {
                                 className="object-cover"
                               />
                             </div>
-                            <div className="text-center flex-1 flex items-center justify-center">
+                            <div className="text-center flex items-center justify-center">
                               <div className="flex items-center justify-center gap-1 md:gap-2">
                                 <h5 className="font-medium text-sm md:text-xs lg:text-sm group-hover:text-primary transition-colors uppercase">{service.title}</h5>
                                 {service.quantity > 1 && (
@@ -87,9 +87,9 @@ export default function ComboPackagesInlineSection() {
                         )}
                         {pkg.products.map((product, index) => (
                           <React.Fragment key={product.id}>
-                            <Link href={`/katalog?product=${product.id}`} className="group w-full">
-                              <div className="flex flex-col items-center gap-1 md:gap-2 w-full h-40 md:h-44 lg:h-48 bg-gray-50 rounded-lg md:rounded-xl p-2 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                                <div className="relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                            <Link href={`/katalog?product=${product.id}`} className="group w-full flex justify-center">
+                              <div className="flex flex-col items-center justify-between w-[70%] md:w-full h-48 md:h-44 lg:h-48 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                <div className="relative w-[70%] h-32 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105 mt-1 md:mt-0">
                                   <Image
                                     src={product.image}
                                     alt={product.title}
@@ -97,7 +97,7 @@ export default function ComboPackagesInlineSection() {
                                     className="object-cover"
                                   />
                                 </div>
-                                <div className="text-center flex-1 flex items-center justify-center">
+                                <div className="text-center flex items-center justify-center">
                                   <div className="flex items-center justify-center gap-1 md:gap-2">
                                     <h5 className="font-medium text-sm md:text-xs lg:text-sm group-hover:text-primary transition-colors uppercase">{product.title}</h5>
                                     {product.quantity > 1 && (
