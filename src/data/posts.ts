@@ -3,53 +3,340 @@ import { BlogPost } from './types';
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: 'Plazma terapija - revolucionarna metoda za mladolik izgled',
-    slug: 'plazma-terapija',
-    excerpt: 'Otkrijte kako plazma terapija može pomoći u redukciji bora, liftingu kože i poboljšanju tonusa kože bez invazivnih zahvata.',
+    title: 'Kemijski Piling - Ključ do Blistave i Mladenačke Kože',
+    slug: 'kemijski-piling-blistava-koza',
+    excerpt: 'Otkrijte kako kemijski piling može transformirati vašu kožu, ukloniti mrtve stanice i otkriti svježu, mladenačku kožu ispod. Saznajte sve o TOSKANI pilingima i kako se kombiniraju s drugim tretmanima.',
     content: [
       {
         type: 'heading',
         level: 1,
-        text: 'Plazma terapija - revolucionarna metoda za mladolik izgled'
+        text: 'Kemijski Piling - Ključ do Blistave i Mladenačke Kože'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Plazma terapija je ' },
-          { type: 'text', text: 'revolucionarna metoda', style: 'bold' },
-          { type: 'text', text: ' u estetskoj medicini koja koristi prirodnu plazmu vaše krvi za stimulaciju regeneracije kože. Ova neinvazivna tehnika je postala izuzetno popularna zahvaljujući svojoj učinkovitosti i minimalnom vremenu oporavka.' }
+          { type: 'text', text: 'Kemijski piling je jedan od najučinkovitijih tretmana za obnovu kože koji se koristi u estetskoj medicini već desetljećima. Ova ' },
+          { type: 'text', text: 'revolucionarna tehnika', style: 'bold' },
+          { type: 'text', text: ' omogućava kontrolirano uklanjanje mrtvih stanica s površine kože, otkrivajući svježu, mladenačku kožu ispod. U VISAGE studiju koristimo isključivo ' },
+          { type: 'text', text: 'TOSKANI kemijske pilinze', style: 'bold' },
+          { type: 'text', text: ' koji kombiniraju najnovije tehnologije s prirodnim sastojcima za optimalne rezultate.' }
+        ]
+      },
+      {
+        type: 'image',
+        src: '/images/services/kemijski-piling/tretman-kemijski-piling.webp',
+        alt: 'Kemijski piling tretman',
+        caption: 'Profesionalni kemijski piling s TOSKANI proizvodima'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Što je Kemijski Piling?'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Kemijski piling je ' },
+          { type: 'text', text: 'minimalno invazivna procedura', style: 'bold' },
+          { type: 'text', text: ' koja koristi kemijske otopine za uklanjanje mrtvih stanica s površine kože. Ova tehnika potiče prirodnu regeneraciju kože, poboljšava teksturu i ton, te smanjuje pojavu fine linija, bora, hiperpigmentacija i ožiljaka od akni.' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Prednosti Kemijskog Pilinga'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Kemijski piling nudi brojne prednosti koje ga čine nezamjenjivim u rutini njege kože:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Dubinsko čišćenje kože', style: 'bold' },
+          { type: 'text', text: ' - uklanja mrtve stanice i nečistoće s površine' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Poboljšanje teksture kože', style: 'bold' },
+          { type: 'text', text: ' - zaglađuje površinu i smanjuje vidljivost pora' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Smanjenje hiperpigmentacija', style: 'bold' },
+          { type: 'text', text: ' - ublažava mrlje i neravnomjernu pigmentaciju' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Anti-aging učinci', style: 'bold' },
+          { type: 'text', text: ' - smanjuje fine linije i bore, potiče proizvodnju kolagena' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Poboljšanje apsorpcije', style: 'bold' },
+          { type: 'text', text: ' - omogućava bolju apsorpciju kozmetičkih proizvoda' }
+        ]
+      },
+      {
+        type: 'image',
+        src: '/images/services/kemijski-piling/toskani-peelings.webp',
+        alt: 'TOSKANI kemijski pilinzi',
+        caption: 'TOSKANI linija kemijskih pilinzi za sve tipove kože'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'TOSKANI Kemijski Pilinzi - Zašto su Posebni?'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'U VISAGE studiju koristimo isključivo ' },
+          { type: 'text', text: 'TOSKANI kemijske pilinze', style: 'bold' },
+          { type: 'text', text: ' koji se ističu svojom jedinstvenom formulacijom:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Prirodni sastojci', style: 'bold' },
+          { type: 'text', text: ' - kombiniraju najnovije tehnologije s prirodnim ekstraktima' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Prilagodljivost', style: 'bold' },
+          { type: 'text', text: ' - različiti tipovi pilinzi za različite potrebe kože' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Sigurnost', style: 'bold' },
+          { type: 'text', text: ' - testirani i odobreni za profesionalnu upotrebu' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Učinkovitost', style: 'bold' },
+          { type: 'text', text: ' - vidljivi rezultati već nakon prvog tretmana' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Kombinacija s Drugim Tretmanima - Sinergijski Učinci'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Kemijski piling je izvrsna osnova za druge estetske tretmane. Kombiniran s drugim procedurama može dati ' },
+          { type: 'text', text: 'dramatične rezultate', style: 'bold' },
+          { type: 'text', text: ':' }
+        ]
+      },
+      {
+        type: 'image',
+        src: '/images/services/kemijski-piling/kombinirani-pilinzi.webp',
+        alt: 'Kombinirani tretmani',
+        caption: 'Kombinacija kemijskog pilinga s drugim tretmanima za optimalne rezultate'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: '• ' },
+          { type: 'text', text: 'Mesoterapija', style: 'bold' },
+          { type: 'text', text: ' - Kemijski piling priprema kožu za bolju apsorpciju aktivnih sastojaka iz ' },
+          { type: 'link', text: 'mesoterapije', href: '/usluge/mezoterapija' },
+          { type: 'text', text: ', omogućavajući dubinsku hidrataciju i regeneraciju.' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'PRP terapija', style: 'bold' },
+          { type: 'text', text: ' - Kombinacija s ' },
+          { type: 'link', text: 'PRP tretmanima', href: '/usluge/prp' },
+          { type: 'text', text: ' potiče prirodnu regeneraciju kože i poboljšava rezultate oba tretmana.' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Skin Boosteri', style: 'bold' },
+          { type: 'text', text: ' - Kemijski piling omogućava bolju apsorpciju ' },
+          { type: 'link', text: 'skin booster tretmana', href: '/usluge/skin-boosteri' },
+          { type: 'text', text: ' koji hidratiraju i volumiziraju kožu.' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Dermalni Fileri', style: 'bold' },
+          { type: 'text', text: ' - Pripremljena koža nakon pilinga bolje reagira na ' },
+          { type: 'link', text: 'dermalne filere', href: '/usluge/dermalni-fileri' },
+          { type: 'text', text: ' i omogućava prirodnije rezultate.' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Tko je Idealni Kandidat?'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Kemijski piling je idealan za osobe koje žele:' },
+          { type: 'text', text: '\n\n• Poboljšati ton i teksturu kože' },
+          { type: 'text', text: '\n• Smanjiti fine linije i bore' },
+          { type: 'text', text: '\n• Ublažiti ožiljke od akni' },
+          { type: 'text', text: '\n• Smanjiti hiperpigmentacije i mrlje' },
+          { type: 'text', text: '\n• Poboljšati apsorpciju kozmetičkih proizvoda' },
+          { type: 'text', text: '\n• Postići svjež i mladenački izgled' }
+        ]
+      },
+      {
+        type: 'image',
+        src: '/images/services/kemijski-piling/toskani-duosomal.webp',
+        alt: 'Individualni pristup tretmanu',
+        caption: 'Svaki tretman je prilagođen individualnim potrebama kože'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Tijek Tretmana'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Tretman kemijskim pilingom u VISAGE studiju se provodi u nekoliko faza:' },
+          { type: 'text', text: '\n\n1. ' },
+          { type: 'text', text: 'Konzultacija i procjena', style: 'bold' },
+          { type: 'text', text: ' - određivanje tipa kože i odabir odgovarajućeg pilinga' },
+          { type: 'text', text: '\n2. ' },
+          { type: 'text', text: 'Priprema kože', style: 'bold' },
+          { type: 'text', text: ' - čišćenje i odmašćivanje kože' },
+          { type: 'text', text: '\n3. ' },
+          { type: 'text', text: 'Aplikacija pilinga', style: 'bold' },
+          { type: 'text', text: ' - precizno nanošenje kemijske otopine' },
+          { type: 'text', text: '\n4. ' },
+          { type: 'text', text: 'Neutralizacija', style: 'bold' },
+          { type: 'text', text: ' - zaustavljanje kemijske reakcije' },
+          { type: 'text', text: '\n5. ' },
+          { type: 'text', text: 'Završna njega', style: 'bold' },
+          { type: 'text', text: ' - nanošenje umirujućih i regenerativnih proizvoda' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Oporavak i Naknadna Njega'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Nakon kemijskog pilinga važno je pravilno njegovati kožu:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Zaštita od sunca', style: 'bold' },
+          { type: 'text', text: ' - obavezno korištenje SPF 50+ kreme' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Blaga njega', style: 'bold' },
+          { type: 'text', text: ' - korištenje umirujućih proizvoda' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Izbjegavanje agresivnih proizvoda', style: 'bold' },
+          { type: 'text', text: ' - tjedan dana nakon tretmana' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Redovno praćenje', style: 'bold' },
+          { type: 'text', text: ' - kontrola stanja kože i prilagodba njege' }
+        ]
+      },
+      {
+        type: 'image',
+        src: '/images/services/kemijski-piling/toskani-recovery.webp',
+        alt: 'Naknadna njega kože',
+        caption: 'TOSKANI Total Recovery Gel za optimalnu regeneraciju kože'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Očekivani Rezultati'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Nakon serije kemijskih pilinzi možete očekivati:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Svježu i blistavu kožu', style: 'bold' },
+          { type: 'text', text: ' - uklanjanje mrtvih stanica otkriva mladenačku kožu' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Poboljšanu teksturu', style: 'bold' },
+          { type: 'text', text: ' - zaglađivanje površine i smanjenje pora' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Ujednačen ten', style: 'bold' },
+          { type: 'text', text: ' - smanjenje hiperpigmentacija i mrlja' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Anti-aging učinke', style: 'bold' },
+          { type: 'text', text: ' - smanjenje fine linija i poticanje kolagena' }
+        ]
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Za najbolje rezultate preporučujemo seriju od ' },
+          { type: 'text', text: '3-6 tretmana', style: 'bold' },
+          { type: 'text', text: ' u razmaku od ' },
+          { type: 'text', text: '4-6 tjedana', style: 'bold' },
+          { type: 'text', text: '. Rezultati su kumulativni i traju do ' },
+          { type: 'text', text: '12 mjeseci', style: 'bold' },
+          { type: 'text', text: '. Za više informacija o ' },
+          { type: 'link', text: 'cijenama i rasporedu tretmana', href: '/cjenik' },
+          { type: 'text', text: ' ili ' },
+          { type: 'link', text: 'dogovorite termin', href: '/kontakt' },
+          { type: 'text', text: ' u VISAGE studiju.' }
+        ]
+      }
+    ],
+    date: new Date('2024-01-15T00:00:00.000Z'),
+    author: 'dr. T. Torinek',
+    tags: ['Kemijski Piling', 'TOSKANI', 'Anti-aging', 'Obnova kože', 'Estetska medicina'],
+    image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp'
+  },
+  {
+    id: 2,
+    title: 'Plazma Terapija - Prirodna Revolucija u Anti-Aging Tretmanima',
+    slug: 'plazma-terapija',
+    excerpt: 'Otkrijte kako plazma terapija koristi prirodne faktore rasta iz vaše krvi za potpunu regeneraciju kože. Saznajte sve o ovoj revolucionarnoj metodi i kako se kombinira s drugim tretmanima za optimalne rezultate.',
+    content: [
+      {
+        type: 'heading',
+        level: 1,
+        text: 'Plazma Terapija - Prirodna Revolucija u Anti-Aging Tretmanima'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Plazma terapija predstavlja ' },
+          { type: 'text', text: 'revolucionarni pristup', style: 'bold' },
+          { type: 'text', text: ' u estetskoj medicini koji koristi prirodne faktore rasta iz vaše vlastite krvi za potpunu regeneraciju kože. Ova ' },
+          { type: 'text', text: 'autologna tehnika', style: 'bold' },
+          { type: 'text', text: ' eliminira rizik alergijskih reakcija i omogućava prirodnu, dugotrajnu obnovu kože bez invazivnih zahvata.' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/plasmage-hero.webp',
         alt: 'Plazma terapija tretman',
-        caption: 'Plazma terapija - siguran i učinkovit tretman za mladolik izgled'
+        caption: 'Profesionalni tretman plazma terapije u VISAGE studiju'
       },
       {
         type: 'heading',
         level: 2,
-        text: 'Prednosti plazma terapije'
+        text: 'Što je Plazma Terapija?'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Plazma terapija nudi brojne prednosti u odnosu na tradicionalne metode:' },
-          { type: 'text', text: '\n\n• ' },
-          { type: 'text', text: 'Prirodna regeneracija kože', style: 'bold' },
-          { type: 'text', text: ' - koristi vlastite faktore rasta iz krvi' },
-          { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Minimalno vrijeme oporavka', style: 'bold' },
-          { type: 'text', text: ' - većina klijenata se može vratiti normalnim aktivnostima isti dan' },
-          { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Dugotrajni rezultati', style: 'bold' },
-          { type: 'text', text: ' - rezultati se postupno poboljšavaju tijekom nekoliko tjedana' }
+          { type: 'text', text: 'Plazma terapija, poznata i kao ' },
+          { type: 'text', text: 'PRP (Platelet-Rich Plasma)', style: 'bold' },
+          { type: 'text', text: ', je minimalno invazivna procedura koja koristi koncentrirane trombocite iz vaše krvi. Ovi trombociti sadrže ' },
+          { type: 'text', text: 'faktore rasta', style: 'bold' },
+          { type: 'text', text: ' koji potiču prirodnu regeneraciju kože, stimuliraju proizvodnju kolagena i elastina, te poboljšavaju općenito stanje kože.' }
         ]
       },
       {
         type: 'heading',
         level: 2,
-        text: 'Kako radi plazma terapija?'
+        text: 'Prednosti Plazma Terapije'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Plazma terapija nudi brojne prednosti koje je čine nezamjenjivom u modernoj estetskoj medicini:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: '100% Prirodna i Sigurna', style: 'bold' },
+          { type: 'text', text: ' - koristi vaše vlastite faktore rasta, bez rizika alergijskih reakcija' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Minimalno Vrijeme Oporavka', style: 'bold' },
+          { type: 'text', text: ' - većina klijenata se može vratiti normalnim aktivnostima isti dan' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Dugotrajni Rezultati', style: 'bold' },
+          { type: 'text', text: ' - rezultati se postupno poboljšavaju tijekom 6-12 mjeseci' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Svestrano Djelovanje', style: 'bold' },
+          { type: 'text', text: ' - poboljšava teksturu, ton, hidrataciju i elastičnost kože' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Prirodni Lifting', style: 'bold' },
+          { type: 'text', text: ' - potiče prirodnu obnovu volumena bez umjetnih materijala' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Kako Radi Plazma Terapija?'
       },
       {
         type: 'text',
@@ -57,7 +344,7 @@ export const blogPosts: BlogPost[] = [
           { type: 'text', text: 'Tijekom tretmana, mala količina vaše krvi se uzima i centrifugira kako bi se izdvojila ' },
           { type: 'text', text: 'plazma bogata trombocitima (PRP)', style: 'bold' },
           { type: 'text', text: '. Ova plazma sadrži koncentrirane faktore rasta koji se zatim injiciraju u kožu, stimulirajući prirodni proces regeneracije. Za više informacija o ' },
-          { type: 'link', text: 'PRP tretmanima', href: '/usluge/prp-terapija' },
+          { type: 'link', text: 'PRP tretmanima', href: '/usluge/prp' },
           { type: 'text', text: ', posjetite našu stranicu s uslugama.' }
         ]
       },
@@ -70,7 +357,44 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'heading',
         level: 2,
-        text: 'Tko je idealan kandidat?'
+        text: 'Kombinacija s Drugim Tretmanima - Sinergijski Učinci'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Plazma terapija je izvrsna osnova za druge estetske tretmane i može se kombinirati s:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Kemijski Piling', style: 'bold' },
+          { type: 'text', text: ' - Kombinacija s ' },
+          { type: 'link', text: 'kemijskim pilingom', href: '/usluge/kemijski-piling' },
+          { type: 'text', text: ' omogućava bolju apsorpciju faktora rasta i potiče dubinsku regeneraciju.' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Mesoterapija', style: 'bold' },
+          { type: 'text', text: ' - Kombinacija s ' },
+          { type: 'link', text: 'mesoterapijom', href: '/usluge/mezoterapija' },
+          { type: 'text', text: ' pruža dubinsku hidrataciju i dodatnu stimulaciju regeneracije.' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Skin Boosteri', style: 'bold' },
+          { type: 'text', text: ' - Kombinacija s ' },
+          { type: 'link', text: 'skin booster tretmanima', href: '/usluge/skin-boosteri' },
+          { type: 'text', text: ' potiče volumizaciju i dodatnu hidrataciju kože.' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Dermalni Fileri', style: 'bold' },
+          { type: 'text', text: ' - Plazma terapija može potpomoći rezultate ' },
+          { type: 'link', text: 'dermalnih filera', href: '/usluge/dermalni-fileri' },
+          { type: 'text', text: ' i produžiti njihov učinak.' }
+        ]
+      },
+      {
+        type: 'image',
+        src: '/images/services/MYV_selfie_details.webp',
+        alt: 'Rezultati plazma terapije',
+        caption: 'Vidljivi rezultati nakon serije tretmana plazma terapije'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Tko je Idealni Kandidat?'
       },
       {
         type: 'text',
@@ -93,7 +417,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'heading',
         level: 2,
-        text: 'Očekivani rezultati'
+        text: 'Očekivani Rezultati'
       },
       {
         type: 'text',
@@ -114,6 +438,32 @@ export const blogPosts: BlogPost[] = [
         ]
       },
       {
+        type: 'heading',
+        level: 2,
+        text: 'Tijek Tretmana'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Tretman plazma terapije u VISAGE studiju se provodi u nekoliko faza:' },
+          { type: 'text', text: '\n\n1. ' },
+          { type: 'text', text: 'Konzultacija i procjena', style: 'bold' },
+          { type: 'text', text: ' - određivanje potreba kože i planiranje tretmana' },
+          { type: 'text', text: '\n2. ' },
+          { type: 'text', text: 'Uzimanje krvi', style: 'bold' },
+          { type: 'text', text: ' - mala količina krvi se uzima iz ruke' },
+          { type: 'text', text: '\n3. ' },
+          { type: 'text', text: 'Centrifugiranje', style: 'bold' },
+          { type: 'text', text: ' - odvajanje plazme bogate trombocitima' },
+          { type: 'text', text: '\n4. ' },
+          { type: 'text', text: 'Aplikacija', style: 'bold' },
+          { type: 'text', text: ' - precizno injiciranje u ciljna područja' },
+          { type: 'text', text: '\n5. ' },
+          { type: 'text', text: 'Završna njega', style: 'bold' },
+          { type: 'text', text: ' - nanošenje umirujućih proizvoda' }
+        ]
+      },
+      {
         type: 'text',
         text: [
           { type: 'text', text: 'Za najbolje rezultate, preporučujemo seriju od ' },
@@ -124,17 +474,19 @@ export const blogPosts: BlogPost[] = [
           { type: 'text', text: '12-18 mjeseci', style: 'bold' },
           { type: 'text', text: '. Za više informacija o ' },
           { type: 'link', text: 'cijenama i rasporedu tretmana', href: '/cjenik' },
-          { type: 'text', text: ', dogovorite termin ili posjetite našu stranicu s cjenikom.' }
+          { type: 'text', text: ' ili ' },
+          { type: 'link', text: 'dogovorite termin', href: '/kontakt' },
+          { type: 'text', text: ' u VISAGE studiju.' }
         ]
       }
     ],
     date: new Date('2024-03-15T00:00:00.000Z'),
     author: 'dr. T. Torinek',
-    tags: ['Plazma terapija', 'Anti-aging', 'Estetska medicina'],
+    tags: ['Plazma Terapija', 'PRP', 'Anti-aging', 'Regeneracija kože', 'Estetska medicina', 'Prirodni tretmani'],
     image: '/images/services/MYV_selfie_details.webp'
   },
   {
-    id: 2,
+    id: 3,
     title: 'Savršene obrve i trepavice - ključ za izražajni pogled',
     slug: 'obrve-trepavice',
     excerpt: 'Saznajte kako postići savršene obrve i trepavice koje će vašem licu dati izražajnost i mladolik izgled.',
@@ -213,7 +565,7 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/obrve-i-trepavice.webp'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Toskani - vrhunski proizvodi za njegu kože',
     slug: 'toskani-proizvodi',
     excerpt: 'Upoznajte Toskani proizvode - vrhunsku liniju za njegu kože koja kombinira prirodne sastojke i najnovije tehnologije.',
@@ -292,7 +644,7 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/toskani-hero.webp'
   },
   {
-    id: 4,
+    id: 5,
     title: 'Mesoterapija - prirodna metoda za hidrataciju kože',
     slug: 'mesoterapija',
     excerpt: 'Otkrijte prednosti mesoterapije - prirodne metode za dubinsku hidrataciju i regeneraciju kože.',
@@ -338,7 +690,7 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/Mesoterapia-transdermica-facial.webp'
   },
   {
-    id: 5,
+    id: 6,
     title: 'Profesionalna njega ruku i noktiju',
     slug: 'njega-ruku',
     excerpt: 'Saznajte kako održavati ruke i nokte u savršenom stanju uz pomoć profesionalnih tretmana.',
@@ -384,7 +736,7 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/manikura.webp'
   },
   {
-    id: 6,
+    id: 7,
     title: 'Kozmetički tretmani za muškarce',
     slug: 'kozmeticki-tretmani-za-muskarce',
     excerpt: 'Otkrijte kako muškarci mogu održavati zdrav i mladolik izgled uz pomoć profesionalnih kozmetičkih tretmana.',
@@ -430,7 +782,7 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/botox-face-girl.webp'
   },
   {
-    id: 7,
+    id: 8,
     title: 'Prirodna njega kože - najbolji sastojci za svaki tip kože',
     slug: 'prirodna-njega-koze',
     excerpt: 'Otkrijte prirodne sastojke koji će vašoj koži dati sve što joj treba za zdrav i mladolik izgled.',
@@ -482,7 +834,7 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/toskani-woman.webp'
   },
   {
-    id: 8,
+    id: 9,
     title: 'Zimski tretmani za kožu - kako održati kožu zdravom tijekom hladnih mjeseci',
     slug: 'zimski-tretmani-koze',
     excerpt: 'Saznajte kako pravilno njegovati kožu tijekom zime i spriječiti suhoću i oštećenja.',
@@ -534,7 +886,7 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/MYV_selfie_details.webp'
   },
   {
-    id: 9,
+    id: 10,
     title: 'Anti-aging tretmani - kako održati mladolik izgled prirodno',
     slug: 'anti-aging-tretmani',
     excerpt: 'Otkrijte najučinkovitije anti-aging tretmane koji će vam pomoći održati mladolik izgled na prirodan način.',
@@ -586,7 +938,7 @@ export const blogPosts: BlogPost[] = [
     image: '/images/services/botox-face-girl.webp'
   },
   {
-    id: 10,
+    id: 11,
     title: 'Plasmage - najnoviji trend u estetskoj medicini',
     slug: 'plasmage-najnoviji-trend',
     excerpt: 'Otkrijte revolucionarnu Plasmage tehnologiju koja kombinira plazmu i radiofrekvenciju za izvanredne rezultate u estetskoj medicini.',
