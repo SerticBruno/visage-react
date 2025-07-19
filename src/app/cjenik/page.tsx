@@ -135,7 +135,7 @@ export default function PricingPage() {
                     Kategorije
                   </label>
                   <div className="space-y-2 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
-                    {pricingCategories.map((category) => (
+                    {pricingCategories.filter(category => category !== "Konzultacije").map((category) => (
                       <label key={category} className="flex items-start space-x-2 cursor-pointer group">
                         <div className="pt-0.5">
                           <input
