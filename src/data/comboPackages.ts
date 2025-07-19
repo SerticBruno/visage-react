@@ -37,19 +37,19 @@ export const comboPackages: ComboPackage[] = [
         id: "kemijski-piling", 
         title: "Kemijski Piling", 
         quantity: 1,
-        image: "/images/services/kemijski-piling/tretman-kemijski-piling.webp"
+        image: "/images/services/kemijski-piling/toskani-bg.webp"
       },
       { 
         id: "prp", 
         title: "PRP", 
         quantity: 1,
-        image: "/images/services/plasmage-hero.webp"
+        image: "/images/services/MYV_selfie_details.webp"
       },
       { 
         id: "skin-boosteri", 
         title: "Skin Boosteri", 
         quantity: 1,
-        image: "/images/services/TKNHA3_.webp"
+        image: "/images/services/toskani-hero.webp"
       }
     ],
     products: [
@@ -80,7 +80,7 @@ export const comboPackages: ComboPackage[] = [
   //       id: "kemijski-piling", 
   //       title: "Kemijski Piling", 
   //       quantity: 2,
-  //       image: "/images/services/kemijski-piling/toskani-peelings.webp",
+  //       image: "/images/services/kemijski-piling/toskani-bg.webp",
   //       shortDescription: "Obnova kože"
   //     },
   //     { 
@@ -94,7 +94,7 @@ export const comboPackages: ComboPackage[] = [
   //       id: "skin-booster-profhilo", 
   //       title: "Profhilo", 
   //       quantity: 1,
-  //       image: "/images/services/toskani-woman.webp",
+  //       image: "/images/services/toskani-hero.webp",
   //       shortDescription: "Napredna hidratacija"
   //     }
   //   ],

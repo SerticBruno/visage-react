@@ -126,7 +126,7 @@ export default function RelatedServicesSection({ currentService, relatedServices
                       >
                         <div className="relative h-48 overflow-hidden">
                           <Image
-                            src={service.image}
+                            src={service.heroImage}
                             alt={service.title}
                             fill
                             className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -199,7 +199,7 @@ export default function RelatedServicesSection({ currentService, relatedServices
                   <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
                     <div className="relative h-48 overflow-hidden">
                       <Image
-                        src={service.image}
+                        src={service.heroImage}
                         alt={service.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"

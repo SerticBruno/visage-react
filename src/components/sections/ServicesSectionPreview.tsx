@@ -80,7 +80,7 @@ export default function ServicesSectionPreview() {
                 >
                   <div className="relative h-48 md:h-64">
                     <Image
-                      src={service.image}
+                      src={service.heroImage}
                       alt={service.title}
                       fill
                       className="object-cover transition-all duration-300 group-hover:scale-110"
