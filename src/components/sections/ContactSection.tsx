@@ -178,10 +178,10 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel }: { hasTopPadding?
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
           {/* Contact Form - Left side */}
-          <div className="lg:col-span-5" ref={formRef}>
-            <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-6 sm:p-8 h-full flex flex-col">
+          <div className="lg:col-span-5 flex" ref={formRef}>
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-6 sm:p-8 w-full flex flex-col">
               {serviceLabel && (
                 <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg">
                   <div className="flex items-center gap-2">
@@ -307,9 +307,9 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel }: { hasTopPadding?
           </div>
 
           {/* Contact Info and Map - Right side */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
+          <div className="lg:col-span-7 flex flex-col space-y-6 sm:space-y-8">
             {/* Google Maps */}
-            <div className="h-64 sm:h-80 lg:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl">
+            <div className="flex-grow min-h-64 sm:min-h-80 lg:min-h-[400px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.9999999999995!2d16.371999999999998!3d45.483999999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4766a7a7a7a7a7a7%3A0x7a7a7a7a7a7a7a7a!2sUlica%20Stjepana%20i%20Antuna%20Radi%C4%87a%2049%2C%2044000%2C%20Sisak!5e0!3m2!1shr!2shr!4v1234567890!5m2!1shr!2shr"
                 width="100%"

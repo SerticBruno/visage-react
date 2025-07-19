@@ -63,7 +63,7 @@ export default function Header() {
   };
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    if (isActive(path) && path !== '/usluge') {
+    if (isActive(path) && path !== '/usluge' && path !== '/blog') {
       e.preventDefault();
       window.scrollTo({
         top: 0,
