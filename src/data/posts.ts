@@ -3,7 +3,7 @@ import { BlogPost } from './types';
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: 'Kemijski Piling - Ključ do Blistave i Mladenačke Kože',
+    title: 'Kemijski piling - ključ do blistave i mladenačke kože',
     slug: 'kemijski-piling-blistava-koza',
     excerpt: 'Otkrijte kako kemijski piling može transformirati vašu kožu, ukloniti mrtve stanice i otkriti svježu, mladenačku kožu ispod. Saznajte sve o TOSKANI pilingima i kako se kombiniraju s drugim tretmanima.',
     content: [
@@ -267,7 +267,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 2,
-    title: 'Plazma Terapija - Prirodna Revolucija u Anti-Aging Tretmanima',
+    title: 'Plazma terapija - prirodna revolucija u anti-aging tretmanima',
     slug: 'plazma-terapija',
     excerpt: 'Otkrijte kako plazma terapija koristi prirodne faktore rasta iz vaše krvi za potpunu regeneraciju kože. Saznajte sve o ovoj revolucionarnoj metodi i kako se kombinira s drugim tretmanima za optimalne rezultate.',
     content: [
@@ -487,7 +487,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 3,
-    title: 'Savršene Obrve i Trepavice - Umjetnost Izražajnog Pogleda',
+    title: 'Savršene obrve i trepavice - umjetnost izražajnog pogleda',
     slug: 'obrve-trepavice',
     excerpt: 'Otkrijte tajne savršenih obrva i trepavica koji definiraju vaš izraz lica. Saznajte sve o profesionalnim tretmanima i kako postići prirodan, dugotrajan rezultat koji će vašem licu dati izražajnost i mladolik izgled.',
     content: [
@@ -682,7 +682,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 4,
-    title: 'TOSKANI - Vrhunska Linija za Profesionalnu Njegu Kože',
+    title: 'TOSKANI - vrhunska linija za profesionalnu njegu kože',
     slug: 'toskani-proizvodi',
     excerpt: 'Otkrijte TOSKANI proizvode - vrhunsku liniju za njegu kože koja kombinira prirodne sastojke s najnovijim tehnologijama. Saznajte kako TOSKANI proizvodi mogu transformirati vašu kožu i kako se kombiniraju s našim profesionalnim tretmanima.',
     content: [
@@ -880,7 +880,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 5,
-    title: 'Mezoterapija - Dubinska Hidratacija i Regeneracija Kože',
+    title: 'Mezoterapija - dubinska hidratacija i regeneracija kože',
     slug: 'mezoterapija',
     excerpt: 'Mezoterapija je revolucionarna metoda koja koristi prirodne sastojke za dubinsku hidrataciju i regeneraciju kože. Saznajte sve o ovoj minimalno invazivnoj tehnici i kako se kombinira s drugim tretmanima za optimalne rezultate.',
     content: [
@@ -960,9 +960,9 @@ export const blogPosts: BlogPost[] = [
         level: 2,
         text: 'Kombinacija s Drugim Tretmanima - Sinergijski Učinci'
       },
-              {
-          type: 'text',
-          text: [
+      {
+        type: 'text',
+        text: [
             { type: 'text', text: 'Mezoterapija se izvrsno kombinira s drugim estetskim tretmanima:' },
           { type: 'text', text: '\n\n• ' },
           { type: 'text', text: 'Kemijski Piling', style: 'bold' },
@@ -1073,42 +1073,198 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 6,
-    title: 'Profesionalna njega ruku i noktiju',
+    title: 'Profesionalna njega ruku i noktiju - umjetnost savršenog izgleda',
     slug: 'njega-ruku',
-    excerpt: 'Saznajte kako održavati ruke i nokte u savršenom stanju uz pomoć profesionalnih tretmana.',
+    excerpt: 'Ruke su vaš prvi dojam - otkrijte kako profesionalna njega ruku i noktiju može transformirati vaš izgled. Saznajte sve o našim tretmanima i kako se kombiniraju s drugim uslugama za kompletnu njegu.',
     content: [
+      {
+        type: 'heading',
+        level: 1,
+        text: 'Profesionalna Njega Ruku i Noktiju - Umjetnost Savršenog Izgleda'
+      },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Ruke su jedna od prvih stvari koje drugi primjećuju, a dobro održavani nokti su znak brige o sebi. U našem salonu nudimo širok spektar tretmana za njegu ruku i noktiju.' }
+          { type: 'text', text: 'Ruke su ' },
+          { type: 'text', text: 'vaš prvi dojam', style: 'bold' },
+          { type: 'text', text: ' i jedna od prvih stvari koje drugi primjećuju. Dobro održavani nokti su znak brige o sebi i profesionalnosti. U VISAGE studiju nudimo ' },
+          { type: 'text', text: 'širok spektar profesionalnih tretmana', style: 'bold' },
+          { type: 'text', text: ' za njegu ruku i noktiju koji će vam dati savršen izgled.' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/manikura.webp',
         alt: 'Profesionalna manikura',
-        caption: 'Profesionalni tretman manikure'
+        caption: 'Profesionalni tretman manikure u VISAGE studiju'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Zašto je Njega Ruku i Noktiju Tako Važna?'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Naše usluge uključuju:' },
-          { type: 'text', text: '\n- Profesionalnu manikuru' },
-          { type: 'text', text: '\n- Gel lak' },
-          { type: 'text', text: '\n- Rekonstrukciju noktiju' },
-          { type: 'text', text: '\n- Njegu kože ruku' }
+          { type: 'text', text: 'Ruke i nokti igraju ključnu ulogu u vašem općenitom izgledu:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Prvi Dojam', style: 'bold' },
+          { type: 'text', text: ' - ruke su prvo što ljudi primjećuju kod rukovanja' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Profesionalnost', style: 'bold' },
+          { type: 'text', text: ' - dobro održavani nokti pokazuju brigu o sebi' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Samopouzdanje', style: 'bold' },
+          { type: 'text', text: ' - savršeni nokti podižu samopouzdanje' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Zdravlje', style: 'bold' },
+          { type: 'text', text: ' - redovita njega sprječava probleme s noktima' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Anti-Aging', style: 'bold' },
+          { type: 'text', text: ' - pravilna njega održava ruke mladima' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Naše Profesionalne Usluge'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'U VISAGE studiju nudimo ' },
+          { type: 'text', text: 'širok spektar profesionalnih usluga', style: 'bold' },
+          { type: 'text', text: ' za njegu ruku i noktiju:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Profesionalna Manikura', style: 'bold' },
+          { type: 'text', text: ' - klasična manikura s oblikovanjem i lakiranjem (1-2 tjedna)' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Gel Lak', style: 'bold' },
+          { type: 'text', text: ' - dugotrajni lak koji traje 2-3 tjedna bez ljuštenja' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Rekonstrukcija Noktiju', style: 'bold' },
+          { type: 'text', text: ' - popravak slomljenih ili oštećenih noktiju' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Njega Kože Ruku', style: 'bold' },
+          { type: 'text', text: ' - hidratacija i regeneracija kože ruku' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Specijalni Tretmani', style: 'bold' },
+          { type: 'text', text: ' - parafinska kupka, masaze i regenerativni tretmani' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/socialmedia_peelings_combined.webp',
         alt: 'Tretman ruku',
-        caption: 'Specijalni tretmani za njegu ruku'
+        caption: 'Specijalni tretmani za njegu ruku u VISAGE studiju'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Prednosti Naših Tretmana'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Svaki tretman je prilagođen vašim potrebama i željama, a koristimo samo najkvalitetnije proizvode za postizanje najboljih rezultata.' }
+          { type: 'text', text: 'Svaki tretman u VISAGE studiju je ' },
+          { type: 'text', text: 'prilagođen individualnim potrebama', style: 'bold' },
+          { type: 'text', text: ' klijenta:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Profesionalna Kvaliteta', style: 'bold' },
+          { type: 'text', text: ' - iskusni stručnjaci s najnovijim tehnikama' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Higijena i Sigurnost', style: 'bold' },
+          { type: 'text', text: ' - najviši standardi higijene i sterilizacije' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Kvalitetni Proizvodi', style: 'bold' },
+          { type: 'text', text: ' - koristimo samo najbolje proizvode na tržištu' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Dugotrajni Rezultati', style: 'bold' },
+          { type: 'text', text: ' - rezultati traju duže od kućnih tretmana' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Individualni Pristup', style: 'bold' },
+          { type: 'text', text: ' - svaki tretman je prilagođen vašim potrebama' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Kombinacija s Drugim Tretmanima'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Njega ruku i noktiju se izvrsno kombinira s drugim estetskim tretmanima:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Kozmetički Tretmani', style: 'bold' },
+          { type: 'text', text: ' - Kompletna njega s ' },
+          { type: 'link', text: 'kozmetičkim tretmanima', href: '/usluge/beauty-tretmani' },
+          { type: 'text', text: ' za savršen izgled' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Anti-Aging Tretmani', style: 'bold' },
+          { type: 'text', text: ' - Kombinacija s ' },
+          { type: 'link', text: 'plazma terapijom', href: '/usluge/plasmage' },
+          { type: 'text', text: ' za mladolik izgled' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Obrve i Trepavice', style: 'bold' },
+          { type: 'text', text: ' - Kompletna njega s ' },
+          { type: 'link', text: 'tretmanima obrva i trepavica', href: '/usluge/obrve-trepavice' },
+          { type: 'text', text: ' za savršen izgled' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'TOSKANI Proizvodi', style: 'bold' },
+          { type: 'text', text: ' - ' },
+          { type: 'link', text: 'TOSKANI proizvodi', href: '/usluge/toskani-proizvodi' },
+          { type: 'text', text: ' za kućnu njegu ruku' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Tko je Idealni Kandidat?'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Naši tretmani su idealni za osobe koje žele:' },
+          { type: 'text', text: '\n\n• Poboljšati izgled ruku i noktiju' },
+          { type: 'text', text: '\n• Postići profesionalan i elegantan izgled' },
+          { type: 'text', text: '\n• Riješiti probleme s noktima (lomljivost, slabljenje)' },
+          { type: 'text', text: '\n• Održati dugotrajne rezultate' },
+          { type: 'text', text: '\n• Poboljšati samopouzdanje' },
+          { type: 'text', text: '\n• Profesionalnu primjenu i savjete' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Tijek Tretmana'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Svaki tretman se provodi u nekoliko faza:' },
+          { type: 'text', text: '\n\n1. ' },
+          { type: 'text', text: 'Konzultacija', style: 'bold' },
+          { type: 'text', text: ' - procjena stanja noktiju i odabir tretmana' },
+          { type: 'text', text: '\n2. ' },
+          { type: 'text', text: 'Priprema', style: 'bold' },
+          { type: 'text', text: ' - čišćenje i oblikovanje noktiju' },
+          { type: 'text', text: '\n3. ' },
+          { type: 'text', text: 'Aplikacija', style: 'bold' },
+          { type: 'text', text: ' - precizna primjena odabranog tretmana' },
+          { type: 'text', text: '\n4. ' },
+          { type: 'text', text: 'Završna njega', style: 'bold' },
+          { type: 'text', text: ' - upute za naknadnu njegu i održavanje' }
+        ]
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Svaki tretman je prilagođen vašim potrebama i željama, a koristimo samo najkvalitetnije proizvode za postizanje najboljih rezultata. Za više informacija o ' },
+          { type: 'link', text: 'cijenama i rasporedu tretmana', href: '/cjenik' },
+          { type: 'text', text: ' ili ' },
+          { type: 'link', text: 'dogovorite termin', href: '/kontakt' },
+          { type: 'text', text: ' u VISAGE studiju.' }
         ]
       }
     ],
@@ -1165,224 +1321,905 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 8,
-    title: 'Prirodna njega kože - najbolji sastojci za svaki tip kože',
+    title: 'Prirodna njega kože - umjetnost odabira savršenih sastojaka',
     slug: 'prirodna-njega-koze',
-    excerpt: 'Otkrijte prirodne sastojke koji će vašoj koži dati sve što joj treba za zdrav i mladolik izgled.',
+    excerpt: 'Svaki tip kože zahtijeva jedinstven pristup - otkrijte kako prirodni sastojci mogu transformirati vašu kožu. Saznajte sve o najboljim sastojcima za vaš tip kože i kako se kombiniraju s profesionalnim tretmanima.',
     content: [
       {
         type: 'heading',
         level: 1,
-        text: 'Prirodna njega kože - najbolji sastojci za svaki tip kože'
+        text: 'Prirodna Njega Kože - Umjetnost Odabira Savršenih Sastojaka'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Prirodna njega kože postaje sve popularnija, a s razlogom. Prirodni sastojci su blagi, učinkoviti i često sadrže aktivne tvari koje koža lako apsorbira.' }
+          { type: 'text', text: 'Prirodna njega kože postaje sve popularnija, a s razlogom. Prirodni sastojci su ' },
+          { type: 'text', text: 'blagi, učinkoviti i sigurni', style: 'bold' },
+          { type: 'text', text: ' za svaki tip kože. U VISAGE studiju vjerujemo u ' },
+          { type: 'text', text: 'snagu prirode kombiniranu s najnovijim tehnologijama', style: 'bold' },
+          { type: 'text', text: ' za postizanje optimalnih rezultata. Svaki tip kože zahtijeva jedinstven pristup i odabir sastojaka koji će najbolje odgovarati njenim potrebama.' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/toskani-woman.webp',
         alt: 'Prirodna njega kože',
-        caption: 'Prirodni sastojci za njegu kože'
+        caption: 'Prirodni sastojci za njegu kože u VISAGE studiju'
       },
       {
         type: 'heading',
         level: 2,
-        text: 'Najbolji prirodni sastojci'
+        text: 'Zašto Prirodni Sastojci?'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Evo nekoliko prirodnih sastojaka koji su posebno korisni za kožu:' },
+          { type: 'text', text: 'Prirodni sastojci imaju brojne prednosti nad sintetičkim alternativama:' },
           { type: 'text', text: '\n\n• ' },
-          { type: 'text', text: 'Aloe vera', style: 'bold' },
-          { type: 'text', text: ' - odlična za hidrataciju i smirivanje' },
+          { type: 'text', text: 'Biokompatibilnost', style: 'bold' },
+          { type: 'text', text: ' - koža prirodno prepoznaje i apsorbira prirodne sastojke' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Čajno drvo', style: 'bold' },
-          { type: 'text', text: ' - prirodni antiseptik za problematičnu kožu' },
+          { type: 'text', text: 'Smanjena Iritacija', style: 'bold' },
+          { type: 'text', text: ' - manje alergijskih reakcija i iritacija' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Kokosovo ulje', style: 'bold' },
-          { type: 'text', text: ' - bogato srednjelančanim masnim kiselinama' },
+          { type: 'text', text: 'Antioksidantna Svojstva', style: 'bold' },
+          { type: 'text', text: ' - prirodni antioksidanti štite od slobodnih radikala' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Dugotrajni Učinci', style: 'bold' },
+          { type: 'text', text: ' - prirodni sastojci rade s kožom, a ne protiv nje' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Ekološka Odgovornost', style: 'bold' },
+          { type: 'text', text: ' - održivi pristup njezi kože i okoliša' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Najbolji Prirodni Sastojci za Svaki Tip Kože'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Svaki tip kože zahtijeva specifične sastojke. Evo ' },
+          { type: 'text', text: 'najučinkovitijih prirodnih sastojaka', style: 'bold' },
+          { type: 'text', text: ' za različite potrebe kože:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Aloe Vera', style: 'bold' },
+          { type: 'text', text: ' - odlična za hidrataciju, smirivanje i regeneraciju svih tipova kože' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Čajno Drvo', style: 'bold' },
+          { type: 'text', text: ' - prirodni antiseptik za problematičnu i masnu kožu' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Kokosovo Ulje', style: 'bold' },
+          { type: 'text', text: ' - bogato srednjelančanim masnim kiselinama za suhu kožu' },
           { type: 'text', text: '\n• ' },
           { type: 'text', text: 'Med', style: 'bold' },
-          { type: 'text', text: ' - prirodni humektant s antibakterijskim svojstvima' }
+          { type: 'text', text: ' - prirodni humektant s antibakterijskim svojstvima' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Vitamin C', style: 'bold' },
+          { type: 'text', text: ' - snažan antioksidant za svjetljenje i zaštitu' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Retinol', style: 'bold' },
+          { type: 'text', text: ' - prirodni derivat vitamina A za anti-aging učinke' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Hijaluronska Kiselina', style: 'bold' },
+          { type: 'text', text: ' - prirodni humektant za dubinsku hidrataciju' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Niacinamid', style: 'bold' },
+          { type: 'text', text: ' - vitamin B3 za regulaciju sebuma i svjetljenje' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Sastojci Prema Tipu Kože'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Odabir sastojaka treba biti prilagođen vašem tipu kože:' },
+          { type: 'text', text: '\n\n' },
+          { type: 'text', text: 'Suha Koža', style: 'bold' },
+          { type: 'text', text: ' - hijaluronska kiselina, ceramidi, masna ulja (argan, jojoba)' },
+          { type: 'text', text: '\n\n' },
+          { type: 'text', text: 'Masna Koža', style: 'bold' },
+          { type: 'text', text: ' - niacinamid, salicilna kiselina, čajno drvo, glina' },
+          { type: 'text', text: '\n\n' },
+          { type: 'text', text: 'Mješovita Koža', style: 'bold' },
+          { type: 'text', text: ' - blagi sastojci, hijaluronska kiselina, vitamin C' },
+          { type: 'text', text: '\n\n' },
+          { type: 'text', text: 'Osetljiva Koža', style: 'bold' },
+          { type: 'text', text: ' - aloe vera, panthenol, ceramidi, minimalna formulacija' },
+          { type: 'text', text: '\n\n' },
+          { type: 'text', text: 'Zrela Koža', style: 'bold' },
+          { type: 'text', text: ' - retinol, peptidi, antioksidanti, hijaluronska kiselina' }
+        ]
+              },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'TOSKANI - Prirodna Kozmetika Premium Kvalitete'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'U VISAGE studiju koristimo isključivo ' },
+            { type: 'text', text: 'TOSKANI prirodnu kozmetiku', style: 'bold' },
+            { type: 'text', text: ' koja kombinira najbolje prirodne sastojke s najnovijim tehnologijama:' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Prirodni Sastojci', style: 'bold' },
+            { type: 'text', text: ' - ekstrakti biljaka, vitamina i minerala' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Bez Parabena', style: 'bold' },
+            { type: 'text', text: ' - sigurna formulacija bez štetnih konzervansa' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Dermatološki Testirano', style: 'bold' },
+            { type: 'text', text: ' - testirano na svim tipovima kože' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Profesionalna Kvaliteta', style: 'bold' },
+            { type: 'text', text: ' - rezervirano za profesionalne salone' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Kombinacija s Profesionalnim Tretmanima'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Prirodna njega kože se izvrsno kombinira s profesionalnim tretmanima:' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Kemijski Piling', style: 'bold' },
+            { type: 'text', text: ' - Prirodni sastojci potpomažu oporavak nakon ' },
+            { type: 'link', text: 'kemijskog pilinga', href: '/usluge/kemijski-piling' },
+            { type: 'text', text: ' i održavaju rezultate' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Mezoterapija', style: 'bold' },
+            { type: 'text', text: ' - Prirodni sastojci potpomažu apsorpciju aktivnih tvari iz ' },
+            { type: 'link', text: 'mezoterapije', href: '/usluge/mezoterapija' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Plazma Terapija', style: 'bold' },
+            { type: 'text', text: ' - Prirodna njega održava rezultate ' },
+            { type: 'link', text: 'plazma terapije', href: '/usluge/plasmage' },
+            { type: 'text', text: ' i potpomaže regeneraciju' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Skin Boosteri', style: 'bold' },
+            { type: 'text', text: ' - Prirodni sastojci potpomažu učinke ' },
+            { type: 'link', text: 'skin booster tretmana', href: '/usluge/skin-boosteri' },
+            { type: 'text', text: ' i održavaju hidrataciju' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Rutina Prirodne Njege Kože'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Za optimalne rezultate, preporučujemo sljedeću rutinu:' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Jutarnja Rutina', style: 'bold' },
+            { type: 'text', text: ':' },
+            { type: 'text', text: '\n1. Blago čišćenje s prirodnim čistačem' },
+            { type: 'text', text: '\n2. Tonik s prirodnim sastojcima' },
+            { type: 'text', text: '\n3. Serum s vitaminom C ili hijaluronskom kiselinom' },
+            { type: 'text', text: '\n4. Hidratantna krema s prirodnim sastojcima' },
+            { type: 'text', text: '\n5. SPF zaštita' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Večernja Rutina', style: 'bold' },
+            { type: 'text', text: ':' },
+            { type: 'text', text: '\n1. Dubinsko čišćenje' },
+            { type: 'text', text: '\n2. Tonik' },
+            { type: 'text', text: '\n3. Retinol ili peptidni serum' },
+            { type: 'text', text: '\n4. Bogata hidratantna krema' },
+            { type: 'text', text: '\n5. Masno ulje za zaključavanje hidratacije' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Česti Greške u Prirodnoj Njezi Kože'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Izbjegavajte sljedeće greške:' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Previše Sastojaka', style: 'bold' },
+            { type: 'text', text: ' - ne koristite sve odjednom, uvodite postupno' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Nepravilna Kombinacija', style: 'bold' },
+            { type: 'text', text: ' - neki sastojci se ne slažu (npr. retinol i vitamin C)' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Nedostatak SPF-a', style: 'bold' },
+            { type: 'text', text: ' - prirodni sastojci mogu povećati fotosenzibilnost' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Očekivanje Prebrzih Rezultata', style: 'bold' },
+            { type: 'text', text: ' - prirodni sastojci rade postupno' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Ignoriranje Tipa Kože', style: 'bold' },
+            { type: 'text', text: ' - svaki tip kože zahtijeva specifične sastojke' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Kada Potražiti Profesionalnu Pomoć?'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Konsultirajte se s profesionalcima u VISAGE studiju ako:' },
+            { type: 'text', text: '\n\n• Imate osetljivu ili problematičnu kožu' },
+            { type: 'text', text: '\n• Želite personaliziranu rutinu njege' },
+            { type: 'text', text: '\n• Trebate savjet o kombinaciji sastojaka' },
+            { type: 'text', text: '\n• Želite kombinirati s profesionalnim tretmanima' },
+            { type: 'text', text: '\n• Imate specifične probleme s kožom' },
+            { type: 'text', text: '\n• Trebate savjet o TOSKANI proizvodima' }
+          ]
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Prirodna njega kože je umjetnost koja zahtijeva znanje i strpljenje. U VISAGE studiju vam pomažemo odabrati ' },
+            { type: 'text', text: 'savršenu kombinaciju prirodnih sastojaka', style: 'bold' },
+            { type: 'text', text: ' za vaš tip kože i kombinirati je s profesionalnim tretmanima za optimalne rezultate. Za više informacija o ' },
+            { type: 'link', text: 'TOSKANI proizvodima', href: '/usluge/toskani-proizvodi' },
+            { type: 'text', text: ' ili ' },
+            { type: 'link', text: 'dogovorite konzultaciju', href: '/kontakt' },
+            { type: 'text', text: ' s našim stručnjacima.' }
         ]
       }
     ],
     date: new Date('2024-05-15'),
     author: 'Mia Torinek',
-    tags: ['Prirodna njega', 'Kozmetika', 'Njega kože'],
+      tags: ['Prirodna njega', 'TOSKANI', 'Kozmetika', 'Njega kože', 'Prirodni sastojci'],
     image: '/images/services/toskani-woman.webp'
   },
   {
     id: 9,
-    title: 'Zimski tretmani za kožu - kako održati kožu zdravom tijekom hladnih mjeseci',
+    title: 'Zimski tretmani za kožu - kompletni vodič za zdravu kožu tijekom hladnih mjeseci',
     slug: 'zimski-tretmani-koze',
-    excerpt: 'Saznajte kako pravilno njegovati kožu tijekom zime i spriječiti suhoću i oštećenja.',
+    excerpt: 'Zima je izazovno doba za kožu - otkrijte kako profesionalni zimski tretmani mogu zaštititi i regenerirati vašu kožu. Saznajte sve o zimskoj njezi i kako se kombinira s drugim tretmanima za optimalne rezultate.',
     content: [
       {
         type: 'heading',
         level: 1,
-        text: 'Zimski tretmani za kožu - kako održati kožu zdravom tijekom hladnih mjeseci'
+        text: 'Zimski Tretmani za Kožu - Kompletni Vodič za Zdravu Kožu Tijekom Hladnih Mjeseci'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Zima je posebno zahtjevno doba godine za našu kožu. Hladno vrijeme, suhi zrak u zatvorenim prostorima i promjene temperature mogu dovesti do suhoće, iritacije i oštećenja kože.' }
+          { type: 'text', text: 'Zima je posebno zahtjevno doba godine za našu kožu. Hladno vrijeme, suhi zrak u zatvorenim prostorima i ' },
+          { type: 'text', text: 'naglim promjenama temperature', style: 'bold' },
+          { type: 'text', text: ' mogu dovesti do suhoće, iritacije i oštećenja kože. U VISAGE studiju razumijemo jedinstvene izazove koje zima predstavlja i nudimo ' },
+          { type: 'text', text: 'specijalizirane zimski tretmani', style: 'bold' },
+          { type: 'text', text: ' koji će zaštititi i regenerirati vašu kožu tijekom hladnih mjeseci.' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/MYV_selfie_details.webp',
         alt: 'Zimski tretman kože',
-        caption: 'Profesionalni zimski tretman kože'
+        caption: 'Profesionalni zimski tretman kože u VISAGE studiju'
       },
       {
         type: 'heading',
         level: 2,
-        text: 'Ključni koraci za zimsku njegu kože'
+        text: 'Kako Zima Utječe na Kožu?'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Za zdravu kožu tijekom zime, preporučujemo sljedeće korake:' },
+          { type: 'text', text: 'Zimski uvjeti stvaraju jedinstvene izazove za kožu:' },
           { type: 'text', text: '\n\n• ' },
-          { type: 'text', text: 'Intenzivna hidratacija', style: 'bold' },
-          { type: 'text', text: ' - koristite bogate kreme i serume' },
+          { type: 'text', text: 'Suhoća', style: 'bold' },
+          { type: 'text', text: ' - hladan zrak i grijanje smanjuju vlagu u zraku' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Zaštita od vremenskih uvjeta', style: 'bold' },
-          { type: 'text', text: ' - SPF je važan i zimi' },
+          { type: 'text', text: 'Dehidratacija', style: 'bold' },
+          { type: 'text', text: ' - koža gubi vlagu brže nego ljeti' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Gentilno čišćenje', style: 'bold' },
-          { type: 'text', text: ' - izbjegavajte agresivne proizvode' },
+          { type: 'text', text: 'Iritacija', style: 'bold' },
+          { type: 'text', text: ' - vjetar i hladnoća mogu oštetiti zaštitnu barijeru kože' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Redovni tretmani', style: 'bold' },
-          { type: 'text', text: ' - profesionalna njega jednom mjesečno' }
+          { type: 'text', text: 'Smanjena Proizvodnja Sebuma', style: 'bold' },
+          { type: 'text', text: ' - koža proizvodi manje prirodnih ulja' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Povećana Osetljivost', style: 'bold' },
+          { type: 'text', text: ' - koža postaje reaktivnija na vanjske čimbenike' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Usporena Regeneracija', style: 'bold' },
+          { type: 'text', text: ' - procesi obnove kože se usporavaju' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Profesionalni Zimski Tretmani u VISAGE Studiju'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'U VISAGE studiju nudimo ' },
+          { type: 'text', text: 'specijalizirane zimski tretmani', style: 'bold' },
+          { type: 'text', text: ' koji su prilagođeni jedinstvenim potrebama kože tijekom hladnih mjeseci:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Intenzivna Hidratacija', style: 'bold' },
+          { type: 'text', text: ' - dubinski hidratantni tretmani s hijaluronskom kiselinom' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Zaštitni Tretmani', style: 'bold' },
+          { type: 'text', text: ' - kreiranje zaštitne barijere protiv hladnoće i vjetra' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Regenerativni Tretmani', style: 'bold' },
+          { type: 'text', text: ' - poticanje prirodne obnove kože' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Anti-Iritacijski Tretmani', style: 'bold' },
+          { type: 'text', text: ' - smirivanje osetljive i iritirane kože' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Nutritivni Tretmani', style: 'bold' },
+          { type: 'text', text: ' - obogaćivanje kože esencijalnim nutrijentima' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Kućna Zimska Rutina Njege'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Za zdravu kožu tijekom zime, preporučujemo sljedeću rutinu:' },
+          { type: 'text', text: '\n\n' },
+          { type: 'text', text: 'Jutarnja Rutina', style: 'bold' },
+          { type: 'text', text: ':' },
+          { type: 'text', text: '\n1. Blago čišćenje s hidratantnim čistačem' },
+          { type: 'text', text: '\n2. Tonik bez alkohola' },
+          { type: 'text', text: '\n3. Hidratantni serum s hijaluronskom kiselinom' },
+          { type: 'text', text: '\n4. Bogata hidratantna krema' },
+          { type: 'text', text: '\n5. SPF 30+ (važan i zimi!)' },
+          { type: 'text', text: '\n\n' },
+          { type: 'text', text: 'Večernja Rutina', style: 'bold' },
+          { type: 'text', text: ':' },
+          { type: 'text', text: '\n1. Dubinsko čišćenje' },
+          { type: 'text', text: '\n2. Hidratantni tonik' },
+          { type: 'text', text: '\n3. Nutritivni serum' },
+          { type: 'text', text: '\n4. Bogata noćna krema' },
+          { type: 'text', text: '\n5. Masno ulje za zaključavanje hidratacije' }
+        ]
+              },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Kombinacija s Drugim Tretmanima - Sinergijski Učinci'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Zimski tretmani se izvrsno kombiniraju s drugim estetskim procedurama:' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Mezoterapija', style: 'bold' },
+            { type: 'text', text: ' - Zimska hidratacija potpomaže apsorpciju aktivnih tvari iz ' },
+            { type: 'link', text: 'mezoterapije', href: '/usluge/mezoterapija' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Skin Boosteri', style: 'bold' },
+            { type: 'text', text: ' - Zimska priprema kože omogućava bolje rezultate ' },
+            { type: 'link', text: 'skin booster tretmana', href: '/usluge/skin-boosteri' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Kemijski Piling', style: 'bold' },
+            { type: 'text', text: ' - Zimska regeneracija potpomaže oporavak nakon ' },
+            { type: 'link', text: 'kemijskog pilinga', href: '/usluge/kemijski-piling' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Plazma Terapija', style: 'bold' },
+            { type: 'text', text: ' - Zimska zaštita održava rezultate ' },
+            { type: 'link', text: 'plazma terapije', href: '/usluge/plasmage' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'TOSKANI Proizvodi', style: 'bold' },
+            { type: 'text', text: ' - ' },
+            { type: 'link', text: 'TOSKANI zimski proizvodi', href: '/usluge/toskani-proizvodi' },
+            { type: 'text', text: ' za kućnu njegu' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Najbolji Sastojci za Zimsku Njegu'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Za zimsku njegu kože preporučujemo sljedeće sastojke:' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Hijaluronska Kiselina', style: 'bold' },
+            { type: 'text', text: ' - dubinska hidratacija i zadržavanje vlage' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Ceramidi', style: 'bold' },
+            { type: 'text', text: ' - obnavljanje zaštitne barijere kože' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Glicerin', style: 'bold' },
+            { type: 'text', text: ' - prirodni humektant za zadržavanje vlage' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Masna Ulja', style: 'bold' },
+            { type: 'text', text: ' - argan, jojoba, kokosovo ulje za zaštitu' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Panthenol', style: 'bold' },
+            { type: 'text', text: ' - smirivanje i regeneracija osetljive kože' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Antioksidanti', style: 'bold' },
+            { type: 'text', text: ' - vitamin C i E za zaštitu od slobodnih radikala' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Česti Zimski Problemi i Rješenja'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Evo kako riješiti najčešće zimske probleme s kožom:' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Suha i Dehidratirana Koža', style: 'bold' },
+            { type: 'text', text: ' - intenzivna hidratacija s hijaluronskom kiselinom i ceramidima' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Iritacija i Crvenilo', style: 'bold' },
+            { type: 'text', text: ' - smirujući tretmani s panthenolom i aloe verom' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Oštećena Zaštitna Barijera', style: 'bold' },
+            { type: 'text', text: ' - regenerativni tretmani s masnim uljima' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Povećana Osetljivost', style: 'bold' },
+            { type: 'text', text: ' - blagi proizvodi bez parfema i alkohola' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Usorena Regeneracija', style: 'bold' },
+            { type: 'text', text: ' - nutritivni tretmani s vitaminima i peptidima' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Frekvencija Zimskih Tretmana'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Za optimalne rezultate tijekom zime preporučujemo:' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Profesionalni Tretmani', style: 'bold' },
+            { type: 'text', text: ' - svaka 2-3 tjedna za intenzivnu hidrataciju' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Kućna Njega', style: 'bold' },
+            { type: 'text', text: ' - svakodnevno praćenje preporučene rutine' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Kombinacijski Tretmani', style: 'bold' },
+            { type: 'text', text: ' - mjesečno kombiniranje s drugim procedurama' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Preventivni Pristup', style: 'bold' },
+            { type: 'text', text: ' - započnite prije početka zime' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Tko je Idealni Kandidat?'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Zimski tretmani su idealni za osobe koje:' },
+            { type: 'text', text: '\n\n• Imaju suhu ili dehidratiranu kožu' },
+            { type: 'text', text: '\n• Doživljavaju iritaciju tijekom zime' },
+            { type: 'text', text: '\n• Žele održati mladolik izgled tijekom hladnih mjeseci' },
+            { type: 'text', text: '\n• Imaju osetljivu kožu' },
+            { type: 'text', text: '\n• Žele spriječiti zimske probleme s kožom' },
+            { type: 'text', text: '\n• Kombiniraju s drugim estetskim tretmanima' }
+          ]
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Zima ne mora biti izazov za vašu kožu. U VISAGE studiju nudimo ' },
+            { type: 'text', text: 'specijalizirane zimski tretmani', style: 'bold' },
+            { type: 'text', text: ' koji će zaštititi, hidratirati i regenerirati vašu kožu tijekom hladnih mjeseci. Kombinirano s pravilnom kućnom njegom i drugim profesionalnim tretmanima, možete postići ' },
+            { type: 'text', text: 'zdravu i blistavu kožu cijele godine', style: 'bold' },
+            { type: 'text', text: '. Za više informacija o ' },
+            { type: 'link', text: 'cijenama zimskih tretmana', href: '/cjenik' },
+            { type: 'text', text: ' ili ' },
+            { type: 'link', text: 'dogovorite termin', href: '/kontakt' },
+            { type: 'text', text: ' s našim stručnjacima.' }
         ]
       }
     ],
     date: new Date('2024-05-20'),
     author: 'dr. T. Torinek',
-    tags: ['Zimska njega', 'Hidratacija', 'Njega kože'],
+      tags: ['Zimska njega', 'Hidratacija', 'Njega kože', 'Zimski tretmani', 'Zaštita kože'],
     image: '/images/services/MYV_selfie_details.webp'
   },
   {
     id: 10,
-    title: 'Anti-aging tretmani - kako održati mladolik izgled prirodno',
+    title: 'Anti-aging tretmani - umjetnost prirodnog održavanja mladolikog izgleda',
     slug: 'anti-aging-tretmani',
-    excerpt: 'Otkrijte najučinkovitije anti-aging tretmane koji će vam pomoći održati mladolik izgled na prirodan način.',
+    excerpt: 'Anti-aging tretmani su ključ do mladolikog izgleda - otkrijte kako profesionalni tretmani mogu prirodno obnoviti vašu kožu. Saznajte sve o najučinkovitijim anti-aging procedurama i kako se kombiniraju za optimalne rezultate.',
     content: [
       {
         type: 'heading',
         level: 1,
-        text: 'Anti-aging tretmani - kako održati mladolik izgled prirodno'
+        text: 'Anti-Aging Tretmani - Umjetnost Prirodnog Održavanja Mladolikog Izgleda'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Anti-aging tretmani su postali sastavni dio moderne kozmetičke njege. Uz pravilnu kombinaciju profesionalnih tretmana i kućne njege, možete postići značajno poboljšanje izgleda kože.' }
+          { type: 'text', text: 'Anti-aging tretmani su postali sastavni dio moderne kozmetičke njege. U VISAGE studiju vjerujemo u ' },
+          { type: 'text', text: 'prirodan pristup anti-aging tretmanima', style: 'bold' },
+          { type: 'text', text: ' koji potiče vlastite mehanizme regeneracije kože. Uz pravilnu kombinaciju profesionalnih tretmana i kućne njege, možete postići ' },
+          { type: 'text', text: 'značajno poboljšanje izgleda kože', style: 'bold' },
+          { type: 'text', text: ' bez umjetnih rezultata.' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/botox-face-girl.webp',
         alt: 'Anti-aging tretman',
-        caption: 'Profesionalni anti-aging tretman'
+        caption: 'Profesionalni anti-aging tretman u VISAGE studiju'
       },
       {
         type: 'heading',
         level: 2,
-        text: 'Najučinkovitiji anti-aging tretmani'
+        text: 'Kako Dolazi do Starenja Kože?'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'U našem salonu nudimo širok spektar anti-aging tretmana:' },
+          { type: 'text', text: 'Starenje kože je prirodan proces koji uključuje:' },
           { type: 'text', text: '\n\n• ' },
-          { type: 'text', text: 'Plazma terapija', style: 'bold' },
-          { type: 'text', text: ' - prirodna regeneracija kože' },
+          { type: 'text', text: 'Smanjenje Proizvodnje Kolagena', style: 'bold' },
+          { type: 'text', text: ' - koža gubi strukturu i elastičnost' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Radiofrekvencija', style: 'bold' },
-          { type: 'text', text: ' - lifting i toniziranje kože' },
+          { type: 'text', text: 'Smanjenje Proizvodnje Elastina', style: 'bold' },
+          { type: 'text', text: ' - koža gubi sposobnost povratka u izvorno stanje' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Smanjenje Proizvodnje Hijaluronske Kiseline', style: 'bold' },
+          { type: 'text', text: ' - koža gubi hidrataciju i volumen' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Usporena Regeneracija', style: 'bold' },
+          { type: 'text', text: ' - stanice se sporije obnavljaju' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Smanjenje Proizvodnje Sebuma', style: 'bold' },
+          { type: 'text', text: ' - koža postaje suha i dehidratirana' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Oštećenja od Slobodnih Radikala', style: 'bold' },
+          { type: 'text', text: ' - UV zračenje i zagađenje oštećuju kožu' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Najučinkovitiji Anti-Aging Tretmani u VISAGE Studiju'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'U VISAGE studiju nudimo ' },
+          { type: 'text', text: 'širok spektar anti-aging tretmana', style: 'bold' },
+          { type: 'text', text: ' koji su prilagođeni različitim potrebama i tipovima kože:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Plazma Terapija', style: 'bold' },
+          { type: 'text', text: ' - prirodna regeneracija kože s vlastitim faktorima rasta' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Plasmage', style: 'bold' },
+          { type: 'text', text: ' - revolucionarna kombinacija plazme i radiofrekvencije' },
           { type: 'text', text: '\n• ' },
           { type: 'text', text: 'Mezoterapija', style: 'bold' },
-          { type: 'text', text: ' - dubinska hidratacija i regeneracija' },
+          { type: 'text', text: ' - dubinska hidratacija i regeneracija s vitaminima' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'LED terapija', style: 'bold' },
-          { type: 'text', text: ' - stimulacija proizvodnje kolagena' }
+          { type: 'text', text: 'Skin Boosteri', style: 'bold' },
+          { type: 'text', text: ' - volumizacija i hidratacija kože' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Kemijski Piling', style: 'bold' },
+          { type: 'text', text: ' - obnova površine kože i stimulacija kolagena' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Dermalni Fileri', style: 'bold' },
+          { type: 'text', text: ' - volumizacija i popravak kontura lica' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'LED Terapija', style: 'bold' },
+          { type: 'text', text: ' - stimulacija proizvodnje kolagena i elastina' }
+        ]
+              },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Kombinacija Anti-Aging Tretmana - Sinergijski Učinci'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Najbolji rezultati se postižu kombiniranjem različitih anti-aging tretmana:' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Plazma + Mezoterapija', style: 'bold' },
+            { type: 'text', text: ' - ' },
+            { type: 'link', text: 'Plazma terapija', href: '/usluge/prp' },
+            { type: 'text', text: ' potiče regeneraciju, a ' },
+            { type: 'link', text: 'mezoterapija', href: '/usluge/mezoterapija' },
+            { type: 'text', text: ' osigurava hidrataciju' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Kemijski Piling + Skin Boosteri', style: 'bold' },
+            { type: 'text', text: ' - ' },
+            { type: 'link', text: 'Kemijski piling', href: '/usluge/kemijski-piling' },
+            { type: 'text', text: ' priprema kožu za bolju apsorpciju ' },
+            { type: 'link', text: 'skin booster tretmana', href: '/usluge/skin-boosteri' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Plasmage + Dermalni Fileri', style: 'bold' },
+            { type: 'text', text: ' - ' },
+            { type: 'link', text: 'Plasmage', href: '/usluge/plasmage' },
+            { type: 'text', text: ' potiče regeneraciju, a ' },
+            { type: 'link', text: 'dermalni fileri', href: '/usluge/dermalni-fileri' },
+            { type: 'text', text: ' dodaju volumen' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'LED Terapija + TOSKANI Proizvodi', style: 'bold' },
+            { type: 'text', text: ' - LED potiče kolagen, a ' },
+            { type: 'link', text: 'TOSKANI proizvodi', href: '/usluge/toskani-proizvodi' },
+            { type: 'text', text: ' održavaju rezultate' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Anti-Aging Prema Dobu'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Različite dobi zahtijevaju različite pristupe:' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: '25-35 godina', style: 'bold' },
+            { type: 'text', text: ' - Preventivni pristup:' },
+            { type: 'text', text: '\n• Kemijski piling za obnovu površine' },
+            { type: 'text', text: '\n• Mezoterapija za hidrataciju' },
+            { type: 'text', text: '\n• LED terapija za stimulaciju kolagena' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: '35-45 godina', style: 'bold' },
+            { type: 'text', text: ' - Korektivni pristup:' },
+            { type: 'text', text: '\n• Plazma terapija za regeneraciju' },
+            { type: 'text', text: '\n• Skin boosteri za volumizaciju' },
+            { type: 'text', text: '\n• Dermalni fileri za konture' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: '45+ godina', style: 'bold' },
+            { type: 'text', text: ' - Intenzivni pristup:' },
+            { type: 'text', text: '\n• Plasmage za dubinsku regeneraciju' },
+            { type: 'text', text: '\n• Kombinacija više tretmana' },
+            { type: 'text', text: '\n• Redovito održavanje rezultata' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Kućna Anti-Aging Rutina'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Za optimalne rezultate, preporučujemo sljedeću rutinu:' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Jutarnja Rutina', style: 'bold' },
+            { type: 'text', text: ':' },
+            { type: 'text', text: '\n1. Blago čišćenje' },
+            { type: 'text', text: '\n2. Vitamin C serum (antioksidant)' },
+            { type: 'text', text: '\n3. Hijaluronska kiselina' },
+            { type: 'text', text: '\n4. Hidratantna krema' },
+            { type: 'text', text: '\n5. SPF 50+ (ključno za anti-aging!)' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Večernja Rutina', style: 'bold' },
+            { type: 'text', text: ':' },
+            { type: 'text', text: '\n1. Dubinsko čišćenje' },
+            { type: 'text', text: '\n2. Retinol (stimulira kolagen)' },
+            { type: 'text', text: '\n3. Peptidni serum' },
+            { type: 'text', text: '\n4. Bogata noćna krema' },
+            { type: 'text', text: '\n5. Masno ulje za zaključavanje' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Najbolji Anti-Aging Sastojci'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Ključni sastojci za anti-aging rutinu:' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Retinol', style: 'bold' },
+            { type: 'text', text: ' - zlatni standard za stimulaciju kolagena' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Vitamin C', style: 'bold' },
+            { type: 'text', text: ' - snažan antioksidant i stimulator kolagena' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Hijaluronska Kiselina', style: 'bold' },
+            { type: 'text', text: ' - hidratacija i volumizacija' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Peptidi', style: 'bold' },
+            { type: 'text', text: ' - signalne molekule za regeneraciju' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Niacinamid', style: 'bold' },
+            { type: 'text', text: ' - poboljšanje teksture i ton kože' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Alfa-Hidroksi Kiseline', style: 'bold' },
+            { type: 'text', text: ' - eksfolijacija i obnova površine' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Frekvencija Anti-Aging Tretmana'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Za optimalne rezultate preporučujemo:' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Preventivni Tretmani', style: 'bold' },
+            { type: 'text', text: ' - mjesečno za osobe 25-35 godina' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Korektivni Tretmani', style: 'bold' },
+            { type: 'text', text: ' - svaka 3-4 tjedna za osobe 35-45 godina' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Intenzivni Tretmani', style: 'bold' },
+            { type: 'text', text: ' - svaka 2-3 tjedna za osobe 45+ godina' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Održavanje', style: 'bold' },
+            { type: 'text', text: ' - mjesečno nakon postizanja željenih rezultata' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Tko je Idealni Kandidat?'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Anti-aging tretmani su idealni za osobe koje:' },
+            { type: 'text', text: '\n\n• Žele spriječiti znakove starenja' },
+            { type: 'text', text: '\n• Imaju fine linije i bore' },
+            { type: 'text', text: '\n• Primjećuju gubitak volumena lica' },
+            { type: 'text', text: '\n• Imaju suhu ili dehidratiranu kožu' },
+            { type: 'text', text: '\n• Žele poboljšati teksturu i ton kože' },
+            { type: 'text', text: '\n• Traže prirodne rezultate bez umjetnog izgleda' },
+            { type: 'text', text: '\n• Žele dugotrajne rezultate' }
+          ]
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Anti-aging tretmani su ' },
+            { type: 'text', text: 'investicija u vašu budućnost', style: 'bold' },
+            { type: 'text', text: '. U VISAGE studiju vam pomažemo postići mladolik izgled kroz prirodne, sigurne i učinkovite tretmane. Kombinirano s pravilnom kućnom njegom, možete postići ' },
+            { type: 'text', text: 'dugotrajne rezultate', style: 'bold' },
+            { type: 'text', text: ' koji će vas zadovoljiti godinama. Za više informacija o ' },
+            { type: 'link', text: 'cijenama anti-aging tretmana', href: '/cjenik' },
+            { type: 'text', text: ' ili ' },
+            { type: 'link', text: 'dogovorite konzultaciju', href: '/kontakt' },
+            { type: 'text', text: ' s našim stručnjacima.' }
         ]
       }
     ],
     date: new Date('2024-05-25'),
     author: 'dr. T. Torinek',
-    tags: ['Anti-aging', 'Estetska medicina', 'Njega kože'],
+      tags: ['Anti-aging', 'Estetska medicina', 'Njega kože', 'Mladolik izgled', 'Regeneracija kože'],
     image: '/images/services/botox-face-girl.webp'
   },
   {
     id: 11,
-    title: 'Plasmage - najnoviji trend u estetskoj medicini',
+    title: 'Plasmage - revolucionarna tehnologija za mladolik izgled',
     slug: 'plasmage-najnoviji-trend',
-    excerpt: 'Otkrijte revolucionarnu Plasmage tehnologiju koja kombinira plazmu i radiofrekvenciju za izvanredne rezultate u estetskoj medicini.',
+    excerpt: 'Plasmage je najnovija revolucionarna tehnologija u estetskoj medicini - otkrijte kako kombinacija plazme i radiofrekvencije može transformirati vašu kožu. Saznajte sve o ovom inovativnom tretmanu i kako se kombinira s drugim procedurama.',
     content: [
       {
         type: 'heading',
         level: 1,
-        text: 'Plasmage - najnoviji trend u estetskoj medicini'
+        text: 'Plasmage - Revolucionarna Tehnologija za Mladolik Izgled'
       },
       {
         type: 'text',
         text: [
           { type: 'text', text: 'Plasmage je ' },
           { type: 'text', text: 'revolucionarna tehnologija', style: 'bold' },
-          { type: 'text', text: ' koja kombinira prednosti plazma terapije i radiofrekvencije za postizanje izvanrednih rezultata u estetskoj medicini. Ova inovativna metoda predstavlja novi standard u neinvazivnim tretmanima za mladolik izgled.' }
+          { type: 'text', text: ' koja kombinira prednosti plazma terapije i radiofrekvencije za postizanje izvanrednih rezultata u estetskoj medicini. U VISAGE studiju ponosimo se što nudimo ovu ' },
+          { type: 'text', text: 'najnoviju inovativnu metodu', style: 'bold' },
+          { type: 'text', text: ' koja predstavlja novi standard u neinvazivnim tretmanima za mladolik izgled. Ova jedinstvena kombinacija omogućava rezultate koji su prethodno bili mogući samo uz invazivne zahvate.' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/plasmage-hero.webp',
         alt: 'Plasmage tretman',
-        caption: 'Plasmage - revolucionarna kombinacija plazme i radiofrekvencije'
+        caption: 'Plasmage - revolucionarna kombinacija plazme i radiofrekvencije u VISAGE studiju'
       },
       {
         type: 'heading',
         level: 2,
-        text: 'Kako radi Plasmage?'
+        text: 'Što Čini Plasmage Jedinstvenim?'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Plasmage tehnologija koristi jedinstvenu kombinaciju:' },
+          { type: 'text', text: 'Plasmage se ističe svojom ' },
+          { type: 'text', text: 'jedinstvenom kombinacijom dviju tehnologija', style: 'bold' },
+          { type: 'text', text: ':' },
           { type: 'text', text: '\n\n• ' },
-          { type: 'text', text: 'Plazma terapije', style: 'bold' },
-          { type: 'text', text: ' - prirodni faktori rasta iz vaše krvi' },
+          { type: 'text', text: 'Prirodni Faktori Rasta', style: 'bold' },
+          { type: 'text', text: ' - iz vaše vlastite krvi za sigurnu regeneraciju' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Radiofrekvencije', style: 'bold' },
-          { type: 'text', text: ' - kontrolirano zagrijavanje za stimulaciju kolagena' },
-          { type: 'text', text: '\n\nOva sinergija omogućuje dubinsku regeneraciju kože i postizanje rezultata koji su prethodno bili mogući samo uz invazivne zahvate.' }
+          { type: 'text', text: 'Kontrolirano Zagrijavanje', style: 'bold' },
+          { type: 'text', text: ' - radiofrekvencija potiče proizvodnju kolagena' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Sinergijski Učinak', style: 'bold' },
+          { type: 'text', text: ' - kombinacija je snažnija od pojedinačnih tretmana' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Minimalno Vrijeme Oporavka', style: 'bold' },
+          { type: 'text', text: ' - brz povratak normalnim aktivnostima' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Prirodni Rezultati', style: 'bold' },
+          { type: 'text', text: ' - bez umjetnog ili prenapetog izgleda' }
         ]
       },
       {
         type: 'heading',
         level: 2,
-        text: 'Prednosti Plasmage tretmana'
+        text: 'Kako Radi Plasmage Tehnologija?'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Plasmage nudi brojne prednosti u odnosu na tradicionalne metode:' },
+          { type: 'text', text: 'Plasmage tehnologija koristi ' },
+          { type: 'text', text: 'jedinstvenu kombinaciju dviju naprednih tehnologija', style: 'bold' },
+          { type: 'text', text: ':' },
           { type: 'text', text: '\n\n• ' },
-          { type: 'text', text: 'Dubinska regeneracija', style: 'bold' },
-          { type: 'text', text: ' - stimulacija proizvodnje kolagena i elastina' },
+          { type: 'text', text: 'Plazma Terapija', style: 'bold' },
+          { type: 'text', text: ' - prirodni faktori rasta iz vaše vlastite krvi za sigurnu regeneraciju' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Prirodni rezultati', style: 'bold' },
-          { type: 'text', text: ' - bez umjetnog izgleda' },
+          { type: 'text', text: 'Radiofrekvencija', style: 'bold' },
+          { type: 'text', text: ' - kontrolirano zagrijavanje dubinskih slojeva kože za stimulaciju kolagena' },
+          { type: 'text', text: '\n\nOva ' },
+          { type: 'text', text: 'sinergijska kombinacija', style: 'bold' },
+          { type: 'text', text: ' omogućuje dubinsku regeneraciju kože i postizanje rezultata koji su prethodno bili mogući samo uz invazivne zahvate. Plazma osigurava prirodne faktore rasta, dok radiofrekvencija potiče proizvodnju novog kolagena i elastina.' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Prednosti Plasmage Tretmana'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Plasmage nudi ' },
+          { type: 'text', text: 'brojne prednosti', style: 'bold' },
+          { type: 'text', text: ' u odnosu na tradicionalne metode:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Dubinska Regeneracija', style: 'bold' },
+          { type: 'text', text: ' - stimulacija proizvodnje kolagena i elastina u dubinskim slojevima' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Minimalno vrijeme oporavka', style: 'bold' },
-          { type: 'text', text: ' - brz povratak normalnim aktivnostima' },
+          { type: 'text', text: 'Prirodni Rezultati', style: 'bold' },
+          { type: 'text', text: ' - bez umjetnog ili prenapetog izgleda' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Dugotrajni učinak', style: 'bold' },
-          { type: 'text', text: ' - rezultati traju do 18 mjeseci' }
+          { type: 'text', text: 'Minimalno Vrijeme Oporavka', style: 'bold' },
+          { type: 'text', text: ' - brz povratak normalnim aktivnostima (1-3 dana)' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Dugotrajni Učinak', style: 'bold' },
+          { type: 'text', text: ' - rezultati traju do 18-24 mjeseci' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Sigurnost', style: 'bold' },
+          { type: 'text', text: ' - koristi vaše vlastite faktore rasta' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Neinvazivnost', style: 'bold' },
+          { type: 'text', text: ' - bez rezanja ili šavova' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Univerzalnost', style: 'bold' },
+          { type: 'text', text: ' - prikladan za sve tipove kože' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Kombinabilnost', style: 'bold' },
+          { type: 'text', text: ' - može se kombinirati s drugim tretmanima' }
         ]
       },
       {
@@ -1441,11 +2278,164 @@ export const blogPosts: BlogPost[] = [
           { type: 'link', text: 'cijenama i rasporedu tretmana', href: '/cjenik' },
           { type: 'text', text: ', dogovorite termin ili posjetite našu stranicu s cjenikom.' }
         ]
+              },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Kombinacija s Drugim Tretmanima - Sinergijski Učinci'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Plasmage se izvrsno kombinira s drugim estetskim tretmanima:' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Mezoterapija', style: 'bold' },
+            { type: 'text', text: ' - Plasmage potiče regeneraciju, a ' },
+            { type: 'link', text: 'mezoterapija', href: '/usluge/mezoterapija' },
+            { type: 'text', text: ' osigurava hidrataciju i vitamine' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Skin Boosteri', style: 'bold' },
+            { type: 'text', text: ' - Plasmage priprema kožu za bolju apsorpciju ' },
+            { type: 'link', text: 'skin booster tretmana', href: '/usluge/skin-boosteri' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Kemijski Piling', style: 'bold' },
+            { type: 'text', text: ' - ' },
+            { type: 'link', text: 'Kemijski piling', href: '/usluge/kemijski-piling' },
+            { type: 'text', text: ' priprema površinu, Plasmage regenerira dubinu' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Dermalni Fileri', style: 'bold' },
+            { type: 'text', text: ' - Plasmage potiče prirodnu regeneraciju, a ' },
+            { type: 'link', text: 'dermalni fileri', href: '/usluge/dermalni-fileri' },
+            { type: 'text', text: ' dodaju trenutni volumen' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'TOSKANI Proizvodi', style: 'bold' },
+            { type: 'text', text: ' - ' },
+            { type: 'link', text: 'TOSKANI proizvodi', href: '/usluge/toskani-proizvodi' },
+            { type: 'text', text: ' održavaju i potpomažu rezultate Plasmage tretmana' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Tijek Plasmage Tretmana'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Svaki Plasmage tretman se provodi u nekoliko faza:' },
+            { type: 'text', text: '\n\n1. ' },
+            { type: 'text', text: 'Konzultacija i Procjena', style: 'bold' },
+            { type: 'text', text: ' - određivanje potreba i planiranje tretmana' },
+            { type: 'text', text: '\n2. ' },
+            { type: 'text', text: 'Priprema Kože', style: 'bold' },
+            { type: 'text', text: ' - čišćenje i odmašćivanje kože' },
+            { type: 'text', text: '\n3. ' },
+            { type: 'text', text: 'Uzimanje Krvi', style: 'bold' },
+            { type: 'text', text: ' - priprema plazme s faktorima rasta' },
+            { type: 'text', text: '\n4. ' },
+            { type: 'text', text: 'Aplikacija Plazme', style: 'bold' },
+            { type: 'text', text: ' - precizno nanošenje plazme na ciljane područja' },
+            { type: 'text', text: '\n5. ' },
+            { type: 'text', text: 'Radiofrekvencija', style: 'bold' },
+            { type: 'text', text: ' - kontrolirano zagrijavanje za stimulaciju kolagena' },
+            { type: 'text', text: '\n6. ' },
+            { type: 'text', text: 'Završna Njega', style: 'bold' },
+            { type: 'text', text: ' - nanošenje umirujućih proizvoda i upute' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Očekivani Rezultati i Vremenski Okvir'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Rezultati Plasmage tretmana se postupno pojavljuju:' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Trenutni Učinci', style: 'bold' },
+            { type: 'text', text: ' (1-7 dana):' },
+            { type: 'text', text: '\n• Poboljšana hidratacija kože' },
+            { type: 'text', text: '\n• Smanjenje crvenila i iritacije' },
+            { type: 'text', text: '\n• Blago poboljšanje teksture' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Srednjoročni Učinci', style: 'bold' },
+            { type: 'text', text: ' (2-8 tjedana):' },
+            { type: 'text', text: '\n• Poboljšanje teksture i ton kože' },
+            { type: 'text', text: '\n• Smanjenje fine linija' },
+            { type: 'text', text: '\n• Povećanje elastičnosti' },
+            { type: 'text', text: '\n\n' },
+            { type: 'text', text: 'Dugoročni Učinci', style: 'bold' },
+            { type: 'text', text: ' (3-6 mjeseci):' },
+            { type: 'text', text: '\n• Vidljivo poboljšanje kontura lica' },
+            { type: 'text', text: '\n• Smanjenje dubokih bora' },
+            { type: 'text', text: '\n• Prirodni lifting učinak' },
+            { type: 'text', text: '\n• Dugotrajni rezultati (18-24 mjeseca)' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Tko je Idealni Kandidat za Plasmage?'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Plasmage je idealan za osobe koje:' },
+            { type: 'text', text: '\n\n• Imaju fine linije i bore' },
+            { type: 'text', text: '\n• Primjećuju gubitak volumena lica' },
+            { type: 'text', text: '\n• Žele prirodne rezultate bez umjetnog izgleda' },
+            { type: 'text', text: '\n• Imaju ožiljke ili oštećenja kože' },
+            { type: 'text', text: '\n• Žele poboljšati teksturu i ton kože' },
+            { type: 'text', text: '\n• Traže dugotrajne rezultate' },
+            { type: 'text', text: '\n• Imaju različite tipove kože (prikladan za sve)' },
+            { type: 'text', text: '\n• Žele minimalno vrijeme oporavka' }
+          ]
+        },
+        {
+          type: 'heading',
+          level: 2,
+          text: 'Nakon Tretmana - Oporavak i Njega'
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Za optimalne rezultate nakon Plasmage tretmana:' },
+            { type: 'text', text: '\n\n• ' },
+            { type: 'text', text: 'Prvih 24 sata', style: 'bold' },
+            { type: 'text', text: ' - izbjegavajte sunce, vrućinu i intenzivnu aktivnost' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Prvih 7 dana', style: 'bold' },
+            { type: 'text', text: ' - koristite blage proizvode za čišćenje i hidrataciju' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'SPF Zaštita', style: 'bold' },
+            { type: 'text', text: ' - obavezno koristite SPF 50+ svaki dan' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Hidratacija', style: 'bold' },
+            { type: 'text', text: ' - pijte puno vode za optimalne rezultate' },
+            { type: 'text', text: '\n• ' },
+            { type: 'text', text: 'Redovita Njega', style: 'bold' },
+            { type: 'text', text: ' - pratite preporučenu rutinu njege kože' }
+          ]
+        },
+        {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Plasmage predstavlja ' },
+            { type: 'text', text: 'budućnost estetske medicine', style: 'bold' },
+            { type: 'text', text: ', kombinirajući najbolje od prirodnih i tehnoloških rješenja za postizanje izvanrednih rezultata. U VISAGE studiju vam pomažemo postići mladolik izgled kroz ovu ' },
+            { type: 'text', text: 'revolucionarnu tehnologiju', style: 'bold' },
+            { type: 'text', text: '. Za više informacija o ' },
+            { type: 'link', text: 'cijenama i rasporedu tretmana', href: '/cjenik' },
+            { type: 'text', text: ' ili ' },
+            { type: 'link', text: 'dogovorite konzultaciju', href: '/kontakt' },
+            { type: 'text', text: ' s našim stručnjacima.' }
+        ]
       }
     ],
     date: new Date('2024-05-30'),
     author: 'dr. T. Torinek',
-    tags: ['Plasmage', 'Anti-aging', 'Estetska medicina', 'Radiofrekvencija'],
+      tags: ['Plasmage', 'Anti-aging', 'Estetska medicina', 'Radiofrekvencija', 'Plazma terapija', 'Mladolik izgled'],
     image: '/images/services/plasmage-hero.webp'
   }
 ]; 
