@@ -14,7 +14,7 @@ U Visage studiju koristimo najkvalitetnije proizvode i tehnike za terapiju bora,
   benefits: [
   ],
   image: '/images/services/manikura.webp',
-  heroImage: '/images/services/toskani-woman.webp',
+  heroImage: '/images/services/botox-face-girl.webp',
   metaDescription: 'Profesionalna terapija bora lica u VISAGE studiju u Siska. Smanjite i spriječite bore uz pomoć naprednih anti-aging metoda. Prirodni i dugotrajni rezultati.',
   metaKeywords: 'terapija bora, bore lica, prevencija bora, anti-aging, estetski studio Sisak, VISAGE studio, smanjenje bora',
   tags: ['terapija-bora', 'prevencija-bora', 'anti-aging', 'nježni-tretmani', 'lifting-lica'],
@@ -59,8 +59,7 @@ U Visage studiju koristimo najkvalitetnije proizvode i tehnike za terapiju bora,
     { 
       id: 'cijena', 
       label: 'Cijena', 
-      icon: 'FaHandHoldingUsd',
-      image: '/images/services/toskani-woman.webp'
+      icon: 'FaHandHoldingUsd'
     }
   ],
   stepContents: {

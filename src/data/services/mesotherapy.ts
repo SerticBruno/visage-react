@@ -14,7 +14,7 @@ U Visage studiju koristimo najnoviju tehnologiju Mesoject Gun-a koja osigurava p
   benefits: [
   ],
   image: '/images/services/Mesoterapia-transdermica-facial.webp',
-  heroImage: '/images/services/Mesoterapia-transdermica-facial.webp',
+  heroImage: '/images/services/toskani-hero.webp',
   metaDescription: 'Profesionalna mezoterapija u VISAGE studiju u Siska. Dubinska hidratacija i revitalizacija kože uz pomoć preciznih mikroinjekcija Mesoject Gun tehnologijom.',
   metaKeywords: 'mezoterapija, hidratacija kože, mikroinjekcije, estetski studio Sisak, VISAGE studio, Mesoject Gun, mezoterapija lica',
   tags: ['mezoterapija', 'hidratacija', 'mikroinjekcije', 'revitalizacija', 'mesoject-gun'],
@@ -59,8 +59,7 @@ U Visage studiju koristimo najnoviju tehnologiju Mesoject Gun-a koja osigurava p
     { 
       id: 'cijena', 
       label: 'Cijena', 
-      icon: 'FaHandHoldingUsd',
-      image: '/images/services/Mesoterapia-transdermica-facial.webp'
+      icon: 'FaHandHoldingUsd'
     }
   ],
   stepContents: {

@@ -59,8 +59,7 @@ U Visage studiju koristimo originalne Bio Sculpture proizvode i tehnike, što os
     { 
       id: 'cijena', 
       label: 'Cijena', 
-      icon: 'FaHandHoldingUsd',
-      image: '/images/services/manikura.webp'
+      icon: 'FaHandHoldingUsd'
     }
   ],
   stepContents: {

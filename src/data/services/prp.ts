@@ -14,7 +14,7 @@ U Visage studiju koristimo najnapredniju opremu za pripremu PRP-a, što osigurav
   benefits: [
   ],
   image: '/images/services/plasmage-hero.webp',
-  heroImage: '/images/services/MYV_selfie_details.webp',
+  heroImage: '/images/services/Mesoterapia-transdermica-facial.webp',
   metaDescription: 'Profesionalna PRP terapija u VISAGE studiju u Siska. Koristite vlastite trombocite za regeneraciju kože. Prirodna i sigurna metoda s vidljivim rezultatima.',
   metaKeywords: 'PRP terapija, regeneracija kože, trombociti, estetski studio Sisak, VISAGE studio, PRP lica, prirodna regeneracija',
   tags: ['prp', 'regeneracija', 'prirodni-tretmani', 'minimalno-invazivni', 'trombociti'],
@@ -59,8 +59,7 @@ U Visage studiju koristimo najnapredniju opremu za pripremu PRP-a, što osigurav
     { 
       id: 'cijena', 
       label: 'Cijena', 
-      icon: 'FaHandHoldingUsd',
-      image: '/images/services/MYV_selfie_details.webp'
+      icon: 'FaHandHoldingUsd'
     }
   ],
   stepContents: {

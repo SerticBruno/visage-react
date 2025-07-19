@@ -59,8 +59,7 @@ U Visage studiju koristimo najnapredniju Plasmage opremu, što osigurava optimal
     { 
       id: 'cijena', 
       label: 'Cijena', 
-      icon: 'FaHandHoldingUsd',
-      image: '/images/services/plasmage-hero.webp'
+      icon: 'FaHandHoldingUsd'
     }
   ],
   stepContents: {

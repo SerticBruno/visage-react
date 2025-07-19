@@ -429,7 +429,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                     )}
 
                     {/* Image for other tabs */}
-                    {activeTab !== 'prednosti' && (
+                    {activeTab !== 'prednosti' && activeTab !== 'cijena' && (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}

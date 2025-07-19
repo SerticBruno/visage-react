@@ -14,7 +14,7 @@ U Visage studiju koristimo najkvalitetnije skin boostere poput TKN HA3, Profhilo
   benefits: [
   ],
   image: '/images/services/obrve-i-trepavice.webp',
-  heroImage: '/images/services/toskani-hero.webp',
+  heroImage: '/images/services/skinboosteri-hero.webp',
   metaDescription: 'Profesionalni skin boosteri u VISAGE studiju u Siska. Duboka hidratacija i revitalizacija kože uz pomoć naprednih skin booster tretmana. Vidljivi i dugotrajni rezultati.',
   metaKeywords: 'skin boosteri, hidratacija kože, revitalizacija kože, estetski studio Sisak, VISAGE studio, TKN HA3, Profhilo, skin booster tretmani',
   tags: ['skin-boosteri', 'hidratacija', 'revitalizacija', 'minimalno-invazivni', 'mikroinjekcije'],
@@ -59,8 +59,7 @@ U Visage studiju koristimo najkvalitetnije skin boostere poput TKN HA3, Profhilo
     { 
       id: 'cijena', 
       label: 'Cijena', 
-      icon: 'FaHandHoldingUsd',
-      image: '/images/services/toskani-hero.webp'
+      icon: 'FaHandHoldingUsd'
     }
   ],
   stepContents: {

@@ -16,7 +16,7 @@ U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama kor
   benefits: [
   ],
   image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp',
-  heroImage: '/images/services/kemijski-piling/toskani-bg.webp',
+  heroImage: '/images/services/kemijski-piling/socialmedia_peelings_combined.webp',
   metaDescription: 'Profesionalni kemijski piling u VISAGE studiju u Siska. Obnovite svoju kožu uz pomoć naprednih kemijskih pilinzi TOSKANI. Rezultati odmah vidljivi.',
   metaKeywords: 'kemijski piling, piling lica, obnova kože, estetski studio Sisak, VISAGE studio, TOSKANI piling, kemijski piling Sisak',
   tags: ['kemijski-piling', 'piling', 'obnova-kože', 'nježni-tretmani'],
@@ -61,8 +61,7 @@ U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama kor
     { 
       id: 'cijena', 
       label: 'Cijena', 
-      icon: 'FaHandHoldingUsd',
-      image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp'
+      icon: 'FaHandHoldingUsd'
     }
   ],
   stepContents: {
