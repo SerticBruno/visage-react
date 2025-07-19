@@ -487,206 +487,588 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 3,
-    title: 'Savršene obrve i trepavice - ključ za izražajni pogled',
+    title: 'Savršene Obrve i Trepavice - Umjetnost Izražajnog Pogleda',
     slug: 'obrve-trepavice',
-    excerpt: 'Saznajte kako postići savršene obrve i trepavice koje će vašem licu dati izražajnost i mladolik izgled.',
+    excerpt: 'Otkrijte tajne savršenih obrva i trepavica koji definiraju vaš izraz lica. Saznajte sve o profesionalnim tretmanima i kako postići prirodan, dugotrajan rezultat koji će vašem licu dati izražajnost i mladolik izgled.',
     content: [
       {
         type: 'heading',
         level: 1,
-        text: 'Savršene obrve i trepavice - ključ za izražajni pogled'
+        text: 'Savršene Obrve i Trepavice - Umjetnost Izražajnog Pogleda'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Obrve i trepavice igraju ključnu ulogu u izgledu našeg lica. Dobro oblikovane obrve mogu potpuno promijeniti izraz lica, dok duge i guste trepavice daju očima izražajnost i mladolik izgled.' }
+          { type: 'text', text: 'Obrve i trepavice su ' },
+          { type: 'text', text: 'ključni elementi', style: 'bold' },
+          { type: 'text', text: ' koji definiraju izraz našeg lica i igraju presudnu ulogu u općenitom izgledu. Dobro oblikovane obrve mogu potpuno transformirati izraz lica, dok duge i guste trepavice daju očima ' },
+          { type: 'text', text: 'izražajnost i mladolik sjaj', style: 'bold' },
+          { type: 'text', text: '. U VISAGE studiju specijalizirani smo za stvaranje savršenih obrva i trepavica koji će vam dati prirodan, dugotrajan rezultat.' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/obrve-i-trepavice.webp',
         alt: 'Tretman obrva',
-        caption: 'Profesionalni tretman obrva za savršen izgled'
+        caption: 'Profesionalni tretman obrva u VISAGE studiju'
       },
       {
         type: 'heading',
         level: 2,
-        text: 'Naše usluge'
+        text: 'Zašto su Obrve i Trepavice Tako Važni?'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'U našem salonu nudimo širok spektar tretmana:' },
+          { type: 'text', text: 'Obrve i trepavice su ' },
+          { type: 'text', text: 'okvir za naše oči', style: 'bold' },
+          { type: 'text', text: ' i igraju ključnu ulogu u:' },
           { type: 'text', text: '\n\n• ' },
-          { type: 'text', text: 'Laminacija obrva', style: 'bold' },
-          { type: 'text', text: ' - dugotrajno oblikovanje i volumizacija' },
+          { type: 'text', text: 'Definiranju izraza lica', style: 'bold' },
+          { type: 'text', text: ' - obrve su "okvir" koji definira vaš izraz' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Tintiranje trepavica', style: 'bold' },
-          { type: 'text', text: ' - intenzivniji i izražajniji pogled' },
+          { type: 'text', text: 'Balansiranju proporcija lica', style: 'bold' },
+          { type: 'text', text: ' - pravilno oblikovane obrve mogu "otvoriti" oči' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Lifting trepavica', style: 'bold' },
-          { type: 'text', text: ' - prirodno podizanje i volumizacija' },
+          { type: 'text', text: 'Stvaranju mladolikog izgleda', style: 'bold' },
+          { type: 'text', text: ' - guste trepavice daju očima dubinu i izražajnost' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Mikroblading', style: 'bold' },
-          { type: 'text', text: ' - polutrajno oblikovanje obrva' }
+          { type: 'text', text: 'Poboljšanju samopouzdanja', style: 'bold' },
+          { type: 'text', text: ' - savršene obrve i trepavice podižu samopouzdanje' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Naše Profesionalne Usluge'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'U VISAGE studiju nudimo ' },
+          { type: 'text', text: 'širok spektar profesionalnih tretmana', style: 'bold' },
+          { type: 'text', text: ' za obrve i trepavice:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Laminacija Obrva', style: 'bold' },
+          { type: 'text', text: ' - dugotrajno oblikovanje i volumizacija obrva (6-8 tjedana)' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Tintiranje Trepavica', style: 'bold' },
+          { type: 'text', text: ' - intenzivniji i izražajniji pogled (4-6 tjedana)' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Lifting Trepavica', style: 'bold' },
+          { type: 'text', text: ' - prirodno podizanje i volumizacija (6-8 tjedana)' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Mikroblading Obrva', style: 'bold' },
+          { type: 'text', text: ' - polutrajno oblikovanje obrva (1-3 godine)' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Kombinirani Tretmani', style: 'bold' },
+          { type: 'text', text: ' - personalizirane kombinacije za optimalne rezultate' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/botox-face-girl.webp',
         alt: 'Tretman trepavica',
-        caption: 'Tretman trepavica za izražajniji pogled'
+        caption: 'Profesionalni tretman trepavica u VISAGE studiju'
       },
       {
         type: 'heading',
         level: 2,
-        text: 'Prednosti naših tretmana'
+        text: 'Prednosti Naših Tretmana'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Svaki tretman je prilagođen individualnim potrebama klijenta:' },
-          { type: 'text', text: '\n\n• Prirodan izgled' },
-          { type: 'text', text: '\n• Dugotrajni rezultati' },
-          { type: 'text', text: '\n• Minimalno vrijeme oporavka' },
-          { type: 'text', text: '\n• Profesionalna primjena' }
+          { type: 'text', text: 'Svaki tretman u VISAGE studiju je ' },
+          { type: 'text', text: 'prilagođen individualnim potrebama', style: 'bold' },
+          { type: 'text', text: ' klijenta:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Prirodan Izgled', style: 'bold' },
+          { type: 'text', text: ' - rezultati izgledaju prirodno i suptilno' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Dugotrajni Rezultati', style: 'bold' },
+          { type: 'text', text: ' - od 4 tjedana do 3 godine ovisno o tretmanu' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Minimalno Vrijeme Oporavka', style: 'bold' },
+          { type: 'text', text: ' - većina tretmana ne zahtijeva oporavak' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Profesionalna Primjena', style: 'bold' },
+          { type: 'text', text: ' - iskusni stručnjaci s najnovijim tehnikama' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Sigurnost i Higijena', style: 'bold' },
+          { type: 'text', text: ' - najviši standardi sigurnosti i higijene' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Kombinacija s Drugim Tretmanima'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Tretmani obrva i trepavica se izvrsno kombiniraju s drugim estetskim tretmanima:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Kozmetički Tretmani', style: 'bold' },
+          { type: 'text', text: ' - Kombinacija s ' },
+          { type: 'link', text: 'kozmetičkim tretmanima', href: '/usluge/beauty-tretmani' },
+          { type: 'text', text: ' za kompletnu njegu lica' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Anti-Aging Tretmani', style: 'bold' },
+          { type: 'text', text: ' - Savršeno se nadopunjuje s ' },
+          { type: 'link', text: 'plazma terapijom', href: '/usluge/plasmage' },
+          { type: 'text', text: ' i drugim anti-aging procedurama' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Njega Ruku i Noktiju', style: 'bold' },
+          { type: 'text', text: ' - Kompletna njega s ' },
+          { type: 'link', text: 'profesionalnom manikurom', href: '/usluge/bio-sculpture' },
+          { type: 'text', text: ' za savršen izgled' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Tko je Idealni Kandidat?'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Naši tretmani su idealni za osobe koje žele:' },
+          { type: 'text', text: '\n\n• Poboljšati izraz lica i definiciju obrva' },
+          { type: 'text', text: '\n• Postići izražajniji i mladolik pogled' },
+          { type: 'text', text: '\n• Uštedjeti vrijeme na svakodnevnom šminkanju' },
+          { type: 'text', text: '\n• Prirodan i dugotrajan rezultat' },
+          { type: 'text', text: '\n• Profesionalnu primjenu i savjete' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Tijek Tretmana'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Svaki tretman se provodi u nekoliko faza:' },
+          { type: 'text', text: '\n\n1. ' },
+          { type: 'text', text: 'Konzultacija', style: 'bold' },
+          { type: 'text', text: ' - procjena potreba i odabir najboljeg tretmana' },
+          { type: 'text', text: '\n2. ' },
+          { type: 'text', text: 'Priprema', style: 'bold' },
+          { type: 'text', text: ' - čišćenje i priprema područja za tretman' },
+          { type: 'text', text: '\n3. ' },
+          { type: 'text', text: 'Aplikacija', style: 'bold' },
+          { type: 'text', text: ' - precizna primjena odabranog tretmana' },
+          { type: 'text', text: '\n4. ' },
+          { type: 'text', text: 'Završna njega', style: 'bold' },
+          { type: 'text', text: ' - upute za naknadnu njegu i održavanje' }
         ]
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Naši stručnjaci će vam pomoći odabrati najbolji tretman za vaše potrebe i želje, osiguravajući prirodan i dugotrajan rezultat.' }
+          { type: 'text', text: 'Naši stručnjaci će vam pomoći odabrati najbolji tretman za vaše potrebe i želje, osiguravajući prirodan i dugotrajan rezultat. Za više informacija o ' },
+          { type: 'link', text: 'cijenama i rasporedu tretmana', href: '/cjenik' },
+          { type: 'text', text: ' ili ' },
+          { type: 'link', text: 'dogovorite termin', href: '/kontakt' },
+          { type: 'text', text: ' u VISAGE studiju.' }
         ]
       }
     ],
     date: new Date('2024-03-20'),
     author: 'Mia Torinek',
-    tags: ['Obrve', 'Trepavice', 'Laminacija'],
+    tags: ['Obrve', 'Trepavice', 'Laminacija', 'Mikroblading', 'Lifting trepavica', 'Tintiranje', 'Estetska medicina', 'Izražajni pogled'],
     image: '/images/services/obrve-i-trepavice.webp'
   },
   {
     id: 4,
-    title: 'Toskani - vrhunski proizvodi za njegu kože',
+    title: 'TOSKANI - Vrhunska Linija za Profesionalnu Njegu Kože',
     slug: 'toskani-proizvodi',
-    excerpt: 'Upoznajte Toskani proizvode - vrhunsku liniju za njegu kože koja kombinira prirodne sastojke i najnovije tehnologije.',
+    excerpt: 'Otkrijte TOSKANI proizvode - vrhunsku liniju za njegu kože koja kombinira prirodne sastojke s najnovijim tehnologijama. Saznajte kako TOSKANI proizvodi mogu transformirati vašu kožu i kako se kombiniraju s našim profesionalnim tretmanima.',
     content: [
       {
         type: 'heading',
         level: 1,
-        text: 'Toskani - vrhunski proizvodi za njegu kože'
+        text: 'TOSKANI - Vrhunska Linija za Profesionalnu Njegu Kože'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Toskani je vodeći proizvođač kozmetičkih proizvoda koji kombiniraju prirodne sastojke s najnovijim tehnologijama. Njihova linija proizvoda je specijalizirana za različite tipove kože i probleme, pružajući rješenja koja su i učinkovita i blaga za kožu.' }
+          { type: 'text', text: 'TOSKANI je ' },
+          { type: 'text', text: 'vodeći talijanski proizvođač', style: 'bold' },
+          { type: 'text', text: ' kozmetičkih proizvoda koji kombiniraju prirodne sastojke s najnovijim tehnologijama. Njihova linija proizvoda je specijalizirana za različite tipove kože i probleme, pružajući rješenja koja su i ' },
+          { type: 'text', text: 'učinkovita i blaga za kožu', style: 'bold' },
+          { type: 'text', text: '. U VISAGE studiju koristimo isključivo TOSKANI proizvode jer vjerujemo u njihovu kvalitetu i učinkovitost.' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/toskani-hero.webp',
-        alt: 'Toskani proizvodi',
-        caption: 'Toskani linija proizvoda za njegu kože'
+        alt: 'TOSKANI proizvodi',
+        caption: 'TOSKANI linija proizvoda za profesionalnu njegu kože'
       },
       {
         type: 'heading',
         level: 2,
-        text: 'Prednosti Toskani proizvoda'
+        text: 'TOSKANI Filozofija - Priroda i Tehnologija'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Toskani proizvodi se ističu svojim jedinstvenim svojstvima:' },
+          { type: 'text', text: 'TOSKANI je nastao iz ' },
+          { type: 'text', text: 'ljubavi prema prirodi i znanosti', style: 'bold' },
+          { type: 'text', text: '. Njihova filozofija temelji se na:' },
           { type: 'text', text: '\n\n• ' },
-          { type: 'text', text: 'Prirodni sastojci', style: 'bold' },
-          { type: 'text', text: ' - visokokvalitetni ekstrakti iz prirode' },
+          { type: 'text', text: 'Prirodnim Sastojcima', style: 'bold' },
+          { type: 'text', text: ' - korištenje najkvalitetnijih prirodnih ekstrakata' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Dokazana učinkovitost', style: 'bold' },
-          { type: 'text', text: ' - rezultati potvrđeni kliničkim istraživanjima' },
+          { type: 'text', text: 'Naprednim Tehnologijama', style: 'bold' },
+          { type: 'text', text: ' - najnoviji znanstveni pristup formulaciji' },
           { type: 'text', text: '\n• ' },
-          { type: 'text', text: 'Visoka kvaliteta', style: 'bold' },
-          { type: 'text', text: ' - proizvedeno u Italiji po najvišim standardima' },
+          { type: 'text', text: 'Dokazanoj Učinkovitosti', style: 'bold' },
+          { type: 'text', text: ' - klinički testirani i potvrđeni rezultati' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Sigurnosti i Kvaliteti', style: 'bold' },
+          { type: 'text', text: ' - najviši standardi proizvodnje u Italiji' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Prednosti TOSKANI Proizvoda'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'TOSKANI proizvodi se ističu svojim jedinstvenim svojstvima:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Prirodni Sastojci', style: 'bold' },
+          { type: 'text', text: ' - visokokvalitetni ekstrakti iz prirode bez parabena i sulfata' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Dokazana Učinkovitost', style: 'bold' },
+          { type: 'text', text: ' - rezultati potvrđeni kliničkim istraživanjima i dermatološkim testovima' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Visoka Kvaliteta', style: 'bold' },
+          { type: 'text', text: ' - proizvedeno u Italiji po najvišim standardima i GMP certifikaciji' },
           { type: 'text', text: '\n• ' },
           { type: 'text', text: 'Prilagodljivost', style: 'bold' },
-          { type: 'text', text: ' - odgovara svim tipovima kože' }
+          { type: 'text', text: ' - odgovara svim tipovima kože i različitim potrebama' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Profesionalna Formulacija', style: 'bold' },
+          { type: 'text', text: ' - razvijeno za profesionalnu upotrebu u salonima' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Dugotrajni Rezultati', style: 'bold' },
+          { type: 'text', text: ' - vidljivi i trajni rezultati uz redovitu upotrebu' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/toskani-woman.webp',
-        alt: 'Toskani tretman',
-        caption: 'Profesionalni tretman s Toskani proizvodima'
+        alt: 'TOSKANI tretman',
+        caption: 'Profesionalni tretman s TOSKANI proizvodima u VISAGE studiju'
       },
       {
         type: 'heading',
         level: 2,
-        text: 'Naše Toskani usluge'
+        text: 'TOSKANI Linije Proizvoda'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'U našem salonu možete pronaći:' },
-          { type: 'text', text: '\n\n• Profesionalne tretmane s Toskani proizvodima' },
-          { type: 'text', text: '\n• Individualne savjete za kućnu njegu' },
-          { type: 'text', text: '\n• Kompletne linije proizvoda' },
-          { type: 'text', text: '\n• Redovne promocije i posebne ponude' }
+          { type: 'text', text: 'TOSKANI nudi ' },
+          { type: 'text', text: 'specijalizirane linije proizvoda', style: 'bold' },
+          { type: 'text', text: ' za različite potrebe kože:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Anti-Aging Linija', style: 'bold' },
+          { type: 'text', text: ' - proizvodi za mladolik izgled i smanjenje bora' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Hidratacijska Linija', style: 'bold' },
+          { type: 'text', text: ' - dubinska hidratacija i regeneracija kože' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Čišćenje i Detoks', style: 'bold' },
+          { type: 'text', text: ' - blago čišćenje i detoksifikacija kože' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Zaštita od Sunca', style: 'bold' },
+          { type: 'text', text: ' - visoka zaštita SPF 50+ za svaki dan' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Specijalizirani Tretmani', style: 'bold' },
+          { type: 'text', text: ' - proizvodi za specifične probleme kože' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Kombinacija s Profesionalnim Tretmanima'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'TOSKANI proizvodi se izvrsno kombiniraju s našim profesionalnim tretmanima:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Kemijski Piling', style: 'bold' },
+          { type: 'text', text: ' - TOSKANI proizvodi se koriste u ' },
+          { type: 'link', text: 'kemijskim pilingima', href: '/usluge/kemijski-piling' },
+          { type: 'text', text: ' za optimalne rezultate' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Mesoterapija', style: 'bold' },
+          { type: 'text', text: ' - TOSKANI kreme potpomažu rezultate ' },
+          { type: 'link', text: 'mesoterapije', href: '/usluge/mezoterapija' },
+          { type: 'text', text: ' i produžavaju učinak' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Plazma Terapija', style: 'bold' },
+          { type: 'text', text: ' - TOSKANI proizvodi potpomažu regeneraciju nakon ' },
+          { type: 'link', text: 'plazma terapije', href: '/usluge/plasmage' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Kućna Njega', style: 'bold' },
+          { type: 'text', text: ' - personalizirane rutine za održavanje rezultata tretmana' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Naše TOSKANI Usluge'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'U VISAGE studiju nudimo:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Profesionalne Tretmane', style: 'bold' },
+          { type: 'text', text: ' - s TOSKANI proizvodima za optimalne rezultate' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Individualne Savjete', style: 'bold' },
+          { type: 'text', text: ' - personalizirane preporuke za vašu kožu' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Kompletne Linije Proizvoda', style: 'bold' },
+          { type: 'text', text: ' - sve TOSKANI proizvode možete pronaći kod nas' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Redovne Promocije', style: 'bold' },
+          { type: 'text', text: ' - posebne ponude i paketi tretmana' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Zašto Odabrati TOSKANI?'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'TOSKANI je idealan izbor za osobe koje traže:' },
+          { type: 'text', text: '\n\n• Prirodne i sigurne proizvode za njegu kože' },
+          { type: 'text', text: '\n• Profesionalnu kvalitetu i dokazanu učinkovitost' },
+          { type: 'text', text: '\n• Proizvode koji se kombiniraju s profesionalnim tretmanima' },
+          { type: 'text', text: '\n• Dugotrajne rezultate i vidljivo poboljšanje kože' },
+          { type: 'text', text: '\n• Proizvode prilagođene različitim tipovima kože' }
         ]
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Naši stručnjaci će vam pomoći odabrati najbolje Toskani proizvode za vašu kožu i naučiti vas kako ih pravilno koristiti za optimalne rezultate.' }
+          { type: 'text', text: 'Naši stručnjaci će vam pomoći odabrati najbolje TOSKANI proizvode za vašu kožu i naučiti vas kako ih pravilno koristiti za optimalne rezultate. Za više informacija o ' },
+          { type: 'link', text: 'cijenama proizvoda', href: '/cjenik' },
+          { type: 'text', text: ' ili ' },
+          { type: 'link', text: 'dogovorite konzultaciju', href: '/kontakt' },
+          { type: 'text', text: ' u VISAGE studiju.' }
         ]
       }
     ],
     date: new Date('2024-03-25'),
     author: 'Mia Torinek',
-    tags: ['Toskani', 'Njega kože', 'Kozmetika'],
+    tags: ['TOSKANI', 'Njega kože', 'Kozmetika', 'Profesionalni proizvodi', 'Anti-aging', 'Hidratacija', 'Talijanska kozmetika', 'Prirodni sastojci'],
     image: '/images/services/toskani-hero.webp'
   },
   {
     id: 5,
-    title: 'Mesoterapija - prirodna metoda za hidrataciju kože',
-    slug: 'mesoterapija',
-    excerpt: 'Otkrijte prednosti mesoterapije - prirodne metode za dubinsku hidrataciju i regeneraciju kože.',
+    title: 'Mezoterapija - Dubinska Hidratacija i Regeneracija Kože',
+    slug: 'mezoterapija',
+    excerpt: 'Mezoterapija je revolucionarna metoda koja koristi prirodne sastojke za dubinsku hidrataciju i regeneraciju kože. Saznajte sve o ovoj minimalno invazivnoj tehnici i kako se kombinira s drugim tretmanima za optimalne rezultate.',
     content: [
+      {
+        type: 'heading',
+        level: 1,
+        text: 'Mezoterapija - Dubinska Hidratacija i Regeneracija Kože'
+      },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Mesoterapija je minimalno invazivna metoda koja uključuje injekciju prirodnih sastojaka direktno u srednji sloj kože. Ova tehnika omogućuje direktnu dostavu aktivnih sastojaka u područje koje zahtijeva tretman.' }
+          { type: 'text', text: 'Mezoterapija je ' },
+          { type: 'text', text: 'revolucionarna minimalno invazivna metoda', style: 'bold' },
+          { type: 'text', text: ' koja uključuje injekciju prirodnih sastojaka direktno u srednji sloj kože. Ova tehnika omogućuje ' },
+          { type: 'text', text: 'direktnu dostavu aktivnih sastojaka', style: 'bold' },
+          { type: 'text', text: ' u područje koje zahtijeva tretman, pružajući dubinsku hidrataciju i potičući prirodnu regeneraciju kože.' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/Mesoterapia-transdermica-facial.webp',
-        alt: 'Mesoterapija tretman',
-        caption: 'Profesionalni tretman mesoterapije'
+        alt: 'Mezoterapija tretman',
+        caption: 'Profesionalni tretman mezoterapije u VISAGE studiju'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Što je Mezoterapija?'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Prednosti mesoterapije:' },
-          { type: 'text', text: '\n- Dubinska hidratacija' },
-          { type: 'text', text: '\n- Stimulacija proizvodnje kolagena' },
-          { type: 'text', text: '\n- Poboljšanje tonusa kože' },
-          { type: 'text', text: '\n- Smanjenje finih linija' }
+          { type: 'text', text: 'Mezoterapija je ' },
+          { type: 'text', text: 'minimalno invazivna tehnika', style: 'bold' },
+          { type: 'text', text: ' koja koristi vrlo tanke iglice za injiciranje koktela prirodnih sastojaka direktno u ' },
+          { type: 'text', text: 'srednji sloj kože (dermis)', style: 'bold' },
+          { type: 'text', text: '. Ova metoda omogućava direktnu dostavu aktivnih sastojaka tamo gdje su najpotrebniji, zaobilazeći površinski sloj kože i osiguravajući maksimalnu apsorpciju.' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Prednosti Mezoterapije'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Mezoterapija nudi brojne prednosti koje je čine nezamjenjivom u modernoj estetskoj medicini:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Dubinska Hidratacija', style: 'bold' },
+          { type: 'text', text: ' - direktna dostava vode i hidratantnih sastojaka u dermis' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Stimulacija Kolagena', style: 'bold' },
+          { type: 'text', text: ' - potiče prirodnu proizvodnju kolagena i elastina' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Poboljšanje Tonusa Kože', style: 'bold' },
+          { type: 'text', text: ' - zaglađuje teksturu i poboljšava elastičnost' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Smanjenje Fine Linija', style: 'bold' },
+          { type: 'text', text: ' - prirodno podmlađivanje bez invazivnih zahvata' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Prirodni Sastojci', style: 'bold' },
+          { type: 'text', text: ' - koristi vitaminima, mineralima i aminokiselinama' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Minimalno Vrijeme Oporavka', style: 'bold' },
+          { type: 'text', text: ' - većina klijenata se može vratiti normalnim aktivnostima isti dan' }
         ]
       },
       {
         type: 'image',
         src: '/images/services/TKNHA3_.webp',
-        alt: 'Rezultati mesoterapije',
-        caption: 'Vidljivi rezultati nakon tretmana'
+        alt: 'Rezultati mezoterapije',
+        caption: 'Vidljivi rezultati nakon serije tretmana mezoterapije'
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Kombinacija s Drugim Tretmanima - Sinergijski Učinci'
+      },
+              {
+          type: 'text',
+          text: [
+            { type: 'text', text: 'Mezoterapija se izvrsno kombinira s drugim estetskim tretmanima:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Kemijski Piling', style: 'bold' },
+          { type: 'text', text: ' - Kombinacija s ' },
+          { type: 'link', text: 'kemijskim pilingom', href: '/usluge/kemijski-piling' },
+          { type: 'text', text: ' omogućava bolju apsorpciju aktivnih sastojaka' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'PRP Terapija', style: 'bold' },
+          { type: 'text', text: ' - Kombinacija s ' },
+          { type: 'link', text: 'PRP tretmanima', href: '/usluge/prp' },
+          { type: 'text', text: ' potiče dubinsku regeneraciju i potpomaže rezultate' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Skin Boosteri', style: 'bold' },
+          { type: 'text', text: ' - Kombinacija s ' },
+          { type: 'link', text: 'skin booster tretmanima', href: '/usluge/skin-boosteri' },
+          { type: 'text', text: ' pruža dodatnu hidrataciju i volumizaciju' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'TOSKANI Proizvodi', style: 'bold' },
+          { type: 'text', text: ' - ' },
+          { type: 'link', text: 'TOSKANI kreme', href: '/usluge/toskani-proizvodi' },
+          { type: 'text', text: ' potpomažu i produžavaju učinak mesoterapije' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Tko je Idealni Kandidat?'
       },
       {
         type: 'text',
         text: [
-          { type: 'text', text: 'Tretman je prilagođen individualnim potrebama kože i može se kombinirati s drugim tretmanima za optimalne rezultate.' }
+          { type: 'text', text: 'Mezoterapija je idealna za osobe koje žele:' },
+          { type: 'text', text: '\n\n• Poboljšati hidrataciju i elastičnost kože' },
+          { type: 'text', text: '\n• Smanjiti fine linije i bore' },
+          { type: 'text', text: '\n• Poboljšati teksturu i ton kože' },
+          { type: 'text', text: '\n• Postići prirodan anti-aging učinak' },
+          { type: 'text', text: '\n• Stimulirati proizvodnju kolagena' },
+          { type: 'text', text: '\n• Prirodan i dugotrajan rezultat' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Tijek Tretmana'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Tretman mezoterapije u VISAGE studiju se provodi u nekoliko faza:' },
+          { type: 'text', text: '\n\n1. ' },
+          { type: 'text', text: 'Konzultacija i Procjena', style: 'bold' },
+          { type: 'text', text: ' - određivanje potreba kože i planiranje tretmana' },
+          { type: 'text', text: '\n2. ' },
+          { type: 'text', text: 'Priprema Kože', style: 'bold' },
+          { type: 'text', text: ' - čišćenje i dezinfekcija područja za tretman' },
+          { type: 'text', text: '\n3. ' },
+          { type: 'text', text: 'Aplikacija', style: 'bold' },
+          { type: 'text', text: ' - precizno injiciranje koktela sastojaka' },
+          { type: 'text', text: '\n4. ' },
+          { type: 'text', text: 'Završna Njega', style: 'bold' },
+          { type: 'text', text: ' - nanošenje umirujućih proizvoda' }
+        ]
+      },
+      {
+        type: 'heading',
+        level: 2,
+        text: 'Očekivani Rezultati'
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Nakon serije tretmana mezoterapije možete očekivati:' },
+          { type: 'text', text: '\n\n• ' },
+          { type: 'text', text: 'Dubinsku Hidrataciju', style: 'bold' },
+          { type: 'text', text: ' - koža postaje mekana i hidratirana' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Poboljšanu Elastičnost', style: 'bold' },
+          { type: 'text', text: ' - koža postaje elastičnija i mladolikija' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Smanjenje Fine Linija', style: 'bold' },
+          { type: 'text', text: ' - prirodno podmlađivanje' },
+          { type: 'text', text: '\n• ' },
+          { type: 'text', text: 'Poboljšanu Teksturu', style: 'bold' },
+          { type: 'text', text: ' - glatka i sjajna koža' }
+        ]
+      },
+      {
+        type: 'text',
+        text: [
+          { type: 'text', text: 'Za najbolje rezultate preporučujemo seriju od ' },
+          { type: 'text', text: '4-6 tretmana', style: 'bold' },
+          { type: 'text', text: ' u razmaku od ' },
+          { type: 'text', text: '2-4 tjedana', style: 'bold' },
+          { type: 'text', text: '. Rezultati su kumulativni i traju do ' },
+          { type: 'text', text: '12 mjeseci', style: 'bold' },
+          { type: 'text', text: '. Za više informacija o ' },
+          { type: 'link', text: 'cijenama i rasporedu tretmana', href: '/cjenik' },
+          { type: 'text', text: ' ili ' },
+          { type: 'link', text: 'dogovorite termin', href: '/kontakt' },
+          { type: 'text', text: ' u VISAGE studiju.' }
         ]
       }
     ],
     date: new Date('2024-05-07'),
     author: 'dr. T. Torinek',
-    tags: ['Mesoterapija', 'Hidratacija', 'Anti-aging'],
+    tags: ['Mezoterapija', 'Hidratacija', 'Anti-aging', 'Regeneracija kože', 'Kolagen', 'Estetska medicina', 'Minimalno invazivni tretmani'],
     image: '/images/services/Mesoterapia-transdermica-facial.webp'
   },
   {
