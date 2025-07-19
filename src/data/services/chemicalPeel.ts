@@ -4,15 +4,15 @@ export const chemicalPeel: Service = {
   id: 'kemijski-piling',
   title: 'Kemijski Piling',
   description: 'Otkrijte tajnu blistave kože uz TOSKANI pilinge',
-  longDescription: `Želite li postići ujednačen ten, smanjiti vidljivost pora ili se riješiti nepravilnosti? TOSKANI kemijski piling pružit će vam upravo to, svjež, zdrav i mladenački izgled kože.
+  longDescription: `Želite li postići <strong>ujednačen ten</strong>, <strong>smanjiti vidljivost pora</strong> ili se riješiti <strong>nepravilnosti</strong>? <strong>TOSKANI kemijski piling</strong> pružit će vam upravo to, <strong>svjež, zdrav i mladenački izgled kože</strong>.
 
-Kemijski piling je tehnika koja se koristi za poboljšanje izgleda kože putem kontroliranog kemijskog oštećenja određenih slojeva epiderme ili dermisa.
+<strong>Kemijski piling</strong> je tehnika koja se koristi za poboljšanje izgleda kože putem <strong>kontroliranog kemijskog oštećenja</strong> određenih slojeva epiderme ili dermisa.
 
-Ova tehnika je ključan korak u njezi kože, jer uklanja mrtve stanice s površine kože, potiče regeneraciju stanica te smanjuje pojavu nepravilnosti poput hiperpigmentacija, preranog starenja, akni i proširenih pora.
+Ova tehnika je <strong>ključan korak u njezi kože</strong>, jer <strong>uklanja mrtve stanice</strong> s površine kože, <strong>potiče regeneraciju stanica</strong> te <strong>smanjuje pojavu nepravilnosti</strong> poput <strong>hiperpigmentacija</strong>, <strong>preranog starenja</strong>, <strong>akni</strong> i <strong>proširenih pora</strong>.
 
-Koristi se najčešće u sinergiji s drugim estetskim tretmanima: mezoterapija, PRP tretman i skinboosteri.
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <strong>mezoterapija</strong>, <strong>PRP tretman</strong> i <strong>skinboosteri</strong>.
 
-U Visage studiju prilagođavamo svaki tretman vašim individualnim potrebama koristeći kombinaciju nježnih kiselina kako bismo postigli optimalne rezultate.`,
+U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>individualnim potrebama</strong> koristeći kombinaciju <strong>nježnih kiselina</strong> kako bismo postigli <strong>optimalne rezultate</strong>.`,
   benefits: [
   ],
   image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp',
