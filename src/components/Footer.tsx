@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { FaFacebook, FaWhatsapp, FaInstagram, FaEnvelope, FaPhone, FaCcVisa, FaCcMastercard } from 'react-icons/fa';
-import { SiDinersclub } from 'react-icons/si';
+import { FaFacebook, FaWhatsapp, FaInstagram, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { PaymentIcon } from 'react-svg-credit-card-payment-icons';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -274,9 +274,10 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <span className="text-sm text-gray-400">Gotovina, Kartice</span>
                 <div className="flex gap-3">
-                  <FaCcVisa className="text-gray-400 hover:text-white transition-colors transform hover:scale-110" size={24} />
-                  <FaCcMastercard className="text-gray-400 hover:text-white transition-colors transform hover:scale-110" size={24} />
-                  <SiDinersclub className="text-gray-400 hover:text-white transition-colors transform hover:scale-110" size={24} />
+                  <PaymentIcon type="Visa" format="flatRounded" width={24} className="filter grayscale opacity-60" />
+                  <PaymentIcon type="Mastercard" format="flatRounded" width={24} className="filter grayscale opacity-60" />
+                  <PaymentIcon type="Diners" format="flatRounded" width={24} className="filter grayscale opacity-60" />
+                  <PaymentIcon type="Maestro" format="flatRounded" width={24} className="filter grayscale opacity-60" />
                 </div>
               </div>
             </div>
