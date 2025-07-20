@@ -6,7 +6,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
 import { products, productCategories, type Product } from '@/data/products';
-import { FaSearch, FaStar, FaTimes } from 'react-icons/fa';
+import { FaSearch, FaStar, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaTag, FaFire, FaLeaf } from 'react-icons/fa6';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
@@ -347,8 +347,10 @@ function KatalogContent() {
                   }}
                   disabled={currentPage === 1}
                   className="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm"
+                  aria-label="Prethodna stranica"
                 >
-                  Prethodna
+                  <span className="hidden sm:inline">Prethodna</span>
+                  <FaChevronLeft className="sm:hidden w-4 h-4" />
                 </button>
                 <div className="flex items-center space-x-2">
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
@@ -359,7 +361,7 @@ function KatalogContent() {
                       }}
                       className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all duration-300 ${
                         currentPage === page
-                          ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-md'
+                          ? 'bg-slate-800 text-white shadow-md'
                           : 'text-slate-600 hover:bg-slate-50 hover:border hover:border-slate-200 hover:shadow-sm'
                       }`}
                     >
@@ -373,8 +375,10 @@ function KatalogContent() {
                   }}
                   disabled={currentPage === totalPages}
                   className="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm"
+                  aria-label="Sljedeća stranica"
                 >
-                  Sljedeća
+                  <span className="hidden sm:inline">Sljedeća</span>
+                  <FaChevronRight className="sm:hidden w-4 h-4" />
                 </button>
               </div>
             )}
