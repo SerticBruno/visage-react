@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight, FaArrowRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
@@ -30,7 +30,32 @@ export default function ServiceSlider({
   viewAllText = "Pogledajte sve usluge"
 }: ServiceSliderProps) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [isPaused, setIsPaused] = useState(false);
   const swiperRef = useRef<SwiperType | null>(null);
+  const autoPlayIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Auto-play functionality
+  useEffect(() => {
+    const startAutoPlay = () => {
+      if (autoPlayIntervalRef.current) {
+        clearInterval(autoPlayIntervalRef.current);
+      }
+      
+      autoPlayIntervalRef.current = setInterval(() => {
+        if (!isPaused && swiperRef.current) {
+          swiperRef.current.slideNext();
+        }
+      }, 5000); // 5 seconds
+    };
+
+    startAutoPlay();
+
+    return () => {
+      if (autoPlayIntervalRef.current) {
+        clearInterval(autoPlayIntervalRef.current);
+      }
+    };
+  }, [isPaused]);
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -50,6 +75,14 @@ export default function ServiceSlider({
     }
   };
 
+  const handleMouseEnter = () => {
+    setIsPaused(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+  };
+
   return (
     <div className="relative w-full py-20" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
       <div className="container mx-auto px-4 max-w-7xl">
@@ -60,7 +93,11 @@ export default function ServiceSlider({
         
         <div className="relative">
           {/* Mobile Slider */}
-          <div className="md:hidden">
+          <div 
+            className="md:hidden"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <Swiper
               spaceBetween={24}
               slidesPerView={1}

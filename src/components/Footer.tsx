@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { FaFacebook, FaWhatsapp, FaInstagram, FaEnvelope, FaCcVisa, FaCcMastercard, FaPhone } from 'react-icons/fa';
+import { FaFacebook, FaWhatsapp, FaInstagram, FaEnvelope, FaPhone, FaCcVisa, FaCcMastercard } from 'react-icons/fa';
+import { SiDinersclub } from 'react-icons/si';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -275,6 +276,7 @@ const Footer = () => {
                 <div className="flex gap-3">
                   <FaCcVisa className="text-gray-400 hover:text-white transition-colors transform hover:scale-110" size={24} />
                   <FaCcMastercard className="text-gray-400 hover:text-white transition-colors transform hover:scale-110" size={24} />
+                  <SiDinersclub className="text-gray-400 hover:text-white transition-colors transform hover:scale-110" size={24} />
                 </div>
               </div>
             </div>

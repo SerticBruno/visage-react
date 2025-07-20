@@ -14,6 +14,7 @@ interface HeroSectionProps {
   ctaLink?: string;
   variant?: 'home' | 'default';
   serviceName?: string;
+  titleIcon?: React.ReactNode;
 }
 
 const HeroSection = ({
@@ -24,6 +25,7 @@ const HeroSection = ({
   ctaLink,
   variant = 'default',
   serviceName,
+  titleIcon,
 }: HeroSectionProps) => {
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
@@ -133,9 +135,18 @@ const HeroSection = ({
                 </h2>
               </div>
             ) : (
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                {title}
-              </h1>
+              <div className="flex flex-col items-center">
+                {titleIcon && (
+                  <div className="mb-6">
+                    <div className="bg-white/10 backdrop-blur-sm p-4 rounded-full border border-white/20">
+                      {titleIcon}
+                    </div>
+                  </div>
+                )}
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                  {title}
+                </h1>
+              </div>
             )}
           </motion.div>
 

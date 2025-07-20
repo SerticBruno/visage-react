@@ -40,3 +40,41 @@ html.modal-open {
   overflow: hidden;
   padding-right: var(--scrollbar-width);
 }
+
+/* iOS-specific fixes for border radius during transitions */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari and other WebKit browsers on iOS */
+  .rounded-xl,
+  .rounded-2xl,
+  .rounded-lg {
+    /* Force hardware acceleration and preserve border radius during transitions */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+  }
+  
+  /* Ensure border radius is preserved during all transitions */
+  *[class*="rounded-"] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Specific fix for cards with hover effects */
+  .group.rounded-xl,
+  .group.rounded-2xl,
+  .group.rounded-lg {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* Fix for elements with transition-all */
+  *[class*="transition-all"] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { services } from '@/data/services';
 import { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import 'swiper/css';
@@ -46,10 +47,16 @@ export default function ServicesSectionPreview() {
         
         <div className="relative">
           <Swiper
+            modules={[Autoplay]}
             spaceBetween={24}
             slidesPerView={1}
             loop={true}
             watchSlidesProgress={true}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}

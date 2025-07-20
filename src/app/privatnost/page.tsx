@@ -14,16 +14,11 @@ const PrivacyPolicy = () => {
       <HeroSection
         title="Politika privatnosti"
         description="Vaša privatnost nam je važna. Saznajte kako štitimo i koristimo vaše osobne podatke."
+        titleIcon={<FaShieldAlt size={48} className="text-white" />}
       />
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-          {/* Badge */}
-          <div className="flex justify-center mb-8">
-            <div className="bg-slate-100 p-4 rounded-full">
-              <FaShieldAlt size={32} className="text-slate-600" />
-            </div>
-          </div>
 
           <div className="prose prose-lg max-w-none">
             <div className="mb-12">
