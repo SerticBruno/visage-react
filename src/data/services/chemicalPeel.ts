@@ -26,19 +26,17 @@ U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>in
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
-      image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp'
     },
     { 
       id: 'kandidati', 
       label: 'Kandidati', 
       icon: 'FaUsers',
-      image: '/images/services/kemijski-piling/toskani-peelings.webp'
+      image: '/images/services/kemijski-piling/kemijski-piling-toskani-woman-estetski-studio.jpg'
     },
     { 
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
-      image: '/images/services/kemijski-piling/toskani-duosomal.webp'
     },
     { 
       id: 'tijek-zahvata', 
@@ -55,7 +53,7 @@ U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>in
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
       icon: 'FaRegFile',
-      image: '/images/services/kemijski-piling/tretman-kemijski-piling.webp'
+      image: '/images/services/kemijski-piling/kemijski-piling-toskani-estetski-studio.png'
     },
     { 
       id: 'cijena', 

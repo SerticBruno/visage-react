@@ -371,7 +371,11 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.15 }}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                  <div className={`grid grid-cols-1 gap-12 items-start ${
+                    activeTab !== 'prednosti' && activeTab !== 'cijena' && service.steps.find(s => s.id === activeTab)?.image 
+                      ? 'lg:grid-cols-2' 
+                      : 'lg:grid-cols-1'
+                  }`}>
                     <div className="space-y-6">
                       <motion.div 
                         initial={{ opacity: 0, x: -20 }}
@@ -439,8 +443,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                       </motion.div>
                     )}
 
-                    {/* Image for other tabs */}
-                    {activeTab !== 'prednosti' && activeTab !== 'cijena' && (
+                    {/* Image for other tabs - only show if step has an image */}
+                    {activeTab !== 'prednosti' && activeTab !== 'cijena' && service.steps.find(s => s.id === activeTab)?.image && (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -448,7 +452,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         className="relative h-[400px] rounded-xl overflow-hidden shadow-xl group cursor-pointer"
                       >
                         <Image
-                          src={service.steps.find(s => s.id === activeTab)?.image || service.image}
+                          src={service.steps.find(s => s.id === activeTab)?.image!}
                           alt={`${service.title} - ${service.steps.find(s => s.id === activeTab)?.label}`}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"
