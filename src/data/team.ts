@@ -9,7 +9,9 @@ export const teamMembers: TeamMember[] = [
       'dr. spec. med. obiteljske medicine',
       'član HDEM-a'
     ],
-    favoriteTreatments: 'mezoterapija egzosomima, skin boosteri i plasmage'
+    favoriteTreatments: 'mezoterapija egzosomima, skin boosteri i plasmage',
+    hasImage: false,
+    quote: '"Kombiniram medicinsko znanje s najnovijim estetskim tehnikama kako bih pružila sigurne i učinkovite tretmane."'
   },
   {
     name: 'Mia Torinek',
@@ -19,7 +21,9 @@ export const teamMembers: TeamMember[] = [
       'mag. oec. smjer marketing',
       'kozmetičar'
     ],
-    favoriteTreatments: 'PRP, mezoterapija polinukleotidima i skin boosteri'
+    favoriteTreatments: 'PRP, mezoterapija polinukleotidima i skin boosteri',
+    hasImage: false,
+    quote: '"Posvećena sam pružanju personaliziranih tretmana koji ističu prirodnu ljepotu svakog klijenta."'
   },
   {
     name: 'Helena Torinek',
@@ -29,7 +33,9 @@ export const teamMembers: TeamMember[] = [
       'dr. med. vet.',
       'kozmetičar'
     ],
-    favoriteTreatments: 'Kemijski piling, PRP i Plasmage'
+    favoriteTreatments: 'Kemijski piling, PRP i Plasmage',
+    hasImage: false,
+    quote: '"Moja strast je pomoći klijentima da postignu najbolju verziju sebe kroz sigurne i učinkovite tretmane."'
   }
 ];
 
@@ -48,5 +54,7 @@ export const teamDetailsSection = {
     teamDetails.tatjana,
     teamDetails.mia,
     teamDetails.helena
-  ]
+  ],
+  hasGroupPhoto: false,
+  groupQuote: '"Naš tim stručnjaka radi zajedno kako bismo vam pružili najkvalitetnije estetske usluge s fokusom na vašu sigurnost i zadovoljstvo."'
 }; 

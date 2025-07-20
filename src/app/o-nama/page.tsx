@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: "Upoznajte VISAGE Studio - vodeći estetski studio u Siska. Naš tim stručnjaka pruža najkvalitetnije usluge estetske medicine i kozmetičke tretmane.",
     images: [
       {
-        url: "/images/services/Mesoterapia-transdermica-facial.webp",
+        url: "/images/background.webp",
         width: 1200,
         height: 630,
         alt: "VISAGE Studio - O nama"
@@ -26,7 +26,7 @@ export default function OnamaPage() {
       <HeroSection
         title="O nama"
         description="Regenerirajte i pomladite svoju kožu s nama!"
-        image="/images/services/Mesoterapia-transdermica-facial.webp"
+        image="/images/background.webp"
       />
       <AboutContent />
       <ContactSection/>
