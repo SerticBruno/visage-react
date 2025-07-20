@@ -91,11 +91,13 @@ const renderPricingTable = (service: Service) => {
 export default function ServiceDetailsSection({ service }: ServiceDetailsSectionProps) {
   const [activeTab, setActiveTab] = useState(service.steps[0].id);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [hasUserChangedTab, setHasUserChangedTab] = useState(false);
 
   const handleNext = () => {
     const currentIndex = service.steps.findIndex(step => step.id === activeTab);
     if (currentIndex < service.steps.length - 1) {
       setActiveTab(service.steps[currentIndex + 1].id);
+      setHasUserChangedTab(true);
       // Scroll the slider
       if (sliderRef.current) {
         const scrollAmount = 84; // 80px (min-w-[80px]) + 16px (space-x-4)
@@ -108,6 +110,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
     const currentIndex = service.steps.findIndex(step => step.id === activeTab);
     if (currentIndex > 0) {
       setActiveTab(service.steps[currentIndex - 1].id);
+      setHasUserChangedTab(true);
       // Scroll the slider
       if (sliderRef.current) {
         const scrollAmount = -84; // 80px (min-w-[80px]) + 16px (space-x-4)
@@ -125,10 +128,12 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
     }
   }, [activeTab]);
 
-  // Call scrollToActiveStep when activeTab changes
+  // Call scrollToActiveStep only when user has manually changed tabs
   React.useEffect(() => {
-    scrollToActiveStep();
-  }, [activeTab, scrollToActiveStep]);
+    if (hasUserChangedTab) {
+      scrollToActiveStep();
+    }
+  }, [activeTab, scrollToActiveStep, hasUserChangedTab]);
 
   const formatContent = (content: string) => {
     // Split content into sections (separated by double newlines)
@@ -257,7 +262,10 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                     data-step-id={step.id}
                   >
                     <button
-                      onClick={() => setActiveTab(step.id)}
+                      onClick={() => {
+                        setActiveTab(step.id);
+                        setHasUserChangedTab(true);
+                      }}
                       className={`flex flex-col items-center min-w-[80px] transition-all duration-200 ${
                         activeTab === step.id ? 'opacity-100' : 'opacity-60'
                       }`}
@@ -327,7 +335,10 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                 return (
                   <motion.button
                     key={step.id}
-                    onClick={() => setActiveTab(step.id)}
+                    onClick={() => {
+                      setActiveTab(step.id);
+                      setHasUserChangedTab(true);
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`
