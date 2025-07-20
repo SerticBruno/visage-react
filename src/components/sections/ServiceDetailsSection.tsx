@@ -452,8 +452,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         className="relative h-[400px] rounded-xl overflow-hidden shadow-xl group cursor-pointer"
                       >
                         <Image
-                          src={service.steps.find(s => s.id === activeTab)?.image!}
-                          alt={`${service.title} - ${service.steps.find(s => s.id === activeTab)?.label}`}
+                          src={service.steps.find(s => s.id === activeTab)?.image || ''}
+                          alt={`${service.title} - ${service.steps.find(s => s.id === activeTab)?.label || ''}`}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"
                         />
