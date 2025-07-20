@@ -274,10 +274,10 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <span className="text-sm text-gray-400">Gotovina, Kartice</span>
                 <div className="flex gap-3">
-                  <PaymentIcon type="Visa" format="flatRounded" width={24} className="filter grayscale opacity-60" />
-                  <PaymentIcon type="Mastercard" format="flatRounded" width={24} className="filter grayscale opacity-60" />
-                  <PaymentIcon type="Diners" format="flatRounded" width={24} className="filter grayscale opacity-60" />
-                  <PaymentIcon type="Maestro" format="flatRounded" width={24} className="filter grayscale opacity-60" />
+                  <PaymentIcon type="Visa" format="flatRounded" width={24} className="filter grayscale opacity-60 rounded-md" />
+                  <PaymentIcon type="Mastercard" format="flatRounded" width={24} className="filter grayscale opacity-60 rounded-md" />
+                  <PaymentIcon type="Diners" format="flatRounded" width={24} className="filter grayscale opacity-60 rounded-md" />
+                  <PaymentIcon type="Maestro" format="flatRounded" width={24} className="filter grayscale opacity-60 rounded-md" />
                 </div>
               </div>
             </div>
