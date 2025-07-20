@@ -14,7 +14,6 @@ export interface PricingItem {
 export const pricingCategories = [
   "Konzultacije",
   "Beauty Tretmani",
-  "Bio Sculpture Proizvodi",
   "Bio Sculpture Sistemi",
   "Botox",
   "Dermalni Fileri",
@@ -162,71 +161,6 @@ export const pricingData: PricingItem[] = [
     description: "Profesionalno bojanje obrva i trepavica",
     price: "7 EUR",
     category: "Beauty Tretmani"
-  },
-
-  // Bio Sculpture Proizvodi
-  {
-    id: "bio-sculpture-almond-oil",
-    title: "Ethos Almond Oil",
-    description: "14 ml",
-    price: "13 EUR",
-    category: "Bio Sculpture Proizvodi"
-  },
-  {
-    id: "bio-sculpture-rosehip-oil",
-    title: "Ethos Rosehip Cuticle Oil",
-    description: "14 ml",
-    price: "13 EUR",
-    category: "Bio Sculpture Proizvodi"
-  },
-  {
-    id: "bio-sculpture-blackcurrent",
-    title: "Ethos Blackcurrent",
-    description: "14 ml",
-    price: "13 EUR",
-    category: "Bio Sculpture Proizvodi"
-  },
-  {
-    id: "bio-sculpture-jasmine-oil",
-    title: "Ethos Jasmine Cuticle Oil",
-    description: "14 ml",
-    price: "13 EUR",
-    category: "Bio Sculpture Proizvodi"
-  },
-  {
-    id: "bio-sculpture-refill",
-    title: "Refill",
-    description: "1 ml",
-    price: "1 EUR",
-    category: "Bio Sculpture Proizvodi"
-  },
-  {
-    id: "bio-sculpture-raspa",
-    title: "Rašpa Orlit Extreme",
-    description: "100/180",
-    price: "2 EUR",
-    category: "Bio Sculpture Proizvodi"
-  },
-  {
-    id: "bio-sculpture-apricot-scrub",
-    title: "Apricot Kernel Scrub",
-    description: "75 ml",
-    price: "15 EUR",
-    category: "Bio Sculpture Proizvodi"
-  },
-  {
-    id: "bio-sculpture-heel-balm",
-    title: "Heel Balm",
-    description: "75 ml",
-    price: "15 EUR",
-    category: "Bio Sculpture Proizvodi"
-  },
-  {
-    id: "bio-sculpture-mint-mask",
-    title: "Mint Mask",
-    description: "75 ml",
-    price: "15 EUR",
-    category: "Bio Sculpture Proizvodi"
   },
 
   // Bio Sculpture Sistemi
@@ -405,14 +339,14 @@ export const pricingData: PricingItem[] = [
   {
     id: "microneedling-face",
     title: "Microneedling Face",
-    description: "1 tretman lica Dermapenom 4 i odgovarajućom DP Dermaceuticals mezoterapijskim koktelima",
+    description: "1 tretman lica Dermapenom 4",
     price: "120 EUR",
     category: "Mezoterapija Dermapenom 4"
   },
   {
     id: "microneedling-face-standard",
     title: "Microneedling Face Standard Paket",
-    description: "paket od 4 tretmana lica Dermapenom 4 i odgovarajućom DP Dermaceuticals mezoterapijskim koktelima",
+    description: "paket od 4 tretmana lica Dermapenom 4",
     price: "435 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
@@ -421,7 +355,7 @@ export const pricingData: PricingItem[] = [
   {
     id: "microneedling-face-premium",
     title: "Microneedling Face Premium Paket",
-    description: "paket od 6 tretmana lica Dermapenom 4 i odgovarajućom DP Dermaceuticals mezoterapijskim koktelima",
+    description: "paket od 6 tretmana lica Dermapenom 4",
     price: "650 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
@@ -430,14 +364,14 @@ export const pricingData: PricingItem[] = [
   {
     id: "microneedling-beauty",
     title: "Microneedling Beauty",
-    description: "1 tretman lica, vrata i dekoltea Dermapenom 4 i odgovarajućim DP Dermaceuticals mezoterapijskim koktelima",
+    description: "1 tretman lica, vrata i dekoltea Dermapenom 4",
     price: "155 EUR",
     category: "Mezoterapija Dermapenom 4"
   },
   {
     id: "microneedling-beauty-standard",
     title: "Microneedling Beauty Standard Paket",
-    description: "paket od 4 tretmana lica, vrata i dekoltea Dermapenom 4 i odgovarajućim DP Dermaceuticals mezoterapijskim koktelima",
+    description: "paket od 4 tretmana lica, vrata i dekoltea Dermapenom 4",
     price: "560 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
@@ -446,7 +380,7 @@ export const pricingData: PricingItem[] = [
   {
     id: "microneedling-beauty-premium",
     title: "Microneedling Beauty Premium Paket",
-    description: "6 tretmana lica, vrata i dekoltea Dermapenom 4 i odgovarajućim DP Dermaceuticals mezoterapijskim koktelima",
+    description: "6 tretmana lica, vrata i dekoltea Dermapenom 4",
     price: "835 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
@@ -455,79 +389,35 @@ export const pricingData: PricingItem[] = [
   {
     id: "exo-face",
     title: "Exo Face",
-    description: "1 tretman lica DP Dermaceuticals egzosomima",
-    price: "320 EUR",
+    description: "1 tretman lica egzosomima",
+    price: "175 EUR",
     category: "Mezoterapija Dermapenom 4"
   },
   {
-    id: "exo-face-standard",
-    title: "Exo Face Standard Paket",
-    description: "paket od 2 tretmana lica DP Dermaceuticals egzosomima",
-    price: "575 EUR",
-    category: "Mezoterapija Dermapenom 4",
-    isPackage: true,
-    packageDetails: "2 tretmana"
-  },
-  {
-    id: "exo-face-premium",
-    title: "Exo Face Premium Paket",
-    description: "paket od 4 tretmana lica DP Dermaceuticals egzosomima",
-    price: "1090 EUR",
+    id: "exo-face-classic-dermapen",
+    title: "Exo Face Classic",
+    description: "Paket od 4 tretmana lica egzosomima",
+    price: "630 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     packageDetails: "4 tretmana"
   },
   {
-    id: "exo-beauty",
-    title: "Exo Beauty",
-    description: "1 tretman lica, vrata i dekoltea DP Dermaceuticals egzosomima",
-    price: "450 EUR",
-    category: "Mezoterapija Dermapenom 4"
-  },
-  {
-    id: "exo-beauty-standard",
-    title: "Exo Beauty Standard Paket",
-    description: "2 tretmana lica, vrata i dekoltea DP Dermaceuticals egzosomima",
-    price: "810 EUR",
-    category: "Mezoterapija Dermapenom 4",
-    isPackage: true,
-    packageDetails: "2 tretmana"
-  },
-  {
-    id: "exo-beauty-premium",
-    title: "Exo Beauty Premium Paket",
-    description: "4 tretmana lica, vrata i dekoltea DP Dermaceuticals egzosomima",
-    price: "1090 EUR",
-    category: "Mezoterapija Dermapenom 4",
-    isPackage: true,
-    packageDetails: "4 tretmana"
-  },
-  {
-    id: "exo-hair",
+    id: "exo-hair-dermapen",
     title: "Exo Hair",
-    description: "1 tretman vlasišta DP Dermaceuticals egzosomima",
-    price: "320 EUR",
+    description: "1 tretman vlasišta egzosomima",
+    price: "175 EUR",
     category: "Mezoterapija Dermapenom 4"
   },
   {
-    id: "exo-hair-standard",
-    title: "Exo Hair Standard Paket",
-    description: "paket od 2 tretmana vlasišta DP Dermaceuticals egzosomima",
-    price: "575 EUR",
-    category: "Mezoterapija Dermapenom 4",
-    isPackage: true,
-    packageDetails: "2 tretmana"
-  },
-  {
-    id: "exo-hair-premium",
-    title: "Exo Hair Premium Paket",
-    description: "4 tretmana vlasišta DP Dermaceuticals egzosomima",
-    price: "608 EUR",
+    id: "exo-hair-classic-dermapen",
+    title: "Exo Hair Classic",
+    description: "Paket od 4 tretmana vlasišta egzosomima",
+    price: "630 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     packageDetails: "4 tretmana"
   },
-
   // Mezoterapija Mesoject Gunom
   {
     id: "mesoject-standard",
@@ -564,15 +454,6 @@ export const pricingData: PricingItem[] = [
     title: "Duosomal Standard Paket",
     description: "5 kemijski piling Duosomal, mezoterapiju lica i skin architect masku",
     price: "520 EUR",
-    category: "Mezoterapija Mesoject Gunom",
-    isPackage: true,
-    packageDetails: "5 tretmana"
-  },
-  {
-    id: "mesoject-brow-package",
-    title: "Brow Paket",
-    description: "5 mezoterapija obrva",
-    price: "90 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     packageDetails: "5 tretmana"
@@ -626,6 +507,56 @@ export const pricingData: PricingItem[] = [
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     packageDetails: "10 tretmana"
+  },
+  {
+    id: "exo-face",
+    title: "Exo Face",
+    description: "Jedan tretman lica egzosomima",
+    price: "150 EUR",
+    category: "Mezoterapija Mesoject Gunom"
+  },
+  {
+    id: "exo-face-classic",
+    title: "Exo Face Classic",
+    description: "Paket od 4 tretmana lica egzosomima",
+    price: "540 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "4 tretmana"
+  },
+  {
+    id: "exo-hair",
+    title: "Exo Hair",
+    description: "Jedan tretman vlasišta egzosomima",
+    price: "150 EUR",
+    category: "Mezoterapija Mesoject Gunom"
+  },
+  {
+    id: "exo-hair-classic",
+    title: "Exo Hair Classic",
+    description: "Paket od 4 tretmana vlasišta egzosomima",
+    price: "540 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "4 tretmana"
+  },
+  {
+    id: "premium-package",
+    title: "Premium Paket",
+    description: "4 mezoterapije lica i vrata",
+    price: "470 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "4 tretmana"
+  },
+  {
+    id: "premium",
+    title: "Premium",
+    description: "4 mezoterapije lica i vrata",
+    price: "470 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "4 tretmana"
   },
 
   // Plasmage
@@ -852,28 +783,28 @@ export const pricingData: PricingItem[] = [
     id: "purifying-cleanser",
     title: "Purifying Cleanser",
     description: "200 ml",
-    price: "44 EUR",
+    price: "40 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "bamboo-toner",
     title: "Bamboo Toner Tonik",
     description: "200 ml",
-    price: "28 EUR",
+    price: "30 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "nutritive-scrub",
     title: "Nutritive Scrub",
     description: "200 ml",
-    price: "44 EUR",
+    price: "45 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "purifying-scrub",
     title: "Purifying Scrub",
     description: "200 ml",
-    price: "44 EUR",
+    price: "45 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
@@ -887,7 +818,7 @@ export const pricingData: PricingItem[] = [
     id: "total-recovery-gel",
     title: "Total Recovery Gel",
     description: "50 ml",
-    price: "37 EUR",
+    price: "35 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
@@ -908,126 +839,126 @@ export const pricingData: PricingItem[] = [
     id: "radiance-daily-cream",
     title: "Radiance Daily Cream SPF 30+",
     description: "50 ml",
-    price: "65 EUR",
+    price: "60 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "radiance-eye",
     title: "Radiance Eye Contour",
     description: "15 ml",
-    price: "65 EUR",
+    price: "40 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "radiance-mesoserum",
     title: "Radiance Ultimate Mesoserum",
     description: "30 ml",
-    price: "85 EUR",
+    price: "75 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "purifying-serum",
     title: "Purifying Intensive Serum",
     description: "15 ml",
-    price: "45 EUR",
+    price: "40 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "purifying-cream",
     title: "Purifying Cream",
     description: "50 ml",
-    price: "65 EUR",
+    price: "56 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "skin-architect-mesoserum",
     title: "Skin Architect Mesoserum",
     description: "30 ml",
-    price: "80 EUR",
+    price: "70 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "skin-architect-cream",
     title: "Skin Architect Cream",
     description: "50 ml",
-    price: "70 EUR",
+    price: "60 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "night-reverse-serum",
     title: "Night Reverse Advanced Serum",
     description: "30 ml",
-    price: "87 EUR",
+    price: "80 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "night-reverse-cream",
     title: "Night Reverse Intensive Cream & Mask",
     description: "50 ml",
-    price: "80 EUR",
+    price: "70 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "anti-hair-loss",
     title: "Anti-Hair Loss Lotion",
     description: "100 ml",
-    price: "37 EUR",
+    price: "45 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "densihair-boost",
     title: "Densihair Boost Kapsule",
     description: "30 kapsula",
-    price: "38 EUR",
+    price: "35 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "glacier-pro-age-cream",
     title: "Glacier Pro Age Krema",
     description: "50 ml",
-    price: "70 EUR",
+    price: "60 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "glacier-pro-age-serum",
     title: "Glacier Pro Age Serum",
     description: "30 ml",
-    price: "75 EUR",
+    price: "65 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "retin-pro-age-cream",
     title: "Retin Pro Age Krema",
     description: "50 ml",
-    price: "75 EUR",
+    price: "65 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "retin-pro-age-serum",
     title: "Retin Pro Age Serum",
     description: "30 ml",
-    price: "80 EUR",
+    price: "70 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "unique-pro-age-cream",
     title: "Unique Pro Age Krema",
     description: "50 ml",
-    price: "75 EUR",
+    price: "65 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "unique-pro-age-serum",
     title: "Unique Pro Age Serum",
     description: "30 ml",
-    price: "80 EUR",
+    price: "70 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "myotec-eye-lift",
     title: "Myotec Eye Lift Krema",
     description: "15 ml",
-    price: "55 EUR",
+    price: "48 EUR",
     category: "TOSKANI Proizvodi"
   }
 ]; 

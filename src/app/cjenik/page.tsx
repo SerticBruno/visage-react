@@ -18,8 +18,10 @@ export default function PricingPage() {
 
   const filteredItems = useMemo(() => {
     return pricingData.filter(item => {
-      const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          item.description.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch = searchTerm === '' || 
+                          item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          item.category.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(item.category);
       const matchesBadges = selectedBadges.length === 0 || 
         (selectedBadges.includes('popular') && item.isPopular) ||
