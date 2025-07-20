@@ -20,12 +20,12 @@ export interface Product {
 
 export const productCategories = [
   'Čišćenje',
-  'Toniziranje',
+  'Tonik',
   'Piling',
   'Maska',
   'Krema',
   'Serum',
-  'Oko očiju',
+  'Okoloočna njega',
   'Zaštita od sunca',
   'Njega kose'
 ];
@@ -75,7 +75,7 @@ export const products: Product[] = [
     id: '3',
     title: 'Bamboo Hydratonic',
     description: 'Tonik bez ulja koji obnavlja kožu i temeljito čisti uklanjajući sve tragove prljavštine i šminke.',
-    category: 'Toniziranje',
+    category: 'Tonik',
     image: '/images/products/toskanibamboohydratonic.webp',
     price: '28 €',
     oldPrice: '35 €',
@@ -191,7 +191,7 @@ export const products: Product[] = [
     id: '13',
     title: 'Radiance Eye Contour',
     description: 'Učinkovita krema za područje oko očiju koja ublažuje hiperpigmentacije i probleme s mikrocirkulacijom.',
-    category: 'Oko očiju',
+    category: 'Okoloočna njega',
     image: '/images/products/toskaniradianceeyecontour.webp',
     price: '65 €',
     oldPrice: '75 €',

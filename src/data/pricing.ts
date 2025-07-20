@@ -960,5 +960,68 @@ export const pricingData: PricingItem[] = [
     description: "15 ml",
     price: "48 EUR",
     category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "anti-ageing-ha-ampule",
+    title: "Anti-ageing + HA Ampule",
+    description: "15x2mL",
+    price: "50 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "radiance-ampule",
+    title: "Radiance Ampule",
+    description: "15x2mL",
+    price: "50 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "sensitive-skin-ampule",
+    title: "Sensitive Skin Ampule",
+    description: "15x2mL",
+    price: "50 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "purifying-ampule",
+    title: "Purifying Ampule",
+    description: "15x2mL",
+    price: "50 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "lipo-proteoglycans-ampule",
+    title: "Lipo Proteoglycans Ampule",
+    description: "15x2mL",
+    price: "50 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "vitaflash-ampule",
+    title: "Vitaflash Ampule",
+    description: "15x2mL",
+    price: "30 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "sun-shield-d-facial-cream",
+    title: "Sun Shield-D Sun Fluid Facial Cream",
+    description: "50mL",
+    price: "36 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "sun-shield-d-facial-cream-tinted",
+    title: "Sun Shield-D Sun Fluid Facial Cream Tinted",
+    description: "50mL",
+    price: "39 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "sun-shield-d-body-face-spray",
+    title: "Sun Shield-D Sun Body & Face Spray",
+    description: "200mL",
+    price: "42 EUR",
+    category: "TOSKANI Proizvodi"
   }
 ]; 
