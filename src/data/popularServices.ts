@@ -38,7 +38,7 @@ export const popularServices = [
   {
     title: 'PRP',
     description: 'Prirodna obnova i regeneracija kože',
-    image: '/images/services/MYV_selfie_details.webp',
+    image: '/images/services/woman-face-visage-estetski-studio.webp',
     link: '/usluge/prp',
     features: [
       'prirodna i dugotrajna regeneracija kože i vlasišta',

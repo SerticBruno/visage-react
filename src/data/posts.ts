@@ -350,7 +350,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/MYV_selfie_details.webp',
+        src: '/images/services/woman-face-visage-estetski-studio.webp',
         alt: 'Rezultati plazma terapije',
         caption: 'Vidljivi rezultati nakon serije tretmana plazma terapije'
       },
@@ -387,7 +387,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/MYV_selfie_details.webp',
+        src: '/images/services/woman-face-visage-estetski-studio.webp',
         alt: 'Rezultati plazma terapije',
         caption: 'Vidljivi rezultati nakon serije tretmana plazma terapije'
       },
@@ -483,7 +483,7 @@ export const blogPosts: BlogPost[] = [
     date: new Date('2024-03-15T00:00:00.000Z'),
     author: 'dr. T. Torinek',
     tags: ['Plazma Terapija', 'PRP', 'Anti-aging', 'Regeneracija kože', 'Estetska medicina', 'Prirodni tretmani'],
-    image: '/images/services/MYV_selfie_details.webp'
+    image: '/images/services/woman-face-visage-estetski-studio.webp'
   },
   {
     id: 3,
@@ -1303,7 +1303,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/MYV_selfie_details.webp',
+        src: '/images/services/woman-face-visage-estetski-studio.webp',
         alt: 'Rezultati tretmana',
         caption: 'Vidljivi rezultati nakon tretmana'
       },
@@ -1601,7 +1601,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/MYV_selfie_details.webp',
+        src: '/images/services/woman-face-visage-estetski-studio.webp',
         alt: 'Zimski tretman kože',
         caption: 'Profesionalni zimski tretman kože u VISAGE studiju'
       },
@@ -1834,7 +1834,7 @@ export const blogPosts: BlogPost[] = [
     date: new Date('2024-05-20'),
     author: 'dr. T. Torinek',
       tags: ['Zimska njega', 'Hidratacija', 'Njega kože', 'Zimski tretmani', 'Zaštita kože'],
-    image: '/images/services/MYV_selfie_details.webp'
+    image: '/images/services/woman-face-visage-estetski-studio.webp'
   },
   {
     id: 10,
@@ -2224,7 +2224,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/MYV_selfie_details.webp',
+        src: '/images/services/woman-face-visage-estetski-studio.webp',
         alt: 'Rezultati Plasmage tretmana',
         caption: 'Vidljivi rezultati nakon serije Plasmage tretmana'
       },

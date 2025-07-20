@@ -43,7 +43,7 @@ export const comboPackages: ComboPackage[] = [
         id: "prp", 
         title: "PRP", 
         quantity: 1,
-        image: "/images/services/MYV_selfie_details.webp"
+        image: "/images/services/woman-face-visage-estetski-studio.webp"
       },
       { 
         id: "skin-boosteri", 

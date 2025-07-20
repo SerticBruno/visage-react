@@ -24,37 +24,37 @@ U Visage studiju koristimo najnapredniju opremu za pripremu PRP-a, što osigurav
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
-      image: '/images/services/MYV_selfie_details.webp'
+      image: '/images/services/woman-face-visage-estetski-studio.webp'
     },
     { 
       id: 'kandidati', 
       label: 'Kandidati', 
       icon: 'FaUsers',
-      image: '/images/services/MYV_selfie_details.webp'
+      image: '/images/services/woman-face-visage-estetski-studio.webp'
     },
     { 
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
-      image: '/images/services/MYV_selfie_details.webp'
+      image: '/images/services/woman-face-visage-estetski-studio.webp'
     },
     { 
       id: 'tijek-zahvata', 
       label: 'Tijek zahvata', 
       icon: 'FaRegClock',
-      image: '/images/services/MYV_selfie_details.webp'
+      image: '/images/services/woman-face-visage-estetski-studio.webp'
     },
     { 
       id: 'oporavak', 
       label: 'Oporavak', 
       icon: 'FaRegHospital',
-      image: '/images/services/MYV_selfie_details.webp'
+      image: '/images/services/woman-face-visage-estetski-studio.webp'
     },
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
       icon: 'FaRegFile',
-      image: '/images/services/MYV_selfie_details.webp'
+      image: '/images/services/woman-face-visage-estetski-studio.webp'
     },
     { 
       id: 'cijena', 
