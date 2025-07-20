@@ -44,13 +44,12 @@ U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>in
       id: 'tijek-zahvata', 
       label: 'Tijek zahvata', 
       icon: 'FaRegClock',
-      image: '/images/services/kemijski-piling/kombinirani-pilinzi.webp'
+      image: '/images/services/kemijski-piling/toskani-bg.webp'
     },
     { 
       id: 'oporavak', 
       label: 'Oporavak', 
       icon: 'FaRegHospital',
-      image: '/images/services/kemijski-piling/toskani-bg.webp'
     },
     { 
       id: 'nakon-tretmana', 
