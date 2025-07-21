@@ -20,6 +20,7 @@ export const pricingCategories = [
   "Hijaluronidaza",
   "Kemijski Piling",
   "Mesosynergy",
+  "Mezoterapija",
   "Mezoterapija Dermapenom 4",
   "Mezoterapija Mesoject Gunom",
   "Plasmage",
@@ -333,6 +334,35 @@ export const pricingData: PricingItem[] = [
     description: "2 kemijski piling Dusomal, mezoterapija lica, TKN HA3 i skin architect maska",
     price: "640 EUR",
     category: "Mesosynergy"
+  },
+
+  // Mezoterapija
+  {
+    id: "brows-package",
+    title: "Brows Paket",
+    description: "5 mezoterapija obrva",
+    price: "100 EUR",
+    category: "Mezoterapija",
+    isPackage: true,
+    packageDetails: "5 tretmana"
+  },
+  {
+    id: "hydraboost-lips",
+    title: "Hydraboost Usana",
+    description: "5 mezoterapija usana hijaluronom",
+    price: "100 EUR",
+    category: "Mezoterapija",
+    isPackage: true,
+    packageDetails: "5 tretmana"
+  },
+  {
+    id: "y-zone",
+    title: "Y Zona",
+    description: "5 tretmana topljenja i zatezanja podbratka i vrata",
+    price: "450 EUR",
+    category: "Mezoterapija",
+    isPackage: true,
+    packageDetails: "5 tretmana"
   },
 
   // Mezoterapija Dermapenom 4
