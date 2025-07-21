@@ -1,6 +1,6 @@
 export const popularServices = [
   {
-    title: 'SKIN BOOSTERI',
+    title: 'Skin Boosteri',
     description: 'Dubinska hidratacija i revitalizacija kože',
     image: '/images/services/toskani-hero.webp',
     link: '/usluge/skin-boosteri',
@@ -12,7 +12,7 @@ export const popularServices = [
     ]
   },
   {
-    title: 'MEZOTERAPIJA',
+    title: 'Mezoterapija',
     description: 'Dubinska njega za vašu kožu',
     image: '/images/services/Mesoterapia-transdermica-facial.webp',
     link: '/usluge/mezoterapija',
@@ -24,7 +24,7 @@ export const popularServices = [
     ]
   },
   {
-    title: 'PLASMAGE',
+    title: 'Plasmage',
     description: 'Revolucionarna tehnologija za pomlađivanje kože',
     image: '/images/services/plasmage-hero.webp',
     link: '/usluge/plasmage',

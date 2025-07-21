@@ -37,9 +37,9 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             priority={false}
           />
-          <div className="absolute inset-0 bg-black/20" />
-          <div className="absolute bottom-0 left-0 right-0 p-6">
-            <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">
+          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-300" />
+          <div className="absolute bottom-0 left-0 right-0 p-4">
+            <h3 className="text-2xl font-bold text-white drop-shadow-lg">
               {service.title}
             </h3>
           </div>

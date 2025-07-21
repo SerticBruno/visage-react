@@ -29,7 +29,7 @@ export default function ServicesSection() {
                   fill
                   className="object-cover transition-all duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/40 transition-all duration-300" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-all duration-300" />
                 
                 {/* Content Container */}
                 <div className="absolute inset-0 p-3 md:p-6 flex flex-col justify-end transition-all duration-300">
