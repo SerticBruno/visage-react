@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import RelatedArticles from '@/components/blog/RelatedArticles';
 import { FaCalendarAlt, FaUser } from 'react-icons/fa';
-import { formatDate, toSlug } from '@/lib/utils';
+import { formatDate, toSlug, toSentenceCase } from '@/lib/utils';
 import { ElementType } from 'react';
 import { TextContent } from '@/data/types';
 import InteractiveLink from '@/components/blog/InteractiveLink';
@@ -193,7 +193,7 @@ export default async function BlogPostPage(
                         item.level === 3 ? 'text-2xl' : ''
                       }`}
                     >
-                      {item.text}
+                      {toSentenceCase(item.text)}
                     </Tag>
                   );
                 } else if (item.type === 'image') {

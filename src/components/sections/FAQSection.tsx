@@ -15,7 +15,7 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "Gdje mogu dogovoriti termin?",
-    answer: "Termin možete dogovoriti preko naših društvenih mreža, putem našeg Whatsappa, te maila ili forme na službenoj web stranici."
+    answer: "Termin možete dogovoriti preko naših društvenih mreža, putem našeg Whatsappa, e-maila ili forme na službenoj web stranici."
   },
   {
     question: "Koje je vaše radno vrijeme?",
