@@ -374,9 +374,11 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                   <div className={`grid grid-cols-1 gap-12 items-start ${
                     activeTab !== 'prednosti' && activeTab !== 'cijena' && service.steps.find(s => s.id === activeTab)?.image 
                       ? 'lg:grid-cols-2' 
+                      : activeTab === 'cijena'
+                      ? 'lg:grid-cols-1'
                       : 'lg:grid-cols-1'
                   }`}>
-                    <div className="space-y-6">
+                    <div className={`space-y-6 ${activeTab === 'cijena' ? 'lg:max-w-2xl' : ''}`}>
                       <motion.div 
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}

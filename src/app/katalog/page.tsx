@@ -247,6 +247,13 @@ function KatalogContent() {
                   </label>
                 </div>
               </div>
+
+              {/* Results Count */}
+              <div className="border-t border-gray-200 pt-6">
+                <p className="text-sm text-gray-600">
+                  Pronađeno proizvoda: <span className="font-semibold">{filteredProducts.length}</span>
+                </p>
+              </div>
             </div>
           </div>
 
