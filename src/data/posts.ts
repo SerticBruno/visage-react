@@ -3,9 +3,9 @@ import { BlogPost } from './types';
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: 'Kemijski piling - ključ do blistave i mladenačke kože',
+    title: 'Transformacija kože kroz kemijski piling: otkrijte svoju prirodnu ljepotu',
     slug: 'kemijski-piling-blistava-koza',
-    excerpt: 'Otkrijte kako kemijski piling može transformirati vašu kožu, ukloniti mrtve stanice i otkriti svježu, mladenačku kožu ispod. Saznajte sve o TOSKANI pilingima i kako se kombiniraju s drugim tretmanima.',
+    excerpt: 'Kemijski piling nije samo tretman - to je umjetnost otkrivanja vaše prirodne ljepote. Kroz kontrolirano uklanjanje mrtvih stanica, otkrivamo svježu, mladenačku kožu koja je uvijek bila tu, samo skrivena ispod površine.',
     content: [
       {
         type: 'heading',
@@ -267,9 +267,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 2,
-    title: 'Plazma terapija - prirodna revolucija u anti-aging tretmanima',
+    title: 'Vaša krv kao eliksir mladosti: magija plazma terapije',
     slug: 'plazma-terapija',
-    excerpt: 'Otkrijte kako plazma terapija koristi prirodne faktore rasta iz vaše krvi za potpunu regeneraciju kože. Saznajte sve o ovoj revolucionarnoj metodi i kako se kombinira s drugim tretmanima za optimalne rezultate.',
+    excerpt: 'Zamislite da vaša vlastita krv može biti ključ do mladosti. Plazma terapija koristi prirodne faktore rasta iz vašeg tijela za potpunu regeneraciju kože - to je kao da priroda sama piše recept za mladost.',
     content: [
       {
         type: 'heading',
@@ -487,9 +487,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 3,
-    title: 'Savršene obrve i trepavice - umjetnost izražajnog pogleda',
+    title: 'Oči su ogledalo duše: umjetnost savršenih obrva i trepavica',
     slug: 'obrve-trepavice',
-    excerpt: 'Otkrijte tajne savršenih obrva i trepavica koji definiraju vaš izraz lica. Saznajte sve o profesionalnim tretmanima i kako postići prirodan, dugotrajan rezultat koji će vašem licu dati izražajnost i mladolik izgled.',
+    excerpt: 'Obrve i trepavice su tajni jezik ljepote koji govori bez riječi. Kroz preciznu umjetnost oblikovanja, stvaramo okvir koji otkriva istinsku ljepotu vaših očiju i definira vaš jedinstveni izraz.',
     content: [
       {
         type: 'heading',
@@ -682,9 +682,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 4,
-    title: 'TOSKANI - vrhunska linija za profesionalnu njegu kože',
+    title: 'TOSKANI: talijanska umjetnost ljepote koja govori kroz rezultate',
     slug: 'toskani-proizvodi',
-    excerpt: 'Otkrijte TOSKANI proizvode - vrhunsku liniju za njegu kože koja kombinira prirodne sastojke s najnovijim tehnologijama. Saznajte kako TOSKANI proizvodi mogu transformirati vašu kožu i kako se kombiniraju s našim profesionalnim tretmanima.',
+    excerpt: 'TOSKANI nije samo brend - to je talijanska umjetnost ljepote koja kombinira mudrost prirode s preciznošću znanosti. Svaki proizvod je priča o kvaliteti, učinkovitosti i posvećenosti savršenstvu.',
     content: [
       {
         type: 'heading',
@@ -880,9 +880,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 5,
-    title: 'Mezoterapija - dubinska hidratacija i regeneracija kože',
+    title: 'Dubinska hidratacija kože: kako mezoterapija stvara "vodeni efekt"',
     slug: 'mezoterapija',
-    excerpt: 'Mezoterapija je revolucionarna metoda koja koristi prirodne sastojke za dubinsku hidrataciju i regeneraciju kože. Saznajte sve o ovoj minimalno invazivnoj tehnici i kako se kombinira s drugim tretmanima za optimalne rezultate.',
+    excerpt: 'Zamislite da vaša koža može popiti vodu kao spužva. Mezoterapija je tajna tehnika koja direktno dostavlja hidrataciju u najdublje slojeve kože, stvarajući efekt koji se može osjetiti i vidjeti.',
     content: [
       {
         type: 'heading',
@@ -1073,9 +1073,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 6,
-    title: 'Profesionalna njega ruku i noktiju - umjetnost savršenog izgleda',
+    title: 'Ruke govore priču: umjetnost savršene manikure koja otkriva vašu ljepotu',
     slug: 'njega-ruku',
-    excerpt: 'Ruke su vaš prvi dojam - otkrijte kako profesionalna njega ruku i noktiju može transformirati vaš izgled. Saznajte sve o našim tretmanima i kako se kombiniraju s drugim uslugama za kompletnu njegu.',
+    excerpt: 'Ruke su tajni jezik koji govori o vašoj ljepoti bez riječi. Kroz preciznu umjetnost manikure, stvaramo priču o vašem stilu, eleganciji i posvećenosti savršenstvu.',
     content: [
       {
         type: 'heading',
@@ -1275,9 +1275,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 7,
-    title: 'Kozmetički tretmani za muškarce',
+    title: 'Muška ljepota: kako moderni muškarci otkrivaju svoju prirodnu ljepotu',
     slug: 'kozmeticki-tretmani-za-muskarce',
-    excerpt: 'Otkrijte kako muškarci mogu održavati zdrav i mladolik izgled uz pomoć profesionalnih kozmetičkih tretmana.',
+    excerpt: 'Ljepota nije samo ženska domena. Moderni muškarci prepoznaju da je njega kože znak samopouzdanja i profesionalnosti, a ne slabosti.',
     content: [
       {
         type: 'text',
@@ -1321,9 +1321,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 8,
-    title: 'Prirodna njega kože - umjetnost odabira savršenih sastojaka',
+    title: 'Priroda kao kozmetičar: kako prirodni sastojci pišu priču o vašoj ljepoti',
     slug: 'prirodna-njega-koze',
-    excerpt: 'Svaki tip kože zahtijeva jedinstven pristup - otkrijte kako prirodni sastojci mogu transformirati vašu kožu. Saznajte sve o najboljim sastojcima za vaš tip kože i kako se kombiniraju s profesionalnim tretmanima.',
+    excerpt: 'Priroda je najbolji kozmetičar - ona već zna što vaša koža treba. Kroz mudro odabrane prirodne sastojke, otkrivamo tajne koje su bile tu od početka vremena.',
     content: [
       {
         type: 'heading',
@@ -1580,9 +1580,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 9,
-    title: 'Zimski tretmani za kožu - kompletni vodič za zdravu kožu tijekom hladnih mjeseci',
+    title: 'Zimska bajka za kožu: kako preživjeti hladne mjesece s blistavom kožom',
     slug: 'zimski-tretmani-koze',
-    excerpt: 'Zima je izazovno doba za kožu - otkrijte kako profesionalni zimski tretmani mogu zaštititi i regenerirati vašu kožu. Saznajte sve o zimskoj njezi i kako se kombinira s drugim tretmanima za optimalne rezultate.',
+    excerpt: 'Zima nije vrijeme za sakrivanje ljepote - to je vrijeme za nježnu zaštitu i dubinsku regeneraciju. Otkrijte kako vaša koža može blistati čak i kada vani pada snijeg.',
     content: [
       {
         type: 'heading',
@@ -1838,9 +1838,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 10,
-    title: 'Anti-aging tretmani - umjetnost prirodnog održavanja mladolikog izgleda',
+    title: 'Umjetnost mladosti: kako anti-aging tretmani pišu novu priču o vašem licu',
     slug: 'anti-aging-tretmani',
-    excerpt: 'Anti-aging tretmani su ključ do mladolikog izgleda - otkrijte kako profesionalni tretmani mogu prirodno obnoviti vašu kožu. Saznajte sve o najučinkovitijim anti-aging procedurama i kako se kombiniraju za optimalne rezultate.',
+    excerpt: 'Starenje nije neizbježno - to je samo priča koju možemo prepisati. Anti-aging tretmani su način da vašem licu vratimo priču o mladosti, energiji i vitalnosti.',
     content: [
       {
         type: 'heading',
@@ -2110,9 +2110,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 11,
-    title: 'Plasmage - revolucionarna tehnologija za mladolik izgled',
+    title: 'Plasmage: budućnost ljepote gdje se znanost susreće s prirodom',
     slug: 'plasmage-najnoviji-trend',
-    excerpt: 'Plasmage je najnovija revolucionarna tehnologija u estetskoj medicini - otkrijte kako kombinacija plazme i radiofrekvencije može transformirati vašu kožu. Saznajte sve o ovom inovativnom tretmanu i kako se kombinira s drugim procedurama.',
+    excerpt: 'Plasmage nije samo tretman - to je revolucionarna sinergija gdje se prirodni faktori rasta susreću s naprednom tehnologijom. Rezultat? Ljepota koja se čini nemogućom, ali je potpuno prirodna.',
     content: [
       {
         type: 'heading',
