@@ -3,9 +3,9 @@ import { BlogPost } from './types';
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: 'Transformacija kože kroz kemijski piling: otkrijte svoju prirodnu ljepotu',
+    title: 'Kemijski piling: otkrivanje vaše prirodne ljepote',
     slug: 'kemijski-piling-blistava-koza',
-    excerpt: 'Kemijski piling nije samo tretman - to je umjetnost otkrivanja vaše prirodne ljepote. Kroz kontrolirano uklanjanje mrtvih stanica, otkrivamo svježu, mladenačku kožu koja je uvijek bila tu, samo skrivena ispod površine.',
+    excerpt: 'Kroz kontrolirano uklanjanje mrtvih stanica, otkrivamo svježu, mladenačku kožu koja je uvijek bila tu, samo skrivena ispod površine.',
     content: [
       {
         type: 'heading',
@@ -267,9 +267,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 2,
-    title: 'Vaša krv kao eliksir mladosti: magija plazma terapije',
+    title: 'Plazma terapija: vaša krv kao eliksir mladosti',
     slug: 'plazma-terapija',
-    excerpt: 'Zamislite da vaša vlastita krv može biti ključ do mladosti. Plazma terapija koristi prirodne faktore rasta iz vašeg tijela za potpunu regeneraciju kože - to je kao da priroda sama piše recept za mladost.',
+    excerpt: 'Zamislite da vaša vlastita krv može biti ključ do mladosti. Koristi prirodne faktore rasta iz vašeg tijela za potpunu regeneraciju kože.',
     content: [
       {
         type: 'heading',
@@ -487,9 +487,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 3,
-    title: 'Oči su ogledalo duše: umjetnost savršenih obrva i trepavica',
+    title: 'Obrve i trepavice: ogledalo duše',
     slug: 'obrve-trepavice',
-    excerpt: 'Obrve i trepavice su tajni jezik ljepote koji govori bez riječi. Kroz preciznu umjetnost oblikovanja, stvaramo okvir koji otkriva istinsku ljepotu vaših očiju i definira vaš jedinstveni izraz.',
+    excerpt: 'Obrve i trepavice su tajni jezik ljepote koji govori bez riječi. Kroz preciznu umjetnost oblikovanja, stvaramo okvir koji otkriva istinsku ljepotu vaših očiju.',
     content: [
       {
         type: 'heading',
@@ -682,9 +682,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 4,
-    title: 'TOSKANI: talijanska umjetnost ljepote koja govori kroz rezultate',
+    title: 'TOSKANI: talijanska umjetnost ljepote',
     slug: 'toskani-proizvodi',
-    excerpt: 'TOSKANI nije samo brend - to je talijanska umjetnost ljepote koja kombinira mudrost prirode s preciznošću znanosti. Svaki proizvod je priča o kvaliteti, učinkovitosti i posvećenosti savršenstvu.',
+    excerpt: 'Kombinira mudrost prirode s preciznošću znanosti. Svaki proizvod je priča o kvaliteti, učinkovitosti i posvećenosti savršenstvu.',
     content: [
       {
         type: 'heading',
@@ -880,9 +880,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 5,
-    title: 'Dubinska hidratacija kože: kako mezoterapija stvara "vodeni efekt"',
+    title: 'Mezoterapija: dubinska hidratacija kože',
     slug: 'mezoterapija',
-    excerpt: 'Zamislite da vaša koža može popiti vodu kao spužva. Mezoterapija je tajna tehnika koja direktno dostavlja hidrataciju u najdublje slojeve kože, stvarajući efekt koji se može osjetiti i vidjeti.',
+    excerpt: 'Zamislite da vaša koža može popiti vodu kao spužva. Direktno dostavlja hidrataciju u najdublje slojeve kože, stvarajući efekt koji se može osjetiti i vidjeti.',
     content: [
       {
         type: 'heading',
@@ -1073,9 +1073,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 6,
-    title: 'Ruke govore priču: umjetnost savršene manikure koja otkriva vašu ljepotu',
+    title: 'Manikura: ruke govore priču',
     slug: 'njega-ruku',
-    excerpt: 'Ruke su tajni jezik koji govori o vašoj ljepoti bez riječi. Kroz preciznu umjetnost manikure, stvaramo priču o vašem stilu, eleganciji i posvećenosti savršenstvu.',
+    excerpt: 'Ruke su tajni jezik koji govori o vašoj ljepoti bez riječi. Kroz preciznu umjetnost manikure, stvaramo priču o vašem stilu i eleganciji.',
     content: [
       {
         type: 'heading',
@@ -1275,9 +1275,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 7,
-    title: 'Muška ljepota: kako moderni muškarci otkrivaju svoju prirodnu ljepotu',
+    title: 'Muška ljepota: moderni pristup njezi kože',
     slug: 'kozmeticki-tretmani-za-muskarce',
-    excerpt: 'Ljepota nije samo ženska domena. Moderni muškarci prepoznaju da je njega kože znak samopouzdanja i profesionalnosti, a ne slabosti.',
+    excerpt: 'Ljepota nije samo ženska domena. Moderni muškarci prepoznaju da je njega kože znak samopouzdanja i profesionalnosti.',
     content: [
       {
         type: 'text',
@@ -1321,7 +1321,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 8,
-    title: 'Priroda kao kozmetičar: kako prirodni sastojci pišu priču o vašoj ljepoti',
+    title: 'Prirodna njega kože: priroda kao kozmetičar',
     slug: 'prirodna-njega-koze',
     excerpt: 'Priroda je najbolji kozmetičar - ona već zna što vaša koža treba. Kroz mudro odabrane prirodne sastojke, otkrivamo tajne koje su bile tu od početka vremena.',
     content: [
@@ -1580,9 +1580,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 9,
-    title: 'Zimska bajka za kožu: kako preživjeti hladne mjesece s blistavom kožom',
+    title: 'Zimska bajka za kožu: blistavost i tijekom hladnih mjeseci',
     slug: 'zimski-tretmani-koze',
-    excerpt: 'Zima nije vrijeme za sakrivanje ljepote - to je vrijeme za nježnu zaštitu i dubinsku regeneraciju. Otkrijte kako vaša koža može blistati čak i kada vani pada snijeg.',
+    excerpt: 'Zima nije vrijeme za sakrivanje ljepote - otkrijte kako vaša koža može blistati čak i kada vani pada snijeg kroz nježnu zaštitu i dubinsku regeneraciju.',
     content: [
       {
         type: 'heading',
@@ -1838,9 +1838,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 10,
-    title: 'Umjetnost mladosti: kako anti-aging tretmani pišu novu priču o vašem licu',
+    title: 'Anti-aging tretmani: prepisivanje priče o mladosti',
     slug: 'anti-aging-tretmani',
-    excerpt: 'Starenje nije neizbježno - to je samo priča koju možemo prepisati. Anti-aging tretmani su način da vašem licu vratimo priču o mladosti, energiji i vitalnosti.',
+    excerpt: 'Starenje nije neizbježno - otkrijte kako anti-aging tretmani mogu vratiti vašem licu priču o mladosti, energiji i vitalnosti.',
     content: [
       {
         type: 'heading',
@@ -2110,9 +2110,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 11,
-    title: 'Plasmage: budućnost ljepote gdje se znanost susreće s prirodom',
+    title: 'Plasmage: revolucionarna sinergija znanosti i prirode',
     slug: 'plasmage-najnoviji-trend',
-    excerpt: 'Plasmage nije samo tretman - to je revolucionarna sinergija gdje se prirodni faktori rasta susreću s naprednom tehnologijom. Rezultat? Ljepota koja se čini nemogućom, ali je potpuno prirodna.',
+    excerpt: 'Otkrijte kako kombinacija prirodnih faktora rasta i napredne tehnologije stvara ljepotu koja se čini nemogućom, ali je potpuno prirodna.',
     content: [
       {
         type: 'heading',

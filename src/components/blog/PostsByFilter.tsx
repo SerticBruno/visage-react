@@ -58,7 +58,7 @@ export default function PostsByFilter({ posts, filterType, filterValue }: PostsB
                       {post.excerpt}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {post.tags.map((tag) => (
+                      {post.tags.slice(0, 3).map((tag) => (
                         <InteractiveLink
                           key={tag}
                           href={`/blog/kategorija/${tag}`}
@@ -67,6 +67,11 @@ export default function PostsByFilter({ posts, filterType, filterValue }: PostsB
                           {tag}
                         </InteractiveLink>
                       ))}
+                      {post.tags.length > 3 && (
+                        <span className="px-3 py-1 bg-gray-100 text-gray-500 text-sm rounded-full">
+                          +{post.tags.length - 3}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </Link>

@@ -185,7 +185,7 @@ export default async function TagPage({ params }: TagPageProps) {
                       </p>
                     </Link>
                     <div className="flex flex-wrap gap-2">
-                      {post.tags.map((tag) => (
+                      {post.tags.slice(0, 3).map((tag) => (
                         <InteractiveLink
                           key={tag}
                           href={`/blog/kategorija/${toSlug(tag)}`}
@@ -194,6 +194,11 @@ export default async function TagPage({ params }: TagPageProps) {
                           {tag}
                         </InteractiveLink>
                       ))}
+                      {post.tags.length > 3 && (
+                        <span className="px-3 py-1 bg-slate-100 text-slate-500 text-sm rounded-full">
+                          +{post.tags.length - 3}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </article>

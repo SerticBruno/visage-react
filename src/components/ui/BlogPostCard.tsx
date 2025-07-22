@@ -32,7 +32,7 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
             {post.title}
           </h2>
           <div className="flex flex-wrap gap-2 mb-4">
-            {post.tags.map((tag) => (
+            {post.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
                 className="px-2 py-1 rounded-full text-sm font-medium"
@@ -41,8 +41,13 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
                 {tag}
               </span>
             ))}
+            {post.tags.length > 3 && (
+              <span className="px-2 py-1 rounded-full text-sm font-medium text-slate-500">
+                +{post.tags.length - 3}
+              </span>
+            )}
           </div>
-          <p className="text-slate-600 mb-4">{post.excerpt}</p>
+          <p className="text-slate-600 mb-4 line-clamp-3">{post.excerpt}</p>
         </div>
         <div className="p-6 pt-0">
           <div className="flex items-center justify-between text-sm text-slate-500 pt-4 border-t border-slate-100 mb-4">
