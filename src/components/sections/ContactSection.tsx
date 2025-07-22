@@ -40,11 +40,13 @@ const ContactInfoCard = ({ icon: Icon, title, content, link, linkText }: {
   );
 
   if (link) {
+    // Check if link is a web URL (starts with http/https) to determine if target="_blank" should be used
+    const isWebUrl = link.startsWith('http://') || link.startsWith('https://');
+    
     return (
       <a 
         href={link} 
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(isWebUrl && { target: "_blank", rel: "noopener noreferrer" })}
         className="block bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-4 sm:p-6 hover:shadow-2xl transition-shadow duration-300 hover:bg-gray-50"
       >
         <CardContent />
