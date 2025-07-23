@@ -99,17 +99,19 @@ Tjedan dana prije tretmana:
 
 4. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade kemijski piling preporučamo korištenje Toskani Total Recovery Gela i obavezno je korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.`,
     'oporavak': 'Oporavak može trajati nekoliko dana, uz blago crvenilo i ljuštenje kože. Nuspojave mogu uključivati:\n1. Crvenilo\n2. Osjetljivost\n3. Peckanje\n4. Stvaranje ljuskica\n5. Perutanje kože',
-    'nakon-tretmana': `Nakon kemijskog pilinga važno je:
+    'nakon-tretmana': `Za najbolje rezultate se preporuča protokol:
 
-- Zaštita od sunca - Obavezno koristite kremu sa zaštitnim faktorom SPF 50+ i izbjegavajte izravno izlaganje suncu.
+Napraviti 4 do 6 tretmana u razmaku od 2 do 3 tjedna, ovisno o stanju kože, te ponavljanje svakih 3 do 6 mjeseci.
 
-- Njega kože - Koristite blage proizvode za čišćenje i hidrataciju kože, izbjegavajte agresivne proizvode.
+Nakon kemijskog pilinga se preporuča:
 
-- Izbjegavanje dodatnih tretmana - Tjedan dana nakon pilinga izbjegavajte druge estetske tretmane.
-
-- Redovno praćenje - Pratite stanje kože i javite se ako primijetite bilo kakve neobične reakcije.
-
-- Preporučeni proizvodi - Nastavite koristiti Toskani Total Recovery Gel i Toskani Sun Shiel-D SPF 50+ za optimalne rezultate.`,
+- Ne nanosite kozmetiku s retinolom minimalno tjedan dana nakon tretmana
+- Ne koristiti grube ručnike tijekom skincare rutine
+- Ne koristiti mehaničke pilinge nakon tretmana minimalno tjedan dana
+- Izbjegavajte izlaganje suncu i solariju
+- Ne skidati ljuskice i pustiti kožu da se sama obnovi
+- Korištenje Toskani Recovery gela
+- Korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+`,
     'cijena': 'Cijena ovisi o tipu pilinga i broju potrebnih tretmana.'
   }
 }; 
