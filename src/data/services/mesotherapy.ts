@@ -17,7 +17,7 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimalno prilagođen pojedincu</strong>, njegovim potrebama i željama.`,
   benefits: [
   ],
-  image: '/images/services/Mesoterapia-transdermica-facial.webp',
+  image: '/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg',
   heroImage: '/images/services/toskani-hero.webp',
   metaDescription: 'Profesionalna mezoterapija u VISAGE studiju u Siska. Dubinska hidratacija i revitalizacija kože uz pomoć preciznih mikroinjekcija Mesoject Gun tehnologijom.',
   metaKeywords: 'mezoterapija, hidratacija kože, mikroinjekcije, estetski studio Sisak, VISAGE studio, Mesoject Gun, mezoterapija lica',
@@ -29,37 +29,36 @@ U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimal
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
-      image: '/images/services/Mesoterapia-transdermica-facial.webp'
+      image: '/images/services/mezoterapija/mezoterapija-prednosti-visage-estetski-studio.jpg'
     },
     { 
       id: 'kandidati', 
       label: 'Kandidati', 
       icon: 'FaUsers',
-      image: '/images/services/Mesoterapia-transdermica-facial.webp'
+      image: '/images/services/mezoterapija/mezoterapija-kandidati-visage-estetski-studio.jpg'
     },
     { 
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
-      image: '/images/services/Mesoterapia-transdermica-facial.webp'
+      image: '/images/services/mezoterapija/mezoterapija-priprema-visage-estetski-studio.jpg'
     },
     { 
       id: 'tijek-zahvata', 
       label: 'Tijek zahvata', 
       icon: 'FaRegClock',
-      image: '/images/services/Mesoterapia-transdermica-facial.webp'
+      image: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp'
     },
     { 
       id: 'oporavak', 
       label: 'Oporavak', 
       icon: 'FaRegHospital',
-      image: '/images/services/Mesoterapia-transdermica-facial.webp'
     },
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
       icon: 'FaRegFile',
-      image: '/images/services/Mesoterapia-transdermica-facial.webp'
+      image: '/images/services/mezoterapija/mezoterapija-nakon-tretmana-visage-estetski-studio.jpg'
     },
     { 
       id: 'cijena', 
@@ -69,60 +68,63 @@ U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimal
   ],
   stepContents: {
     'prednosti': `Prednosti mezoterapije:
-- Dubinska hidratacija kože kroz direktnu primjenu hijaluronske kiseline
-- Smanjivanje finih linija i bora poticanjem kolagena
-- Poboljšanje tonusa i teksture kože
-- Revitalizacija umorne i dehidrirane kože
-- Prirodna regeneracija stanica i obnova kože
-- Minimalno invazivni tretman s brzim oporavkom
-- Vidljivi rezultati već nakon prvog tretmana
-- Dugotrajni učinci kroz seriju tretmana`,
-    'kandidati': `Mezoterapija je idealna za osobe koje žele:
-- Poboljšati hidrataciju dehidrirane kože
-- Smanjiti fine linije i bore
-- Revitalizirati umornu kožu
-- Poboljšati tonus i teksturu kože
-- Prirodno potaknuti regeneraciju stanica
-- Postići svjež i mladenački izgled
 
-Pogodna je za sve tipove kože i dobne skupine, posebno za:
-- Dehidriranu kožu
-- Kožu s finim linijama
-- Umornu kožu
-- Kožu koja treba revitalizaciju`,
+- Stimulacija proizvodnje kolagena i elastina
+- Poboljšanje hidratacije kože
+- Poboljšanje tonusa i teksture kože
+- Poboljšanje kvalitete vlasišta
+- Smanjenje gubitka kose
+- Smanjenje finih linija i bora
+- Smanjenje pigmentacija
+- Prilagodljivost tretmana prema individualnim potrebama klijenta`,
+    'kandidati': `Mezoterapija je idealna za osobe koje žele:
+
+- Poboljšati kvalitetu kože i vlasišta
+- Ublažiti hiperpigmentacije
+- Ublažiti ožiljke od akni
+- Liječiti akne
+- Potaknuti rast kose
+- Smanjiti vidljivost finih linija i bora`,
     'priprema': `Prije mezoterapije potrebno je:
+
 1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
-2. Preporuka odgovarajućeg tipa koktela za vaš tip kože
+2. Preporuka odgovarajućeg uređaja za izvođenje mezoterapije i odgovarajućeg mezoterapijskog koktela
 3. Preporuka broja tretmana za optimalne rezultate
 4. Upute za pripremu kože prije tretmana
 
 Tjedan dana prije tretmana:
-- Izbjegavati izlaganje suncu
+
 - Prekinuti korištenje agresivnih proizvoda za njegu kože (npr. retinol)
-- Ne smijete laserski uklanjati dlačice`,
+- Ne smijete laserski uklanjati dlačice
+- Izbjegavanje odlazaka u solarij`,
     'tijek-zahvata': `Tretman mezoterapijom je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-1. Priprema kože - Čišćenje kože, primjena anestetičke kreme za komfort i dezinfekcija kože.
+1. Priprema kože - Čišćenje kože s odgovarajućim cleanserom i dezinficiranje područja koje se tretira.
 
-2. Primjena mezoterapije - Precizne mikroinjekcije Mesoject Gun-om s odabranim koktelom aktivnih sastojaka.
+2. Priprema odgovarajućeg mezoterapijskog koktela i uređaja - Nanošenje mezoterapijskog koktela na kožu korištenjem odgovarajućeg uređaja, ovisno o stanju i osjetljivosti kože. Može se koristiti Mesoject Gun i Dermapen 4 uređaj.
 
-3. Završna njega - Nanošenje umirujućih proizvoda, regenerativnih seruma i zaštitnog krema s SPF faktorom.
+3. Završna njega - Nanošenje odgovarajućih maski i seruma koji pridonose regeneraciji kože i koji odgovaraju stanju kože. Na kraju svakog tretmana nanosimo Toskani Sun Shiel-D SPF 50+.
 
-4. Preporuka za kućnu njegu - Preporučujemo korištenje blagih proizvoda za čišćenje, hidratantnih kremova i obavezno korištenje SPF 50+ zaštite.`,
-    'oporavak': `Oporavak može trajati nekoliko dana, uz blago crvenilo i osjetljivost kože. Nuspojave mogu uključivati:
+4. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade tretman mezoterapije preporučimo korištenje Toskani Total Recovery Gela i obavezno korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+. Preporučimo kućnu njegu ovisno o stanju kože.`,
+    'oporavak': `Ako se radi mezoterapija Mesoject gunom, tada oporavka nema. Ako se radi mezoterapija Dermapenom 4, ovisno o indikaciji koja se tretira, oporavak može trajati 2 do 4 dana.
+
+Nuspojave mogu uključivati:
 1. Crvenilo
-2. Osjetljivost
-3. Peckanje
-4. Male crvene točkice na mjestima injekcija`,
-    'nakon-tretmana': `Nakon mezoterapije važno je:
+2. Ljuskanje kože
+3. Osjetljivost`,
+    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
 
-- Zaštita od sunca - Obavezno koristite kremu sa zaštitnim faktorom SPF 50+ i izbjegavajte izravno izlaganje suncu.
+Napraviti 4 do 10 tretmana u razmaku od 2 do 4 tjedna, ovisno o stanju kože ili vlasišta, te ponavljanje tretmana svakih 6 do 9 mjeseci.
 
-- Njega kože - Koristite blage proizvode za čišćenje i hidrataciju kože, izbjegavajte agresivne proizvode.
+Nakon tretmana mezoterapije važno je:
 
-- Izbjegavanje dodatnih tretmana - Tjedan dana nakon mezoterapije izbjegavajte druge estetske tretmane.
-
-- Redovito praćenje - Pratite stanje kože i javite se ako primijetite bilo kakve neobične reakcije.`,
+- Ne nanositi šminku taj dan
+- Zaštititi tretirano područje s SPF kremom
+- Izbjegavati direktno izlaganje suncu i visokim temperaturama
+- Tjedan dana nakon izbjegavati solarije i saune
+- Odgoditi vježbanje barem 3 dana nakon tretmana
+- Ne koristiti agresivne proizvode na tretiranom području kako bi se izbjegle nuspojave i osigurao dugotrajan učinak
+- Promjeniti jastučnicu i ručnik za lice`,
     'cijena': 'Cijena mezoterapije ovisi o području tretmana, tipu koktela i broju potrebnih tretmana. Za optimalne rezultate preporučujemo seriju od 3-6 tretmana s intervalima od 2-4 tjedna.'
   }
 }; 

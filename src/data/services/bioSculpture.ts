@@ -13,7 +13,7 @@ Bio Sculpture je idealan za sve tipove noktiju i pruža vidljive rezultate odmah
 U Visage studiju koristimo originalne Bio Sculpture proizvode i tehnike, što osigurava najbolju kvalitetu i trajnost. Svaki tretman je pažljivo planiran za optimalne rezultate i dugotrajnu ljepotu noktiju.`,
   benefits: [
   ],
-  image: '/images/services/Mesoterapia-transdermica-facial.webp',
+  image: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp',
   heroImage: '/images/services/manikura.webp',
   metaDescription: 'Profesionalni Bio Sculpture sistemi u VISAGE studiju u Siska. Vrhunska njega i ukrašavanje noktiju s originalnim Bio Sculpture proizvodima. Dugotrajni rezultati i prirodan izgled.',
   metaKeywords: 'bio sculpture, nokti, manikura, estetski studio Sisak, VISAGE studio, bio sculpture sistemi, njega noktiju',

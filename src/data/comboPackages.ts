@@ -87,7 +87,7 @@ export const comboPackages: ComboPackage[] = [
   //       id: "mezoterapija", 
   //       title: "Mezoterapija", 
   //       quantity: 2,
-  //       image: "/images/services/Mesoterapia-transdermica-facial.webp",
+  //       image: "/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp",
   //       shortDescription: "Dubinska hidratacija"
   //     },
   //     { 

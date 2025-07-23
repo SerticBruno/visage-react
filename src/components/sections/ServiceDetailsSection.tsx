@@ -372,10 +372,10 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                   transition={{ duration: 0.15 }}
                 >
                   <div className={`grid grid-cols-1 gap-12 items-start ${
-                    activeTab !== 'prednosti' && activeTab !== 'cijena' && service.steps.find(s => s.id === activeTab)?.image 
-                      ? 'lg:grid-cols-2' 
-                      : activeTab === 'cijena'
+                    activeTab === 'cijena'
                       ? 'lg:grid-cols-1'
+                      : activeTab === 'oporavak' || (activeTab !== 'cijena' && service.steps.find(s => s.id === activeTab)?.image)
+                      ? 'lg:grid-cols-2' 
                       : 'lg:grid-cols-1'
                   }`}>
                     <div className={`space-y-6 ${activeTab === 'cijena' ? 'lg:max-w-2xl' : ''}`}>
@@ -414,39 +414,10 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                       </motion.div>
                     </div>
 
-                    {/* Benefits Cards */}
-                    {activeTab === 'prednosti' && (
-                      <motion.div 
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.15 }}
-                        className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-                      >
-                        {service.benefits.map((benefit, idx) => (
-                          <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 * idx }}
-                            whileHover={{ scale: 1.02 }}
-                            className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 cursor-pointer"
-                          >
-                            <div className="flex items-center space-x-3 mb-4">
-                              <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-slate-200 via-slate-300 to-slate-400 flex items-center justify-center shadow-lg ring-2 ring-white">
-                                <svg className="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <h4 className="text-lg font-semibold text-gray-900">Prednost {idx + 1}</h4>
-                            </div>
-                            <p className="text-gray-600 leading-relaxed">{benefit}</p>
-                          </motion.div>
-                        ))}
-                      </motion.div>
-                    )}
+
 
                     {/* Image for other tabs - only show if step has an image */}
-                    {activeTab !== 'prednosti' && activeTab !== 'cijena' && service.steps.find(s => s.id === activeTab)?.image && (
+                    {activeTab !== 'cijena' && service.steps.find(s => s.id === activeTab)?.image && (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -460,6 +431,18 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                           className="object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </motion.div>
+                    )}
+
+                    {/* Empty right column for oporavak tab */}
+                    {activeTab === 'oporavak' && !service.steps.find(s => s.id === activeTab)?.image && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.15 }}
+                        className="hidden lg:block"
+                      >
+                        {/* Empty space to maintain 2-column layout */}
                       </motion.div>
                     )}
                   </div>

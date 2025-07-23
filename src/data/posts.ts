@@ -901,7 +901,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/Mesoterapia-transdermica-facial.webp',
+        src: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp',
         alt: 'Mezoterapija tretman',
         caption: 'Profesionalni tretman mezoterapije u VISAGE studiju'
       },
@@ -1069,7 +1069,7 @@ export const blogPosts: BlogPost[] = [
     date: new Date('2024-05-07'),
     author: 'dr. T. Torinek',
     tags: ['Mezoterapija', 'Hidratacija', 'Anti-aging', 'Regeneracija kože', 'Kolagen', 'Estetska medicina', 'Minimalno invazivni tretmani'],
-    image: '/images/services/Mesoterapia-transdermica-facial.webp'
+    image: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp'
   },
   {
     id: 6,

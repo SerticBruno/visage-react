@@ -14,7 +14,7 @@ export const popularServices = [
   {
     title: 'Mezoterapija',
     description: 'Dubinska njega za vašu kožu',
-    image: '/images/services/Mesoterapia-transdermica-facial.webp',
+    image: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp',
     link: '/usluge/mezoterapija',
     features: [
       'poboljšanje kvalitete kože i vlasišta',

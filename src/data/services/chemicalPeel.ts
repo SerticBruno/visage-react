@@ -27,6 +27,7 @@ U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>in
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
+      image: '/images/services/kemijski-piling/kemijski-piling-prednosti-estetski-studio-sisak.jpg'
     },
     { 
       id: 'kandidati', 
@@ -38,6 +39,8 @@ U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>in
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
+      image: '/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg'
+
     },
     { 
       id: 'tijek-zahvata', 

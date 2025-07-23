@@ -3,18 +3,24 @@ import { Service } from './types';
 export const prp: Service = {
   id: 'prp',
   title: 'PRP',
-  description: 'PRP terapija za poticanje prirodne regeneracije kože',
-  longDescription: `PRP (Platelet Rich Plasma) terapija je revolucionarna metoda koja koristi vlastite trombocite pacijenta za poticanje prirodne regeneracije kože. Ova potpuno prirodna i sigurna metoda omogućava direktnu primjenu koncentriranih faktora rasta u kožu.
+  description: 'Prirodna obnova i revitalizacija kože',
+  longDescription: `Bez dodataka, bez kemije, bez rizika, samo <strong>čista snaga regeneracije</strong> iz vlastitih stanica. <strong>PRP tretman</strong> pruža <strong>prirodnu i dugotrajnu revitalizaciju kože</strong>.
 
-Kroz precizne mikroinjekcije, vlastiti trombociti pacijenta se isporučuju u dermis, potičući prirodne procese regeneracije i obnove kože. PRP terapija aktivira vlastite mehanizme popravka kože, što rezultira poboljšanjem tonusa, teksture i općeg izgleda kože.
+<strong>PRP tretman</strong> ili tretman <strong>plazmom bogatom trombocitima</strong> je primjena vlastite krvi plazme koja je bogata <strong>faktorima rasta</strong> i <strong>proteinima</strong> kako bi se potaknula <strong>regeneracija kože</strong>.
 
-PRP terapija je idealna za sve tipove kože i pruža vidljive rezultate već nakon prvog tretmana. Posebno je učinkovita za kožu koja treba revitalizaciju, kožu s finim linijama i kožu koja izgleda umorno.
+<strong>Trombociti</strong> su sastavne stanice naše krvi te sadrže brojne <strong>faktore rasta</strong> koji se oslobađaju nakon aktivacije, a djeluju tako da <strong>stimuliraju matične stanice</strong> i time ubrzavaju proces <strong>cijeljenja i regeneracije tkiva</strong>.
 
-U Visage studiju koristimo najnapredniju opremu za pripremu PRP-a, što osigurava optimalnu koncentraciju trombocita i maksimalne rezultate. Svaki tretman je prilagođen individualnim potrebama vaše kože.`,
+<strong>PRP tretman</strong> je <strong>potpuno prirodan tretman</strong>, jer se koristi <strong>vaša krv</strong>. Ne može izazvati <strong>alergijsku reakciju</strong> i <strong>potpuno je siguran</strong>.
+
+<strong>PRP se može raditi</strong> primjenom <strong>Mesoject guna</strong> i s <strong>mezoterapijskim iglama</strong>.
+
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <strong>skin boosteri</strong>, <strong>mezoterapija</strong> i <strong>kemijski piling</strong>.
+
+Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj revitalizaciji kože</strong> u <strong>Visage studiju</strong>.`,
   benefits: [
   ],
-  image: '/images/services/plasmage-hero.webp',
-  heroImage: '/images/services/Mesoterapia-transdermica-facial.webp',
+  image: '/images/services/toskani-woman.webp',
+  heroImage: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp',
   metaDescription: 'Profesionalna PRP terapija u VISAGE studiju u Siska. Koristite vlastite trombocite za regeneraciju kože. Prirodna i sigurna metoda s vidljivim rezultatima.',
   metaKeywords: 'PRP terapija, regeneracija kože, trombociti, estetski studio Sisak, VISAGE studio, PRP lica, prirodna regeneracija',
   tags: ['prp', 'regeneracija', 'prirodni-tretmani', 'minimalno-invazivni', 'trombociti'],
@@ -25,37 +31,33 @@ U Visage studiju koristimo najnapredniju opremu za pripremu PRP-a, što osigurav
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
-      image: '/images/services/woman-face-visage-estetski-studio.webp'
+      image: '/images/services/prp/prp-prednosti-estetski-studio-sisak.jpeg'
     },
     { 
       id: 'kandidati', 
       label: 'Kandidati', 
       icon: 'FaUsers',
-      image: '/images/services/woman-face-visage-estetski-studio.webp'
     },
     { 
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
-      image: '/images/services/woman-face-visage-estetski-studio.webp'
     },
     { 
       id: 'tijek-zahvata', 
       label: 'Tijek zahvata', 
       icon: 'FaRegClock',
-      image: '/images/services/woman-face-visage-estetski-studio.webp'
+      image: '/images/services/prp/prp-tijek-zahvata-estetski-studio-sisak.jpeg'
     },
     { 
       id: 'oporavak', 
       label: 'Oporavak', 
       icon: 'FaRegHospital',
-      image: '/images/services/woman-face-visage-estetski-studio.webp'
     },
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
       icon: 'FaRegFile',
-      image: '/images/services/woman-face-visage-estetski-studio.webp'
     },
     { 
       id: 'cijena', 
@@ -64,71 +66,59 @@ U Visage studiju koristimo najnapredniju opremu za pripremu PRP-a, što osigurav
     }
   ],
   stepContents: {
-    'prednosti': `Prednosti PRP terapije:
-- Potpuno prirodna metoda koja koristi vlastite stanice pacijenta
-- Potiče prirodnu regeneraciju kože kroz faktore rasta
-- Poboljšava tonus i teksturu kože
-- Smanjuje fine linije i bore
-- Revitalizira umornu i dehidriranu kožu
-- Minimalno invazivni tretman s brzim oporavkom
-- Vidljivi rezultati već nakon prvog tretmana
-- Dugotrajni učinci kroz seriju tretmana
-- Sigurna metoda bez rizika od alergijskih reakcija`,
-    'kandidati': `PRP terapija je idealna za osobe koje žele:
-- Potaknuti prirodnu regeneraciju kože
-- Poboljšati tonus i teksturu kože
-- Smanjiti fine linije i bore
-- Revitalizirati umornu kožu
-- Koristiti potpuno prirodnu metodu
-- Postići svjež i mladenački izgled
+    'prednosti': `Prednosti PRP tretmana:
 
-Pogodna je za sve tipove kože i dobne skupine, posebno za:
-- Umornu kožu koja treba revitalizaciju
-- Kožu s finim linijama i borama
-- Dehidriranu kožu
-- Kožu koja treba poboljšanje tonusa`,
-    'priprema': `Prije PRP terapije potrebno je:
+- Koristi vlastite biološke resurse minimizirajući rizik alergijskih reakcija
+- Potiče stvaranje kolagena i elastina
+- Potiče samostalnu regeneraciju kože i vlasišta
+- Poboljšava teksturu kože
+- Smanjuje pojavu finih linija, bora i nepravilnosti
+- Pomaže u poboljšanju tonusa kože
+- Povećava hidrataciju kože
+- Usporava se gubitak kose
+- Potiče rast kose
+- Poboljšava kvalitetu vlasišta`,
+    'kandidati': `PRP tretman je idealan za osobe koje žele:
+
+- Poboljšati kvalitetu kože i vlasišta
+- Poboljšati tonus kože
+- Usporiti proces starenja
+- Ojačati kosu
+- Smanjiti opadanje kose
+- Ujednačiti ton kože
+- Poboljšanje elastičnosti kože
+- Dubinski hidratizirati kožu`,
+    'priprema': `Prije PRP tretmana potrebno je:
+
 1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
-2. Preporuka broja tretmana za optimalne rezultate
-3. Upute za pripremu kože prije tretmana
-4. Analiza krvi (po potrebi)
+2. Izvaditi krv kako bismo utvrdili jeste li kandidat za PRP tretman
+3. Preporuka broja tretmana za optimalne rezultate`,
+    'tijek-zahvata': `Tretman PRP je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-Tjedan dana prije tretmana:
-- Izbjegavati izlaganje suncu
-- Prekinuti korištenje agresivnih proizvoda za njegu kože
-- Piti dovoljno vode za optimalnu hidrataciju kože
-- Izbjegavati alkohol i pušenje
-- Ne smijete laserski uklanjati dlačice`,
-    'tijek-zahvata': `Tretman PRP (Platelet Rich Plasma) je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
+1. Priprema kože - Dezinficiramo kožu te vadimo malu količinu vaše krvi.
 
-1. Konzultacija i procjena - Detaljna analiza stanja kože, odabir odgovarajućeg tretmana, plan postupka i objašnjenje.
+2. Priprema krvne plazme - Centrifugiramo vašu krv u posebnom stroju koji ekstrahira plazmu punu matičnih stanica i faktora rasta.
 
-2. Priprema kože - Dubinsko čišćenje kože, priprema za uzimanje krvi, dezinfekcija kože.
+3. Priprema kože ili vlasišta - Čistimo kožu s Toskani Energizing Cleanserom, dok vlasište odmastimo s kemijskim pilingom u spreju.
 
-3. Primjena PRP - Uzimanje krvi, priprema plazme, precizne mikroinjekcije i masiranje područja.
+4. Odabir načina izvođenja PRP tretmana - PRP tretman se može raditi s mezoterapijskim iglama, gdje je bol svedena na minimum korištenjem anestetske kreme. Nadalje, PRP tretman se može raditi s Mesoject gunom, pri čemu nema nelagode.
 
-4. Završna njega - Primjena umirujućih proizvoda, regenerativnih seruma i zaštitnog krema s SPF faktorom.
+5. Završna njega - Nanošenje Toskani Antistress maske koja ima umirujuća svojstva na kožu, nanošenje Toskani Total Recovery gela koji pomaže regeneraciji kože i nanošenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.
 
-5. Preporuka za kućnu njegu - Preporučujemo korištenje blagih proizvoda za čišćenje, hidratantnih kremova i obavezno korištenje SPF 50+ zaštite.`,
-    'oporavak': `Oporavak može trajati nekoliko dana, uz blago crvenilo i osjetljivost kože. Nuspojave mogu uključivati:
-1. Crvenilo
-2. Osjetljivost
-3. Peckanje
-4. Male crvene točkice na mjestima injekcija
-5. Moguća mala modrica na mjestima injekcija
+6. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade PRP tretman preporučavamo korištenje Toskani Total Recovery gela i kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.`,
+    'oporavak': `Moguće nuspojave su osjetljivost i blago crvenilo tretiranog područja koje može trajati oko 24h.
 
-Redoviti tretmani svakih 4-6 tjedana daju najbolje rezultate.`,
-    'nakon-tretmana': `Nakon PRP terapije važno je:
+Odmah nakon završetka tretmana moguće je nastaviti s uobičajenim aktivnostima.`,
+    'nakon-tretmana': `Za najbolje rezultate se preporuča protokol:
 
-- Zaštita od sunca - Obavezno koristite kremu sa zaštitnim faktorom SPF 50+ i izbjegavajte izravno izlaganje suncu 2 tjedna.
+Napraviti 2 ili 3 PRP tretmana u razmaku od mjesec dana, ovisno o stanju kože, te ponavljati tretman svakih 6 do 12 mjeseci.
 
-- Njega kože - Koristite blage proizvode za čišćenje i hidrataciju kože, izbjegavajte agresivne proizvode.
+Nakon PRP tretmana se preporuča:
 
-- Izbjegavanje dodatnih tretmana - Tjedan dana nakon PRP terapije izbjegavajte druge estetske tretmane.
-
-- Redovito praćenje - Pratite stanje kože i javite se ako primijetite bilo kakve neobične reakcije.
-
-- Hidratacija - Piti dovoljno vode za optimalnu hidrataciju kože.`,
+- Koristiti kremu sa zaštitnim faktorom
+- Izbjegavati odlazak u saunu i solarij
+- Odgoditi trening za minimalno 3 dana
+- Promjeniti jastučnicu i ručnik za lice`,
     'cijena': `Cijena PRP terapije:
 - Pojedinačni tretman: 600 kn
 - Paket od 3 tretmana: 1.500 kn
