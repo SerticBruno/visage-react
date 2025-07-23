@@ -832,7 +832,7 @@ export const pricingData: PricingItem[] = [
   // TOSKANI Proizvodi
   {
     id: "energizing-cleanser",
-    title: "Energizing Cleanser Gel",
+    title: "Energizing Cleanser",
     description: "200 ml",
     price: "40 EUR",
     category: "TOSKANI Proizvodi"
@@ -845,8 +845,8 @@ export const pricingData: PricingItem[] = [
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "bamboo-toner",
-    title: "Bamboo Toner Tonik",
+    id: "bamboo-hydratonic",
+    title: "Bamboo Hydratonic",
     description: "200 ml",
     price: "30 EUR",
     category: "TOSKANI Proizvodi"
@@ -866,29 +866,8 @@ export const pricingData: PricingItem[] = [
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "antistress-mask",
-    title: "Antistress Mask",
-    description: "200 ml",
-    price: "65 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
     id: "total-recovery-gel",
     title: "Total Recovery Gel",
-    description: "50 ml",
-    price: "35 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "anti-pollution-cream",
-    title: "Anti-Pollution Total Defense Cream 50+",
-    description: "50 ml",
-    price: "65 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "sun-protection",
-    title: "Sun Protection Creme SPF 50",
     description: "50 ml",
     price: "35 EUR",
     category: "TOSKANI Proizvodi"
@@ -901,21 +880,21 @@ export const pricingData: PricingItem[] = [
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "radiance-eye",
+    id: "radiance-eye-contour",
     title: "Radiance Eye Contour",
     description: "15 ml",
     price: "40 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "radiance-mesoserum",
+    id: "radiance-ultimate-mesoserum",
     title: "Radiance Ultimate Mesoserum",
     description: "30 ml",
     price: "75 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "purifying-serum",
+    id: "purifying-intensive-serum",
     title: "Purifying Intensive Serum",
     description: "15 ml",
     price: "40 EUR",
@@ -943,41 +922,6 @@ export const pricingData: PricingItem[] = [
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "night-reverse-serum",
-    title: "Night Reverse Advanced Serum",
-    description: "30 ml",
-    price: "80 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "night-reverse-cream",
-    title: "Night Reverse Intensive Cream & Mask",
-    description: "50 ml",
-    price: "70 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "anti-hair-loss",
-    title: "Anti-Hair Loss Lotion",
-    description: "100 ml",
-    price: "45 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "densihair-boost",
-    title: "Densihair Boost Kapsule",
-    description: "30 kapsula",
-    price: "35 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "glacier-pro-age-cream",
-    title: "Glacier Pro Age Krema",
-    description: "50 ml",
-    price: "60 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
     id: "glacier-pro-age-serum",
     title: "Glacier Pro Age Serum",
     description: "30 ml",
@@ -985,10 +929,10 @@ export const pricingData: PricingItem[] = [
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "retin-pro-age-cream",
-    title: "Retin Pro Age Krema",
+    id: "glacier-pro-age-cream",
+    title: "Glacier Pro Age Cream",
     description: "50 ml",
-    price: "65 EUR",
+    price: "60 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
@@ -999,8 +943,8 @@ export const pricingData: PricingItem[] = [
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "unique-pro-age-cream",
-    title: "Unique Pro Age Krema",
+    id: "retin-pro-age-cream",
+    title: "Retin Pro Age Cream",
     description: "50 ml",
     price: "65 EUR",
     category: "TOSKANI Proizvodi"
@@ -1013,72 +957,107 @@ export const pricingData: PricingItem[] = [
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "myotec-eye-lift",
-    title: "Myotec Eye Lift Krema",
+    id: "unique-pro-age-cream",
+    title: "Unique Pro Age Cream",
+    description: "50 ml",
+    price: "65 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "anti-hair-loss-lotion",
+    title: "Anti Hair-Loss Lotion",
+    description: "100 ml",
+    price: "45 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "densihair-boost-capsules",
+    title: "DensiHair Boost Capsules",
+    description: "30 kapsula",
+    price: "35 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "night-reverse-advanced-serum",
+    title: "Night Reverse Advanced Serum",
+    description: "30 ml",
+    price: "80 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "night-reverse-intensive-cream-mask",
+    title: "Night Reverse Intensive Cream & Mask",
+    description: "50 ml",
+    price: "70 EUR",
+    category: "TOSKANI Proizvodi"
+  },
+  {
+    id: "anti-ageing-eye-contour",
+    title: "Anti Ageing Eye Contour",
     description: "15 ml",
-    price: "48 EUR",
+    price: "45 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "anti-ageing-ha-ampule",
     title: "Anti-ageing + HA Ampule",
-    description: "15x2mL",
+    description: "15x2ml",
     price: "50 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "radiance-ampule",
     title: "Radiance Ampule",
-    description: "15x2mL",
+    description: "15x2ml",
     price: "50 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "sensitive-skin-ampule",
     title: "Sensitive Skin Ampule",
-    description: "15x2mL",
+    description: "15x2ml",
     price: "50 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "purifying-ampule",
     title: "Purifying Ampule",
-    description: "15x2mL",
+    description: "15x2ml",
     price: "50 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "lipo-proteoglycans-ampule",
     title: "Lipo Proteoglycans Ampule",
-    description: "15x2mL",
+    description: "15x2ml",
     price: "50 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "vitaflash-ampule",
     title: "Vitaflash Ampule",
-    description: "15x2mL",
+    description: "15x2ml",
     price: "30 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "sun-shield-d-facial-cream",
-    title: "Sun Shield-D Sun Fluid Facial Cream",
-    description: "50mL",
+    title: "Sun Shiel-D Sun Fluid Facial Cream",
+    description: "50ml",
     price: "36 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "sun-shield-d-facial-cream-tinted",
-    title: "Sun Shield-D Sun Fluid Facial Cream Tinted",
-    description: "50mL",
+    title: "Sun Shiel-D Sun Fluid Facial Cream Tinted",
+    description: "50ml",
     price: "39 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "sun-shield-d-body-face-spray",
-    title: "Sun Shield-D Sun Body & Face Spray",
-    description: "200mL",
+    title: "Sun Shiel-D Sun Body&Face Sprej",
+    description: "200ml",
     price: "42 EUR",
     category: "TOSKANI Proizvodi"
   }
