@@ -27,7 +27,9 @@ export const productCategories = [
   'Serum',
   'Okoloočna njega',
   'Zaštita od sunca',
-  'Njega kose'
+  'Njega kose',
+  'Noćna njega',
+  'Ampule'
 ];
 
 export const products: Product[] = [
@@ -136,23 +138,7 @@ export const products: Product[] = [
     ],
     tags: ['piling', 'masna koža', 'mješovita koža']
   },
-  {
-    id: '6',
-    title: 'Antistress Mask',
-    description: 'Hranjiva, umirujuća i osvježavajuća maska za sve tipove kože.',
-    category: 'Maska',
-    image: '/images/products/toskaniantistressmask.webp',
-    price: '65 EUR',
-    oldPrice: '75 EUR',
-    volume: '200 ml',
-    activeIngredients: ['Aloe Vera Ekstrakt', 'Ekstrakt kamilice', 'Maslinovo ulje', 'Mentol'],
-    application: [
-      'Uklonite šminku i očistite kožu Energizing Cleanserom',
-      'Premažite fini, jednoliki sloj po licu, vratu i dekolteu',
-      'Pričekajte 15 minuta i uklonite spužvama ili pamukom navlaženim vodom'
-    ],
-    tags: ['maska', 'umirujuća svojstva', 'hidratacija', 'svi tipovi kože']
-  },
+
   {
     id: '8',
     title: 'Total Recovery Gel',
@@ -290,23 +276,6 @@ export const products: Product[] = [
     tags: ['krema', 'anti-age', 'njega nakon dermalnih filera', 'njega nakon skin boostera', 'svi tipovi kože']
   },
   {
-    id: '19',
-    title: 'Night Reverse Advanced Serum',
-    description: 'Noćni serum s Total Restoring Complexom, koji poništava štetu od svakodnevnog stresa i aktivira prirodni mehanizam obnove kože.',
-    category: 'Serum',
-    image: '/images/products/toskaniantiagenightdrops.webp',
-    price: '80 EUR',
-    oldPrice: '95 EUR',
-    volume: '30 ml',
-    activeIngredients: ['Probiotici', 'algae extract', 'Byfida ferment Lysate', 'tetrapeptide-26', 'TRC (Total Restoring Complex)'],
-    application: [
-      'Uklonite šminku i očistite kožu pomoću Energizing Cleansera',
-      'Nanesite Night Reverse Advanced Serum na područje oko očiju',
-      'Nanesite jednu ili dvije kapljice Night Reverse seruma u malu količinu Skin Architect kreme'
-    ],
-    tags: ['serum', 'noćna njega', 'anti-age', 'svi tipovi kože', 'suha koža', 'dehidrirana koža']
-  },
-  {
     id: '20',
     title: 'Glacier Pro Age Serum',
     description: 'Lagani serum koji nakon nanošenja pruža osjećaj hidratacije i svježine.',
@@ -440,5 +409,248 @@ export const products: Product[] = [
       'Nakon toga uzmite 1 kapsulu dnevno za održavanje rezultata'
     ],
     tags: ['kapsule', 'njega vlasišta', 'dodatak prehrani', 'zaustavljanje gubitka kose', 'jačanje kose']
+  },
+  {
+    id: '28',
+    title: 'Night Reverse Advanced Serum',
+    description: 'Napredni noćni serum za obnavljanje i regeneraciju kože tijekom noći.',
+    category: 'Noćna njega',
+    image: '/images/products/toskani-night-reverse-serum.webp',
+    price: '80 EUR',
+    volume: '30 ml',
+    isNew: true,
+    activeIngredients: ['Retinol', 'Niacinamid', 'Hijaluronska kiselina', 'Peptidi'],
+    application: [
+      'Nanesite navečer na čistu kožu',
+      'Koristite 2-3 kapi seruma na cijelo lice',
+      'Nanesite laganim tapkanjem prstiju',
+      'Slijedite s noćnom kremom'
+    ],
+    tags: ['noćna njega', 'anti-age', 'regeneracija', 'svi tipovi kože']
+  },
+  {
+    id: '29',
+    title: 'Night Reverse Intensive Cream & Mask',
+    description: 'Intenzivna noćna krema i maska za duboku regeneraciju i obnavljanje kože.',
+    category: 'Noćna njega',
+    image: '/images/products/toskani-night-cream.jpg',
+    price: '70 EUR',
+    volume: '50 ml',
+    isNew: true,
+    activeIngredients: ['Retinol', 'Vitamin E', 'Shea maslac', 'Hijaluronska kiselina'],
+    application: [
+      'Nanesite navečer na čistu kožu',
+      'Može se koristiti kao noćna krema ili maska',
+      'Za masku: nanesite deblji sloj i ostavite 15-20 minuta',
+      'Za noćnu kremu: nanesite tanak sloj'
+    ],
+    tags: ['noćna njega', 'maska', 'anti-age', 'regeneracija', 'svi tipovi kože']
+  },
+  {
+    id: '30',
+    title: 'Night Reverse Advanced Serum',
+    description: 'Napredni noćni serum za obnavljanje i regeneraciju kože tijekom noći.',
+    category: 'Serum',
+    image: '/images/products/toskani-night-reverse-serum.webp',
+    price: '80 EUR',
+    volume: '30 ml',
+    isNew: true,
+    activeIngredients: ['Retinol', 'Niacinamid', 'Hijaluronska kiselina', 'Peptidi'],
+    application: [
+      'Nanesite navečer na čistu kožu',
+      'Koristite 2-3 kapi seruma na cijelo lice',
+      'Nanesite laganim tapkanjem prstiju',
+      'Slijedite s noćnom kremom'
+    ],
+    tags: ['serum', 'noćna njega', 'anti-age', 'regeneracija', 'svi tipovi kože']
+  },
+  {
+    id: '31',
+    title: 'Night Reverse Intensive Cream & Mask',
+    description: 'Intenzivna noćna krema i maska za duboku regeneraciju i obnavljanje kože.',
+    category: 'Maska',
+    image: '/images/products/toskani-night-cream.jpg',
+    price: '70 EUR',
+    volume: '50 ml',
+    isNew: true,
+    activeIngredients: ['Retinol', 'Vitamin E', 'Shea maslac', 'Hijaluronska kiselina'],
+    application: [
+      'Nanesite navečer na čistu kožu',
+      'Može se koristiti kao noćna krema ili maska',
+      'Za masku: nanesite deblji sloj i ostavite 15-20 minuta',
+      'Za noćnu kremu: nanesite tanak sloj'
+    ],
+    tags: ['maska', 'noćna njega', 'anti-age', 'regeneracija', 'svi tipovi kože']
+  },
+  {
+    id: '32',
+    title: 'Anti Ageing Eye Contour',
+    description: 'Posebno formuliran hidratantni serum za smanjenje umora, tretiranje bora, osvježavanje područja oko očiju, hidrataciju i umirivanje nježne kože oko očiju. Njegovi aktivni sastojci koji djeluju u sinergiji kako bi se oduprli pojavi bora, umanjili bore i već formirane linije. Također pomaže u sprječavanju gubitka čvrstoće, pomaže koži da se vrati u njezino prirodno zdravlje i pruža ukupni učinak pomlađivanja.',
+    category: 'Okoloočna njega',
+    image: '/images/products/toskani-anti-ageing-eye-contour.webp',
+    price: '45 EUR',
+    volume: '15 ml',
+    isNew: true,
+    activeIngredients: ['Acetyl Hexapeptide-8', 'DMAE', 'Ekstrakti Ginkgo Bilobe', 'Hijaluronska kiselina', 'Maslinovo ulje', 'Organski silicij'],
+    application: [
+      'Nanesite ujutro i navečer na čistu kožu',
+      'Nanesite laganim tapkanjem prstiju po području oko očiju',
+      'Izbjegavajte direktan kontakt s očima',
+      'Slijedite s odgovarajućom kremom'
+    ],
+    tags: ['okoloočna njega', 'anti-age', 'ublažavanje finih linija', 'hidratacija', 'umirivanje']
+  },
+  {
+    id: '33',
+    title: 'Anti-ageing + HA Ampule',
+    description: 'Intenzivna ampula s hijaluronskom kiselinom za anti-age tretman i duboku hidrataciju.',
+    category: 'Ampule',
+    image: '/images/products/toskani-anti-ageing-ha-ampule.webp',
+    price: '50 EUR',
+    volume: '15x2ml',
+    isNew: true,
+    activeIngredients: ['Hijaluronska kiselina', 'Peptidi', 'Anti-age kompleks'],
+    application: [
+      'Koristite jednu ampulu dnevno',
+      'Nanesite na čistu kožu',
+      'Slijedite s odgovarajućom kremom'
+    ],
+    tags: ['ampule', 'anti-age', 'hijaluronska kiselina', 'hidratacija']
+  },
+  {
+    id: '34',
+    title: 'Radiance Ampule',
+    description: 'Ampula za posvjetljivanje i ujednačavanje tena.',
+    category: 'Ampule',
+    image: '/images/products/toskani-radiance-ampule.webp',
+    price: '50 EUR',
+    volume: '15x2ml',
+    isNew: true,
+    activeIngredients: ['Vitamin C', 'Niacinamid', 'Azelaična kiselina'],
+    application: [
+      'Koristite jednu ampulu dnevno',
+      'Nanesite na čistu kožu',
+      'Slijedite s odgovarajućom kremom'
+    ],
+    tags: ['ampule', 'posvjetljivanje', 'ujednačavanje tena', 'vitamin C']
+  },
+  {
+    id: '35',
+    title: 'Sensitive Skin Ampule',
+    description: 'Umirujuća ampula za osjetljivu kožu.',
+    category: 'Ampule',
+    image: '/images/products/toskani-sensitive-skin-ampule.webp',
+    price: '50 EUR',
+    volume: '15x2ml',
+    isNew: true,
+    activeIngredients: ['Aloe Vera', 'Centella Asiatica', 'Panthenol'],
+    application: [
+      'Koristite jednu ampulu dnevno',
+      'Nanesite na čistu kožu',
+      'Slijedite s odgovarajućom kremom'
+    ],
+    tags: ['ampule', 'osjetljiva koža', 'umirivanje', 'regeneracija']
+  },
+  {
+    id: '36',
+    title: 'Purifying Ampule',
+    description: 'Ampula za pročišćavanje i kontrolu masnoće.',
+    category: 'Ampule',
+    image: '/images/products/toskani-purifying-ampule.webp',
+    price: '50 EUR',
+    volume: '15x2ml',
+    isNew: true,
+    activeIngredients: ['Salicylic Acid', 'Zinc', 'Purifying Complex'],
+    application: [
+      'Koristite jednu ampulu dnevno',
+      'Nanesite na čistu kožu',
+      'Slijedite s odgovarajućom kremom'
+    ],
+    tags: ['ampule', 'pročišćavanje', 'kontrola masnoće', 'akne']
+  },
+  {
+    id: '37',
+    title: 'Lipo Proteoglycans Ampule',
+    description: 'Ampula s lipo proteoglikanima za učvršćivanje i obnavljanje kože.',
+    category: 'Ampule',
+    image: '/images/products/toskani-lipo-proteoglycans-ampule.webp',
+    price: '50 EUR',
+    volume: '15x2ml',
+    isNew: true,
+    activeIngredients: ['Lipo Proteoglycans', 'Kolagen', 'Elastin'],
+    application: [
+      'Koristite jednu ampulu dnevno',
+      'Nanesite na čistu kožu',
+      'Slijedite s odgovarajućom kremom'
+    ],
+    tags: ['ampule', 'učvršćivanje', 'obnavljanje', 'anti-age']
+  },
+  {
+    id: '38',
+    title: 'Vitaflash Ampule',
+    description: 'Ampula s vitaminima za trenutno osvježavanje i energiziranje kože.',
+    category: 'Ampule',
+    image: '/images/products/toskani-vitaflash-ampule.webp',
+    price: '30 EUR',
+    volume: '15x2ml',
+    isNew: true,
+    activeIngredients: ['Vitamin C', 'Vitamin E', 'Vitamin B3', 'Vitamin B5'],
+    application: [
+      'Koristite jednu ampulu dnevno',
+      'Nanesite na čistu kožu',
+      'Slijedite s odgovarajućom kremom'
+    ],
+    tags: ['ampule', 'vitamini', 'osvježavanje', 'energiziranje']
+  },
+  {
+    id: '39',
+    title: 'Sun Shiel-D Sun Fluid Facial Cream',
+    description: 'Lagana fluidna krema za zaštitu lica od sunca.',
+    category: 'Zaštita od sunca',
+    image: '/images/products/toskani-sun-shield-facial-cream.webp',
+    price: '36 EUR',
+    volume: '50ml',
+    isNew: true,
+    activeIngredients: ['SPF 50+', 'UVA/UVB zaštita', 'Hijaluronska kiselina'],
+    application: [
+      'Nanesite 20 minuta prije izlaganja suncu',
+      'Ponovite nanošenje svaka 2 sata',
+      'Nanesite na čistu kožu'
+    ],
+    tags: ['spf', 'zaštita od sunca', 'lice', 'fluidna tekstura']
+  },
+  {
+    id: '40',
+    title: 'Sun Shiel-D Sun Fluid Facial Cream Tinted',
+    description: 'Lagana fluidna krema s tonom za zaštitu lica od sunca.',
+    category: 'Zaštita od sunca',
+    image: '/images/products/toskani-sun-shield-facial-cream-tinted.webp',
+    price: '39 EUR',
+    volume: '50ml',
+    isNew: true,
+    activeIngredients: ['SPF 50+', 'UVA/UVB zaštita', 'Hijaluronska kiselina', 'Toner'],
+    application: [
+      'Nanesite 20 minuta prije izlaganja suncu',
+      'Ponovite nanošenje svaka 2 sata',
+      'Nanesite na čistu kožu'
+    ],
+    tags: ['spf', 'zaštita od sunca', 'lice', 'fluidna tekstura', 'toner']
+  },
+  {
+    id: '41',
+    title: 'Sun Shiel-D Sun Body&Face Sprej',
+    description: 'Sprej za zaštitu tijela i lica od sunca.',
+    category: 'Zaštita od sunca',
+    image: '/images/products/toskani-sun-shield-body-face-spray.webp',
+    price: '42 EUR',
+    volume: '200ml',
+    isNew: true,
+    activeIngredients: ['SPF 50+', 'UVA/UVB zaštita', 'Vodootporna formula'],
+    application: [
+      'Nanesite 20 minuta prije izlaganja suncu',
+      'Ponovite nanošenje svaka 2 sata',
+      'Nanesite na čistu kožu'
+    ],
+    tags: ['spf', 'zaštita od sunca', 'tijelo i lice', 'sprej', 'vodootporna']
   }
 ]; 
