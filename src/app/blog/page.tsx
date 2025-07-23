@@ -203,7 +203,7 @@ export default function BlogPage() {
                           onClick={() => handleSort('newest')}
                           className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
                             sortBy === 'newest' 
-                              ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                              ? 'bg-slate-700 text-white shadow-sm' 
                               : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
                           }`}
                         >
@@ -214,7 +214,7 @@ export default function BlogPage() {
                           onClick={() => handleSort('oldest')}
                           className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
                             sortBy === 'oldest' 
-                              ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                              ? 'bg-slate-700 text-white shadow-sm' 
                               : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
                           }`}
                         >
@@ -225,7 +225,7 @@ export default function BlogPage() {
                           onClick={() => handleSort('title-asc')}
                           className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
                             sortBy === 'title-asc' 
-                              ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                              ? 'bg-slate-700 text-white shadow-sm' 
                               : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
                           }`}
                         >
@@ -236,7 +236,7 @@ export default function BlogPage() {
                           onClick={() => handleSort('title-desc')}
                           className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all duration-300 cursor-pointer ${
                             sortBy === 'title-desc' 
-                              ? 'bg-gradient-to-br from-slate-700 to-slate-800 text-white shadow-sm' 
+                              ? 'bg-slate-700 text-white shadow-sm' 
                               : 'text-slate-600 hover:bg-slate-50 hover:shadow-sm'
                           }`}
                         >

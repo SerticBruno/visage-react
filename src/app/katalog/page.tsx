@@ -331,7 +331,7 @@ function KatalogContent() {
                         )}
                       </div>
                       <button 
-                        className="px-4 py-2 bg-gradient-to-br from-slate-700 to-slate-800 text-white rounded-lg hover:from-slate-800 hover:to-slate-900 transition-all duration-300 text-sm font-medium shadow-sm hover:shadow-md transform hover:-translate-y-0.5 cursor-pointer"
+                        className="px-4 py-2 bg-slate-700 hover:bg-slate-800 text-white rounded-lg transition-all duration-300 text-sm font-medium shadow-sm hover:shadow-md transform hover:-translate-y-0.5 cursor-pointer"
                         onClick={(e) => {
                           e.stopPropagation();
                           openProductModal(product);

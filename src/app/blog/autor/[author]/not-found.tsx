@@ -12,7 +12,7 @@ export default function AuthorNotFound() {
         </p>
         <Link
           href="/blog"
-          className="inline-flex items-center px-6 py-3 bg-gradient-to-br from-slate-700 to-slate-800 text-white rounded-lg hover:from-slate-800 hover:to-slate-900 transition-all duration-300 shadow-sm hover:shadow-md"
+                      className="inline-flex items-center px-6 py-3 bg-slate-700 hover:bg-slate-800 text-white rounded-lg transition-all duration-300 shadow-sm hover:shadow-md"
         >
           Povratak na blog
         </Link>
