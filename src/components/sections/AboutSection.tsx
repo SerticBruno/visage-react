@@ -16,7 +16,7 @@ const AboutSection = () => {
             </p>
             <Link
               href="/o-nama"
-              className="inline-block bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center px-8 py-4 border border-slate-600 text-base font-medium rounded-xl shadow-lg text-white bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:shadow-xl"
             >
               Saznajte više
             </Link>

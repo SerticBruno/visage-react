@@ -17,6 +17,15 @@ interface ServicePageProps {
 }
 
 const findRelatedServices = (currentService: Service, allServices: Service[]): Service[] => {
+  // If the service has explicitly defined related services, use those
+  if (currentService.relatedServices && currentService.relatedServices.length > 0) {
+    return currentService.relatedServices
+      .map(serviceId => allServices.find(service => service.id === serviceId))
+      .filter((service): service is Service => service !== undefined)
+      .slice(0, 3);
+  }
+  
+  // Fallback to finding related services based on common tags
   return allServices
     .filter(service => service !== currentService)
     .sort((a, b) => {

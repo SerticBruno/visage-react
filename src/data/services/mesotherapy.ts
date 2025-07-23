@@ -3,14 +3,18 @@ import { Service } from './types';
 export const mesotherapy: Service = {
   id: 'mezoterapija',
   title: 'Mezoterapija',
-  description: 'Dubinska hidratacija i revitalizacija kože uz pomoć mikroinjekcija',
-  longDescription: `Mezoterapija je napredni tretman koji kombinira precizne mikroinjekcije s koktelom aktivnih sastojaka za dubinsku hidrataciju i revitalizaciju kože. Ovaj revolucionarni pristup omogućava direktnu primjenu nutritivnih sastojaka u srednji sloj kože, gdje su najefikasniji.
+  description: 'Dubinska njega za vašu kožu',
+  longDescription: `Neovisno o vašim potrebama, <strong>mezoterapija</strong> pruža <strong>personaliziranu njegu</strong> koja cilja na vaše specifične probleme, uključujući <strong>dehidriranu kožu</strong>, <strong>gubitak tonusa</strong> ili <strong>neujednačen ten</strong>. Rezultat: <strong>Osvježena, hidratizirana koža s mladenačkom sjajem</strong>.
 
-Kroz precizne mikroinjekcije, aktivni sastojci poput hijaluronske kiseline, vitamina, minerala i aminokiselina direktno se isporučuju u dermis, potičući prirodne procese regeneracije i obnove kože.
+<strong>Mezoterapija</strong> je <strong>inovativni tretman</strong> koji pruža <strong>dubinsku hidrataciju</strong>, <strong>obnavljanje</strong> i <strong>pomlađivanje kože</strong>, ostavljajući kožu <strong>osvježenom i sjajnom</strong>.
 
-Mezoterapija je idealna za sve tipove kože i pruža vidljive rezultate već nakon prvog tretmana. Posebno je učinkovita za dehidriranu kožu, kožu s finim linijama i kožu koja izgleda umorno.
+<strong>Redovitom mezoterapijom</strong> možemo nadomjestiti nedostatak određenih tvari potrebnih za održavanje <strong>tonusa</strong>, <strong>teksture</strong> i <strong>kvalitete kože</strong> te pomaže u <strong>izgradnji kolagena i elastina</strong>.
 
-U Visage studiju koristimo najnoviju tehnologiju Mesoject Gun-a koja osigurava preciznost, minimalnu bol i optimalne rezultate. Svaki tretman je prilagođen individualnim potrebama vaše kože.`,
+<strong>Mezoterapija se najčešće primjenjuje na</strong>: <strong>licu</strong>, <strong>vratu</strong>, <strong>dekolteu</strong>, <strong>vlasištu</strong> i <strong>vanjskoj strani šaka</strong>.
+
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <strong>skinboosteri</strong>, <strong>terapija bora lica</strong> i <strong>dermalni fileri</strong>.
+
+U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimalno prilagođen pojedincu</strong>, njegovim potrebama i željama.`,
   benefits: [
   ],
   image: '/images/services/Mesoterapia-transdermica-facial.webp',
@@ -19,6 +23,7 @@ U Visage studiju koristimo najnoviju tehnologiju Mesoject Gun-a koja osigurava p
   metaKeywords: 'mezoterapija, hidratacija kože, mikroinjekcije, estetski studio Sisak, VISAGE studio, Mesoject Gun, mezoterapija lica',
   tags: ['mezoterapija', 'hidratacija', 'mikroinjekcije', 'revitalizacija', 'mesoject-gun'],
   pricingCategory: 'Mezoterapija Mesoject Gunom',
+  relatedServices: ['kemijski-piling', 'skin-boosteri', 'prp'],
   steps: [
     { 
       id: 'prednosti', 

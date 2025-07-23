@@ -19,6 +19,7 @@ U Visage studiju koristimo najkvalitetnije dermalne filere, prilagođene vašem 
   metaKeywords: 'dermalni fileri, volumizacija lica, konture lica, estetski studio Sisak, VISAGE studio, hijaluronski fileri, volumizacija obraza',
   tags: ['dermalni-fileri', 'volumizacija', 'konture-lica', 'minimalno-invazivni', 'hijaluronski-fileri'],
   pricingCategory: 'Dermalni Fileri',
+  relatedServices: ['terapija-bora-lica', 'plasmage', 'mezoterapija'],
   steps: [
     { 
       id: 'prednosti', 

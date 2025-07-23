@@ -19,6 +19,7 @@ U Visage studiju koristimo najnapredniju Plasmage opremu, što osigurava optimal
   metaKeywords: 'plasmage, lifting kože, plazma, radiofrekvencija, estetski studio Sisak, VISAGE studio, plasmage terapija, obnavljanje kože',
   tags: ['plasmage', 'lifting', 'plazma', 'minimalno-invazivni', 'radiofrekvencija'],
   pricingCategory: 'Plasmage',
+  relatedServices: ['dermalni-fileri', 'terapija-bora-lica', 'kemijski-piling'],
   steps: [
     { 
       id: 'prednosti', 

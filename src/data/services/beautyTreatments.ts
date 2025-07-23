@@ -19,6 +19,7 @@ U Visage studiju nudimo različite vrste beauty tretmana, prilagođene vašim po
   metaKeywords: 'beauty tretmani, njega kože, opuštanje, estetski studio Sisak, VISAGE studio, luksuzni tretmani, hidratacija kože',
   tags: ['beauty-tretmani', 'opuštanje', 'njega-kože', 'luksuzni-tretmani', 'hidratacija'],
   pricingCategory: 'Beauty Tretmani',
+  relatedServices: ['kemijski-piling', 'mezoterapija', 'skin-boosteri'],
   steps: [
     { 
       id: 'prednosti', 

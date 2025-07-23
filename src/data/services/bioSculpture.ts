@@ -19,6 +19,7 @@ U Visage studiju koristimo originalne Bio Sculpture proizvode i tehnike, što os
   metaKeywords: 'bio sculpture, nokti, manikura, estetski studio Sisak, VISAGE studio, bio sculpture sistemi, njega noktiju',
   tags: ['bio-sculpture', 'nokti', 'manikura', 'nježni-tretmani', 'gel-lak'],
   pricingCategory: 'Bio Sculpture Sistemi',
+  relatedServices: ['beauty-tretmani', 'kemijski-piling', 'mezoterapija'],
   steps: [
     { 
       id: 'prednosti', 

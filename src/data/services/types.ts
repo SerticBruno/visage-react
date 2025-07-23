@@ -28,6 +28,7 @@ export interface Service {
   treatmentSteps?: TreatmentStep[];
   tags: string[];
   pricingCategory?: string;
+  relatedServices?: string[];
 }
 
 export type Services = {

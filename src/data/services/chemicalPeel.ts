@@ -21,6 +21,7 @@ U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>in
   metaKeywords: 'kemijski piling, piling lica, obnova kože, estetski studio Sisak, VISAGE studio, TOSKANI piling, kemijski piling Sisak',
   tags: ['kemijski-piling', 'piling', 'obnova-kože', 'nježni-tretmani'],
   pricingCategory: 'Kemijski Piling',
+  relatedServices: ['skin-boosteri', 'mezoterapija', 'prp'],
   steps: [
     { 
       id: 'prednosti', 

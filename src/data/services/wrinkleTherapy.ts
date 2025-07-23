@@ -19,6 +19,7 @@ U Visage studiju koristimo najkvalitetnije proizvode i tehnike za terapiju bora,
   metaKeywords: 'terapija bora, bore lica, prevencija bora, anti-aging, estetski studio Sisak, VISAGE studio, smanjenje bora',
   tags: ['terapija-bora', 'prevencija-bora', 'anti-aging', 'nježni-tretmani', 'lifting-lica'],
   pricingCategory: 'Botox',
+  relatedServices: ['dermalni-fileri', 'plasmage', 'mezoterapija'],
   steps: [
     { 
       id: 'prednosti', 
