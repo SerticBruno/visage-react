@@ -224,7 +224,7 @@ export default function RelatedServicesSection({ currentService, relatedServices
         <div className="mt-12 text-center">
           <Link
             href="/usluge"
-            className="inline-flex items-center px-8 py-4 text-base font-medium rounded-xl shadow-lg text-white bg-slate-700 hover:bg-slate-800 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 text-base font-medium rounded-xl shadow-lg text-white bg-slate-700 hover:bg-slate-800 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl border border-slate-600"
           >
             <svg className="mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
