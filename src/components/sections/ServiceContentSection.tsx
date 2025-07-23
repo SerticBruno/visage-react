@@ -49,7 +49,7 @@ export default function ServiceContentSection({
 
             <Link
               href={serviceName ? `/kontakt?service=${encodeURIComponent(serviceName)}` : "/kontakt"}
-              className="inline-flex items-center px-8 py-4 border border-slate-600 text-base font-medium rounded-xl shadow-lg text-white bg-slate-700 hover:bg-slate-800 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-xl"
+              className="inline-flex items-center px-8 py-4 border border-slate-600 text-base font-medium rounded-xl shadow-lg text-white bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:shadow-xl"
             >
               Dogovorite termin
             </Link>
