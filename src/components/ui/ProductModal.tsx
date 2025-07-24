@@ -129,18 +129,7 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                   </div>
                 )}
 
-                {product.tags && (
-                  <div className="bg-slate-50 rounded-xl p-3">
-                    <h3 className="text-sm font-semibold text-slate-900 mb-1">Oznake</h3>
-                    <div className="flex flex-wrap gap-1.5">
-                      {product.tags.map((tag, index) => (
-                        <span key={index} className="px-2 py-0.5 bg-white text-slate-600 rounded-full text-xs font-medium shadow-sm">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
+
               </div>
             </div>
           </div>
