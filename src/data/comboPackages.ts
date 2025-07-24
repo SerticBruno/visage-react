@@ -68,42 +68,97 @@ export const comboPackages: ComboPackage[] = [
     ],
     isPopular: true
   },
-  // {
-  //   id: "anti-age-combo",
-  //   title: "Anti-Age Combo",
-  //   description: "Napredni paket za mladolik izgled",
-  //   image: "/images/services/toskani-woman.webp",
-  //   price: "680 EUR",
-  //   oldPrice: "780 EUR",
-  //   services: [
-  //     { 
-  //       id: "kemijski-piling", 
-  //       title: "Kemijski Piling", 
-  //       quantity: 2,
-  //       image: "/images/services/kemijski-piling/toskani-bg.webp",
-  //       shortDescription: "Obnova kože"
-  //     },
-  //     { 
-  //       id: "mezoterapija", 
-  //       title: "Mezoterapija", 
-  //       quantity: 2,
-  //       image: "/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp",
-  //       shortDescription: "Dubinska hidratacija"
-  //     },
-  //     { 
-  //       id: "skin-booster-profhilo", 
-  //       title: "Profhilo", 
-  //       quantity: 1,
-  //       image: "/images/services/toskani-hero.webp",
-  //       shortDescription: "Napredna hidratacija"
-  //     }
-  //   ],
-  //   benefits: [
-  //     "Dubinska regeneracija kože",
-  //     "Poboljšana elastičnost",
-  //     "Smanjenje bora",
-  //     "Svježiji i mladolikiji izgled"
-  //   ],
-  //   isLimited: true
-  // }
+  {
+    id: "anti-age-combo",
+    title: "Anti-Age Combo",
+    description: "Napredni paket za mladolik izgled",
+    image: "/images/services/toskani-woman.webp",
+    price: "680 EUR",
+    oldPrice: "780 EUR",
+    services: [
+      { 
+        id: "kemijski-piling", 
+        title: "Kemijski Piling", 
+        quantity: 1,
+        image: "/images/services/kemijski-piling/toskani-bg.webp",
+        shortDescription: "Obnova kože"
+      },
+      { 
+        id: "mezoterapija", 
+        title: "Mezoterapija", 
+        quantity: 1,
+        image: "/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp",
+        shortDescription: "Dubinska hidratacija"
+      },
+      { 
+        id: "skin-boosteri", 
+        title: "Skin Boosteri", 
+        quantity: 1,
+        image: "/images/services/toskani-hero.webp",
+        shortDescription: "Napredna hidratacija"
+      }
+    ],
+    products: [
+      { 
+        id: "3", 
+        title: "Retin Cream", 
+        quantity: 1,
+        image: "/images/products/toskaniRetinCream.webp"
+      }
+    ],
+    benefits: [
+      "Dubinska regeneracija kože",
+      "Poboljšana elastičnost",
+      "Smanjenje bora",
+      "Svježiji i mladolikiji izgled"
+    ],
+    isLimited: true
+  },
+  {
+    id: "premium-combo",
+    title: "Premium Combo",
+    description: "Ekskluzivni paket za najbolje rezultate",
+    image: "/images/services/toskani-woman.webp",
+    price: "890 EUR",
+    oldPrice: "1050 EUR",
+    services: [
+      { 
+        id: "plasmage", 
+        title: "Plasmage", 
+        quantity: 1,
+        image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg",
+        shortDescription: "Napredna terapija"
+      },
+      { 
+        id: "dermalni-fileri", 
+        title: "Dermalni Fileri", 
+        quantity: 1,
+        image: "/images/services/dermalni-fileri/dermalni-fileri-visage-estetski-studio-sisak.webp",
+        shortDescription: "Volumizacija"
+      },
+      { 
+        id: "kemijski-piling", 
+        title: "Kemijski Piling", 
+        quantity: 1,
+        image: "/images/services/kemijski-piling/toskani-bg.webp",
+        shortDescription: "Obnova kože"
+      }
+    ],
+    products: [
+      { 
+        id: "5", 
+        title: "Unique Cream", 
+        quantity: 1,
+        image: "/images/products/toskaniUniqueCream.webp"
+      }
+    ],
+    benefits: [
+      "Kompletna transformacija kože",
+      "Maksimalna hidratacija i regeneracija",
+      "Dugotrajni rezultati",
+      "Personalizirani pristup"
+    ],
+    isPopular: true,
+    isLimited: true
+  }
 ]; 

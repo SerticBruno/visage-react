@@ -95,3 +95,21 @@ html.modal-open {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* Swiper pagination styles for combo packages */
+.combo-packages-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #d1d5db;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.combo-packages-swiper .swiper-pagination-bullet-active {
+  background: #1e293b;
+  transform: scale(1.2);
+}
+
+.combo-packages-swiper .swiper-slide {
+  height: auto;
+}
