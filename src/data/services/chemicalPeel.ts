@@ -8,9 +8,9 @@ export const chemicalPeel: Service = {
 
 <strong>Kemijski piling</strong> je tehnika koja se koristi za poboljšanje izgleda kože putem <strong>kontroliranog kemijskog oštećenja</strong> određenih slojeva epiderme ili dermisa.
 
-Ova tehnika je <strong>ključan korak u njezi kože</strong>, jer <strong>uklanja mrtve stanice</strong> s površine kože, <strong>potiče regeneraciju stanica</strong> te <strong>smanjuje pojavu nepravilnosti</strong> poput <strong>hiperpigmentacija</strong>, <strong>preranog starenja</strong>, <strong>akni</strong> i <strong>proširenih pora</strong>.
+Ova tehnika je <strong>ključan korak u njezi kože</strong>, jer <strong>uklanja mrtve stanice</strong> s površine kože, <strong>potiče regeneraciju stanica</strong> te <strong>smanjuje pojavu nepravilnosti</strong> poput hiperpigmentacija, preranog starenja, akni i proširenih pora.
 
-Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <strong>mezoterapija</strong>, <strong>PRP tretman</strong> i <strong>skinboosteri</strong>.
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/mezoterapija">mezoterapija</a>, <a href="/usluge/prp">PRP tretman</a> i <a href="/usluge/skin-boosteri">skin boosteri</a>.
 
 U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>individualnim potrebama</strong> koristeći kombinaciju <strong>nježnih kiselina</strong> kako bismo postigli <strong>optimalne rezultate</strong>.`,
   benefits: [
@@ -21,7 +21,7 @@ U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>in
   metaKeywords: 'kemijski piling, piling lica, obnova kože, estetski studio Sisak, VISAGE studio, TOSKANI piling, kemijski piling Sisak',
   tags: ['kemijski-piling', 'piling', 'obnova-kože', 'nježni-tretmani'],
   pricingCategory: 'Kemijski Piling',
-  relatedServices: ['skin-boosteri', 'mezoterapija', 'prp'],
+  relatedServices: ['mezoterapija', 'prp', 'skin-boosteri'],
   steps: [
     { 
       id: 'prednosti', 

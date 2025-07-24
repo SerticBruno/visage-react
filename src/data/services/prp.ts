@@ -12,9 +12,9 @@ export const prp: Service = {
 
 <strong>PRP tretman</strong> je <strong>potpuno prirodan tretman</strong>, jer se koristi <strong>vaša krv</strong>. Ne može izazvati <strong>alergijsku reakciju</strong> i <strong>potpuno je siguran</strong>.
 
-<strong>PRP se može raditi</strong> primjenom <strong>Mesoject guna</strong> i s <strong>mezoterapijskim iglama</strong>.
+PRP se može raditi primjenom <strong>Mesoject guna</strong> i s <strong>mezoterapijskim iglama</strong>.
 
-Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <strong>skin boosteri</strong>, <strong>mezoterapija</strong> i <strong>kemijski piling</strong>.
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/skin-boosteri">skin boosteri</a>, <a href="/usluge/mezoterapija">mezoterapija</a> i <a href="/usluge/kemijski-piling">kemijski piling</a>.
 
 Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj revitalizaciji kože</strong> u <strong>Visage studiju</strong>.`,
   benefits: [

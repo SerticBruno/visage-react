@@ -14,9 +14,9 @@ Već <strong>prvi tjedan nakon tretmana</strong> se mogu vidjeti <strong>trenuta
 
 U <strong>Visage studiju</strong> koristimo <strong>bioremodulator Profhilo</strong> i <strong>biorevitalizator TKN HA3</strong>.
 
-Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <strong>mezoterapija</strong>, <strong>PRP</strong> i <strong>kemijski piling</strong>.
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/mezoterapija">mezoterapija</a>, <a href="/usluge/prp">PRP</a> i <a href="/usluge/kemijski-piling">kemijski piling</a>.
 
-Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa <strong>skin booster tretmanima</strong> u <strong>Visage studiju</strong>.`,
+Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa skin booster tretmanima u <strong>Visage studiju</strong>.`,
   benefits: [
   ],
   image: '/images/services/skinboosteri-hero.webp',

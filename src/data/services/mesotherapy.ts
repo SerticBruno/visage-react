@@ -4,15 +4,15 @@ export const mesotherapy: Service = {
   id: 'mezoterapija',
   title: 'Mezoterapija',
   description: 'Dubinska njega za vašu kožu',
-  longDescription: `Neovisno o vašim potrebama, <strong>mezoterapija</strong> pruža <strong>personaliziranu njegu</strong> koja cilja na vaše specifične probleme, uključujući <strong>dehidriranu kožu</strong>, <strong>gubitak tonusa</strong> ili <strong>neujednačen ten</strong>. Rezultat: <strong>Osvježena, hidratizirana koža s mladenačkom sjajem</strong>.
+  longDescription: `Neovisno o vašim potrebama, <strong>mezoterapija</strong> pruža <strong>personaliziranu njegu</strong> koja cilja na vaše specifične probleme, uključujući <strong>dehidriranu kožu</strong>, <strong>gubitak tonusa</strong> ili <strong>neujednačen ten</strong>. Rezultat: <strong>osvježena, hidratizirana koža s mladenačkom sjajem</strong>.
 
 <strong>Mezoterapija</strong> je <strong>inovativni tretman</strong> koji pruža <strong>dubinsku hidrataciju</strong>, <strong>obnavljanje</strong> i <strong>pomlađivanje kože</strong>, ostavljajući kožu <strong>osvježenom i sjajnom</strong>.
 
 <strong>Redovitom mezoterapijom</strong> možemo nadomjestiti nedostatak određenih tvari potrebnih za održavanje <strong>tonusa</strong>, <strong>teksture</strong> i <strong>kvalitete kože</strong> te pomaže u <strong>izgradnji kolagena i elastina</strong>.
 
-<strong>Mezoterapija se najčešće primjenjuje na</strong>: <strong>licu</strong>, <strong>vratu</strong>, <strong>dekolteu</strong>, <strong>vlasištu</strong> i <strong>vanjskoj strani šaka</strong>.
+<strong>Mezoterapija se najčešće primjenjuje na</strong>: lice, vrat, dekolte, vlasište i vanjsku stranu šaka.
 
-Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <strong>skinboosteri</strong>, <strong>terapija bora lica</strong> i <strong>dermalni fileri</strong>.
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/skin-boosteri">skin boosteri</a>, <a href="/usluge/terapija-bora-lica">terapija bora lica</a> i <a href="/usluge/dermalni-fileri">dermalni fileri</a>.
 
 U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimalno prilagođen pojedincu</strong>, njegovim potrebama i željama.`,
   benefits: [
@@ -23,7 +23,7 @@ U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimal
   metaKeywords: 'mezoterapija, hidratacija kože, mikroinjekcije, estetski studio Sisak, VISAGE studio, Mesoject Gun, mezoterapija lica',
   tags: ['mezoterapija', 'hidratacija', 'mikroinjekcije', 'revitalizacija', 'mesoject-gun'],
   pricingCategory: 'Mezoterapija Mesoject Gunom',
-  relatedServices: ['kemijski-piling', 'skin-boosteri', 'prp'],
+  relatedServices: ['skin-boosteri', 'terapija-bora-lica', 'dermalni-fileri'],
   steps: [
     { 
       id: 'prednosti', 

@@ -4,15 +4,17 @@ export const dermalFillers: Service = {
   id: 'dermalni-fileri',
   title: 'Dermalni fileri',
   description: 'Prirodni volumen i mladenački izgled',
-  longDescription: `Upoznajte <strong>moć dermalnih filera</strong> koji pružaju <strong>prirodni volumen</strong> i <strong>pomlađeni izgled</strong> bez potrebe za <strong>kirurškim zahvatima</strong>.
+  longDescription: `Upoznajte <strong>moć dermalnih filera</strong> koji pružaju <strong>prirodni volumen</strong> i <strong>pomlađeni izgled</strong> bez potrebe za kirurškim zahvatima.
 
-<strong>Hijaluronski dermalni fileri</strong> se sastoje od <strong>molekula hijaluronske kiseline velike gustoće</strong> koji se apliciraju u odabrano područje kako bi <strong>popunili volumen</strong>, <strong>smanjili bore</strong> i <strong>oblikovali konture lica</strong>.
+<strong>Hijaluronski dermalni fileri</strong> se sastoje od molekula hijaluronske kiseline velike gustoće koji se apliciraju u odabrano područje kako bi <strong>popunili volumen</strong>, <strong>smanjili bore</strong> i <strong>oblikovali konture lica</strong>.
 
 <strong>Razvoj novih formula</strong> i <strong>tehnika injektiranja</strong> omogućava <strong>prilagođavanje tretmana</strong> specifičnim potrebama klijenta.
 
 Već nakon <strong>jednog tretmana</strong> možete primjetiti <strong>vidno poboljšanje u volumenu kože</strong> i <strong>smanjenju bora</strong>, no <strong>potpuni efekt</strong> se vidi <strong>2 tjedna nakon aplikacije filera</strong>.
 
-<strong>Regije koje se mogu tretirati</strong> su: <strong>nazolabijalne bore</strong>, <strong>marionetske bore</strong>, <strong>usne</strong>, <strong>jagodice</strong>, <strong>čeljust</strong> i <strong>brada</strong>.
+<strong>Regije koje se mogu tretirati</strong> su: nazolabijalne bore, marionetske bore, usne, jagodice, čeljust i brada.
+
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/terapija-bora-lica">terapija bora lica</a>, <a href="/usluge/skin-boosteri">skin boosteri</a> i <a href="/usluge/mezoterapija">mezoterapija</a>.
 
 U <strong>Visage studiju</strong> koristimo <strong>Aliaxin</strong> i <strong>Skin Architect</strong> filere.
 
@@ -25,7 +27,7 @@ Vratite <strong>samopouzdanje</strong> uz <strong>prirodan volumen</strong> i <s
   metaKeywords: 'dermalni fileri, volumizacija lica, konture lica, estetski studio Sisak, VISAGE studio, hijaluronski fileri, volumizacija obraza',
   tags: ['dermalni-fileri', 'volumizacija', 'konture-lica', 'minimalno-invazivni', 'hijaluronski-fileri'],
   pricingCategory: 'Dermalni Fileri',
-  relatedServices: ['terapija-bora-lica', 'plasmage', 'mezoterapija'],
+  relatedServices: ['terapija-bora-lica', 'skin-boosteri', 'mezoterapija'],
   steps: [
     { 
       id: 'prednosti', 
