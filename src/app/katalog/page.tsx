@@ -37,7 +37,14 @@ function KatalogContent() {
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-  const startIndex = (currentPage - 1) * productsPerPage;
+  
+  // Ensure current page is within bounds
+  const validCurrentPage = Math.min(Math.max(1, currentPage), totalPages || 1);
+  if (validCurrentPage !== currentPage) {
+    setCurrentPage(validCurrentPage);
+  }
+  
+  const startIndex = (validCurrentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
   const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
@@ -45,11 +52,6 @@ function KatalogContent() {
   useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, selectedCategories, selectedBadges]);
-
-  // Always reset to page 1 when filters change
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [filteredProducts]);
 
   // Handle URL parameter for auto-opening product modal
   useEffect(() => {
@@ -94,7 +96,11 @@ function KatalogContent() {
   };
 
   const handlePageChange = (newPage: number) => {
-    if (newPage !== currentPage) {
+    console.log('handlePageChange called with:', newPage, 'currentPage:', currentPage, 'totalPages:', totalPages);
+    
+    // Validate that the new page is within bounds
+    if (newPage >= 1 && newPage <= totalPages && newPage !== validCurrentPage) {
+      console.log('Setting page to:', newPage);
       setIsScrolling(true);
       setCurrentPage(newPage);
       
@@ -105,6 +111,8 @@ function KatalogContent() {
           setIsScrolling(false);
         }, 500);
       });
+    } else {
+      console.log('Page change rejected:', { newPage, validCurrentPage, totalPages });
     }
   };
 
@@ -364,9 +372,9 @@ function KatalogContent() {
               <div className="mt-8 flex justify-center items-center space-x-2">
                 <button
                   onClick={() => {
-                    handlePageChange(Math.max(currentPage - 1, 1));
+                    handlePageChange(Math.max(validCurrentPage - 1, 1));
                   }}
-                  disabled={currentPage === 1}
+                  disabled={validCurrentPage === 1}
                   className="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm"
                   aria-label="Prethodna stranica"
                 >
@@ -381,7 +389,7 @@ function KatalogContent() {
                         handlePageChange(page);
                       }}
                       className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all duration-300 ${
-                        currentPage === page
+                        validCurrentPage === page
                           ? 'bg-slate-800 text-white shadow-md'
                           : 'text-slate-600 hover:bg-slate-50 hover:border hover:border-slate-200 hover:shadow-sm'
                       }`}
@@ -392,9 +400,9 @@ function KatalogContent() {
                 </div>
                 <button
                   onClick={() => {
-                    handlePageChange(Math.min(currentPage + 1, totalPages));
+                    handlePageChange(Math.min(validCurrentPage + 1, totalPages));
                   }}
-                  disabled={currentPage === totalPages}
+                  disabled={validCurrentPage === totalPages}
                   className="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm"
                   aria-label="Sljedeća stranica"
                 >

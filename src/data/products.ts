@@ -36,7 +36,7 @@ export const products: Product[] = [
   {
     id: '1',
     title: 'Energizing Cleanser',
-    description: 'Energizing Cleanser – gel sredstvo za čišćenje uklanjanje prljavštinu, prašinu i šminku, zajedno s viškom masnoće i mrtvih stanica kože nakupljenim tijekom dana. Gel za čišćenje čuva neke slojeve masnoće na koži što sprječava isušivanje kože. Čisti, pročišćava i tonizira kožu.',
+    description: 'Gel sredstvo za čišćenje uklanjanje prljavštinu, prašinu i šminku, zajedno s viškom masnoće i mrtvih stanica kože nakupljenim tijekom dana. Gel za čišćenje čuva neke slojeve masnoće na koži što sprječava isušivanje kože. Čisti, pročišćava i tonizira kožu.',
     category: 'Čišćenje',
     image: '/images/products/toskanienergizingcleanser.webp',
     price: '40 EUR',
@@ -54,7 +54,7 @@ export const products: Product[] = [
   {
     id: '2',
     title: 'Purifying Cleanser',
-    description: 'Purifying Cleanser – gel bez ulja koji nježno čisti lice i područje oko očiju. Preporuča se za mješovitu i masnu kožu. Ovaj gel za čišćenje uklanja nečistoće i višak sebuma koji začepljuju pore i dovode do stvaranja komedona i prištića na koži sklonoj aknama. Purifying Cleanser regulira proizvodnju sebuma i ostavlja kožu čistom, svježom, glatkom i mirnom. Ovo sredstvo za čišćenje može se koristiti i na tijelu.',
+    description: 'Gel bez ulja koji nježno čisti lice i područje oko očiju. Preporuča se za mješovitu i masnu kožu. Ovaj gel za čišćenje uklanja nečistoće i višak sebuma koji začepljuju pore i dovode do stvaranja komedona i prištića na koži sklonoj aknama. Purifying Cleanser regulira proizvodnju sebuma i ostavlja kožu čistom, svježom, glatkom i mirnom. Ovo sredstvo za čišćenje može se koristiti i na tijelu.',
     category: 'Čišćenje',
     image: '/images/products/TOSKANIpurifyingcleanser.webp',
     price: '44 EUR',
@@ -72,7 +72,7 @@ export const products: Product[] = [
   {
     id: '3',
     title: 'Bamboo Hydratonic',
-    description: 'Bamboo Hydratonic – tonik bez ulja koji obnavlja kožu i temeljito čisti uklanjajući sve tragove prljavštine i šminke. Pogodan je za sve tipove kože. Ovaj tonik sa svježim mirisom revitalizira i hidratizira kožu za potpuno pročišćen i osvježen osjećaj. Kombinira visoku koncentraciju biljnih ekstrakata kao što su bambus, limun i naranča, koji su prirodni izvor alfa-hidroksi kiselina.',
+    description: 'Tonik bez ulja koji obnavlja kožu i temeljito čisti uklanjajući sve tragove prljavštine i šminke. Pogodan je za sve tipove kože. Ovaj tonik sa svježim mirisom revitalizira i hidratizira kožu za potpuno pročišćen i osvježen osjećaj. Kombinira visoku koncentraciju biljnih ekstrakata kao što su bambus, limun i naranča, koji su prirodni izvor alfa-hidroksi kiselina.',
     category: 'Tonik',
     image: '/images/products/toskanibamboohydratonic.webp',
     price: '28 EUR',
@@ -89,7 +89,7 @@ export const products: Product[] = [
   {
     id: '4',
     title: 'Nutritive Scrub',
-    description: 'Nutritive Scrub – idealan za suhu i normalnu kožu, TOSKANI Nutritive Scrub sadrži ulje Rosa Mochata, sjemenke i vitamin E koji učinkovito zaglađuju kožu i smanjuju nesavršenosti za zdraviji i mlađi izgled. Ovaj piling ostavlja kožu osvježenom, vidljivo čišću i mekšom uz zdrav sjaj u koji ćete se zaljubiti.',
+    description: 'Idealan za suhu i normalnu kožu, TOSKANI Nutritive Scrub sadrži ulje Rosa Mochata, sjemenke i vitamin E koji učinkovito zaglađuju kožu i smanjuju nesavršenosti za zdraviji i mlađi izgled. Ovaj piling ostavlja kožu osvježenom, vidljivo čišću i mekšom uz zdrav sjaj u koji ćete se zaljubiti.',
     category: 'Piling',
     image: '/images/products/toskaninutritivescrub.webp',
     price: '44 EUR',
@@ -110,7 +110,7 @@ export const products: Product[] = [
   {
     id: '5',
     title: 'Purifying Scrub',
-    description: 'Purifying Scrub – piling na bazi vode koji čisti kožu i preporučuje se za mješovitu i masnu kožu. Formuliran s marokanskom glinom, ovaj piling uklanja višak ulja i stanica sa površinskih slojeva kože pročišćavajući pore. Koža izgleda sjajnije, dok su sjaj i suhoća svedeni na minimum. Formuliran je s ekstraktom hamamelisa s adstringentnim svojstvima, koji ostavlja osvježenu i ujednačenu kožu.',
+    description: 'Piling na bazi vode koji čisti kožu i preporučuje se za mješovitu i masnu kožu. Formuliran s marokanskom glinom, ovaj piling uklanja višak ulja i stanica sa površinskih slojeva kože pročišćavajući pore. Koža izgleda sjajnije, dok su sjaj i suhoća svedeni na minimum. Formuliran je s ekstraktom hamamelisa s adstringentnim svojstvima, koji ostavlja osvježenu i ujednačenu kožu.',
     category: 'Piling',
     image: '/images/products/toskanipurifyingscrub.webp',
     price: '44 EUR',
@@ -132,7 +132,7 @@ export const products: Product[] = [
   {
     id: '6',
     title: 'Antistress Mask',
-    description: 'Antistress Mask – hranjiva, umirujuća i osvježavajuća maska za sve tipove kože. Antistress maska sadrži ekstrakte nevena i kamilice, posebno pogodne za reaktivnu kožu.',
+    description: 'Hranjiva, umirujuća i osvježavajuća maska za sve tipove kože. Antistress maska sadrži ekstrakte nevena i kamilice, posebno pogodne za reaktivnu kožu.',
     category: 'Maska',
     image: '/images/products/toskaniantistressmask.webp',
     price: '65 EUR',
@@ -147,7 +147,7 @@ export const products: Product[] = [
   {
     id: '7',
     title: 'Total Recovery Cream',
-    description: 'Total Recovery Cream – zaštitna, hidratantna i hranjiva krema koja pruža moćnu regeneraciju suhe i normalne kože. Pruža snažne učinke obnavljanja kože. Poboljšava izgled oštećene kože.',
+    description: 'Zaštitna, hidratantna i hranjiva krema koja pruža moćnu regeneraciju suhe i normalne kože. Pruža snažne učinke obnavljanja kože. Poboljšava izgled oštećene kože.',
     category: 'Krema',
     image: '/images/products/toskanitotalrecoverycream.webp',
     price: '60 EUR',
@@ -165,7 +165,7 @@ export const products: Product[] = [
   {
     id: '8',
     title: 'Total Recovery Gel',
-    description: 'Total Recovery Gel – obnavljajući, hidratantni i umirujući gel s aloe verom za mješovitu i masnu kožu. Štiti i vlaži epidermu, pogodujući oporavku osjetljive kože nakon iritacija ili invazivnih tretmana.',
+    description: 'Obnavljajući, hidratantni i umirujući gel s aloe verom za mješovitu i masnu kožu. Štiti i vlaži epidermu, pogodujući oporavku osjetljive kože nakon iritacija ili invazivnih tretmana.',
     category: 'Krema',
     image: '/images/products/toskanitotalrecoverygel.webp',
     price: '37 EUR',
@@ -182,7 +182,7 @@ export const products: Product[] = [
   {
     id: '9',
     title: 'Anti Pollution Total Defense Cream 50+',
-    description: 'Anti Pollution Total Defense Cream – inovativna dnevna krema za sve tipove kože koja nudi višestruku zaštitu. Štiti kožu od zračenja, okoliša i digitalnog onečišćenja i od slobodnih radikala, a istovremeno poboljšava hidrataciju. Sprječava prijanjanje kontaminirajućih čestica u kožu i pojavu bora. Posebno se preporuča koži izloženoj okolišnim zagađivačima, oštećenoj koži, dehidriranoj koži i pušačima.',
+    description: 'Inovativna dnevna krema za sve tipove kože koja nudi višestruku zaštitu. Štiti kožu od zračenja, okoliša i digitalnog onečišćenja i od slobodnih radikala, a istovremeno poboljšava hidrataciju. Sprječava prijanjanje kontaminirajućih čestica u kožu i pojavu bora. Posebno se preporuča koži izloženoj okolišnim zagađivačima, oštećenoj koži, dehidriranoj koži i pušačima.',
     category: 'Krema',
     image: '/images/products/toskaniAntipollution_Total_Defense.webp',
     price: '65 EUR',
@@ -197,7 +197,7 @@ export const products: Product[] = [
   {
     id: '10',
     title: 'Sun Protection Cream SPF 50+',
-    description: 'Sun Protection Cream – ultra intenzivna krema za zaštitu od sunca 50+ i hidratantna nemasna krema u jednom proizvodu. Pogodan za suhu i normalnu kožu.',
+    description: 'Ultra intenzivna krema za zaštitu od sunca 50+ i hidratantna nemasna krema u jednom proizvodu. Pogodan za suhu i normalnu kožu.',
     category: 'Zaštita od sunca',
     image: '/images/products/toskanisunprotectioncream.webp',
     price: '35 EUR',
@@ -215,7 +215,7 @@ export const products: Product[] = [
   {
     id: '11',
     title: 'Radiance Daily Cream SPF 30+',
-    description: 'Radiance Daily Cream – krema je za svakodnevnu upotrebu koja je namijenjena ispravljanju znakova fotostarenja. Pogodna je za sve tipove kože. Sprječava dehidraciju, gubitak sjaja, mlitavost i pojavu bora i mrlja. Osim toga, Radiance dnevna krema ima visoki zaštitni faktor za zaštitu od oštećenja uzrokovanih izlaganjem suncu. Sadrži liposomske aktivne sastojke za promicanje maksimalne učinkovitosti proizvoda. Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjeloj koži, koži nejednake pigmentacije te kao dodatak profesionalnim tretmanima za ujednačavanje tona kože (Spot Out Kit Plus, kemijski piling)',
+    description: 'Krema je za svakodnevnu upotrebu koja je namijenjena ispravljanju znakova fotostarenja. Pogodna je za sve tipove kože. Sprječava dehidraciju, gubitak sjaja, mlitavost i pojavu bora i mrlja. Osim toga, Radiance dnevna krema ima visoki zaštitni faktor za zaštitu od oštećenja uzrokovanih izlaganjem suncu. Sadrži liposomske aktivne sastojke za promicanje maksimalne učinkovitosti proizvoda. Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjeloj koži, koži nejednake pigmentacije te kao dodatak profesionalnim tretmanima za ujednačavanje tona kože (Spot Out Kit Plus, kemijski piling)',
     category: 'Krema',
     image: '/images/products/toskaniradiancedailycream.webp',
     price: '65 EUR',
@@ -233,7 +233,7 @@ export const products: Product[] = [
   {
     id: '12',
     title: 'Anti Ageing Eye Contour',
-    description: 'Anti Ageing Eye Contour – posebno formuliran hidratantni serum za smanjenje umora, tretiranje bora, osvježavanje područja oko očiju, hidrataciju i umirivanje nježne kože oko očiju. Njegovi aktivni sastojci koji djeluju u sinergiji kako bi se oduprli pojavi bora, umanjili bore i već formirane linije. Također pomaže u sprječavanju gubitka čvrstoće, pomaže koži da se vrati u njezino prirodno zdravlje i pruža ukupni učinak pomlađivanja.',
+    description: 'Posebno formuliran hidratantni serum za smanjenje umora, tretiranje bora, osvježavanje područja oko očiju, hidrataciju i umirivanje nježne kože oko očiju. Njegovi aktivni sastojci koji djeluju u sinergiji kako bi se oduprli pojavi bora, umanjili bore i već formirane linije. Također pomaže u sprječavanju gubitka čvrstoće, pomaže koži da se vrati u njezino prirodno zdravlje i pruža ukupni učinak pomlađivanja.',
     category: 'Okoloočna njega',
     image: '/images/products/toskani-anti-ageing-eye-contour.webp',
     price: '45 EUR',
@@ -250,7 +250,7 @@ export const products: Product[] = [
   {
     id: '13',
     title: 'Radiance Eye Contour',
-    description: 'Radiance Eye Contour – učinkovita krema za područje oko očiju koja ublažuje hiperpigmentacije i probleme s mikrocirkulacijom, koji uzrokuju podočnjake. Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkulaciji područja oko očiju i kapaka.',
+    description: 'Učinkovita krema za područje oko očiju koja ublažuje hiperpigmentacije i probleme s mikrocirkulacijom, koji uzrokuju podočnjake. Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkulaciji područja oko očiju i kapaka.',
     category: 'Okoloočna njega',
     image: '/images/products/toskaniradianceeyecontour.webp',
     price: '65 EUR',
@@ -268,7 +268,7 @@ export const products: Product[] = [
   {
     id: '14',
     title: 'Radiance Ultimate Mesoserum',
-    description: 'Radiance Ultimate Mesoserum – serum prikladan za sve tipove kože i učinkovit saveznik u borbi protiv hiperpigmentacija i pjega. Posebno razvijen za ujednačavanje tona kože i smanjenje nesavršenosti: sprječava razvoj novih diskoloracija kože, hidrira, spriječava i uklanja tamne mrlje uzrokovane suncem, vraća sjaj i zdravi izgled koži, poboljšava izgled ožiljaka. Vaš novi saveznik u borbi protiv hiperpigmetacija sa učinkovitim djelovanjem već u 1. mjesecu upotrebe!',
+    description: 'Serum prikladan za sve tipove kože i učinkovit saveznik u borbi protiv hiperpigmentacija i pjega. Posebno razvijen za ujednačavanje tona kože i smanjenje nesavršenosti: sprječava razvoj novih diskoloracija kože, hidrira, spriječava i uklanja tamne mrlje uzrokovane suncem, vraća sjaj i zdravi izgled koži, poboljšava izgled ožiljaka. Vaš novi saveznik u borbi protiv hiperpigmetacija sa učinkovitim djelovanjem već u 1. mjesecu upotrebe!',
     category: 'Serum',
     image: '/images/products/toskaniRADIANCE-ULTIMATE-MESOSERUM.webp',
     price: '85 EUR',
@@ -286,7 +286,7 @@ export const products: Product[] = [
   {
     id: '15',
     title: 'Purifying Intensive Serum',
-    description: 'Purifying Intensive Serum – gel za isušivanje koji je antibakterijski i vrlo učinkovit protiv mrlja i nesavršenosti. Ovaj tretman treba povremeno koristiti kako bi se ubrzao nestanak lokaliziranih mrlja, štiteći ih od trenja i bakterija. Intenzivni serum indiciran je za lokalizirano liječenje mrlja.',
+    description: 'Gel za isušivanje koji je antibakterijski i vrlo učinkovit protiv mrlja i nesavršenosti. Ovaj tretman treba povremeno koristiti kako bi se ubrzao nestanak lokaliziranih mrlja, štiteći ih od trenja i bakterija. Intenzivni serum indiciran je za lokalizirano liječenje mrlja.',
     category: 'Serum',
     image: '/images/products/toskanipurifyingIntensiveSerum.webp',
     price: '45 EUR',
@@ -304,7 +304,7 @@ export const products: Product[] = [
   {
     id: '16',
     title: 'Purifying Cream',
-    description: 'Purifying cream – tekuća emulzija prikladna za masnu i kožu sklonu aknama. Njeni aktivni sastojci djeluju zajedno kako bi smanjili upalu, smanjili bakterije i regulirali proizvodnju sebuma. Purifying krema također pomaže koži u borbi protiv slobodnih radikala i pruža vrlo nježan piling uz održavanje razine potrebne hidratacije u koži. Ova fluidna emulzija ublažava nelagodu kože i preporučljivo je koristiti kremu dva puta dnevno, ujutro i navečer.',
+    description: 'Tekuća emulzija prikladna za masnu i kožu sklonu aknama. Njeni aktivni sastojci djeluju zajedno kako bi smanjili upalu, smanjili bakterije i regulirali proizvodnju sebuma. Purifying krema također pomaže koži u borbi protiv slobodnih radikala i pruža vrlo nježan piling uz održavanje razine potrebne hidratacije u koži. Ova fluidna emulzija ublažava nelagodu kože i preporučljivo je koristiti kremu dva puta dnevno, ujutro i navečer.',
     category: 'Krema',
     image: '/images/products/TOSKANIPurifyingCream.webp',
     price: '65 EUR',
@@ -322,7 +322,7 @@ export const products: Product[] = [
   {
     id: '17',
     title: 'Skin Architect Mesoserum',
-    description: 'Skin Architect Mesoserum – serum za popravak i učvršćivanje. Osigurava snažne njegujuće i hidratantne efekte. Pomaže pri minimiziranju vidljivih znakova starenja. Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućih znakova starenja: opuštenu kožu.',
+    description: 'Serum za popravak i učvršćivanje. Osigurava snažne njegujuće i hidratantne efekte. Pomaže pri minimiziranju vidljivih znakova starenja. Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućih znakova starenja: opuštenu kožu.',
     category: 'Serum',
     image: '/images/products/Toskani-Skin-Architect-Mesoserum-1.webp',
     price: '80 EUR',
@@ -340,7 +340,7 @@ export const products: Product[] = [
   {
     id: '18',
     title: 'Skin Architect Cream',
-    description: 'Skin Architect Cream – visoko koncentrirana krema protiv bora koja koristi prirodne sastojke za poboljšanje izgleda finih linija i dubokih bora. Sadrži medicinsku hijaluronsku kiselinu i acetil heksapeptid-8 kao liposomski biomimetički peptid. Oni, zajedno s ostalim sastojcima, pomažu odgoditi učinke starenja na koži i pružaju snažno hidratantno i hranjivo djelovanje. Koži pruža čvrstoću i elastičnost uz primjetan lifting učinak. Hijaluronska kiselina niske molekularne težine (<100Kda), za dublju i dugotrajniju hidrataciju.',
+    description: 'Visoko koncentrirana krema protiv bora koja koristi prirodne sastojke za poboljšanje izgleda finih linija i dubokih bora. Sadrži medicinsku hijaluronsku kiselinu i acetil heksapeptid-8 kao liposomski biomimetički peptid. Oni, zajedno s ostalim sastojcima, pomažu odgoditi učinke starenja na koži i pružaju snažno hidratantno i hranjivo djelovanje. Koži pruža čvrstoću i elastičnost uz primjetan lifting učinak. Hijaluronska kiselina niske molekularne težine (<100Kda), za dublju i dugotrajniju hidrataciju.',
     category: 'Krema',
     image: '/images/products/toskaniskinarchitectcream.webp',
     price: '70 EUR',
@@ -358,7 +358,7 @@ export const products: Product[] = [
   {
     id: '19',
     title: 'Night Reverse Advanced Serum',
-    description: 'Night Reverse Advanced Serum – noćni serum s Total Restoring Complexom, koji poništava štetu od svakodnevnog stresa i aktivira prirodni mehanizam obnove kože. Pomaže popraviti kožu od oštećenja uzrokovanih sunčevim zračenjem, zagađenjem, temperaturnim promjenama i lošim navikama. Jača barijeru kože, pogodan je za sve tipove kože, no najviše se preporučuje suhoj i dehidriranoj koži.',
+    description: 'Noćni serum s Total Restoring Complexom, koji poništava štetu od svakodnevnog stresa i aktivira prirodni mehanizam obnove kože. Pomaže popraviti kožu od oštećenja uzrokovanih sunčevim zračenjem, zagađenjem, temperaturnim promjenama i lošim navikama. Jača barijeru kože, pogodan je za sve tipove kože, no najviše se preporučuje suhoj i dehidriranoj koži.',
     category: 'Serum',
     image: '/images/products/toskani-night-reverse-serum.webp',
     price: '87 EUR',
@@ -375,7 +375,7 @@ export const products: Product[] = [
   {
     id: '20',
     title: 'Glacier Pro Age Serum',
-    description: 'Glacier Pro Age Serum – lagani serum koji nakon nanošenja pruža osjećaj hidratacije i svježine. Sadrži Alpsku termalnu vodu i ekstrakt morskog podrijetla koji pomaže zagladiti bore pružajući koži čvrstoću, hidrataciju i elastičnost. Pomaže u sprječavanju prvih znakova starenja. Jača kožnu barijeru. Pogodan je za biološku dob 20+ godina i sve tipove kože.',
+    description: 'Lagani serum koji nakon nanošenja pruža osjećaj hidratacije i svježine. Sadrži Alpsku termalnu vodu i ekstrakt morskog podrijetla koji pomaže zagladiti bore pružajući koži čvrstoću, hidrataciju i elastičnost. Pomaže u sprječavanju prvih znakova starenja. Jača kožnu barijeru. Pogodan je za biološku dob 20+ godina i sve tipove kože.',
     category: 'Serum',
     image: '/images/products/toskaniGlacierSerum.webp',
     price: '75 EUR',
@@ -393,7 +393,7 @@ export const products: Product[] = [
   {
     id: '21',
     title: 'Glacier Pro Age Cream',
-    description: 'Glacier Pro Age Cream – lagana krema koja daje svježi finiš tijekom nanošenja koji se jako dobro razmazuje i brzo upija. Pomaže u sprječavanju prvih znakova starenja, pruža maksimalnu hidrataciju te jača barijeru kože. Pogodno za biološku dob 20+ godina i sve tipove kože.',
+    description: 'Lagana krema koja daje svježi finiš tijekom nanošenja koji se jako dobro razmazuje i brzo upija. Pomaže u sprječavanju prvih znakova starenja, pruža maksimalnu hidrataciju te jača barijeru kože. Pogodno za biološku dob 20+ godina i sve tipove kože.',
     category: 'Krema',
     image: '/images/products/toskaniGlacierCream.webp',
     price: '70 EUR',
@@ -411,7 +411,7 @@ export const products: Product[] = [
   {
     id: '22',
     title: 'Retin Pro Age Serum',
-    description: 'Retin Pro Age Serum – lagan i gladak serum koji daje osjećaj hranjivosti nakon nanošenja. Sastoji se od kompleksa biljnog retinola i liposomalnog retinaldehida s velikom snagom učvršćivanja i protiv bora. NE SADRŽI RETINOL! Sadrži derivate retinola koji nisu fotoosjetljivi stoga je serum pogodan i za osjetljivu kožu. Pogodan za biološku dob 30+/40 godina i za sve tipove kože.',
+    description: 'Lagan i gladak serum koji daje osjećaj hranjivosti nakon nanošenja. Sastoji se od kompleksa biljnog retinola i liposomalnog retinaldehida s velikom snagom učvršćivanja i protiv bora. NE SADRŽI RETINOL! Sadrži derivate retinola koji nisu fotoosjetljivi stoga je serum pogodan i za osjetljivu kožu. Pogodan za biološku dob 30+/40 godina i za sve tipove kože.',
     category: 'Serum',
     image: '/images/products/toskaniRetinProAge_Serum.webp',
     price: '80 EUR',
@@ -429,7 +429,7 @@ export const products: Product[] = [
   {
     id: '23',
     title: 'Retin Pro Age Cream',
-    description: 'Retin Pro Age Cream – lako upijajuća krema koja pruža njegujući osjećaj. Sadrži spoj nastao od hijaluronske i retinoične kiseline te retinola biljnog podrijetla koji daje snagu protiv bora, zaglađuje nesavršenosti i ujednačava ton. NE SADRŽI RETINOL! Sadrži derivate retinola koji nisu fotoosjetljivi stoga je serum pogodan i za osjetljivu kožu. Pogodan za biološku dob 30+/40 godina i za sve tipove kože.',
+    description: 'Lako upijajuća krema koja pruža njegujući osjećaj. Sadrži spoj nastao od hijaluronske i retinoične kiseline te retinola biljnog podrijetla koji daje snagu protiv bora, zaglađuje nesavršenosti i ujednačava ton. NE SADRŽI RETINOL! Sadrži derivate retinola koji nisu fotoosjetljivi stoga je serum pogodan i za osjetljivu kožu. Pogodan za biološku dob 30+/40 godina i za sve tipove kože.',
     category: 'Krema',
     image: '/images/products/toskaniRetinCream.webp',
     price: '75 EUR',
@@ -447,7 +447,7 @@ export const products: Product[] = [
   {
     id: '24',
     title: 'Unique Pro Age Serum',
-    description: 'Unique Pro Age Serum – hranjivi i luksuzni dnevni serum za svakodnevnu primjenu sa širokim izborom anti-age aktivnih sastojaka usmjerenih na svaki od problema koji najviše zabrinjavaju: zategnutost, marionetske bore, Y zona (oval lica i vrat). Pogodno za biološku dob 45+ godina i za sve tipove kože.',
+    description: 'Hranjivi i luksuzni dnevni serum za svakodnevnu primjenu sa širokim izborom anti-age aktivnih sastojaka usmjerenih na svaki od problema koji najviše zabrinjavaju: zategnutost, marionetske bore, Y zona (oval lica i vrat). Pogodno za biološku dob 45+ godina i za sve tipove kože.',
     category: 'Serum',
     image: '/images/products/toskaniUniqueProAge_Serum.webp',
     price: '80 EUR',
@@ -465,7 +465,7 @@ export const products: Product[] = [
   {
     id: '25',
     title: 'Unique Pro Age Cream',
-    description: 'Unique Pro Age Cream – hranjivi i luksuzni dnevni tretman za svakodnevnu primjenu sa širokim izborom anti-age aktivnih sastojaka usmjerenih na svaki od problema koji najviše zabrinjavaju: zategnutost, marionetske bore, Y zona (oval lica i vrat). Pogodno za biološku dob 45+ godina i sve tipove kože.',
+    description: 'Hranjivi i luksuzni dnevni tretman za svakodnevnu primjenu sa širokim izborom anti-age aktivnih sastojaka usmjerenih na svaki od problema koji najviše zabrinjavaju: zategnutost, marionetske bore, Y zona (oval lica i vrat). Pogodno za biološku dob 45+ godina i sve tipove kože.',
     category: 'Krema',
     image: '/images/products/toskaniUniqueCream.webp',
     price: '75 EUR',
@@ -483,7 +483,7 @@ export const products: Product[] = [
   {
     id: '26',
     title: 'Anti Hair-Loss Lotion',
-    description: 'Anti Hair-Loss Lotion – jedinstveno i inovativno rješenje za zaustavljanje gubitka kose i jačanje nove i postojeće kose. Losion protiv gubitka kose tretman je posebno formuliran za zaustavljanje gubitka kose. Namijenjeno svim vrstama alopecije i za svakodnevnu njegu fine, krhke i nježne kose. Losion protiv gubitka kose jača i revitalizira folikul dlake stimulirajući fazu rasta, povećavajući gustoću i poboljšavajući strukturu kose. Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlasištu.',
+    description: 'Jedinstveno i inovativno rješenje za zaustavljanje gubitka kose i jačanje nove i postojeće kose. Losion protiv gubitka kose tretman je posebno formuliran za zaustavljanje gubitka kose. Namijenjeno svim vrstama alopecije i za svakodnevnu njegu fine, krhke i nježne kose. Losion protiv gubitka kose jača i revitalizira folikul dlake stimulirajući fazu rasta, povećavajući gustoću i poboljšavajući strukturu kose. Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlasištu.',
     category: 'Njega kose',
     image: '/images/products/Anti-hair-loss-lotion.webp',
     price: '37 EUR',
@@ -499,7 +499,7 @@ export const products: Product[] = [
   {
     id: '27',
     title: 'DensiHair Boost Capsules',
-    description: 'DensiHair Boost capsules – dodatak prehrani koji sadrži Sabal serrulata, vitamine i aminokiseline za jačanje kose i zaustavljanje gubitka kose.',
+    description: 'Dodatak prehrani koji sadrži Sabal serrulata, vitamine i aminokiseline za jačanje kose i zaustavljanje gubitka kose.',
     category: 'Njega kose',
     image: '/images/products/toskaniDensiHair-Boost-capsules.webp',
     price: '38 EUR',
