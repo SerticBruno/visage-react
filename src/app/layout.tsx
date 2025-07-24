@@ -16,9 +16,9 @@ const versailles = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://visage-studio.hr'),
+  metadataBase: new URL('https://visagestudio.hr'),
   alternates: {
-    canonical: 'https://visage-studio.hr',
+    canonical: 'https://visagestudio.hr',
   },
   title: {
     default: "VISAGE Studio - Estetski studio Sisak",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "hr_HR",
-    url: "https://visage-studio.hr",
+    url: "https://visagestudio.hr",
     siteName: "VISAGE Studio",
     title: "VISAGE Studio - Estetski studio Sisak",
     description: "VISAGE Studio je estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI.",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       }
     ],
     countryName: "Croatia",
-    emails: ["info@visage-studio.hr"], // Add your email if you have one
+    emails: ["info@visagestudio.hr"], // Add your email if you have one
   },
   twitter: {
     card: "summary_large_image",

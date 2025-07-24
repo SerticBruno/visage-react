@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     description: service.description,
     keywords: service.tags,
     alternates: {
-      canonical: `https://visage-studio.hr/usluge/${resolvedParams.pageName}`,
+      canonical: `https://visagestudio.hr/usluge/${resolvedParams.pageName}`,
     },
   };
 }

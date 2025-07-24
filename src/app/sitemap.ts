@@ -13,7 +13,7 @@ function toSlug(text: string): string {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://visage-studio.hr' // Replace with your actual domain
+  const baseUrl = 'https://visagestudio.hr' // Replace with your actual domain
 
   // Static routes
   const staticRoutes = [
