@@ -29,7 +29,7 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <div className="relative w-full max-w-4xl transform overflow-hidden rounded-2xl bg-gradient-to-b from-white to-slate-50 p-4 shadow-2xl transition-all border border-slate-200 max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white p-4 shadow-2xl transition-all border border-slate-200 max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-start mb-3 pb-3 border-b border-slate-100">
               <h2 className="text-xl font-bold text-slate-900">
                 {product.title}
