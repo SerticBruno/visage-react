@@ -3,9 +3,9 @@ export interface Product {
   title: string;
   description: string;
   category: string;
-  productType: string; // New field for "Tip proizvoda"
-  skinType: string[]; // New field for "Tip kože"
-  skinConcern: string[]; // New field for "Problematika kože"
+  productType?: string; // New field for "Tip proizvoda"
+  skinType?: string[]; // New field for "Tip kože"
+  skinConcern?: string[]; // New field for "Problematika kože"
   image: string;
   price: string;
   oldPrice?: string;

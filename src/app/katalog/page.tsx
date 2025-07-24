@@ -38,11 +38,12 @@ function KatalogContent() {
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          product.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesProductType = selectedProductTypes.length === 0 || selectedProductTypes.includes(product.productType);
+    const matchesProductType = selectedProductTypes.length === 0 || 
+      (product.productType && selectedProductTypes.includes(product.productType));
     const matchesSkinType = selectedSkinTypes.length === 0 || 
-      product.skinType.some(skinType => selectedSkinTypes.includes(skinType));
+      (product.skinType && product.skinType.some(skinType => selectedSkinTypes.includes(skinType)));
     const matchesSkinConcern = selectedSkinConcerns.length === 0 || 
-      product.skinConcern.some(concern => selectedSkinConcerns.includes(concern));
+      (product.skinConcern && product.skinConcern.some(concern => selectedSkinConcerns.includes(concern)));
     const matchesBadges = selectedBadges.length === 0 || 
       (selectedBadges.includes('new') && product.isNew) ||
       (selectedBadges.includes('sale') && product.isOnSale) ||
@@ -221,6 +222,39 @@ function KatalogContent() {
           <div className="lg:w-64 flex-shrink-0">
             <div className="bg-white rounded-lg shadow-md p-6 sticky top-24 space-y-4">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Filtriraj proizvode</h3>
+
+              {/* Search */}
+              <div>
+                <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-2">
+                  Pretraži proizvode
+                </label>
+                <div className="relative">
+                  <input
+                    id="search"
+                    type="text"
+                    placeholder="Naziv ili opis..."
+                    className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm"
+                    value={searchTerm}
+                    onChange={handleSearch}
+                  />
+                  <FaSearch className="absolute left-3 top-3.5 text-gray-400" />
+                  {searchTerm && (
+                    <button
+                      onClick={() => {
+                        setIsFiltering(true);
+                        setSearchTerm('');
+                        requestAnimationFrame(scrollToProducts);
+                      }}
+                      className="absolute right-3 top-3.5 text-gray-400 hover:text-gray-600 transition-colors duration-200 cursor-pointer"
+                      aria-label="Očisti pretraživanje"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+              </div>
 
               {/* Product Types Section */}
               <div className="border-t border-gray-200 pt-4 pb-0 mb-0">
@@ -436,38 +470,6 @@ function KatalogContent() {
           {/* Products Grid */}
           <div className="flex-1" ref={productsRef}>
             {/* Search Bar */}
-            <div className="mb-6">
-              <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-2">
-                Pretraži proizvode
-              </label>
-              <div className="relative max-w-md">
-                <input
-                  id="search"
-                  type="text"
-                  placeholder="Naziv ili opis..."
-                  className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm"
-                  value={searchTerm}
-                  onChange={handleSearch}
-                />
-                <FaSearch className="absolute left-3 top-3.5 text-gray-400" />
-                {searchTerm && (
-                  <button
-                    onClick={() => {
-                      setIsFiltering(true);
-                      setSearchTerm('');
-                      requestAnimationFrame(scrollToProducts);
-                    }}
-                    className="absolute right-3 top-3.5 text-gray-400 hover:text-gray-600 transition-colors duration-200 cursor-pointer"
-                    aria-label="Očisti pretraživanje"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                )}
-              </div>
-            </div>
-
             <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 transition-opacity duration-300 ${isScrolling || isFiltering ? 'opacity-25' : 'opacity-100'}`}>
               {currentProducts.map((product) => (
                 <div
