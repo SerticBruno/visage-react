@@ -120,9 +120,9 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                 {product.application && (
                   <div className="bg-slate-50 rounded-xl p-3">
                     <h3 className="text-sm font-semibold text-slate-900 mb-1">Primjena</h3>
-                    <ul className="list-disc list-inside text-sm text-slate-600 space-y-0.5">
+                    <ul className="list-disc list-outside text-sm text-slate-600 space-y-0.5 pl-4">
                       {product.application.map((step, index) => (
-                        <li key={index}>{step}</li>
+                        <li key={index} className="leading-relaxed">{step}</li>
                       ))}
                     </ul>
                   </div>

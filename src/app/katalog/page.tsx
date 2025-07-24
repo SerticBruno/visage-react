@@ -278,25 +278,27 @@ function KatalogContent() {
                       : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2 relative">
-                    {productTypes.map((productType, index) => (
-                      <label 
-                        key={productType} 
-                        className={`flex items-start space-x-2 cursor-pointer group ${
-                          index === productTypes.length - 1 ? 'pb-2' : ''
-                        }`}
-                      >
-                        <div className="pt-0.5">
-                          <input
-                            type="checkbox"
-                            checked={selectedProductTypes.includes(productType)}
-                            onChange={() => toggleProductType(productType)}
-                            className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                          />
-                        </div>
-                        <span className="text-sm text-gray-700 group-hover:text-gray-900">{productType}</span>
-                      </label>
-                    ))}
+                  <div className="relative">
+                    <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+                      {productTypes.map((productType, index) => (
+                        <label 
+                          key={productType} 
+                          className={`flex items-start space-x-2 cursor-pointer group ${
+                            index === productTypes.length - 1 ? 'pb-2' : ''
+                          }`}
+                        >
+                          <div className="pt-0.5">
+                            <input
+                              type="checkbox"
+                              checked={selectedProductTypes.includes(productType)}
+                              onChange={() => toggleProductType(productType)}
+                              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                            />
+                          </div>
+                          <span className="text-sm text-gray-700 group-hover:text-gray-900">{productType}</span>
+                        </label>
+                      ))}
+                    </div>
                     <div className="absolute bottom-0 left-0 right-2 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
                   </div>
                 </div>
@@ -324,25 +326,27 @@ function KatalogContent() {
                       : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2 relative">
-                    {skinTypes.map((skinType, index) => (
-                      <label 
-                        key={skinType} 
-                        className={`flex items-start space-x-2 cursor-pointer group ${
-                          index === skinTypes.length - 1 ? 'pb-2' : ''
-                        }`}
-                      >
-                        <div className="pt-0.5">
-                          <input
-                            type="checkbox"
-                            checked={selectedSkinTypes.includes(skinType)}
-                            onChange={() => toggleSkinType(skinType)}
-                            className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                          />
-                        </div>
-                        <span className="text-sm text-gray-700 group-hover:text-gray-900">{skinType}</span>
-                      </label>
-                    ))}
+                  <div className="relative">
+                    <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+                      {skinTypes.map((skinType, index) => (
+                        <label 
+                          key={skinType} 
+                          className={`flex items-start space-x-2 cursor-pointer group ${
+                            index === skinTypes.length - 1 ? 'pb-2' : ''
+                          }`}
+                        >
+                          <div className="pt-0.5">
+                            <input
+                              type="checkbox"
+                              checked={selectedSkinTypes.includes(skinType)}
+                              onChange={() => toggleSkinType(skinType)}
+                              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                            />
+                          </div>
+                          <span className="text-sm text-gray-700 group-hover:text-gray-900">{skinType}</span>
+                        </label>
+                      ))}
+                    </div>
                     <div className="absolute bottom-0 left-0 right-2 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
                   </div>
                 </div>
@@ -370,25 +374,27 @@ function KatalogContent() {
                       : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2 relative">
-                    {skinConcerns.map((skinConcern, index) => (
-                      <label 
-                        key={skinConcern} 
-                        className={`flex items-start space-x-2 cursor-pointer group ${
-                          index === skinConcerns.length - 1 ? 'pb-2' : ''
-                        }`}
-                      >
-                        <div className="pt-0.5">
-                          <input
-                            type="checkbox"
-                            checked={selectedSkinConcerns.includes(skinConcern)}
-                            onChange={() => toggleSkinConcern(skinConcern)}
-                            className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                          />
-                        </div>
-                        <span className="text-sm text-gray-700 group-hover:text-gray-900">{skinConcern}</span>
-                      </label>
-                    ))}
+                  <div className="relative">
+                    <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+                      {skinConcerns.map((skinConcern, index) => (
+                        <label 
+                          key={skinConcern} 
+                          className={`flex items-start space-x-2 cursor-pointer group ${
+                            index === skinConcerns.length - 1 ? 'pb-2' : ''
+                          }`}
+                        >
+                          <div className="pt-0.5">
+                            <input
+                              type="checkbox"
+                              checked={selectedSkinConcerns.includes(skinConcern)}
+                              onChange={() => toggleSkinConcern(skinConcern)}
+                              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                            />
+                          </div>
+                          <span className="text-sm text-gray-700 group-hover:text-gray-900">{skinConcern}</span>
+                        </label>
+                      ))}
+                    </div>
                     <div className="absolute bottom-0 left-0 right-2 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
                   </div>
                 </div>
