@@ -102,7 +102,9 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
               <div className="w-full md:w-3/5 space-y-3">
                 <div className="bg-slate-50 rounded-xl p-3">
                   <h3 className="text-sm font-semibold text-slate-900 mb-1">Opis</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{product.description}</p>
+                  <div className="text-sm text-slate-600 leading-relaxed whitespace-pre-line">
+                    {product.description}
+                  </div>
                 </div>
 
                 {product.volume && (
