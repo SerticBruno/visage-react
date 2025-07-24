@@ -29,18 +29,22 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <div className="relative w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white p-4 shadow-2xl transition-all border border-slate-200 max-h-[90vh]">
+          <div className="relative">
+            {/* Close Button - Outside Modal */}
+            <button
+              onClick={onClose}
+              className="absolute -top-4 -right-4 z-20 text-slate-400 hover:text-slate-600 focus:outline-none transition-colors cursor-pointer p-2 hover:bg-slate-100 rounded-full bg-white shadow-md"
+            >
+              <FaTimes size={20} />
+            </button>
+            
+            <div className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white p-4 shadow-2xl transition-all border border-slate-200 max-h-[90vh]">
+            
             <div className="overflow-y-auto max-h-[calc(90vh-2rem)] pr-2">
             <div className="flex justify-between items-start mb-3 pb-3 border-b border-slate-100">
               <h2 className="text-xl font-bold text-slate-900">
                 {product.title}
               </h2>
-              <button
-                onClick={onClose}
-                className="text-slate-400 hover:text-slate-600 focus:outline-none transition-colors cursor-pointer p-1 hover:bg-slate-100 rounded-full"
-              >
-                <FaTimes size={20} />
-              </button>
             </div>
             
             <div className="flex flex-col md:flex-row gap-4">
@@ -130,6 +134,7 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
 
 
               </div>
+                          </div>
             </div>
             </div>
           </div>
