@@ -44,7 +44,6 @@ export const productTypes = [
   'Serum',
   'Okoloočna njega',
   'SPF krema',
-  'Sprej',
   'Kapsule',
   'Ampule'
 ];
