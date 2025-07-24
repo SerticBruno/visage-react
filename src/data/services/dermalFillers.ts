@@ -112,7 +112,7 @@ Moguće su blage nuspojave poput:
 Uobičajeno se povuku u roku od tjedan dana.`,
     'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
 
-Za najbolje rezultate se preporuča svakih 12 do 24 mjeseci ponovno aplicirati filer kako bi se što dulje zadržao mladolik izgled i kontura lica.
+Svakih 12 do 24 mjeseci ponovno aplicirati filer kako bi se što dulje zadržao mladolik izgled i kontura lica.
 
 Nakon tretmana dermalnim filerima važno je da:
 
