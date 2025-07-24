@@ -91,13 +91,13 @@ Tjedan dana prije tretmana:
 - Ne smijete laserski uklanjati dlačice`,
     'tijek-zahvata': `Tretman kemijskim pilingom je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-1. Priprema kože - Čišćenje kože s Toskani Energizing Cleanserom, odmašćivanje kože i zaštita madeža.
+1. Priprema kože - Čišćenje kože s <a href="/katalog?product=1">Toskani Energizing Cleanserom</a>, odmašćivanje kože i zaštita madeža.
 
 2. Priprema kemijskog pilinga - Nanošenje kemijskog pilinga, praćenje reakcije kože i neutralizacija pilinga.
 
-3. Završna njega - Nanošenje Toskani Antistress maske koja ima umirujuća svojstva za kožu i držanje iste 10ak minuta, nanošenje Toskani Total Recovery Gela koji pomaže regeneraciji kože i nanošenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.
+3. Završna njega - Nanošenje Toskani Antistress maske koja ima umirujuća svojstva za kožu i držanje iste 10ak minuta, nanošenje <a href="/katalog?product=8">Toskani Total Recovery Gela</a> koji pomaže regeneraciji kože i nanošenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.
 
-4. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade kemijski piling preporučamo korištenje Toskani Total Recovery Gela i obavezno je korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.`,
+4. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade kemijski piling preporučamo korištenje <a href="/katalog?product=8">Toskani Total Recovery Gela</a> i obavezno je korištenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.`,
     'oporavak': 'Oporavak može trajati nekoliko dana, uz blago crvenilo i ljuštenje kože. Nuspojave mogu uključivati:\n1. Crvenilo\n2. Osjetljivost\n3. Peckanje\n4. Stvaranje ljuskica\n5. Perutanje kože',
     'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
 
@@ -110,8 +110,8 @@ Nakon kemijskog pilinga se preporuča:
 - Ne koristiti mehaničke pilinge nakon tretmana minimalno tjedan dana
 - Izbjegavajte izlaganje suncu i solariju
 - Ne skidati ljuskice i pustiti kožu da se sama obnovi
-- Korištenje Toskani Recovery gela
-- Korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+`,
+- Korištenje <a href="/katalog?product=8">Toskani Recovery gela</a>
+- Korištenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>`,
     'cijena': 'Cijena ovisi o tipu pilinga i broju potrebnih tretmana.'
   }
 }; 

@@ -136,7 +136,18 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   }, [activeTab, scrollToActiveStep, hasUserChangedTab]);
 
   const formatContent = (content: string) => {
-    // Split content into sections (separated by double newlines)
+    // Check if content contains HTML links
+    if (content.includes('<a href=')) {
+      // If content contains HTML, render it directly with dangerouslySetInnerHTML
+      return (
+        <div 
+          className="text-gray-600 leading-relaxed [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      );
+    }
+
+    // Original logic for plain text content
     const sections = content.split('\n\n');
     
     return sections.map((section, sectionIdx) => {
@@ -237,7 +248,14 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
-                <p className="text-gray-600 leading-relaxed">{description}</p>
+                {description.includes('<a href=') ? (
+                  <div 
+                    className="text-gray-600 leading-relaxed [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
+                    dangerouslySetInnerHTML={{ __html: description }}
+                  />
+                ) : (
+                  <p className="text-gray-600 leading-relaxed">{description}</p>
+                )}
               </div>
             </motion.div>
           );
