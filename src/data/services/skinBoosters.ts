@@ -98,13 +98,13 @@ Pogodni su za sve tipove kože i dobne skupine, a posebno za:
 3. Preporuka broja tretmana za optimalne rezultate`,
     'tijek-zahvata': `Tretman skin boosterima je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-1. Priprema kože - Čištimo kožu s Toskani Energizing Cleanserom i dezinficiramo mjesta gdje ćemo injektirati skin booster. Na mjesta injektiranja nanosimo anestetsku kremu kako bi tretman bio što ugodniji.
+1. Priprema kože - Čištimo kožu s <a href="/katalog?product=1">Toskani Energizing Cleanserom</a> i dezinficiramo mjesta gdje ćemo injektirati skin booster. Na mjesta injektiranja nanosimo anestetsku kremu kako bi tretman bio što ugodniji.
 
 2. Primjena skin boostera - Skin boosteri se injektiraju u 4, odnosno 5 mjesta sa svake strane lica.
 
-3. Završna njega - Mjesta uboda masiramo Toskani After creamom i nanosimo kremu sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.
+3. Završna njega - Mjesta uboda masiramo <a href="/katalog?product=8">Toskani Total Recovery gelom</a> i nanosimo kremu sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.
 
-4. Preporuka za kućnu njegu - Preporučujemo korištenje odgovarajućih proizvoda iz Toskani Pro Age linije, kako bi rezultati bili što dugotrajniji, te korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.`,
+4. Preporuka za kućnu njegu - Preporučujemo korištenje odgovarajućih proizvoda iz Toskani Pro Age linije, kako bi rezultati bili što dugotrajniji, te korištenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.`,
     'oporavak': `Oporavak može trajati do 5 dana, ovisno o mjestu injektiranja.
 
 Nuspojave mogu uključivati:
