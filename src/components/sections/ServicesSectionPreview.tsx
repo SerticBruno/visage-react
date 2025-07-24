@@ -29,7 +29,9 @@ export default function ServicesSectionPreview() {
 
   const goToSlide = (index: number) => {
     if (swiperRef.current) {
-      swiperRef.current.slideTo(index);
+      // For looped swiper, we need to calculate the correct slide index
+      // The swiper automatically handles the loop, so we can use the index directly
+      swiperRef.current.slideToLoop(index);
     }
   };
 

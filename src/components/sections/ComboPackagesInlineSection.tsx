@@ -31,7 +31,7 @@ export default function ComboPackagesInlineSection() {
 
   const goToSlide = (index: number) => {
     if (swiperRef.current) {
-      swiperRef.current.slideTo(index);
+      swiperRef.current.slideToLoop(index);
     }
   };
 
@@ -45,30 +45,34 @@ export default function ComboPackagesInlineSection() {
           </p>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 py-8 pb-16">
+        <div className="relative max-w-7xl mx-auto px-4 py-8">
           <Swiper
             modules={[Navigation]}
             spaceBetween={24}
             slidesPerView={1}
+            loop={true}
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
             onSlideChange={(swiper) => {
-              setActiveIndex(swiper.activeIndex);
+              setActiveIndex(swiper.realIndex);
             }}
             className="combo-packages-swiper"
+            style={{ paddingTop: '2rem' }}
           >
             {comboPackages.map((pkg) => (
-              <SwiperSlide key={pkg.id}>
-                <div className="flex flex-col items-center">
-                  {/* Title Badge Above Container */}
-                  <div className="bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg font-bold text-base md:text-lg mb-6">
-                    {pkg.title}
+              <SwiperSlide key={pkg.id} style={{ marginBottom: '2rem' }}>
+                <div className="relative">
+                  {/* Title Badge - Overlapping the container */}
+                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg font-bold text-base md:text-lg">
+                      {pkg.title}
+                    </div>
                   </div>
                   
                   {/* Card Container */}
-                  <div className="bg-white rounded-xl md:rounded-2xl shadow-lg h-full w-full">
-                    <div className="p-4 md:p-6 lg:p-8 h-full flex flex-col rounded-xl md:rounded-2xl" style={{ background: 'linear-gradient(to bottom,rgb(233, 234, 235),#f0f0f0)' }}>
+                  <div className="bg-white rounded-xl md:rounded-2xl shadow-lg h-full relative mx-4">
+                    <div className="p-6 md:p-8 lg:p-10 h-full flex flex-col pt-10 rounded-xl md:rounded-2xl mb-4" style={{ background: 'linear-gradient(to bottom,rgb(233, 234, 235),#f0f0f0)' }}>
                       <div className="text-center mb-6 md:mb-8">
                         <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg">{pkg.description}</p>
                         <div className="flex items-center justify-center gap-2 md:gap-3">
@@ -180,7 +184,7 @@ export default function ComboPackagesInlineSection() {
           </Swiper>
           
           {/* Navigation Controls */}
-          <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="flex items-center justify-center gap-4 mt-12">
             <button
               onClick={handlePrev}
               className="w-8 h-8 bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
@@ -195,7 +199,7 @@ export default function ComboPackagesInlineSection() {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
                     index === activeIndex 
                       ? 'bg-slate-600 scale-125' 
                       : 'bg-slate-300 hover:bg-slate-400'

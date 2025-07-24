@@ -49,7 +49,9 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
 
   const goToPage = (pageIndex: number) => {
     if (swiperRef.current) {
-      const targetIndex = pageIndex * visiblePosts;
+      // Get the current slides per view from the swiper instance
+      const currentSlidesPerView = swiperRef.current.params.slidesPerView as number;
+      const targetIndex = pageIndex * currentSlidesPerView;
       swiperRef.current.slideToLoop(targetIndex);
     }
   };
@@ -76,7 +78,8 @@ export default function FeaturedBlogsSection({ posts }: FeaturedBlogsSectionProp
               swiperRef.current = swiper;
             }}
             onSlideChange={(swiper) => {
-              setCurrentPage(Math.floor(swiper.realIndex / 3) + 1);
+              const currentSlidesPerView = swiper.params.slidesPerView as number;
+              setCurrentPage(Math.floor(swiper.realIndex / currentSlidesPerView) + 1);
             }}
             breakpoints={{
               320: {

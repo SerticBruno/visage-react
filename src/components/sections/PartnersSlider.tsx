@@ -14,6 +14,7 @@ import 'swiper/css/navigation';
 
 const PartnersSlider = () => {
   const swiperRef = React.useRef<SwiperType | null>(null);
+  const [activeIndex, setActiveIndex] = React.useState(0);
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -24,6 +25,12 @@ const PartnersSlider = () => {
   const handleNext = () => {
     if (swiperRef.current) {
       swiperRef.current.slideNext();
+    }
+  };
+
+  const goToSlide = (index: number) => {
+    if (swiperRef.current) {
+      swiperRef.current.slideToLoop(index);
     }
   };
 
@@ -102,6 +109,9 @@ const PartnersSlider = () => {
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
+            onSlideChange={(swiper) => {
+              setActiveIndex(swiper.realIndex);
+            }}
             breakpoints={{
               640: {
                 slidesPerView: 2,
@@ -126,7 +136,7 @@ const PartnersSlider = () => {
             }}
             pagination={{
               clickable: true,
-              el: '.swiper-pagination',
+              el: '.swiper-pagination-custom',
               bulletClass: 'swiper-pagination-bullet',
               bulletActiveClass: 'swiper-pagination-bullet-active',
             }}
@@ -165,7 +175,23 @@ const PartnersSlider = () => {
             >
               <FaChevronLeft className="w-4 h-4" />
             </button>
-            <div className="swiper-pagination !relative !bottom-0 !top-auto !w-auto !mx-4"></div>
+            
+            {/* Custom Pagination Dots */}
+            <div className="flex space-x-2">
+              {partners.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
+                    index === activeIndex 
+                      ? 'bg-slate-600 scale-125' 
+                      : 'bg-slate-300 hover:bg-slate-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+            
             <button
               onClick={handleNext}
               className="w-8 h-8 bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
