@@ -10,6 +10,7 @@ interface ServiceContentSectionProps {
   imageAlt: string;
   benefits?: readonly string[];
   serviceName?: string;
+  focalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 }
 
 export default function ServiceContentSection({
@@ -19,7 +20,33 @@ export default function ServiceContentSection({
   imageAlt,
   benefits = [],
   serviceName,
+  focalPoint = 'center',
 }: ServiceContentSectionProps) {
+  // Convert focal point to CSS object-position values
+  const getObjectPosition = (focalPoint: string) => {
+    switch (focalPoint) {
+      case 'left':
+        return 'left center';
+      case 'right':
+        return 'right center';
+      case 'top':
+        return 'center top';
+      case 'bottom':
+        return 'center bottom';
+      case 'top-left':
+        return 'left top';
+      case 'top-right':
+        return 'right top';
+      case 'bottom-left':
+        return 'left bottom';
+      case 'bottom-right':
+        return 'right bottom';
+      case 'center':
+      default:
+        return 'center center';
+    }
+  };
+
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -61,6 +88,7 @@ export default function ServiceContentSection({
               alt={imageAlt}
               fill
               className="object-cover"
+              style={{ objectPosition: getObjectPosition(focalPoint) }}
               priority
             />
           </div>

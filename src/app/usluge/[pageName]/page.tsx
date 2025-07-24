@@ -85,6 +85,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         imageAlt={currentService.title}
         benefits={currentService.benefits}
         serviceName={currentService.title}
+        focalPoint={currentService.focalPoint}
       />
       <ServiceDetailsSection service={currentService} />
       <CTASection gradientDirection='t'/>

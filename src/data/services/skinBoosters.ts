@@ -22,6 +22,7 @@ Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa skin boo
   ],
   image: '/images/services/skinboosteri-hero.webp',
   heroImage: '/images/services/skin-boosters/skin-booster-visage-estetski-studio-sisak.jpeg',
+  focalPoint: 'left',
   metaDescription: 'Profesionalni skin boosteri u VISAGE studiju u Siska. Duboka hidratacija i revitalizacija kože uz pomoć naprednih skin booster tretmana. Vidljivi i dugotrajni rezultati.',
   metaKeywords: 'skin boosteri, hidratacija kože, revitalizacija kože, estetski studio Sisak, VISAGE studio, TKN HA3, Profhilo, skin booster tretmani',
   tags: ['skin-boosteri', 'hidratacija', 'revitalizacija', 'minimalno-invazivni', 'mikroinjekcije'],

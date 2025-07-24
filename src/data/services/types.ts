@@ -30,6 +30,7 @@ export interface Service {
   tags: string[];
   pricingCategory?: string;
   relatedServices?: string[];
+  focalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 }
 
 export type Services = {
