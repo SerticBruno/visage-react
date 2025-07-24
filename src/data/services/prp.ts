@@ -25,7 +25,7 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
   metaKeywords: 'PRP terapija, regeneracija kože, trombociti, estetski studio Sisak, VISAGE studio, PRP lica, prirodna regeneracija',
   tags: ['prp', 'regeneracija', 'prirodni-tretmani', 'minimalno-invazivni', 'trombociti'],
   pricingCategory: 'PRP',
-  relatedServices: ['mezoterapija', 'skin-boosteri', 'kemijski-piling'],
+  relatedServices: ['skin-boosteri', 'mezoterapija', 'kemijski-piling'],
   steps: [
     { 
       id: 'prednosti', 
