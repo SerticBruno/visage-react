@@ -725,54 +725,52 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
   },
   {
     id: '31',
-    title: 'Sun Shiel-D Sun Fluid Facial Cream',
-    description: `Lagana fluidna krema za zaštitu lica od sunca.`,
+    title: 'SUN SHIEL-D Fluid SPF50+',
+    description: `Fluid za lice ultra lagane teksture koji je pogodan i za osjetljivu kožu.\n\nNije komedogen, što ga čini dobrim izborom i za masnu kožu.\n\nVrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.\n\nPruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
     category: 'Zaštita od sunca',
-    image: '/images/products/toskani-sun-shield-facial-cream.webp',
+    image: '/images/products/toskani-sun-shiel-d-crema-fluida-facial-spf-50.png',
     price: '36 EUR',
     volume: '50ml',
     isNew: true,
-    activeIngredients: ['SPF 50+', 'UVA/UVB zaštita', 'Hijaluronska kiselina'],
+    activeIngredients: ['SPF 50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks'],
     application: [
-      'Nanesite 20 minuta prije izlaganja suncu',
-      'Ponovite nanošenje svaka 2 sata',
-      'Nanesite na čistu kožu'
+      'Nanesite fluid 30 minuta prije izlaganja suncu',
+      'Nanesite 1 do 2 puta kroz dan (ujutro i popodne)'
     ],
-    tags: ['spf', 'zaštita od sunca', 'lice', 'fluidna tekstura']
+    tags: ['spf', 'zaštita od sunca', 'lice', 'fluidna tekstura', 'nekomedogen']
   },
   {
     id: '32',
-    title: 'Sun Shiel-D Sun Fluid Facial Cream Tinted',
-    description: `Lagana fluidna krema s tonom za zaštitu lica od sunca.`,
+    title: 'Sun Shiel-d Tonirani Fluid SPF50+',
+    description: `Tonirani fluid za lice ultra lagane teksture koji je pogodan i za osjetljivu kožu te pomaže ujednačiti ton kože.\n\nNije komedogen, što ga čini dobrim izborom i za masnu kožu.\n\nVrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.\n\nPruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
     category: 'Zaštita od sunca',
-    image: '/images/products/toskani-sun-shield-facial-cream-tinted.webp',
+    image: '/images/products/toskani-sun-shiel-d-tonirani-fluid.png',
     price: '39 EUR',
     volume: '50ml',
     isNew: true,
-    activeIngredients: ['SPF 50+', 'UVA/UVB zaštita', 'Hijaluronska kiselina', 'Toner'],
+    activeIngredients: ['SPF 50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks', 'Toner'],
     application: [
-      'Nanesite 20 minuta prije izlaganja suncu',
-      'Ponovite nanošenje svaka 2 sata',
-      'Nanesite na čistu kožu'
+      'Nanesite fluid 30 minuta prije izlaganja suncu',
+      'Nanesite 1 do 2 puta kroz dan (ujutro i popodne)'
     ],
-    tags: ['spf', 'zaštita od sunca', 'lice', 'fluidna tekstura', 'toner']
+    tags: ['spf', 'zaštita od sunca', 'lice', 'fluidna tekstura', 'toner', 'nekomedogen']
   },
   {
     id: '33',
-    title: 'Sun Shiel-D Sun Body&Face Sprej',
-    description: `Sprej za zaštitu tijela i lica od sunca.`,
+    title: 'Sun Shiel-D Body & Facial Sprej SPF50+',
+    description: `Sprej za lice i tijelo ultra lagane teksture koji je pogodan i za osjetljivu kožu.\n\nVrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.\n\nPruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.\n\nVodootporan je.`,
     category: 'Zaštita od sunca',
-    image: '/images/products/toskani-sun-shield-body-face-spray.webp',
+    image: '/images/products/toskani-sun-shiel-d-spray-facial-spf50.png',
     price: '42 EUR',
     volume: '200ml',
     isNew: true,
-    activeIngredients: ['SPF 50+', 'UVA/UVB zaštita', 'Vodootporna formula'],
+    activeIngredients: ['SPF 50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks'],
     application: [
-      'Nanesite 20 minuta prije izlaganja suncu',
-      'Ponovite nanošenje svaka 2 sata',
-      'Nanesite na čistu kožu'
+      'Protresite prije upotrebe',
+      'Nanesite sprej 30 minuta prije izlaganja suncu',
+      'Nanesite 1 do 2 puta kroz dan (ujutro i popodne)'
     ],
-    tags: ['spf', 'zaštita od sunca', 'tijelo i lice', 'sprej', 'vodootporna']
+    tags: ['spf', 'zaštita od sunca', 'tijelo i lice', 'sprej', 'vodootporan']
   },
   {
     id: '34',
