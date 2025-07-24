@@ -90,7 +90,9 @@ export default function ServicesSectionPreview() {
                       src={service.heroImage}
                       alt={service.title}
                       fill
+                      loading="lazy"
                       className="object-cover transition-all duration-300 group-hover:scale-110"
+                      sizes="(max-width: 768px) 80vw, 40vw"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-all duration-300" />
                     
