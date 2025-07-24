@@ -44,7 +44,12 @@ function KatalogContent() {
   // Reset to first page when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, selectedCategories]);
+  }, [searchTerm, selectedCategories, selectedBadges]);
+
+  // Always reset to page 1 when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filteredProducts]);
 
   // Handle URL parameter for auto-opening product modal
   useEffect(() => {
@@ -264,7 +269,7 @@ function KatalogContent() {
                 <div
                   key={product.id}
                   className={`
-                    bg-gradient-to-b from-white to-slate-50 rounded-xl shadow-sm overflow-hidden
+                    group bg-gradient-to-b from-white to-slate-50 rounded-xl shadow-sm overflow-hidden
                     ${product.isPopular ? 'ring-1 ring-slate-200/50' : ''}
                     hover:shadow-xl transition-all duration-300
                     flex flex-col h-full cursor-pointer relative
@@ -276,7 +281,7 @@ function KatalogContent() {
                       src={product.image}
                       alt={product.title}
                       fill
-                      className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+                      className="object-contain p-2 transition-transform duration-300 hover:scale-105"
                       loading="lazy"
                     />
                     {/* Product Badges */}
@@ -311,7 +316,16 @@ function KatalogContent() {
                         </span>
                       )}
                     </div>
-                    <p className="text-slate-600 text-sm mb-4 line-clamp-2 flex-grow">{product.description}</p>
+                    <div className="text-slate-600 text-sm mb-4 flex-grow">
+                      <p className="overflow-hidden" style={{
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                        textOverflow: 'ellipsis'
+                      }}>
+                        {product.description}
+                      </p>
+                    </div>
                     <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
                       <div className="flex items-center gap-2">
                         <div className="flex flex-col h-12 justify-center">
@@ -331,7 +345,7 @@ function KatalogContent() {
                         )}
                       </div>
                       <button 
-                        className="px-4 py-2 bg-slate-700 hover:bg-slate-800 text-white rounded-lg transition-all duration-300 text-sm font-medium shadow-sm hover:shadow-md transform hover:-translate-y-0.5 cursor-pointer"
+                        className="px-4 py-2 bg-slate-700 text-white rounded-lg text-sm font-medium shadow-sm cursor-pointer"
                         onClick={(e) => {
                           e.stopPropagation();
                           openProductModal(product);
