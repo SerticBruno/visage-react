@@ -7,6 +7,8 @@ import { Service } from '@/data/services/types';
 import { FaRegFileAlt, FaUsers, FaRegEdit, FaRegClock, FaRegFile, FaHandHoldingUsd, FaCheck, FaChevronRight, FaStar, FaBox } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa6';
 import { pricingData } from '@/data/pricing';
+import { products, Product } from '@/data/products';
+import ProductModal from '@/components/ui/ProductModal';
 
 interface ServiceDetailsSectionProps {
   service: Service;
@@ -92,6 +94,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   const [activeTab, setActiveTab] = useState(service.steps[0].id);
   const sliderRef = useRef<HTMLDivElement>(null);
   const [hasUserChangedTab, setHasUserChangedTab] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleNext = () => {
     const currentIndex = service.steps.findIndex(step => step.id === activeTab);
@@ -128,6 +132,14 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
     }
   }, [activeTab]);
 
+  const handleProductClick = (productId: string) => {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+      setSelectedProduct(product);
+      setIsModalOpen(true);
+    }
+  };
+
   // Call scrollToActiveStep only when user has manually changed tabs
   React.useEffect(() => {
     if (hasUserChangedTab) {
@@ -138,11 +150,33 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   const formatContent = (content: string) => {
     // Check if content contains HTML links
     if (content.includes('<a href=')) {
+      // Process the content to replace catalog links with modal triggers
+      const processedContent = content.replace(
+        /<a href="\/katalog\?product=(\d+)">([^<]+)<\/a>/g,
+        (match, productId, linkText) => {
+          return `<a href="#" onclick="window.handleProductClick('${productId}'); return false;" class="product-link" data-product-id="${productId}">${linkText}</a>`;
+        }
+      );
+      
       // If content contains HTML, render it directly with dangerouslySetInnerHTML
       return (
         <div 
           className="text-gray-600 leading-relaxed [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
-          dangerouslySetInnerHTML={{ __html: content }}
+          dangerouslySetInnerHTML={{ __html: processedContent }}
+          ref={(el) => {
+            if (el) {
+              // Add click handlers to product links
+              el.querySelectorAll('.product-link').forEach((link) => {
+                link.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  const productId = link.getAttribute('data-product-id');
+                  if (productId) {
+                    handleProductClick(productId);
+                  }
+                });
+              });
+            }
+          }}
         />
       );
     }
@@ -249,10 +283,36 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
                 {description.includes('<a href=') ? (
-                  <div 
-                    className="text-gray-600 leading-relaxed [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
-                    dangerouslySetInnerHTML={{ __html: description }}
-                  />
+                  (() => {
+                    // Process the content to replace catalog links with modal triggers
+                    const processedDescription = description.replace(
+                      /<a href="\/katalog\?product=(\d+)">([^<]+)<\/a>/g,
+                      (match, productId, linkText) => {
+                        return `<a href="#" onclick="window.handleProductClick('${productId}'); return false;" class="product-link" data-product-id="${productId}">${linkText}</a>`;
+                      }
+                    );
+                    
+                    return (
+                      <div 
+                        className="text-gray-600 leading-relaxed [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
+                        dangerouslySetInnerHTML={{ __html: processedDescription }}
+                        ref={(el) => {
+                          if (el) {
+                            // Add click handlers to product links
+                            el.querySelectorAll('.product-link').forEach((link) => {
+                              link.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                const productId = link.getAttribute('data-product-id');
+                                if (productId) {
+                                  handleProductClick(productId);
+                                }
+                              });
+                            });
+                          }
+                        }}
+                      />
+                    );
+                  })()
                 ) : (
                   <p className="text-gray-600 leading-relaxed">{description}</p>
                 )}
@@ -474,6 +534,13 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
           </AnimatePresence>
         </div>
       </div>
+      
+      {/* Product Modal */}
+      <ProductModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        product={selectedProduct}
+      />
     </section>
   );
 }

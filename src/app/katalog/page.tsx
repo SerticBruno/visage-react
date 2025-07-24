@@ -10,6 +10,7 @@ import { FaSearch, FaStar, FaTimes, FaChevronLeft, FaChevronRight } from 'react-
 import { FaTag, FaFire, FaLeaf } from 'react-icons/fa6';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
+import ProductModal from '@/components/ui/ProductModal';
 
 function KatalogContent() {
   const searchParams = useSearchParams();
@@ -418,137 +419,11 @@ function KatalogContent() {
         </div>
 
         {/* Product Modal */}
-        <Transition appear show={isModalOpen} as={Fragment}>
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={() => setIsModalOpen(false)} />
-            
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-              <div className="relative w-full max-w-4xl transform overflow-hidden rounded-2xl bg-gradient-to-b from-white to-slate-50 p-4 shadow-2xl transition-all border border-slate-200 max-h-[90vh] overflow-y-auto">
-                <div className="flex justify-between items-start mb-3 pb-3 border-b border-slate-100">
-                  <h2 className="text-xl font-bold text-slate-900">
-                    {selectedProduct?.title}
-                  </h2>
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="text-slate-400 hover:text-slate-600 focus:outline-none transition-colors cursor-pointer p-1 hover:bg-slate-100 rounded-full"
-                  >
-                    <FaTimes size={20} />
-                  </button>
-                </div>
-                
-                <div className="flex flex-col md:flex-row gap-4">
-                  <div className="w-full md:w-2/5">
-                    <div className="relative h-64 md:h-96 bg-slate-50 rounded-xl overflow-hidden shadow-sm">
-                      <Image
-                        src={selectedProduct?.image || ''}
-                        alt={selectedProduct?.title || ''}
-                        fill
-                        className="object-contain p-6"
-                      />
-                      {/* Product Badges in Modal */}
-                      <div className="absolute top-4 right-4 flex flex-col gap-2">
-                        {selectedProduct?.isNew && (
-                          <span className="bg-emerald-500 text-white text-sm font-semibold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-sm">
-                            <FaLeaf className="w-4 h-4" />
-                            Novo
-                          </span>
-                        )}
-                        {selectedProduct?.isOnSale && selectedProduct?.oldPrice && (
-                          <span className="bg-rose-500 text-white text-sm font-semibold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-sm">
-                            <FaTag className="w-4 h-4" />
-                            Akcija
-                          </span>
-                        )}
-                        {selectedProduct?.isLimited && (
-                          <span className="bg-violet-500 text-white text-sm font-semibold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-sm">
-                            <FaFire className="w-4 h-4" />
-                            Limitirano
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    <div className="mt-3 flex items-center justify-between bg-slate-50 rounded-xl p-3">
-                      <div className="flex items-center gap-3">
-                        <div className="flex flex-col">
-                          {selectedProduct?.isOnSale && selectedProduct?.oldPrice ? (
-                            <>
-                              <span className="text-sm text-slate-400 line-through">{selectedProduct.oldPrice}</span>
-                              <span className="text-xl font-bold text-rose-500">{selectedProduct.price}</span>
-                            </>
-                          ) : (
-                            <span className="text-xl font-bold text-slate-900">{selectedProduct?.price}</span>
-                          )}
-                        </div>
-                        {selectedProduct?.isOnSale && selectedProduct?.oldPrice && (
-                          <span className="bg-rose-500 text-white text-sm font-bold w-12 h-12 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center">
-                            -{Math.round((1 - parseFloat(selectedProduct.price) / parseFloat(selectedProduct.oldPrice)) * 100)}%
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="w-full md:w-3/5 space-y-3">
-                    <div className="bg-slate-50 rounded-xl p-3">
-                      <h3 className="text-sm font-semibold text-slate-900 mb-1">Opis</h3>
-                      <p className="text-sm text-slate-600 leading-relaxed">{selectedProduct?.description}</p>
-                    </div>
-
-                    {selectedProduct?.volume && (
-                      <div className="bg-slate-50 rounded-xl p-3">
-                        <h3 className="text-sm font-semibold text-slate-900 mb-1">Sadržaj</h3>
-                        <p className="text-sm text-slate-600">{selectedProduct.volume}</p>
-                      </div>
-                    )}
-
-                    {selectedProduct?.activeIngredients && (
-                      <div className="bg-slate-50 rounded-xl p-3">
-                        <h3 className="text-sm font-semibold text-slate-900 mb-1">Aktivni sastojci</h3>
-                        <ul className="list-disc list-inside text-sm text-slate-600 space-y-0.5">
-                          {selectedProduct.activeIngredients.map((ingredient, index) => (
-                            <li key={index}>{ingredient}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {selectedProduct?.application && (
-                      <div className="bg-slate-50 rounded-xl p-3">
-                        <h3 className="text-sm font-semibold text-slate-900 mb-1">Primjena</h3>
-                        <ul className="list-disc list-inside text-sm text-slate-600 space-y-0.5">
-                          {selectedProduct.application.map((step, index) => (
-                            <li key={index}>{step}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {selectedProduct?.tags && (
-                      <div className="bg-slate-50 rounded-xl p-3">
-                        <h3 className="text-sm font-semibold text-slate-900 mb-1">Oznake</h3>
-                        <div className="flex flex-wrap gap-1.5">
-                          {selectedProduct.tags.map((tag, index) => (
-                            <span key={index} className="px-2 py-0.5 bg-white text-slate-600 rounded-full text-xs font-medium shadow-sm">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </Transition.Child>
-          </div>
-        </Transition>
+        <ProductModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          product={selectedProduct}
+        />
       </div>
       <CTASection />
       <ContactSection hasTopPadding={false} />
