@@ -6,7 +6,7 @@ export const dermalFillers: Service = {
   description: 'Prirodni volumen i mladenački izgled',
   longDescription: `Upoznajte <strong>moć dermalnih filera</strong> koji pružaju <strong>prirodni volumen</strong> i <strong>pomlađeni izgled</strong> bez potrebe za <strong>kirurškim zahvatima</strong>.
 
-<strong>Hijaluronski dermalni fileri</strong> se sastoje od <strong>molekula hijaluronske kiseline velike gustoće</strong> koji se apliciraju u odabrano područje kako bi <strong>popunili volumen</strong>, <strong>smanjili bore</strong> i <strong>oblikvali konture lica</strong>.
+<strong>Hijaluronski dermalni fileri</strong> se sastoje od <strong>molekula hijaluronske kiseline velike gustoće</strong> koji se apliciraju u odabrano područje kako bi <strong>popunili volumen</strong>, <strong>smanjili bore</strong> i <strong>oblikovali konture lica</strong>.
 
 <strong>Razvoj novih formula</strong> i <strong>tehnika injektiranja</strong> omogućava <strong>prilagođavanje tretmana</strong> specifičnim potrebama klijenta.
 
@@ -110,7 +110,9 @@ Moguće su blage nuspojave poput:
 4. Osjetljivosti
 
 Uobičajeno se povuku u roku od tjedan dana.`,
-    'nakon-tretmana': `Za najbolje rezultate se preporuča svakih 12 do 24 mjeseci ponovno aplicirati filer kako bi se što dulje zadržao mladolik izgled i kontura lica.
+    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
+
+Za najbolje rezultate se preporuča svakih 12 do 24 mjeseci ponovno aplicirati filer kako bi se što dulje zadržao mladolik izgled i kontura lica.
 
 Nakon tretmana dermalnim filerima važno je da:
 

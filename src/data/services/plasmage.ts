@@ -121,7 +121,9 @@ Tjedan dana prije tretmana:
 5. Stvaranje krustica koje se odvajaju u roku od tjedan dana
 
 Potrebno je izbjegavati izravno sunce 2 tjedna i intenzivnu fizičku aktivnost 48 sati.`,
-    'nakon-tretmana': `Nakon Plasmage tretmana važno je:
+    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
+
+Nakon Plasmage tretmana važno je:
 
 - Zaštita od sunca - Obavezno koristite kremu sa zaštitnim faktorom SPF 50+ i izbjegavajte izravno izlaganje suncu 2 tjedna.
 

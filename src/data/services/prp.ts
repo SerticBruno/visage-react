@@ -109,7 +109,7 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
     'oporavak': `Moguće nuspojave su osjetljivost i blago crvenilo tretiranog područja koje može trajati oko 24h.
 
 Odmah nakon završetka tretmana moguće je nastaviti s uobičajenim aktivnostima.`,
-    'nakon-tretmana': `Za najbolje rezultate se preporuča protokol:
+    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
 
 Napraviti 2 ili 3 PRP tretmana u razmaku od mjesec dana, ovisno o stanju kože, te ponavljati tretman svakih 6 do 12 mjeseci.
 

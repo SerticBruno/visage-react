@@ -117,7 +117,9 @@ Tjedan dana prije tretmana:
 4. Moguća mala modrica (rijetko)
 
 Potrebno je izbjegavati izravno sunce 2 tjedna i koristiti blage proizvode za njegu kože.`,
-    'nakon-tretmana': `Nakon terapije bora važno je:
+    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
+
+Nakon terapije bora važno je:
 
 - Zaštita od sunca - Obavezno koristite kremu sa zaštitnim faktorom SPF 50+ i izbjegavajte izravno izlaganje suncu 2 tjedna.
 

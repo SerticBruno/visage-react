@@ -116,7 +116,9 @@ Dan prije tretmana:
 4. Prirodan izgled noktiju
 
 Potrebno je izbjegavati vodu 2 sata i koristiti zaštitne rukavice pri čišćenju.`,
-    'nakon-tretmana': `Nakon Bio Sculpture tretmana važno je:
+    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
+
+Nakon Bio Sculpture tretmana važno je:
 
 - Zaštita od vode - Izbjegavajte vodu 2 sata nakon tretmana za optimalno sušenje.
 
