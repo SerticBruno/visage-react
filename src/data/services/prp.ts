@@ -115,7 +115,7 @@ Napraviti 2 ili 3 PRP tretmana u razmaku od mjesec dana, ovisno o stanju kože, 
 
 Nakon PRP tretmana se preporuča:
 
-- Koristiti Toskani Sun Shiel-D SPF 50+
+- Koristiti <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>
 - Izbjegavati odlazak u saunu i solarij
 - Odgoditi trening za minimalno 3 dana
 - Promjeniti jastučnicu i ručnik za lice`,
