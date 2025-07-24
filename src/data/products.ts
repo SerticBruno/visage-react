@@ -3,6 +3,9 @@ export interface Product {
   title: string;
   description: string;
   category: string;
+  productType: string; // New field for "Tip proizvoda"
+  skinType: string[]; // New field for "Tip kože"
+  skinConcern: string[]; // New field for "Problematika kože"
   image: string;
   price: string;
   oldPrice?: string;
@@ -32,12 +35,44 @@ export const productCategories = [
   'Ampule'
 ];
 
+// New product types for "Tip proizvoda"
+export const productTypes = [
+  'Čistač',
+  'Tonik',
+  'Scrub',
+  'Krema',
+  'Serum',
+  'Okoloočna njega',
+  'SPF krema',
+  'Sprej',
+  'Kapsule',
+  'Ampule'
+];
+
+// New skin types for "Tip kože"
+export const skinTypes = [
+  'Masna i mješovita koža',
+  'Osjetljiva koža',
+  'Suha i normalna koža'
+];
+
+// New skin concerns for "Problematika kože"
+export const skinConcerns = [
+  'Akne i problematična koža',
+  'Anti-aging njega',
+  'Hiperpigmentacije',
+  'Opadanje kose'
+];
+
 export const products: Product[] = [
   {
     id: '1',
     title: 'Energizing Cleanser',
     description: 'Gel sredstvo za čišćenje uklanjanje prljavštinu, prašinu i šminku, zajedno s viškom masnoće i mrtvih stanica kože nakupljenim tijekom dana. Gel za čišćenje čuva neke slojeve masnoće na koži što sprječava isušivanje kože. Čisti, pročišćava i tonizira kožu.',
     category: 'Čišćenje',
+    productType: 'Čistač',
+    skinType: ['Suha i normalna koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega'],
     image: '/images/products/toskanienergizingcleanser.webp',
     price: '40 EUR',
     volume: '200 ml',
@@ -56,6 +91,9 @@ export const products: Product[] = [
     title: 'Purifying Cleanser',
     description: 'Gel bez ulja koji nježno čisti lice i područje oko očiju. Preporuča se za mješovitu i masnu kožu. Ovaj gel za čišćenje uklanja nečistoće i višak sebuma koji začepljuju pore i dovode do stvaranja komedona i prištića na koži sklonoj aknama. Purifying Cleanser regulira proizvodnju sebuma i ostavlja kožu čistom, svježom, glatkom i mirnom. Ovo sredstvo za čišćenje može se koristiti i na tijelu.',
     category: 'Čišćenje',
+    productType: 'Čistač',
+    skinType: ['Masna i mješovita koža'],
+    skinConcern: ['Akne i problematična koža'],
     image: '/images/products/TOSKANIpurifyingcleanser.webp',
     price: '40 EUR',
     volume: '200 ml',
@@ -74,6 +112,9 @@ export const products: Product[] = [
     title: 'Bamboo Hydratonic',
     description: 'Tonik bez ulja koji obnavlja kožu i temeljito čisti uklanjajući sve tragove prljavštine i šminke. Pogodan je za sve tipove kože. Ovaj tonik sa svježim mirisom revitalizira i hidratizira kožu za potpuno pročišćen i osvježen osjećaj. Kombinira visoku koncentraciju biljnih ekstrakata kao što su bambus, limun i naranča, koji su prirodni izvor alfa-hidroksi kiselina.',
     category: 'Tonik',
+    productType: 'Tonik',
+    skinType: ['Masna i mješovita koža', 'Osjetljiva koža', 'Suha i normalna koža'],
+    skinConcern: ['Anti-aging njega', 'Akne i problematična koža', 'Hiperpigmentacije'],
     image: '/images/products/toskanibamboohydratonic.webp',
     price: '30 EUR',
     volume: '200 ml',
@@ -91,6 +132,8 @@ export const products: Product[] = [
     title: 'Nutritive Scrub',
     description: 'Idealan za suhu i normalnu kožu, TOSKANI Nutritive Scrub sadrži ulje Rosa Mochata, sjemenke i vitamin E koji učinkovito zaglađuju kožu i smanjuju nesavršenosti za zdraviji i mlađi izgled. Ovaj piling ostavlja kožu osvježenom, vidljivo čišću i mekšom uz zdrav sjaj u koji ćete se zaljubiti.',
     category: 'Piling',
+    productType: 'Scrub',
+    skinType: ['Suha i normalna koža', 'Osjetljiva koža'],
     image: '/images/products/toskaninutritivescrub.webp',
     price: '45 EUR',
     volume: '200 ml',
@@ -112,6 +155,8 @@ export const products: Product[] = [
     title: 'Purifying Scrub',
     description: 'Piling na bazi vode koji čisti kožu i preporučuje se za mješovitu i masnu kožu. Formuliran s marokanskom glinom, ovaj piling uklanja višak ulja i stanica sa površinskih slojeva kože pročišćavajući pore. Koža izgleda sjajnije, dok su sjaj i suhoća svedeni na minimum. Formuliran je s ekstraktom hamamelisa s adstringentnim svojstvima, koji ostavlja osvježenu i ujednačenu kožu.',
     category: 'Piling',
+    productType: 'Scrub',
+    skinType: ['Masna i mješovita koža'],
     image: '/images/products/toskanipurifyingscrub.webp',
     price: '45 EUR',
     volume: '200 ml',
@@ -134,6 +179,8 @@ export const products: Product[] = [
     title: 'Total Recovery Cream',
     description: 'Zaštitna, hidratantna i hranjiva krema koja pruža moćnu regeneraciju suhe i normalne kože. Pruža snažne učinke obnavljanja kože. Poboljšava izgled oštećene kože.',
     category: 'Krema',
+    productType: 'Krema',
+    skinType: ['Suha i normalna koža'],
     image: '/images/products/toskanitotalrecoverycream.webp',
     price: '55 EUR',
     volume: '50 ml',
@@ -152,6 +199,8 @@ export const products: Product[] = [
     title: 'Total Recovery Gel',
     description: 'Obnavljajući, hidratantni i umirujući gel s aloe verom za mješovitu i masnu kožu. Štiti i vlaži epidermu, pogodujući oporavku osjetljive kože nakon iritacija ili invazivnih tretmana.',
     category: 'Krema',
+    productType: 'Krema',
+    skinType: ['Osjetljiva koža'],
     image: '/images/products/toskanitotalrecoverygel.webp',
     price: '37 EUR',
     volume: '50 ml',
@@ -169,6 +218,8 @@ export const products: Product[] = [
     title: 'Radiance Daily Cream SPF 30+',
     description: 'Krema je za svakodnevnu upotrebu koja je namijenjena ispravljanju znakova fotostarenja. Pogodna je za sve tipove kože. Sprječava dehidraciju, gubitak sjaja, mlitavost i pojavu bora i mrlja. Osim toga, Radiance dnevna krema ima visoki zaštitni faktor za zaštitu od oštećenja uzrokovanih izlaganjem suncu. Sadrži liposomske aktivne sastojke za promicanje maksimalne učinkovitosti proizvoda. Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjeloj koži, koži nejednake pigmentacije te kao dodatak profesionalnim tretmanima za ujednačavanje tona kože (Spot Out Kit Plus, kemijski piling)',
     category: 'Krema',
+    productType: 'SPF krema',
+    skinType: ['Osjetljiva koža', 'Suha i normalna koža'],
     image: '/images/products/toskaniradiancedailycream.webp',
     price: '60 EUR',
     volume: '50 ml',
@@ -521,6 +572,8 @@ export const products: Product[] = [
     title: 'Anti-ageing + HA Ampule',
     description: 'Intenzivna ampula s hijaluronskom kiselinom za anti-age tretman i duboku hidrataciju.',
     category: 'Ampule',
+    productType: 'Ampule',
+    skinType: ['Suha i normalna koža'],
     image: '/images/products/antiageing_box_ampule.webp',
     price: '52 EUR',
     volume: '15x2ml',
@@ -555,6 +608,8 @@ export const products: Product[] = [
     title: 'Sensitive Skin Ampule',
     description: 'Umirujuća ampula za osjetljivu kožu.',
     category: 'Ampule',
+    productType: 'Ampule',
+    skinType: ['Osjetljiva koža'],
     image: '/images/products/sensitive_box_purifying_box_ampule.webp',
     price: '52 EUR',
     volume: '15x2ml',
@@ -572,6 +627,8 @@ export const products: Product[] = [
     title: 'Purifying Ampule',
     description: 'Ampula za pročišćavanje i kontrolu masnoće.',
     category: 'Ampule',
+    productType: 'Ampule',
+    skinType: ['Masna i mješovita koža'],
     image: '/images/products/purifying_box_ampule.webp',
     price: '52 EUR',
     volume: '15x2ml',
