@@ -29,7 +29,8 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <div className="relative w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white p-4 shadow-2xl transition-all border border-slate-200 max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white p-4 shadow-2xl transition-all border border-slate-200 max-h-[90vh]">
+            <div className="overflow-y-auto max-h-[calc(90vh-2rem)] pr-2">
             <div className="flex justify-between items-start mb-3 pb-3 border-b border-slate-100">
               <h2 className="text-xl font-bold text-slate-900">
                 {product.title}
@@ -110,11 +111,9 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                 {product.activeIngredients && (
                   <div className="bg-slate-50 rounded-xl p-3">
                     <h3 className="text-sm font-semibold text-slate-900 mb-1">Aktivni sastojci</h3>
-                    <ul className="list-disc list-inside text-sm text-slate-600 space-y-0.5">
-                      {product.activeIngredients.map((ingredient, index) => (
-                        <li key={index}>{ingredient}</li>
-                      ))}
-                    </ul>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {product.activeIngredients.join(', ')}
+                    </p>
                   </div>
                 )}
 
@@ -131,6 +130,7 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
 
 
               </div>
+            </div>
             </div>
           </div>
         </Transition.Child>
