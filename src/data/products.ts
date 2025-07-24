@@ -197,7 +197,7 @@ Formuliran je s ekstraktom hamamelisa s adstringentnim svojstvima, koji ostavlja
     tags: ['piling', 'masna koža', 'mješovita koža']
   },
   {
-    id: '7',
+    id: '6',
     title: 'Total Recovery Cream',
     description: `Zaštitna, hidratantna i hranjiva krema koja pruža moćnu regeneraciju suhe i normalne kože.
 
@@ -221,7 +221,7 @@ Poboljšava izgled oštećene kože.`,
   },
 
   {
-    id: '8',
+    id: '7',
     title: 'Total Recovery Gel',
     description: `Obnavljajući, hidratantni i umirujući gel s aloe verom za mješovitu i masnu kožu.
 
@@ -242,7 +242,7 @@ Poboljšava izgled oštećene kože.`,
     tags: ['hidratacija', 'protiv iritacija', 'masna koža', 'mješovita koža', 'dnevna njega', 'njega nakon kemijskog pilinga', 'njega nakon mezoterapije']
   },
   {
-    id: '11',
+    id: '8',
     title: 'Radiance Daily Cream SPF 30+',
     description: `Krema je za svakodnevnu upotrebu koja je namijenjena ispravljanju znakova fotostarenja. Pogodna je za sve tipove kože.
 
@@ -270,7 +270,7 @@ Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjel
     tags: ['spf', 'hiperpigmentacije', 'fotostarenje', 'dnevna njega', 'svi tipovi kože']
   },
   {
-    id: '12',
+    id: '9',
     title: 'Anti Ageing Eye Contour',
     description: 'Posebno formuliran hidratantni serum za smanjenje umora, tretiranje bora, osvježavanje područja oko očiju, hidrataciju i umirivanje nježne kože oko očiju. Njegovi aktivni sastojci koji djeluju u sinergiji kako bi se oduprli pojavi bora, umanjili bore i već formirane linije. Također pomaže u sprječavanju gubitka čvrstoće, pomaže koži da se vrati u njezino prirodno zdravlje i pruža ukupni učinak pomlađivanja.',
     category: 'Okoloočna njega',
@@ -287,7 +287,7 @@ Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjel
     tags: ['okoloočna njega', 'anti-age', 'ublažavanje finih linija']
   },
   {
-    id: '13',
+    id: '10',
     title: 'Radiance Eye Contour',
     description: 'Učinkovita krema za područje oko očiju koja ublažuje hiperpigmentacije i probleme s mikrocirkulacijom, koji uzrokuju podočnjake. Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkulaciji područja oko očiju i kapaka.',
     category: 'Okoloočna njega',
@@ -305,7 +305,7 @@ Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjel
     tags: ['okoloočna njega', 'hiperpigmentacije', 'posvjetljivanje podočnjaka']
   },
   {
-    id: '14',
+    id: '11',
     title: 'Radiance Ultimate Mesoserum',
     description: `Serum prikladan za sve tipove kože i učinkovit saveznik u borbi protiv hiperpigmentacija i pjega.
 
@@ -327,7 +327,7 @@ Vaš novi saveznik u borbi protiv hiperpigmetacija sa učinkovitim djelovanjem v
     tags: ['serum', 'hiperpigmentacije', 'fotostarenje', 'svi tipovi kože']
   },
   {
-    id: '15',
+    id: '12',
     title: 'Purifying Intensive Serum',
     description: `Gel za isušivanje koji je antibakterijski i vrlo učinkovit protiv mrlja i nesavršenosti.
 
@@ -349,7 +349,7 @@ Intenzivni serum indiciran je za lokalizirano liječenje mrlja.`,
     tags: ['serum', 'akne', 'prištići', 'lokalizirano liječenje']
   },
   {
-    id: '16',
+    id: '13',
     title: 'Purifying Cream',
     description: `Tekuća emulzija prikladna za masnu i kožu sklonu aknama.
 
@@ -373,7 +373,7 @@ Ova fluidna emulzija ublažava nelagodu kože i preporučljivo je koristiti krem
     tags: ['krema', 'akne', 'prištići', 'masna koža']
   },
   {
-    id: '17',
+    id: '14',
     title: 'Skin Architect Mesoserum',
     description: `Serum za popravak i učvršćivanje. Osigurava snažne njegujuće i hidratantne efekte.
 
@@ -395,7 +395,7 @@ Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućih znak
     tags: ['serum', 'anti-age', 'njega nakon dermalnih filera', 'njega nakon skin boostera', 'svi tipovi kože']
   },
   {
-    id: '18',
+    id: '15',
     title: 'Skin Architect Cream',
     description: `Visoko koncentrirana krema protiv bora koja koristi prirodne sastojke za poboljšanje izgleda finih linija i dubokih bora.
 
@@ -421,7 +421,7 @@ Hijaluronska kiselina niske molekularne težine (<100Kda), za dublju i dugotrajn
     tags: ['krema', 'anti-age', 'njega nakon dermalnih filera', 'njega nakon skin boostera', 'svi tipovi kože']
   },
   {
-    id: '19',
+    id: '16',
     title: 'Night Reverse Advanced Serum',
     description: `Noćni serum s Total Restoring Complexom, koji poništava štetu od svakodnevnog stresa i aktivira prirodni mehanizam obnove kože.
 
@@ -442,7 +442,7 @@ Jača barijeru kože, pogodan je za sve tipove kože, no najviše se preporučuj
     tags: ['serum', 'noćna njega', 'anti-age', 'svi tipovi kože', 'suha koža', 'dehidrirana koža']
   },
   {
-    id: '20',
+    id: '17',
     title: 'Glacier Pro Age Serum',
     description: `Lagani serum koji nakon nanošenja pruža osjećaj hidratacije i svježine.
 
@@ -468,7 +468,7 @@ Pogodan je za biološku dob 20+ godina i sve tipove kože.`,
     tags: ['serum', 'anti-age', '20+ godina', 'svi tipovi kože']
   },
   {
-    id: '21',
+    id: '18',
     title: 'Glacier Pro Age Cream',
     description: `Lagana krema koja daje svježi finiš tijekom nanošenja koji se jako dobro razmazuje i brzo upija.
 
@@ -490,7 +490,7 @@ Pogodno za biološku dob 20+ godina i sve tipove kože.`,
     tags: ['krema', 'anti-age', '20+ godina', 'svi tipovi kože']
   },
   {
-    id: '22',
+    id: '19',
     title: 'Retin Pro Age Serum',
     description: `Lagan i gladak serum koji daje osjećaj hranjivosti nakon nanošenja.
 
@@ -514,7 +514,7 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     tags: ['serum', 'anti-age', '30+/40 godina', 'svi tipovi kože', 'osjetljiva koža']
   },
   {
-    id: '23',
+    id: '20',
     title: 'Retin Pro Age Cream',
     description: `Lako upijajuća krema koja pruža njegujući osjećaj.
 
@@ -538,7 +538,7 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     tags: ['krema', 'anti-age', '30+/40 godina', 'svi tipovi kože', 'osjetljiva koža']
   },
   {
-    id: '24',
+    id: '21',
     title: 'Unique Pro Age Serum',
     description: `Hranjivi i luksuzni dnevni serum za svakodnevnu primjenu sa širokim izborom anti-age aktivnih sastojaka usmjerenih na svaki od problema koji najviše zabrinjavaju: zategnutost, marionetske bore, Y zona (oval lica i vrat).
 
@@ -558,7 +558,7 @@ Pogodno za biološku dob 45+ godina i za sve tipove kože.`,
     tags: ['serum', 'anti-age', '45+ godina', 'svi tipovi kože']
   },
   {
-    id: '25',
+    id: '22',
     title: 'Unique Pro Age Cream',
     description: `Hranjivi i luksuzni dnevni tretman za svakodnevnu primjenu sa širokim izborom anti-age aktivnih sastojaka usmjerenih na svaki od problema koji najviše zabrinjavaju: zategnutost, marionetske bore, Y zona (oval lica i vrat).
 
@@ -578,7 +578,7 @@ Pogodno za biološku dob 45+ godina i sve tipove kože.`,
     tags: ['krema', 'anti-age', '45+ godina', 'svi tipovi kože']
   },
   {
-    id: '26',
+    id: '23',
     title: 'Anti Hair-Loss Lotion',
     description: `Jedinstveno i inovativno rješenje za zaustavljanje gubitka kose i jačanje nove i postojeće kose.
 
@@ -602,7 +602,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     tags: ['sprej', 'njega vlasišta', 'zaustavljanje gubitka kose', 'jačanje kose', 'alopecija']
   },
   {
-    id: '27',
+    id: '24',
     title: 'DensiHair Boost Capsules',
     description: `Dodatak prehrani koji sadrži Sabal serrulata, vitamine i aminokiseline za jačanje kose i zaustavljanje gubitka kose.`,
     category: 'Njega kose',
@@ -616,25 +616,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     tags: ['kapsule', 'njega vlasišta', 'dodatak prehrani', 'zaustavljanje gubitka kose', 'jačanje kose']
   },
   {
-    id: '28',
-    title: 'Night Reverse Advanced Serum',
-    description: `Napredni noćni serum za obnavljanje i regeneraciju kože tijekom noći.`,
-    category: 'Noćna njega',
-    image: '/images/products/toskani-night-reverse-serum.webp',
-    price: '84 EUR',
-    volume: '30 ml',
-    isNew: true,
-    activeIngredients: ['Retinol', 'Niacinamid', 'Hijaluronska kiselina', 'Peptidi'],
-    application: [
-      'Nanesite navečer na čistu kožu',
-      'Koristite 2-3 kapi seruma na cijelo lice',
-      'Nanesite laganim tapkanjem prstiju',
-      'Slijedite s noćnom kremom'
-    ],
-    tags: ['noćna njega', 'anti-age', 'regeneracija', 'svi tipovi kože']
-  },
-  {
-    id: '29',
+    id: '25',
     title: 'Night Reverse Intensive Cream & Mask',
     description: `Intenzivna noćna krema i maska za duboku regeneraciju i obnavljanje kože.`,
     category: 'Noćna njega',
@@ -652,7 +634,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     tags: ['noćna njega', 'maska', 'anti-age', 'regeneracija', 'svi tipovi kože']
   },
   {
-    id: '33',
+    id: '26',
     title: 'Anti-ageing + HA Ampule',
     description: `Intenzivna ampula s hijaluronskom kiselinom za anti-age tretman i duboku hidrataciju.`,
     category: 'Ampule',
@@ -671,7 +653,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     tags: ['ampule', 'anti-age', 'hijaluronska kiselina', 'hidratacija']
   },
   {
-    id: '34',
+    id: '27',
     title: 'Radiance Ampule',
     description: `Ampula za posvjetljivanje i ujednačavanje tena.`,
     category: 'Ampule',
@@ -688,7 +670,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     tags: ['ampule', 'posvjetljivanje', 'ujednačavanje tena', 'vitamin C']
   },
   {
-    id: '35',
+    id: '28',
     title: 'Sensitive Skin Ampule',
     description: `Umirujuća ampula za osjetljivu kožu.`,
     category: 'Ampule',
@@ -707,7 +689,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     tags: ['ampule', 'osjetljiva koža', 'umirivanje', 'regeneracija']
   },
   {
-    id: '36',
+    id: '29',
     title: 'Purifying Ampule',
     description: `Ampula za pročišćavanje i kontrolu masnoće.`,
     category: 'Ampule',
@@ -726,7 +708,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     tags: ['ampule', 'pročišćavanje', 'kontrola masnoće', 'akne']
   },
   {
-    id: '37',
+    id: '30',
     title: 'Lipo Proteoglycans Ampule',
     description: `Ampula s lipo proteoglikanima za učvršćivanje i obnavljanje kože.`,
     category: 'Ampule',
@@ -743,7 +725,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     tags: ['ampule', 'učvršćivanje', 'obnavljanje', 'anti-age']
   },
   {
-    id: '39',
+    id: '31',
     title: 'Sun Shiel-D Sun Fluid Facial Cream',
     description: `Lagana fluidna krema za zaštitu lica od sunca.`,
     category: 'Zaštita od sunca',
@@ -760,7 +742,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     tags: ['spf', 'zaštita od sunca', 'lice', 'fluidna tekstura']
   },
   {
-    id: '40',
+    id: '32',
     title: 'Sun Shiel-D Sun Fluid Facial Cream Tinted',
     description: `Lagana fluidna krema s tonom za zaštitu lica od sunca.`,
     category: 'Zaštita od sunca',
@@ -777,7 +759,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     tags: ['spf', 'zaštita od sunca', 'lice', 'fluidna tekstura', 'toner']
   },
   {
-    id: '41',
+    id: '33',
     title: 'Sun Shiel-D Sun Body&Face Sprej',
     description: `Sprej za zaštitu tijela i lica od sunca.`,
     category: 'Zaštita od sunca',
@@ -794,7 +776,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     tags: ['spf', 'zaštita od sunca', 'tijelo i lice', 'sprej', 'vodootporna']
   },
   {
-    id: '42',
+    id: '34',
     title: 'Profhilo Haenkenium',
     description: `Anti-age krema preoblikuje lice, vrat i dekolte, dajući elastičnost i čvrstoću te ublažavajući sitne bore.
 
