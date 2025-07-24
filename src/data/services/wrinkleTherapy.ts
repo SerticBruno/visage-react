@@ -107,7 +107,7 @@ Tjedan dana prije tretmana:
 
 3. Primjena tretmana - Precizna primjena proizvoda, praćenje reakcije kože i masiranje područja.
 
-4. Završna njega - Primjena umirujućih proizvoda, regenerativnih seruma i zaštitnog krema s SPF faktorom.
+4. Završna njega - Primjena umirujućih proizvoda, regenerativnih seruma i zaštitnog krema sa SPF faktorom.
 
 5. Preporuka za kućnu njegu - Preporučujemo korištenje blagih proizvoda za čišćenje, hidratantnih kremova i obavezno korištenje SPF 50+ zaštite.`,
     'oporavak': `Oporavak može trajati 1-2 dana, uz blago crvenilo i osjetljivost kože. Nuspojave mogu uključivati:

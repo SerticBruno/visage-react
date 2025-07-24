@@ -106,7 +106,7 @@ Dan prije tretmana:
 
 3. Primjena tretmana - Precizna primjena proizvoda, profesionalna masaža lica, maske i posebni tretmani.
 
-4. Završna njega - Primjena regenerativnih seruma, zaštitnog krema s SPF faktorom i finalna masaža.
+4. Završna njega - Primjena regenerativnih seruma, zaštitnog krema sa SPF faktorom i finalna masaža.
 
 5. Preporuka za kućnu njegu - Preporučujemo korištenje blagih proizvoda za čišćenje, hidratantnih kremova i obavezno korištenje SPF 50+ zaštite.`,
     'oporavak': `Oporavak je minimalan, uz osvježavanje i opuštanje kože. Nuspojave mogu uključivati:

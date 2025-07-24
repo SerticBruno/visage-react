@@ -119,7 +119,7 @@ Napraviti 4 do 10 tretmana u razmaku od 2 do 4 tjedna, ovisno o stanju kože ili
 Nakon tretmana mezoterapije važno je:
 
 - Ne nanositi šminku taj dan
-- Zaštititi tretirano područje s SPF kremom
+- Zaštititi tretirano područje sa SPF kremom
 - Izbjegavati direktno izlaganje suncu i visokim temperaturama
 - Tjedan dana nakon izbjegavati solarije i saune
 - Odgoditi vježbanje barem 3 dana nakon tretmana
