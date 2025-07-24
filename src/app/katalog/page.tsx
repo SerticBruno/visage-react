@@ -1,12 +1,11 @@
 'use client';
 
 import { useState, useRef, useEffect, Fragment, Suspense } from 'react';
-import { Transition } from '@headlessui/react';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
 import { products, productCategories, type Product } from '@/data/products';
-import { FaSearch, FaStar, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaSearch, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaTag, FaFire, FaLeaf } from 'react-icons/fa6';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
