@@ -3,17 +3,23 @@ import { Service } from './types';
 export const dermalFillers: Service = {
   id: 'dermalni-fileri',
   title: 'Dermalni fileri',
-  description: 'Profesionalni dermalni fileri za volumizaciju i obnavljanje kontura lica',
-  longDescription: `Dermalni fileri su napredna metoda za volumizaciju i obnavljanje kontura lica kroz precizne injekcije visokokvalitetnih hijaluronskih gelova. Ova revolucionarna metoda omogućava obnavljanje volumena, popravljanje kontura i smanjenje vidljivosti bora.
+  description: 'Prirodni volumen i mladenački izgled',
+  longDescription: `Upoznajte <strong>moć dermalnih filera</strong> koji pružaju <strong>prirodni volumen</strong> i <strong>pomlađeni izgled</strong> bez potrebe za <strong>kirurškim zahvatima</strong>.
 
-Kroz precizne injekcije, dermalni fileri se isporučuju u specifična područja lica, gdje obnavljaju volumen i popravljaju konture. Ova metoda rezultira prirodnim i dugotrajnim rezultatima, pružajući mladenački i svjež izgled.
+<strong>Hijaluronski dermalni fileri</strong> se sastoje od <strong>molekula hijaluronske kiseline velike gustoće</strong> koji se apliciraju u odabrano područje kako bi <strong>popunili volumen</strong>, <strong>smanjili bore</strong> i <strong>oblikvali konture lica</strong>.
 
-Dermalni fileri su idealni za sve dobne skupine i pružaju vidljive rezultate odmah nakon tretmana. Posebno su učinkoviti za volumizaciju obraza, popravljanje kontura usana, smanjenje nazolabijalnih bora i obnavljanje volumena u području templova.
+<strong>Razvoj novih formula</strong> i <strong>tehnika injektiranja</strong> omogućava <strong>prilagođavanje tretmana</strong> specifičnim potrebama klijenta.
 
-U Visage studiju koristimo najkvalitetnije dermalne filere, prilagođene vašem tipu kože i specifičnim potrebama. Svaki tretman je pažljivo planiran za optimalne i prirodne rezultate.`,
+Već nakon <strong>jednog tretmana</strong> možete primjetiti <strong>vidno poboljšanje u volumenu kože</strong> i <strong>smanjenju bora</strong>, no <strong>potpuni efekt</strong> se vidi <strong>2 tjedna nakon aplikacije filera</strong>.
+
+<strong>Regije koje se mogu tretirati</strong> su: <strong>nazolabijalne bore</strong>, <strong>marionetske bore</strong>, <strong>usne</strong>, <strong>jagodice</strong>, <strong>čeljust</strong> i <strong>brada</strong>.
+
+U <strong>Visage studiju</strong> koristimo <strong>Aliaxin</strong> i <strong>Skin Architect</strong> filere.
+
+Vratite <strong>samopouzdanje</strong> uz <strong>prirodan volumen</strong> i <strong>personalizirani tretman</strong> te dogovorite konzultacije s <strong>dr. Torinek</strong>.`,
   benefits: [
   ],
-  image: '/images/services/TKNHA3_.webp',
+  image: '/images/services/dermalni-fileri/dermalni-fileri-visage-estetski-studio-sisak.webp',
   heroImage: '/images/services/woman-face-visage-estetski-studio.webp',
   metaDescription: 'Profesionalni dermalni fileri u VISAGE studiju u Siska. Volumizacija i obnavljanje kontura lica uz pomoć naprednih dermalnih filera. Prirodni i dugotrajni rezultati.',
   metaKeywords: 'dermalni fileri, volumizacija lica, konture lica, estetski studio Sisak, VISAGE studio, hijaluronski fileri, volumizacija obraza',
@@ -25,37 +31,36 @@ U Visage studiju koristimo najkvalitetnije dermalne filere, prilagođene vašem 
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
-      image: '/images/services/botox-face-girl.webp'
+      image: '/images/services/dermalni-fileri/dermalni-fileri-prednosti-visage-estetski-studio-sisak.webp'
     },
     { 
       id: 'kandidati', 
       label: 'Kandidati', 
       icon: 'FaUsers',
-      image: '/images/services/botox-face-girl.webp'
+      image: '/images/services/dermalni-fileri/dermalni-fileri-kandidati-visage-estetski-studio-sisak.webp'
     },
     { 
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
-      image: '/images/services/botox-face-girl.webp'
+      image: '/images/services/dermalni-fileri/dermalni-fileri-priprema-visage-estetski-studio-sisak.webp'
     },
     { 
       id: 'tijek-zahvata', 
       label: 'Tijek zahvata', 
       icon: 'FaRegClock',
-      image: '/images/services/botox-face-girl.webp'
+      image: '/images/services/dermalni-fileri/dermalni-fileri-tijek-zahvata-visage-estetski-studio-sisak.webp'
     },
     { 
       id: 'oporavak', 
       label: 'Oporavak', 
       icon: 'FaRegHospital',
-      image: '/images/services/botox-face-girl.webp'
     },
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
       icon: 'FaRegFile',
-      image: '/images/services/botox-face-girl.webp'
+      image: '/images/services/dermalni-fileri/dermalni-fileri-nakon-tretmana-visage-estetski-studio-sisak.webp'
     },
     { 
       id: 'cijena', 
@@ -64,71 +69,57 @@ U Visage studiju koristimo najkvalitetnije dermalne filere, prilagođene vašem 
     }
   ],
   stepContents: {
-    'prednosti': `Prednosti dermalnih filera:
-- Prirodna volumizacija lica i obnavljanje kontura
-- Smanjivanje vidljivosti bora i finih linija
-- Popravljanje kontura usana i obraza
-- Obnavljanje volumena u području templova
+    'prednosti': `Prednosti dermalnih filera su:
+
+- Poboljšanje izgleda i vraćanje mladolikosti licu
+- Minimalno invazivan tretman s brzim oporavkom
+- Prirodna volumizacija i obnavljanje kontura lica
+- Smanjenje vidljivosti bora i finih linija
 - Prirodni i dugotrajni rezultati
-- Minimalno invazivni tretman s brzim oporavkom
-- Vidljivi rezultati odmah nakon tretmana
-- Sigurna metoda s minimalnim rizikom
-- Prilagodba količine filera prema potrebama`,
+- Rezultati su vidljivi odmah nakon tretmana
+- Povećanje samopouzdanja klijenta
+- Mogu potaknuti prirodno stvaranje hijaluronske kiseline i kolagena u koži`,
     'kandidati': `Dermalni fileri su idealni za osobe koje žele:
-- Volumizaciju lica i obnavljanje kontura
-- Popravljanje kontura usana i obraza
-- Smanjivanje nazolabijalnih bora
-- Obnavljanje volumena u području templova
-- Postići prirodan i mladenački izgled
-- Dugotrajne rezultate volumizacije
 
-Pogodni su za sve dobne skupine, posebno za:
-- Osobe s gubitkom volumena lica
-- Osobe s vidljivim borama i finim linijama
-- Osobe koje žele popraviti konture usana
-- Osobe koje žele obnoviti volumen obraza`,
+- Popuniti bore i fine linije (npr. nazolabijalne, marionetske ili bar kod bore)
+- Povećati volumen obraza, usana i brade
+- Poboljšanje konture lica
+- Hidrataciju kože
+- Korekciju asimetrije`,
     'priprema': `Prije tretmana dermalnim filerima potrebno je:
+
 1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
-2. Preporuka odgovarajućeg filera za vaš tip kože
-3. Preporuka količine filera za optimalne rezultate
-4. Upute za pripremu kože prije tretmana
+2. Preporuka odgovarajućeg filera, ovisno o području tretiranja
+3. Preporuka količine filera za optimalne rezultate`,
+    'tijek-zahvata': `Tretman dermalnim filerima je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
-Tjedan dana prije tretmana:
-- Izbjegavati izlaganje suncu
-- Prekinuti korištenje agresivnih proizvoda za njegu kože
-- Piti dovoljno vode za optimalnu hidrataciju kože
-- Izbjegavati alkohol i pušenje
-- Ne smijete laserski uklanjati dlačice`,
-    'tijek-zahvata': `Tretman dermalnim filerima je precizan i siguran postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
+1. Priprema kože - Čišćenje i dezinfekcija kože te nanošenje anestetske kreme koja stoji 30 minuta.
 
-1. Konzultacija i procjena - Detaljna analiza stanja kože, odabir odgovarajućeg filera, plan tretmana i objašnjenje postupka.
+2. Aplikacija filera - Precizne injekcije u odabrana područja, kontinuirano praćenje rezultata, prilagodba količine filera i masiranje.
 
-2. Priprema kože - Čišćenje kože, primjena anestetičke kreme, oznaka područja za tretman i dezinfekcija kože.
+3. Završna njega - Umasiravanje After Cream, postproceduralne kreme koja ublažava crvenilo i iritaciju kože, te nanošenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.
 
-3. Primjena filera - Precizne injekcije u odabrana područja, kontinuirano praćenje rezultata, prilagodba količine filera i masiranje.
+4. Preporuka za kućnu njegu - Preporučujemo korištenje Toskani Skin Architect kućne njege koja uključuje kremu, serum i okoloočnu njegu. Svaki dan koristiti kremu sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.`,
+    'oporavak': `Oporavak je obično kratak i ljudi se vraćaju svakodnevnim aktivnostima odmah nakon tretmana.
 
-4. Završna njega - Primjena umirujućih proizvoda, zaštitnog krema s SPF faktorom i detaljne upute za naknadnu njegu.
+Moguće su blage nuspojave poput:
 
-5. Preporuka za kućnu njegu - Preporučujemo korištenje blagih proizvoda za čišćenje, hidratantnih kremova i obavezno korištenje SPF 50+ zaštite.`,
-    'oporavak': `Oporavak može trajati nekoliko dana, uz blago crvenilo i osjetljivost kože. Nuspojave mogu uključivati:
-1. Crvenilo koje nestaje u roku od 24h
-2. Osjetljivost kože
-3. Moguća mala modrica na mjestima injekcija
-4. Blago oticanje koje se smanjuje u narednim danima
-5. Peckanje na mjestima injekcija
+1. Modrica
+2. Oticanja
+3. Crvenila
+4. Osjetljivosti
 
-Potrebno je izbjegavati sunčanje i pratiti upute terapeuta za njegu.`,
-    'nakon-tretmana': `Nakon tretmana dermalnim filerima važno je:
+Uobičajeno se povuku u roku od tjedan dana.`,
+    'nakon-tretmana': `Za najbolje rezultate se preporuča svakih 12 do 24 mjeseci ponovno aplicirati filer kako bi se što dulje zadržao mladolik izgled i kontura lica.
 
-- Zaštita od sunca - Obavezno koristite kremu sa zaštitnim faktorom SPF 50+ i izbjegavajte izravno izlaganje suncu 2 tjedna.
+Nakon tretmana dermalnim filerima važno je da:
 
-- Njega kože - Koristite blage proizvode za čišćenje i hidrataciju kože, izbjegavajte agresivne proizvode.
-
-- Izbjegavanje dodatnih tretmana - Tjedan dana nakon tretmana izbjegavajte druge estetske tretmane.
-
-- Redovito praćenje - Pratite stanje kože i javite se ako primijetite bilo kakve neobične reakcije.
-
-- Masiranje - Pratite upute za masiranje ako su preporučena za optimalne rezultate.`,
+- Odgodite odlazak u saunu ili solarij
+- Odgodite izlaganje suncu
+- Smanjite konzumaciju alkohola i pušenje
+- Odgodite treninge
+- Ne vršite pritisak na tretirano područje
+- Koristite preporučenu kućnu njegu kako bi rezultati bili što dugotrajniji (Toskani Skin Architect linija)`,
     'cijena': `Cijena tretmana dermalnim filerima ovisi o:
 - Lokaciji tretmana (obrazi, usne, nazolabijalni bori, templovi)
 - Količini potrebnog filera
