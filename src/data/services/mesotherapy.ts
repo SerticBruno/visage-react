@@ -103,9 +103,9 @@ Tjedan dana prije tretmana:
 
 2. Priprema odgovarajućeg mezoterapijskog koktela i uređaja - Nanošenje mezoterapijskog koktela na kožu korištenjem odgovarajućeg uređaja, ovisno o stanju i osjetljivosti kože. Može se koristiti Mesoject Gun i Dermapen 4 uređaj.
 
-3. Završna njega - Nanošenje odgovarajućih maski i seruma koji pridonose regeneraciji kože i koji odgovaraju stanju kože. Na kraju svakog tretmana nanosimo Toskani Sun Shiel-D SPF 50+.
+3. Završna njega - Nanošenje odgovarajućih maski i seruma koji pridonose regeneraciji kože i koji odgovaraju stanju kože. Na kraju svakog tretmana nanosimo <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.
 
-4. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade tretman mezoterapije preporučimo korištenje Toskani Total Recovery Gela i obavezno korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+. Preporučimo kućnu njegu ovisno o stanju kože.`,
+4. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade tretman mezoterapije preporučimo korištenje <a href="/katalog?product=8">Toskani Total Recovery Gela</a> i obavezno korištenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>. Preporučimo kućnu njegu ovisno o stanju kože.`,
     'oporavak': `Ako se radi mezoterapija Mesoject gunom, tada oporavka nema. Ako se radi mezoterapija Dermapenom 4, ovisno o indikaciji koja se tretira, oporavak može trajati 2 do 4 dana.
 
 Nuspojave mogu uključivati:
@@ -119,7 +119,7 @@ Napraviti 4 do 10 tretmana u razmaku od 2 do 4 tjedna, ovisno o stanju kože ili
 Nakon tretmana mezoterapije važno je:
 
 - Ne nanositi šminku taj dan
-- Zaštititi tretirano područje sa SPF kremom
+- Zaštititi tretirano područje sa Toskani Sun Shiel-D SPF 50+
 - Izbjegavati direktno izlaganje suncu i visokim temperaturama
 - Tjedan dana nakon izbjegavati solarije i saune
 - Odgoditi vježbanje barem 3 dana nakon tretmana

@@ -154,11 +154,179 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
       const processedContent = content.replace(
         /<a href="\/katalog\?product=(\d+)">([^<]+)<\/a>/g,
         (match, productId, linkText) => {
-          return `<a href="#" onclick="window.handleProductClick('${productId}'); return false;" class="product-link" data-product-id="${productId}">${linkText}</a>`;
+          return `<a href="#" class="product-link" data-product-id="${productId}">${linkText}</a>`;
         }
       );
       
-      // If content contains HTML, render it directly with dangerouslySetInnerHTML
+      // Check if content also contains bullet points
+      if (processedContent.includes('- ')) {
+        // Split content into sections and process bullet points separately
+        const sections = processedContent.split('\n\n');
+        
+        return sections.map((section, sectionIdx) => {
+          const lines = section.split('\n');
+          
+          // If the section starts with a title/intro text
+          if (lines[0] && !lines[0].trim().startsWith('- ') && !lines[0].trim().match(/^[0-9]+\./)) {
+            const introText = lines[0];
+            const bulletPoints = lines.slice(1).filter(line => line.trim().startsWith('- '));
+            
+            return (
+              <div key={sectionIdx} className="mb-6">
+                <div 
+                  className="text-gray-600 mb-4 leading-relaxed [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
+                  dangerouslySetInnerHTML={{ __html: introText }}
+                  ref={(el) => {
+                    if (el) {
+                      el.querySelectorAll('.product-link').forEach((link) => {
+                        link.addEventListener('click', (e) => {
+                          e.preventDefault();
+                          const productId = link.getAttribute('data-product-id');
+                          if (productId) {
+                            handleProductClick(productId);
+                          }
+                        });
+                      });
+                    }
+                  }}
+                />
+                {bulletPoints.length > 0 && (
+                  <ul className="space-y-3">
+                    {bulletPoints.map((item, itemIdx) => {
+                      const cleanItem = item.replace('- ', '');
+                      // Check if the bullet point contains HTML links
+                      if (cleanItem.includes('<a href=')) {
+                        // Process the content to replace catalog links with modal triggers
+                        const processedItem = cleanItem.replace(
+                          /<a href="\/katalog\?product=(\d+)">([^<]+)<\/a>/g,
+                          (match, productId, linkText) => {
+                            return `<a href="#" class="product-link" data-product-id="${productId}">${linkText}</a>`;
+                          }
+                        );
+                        
+                        return (
+                          <li key={itemIdx} className="flex items-start">
+                            <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                              <FaCheck className="h-4 w-4 text-slate-700" />
+                            </div>
+                            <div 
+                              className="text-gray-600 [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
+                              dangerouslySetInnerHTML={{ __html: processedItem }}
+                              ref={(el) => {
+                                if (el) {
+                                  el.querySelectorAll('.product-link').forEach((link) => {
+                                    link.addEventListener('click', (e) => {
+                                      e.preventDefault();
+                                      const productId = link.getAttribute('data-product-id');
+                                      if (productId) {
+                                        handleProductClick(productId);
+                                      }
+                                    });
+                                  });
+                                }
+                              }}
+                            />
+                          </li>
+                        );
+                      }
+                      
+                      return (
+                        <li key={itemIdx} className="flex items-start">
+                          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                            <FaCheck className="h-4 w-4 text-slate-700" />
+                          </div>
+                          <span className="text-gray-600">{cleanItem}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
+            );
+          }
+          
+          // If the section is just bullet points
+          if (lines.every(line => line.trim().startsWith('- '))) {
+            return (
+              <div key={sectionIdx} className="mb-6">
+                <ul className="space-y-3">
+                  {lines.map((item, itemIdx) => {
+                    const cleanItem = item.replace('- ', '');
+                    // Check if the bullet point contains HTML links
+                    if (cleanItem.includes('<a href=')) {
+                      // Process the content to replace catalog links with modal triggers
+                      const processedItem = cleanItem.replace(
+                        /<a href="\/katalog\?product=(\d+)">([^<]+)<\/a>/g,
+                        (match, productId, linkText) => {
+                          return `<a href="#" class="product-link" data-product-id="${productId}">${linkText}</a>`;
+                        }
+                      );
+                      
+                      return (
+                        <li key={itemIdx} className="flex items-start">
+                          <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                            <FaCheck className="h-4 w-4 text-slate-700" />
+                          </div>
+                          <div 
+                            className="text-gray-600 [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
+                            dangerouslySetInnerHTML={{ __html: processedItem }}
+                            ref={(el) => {
+                              if (el) {
+                                el.querySelectorAll('.product-link').forEach((link) => {
+                                  link.addEventListener('click', (e) => {
+                                    e.preventDefault();
+                                    const productId = link.getAttribute('data-product-id');
+                                    if (productId) {
+                                      handleProductClick(productId);
+                                    }
+                                  });
+                                });
+                              }
+                            }}
+                          />
+                        </li>
+                      );
+                    }
+                    
+                    return (
+                      <li key={itemIdx} className="flex items-start">
+                        <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                          <FaCheck className="h-4 w-4 text-slate-700" />
+                        </div>
+                        <span className="text-gray-600">{cleanItem}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          }
+          
+          // Regular HTML content
+          return (
+            <div 
+              key={sectionIdx}
+              className="text-gray-600 leading-relaxed [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
+              dangerouslySetInnerHTML={{ __html: section }}
+              ref={(el) => {
+                if (el) {
+                  el.querySelectorAll('.product-link').forEach((link) => {
+                    link.addEventListener('click', (e) => {
+                      e.preventDefault();
+                      const productId = link.getAttribute('data-product-id');
+                      if (productId) {
+                        handleProductClick(productId);
+                      }
+                    });
+                  });
+                }
+              }}
+            />
+          );
+        });
+      }
+      
+      // If content contains HTML but no bullet points, render it directly
       return (
         <div 
           className="text-gray-600 leading-relaxed [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
@@ -207,14 +375,53 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
             )}
             {bulletPoints.length > 0 && (
               <ul className="space-y-3">
-                {bulletPoints.map((item, itemIdx) => (
-                  <li key={itemIdx} className="flex items-start">
-                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
-                      <FaCheck className="h-4 w-4 text-slate-700" />
-                    </div>
-                    <span className="text-gray-600">{item.replace('- ', '')}</span>
-                  </li>
-                ))}
+                {bulletPoints.map((item, itemIdx) => {
+                  const cleanItem = item.replace('- ', '');
+                  // Check if the bullet point contains HTML links
+                  if (cleanItem.includes('<a href=')) {
+                    // Process the content to replace catalog links with modal triggers
+                    const processedItem = cleanItem.replace(
+                      /<a href="\/katalog\?product=(\d+)">([^<]+)<\/a>/g,
+                      (match, productId, linkText) => {
+                        return `<a href="#" class="product-link" data-product-id="${productId}">${linkText}</a>`;
+                      }
+                    );
+                    
+                    return (
+                      <li key={itemIdx} className="flex items-start">
+                        <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                          <FaCheck className="h-4 w-4 text-slate-700" />
+                        </div>
+                        <div 
+                          className="text-gray-600 [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
+                          dangerouslySetInnerHTML={{ __html: processedItem }}
+                          ref={(el) => {
+                            if (el) {
+                              el.querySelectorAll('.product-link').forEach((link) => {
+                                link.addEventListener('click', (e) => {
+                                  e.preventDefault();
+                                  const productId = link.getAttribute('data-product-id');
+                                  if (productId) {
+                                    handleProductClick(productId);
+                                  }
+                                });
+                              });
+                            }
+                          }}
+                        />
+                      </li>
+                    );
+                  }
+                  
+                  return (
+                    <li key={itemIdx} className="flex items-start">
+                      <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                        <FaCheck className="h-4 w-4 text-slate-700" />
+                      </div>
+                      <span className="text-gray-600">{cleanItem}</span>
+                    </li>
+                  );
+                })}
               </ul>
             )}
           </div>
@@ -241,14 +448,53 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
         return (
           <div key={sectionIdx} className="mb-6">
             <ul className="space-y-3">
-              {lines.map((item, itemIdx) => (
-                <li key={itemIdx} className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
-                    <FaCheck className="h-4 w-4 text-slate-700" />
-                  </div>
-                  <span className="text-gray-600">{item.replace('- ', '')}</span>
-                </li>
-              ))}
+              {lines.map((item, itemIdx) => {
+                const cleanItem = item.replace('- ', '');
+                // Check if the bullet point contains HTML links
+                if (cleanItem.includes('<a href=')) {
+                  // Process the content to replace catalog links with modal triggers
+                  const processedItem = cleanItem.replace(
+                    /<a href="\/katalog\?product=(\d+)">([^<]+)<\/a>/g,
+                    (match, productId, linkText) => {
+                      return `<a href="#" class="product-link" data-product-id="${productId}">${linkText}</a>`;
+                    }
+                  );
+                  
+                  return (
+                    <li key={itemIdx} className="flex items-start">
+                      <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                        <FaCheck className="h-4 w-4 text-slate-700" />
+                      </div>
+                      <div 
+                        className="text-gray-600 [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
+                        dangerouslySetInnerHTML={{ __html: processedItem }}
+                        ref={(el) => {
+                          if (el) {
+                            el.querySelectorAll('.product-link').forEach((link) => {
+                              link.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                const productId = link.getAttribute('data-product-id');
+                                if (productId) {
+                                  handleProductClick(productId);
+                                }
+                              });
+                            });
+                          }
+                        }}
+                      />
+                    </li>
+                  );
+                }
+                
+                return (
+                  <li key={itemIdx} className="flex items-start">
+                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                      <FaCheck className="h-4 w-4 text-slate-700" />
+                    </div>
+                    <span className="text-gray-600">{cleanItem}</span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         );
@@ -288,7 +534,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                     const processedDescription = description.replace(
                       /<a href="\/katalog\?product=(\d+)">([^<]+)<\/a>/g,
                       (match, productId, linkText) => {
-                        return `<a href="#" onclick="window.handleProductClick('${productId}'); return false;" class="product-link" data-product-id="${productId}">${linkText}</a>`;
+                        return `<a href="#" class="product-link" data-product-id="${productId}">${linkText}</a>`;
                       }
                     );
                     
