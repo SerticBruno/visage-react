@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { pricingData, pricingCategories, PricingItem } from '@/data/pricing';
-import { FaSearch, FaStar, FaBox } from 'react-icons/fa';
+import { FaSearch, FaStar, FaBox, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import React from 'react';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
@@ -15,6 +15,12 @@ export default function PricingPage() {
   const [isScrolling] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  
+  // Accordion states for filter sections
+  const [expandedSections, setExpandedSections] = useState({
+    categories: true,
+    badges: false
+  });
 
   const filteredItems = useMemo(() => {
     return pricingData.filter(item => {
@@ -75,6 +81,13 @@ export default function PricingPage() {
     setIsFiltering(true);
     setSearchTerm(e.target.value);
     requestAnimationFrame(scrollToContent);
+  };
+
+  const toggleSection = (section: keyof typeof expandedSections) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
   };
 
   const groupedItems = useMemo(() => {
@@ -147,58 +160,100 @@ export default function PricingPage() {
                 </div>
 
                 {/* Categories Section */}
-                <div className="border-t border-gray-200 pt-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Kategorije
-                  </label>
-                  <div className="space-y-2 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
-                    {pricingCategories.filter(category => category !== "Konzultacije").map((category) => (
-                      <label key={category} className="flex items-start space-x-2 cursor-pointer group">
-                        <div className="pt-0.5">
-                          <input
-                            type="checkbox"
-                            checked={selectedCategories.includes(category)}
-                            onChange={() => toggleCategory(category)}
-                            className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                          />
-                        </div>
-                        <span className="text-sm text-gray-700 group-hover:text-gray-900">{category}</span>
-                      </label>
-                    ))}
+                <div className="border-t border-gray-200 pt-4 pb-0 mb-0">
+                  <button
+                    onClick={() => toggleSection('categories')}
+                    className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
+                  >
+                    <label className="block text-sm font-medium text-gray-700 cursor-pointer">
+                      Kategorije
+                    </label>
+                    {expandedSections.categories ? (
+                      <FaChevronUp className="w-4 h-4 text-gray-500" />
+                    ) : (
+                      <FaChevronDown className="w-4 h-4 text-gray-500" />
+                    )}
+                  </button>
+                  <div 
+                    className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                      expandedSections.categories 
+                        ? 'max-h-40 opacity-100' 
+                        : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2 relative">
+                      {pricingCategories.filter(category => category !== "Konzultacije").map((category, index) => (
+                        <label 
+                          key={category} 
+                          className={`flex items-start space-x-2 cursor-pointer group ${
+                            index === pricingCategories.filter(cat => cat !== "Konzultacije").length - 1 ? 'pb-2' : ''
+                          }`}
+                        >
+                          <div className="pt-0.5">
+                            <input
+                              type="checkbox"
+                              checked={selectedCategories.includes(category)}
+                              onChange={() => toggleCategory(category)}
+                              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                            />
+                          </div>
+                          <span className="text-sm text-gray-700 group-hover:text-gray-900">{category}</span>
+                        </label>
+                      ))}
+                      <div className="absolute bottom-0 left-0 right-2 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+                    </div>
                   </div>
                 </div>
 
                 {/* Badges Filter Section */}
-                <div className="border-t border-gray-200 pt-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Oznake
-                  </label>
-                  <div className="space-y-1 relative">
-                    <label className="flex items-center space-x-2 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={selectedBadges.includes('popular')}
-                        onChange={() => toggleBadge('popular')}
-                        className="h-4 w-4 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded"
-                      />
-                      <span className="text-sm text-gray-700 flex items-center gap-1">
-                        <FaStar className="w-3 h-3 text-yellow-500" />
-                        Popularno
-                      </span>
+                <div className="border-t border-gray-200 pt-4 pb-0 mb-0">
+                  <button
+                    onClick={() => toggleSection('badges')}
+                    className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
+                  >
+                    <label className="block text-sm font-medium text-gray-700 cursor-pointer">
+                      Oznake
                     </label>
-                    <label className="flex items-center space-x-2 cursor-pointer pb-2">
-                      <input
-                        type="checkbox"
-                        checked={selectedBadges.includes('package')}
-                        onChange={() => toggleBadge('package')}
-                        className="h-4 w-4 text-green-500 focus:ring-green-500 border-gray-300 rounded"
-                      />
-                      <span className="text-sm text-gray-700 flex items-center gap-1">
-                        <FaBox className="w-3 h-3 text-green-500" />
-                        Paket
-                      </span>
-                    </label>
-                    <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+                    {expandedSections.badges ? (
+                      <FaChevronUp className="w-4 h-4 text-gray-500" />
+                    ) : (
+                      <FaChevronDown className="w-4 h-4 text-gray-500" />
+                    )}
+                  </button>
+                  <div 
+                    className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                      expandedSections.badges 
+                        ? 'max-h-40 opacity-100' 
+                        : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="space-y-1 relative">
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={selectedBadges.includes('popular')}
+                          onChange={() => toggleBadge('popular')}
+                          className="h-4 w-4 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded"
+                        />
+                        <span className="text-sm text-gray-700 flex items-center gap-1">
+                          <FaStar className="w-3 h-3 text-yellow-500" />
+                          Popularno
+                        </span>
+                      </label>
+                      <label className="flex items-center space-x-2 cursor-pointer pb-2">
+                        <input
+                          type="checkbox"
+                          checked={selectedBadges.includes('package')}
+                          onChange={() => toggleBadge('package')}
+                          className="h-4 w-4 text-green-500 focus:ring-green-500 border-gray-300 rounded"
+                        />
+                        <span className="text-sm text-gray-700 flex items-center gap-1">
+                          <FaBox className="w-3 h-3 text-green-500" />
+                          Paket
+                        </span>
+                      </label>
+                      <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+                    </div>
                   </div>
                 </div>
 

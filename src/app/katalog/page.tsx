@@ -262,7 +262,7 @@ function KatalogContent() {
                   onClick={() => toggleSection('productTypes')}
                   className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
                 >
-                  <label className="block text-sm font-medium text-gray-700">
+                  <label className="block text-sm font-medium text-gray-700 cursor-pointer">
                     Tip proizvoda
                   </label>
                   {expandedSections.productTypes ? (
@@ -308,7 +308,7 @@ function KatalogContent() {
                   onClick={() => toggleSection('skinTypes')}
                   className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
                 >
-                  <label className="block text-sm font-medium text-gray-700">
+                  <label className="block text-sm font-medium text-gray-700 cursor-pointer">
                     Tip kože
                   </label>
                   {expandedSections.skinTypes ? (
@@ -354,7 +354,7 @@ function KatalogContent() {
                   onClick={() => toggleSection('skinConcerns')}
                   className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
                 >
-                  <label className="block text-sm font-medium text-gray-700">
+                  <label className="block text-sm font-medium text-gray-700 cursor-pointer">
                     Problematika kože
                   </label>
                   {expandedSections.skinConcerns ? (
@@ -400,7 +400,7 @@ function KatalogContent() {
                   onClick={() => toggleSection('badges')}
                   className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
                 >
-                  <label className="block text-sm font-medium text-gray-700">
+                  <label className="block text-sm font-medium text-gray-700 cursor-pointer">
                     Oznake
                   </label>
                   {expandedSections.badges ? (
