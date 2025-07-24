@@ -19,7 +19,7 @@ export interface Product {
 }
 
 export const productCategories = [
-  'Čišćenje',
+  'Čišćenje lica',
   'Tonik',
   'Piling',
   'Maska',
