@@ -14,6 +14,7 @@ export type TreatmentStep = {
 export interface Service {
   id: string;
   title: string;
+  akuzativTitle?: string;
   description: string;
   longDescription: string;
   image: string;

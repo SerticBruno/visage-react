@@ -3,6 +3,7 @@ import { Service } from './types';
 export const skinBoosteri: Service = {
   id: 'skin-boosteri',
   title: 'Skin boosteri',
+  akuzativTitle: 'skin boosterima',
   description: 'Hidratacija i revitalizacija kože',
   longDescription: `Doživite <strong>revolucionarnu metodu hidratacije i revitalizacije kože</strong> s našim <strong>skin booster tretmanima</strong>!
 

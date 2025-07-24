@@ -3,6 +3,7 @@ import { Service } from './types';
 export const beautyTreatments: Service = {
   id: 'beauty-tretmani',
   title: 'Beauty tretmani',
+  akuzativTitle: 'beauty tretmanima',
   description: 'Luksuzni beauty tretmani za potpuno opuštanje i njegu kože',
   longDescription: `Beauty tretmani su luksuzni tretmani za lice i tijelo koji pružaju potpuno opuštanje, duboku njegu i revitalizaciju kože. Ova premium iskustva kombinira najkvalitetnije proizvode s profesionalnim tehnikama za maksimalne rezultate.
 

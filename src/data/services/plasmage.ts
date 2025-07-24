@@ -3,6 +3,7 @@ import { Service } from './types';
 export const plasmage: Service = {
   id: 'plasmage',
   title: 'Plasmage',
+  akuzativTitle: 'plasmage tretmanom',
   description: 'Revolucionarna tehnologija za pomlađivanje kože',
   longDescription: `Bojite se <strong>kirurških zahvata</strong>, a želite ukloniti višak kože i svježiji izgled? <strong>Plasmage tretman</strong> je revolucionarna tehnologija koja omogućuje neinvazivno pomlađivanje kože s minimalnim vremenom oporavka.
 

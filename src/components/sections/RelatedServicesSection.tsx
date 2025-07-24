@@ -20,6 +20,8 @@ export default function RelatedServicesSection({ currentService, relatedServices
   const [currentPage, setCurrentPage] = React.useState(1);
   const swiperRef = React.useRef<SwiperType | null>(null);
 
+
+
   // Filter out the current service and ensure we have valid services
   const validServices = relatedServices.filter(service => 
     service && 
@@ -70,10 +72,10 @@ export default function RelatedServicesSection({ currentService, relatedServices
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Usluge koje bi vas mogle zanimati
+            Usluge koje se odlično kombiniraju
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Otkrijte još tretmana koji će vam pomoći postići željeni izgled
+            Otkrijte tretmane koji se savršeno nadopunjuju {(currentService.akuzativTitle || currentService.title.toLowerCase()).startsWith('s') ? 'sa' : 's'} {currentService.akuzativTitle || currentService.title.toLowerCase()} za optimalne rezultate
           </p>
         </div>
 

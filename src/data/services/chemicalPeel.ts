@@ -3,6 +3,7 @@ import { Service } from './types';
 export const chemicalPeel: Service = {
   id: 'kemijski-piling',
   title: 'Kemijski Piling',
+  akuzativTitle: 'kemijskim pilingom',
   description: 'Otkrijte tajnu blistave kože uz TOSKANI pilinge',
   longDescription: `Želite li postići <strong>ujednačen ten</strong>, <strong>smanjiti vidljivost pora</strong> ili se riješiti <strong>nepravilnosti</strong>? <strong>TOSKANI kemijski piling</strong> pružit će vam upravo to, <strong>svjež, zdrav i mladenački izgled kože</strong>.
 

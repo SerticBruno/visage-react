@@ -3,6 +3,7 @@ import { Service } from './types';
 export const dermalFillers: Service = {
   id: 'dermalni-fileri',
   title: 'Dermalni fileri',
+  akuzativTitle: 'dermalnim filerima',
   description: 'Prirodni volumen i mladenački izgled',
   longDescription: `Upoznajte <strong>moć dermalnih filera</strong> koji pružaju <strong>prirodni volumen</strong> i <strong>pomlađeni izgled</strong> bez potrebe za kirurškim zahvatima.
 

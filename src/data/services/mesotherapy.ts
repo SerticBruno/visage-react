@@ -3,6 +3,7 @@ import { Service } from './types';
 export const mesotherapy: Service = {
   id: 'mezoterapija',
   title: 'Mezoterapija',
+  akuzativTitle: 'mezoterapijom',
   description: 'Dubinska njega za vašu kožu',
   longDescription: `Neovisno o vašim potrebama, <strong>mezoterapija</strong> pruža <strong>personaliziranu njegu</strong> koja cilja na vaše specifične probleme, uključujući <strong>dehidriranu kožu</strong>, <strong>gubitak tonusa</strong> ili <strong>neujednačen ten</strong>. Rezultat: <strong>osvježena, hidratizirana koža s mladenačkom sjajem</strong>.
 

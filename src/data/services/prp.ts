@@ -3,6 +3,7 @@ import { Service } from './types';
 export const prp: Service = {
   id: 'prp',
   title: 'PRP',
+  akuzativTitle: 'PRP tretmanom',
   description: 'Prirodna obnova i revitalizacija kože',
   longDescription: `Bez dodataka, bez kemije, bez rizika, samo <strong>čista snaga regeneracije</strong> iz vlastitih stanica. <strong>PRP tretman</strong> pruža <strong>prirodnu i dugotrajnu revitalizaciju kože</strong>.
 
