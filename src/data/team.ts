@@ -56,5 +56,5 @@ export const teamDetailsSection = {
     teamDetails.helena
   ],
   hasGroupPhoto: false,
-  groupQuote: '"Naš tim stručnjaka radi zajedno kako bismo vam pružili najkvalitetnije estetske usluge s fokusom na vašu sigurnost i zadovoljstvo."'
+  groupQuote: '"Naš tim radi zajedno kako bismo vam pružili najkvalitetnije estetske usluge s fokusom na vašu sigurnost i zadovoljstvo."'
 }; 
