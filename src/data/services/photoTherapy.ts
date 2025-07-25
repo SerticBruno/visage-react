@@ -2,7 +2,7 @@ import { Service } from './types';
 
 export const photoTherapy: Service = {
   id: 'foto-terapija',
-  title: 'Dermalux LED fototerapija',
+  title: 'LED fototerapija',
   akuzativTitle: 'Fototerapijom',
   description: 'Zlatni standard profesionalne led fototerapije u službi zdrave i lijepe kože',
   longDescription: `<strong>Dermalux Flex MD</strong> je medicinski CE certificirani uređaj koji omogućuje <strong>vrhunske i neinvazivne tretmane lica</strong>.

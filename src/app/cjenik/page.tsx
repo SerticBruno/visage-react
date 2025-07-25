@@ -148,10 +148,10 @@ export default function PricingPage() {
                           setSearchTerm('');
                           requestAnimationFrame(scrollToContent);
                         }}
-                        className="absolute right-3 top-3.5 text-gray-400 hover:text-gray-600 transition-colors duration-200 cursor-pointer"
+                        className="absolute right-3 top-3.5 w-6 h-6 flex items-center justify-center bg-gray-200 hover:bg-gray-300 text-gray-600 hover:text-gray-800 rounded-full transition-all duration-200 cursor-pointer"
                         aria-label="Očisti pretraživanje"
                       >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
                       </button>

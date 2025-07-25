@@ -31,7 +31,7 @@ export const popularServices = [
     features: [
       'vidljivi rezultati nakon jednog tretmana',
       'neinvazivan tretman',
-      'uklanjanje višak kože bez potrebe za kirurškim zahvatima',
+      'uklanja višak kože bez potrebe za kirurškim zahvatima',
       'regenerira i zateže kožu'
     ]
   },

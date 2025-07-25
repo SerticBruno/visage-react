@@ -20,6 +20,7 @@ export const pricingCategories = [
   "Hijaluronidaza",
   "Kemijski Piling",
   "Kombinirani Paketi",
+  "LED fototerapija",
   "Mezoterapija",
   "Mezoterapija Dermapenom 4",
   "Mezoterapija Mesoject Gunom",
@@ -127,6 +128,42 @@ export const pricingData: PricingItem[] = [
     category: "Fototerapije",
     isPackage: true,
     packageDetails: "12 tretmana"
+  },
+
+  // LED fototerapija
+  {
+    id: "led-fototerapija-single",
+    title: "LED Fototerapija - Pojedinačni Tretman",
+    description: "1 tretman LED fototerapije u trajanju od 20min",
+    price: "25 EUR",
+    category: "LED fototerapija",
+    duration: "20 min"
+  },
+  {
+    id: "led-fototerapija-standard",
+    title: "LED Fototerapija - Standard Paket",
+    description: "Paket od 6 tretmana LED fototerapije",
+    price: "135 EUR",
+    category: "LED fototerapija",
+    isPackage: true,
+    packageDetails: "6 tretmana"
+  },
+  {
+    id: "led-fototerapija-premium",
+    title: "LED Fototerapija - Premium Paket",
+    description: "Paket od 10 tretmana LED fototerapije",
+    price: "220 EUR",
+    category: "LED fototerapija",
+    isPackage: true,
+    packageDetails: "10 tretmana"
+  },
+  {
+    id: "led-fototerapija-addon",
+    title: "LED Fototerapija - Dodatak",
+    description: "Kao dodatak drugom tretmanu u trajanju od 15min",
+    price: "15 EUR",
+    category: "LED fototerapija",
+    duration: "15 min"
   },
   {
     id: "brow-lift",
