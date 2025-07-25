@@ -220,7 +220,7 @@ function KatalogContent() {
       <HeroSection
         title="Katalog proizvoda"
         description="Otkrijte našu široku ponudu proizvoda za njegu lica i tijela"
-        image="/images/services/catalog-hero-visage-estetski-studio.webp"
+        image="/images/pages/katalog/katalog-visage-estetski-studio-sisak.webp"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
