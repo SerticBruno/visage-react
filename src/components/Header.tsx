@@ -40,8 +40,13 @@ export default function Header() {
   }, [isMenuOpen]);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    if (!isMenuOpen) {
+    const newMenuState = !isMenuOpen;
+    setIsMenuOpen(newMenuState);
+    
+    // If opening menu and on a service subpage, auto-open services dropdown
+    if (newMenuState && currentPath.startsWith('/usluge/')) {
+      setIsServicesOpen(true);
+    } else if (!newMenuState) {
       setIsServicesOpen(false);
     }
   };
