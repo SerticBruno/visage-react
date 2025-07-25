@@ -115,7 +115,7 @@ export default function ComboPackagesInlineSection() {
                                 <React.Fragment key={`${item.type}-${item.id}`}>
                                   {item.type === 'service' ? (
                                     <Link href={`/usluge/${item.id}`} className="group">
-                                      <div className="flex flex-col items-center justify-between h-36 bg-gray-50 rounded-lg p-3 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                      <div className="flex flex-col items-center justify-start h-36 bg-gray-50 rounded-lg p-3 pt-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                                         <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                           <Image
                                             src={item.image}
@@ -124,7 +124,7 @@ export default function ComboPackagesInlineSection() {
                                             className="object-cover"
                                           />
                                         </div>
-                                        <div className="text-center flex items-center justify-center">
+                                        <div className="text-center flex items-center justify-center mt-2">
                                           <div className="flex items-center justify-center gap-1">
                                             <h5 className="font-medium text-xs group-hover:text-primary transition-colors">{item.title}</h5>
                                             {item.quantity > 1 && (
@@ -139,7 +139,7 @@ export default function ComboPackagesInlineSection() {
                                       onClick={() => handleProductClick(item.id)}
                                       className="group"
                                     >
-                                      <div className="flex flex-col items-center justify-between h-36 bg-gray-50 rounded-lg p-3 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                      <div className="flex flex-col items-center justify-start h-36 bg-gray-50 rounded-lg p-3 pt-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                                         <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                           <Image
                                             src={item.image}
@@ -148,7 +148,7 @@ export default function ComboPackagesInlineSection() {
                                             className="object-cover"
                                           />
                                         </div>
-                                        <div className="text-center flex items-center justify-center">
+                                        <div className="text-center flex items-center justify-center mt-2">
                                           <div className="flex items-center justify-center gap-1">
                                             <h5 className="font-medium text-xs group-hover:text-primary transition-colors">{item.title}</h5>
                                             {item.quantity > 1 && (
@@ -178,7 +178,7 @@ export default function ComboPackagesInlineSection() {
                           {pkg.services.map((service, index) => (
                             <React.Fragment key={service.id}>
                               <Link href={`/usluge/${service.id}`} className="group w-full flex justify-center">
-                                <div className="flex flex-col items-center justify-between w-full h-44 lg:h-48 bg-gray-50 rounded-xl p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                <div className="flex flex-col items-center justify-start w-full h-44 lg:h-48 xl:h-52 bg-gray-50 rounded-xl p-3 lg:p-4 pt-4 lg:pt-5 pb-2 lg:pb-3 xl:pb-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                                   <div className="relative w-24 lg:w-28 xl:w-32 h-24 lg:h-28 xl:h-32 flex-shrink-0 rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                     <Image
                                       src={service.image}
@@ -187,7 +187,7 @@ export default function ComboPackagesInlineSection() {
                                       className="object-cover"
                                     />
                                   </div>
-                                  <div className="text-center flex items-center justify-center">
+                                  <div className="text-center flex items-center justify-center mt-3 lg:mt-4">
                                     <div className="flex items-center justify-center gap-2">
                                       <h5 className="font-medium text-xs lg:text-sm group-hover:text-primary transition-colors">{service.title}</h5>
                                       {service.quantity > 1 && (
@@ -222,7 +222,7 @@ export default function ComboPackagesInlineSection() {
                                     onClick={() => handleProductClick(product.id)}
                                     className="group w-full flex justify-center"
                                   >
-                                    <div className="flex flex-col items-center justify-between w-full h-44 lg:h-48 bg-gray-50 rounded-xl p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                    <div className="flex flex-col items-center justify-start w-full h-44 lg:h-48 xl:h-52 bg-gray-50 rounded-xl p-3 lg:p-4 pt-4 lg:pt-5 pb-2 lg:pb-3 xl:pb-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                                       <div className="relative w-24 lg:w-28 xl:w-32 h-24 lg:h-28 xl:h-32 flex-shrink-0 rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                         <Image
                                           src={product.image}
@@ -231,7 +231,7 @@ export default function ComboPackagesInlineSection() {
                                           className="object-cover"
                                         />
                                       </div>
-                                      <div className="text-center flex items-center justify-center">
+                                      <div className="text-center flex items-center justify-center mt-3 lg:mt-4">
                                         <div className="flex items-center justify-center gap-2">
                                           <h5 className="font-medium text-xs lg:text-sm group-hover:text-primary transition-colors">{product.title}</h5>
                                           {product.quantity > 1 && (
