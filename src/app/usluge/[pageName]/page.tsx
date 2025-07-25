@@ -8,9 +8,11 @@ import ServiceContentSection from '@/components/sections/ServiceContentSection';
 import ServiceDetailsSection from '@/components/sections/ServiceDetailsSection';
 import BeautyTreatmentsSection from '@/components/sections/BeautyTreatmentsSection';
 import RelatedServicesSection from '@/components/sections/RelatedServicesSection';
+
 import CTASection from '@/components/sections/CTASection';
 import { notFound } from 'next/navigation';
 import { individualBeautyTreatments } from '@/data/services/beautyTreatments';
+import { findComboPackagesWithService } from '@/lib/services';
 
 interface ServicePageProps {
   params: Promise<{
@@ -69,6 +71,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
   const allServices = Object.values(services);
   const relatedServices = findRelatedServices(currentService, allServices);
+  const comboPackagesWithService = findComboPackagesWithService(currentService.id);
 
   return (
     <main className="min-h-screen">
@@ -88,12 +91,16 @@ export default async function ServicePage({ params }: ServicePageProps) {
         benefits={currentService.benefits}
         serviceName={currentService.title}
         focalPoint={currentService.focalPoint}
+        hasComboPackages={comboPackagesWithService.length > 0}
+        comboPackages={comboPackagesWithService}
+        serviceId={currentService.id}
       />
       {currentService.id === 'beauty-tretmani' ? (
         <BeautyTreatmentsSection treatments={individualBeautyTreatments} />
       ) : (
         <ServiceDetailsSection service={currentService} />
       )}
+
       <CTASection gradientDirection='t'/>
       <RelatedServicesSection
         currentService={currentService}

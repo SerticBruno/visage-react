@@ -1,7 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import SingleComboPackageModal from "@/components/ui/SingleComboPackageModal";
+import { ComboPackage } from "@/data/comboPackages";
 
 interface ServiceContentSectionProps {
   title: string;
@@ -11,6 +13,9 @@ interface ServiceContentSectionProps {
   benefits?: readonly string[];
   serviceName?: string;
   focalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  hasComboPackages?: boolean;
+  comboPackages?: ComboPackage[];
+  serviceId?: string;
 }
 
 export default function ServiceContentSection({
@@ -21,7 +26,11 @@ export default function ServiceContentSection({
   benefits = [],
   serviceName,
   focalPoint = 'center',
+  hasComboPackages = false,
+  comboPackages = [],
+  serviceId,
 }: ServiceContentSectionProps) {
+  const [openComboModal, setOpenComboModal] = useState<string | null>(null);
   // Convert focal point to CSS object-position values
   const getObjectPosition = (focalPoint: string) => {
     switch (focalPoint) {
@@ -54,9 +63,36 @@ export default function ServiceContentSection({
           <div className="order-1 lg:order-2">
             <h1 className="text-4xl font-bold text-gray-900 mb-6">{title}</h1>
             <div 
-              className="text-l text-gray-600 mb-8 leading-relaxed whitespace-pre-line [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors"
+              className="text-l text-gray-600 mb-8 leading-relaxed whitespace-pre-line [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors [&_a]:cursor-pointer"
               dangerouslySetInnerHTML={{ __html: description }}
             />
+            
+            {hasComboPackages && comboPackages.length > 0 && (
+              <div className="mb-8 p-4 bg-gradient-to-r from-slate-50 to-white rounded-xl border border-slate-200">
+                <p className="text-sm text-slate-700 leading-relaxed mb-4">
+                  Ova usluga je također dostupna kao dio naših premium combo paketa koji pružaju kompletnu transformaciju i optimalne rezultate:
+                </p>
+                <div className="space-y-2">
+                  {comboPackages.map((comboPackage) => (
+                    <button
+                      key={comboPackage.id}
+                      onClick={() => setOpenComboModal(comboPackage.id)}
+                      className="w-full flex items-center justify-between p-3 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer text-left"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
+                        <span className="text-sm font-medium text-slate-800">
+                          {comboPackage.title}
+                        </span>
+                      </div>
+                      <span className="text-sm text-slate-600 underline hover:text-slate-800 transition-colors font-medium">
+                        Pogledaj detalje
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
             
             {benefits.length > 0 && (
               <div className="mb-8">
@@ -74,7 +110,7 @@ export default function ServiceContentSection({
               </div>
             )}
 
-            <Link
+                        <Link
               href={serviceName ? `/kontakt?service=${encodeURIComponent(serviceName)}` : "/kontakt"}
               className="inline-flex items-center px-8 py-4 border border-slate-600 text-base font-medium rounded-xl shadow-lg text-white bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:shadow-xl"
             >
@@ -94,6 +130,20 @@ export default function ServiceContentSection({
           </div>
         </div>
       </div>
+      
+      {/* Combo Package Modals */}
+      {hasComboPackages && comboPackages.length > 0 && serviceId && 
+        comboPackages.map((comboPackage) => (
+          <SingleComboPackageModal
+            key={comboPackage.id}
+            isOpen={openComboModal === comboPackage.id}
+            onClose={() => setOpenComboModal(null)}
+            comboPackage={comboPackage}
+            serviceId={serviceId}
+            serviceTitle={title}
+          />
+        ))
+      }
     </section>
   );
 } 
