@@ -57,7 +57,7 @@ export const comboPackages: ComboPackage[] = [
         id: "2", 
         title: "Purifying Cleanser", 
         quantity: 1,
-        image: "/images/products/TOSKANIpurifyingcleanser.webp"
+        image: "/images/products/purifying-cleanser-visage-estetski-studio.webp"
       }
     ],
     benefits: [
