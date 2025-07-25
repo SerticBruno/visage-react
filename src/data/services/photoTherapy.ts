@@ -5,13 +5,19 @@ export const photoTherapy: Service = {
   title: 'Fototerapija',
   akuzativTitle: 'Fototerapijom',
   description: 'Napredna fototerapija za tretman kože svjetlom',
-  longDescription: `Fototerapija je revolucionarna metoda tretmana kože koja koristi kontrolirane valove svjetlosti za stimulaciju prirodnih procesa regeneracije kože. Ova napredna tehnologija pruža učinkovite rezultate bez invazivnih postupaka.
+  longDescription: `<strong>Zlatni standard led fototerapije u službi zdrave i lijepe kože</strong>
 
-Kroz precizno kalibrirane svjetlosne impulse, fototerapija stimulira proizvodnju kolagena, poboljšava cirkulaciju i aktivira prirodne mehanizme oporavka kože. Svaki tretman je prilagođen individualnim potrebama i stanju kože.
+<strong>Dermalux Flex MD</strong> je medicinski CE certificirani uređaj koji omogućuje <strong>vrhunske i neinvazivne tretmane lica</strong>.
 
-Fototerapija je idealna za različite probleme kože i pruža vidljive rezultate kroz seriju tretmana. Posebno je učinkovita za akne, ožiljke, hiperpigmentaciju i općenito poboljšanje tonusa i teksture kože.
+Djeluje na principu <strong>fototerapije</strong>, odnosno liječenja svjetlom. Koža apsorbira specifične valne duljine kako bi stimulirala <strong>obnovu stanica</strong>, potaknula <strong>proizvodnju kolagena i elastina</strong>, riješila problematična stanja te ubrzala <strong>zacjeljivanje kože</strong>.
 
-U Visage studiju koristimo najnoviju tehnologiju fototerapije, što osigurava optimalne rezultate i maksimalnu sigurnost. Svaki tretman je pažljivo planiran za postizanje željenih rezultata uz minimalno vrijeme oporavka.`,
+Tretman je <strong>ugodan, bezbolan, siguran</strong> te pruža niz dobrobiti za kožu.
+
+Nakon samo <strong>jednog tretmana</strong> Flex MD LED fototerapije klijenti mogu očekivati <strong>trenutačno poboljšanje tonusa kože, hidratacije i sjaja</strong>, dok terapeutsko svjetlo istovremeno potiče <strong>dublje stanične procese za dugotrajne dobiti kože</strong>.
+
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/mezoterapija">mezoterapija</a>, <a href="/usluge/beauty-tretmani">beauty tretmani</a> i <a href="/usluge/skin-boosteri">skin boosteri</a>
+
+U <strong>Visage studiju</strong> koristimo najnoviju tehnologiju fototerapije, što osigurava <strong>optimalne rezultate i maksimalnu sigurnost</strong>. Svaki tretman je pažljivo planiran za postizanje željenih rezultata uz <strong>minimalno vrijeme oporavka</strong>.`,
   benefits: [
   ],
   image: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp',
@@ -20,7 +26,7 @@ U Visage studiju koristimo najnoviju tehnologiju fototerapije, što osigurava op
   metaKeywords: 'fototerapija, svjetlosna terapija, akne, ožiljci, hiperpigmentacija, estetski studio Sisak, VISAGE studio, tretman kože svjetlom',
   tags: ['fototerapija', 'svjetlosna-terapija', 'akne', 'ožiljci', 'hiperpigmentacija', 'nježni-tretmani'],
   pricingCategory: 'Fototerapije',
-  relatedServices: ['kemijski-piling', 'mezoterapija', 'skin-boosteri'],
+  relatedServices: ['mezoterapija', 'beauty-tretmani', 'skin-boosteri'],
   steps: [
     { 
       id: 'prednosti', 
