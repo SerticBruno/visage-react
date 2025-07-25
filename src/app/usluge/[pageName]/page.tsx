@@ -25,8 +25,7 @@ const findRelatedServices = (currentService: Service, allServices: Service[]): S
   if (currentService.relatedServices && currentService.relatedServices.length > 0) {
     return currentService.relatedServices
       .map(serviceId => allServices.find(service => service.id === serviceId))
-      .filter((service): service is Service => service !== undefined)
-      .slice(0, 3);
+      .filter((service): service is Service => service !== undefined);
   }
   
   // Fallback to finding related services based on common tags
@@ -36,8 +35,7 @@ const findRelatedServices = (currentService: Service, allServices: Service[]): S
       const aCommonTags = a.tags.filter(tag => currentService.tags.includes(tag)).length;
       const bCommonTags = b.tags.filter(tag => currentService.tags.includes(tag)).length;
       return bCommonTags - aCommonTags;
-    })
-    .slice(0, 3);
+    });
 };
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {

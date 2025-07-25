@@ -264,9 +264,6 @@ export default function PricingPage() {
                   <p className="text-sm text-gray-600">
                     Pronađeno usluga: <span className="font-semibold">{filteredItems.length}</span>
                   </p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    Prikazano: <span className="font-medium">Sve usluge</span>
-                  </p>
                 </div>
               </div>
             </div>

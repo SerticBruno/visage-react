@@ -32,7 +32,7 @@ export default function RelatedServicesSection({ currentService, relatedServices
   React.useEffect(() => {
     const updateVisibleServices = () => {
       if (window.innerWidth >= 1024) { // lg
-        setVisibleServices(3);
+        setVisibleServices(4);
       } else if (window.innerWidth >= 768) { // md
         setVisibleServices(2);
       } else {
@@ -108,6 +108,10 @@ export default function RelatedServicesSection({ currentService, relatedServices
                 768: {
                   spaceBetween: 24,
                   slidesPerView: 2,
+                },
+                1024: {
+                  spaceBetween: 24,
+                  slidesPerView: 4,
                 }
               }}
               className="pb-16 overflow-hidden"
@@ -186,7 +190,7 @@ export default function RelatedServicesSection({ currentService, relatedServices
           </div>
 
           {/* Desktop Grid */}
-          <div className="hidden lg:grid grid-cols-3 gap-8">
+          <div className="hidden lg:grid grid-cols-4 gap-6">
             {validServices.map((service) => (
               <motion.div
                 key={service.id}

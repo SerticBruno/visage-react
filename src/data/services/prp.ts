@@ -15,7 +15,7 @@ export const prp: Service = {
 
 PRP se može raditi primjenom <strong>Mesoject guna</strong> i s <strong>mezoterapijskim iglama</strong>.
 
-Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/skin-boosteri">skin boosteri</a>, <a href="/usluge/mezoterapija">mezoterapija</a> i <a href="/usluge/kemijski-piling">kemijski piling</a>.
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/skin-boosteri">skin boosteri</a>, <a href="/usluge/mezoterapija">mezoterapija</a>, <a href="/usluge/kemijski-piling">kemijski piling</a> i <a href="/usluge/foto-terapija">dermalux led fototerapija</a>.
 
 Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj revitalizaciji kože</strong> u <strong>Visage studiju</strong>.`,
   benefits: [
@@ -26,7 +26,7 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
   metaKeywords: 'PRP terapija, regeneracija kože, trombociti, estetski studio Sisak, VISAGE studio, PRP lica, prirodna regeneracija',
   tags: ['prp', 'regeneracija', 'prirodni-tretmani', 'minimalno-invazivni', 'trombociti'],
   pricingCategory: 'PRP',
-  relatedServices: ['skin-boosteri', 'mezoterapija', 'kemijski-piling'],
+  relatedServices: ['skin-boosteri', 'mezoterapija', 'kemijski-piling', 'foto-terapija'],
   steps: [
     { 
       id: 'prednosti', 
