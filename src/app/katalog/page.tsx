@@ -32,8 +32,23 @@ function KatalogContent() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isScrolling, setIsScrolling] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
-  const productsPerPage = 9;
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Dynamic products per page based on screen size
+  const productsPerPage = isMobile ? 6 : 9;
   const productsRef = useRef<HTMLDivElement>(null);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -469,13 +484,17 @@ function KatalogContent() {
                 <p className="text-sm text-gray-600">
                   Pronađeno proizvoda: <span className="font-semibold">{filteredProducts.length}</span>
                 </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Prikazano: <span className="font-medium">{productsPerPage}</span> po stranici
+                  {isMobile && <span className="text-blue-600"> (mobilna verzija)</span>}
+                </p>
               </div>
             </div>
           </div>
 
           {/* Products Grid */}
           <div className="flex-1" ref={productsRef}>
-            {/* Search Bar */}
+            {/* Products Grid */}
             <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 transition-opacity duration-300 ${isScrolling || isFiltering ? 'opacity-25' : 'opacity-100'}`}>
               {currentProducts.map((product) => (
                 <div
@@ -585,14 +604,14 @@ function KatalogContent() {
                   <span className="hidden sm:inline">Prethodna</span>
                   <FaChevronLeft className="sm:hidden w-4 h-4" />
                 </button>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-1 sm:space-x-2">
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                     <button
                       key={page}
                       onClick={() => {
                         handlePageChange(page);
                       }}
-                      className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all duration-300 ${
+                      className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all duration-300 text-sm sm:text-base ${
                         validCurrentPage === page
                           ? 'bg-slate-800 text-white shadow-md'
                           : 'text-slate-600 hover:bg-slate-50 hover:border hover:border-slate-200 hover:shadow-sm'
