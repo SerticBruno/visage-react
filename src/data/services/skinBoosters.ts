@@ -33,7 +33,8 @@ Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa skin boo
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
-      image: '/images/services/skin-boosters/skin-boosteri-prednosti-visage-estetski-studio.png'
+      image: '/images/services/skin-boosters/skin-boosteri-prednosti-visage-estetski-studio.png',
+      focalPoint: '50% 20%',
     },
     { 
       id: 'kandidati', 
@@ -50,19 +51,22 @@ Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa skin boo
       id: 'tijek-zahvata', 
       label: 'Tijek zahvata', 
       icon: 'FaRegClock',
-      image: '/images/services/skin-boosters/skin-boosteri-tijek-zahvata-visage-estetski-studio.png'
+      image: '/images/services/skin-boosters/skin-boosteri-tijek-zahvata-visage-estetski-studio.png',
+      focalPoint: '50% 90%',
     },
     { 
       id: 'oporavak', 
       label: 'Oporavak', 
       icon: 'FaRegHospital',
-      image: '/images/services/skin-boosters/skin-boosteri-oporavak-visage-estetski-studio.png'
+      image: '/images/services/skin-boosters/skin-boosteri-oporavak-visage-estetski-studio.png',
+      focalPoint: '50% 20%',
     },
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
       icon: 'FaRegFile',
-      image: '/images/services/skin-boosters/skin-booster-nakon-tretmana-visage-estetski-studio-sisak.jpeg'
+      image: '/images/services/skin-boosters/skin-booster-nakon-tretmana-visage-estetski-studio-sisak.jpeg',
+      focalPoint: '40% 15%',
     },
     { 
       id: 'cijena', 

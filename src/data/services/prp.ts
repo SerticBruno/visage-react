@@ -32,7 +32,8 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
-      image: '/images/services/prp/prp-prednosti-estetski-studio-sisak.jpeg'
+      image: '/images/services/prp/prp-prednosti-estetski-studio-sisak.jpeg',
+      focalPoint: '50% 0%',
     },
     { 
       id: 'kandidati', 
