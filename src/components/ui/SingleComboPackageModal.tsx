@@ -114,9 +114,7 @@ export default function SingleComboPackageModal({
                                 )}
                               </div>
                               {service.id === serviceId && (
-                                <span className="text-xs bg-slate-200 text-slate-700 px-2 py-1 rounded-full font-medium">
-                                  Ova usluga
-                                </span>
+                                <FaCheck className="text-green-600 ml-2" size={16} />
                               )}
                             </div>
                           ))}
