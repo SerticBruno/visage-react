@@ -299,7 +299,7 @@ Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjel
     category: 'Krema',
     productType: 'SPF krema',
     skinType: ['Osjetljiva koža', 'Suha i normalna koža'],
-    image: '/images/products/toskaniradiancedailycream.webp',
+    image: '/images/products/radiance-daily-cream-visage-estetski-studio.webp',
     price: '60 EUR',
     volume: '50 ml',
     application: [
