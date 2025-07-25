@@ -6,9 +6,11 @@ import ContactSection from '@/components/sections/ContactSection';
 import HeroSection from '@/components/sections/HeroSection';
 import ServiceContentSection from '@/components/sections/ServiceContentSection';
 import ServiceDetailsSection from '@/components/sections/ServiceDetailsSection';
+import BeautyTreatmentsSection from '@/components/sections/BeautyTreatmentsSection';
 import RelatedServicesSection from '@/components/sections/RelatedServicesSection';
 import CTASection from '@/components/sections/CTASection';
 import { notFound } from 'next/navigation';
+import { individualBeautyTreatments } from '@/data/services/beautyTreatments';
 
 interface ServicePageProps {
   params: Promise<{
@@ -87,7 +89,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
         serviceName={currentService.title}
         focalPoint={currentService.focalPoint}
       />
-      <ServiceDetailsSection service={currentService} />
+      {currentService.id === 'beauty-tretmani' ? (
+        <BeautyTreatmentsSection treatments={individualBeautyTreatments} />
+      ) : (
+        <ServiceDetailsSection service={currentService} />
+      )}
       <CTASection gradientDirection='t'/>
       <RelatedServicesSection
         currentService={currentService}

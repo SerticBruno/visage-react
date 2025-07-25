@@ -1,5 +1,21 @@
 import { Service } from './types';
 
+export interface BeautyTreatment {
+  id: string;
+  title: string;
+  description: string;
+  duration: string;
+  price: string;
+  image: string;
+  benefits: string[];
+  suitableFor: string[];
+  preparation: string;
+  procedure: string;
+  aftercare: string;
+  isPopular?: boolean;
+  isNew?: boolean;
+}
+
 export const beautyTreatments: Service = {
   id: 'beauty-tretmani',
   title: 'Beauty tretmani',
@@ -141,4 +157,319 @@ Nakon beauty tretmana važno je:
 
 Za optimalne rezultate preporučujemo redovite tretmane svakih 4-6 tjedana. Za detaljne informacije o cijenama i mogućnostima plaćanja, dogovorite termin.`
   }
-}; 
+};
+
+export const individualBeautyTreatments: BeautyTreatment[] = [
+  {
+    id: 'dermaplaning',
+    title: 'DERMAPLANING',
+    description: `Dermaplaning – neinvazivni mehanički piling u kojem se nježno uklanjaju površinski slojevi kože, uključujući i sitne dlačice. Ovaj tretman uklanja višak površinskih stanica kože i daje blistav ten.
+
+Dermaplaning sa Circadijom predstavlja najnapredniji protokol svoje vrste. Temeljen na višegodišnjoj Circadia ekspertizi protokola te omogućuje najnaprednije dostupne rezultate na tržištu.
+
+Circadia dermaplaning je poseban i drugačiji od ostalih tehnika dermaplaninga koje se nude na tržištu – koristimo specijalne vrste nožića (made in USA) i posebne protokole koji daju najbolje moguće rezultate ove tehnike!`,
+    duration: '60 min',
+    price: '45 €',
+    image: '/images/services/woman-face-visage-estetski-studio.webp',
+    benefits: [
+      'Neinvazivni mehanički piling',
+      'Uklanjanje površinskih slojeva kože',
+      'Uklanjanje sitnih dlačica',
+      'Blistav ten',
+      'Poboljšanje apsorpcije proizvoda',
+      'Glatka i sjajna koža'
+    ],
+    suitableFor: [
+      'Sve tipove kože',
+      'Osobe s grubom kožom',
+      'Osobe koje žele blistav ten',
+      'Priprema za druge tretmane',
+      'Redovita njega kože'
+    ],
+    preparation: `Prije dermaplaning tretmana potrebno je:
+- Dolaziti s čistim licem bez make-upa
+- Izbjegavati izlaganje suncu 24 sata prije tretmana
+- Prekinuti korištenje retinol proizvoda 3-5 dana prije
+- Dolaziti opušteni i spremni za tretman`,
+    procedure: `1. Čišćenje lica sa Circadia proizvodima za čišćenje lica
+
+2. Dermaplaning - Precizno uklanjanje površinskih slojeva kože
+
+3. Aplikacija Snow Algae & Spirulina Cooling Mask
+
+4. Maska se suši 10 do 20 minuta
+
+5. Uklanjanje maske
+
+6. Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
+    aftercare: `Nakon dermaplaning tretmana važno je:
+- Izbjegavati izravno sunce 24-48 sata
+- Koristiti blage proizvode za čišćenje
+- Redovito koristiti SPF zaštitu
+- Izbjegavati agresivne proizvode 3-5 dana
+- Piti dovoljno vode za optimalnu hidrataciju`,
+    isPopular: true
+  },
+  {
+    id: 'masaza-lica',
+    title: 'MASAŽA LICA',
+    description: 'Profesionalna masaža lica za opuštanje mišića i poboljšanje cirkulacije',
+    duration: '30 min',
+    price: '25 €',
+    image: '/images/services/toskani-woman-visage-estetski-studio.webp',
+    benefits: [
+      'Opuštanje mišića lica',
+      'Poboljšanje cirkulacije',
+      'Smanjenje napetosti',
+      'Poboljšanje tonusa kože',
+      'Prirodni lift efekt',
+      'Potpuno opuštanje'
+    ],
+    suitableFor: [
+      'Sve dobne skupine',
+      'Osobe s napetim mišićima lica',
+      'Osobe koje traže opuštanje',
+      'Osobe s umornom kožom',
+      'Priprema za druge tretmane'
+    ],
+    preparation: `Prije masaže lica potrebno je:
+- Dolaziti s čistim licem
+- Izbjegavati teške obroke 2 sata prije
+- Dolaziti opušteni i spremni za masažu
+- Komunicirati bilo kakve zdravstvene probleme`,
+    procedure: `1. Konzultacija - Procjena potreba i objašnjenje tehnike
+
+2. Priprema - Čišćenje lica i primjena masnog ulja
+
+3. Masaža - Profesionalna masaža lica s različitim tehnikama
+
+4. Završna faza - Umirujuća masaža i čišćenje
+
+5. Preporuke - Savjeti za kućnu njegu`,
+    aftercare: `Nakon masaže lica preporučujemo:
+- Održavanje opuštenog stanja
+- Redovito vježbanje mišića lica
+- Koristiti blage proizvode za njegu
+- Piti dovoljno vode
+- Redovite masaže za najbolje rezultate`
+  },
+  {
+    id: 'marshmallow-facial',
+    title: 'MARSHMALLOW FACIAL',
+    description: `Marshmallow Facial – Circadia kozmetički protokol s Marshmallow Whip Hydrating maskom.
+
+Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće zdravlje kože.`,
+    duration: '75 min',
+    price: '55 €',
+    image: '/images/services/beauty-treatment-visage-estetski-studio.webp',
+    benefits: [
+      'Namijenjen svim tipovima kože',
+      'Trenutna i intenzivna hidrataciju',
+      'Umirujući učinak za kožu',
+      'Obnova oštećene kože',
+      'Ljekoviti biljni sastojci',
+      'Poboljšanje općeg zdravlja kože'
+    ],
+    suitableFor: [
+      'Sve tipove kože',
+      'Osobe s dehidriranom kožom',
+      'Osobe s oštećenom kožom',
+      'Osobe koje traže umirujući učinak',
+      'Priprema za posebne prilike'
+    ],
+    preparation: `Prije Marshmallow Facial tretmana:
+- Dolaziti s čistim licem
+- Izbjegavati agresivne proizvode 24 sata prije
+- Piti dovoljno vode dan prije
+- Dolaziti opušteni i spremni za tretman`,
+    procedure: `1. Čišćenje lica sa Circadia proizvodima za čišćenje lica
+
+2. Aplikacija Marshmallow Whip Hydrating Mask
+
+3. Maska se suši 10 do 20 minuta
+
+4. Uklanjanje maske
+
+5. Circadia serum ovisno o tipu i stanju kože
+
+6. Circadia krema ovisno o tipu i stanju kože
+
+7. Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
+    aftercare: `Nakon Marshmallow Facial tretmana:
+- Održavati hidrataciju kože
+- Koristiti blage proizvode za njegu
+- Redovito koristiti SPF zaštitu
+- Izbjegavati agresivne proizvode 24 sata
+- Piti dovoljno vode`,
+    isNew: true
+  },
+  {
+    id: 'firming-peptide-facial',
+    title: 'FIRMING PEPTIDE FACIAL',
+    description: `Firming Peptide Facial – Circadia kozmetički potokol s Firming Peptide maskom koja pruža zatezanje i učvršćivanje kože.
+
+Maska kombinira najnoviju tehnologija u području peptida, antioksidansa i znanosti o regeneraciji kože, rezultirajući mikrocirkulacijom, detoksikacijom te trenutnim zatezanjem i učvršćivanjem kože.`,
+    duration: '90 min',
+    price: '65 €',
+    image: '/images/services/skin-boosters-hero-visage-estetski-studio.webp',
+    benefits: [
+      'Namijenjen koži s vidljivim znakovima starenja',
+      'Trenutno zateže i učvršćuje kožu',
+      'Služi za detoksikaciju i podizanje kože',
+      'Mikrocirkulacija kože',
+      'Antioksidantna zaštita',
+      'Regeneracija kože'
+    ],
+    suitableFor: [
+      'Kožu s vidljivim znakovima starenja',
+      'Suhoj i gruboj koži',
+      'Koži s UV oštećenjima',
+      'Osobe koje traže firming efekt',
+      'Priprema za posebne prilike'
+    ],
+    preparation: `Prije Firming Peptide Facial tretmana:
+- Dolaziti s čistim licem
+- Prekinuti retinol proizvode 5-7 dana prije
+- Izbjegavati izlaganje suncu 24 sata prije
+- Dolaziti opušteni i spremni za tretman`,
+    procedure: `1. Čišćenje lica sa Circadia proizvodima za čišćenje lica
+
+2. Aplikacija Firming Peptide Mask
+
+3. Maska se suši 10 do 30 minuta
+
+4. Uklanjanje maske
+
+5. Circadia serum ovisno o tipu i stanju kože
+
+6. Circadia krema ovisno o tipu i stanju kože
+
+7. Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
+
+UPOZORENJE: Prilikom sušenja maska pruža osjećaj zatezanja!`,
+    aftercare: `Nakon Firming Peptide Facial tretmana:
+- Redovito koristiti SPF zaštitu
+- Koristiti blage proizvode za njegu
+- Izbjegavati agresivne proizvode 5-7 dana
+- Redovite tretmane za održavanje rezultata
+- Piti dovoljno vode`,
+    isPopular: true
+  },
+  {
+    id: 'signature-dermaplaning-facial',
+    title: 'SIGNATURE DERMAPLANING FACIAL',
+    description: `Signature Dermaplaning Facial – Circadia kozmetički protokol koji koristi tehniku dermaplaninga i Marshmallow Whip Hydrating masku.
+
+Terapeutski piling koji ostavlja vašu kožu sjajnom i glatkom.
+
+Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće zdravlje kože.`,
+    duration: '90 min',
+    price: '75 €',
+    image: '/images/services/plasmage-hero-visage-estetski-studio.webp',
+    benefits: [
+      'Namijenjen svim tipovima kože',
+      'Daje koži trenutnu i intenzivnu hidrataciju',
+      'Umirujući učinak za kožu i obnova oštećene kože',
+      'Terapeutski piling',
+      'Sjajna i glatka koža',
+      'Poboljšanje općeg zdravlja kože'
+    ],
+    suitableFor: [
+      'Sve tipove kože',
+      'Osobe koje traže premium iskustvo',
+      'Osobe s grubom kožom',
+      'Priprema za posebne prilike',
+      'Redovita njega kože'
+    ],
+    preparation: `Prije Signature Dermaplaning Facial tretmana:
+- Dolaziti s čistim licem
+- Prekinuti retinol proizvode 5-7 dana prije
+- Izbjegavati izlaganje suncu 24 sata prije
+- Dolaziti opušteni i spremni za tretman`,
+    procedure: `1. Čišćenje lica sa Circadia proizvodima za čišćenje lica
+
+2. Dermaplaning
+
+3. Caviar Lime & Passionfruit Enzym piling
+
+4. Aplikacija Marshmallow Whip Hydrating Mask
+
+5. Maska se suši 10 do 20 minuta
+
+6. Uklanjanje maske
+
+7. Circadia serum ovisno o tipu i stanju kože
+
+8. Circadia krema ovisno o tipu i stanju kože
+
+9. Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
+    aftercare: `Nakon Signature Dermaplaning Facial tretmana:
+- Izbjegavati izravno sunce 48-72 sata
+- Koristiti blage proizvode za njegu
+- Redovito koristiti SPF zaštitu
+- Izbjegavati agresivne proizvode 5-7 dana
+- Piti dovoljno vode`,
+    isPopular: true
+  },
+  {
+    id: 'beyond-botox-facial',
+    title: 'BEYOND BOTOX FACIAL',
+    description: `CIRCADIA Beyond Botox Facial – Circadia kozmetički potokol koji koristi tehniku dermaplaninga i Firming Peptide masku za zatezanje i učvršćivanje.
+
+Vaša tajna za čvršću i blistaviju kožu.
+
+Maska kombinira najnoviju tehnologija u području peptida, antioksidansa i znanosti o regeneraciji kože, rezultirajući mikrocirkulacijom, detoksikacijom te trenutnim zatezanjem i učvršćivanjem kože.`,
+    duration: '120 min',
+    price: '85 €',
+    image: '/images/services/botox-treatment-visage-estetski-studio.webp',
+    benefits: [
+      'Namijenjen koži s vidljivim znakovima starenja',
+      'Trenutno zateže i učvršćuje kožu',
+      'Služi za detoksikaciju i podizanje kože',
+      'Čvršća i blistavija koža',
+      'Mikrocirkulacija kože',
+      'Antioksidantna zaštita'
+    ],
+    suitableFor: [
+      'Kožu s vidljivim znakovima starenja',
+      'Suhoj i gruboj koži',
+      'Koži s UV oštećenjima',
+      'Osobe koje traže dramatične rezultate',
+      'Priprema za posebne prilike'
+    ],
+    preparation: `Prije Beyond Botox Facial tretmana:
+- Dolaziti s čistim licem
+- Prekinuti sve retinol proizvode 7-10 dana prije
+- Izbjegavati izlaganje suncu 48 sata prije
+- Dolaziti opušteni i spremni za tretman`,
+    procedure: `1. Čišćenje lica sa Circadia proizvodima za čišćenje lica
+
+2. Dermaplaning
+
+3. Kemijski piling laktičnom kiselinom ili enzimski piling
+
+4. Aplikacija Firming Peptide Mask
+
+5. Maska se suši 10 do 30 minuta
+
+6. Uklanjanje maske
+
+7. Circadia serum ovisno o tipu i stanju kože
+
+8. Circadia krema ovisno o tipu i stanju kože
+
+9. Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
+
+POKLON: Post Peel Home Care
+
+UPOZORENJE: Prilikom sušenja maska pruža osjećaj zatezanja!`,
+    aftercare: `Nakon Beyond Botox Facial tretmana:
+- Izbjegavati izravno sunce 7-10 dana
+- Koristiti blage proizvode za njegu
+- Redovito koristiti SPF zaštitu
+- Izbjegavati agresivne proizvode 10-14 dana
+- Piti dovoljno vode
+- Redovite kontrole`,
+    isNew: true
+  }
+]; 
