@@ -199,7 +199,7 @@ export default function ComboPackagesInlineSection() {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                     index === activeIndex 
                       ? 'bg-slate-600 scale-125' 
                       : 'bg-slate-300 hover:bg-slate-400'
