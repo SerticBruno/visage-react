@@ -36,6 +36,7 @@ export const productCategories = [
   'Maska',
   'Krema',
   'Serum',
+  'Sprej',
   'Okoloočna njega',
   'Zaštita od sunca',
   'Njega kose',
@@ -45,7 +46,7 @@ export const productCategories = [
 
 // New product types for "Tip proizvoda"
 export const productTypes = [
-  'Čistač',
+  'Čišćenje lica',
   'Tonik',
   'Scrub',
   'Krema',
@@ -58,9 +59,11 @@ export const productTypes = [
 
 // New skin types for "Tip kože"
 export const skinTypes = [
-  'Masna i mješovita koža',
+  'Masna koža',
+  'Mješovita koža',
   'Osjetljiva koža',
-  'Suha i normalna koža'
+  'Suha koža',
+  'Normalna koža'
 ];
 
 // New skin concerns for "Problematika kože"
@@ -80,10 +83,10 @@ export const products: Product[] = [
 Gel za čišćenje čuva neke slojeve masnoće na koži što sprječava isušivanje kože.
 
 Čisti, pročišćava i tonizira kožu.`,
-    category: 'Čišćenje',
-    productType: 'Čistač',
-    skinType: ['Suha i normalna koža', 'Osjetljiva koža'],
-    skinConcern: ['Anti-aging njega'],
+    category: 'Čišćenje lica',
+    productType: 'Čišćenje lica',
+    skinType: ['Suha koža', 'Normalna koža', 'Mješovita koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije'],
     image: '/images/products/energizing-cleanser-visage-estetski-studio.webp',
     price: '40 EUR',
     volume: '200 ml',
@@ -126,7 +129,7 @@ Purifying Cleanser regulira proizvodnju sebuma i ostavlja kožu čistom, svježo
 
 Ovo sredstvo za čišćenje može se koristiti i na tijelu.`,
     category: 'Čišćenje',
-    productType: 'Čistač',
+    productType: 'Čišćenje lica',
     skinType: ['Masna i mješovita koža'],
     skinConcern: ['Akne i problematična koža'],
     image: '/images/products/purifying-cleanser-visage-estetski-studio.webp',
