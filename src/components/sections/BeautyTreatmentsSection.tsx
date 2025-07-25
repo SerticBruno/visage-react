@@ -74,10 +74,10 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
   };
 
   return (
-    <section className="bg-gradient-to-b from-white to-[#e5e7eb] py-4">
+    <section className="bg-gradient-to-b from-white to-[#e5e7eb] py-8">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Treatments Grid - 3+2 Layout with Offset */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-6 gap-x-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-8 gap-x-16">
           {/* First row: 3 items */}
           {treatments.slice(0, 3).map((treatment, index) => (
             <motion.div
@@ -89,7 +89,7 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
               className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer group h-full lg:col-span-2 hover:shadow-xl transition-shadow duration-300"
               onClick={() => handleTreatmentClick(treatment)}
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-52 overflow-hidden">
                 <Image
                   src={treatment.image}
                   alt={treatment.title}
@@ -102,8 +102,10 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
                   <h3 className="text-lg font-bold text-white mb-2">{treatment.title}</h3>
                 </div>
               </div>
-              <div className="p-5">
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-4">{treatment.description}</p>
+              <div className="p-6">
+                <div className="mb-6">
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-6 whitespace-pre-line">{treatment.description}</p>
+                </div>
                 <div className="flex items-center justify-between">
                   <div className="text-sm text-gray-500">
                     <span className="font-medium">{treatment.duration}</span>
@@ -130,7 +132,7 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
               }`}
               onClick={() => handleTreatmentClick(treatment)}
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-52 overflow-hidden">
                 <Image
                   src={treatment.image}
                   alt={treatment.title}
@@ -143,8 +145,10 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
                   <h3 className="text-lg font-bold text-white mb-2">{treatment.title}</h3>
                 </div>
               </div>
-              <div className="p-5">
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-4">{treatment.description}</p>
+              <div className="p-6">
+                <div className="mb-6">
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-6 whitespace-pre-line">{treatment.description}</p>
+                </div>
                 <div className="flex items-center justify-between">
                   <div className="text-sm text-gray-500">
                     <span className="font-medium">{treatment.duration}</span>
