@@ -235,7 +235,7 @@ function KatalogContent() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar with Filters */}
           <div className="lg:w-64 flex-shrink-0">
-            <div className="bg-white rounded-lg shadow-md p-6 sticky top-24 space-y-4">
+            <div className="bg-white rounded-lg shadow-md p-6 pr-10 sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto space-y-3 scrollbar-spaced" style={{ scrollbarGutter: 'stable' }}>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Filtriraj proizvode</h3>
 
               {/* Search */}
@@ -272,7 +272,7 @@ function KatalogContent() {
               </div>
 
               {/* Product Types Section */}
-              <div className="border-t border-gray-200 pt-4 pb-0 mb-0">
+              <div className="border-t border-gray-200 pt-3 pb-0 mb-0">
                 <button
                   onClick={() => toggleSection('productTypes')}
                   className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
@@ -294,7 +294,7 @@ function KatalogContent() {
                   }`}
                 >
                   <div className="relative">
-                    <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+                    <div className="space-y-0.5 max-h-36 overflow-y-auto scrollbar-spaced pr-2">
                       {productTypes.map((productType, index) => (
                         <label 
                           key={productType} 
@@ -320,7 +320,7 @@ function KatalogContent() {
               </div>
 
               {/* Skin Types Section */}
-              <div className="border-t border-gray-200 pt-4 pb-0 mb-0">
+              <div className="border-t border-gray-200 pt-3 pb-0 mb-0">
                 <button
                   onClick={() => toggleSection('skinTypes')}
                   className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
@@ -337,12 +337,12 @@ function KatalogContent() {
                 <div 
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
                     expandedSections.skinTypes 
-                      ? 'max-h-40 opacity-100' 
+                      ? 'max-h-32 opacity-100' 
                       : 'max-h-0 opacity-0'
                   }`}
                 >
                   <div className="relative">
-                    <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+                    <div className="space-y-0.5 max-h-28 overflow-y-auto scrollbar-spaced pr-2">
                       {skinTypes.map((skinType, index) => (
                         <label 
                           key={skinType} 
@@ -368,7 +368,7 @@ function KatalogContent() {
               </div>
 
               {/* Skin Concerns Section */}
-              <div className="border-t border-gray-200 pt-4 pb-0 mb-0">
+              <div className="border-t border-gray-200 pt-3 pb-0 mb-0">
                 <button
                   onClick={() => toggleSection('skinConcerns')}
                   className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
@@ -385,12 +385,12 @@ function KatalogContent() {
                 <div 
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
                     expandedSections.skinConcerns 
-                      ? 'max-h-40 opacity-100' 
+                      ? 'max-h-48 opacity-100' 
                       : 'max-h-0 opacity-0'
                   }`}
                 >
                   <div className="relative">
-                    <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+                    <div className="space-y-0.5 max-h-44 overflow-y-auto scrollbar-spaced pr-2">
                       {skinConcerns.map((skinConcern, index) => (
                         <label 
                           key={skinConcern} 
@@ -416,7 +416,7 @@ function KatalogContent() {
               </div>
 
               {/* Badges Filter Section */}
-              <div className="border-t border-gray-200 pt-4 pb-0 mb-0">
+              <div className="border-t border-gray-200 pt-3 pb-0 mb-0">
                 <button
                   onClick={() => toggleSection('badges')}
                   className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
@@ -433,7 +433,7 @@ function KatalogContent() {
                 <div 
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
                     expandedSections.badges 
-                      ? 'max-h-40 opacity-100' 
+                      ? 'max-h-60 opacity-100' 
                       : 'max-h-0 opacity-0'
                   }`}
                 >
