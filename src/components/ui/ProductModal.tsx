@@ -2,7 +2,7 @@
 
 import React, { Fragment } from 'react';
 import { Transition } from '@headlessui/react';
-import { FaTimes, FaLeaf, FaTag, FaFire } from 'react-icons/fa';
+import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import { Product } from '@/data/products';
 
@@ -263,13 +263,22 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                       <div className="bg-slate-50 rounded-xl p-3">
                         <div className="space-y-3">
                           {product.warnings.map((warning, index) => {
-                            // Extract everything after "UPOZORENJE" (with or without colon)
-                            const warningText = warning.replace(/^UPOZORENJE\s*:?\s*/, '');
+                            // Extract everything after "SIGURNOST:" or "UPOZORENJE" (with or without colon)
+                            const warningText = warning.replace(/^(SIGURNOST|UPOZORENJE)\s*:?\s*/, '');
+                            const isSafetyWarning = warning.startsWith('SIGURNOST');
                             
                             return (
-                              <div key={index} className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
-                                <div className="text-sm font-medium text-yellow-800">
-                                  {warningText}
+                              <div key={index} className={`${isSafetyWarning ? 'bg-slate-50 border-slate-200' : 'bg-yellow-50 border-yellow-200'} border rounded-lg p-4 shadow-sm`}>
+                                <div className="flex items-start gap-3">
+                                  <FaShieldAlt className={`w-5 h-5 mt-0.5 ${isSafetyWarning ? 'text-slate-600' : 'text-yellow-600'}`} />
+                                  <div className="flex-1">
+                                    <div className={`text-sm font-semibold ${isSafetyWarning ? 'text-slate-800' : 'text-yellow-800'} mb-1`}>
+                                      {isSafetyWarning ? 'Sigurnosna informacija' : 'Upozorenje'}
+                                    </div>
+                                    <div className={`text-sm ${isSafetyWarning ? 'text-slate-700' : 'text-yellow-800'} leading-relaxed`}>
+                                      {warningText}
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             );

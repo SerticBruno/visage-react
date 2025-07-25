@@ -496,8 +496,6 @@ Pogodno za biološku dob 20+ godina i sve tipove kože.`,
 
 Sastoji se od kompleksa biljnog retinola i liposomalnog retinaldehida s velikom snagom učvršćivanja i protiv bora.
 
-NE SADRŽI RETINOL! Sadrži derivate retinola koji nisu fotoosjetljivi stoga je serum pogodan i za osjetljivu kožu.
-
 Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     category: 'Serum',
     image: '/images/products/retin-pro-age-serum-visage-estetski-studio.webp',
@@ -511,6 +509,9 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
       'Nanesite malu količinu seruma na cijelo lice te brzo razmažite i umasirajte.',
       'Nanesite proizvod nježno tapkajući prstima po površini vase kože pola minute. Možete koristiti sve prste na objema rukama sa svake strane vašeg lica. Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.'
     ],
+    warnings: [
+      'SIGURNOST: Ne sadrži retinol! Ovaj proizvod sadrži derivate retinola koji nisu fotoosjetljivi i potpuno su sigurni za korištenje. Pogodan je i za osjetljivu kožu te ne zahtijeva posebne mjere opreza.'
+    ],
     tags: ['serum', 'anti-age', '30+/40 godina', 'svi tipovi kože', 'osjetljiva koža']
   },
   {
@@ -519,8 +520,6 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     description: `Lako upijajuća krema koja pruža njegujući osjećaj.
 
 Sadrži spoj nastao od hijaluronske i retinoične kiseline te retinola biljnog podrijetla koji daje snagu protiv bora, zaglađuje nesavršenosti i ujednačava ton.
-
-NE SADRŽI RETINOL! Sadrži derivate retinola koji nisu fotoosjetljivi stoga je serum pogodan i za osjetljivu kožu.
 
 Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     category: 'Krema',
@@ -534,6 +533,9 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
       'Uklonite šminku i očistite kožu pomoću Energizing Cleansera te tonificirajte s Bamboo Hydratonicom.',
       'Nanesite malu količinu kreme na cijelo lice te brzo razmažite i umasirajte.',
       'Nanesite proizvod nježno tapkajući prstima po površini vase kože pola minute. Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.'
+    ],
+    warnings: [
+      'SIGURNOST: Ne sadrži retinol! Ovaj proizvod sadrži derivate retinola koji nisu fotoosjetljivi i potpuno su sigurni za korištenje. Pogodan je i za osjetljivu kožu te ne zahtijeva posebne mjere opreza.'
     ],
     tags: ['krema', 'anti-age', '30+/40 godina', 'svi tipovi kože', 'osjetljiva koža']
   },
