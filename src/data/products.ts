@@ -635,7 +635,11 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
   {
     id: '26',
     title: 'Anti-ageing + HA Ampule',
-    description: `Intenzivna ampula s hijaluronskom kiselinom za anti-age tretman i duboku hidrataciju.`,
+    description: `Anti Ageing + HA ampule pružaju čvrstoću i svjetlinu koži vašeg lica, omekšavajući bore i znakove umora. Učvršćuje i pruža trenutnu i dugotrajnu hidrataciju.
+
+    Sadrži probiotike, funkcionalne peptide, čimbenike rasta i hijaluronsku kiselinu koji pomažu smanjiti i usporiti znakove starenja.
+
+    Intenzivna kura od 30 dana.`,
     category: 'Ampule',
     productType: 'Ampule',
     skinType: ['Suha i normalna koža'],
@@ -643,13 +647,26 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     price: '52 EUR',
     volume: '15x2ml',
     isNew: true,
-    activeIngredients: ['Hijaluronska kiselina', 'Peptidi', 'Anti-age kompleks'],
-    application: [
-      'Koristite jednu ampulu dnevno',
-      'Nanesite na čistu kožu',
-      'Slijedite s odgovarajućom kremom'
+    activeIngredients: [
+      'Faktori rasta',
+      'Hijaluronska kiselina',
+      'Peptidi',
+      'Probiotici'
     ],
-    tags: ['ampule', 'anti-age', 'hijaluronska kiselina', 'hidratacija']
+    application: [
+      'Nanesite pola ampule jednom dnevno (ujutro)',
+      'Za najbolji učinak koristiti s Toskani Skin Architect kremom',
+      'Kombinirajte sa Sun Shiel-D fluidom'
+    ],
+    tags: [
+      'ampule',
+      'anti-age',
+      'hijaluronska kiselina',
+      'hidratacija',
+      'peptidi',
+      'probiotici',
+      '30-dnevna kura'
+    ]
   },
   {
     id: '27',
@@ -690,38 +707,54 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
   {
     id: '29',
     title: 'Purifying Ampule',
-    description: `Ampula za pročišćavanje i kontrolu masnoće.`,
+    description: `Purifying ampule - intenzivni svakodnevni hidratantni tretman za masnu kožu sklonu aknama.\n\nSastojci pomažu u ponovnom balansiranju lipidnog sloja kože, sprječavajući pojavu nesavršenosti.\n\nPomažu u zatvaranju pora i toniranju kože zahvaljujući svom adstrigentnom učinku.\n\nOdržavaju glatak i mat ten, reguliraju sebum te umanjuju tragove i ožiljke na koži.\n\nIntenzivna kura od 30 dana.`,
     category: 'Ampule',
     productType: 'Ampule',
-    skinType: ['Masna i mješovita koža'],
+    skinType: ['Masna i mješovita koža', 'Koža sklona aknama'],
     image: '/images/products/purifying_box_ampule.webp',
     price: '52 EUR',
     volume: '15x2ml',
     isNew: true,
-    activeIngredients: ['Salicylic Acid', 'Zinc', 'Purifying Complex'],
+    activeIngredients: [ 'Ekstrakt Cleome Gynandra', 'Ekstrakt Rhodosorus Marinus', 'Vitamin B5', 'Vitamin C', 'Vitamin E', 'Cink PCA' ],
     application: [
-      'Koristite jednu ampulu dnevno',
-      'Nanesite na čistu kožu',
-      'Slijedite s odgovarajućom kremom'
+      'Nanesite pola ampule jednom dnevno (ujutro)',
+      'Za najbolji učinak kombinirati s Toskani Purifying kremom',
+      'Kombinirajte sa Sun Shiel-D fluidom'
     ],
-    tags: ['ampule', 'pročišćavanje', 'kontrola masnoće', 'akne']
+    tags: [ 'ampule', 'pročišćavanje', 'kontrola masnoće', 'akne', 'regulacija sebuma', 'zatvaranje pora', '30-dnevna kura']
   },
   {
     id: '30',
     title: 'Lipo Proteoglycans Ampule',
-    description: `Ampula s lipo proteoglikanima za učvršćivanje i obnavljanje kože.`,
+    description: `Lipo Proteoglycans ampule su intenzivan dnevni tretman koji pomaže u obnavljanju vezivnog tkiva i stimulaciji proizvodnje kolagena.
+
+    Formuliran s liposomskim proteoglikanima prirodnog porijekla, koji dubinski hidratiziraju i posjeduju svojstva učvršćivanja te posvjetljuju kožu.
+
+    Intenzivna dnevna kura od 30 dana.`,
     category: 'Ampule',
     image: '/images/products/lipoproteoglycans_box_purifying_box_ampule.webp',
     price: '52 EUR',
     volume: '15x2ml',
     isNew: true,
-    activeIngredients: ['Lipo Proteoglycans', 'Kolagen', 'Elastin'],
-    application: [
-      'Koristite jednu ampulu dnevno',
-      'Nanesite na čistu kožu',
-      'Slijedite s odgovarajućom kremom'
+    activeIngredients: [
+      'Proteoglikani',
+      'Vitamin C',
+      'Vitamin F'
     ],
-    tags: ['ampule', 'učvršćivanje', 'obnavljanje', 'anti-age']
+    application: [
+      'Nanesite pola ampule jednom dnevno',
+      'Za najbolji učinak koristiti s Toskani Skin Architect kremom',
+      'Kombinirajte sa Toskani Sun Shiel-D fluidom'
+    ],
+    tags: [
+      'ampule',
+      'učvršćivanje',
+      'obnavljanje',
+      'anti-age',
+      'stimulacija kolagena',
+      '30-dnevna kura',
+      'liposomski proteoglikani'
+    ]
   },
   {
     id: '31',
