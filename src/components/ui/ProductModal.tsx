@@ -54,7 +54,7 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                     src={product.image}
                     alt={product.title}
                     fill
-                    className="object-contain p-6"
+                    className="object-cover"
                   />
                   {/* Product Badges in Modal */}
                   <div className="absolute top-4 right-4 flex flex-col gap-2">
