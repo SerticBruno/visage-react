@@ -26,7 +26,7 @@ const CTASection = ({
   hasPadding = true
 }: CTASectionProps) => {
   return (
-    <section className={`relative overflow-hidden ${hasPadding ? 'py-18' : 'pb-18'} bg-gradient-to-${gradientDirection} from-white to-[#e5e7eb]`}>
+    <section className={`relative overflow-hidden ${hasPadding ? 'py-18' : 'pb-18'}`} style={{ background: gradientDirection === 't' ? 'linear-gradient(to top, #e5e7eb, #ffffff)' : 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
