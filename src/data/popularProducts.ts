@@ -1,9 +1,9 @@
 export const popularProducts = [
   {
-    id: '14',
+    id: '11',
     title: 'Radiance Ultimate Mesoserum',
     description: 'Serum prikladan za sve tipove kože i učinkovit saveznik u borbi protiv hiperpigmentacija i pjega.',
-    image: '/images/products/toskaniRADIANCE-ULTIMATE-MESOSERUM.webp',
+    image: '/images/products/radiance-ultimate-mesoserum-estetski-studio-visage-sisak.jpg',
     link: '/proizvodi/radiance-mesoserum',
     features: [
       'sadrži najstabilniji oblik vitamina C',
@@ -13,10 +13,10 @@ export const popularProducts = [
     ]
   },
   {
-    id: '18',
+    id: '15',
     title: 'Skin Architect Cream',
     description: 'Visoko koncentrirana krema protiv bora koja koristi prirodne sastojke za poboljšanje izgleda finih linija i dubokih bora.',
-    image: '/images/products/toskaniskinarchitectcream.webp',
+    image: '/images/products/skin-architect-cream-visage-estetski-studio.webp',
     link: '/proizvodi/skin-architect-cream',
     features: [
       'poboljšanje izgleda finih linija i bora',
@@ -26,10 +26,10 @@ export const popularProducts = [
     ]
   },
   {
-    id: '11',
+    id: '8',
     title: 'Radiance Daily Cream SPF 30+',
     description: 'Krema za svakodnevnu upotrebu koja je namijenjena ispravljanju znakova fotostarenja.',
-    image: '/images/products/toskaniradiancedailycream.webp',
+    image: '/images/products/radiance-daily-cream-visage-estetski-studio.webp',
     link: '/proizvodi/radiance-daily-cream',
     features: [
       'zaštita od sunca SPF 30+',
@@ -39,10 +39,10 @@ export const popularProducts = [
     ]
   },
   {
-    id: '22',
+    id: '19',
     title: 'Retin Pro Age Serum',
     description: 'Lagan i gladak serum koji daje osjećaj hranjivosti nakon nanošenja.',
-    image: '/images/products/toskaniRetinProAge_Serum.webp',
+    image: '/images/products/retin-pro-age-serum-visage-estetski-studio.webp',
     link: '/proizvodi/retin-pro-age-serum',
     features: [
       'sadrži bakuchiol i retinal',
