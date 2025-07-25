@@ -83,8 +83,8 @@ export default function ComboPackagesInlineSection() {
                   </div>
                   
                   {/* Card Container */}
-                  <div className="bg-white rounded-xl md:rounded-2xl shadow-lg h-full relative mx-4">
-                    <div className="p-6 md:p-8 lg:p-10 h-full flex flex-col pt-10 rounded-xl md:rounded-2xl mb-4" style={{ background: 'linear-gradient(to bottom,rgb(233, 234, 235),#f0f0f0)' }}>
+                  <div className="bg-white rounded-xl md:rounded-2xl shadow-lg h-full relative">
+                    <div className="p-4 md:p-8 lg:p-10 h-full flex flex-col pt-10 rounded-xl md:rounded-2xl mb-4" style={{ background: 'linear-gradient(to bottom,rgb(233, 234, 235),#f0f0f0)' }}>
                       <div className="text-center mb-6 md:mb-8">
                         <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg">{pkg.description}</p>
                         <div className="flex items-center justify-center gap-2 md:gap-3">
@@ -101,12 +101,85 @@ export default function ComboPackagesInlineSection() {
                       </div>
 
                       <div className="flex-1 mb-6 md:mb-8">
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-3 lg:gap-4">
+                        {/* Mobile Layout - 2 cards per row */}
+                        <div className="md:hidden">
+                          <div className="grid grid-cols-2 gap-3 mb-4">
+                            {/* Combine all services and products into a single array for mobile */}
+                            {(() => {
+                              const allItems = [
+                                ...pkg.services.map(service => ({ ...service, type: 'service' as const })),
+                                ...(pkg.products || []).map(product => ({ ...product, type: 'product' as const }))
+                              ];
+                              
+                              return allItems.map((item, index) => (
+                                <React.Fragment key={`${item.type}-${item.id}`}>
+                                  {item.type === 'service' ? (
+                                    <Link href={`/usluge/${item.id}`} className="group">
+                                      <div className="flex flex-col items-center justify-between h-40 bg-gray-50 rounded-lg p-3 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                        <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                                          <Image
+                                            src={item.image}
+                                            alt={item.title}
+                                            fill
+                                            className="object-cover"
+                                          />
+                                        </div>
+                                        <div className="text-center flex items-center justify-center">
+                                          <div className="flex items-center justify-center gap-1">
+                                            <h5 className="font-medium text-xs group-hover:text-primary transition-colors">{item.title}</h5>
+                                            {item.quantity > 1 && (
+                                              <span className="text-xs text-primary font-medium">x{item.quantity}</span>
+                                            )}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </Link>
+                                  ) : (
+                                    <button 
+                                      onClick={() => handleProductClick(item.id)}
+                                      className="group"
+                                    >
+                                      <div className="flex flex-col items-center justify-between h-40 bg-gray-50 rounded-lg p-3 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                        <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                                          <Image
+                                            src={item.image}
+                                            alt={item.title}
+                                            fill
+                                            className="object-cover"
+                                          />
+                                        </div>
+                                        <div className="text-center flex items-center justify-center">
+                                          <div className="flex items-center justify-center gap-1">
+                                            <h5 className="font-medium text-xs group-hover:text-primary transition-colors">{item.title}</h5>
+                                            {item.quantity > 1 && (
+                                              <span className="text-xs text-primary font-medium">x{item.quantity}</span>
+                                            )}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </button>
+                                  )}
+                                  {/* Add plus icon between items, but not after the last item in a row */}
+                                  {index < allItems.length - 1 && index % 2 === 1 && (
+                                    <div className="col-span-2 flex justify-center my-2">
+                                      <div className="bg-primary/10 rounded-full p-1.5 shadow-sm">
+                                        <FaPlus className="text-primary text-sm" />
+                                      </div>
+                                    </div>
+                                  )}
+                                </React.Fragment>
+                              ));
+                            })()}
+                          </div>
+                        </div>
+
+                        {/* Desktop Layout - Original horizontal layout */}
+                        <div className="hidden md:flex flex-row items-center justify-center gap-3 lg:gap-4">
                           {pkg.services.map((service, index) => (
                             <React.Fragment key={service.id}>
                               <Link href={`/usluge/${service.id}`} className="group w-full flex justify-center">
-                                <div className="flex flex-col items-center justify-between w-[70%] md:w-full h-48 md:h-44 lg:h-48 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                                  <div className="relative w-[70%] h-32 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105 mt-1 md:mt-0">
+                                <div className="flex flex-col items-center justify-between w-full h-44 lg:h-48 bg-gray-50 rounded-xl p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                  <div className="relative w-24 lg:w-28 xl:w-32 h-24 lg:h-28 xl:h-32 flex-shrink-0 rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                     <Image
                                       src={service.image}
                                       alt={service.title}
@@ -115,10 +188,10 @@ export default function ComboPackagesInlineSection() {
                                     />
                                   </div>
                                   <div className="text-center flex items-center justify-center">
-                                    <div className="flex items-center justify-center gap-1 md:gap-2">
-                                      <h5 className="font-medium text-sm md:text-xs lg:text-sm group-hover:text-primary transition-colors">{service.title}</h5>
+                                    <div className="flex items-center justify-center gap-2">
+                                      <h5 className="font-medium text-xs lg:text-sm group-hover:text-primary transition-colors">{service.title}</h5>
                                       {service.quantity > 1 && (
-                                        <span className="text-xs md:text-xs lg:text-sm text-primary font-medium">x{service.quantity}</span>
+                                        <span className="text-xs lg:text-sm text-primary font-medium">x{service.quantity}</span>
                                       )}
                                     </div>
                                   </div>
@@ -126,8 +199,8 @@ export default function ComboPackagesInlineSection() {
                               </Link>
                               {index < pkg.services.length - 1 && (
                                 <div className="flex items-center justify-center">
-                                  <div className="bg-primary/10 rounded-full p-1.5 md:p-1.5 lg:p-2 shadow-sm">
-                                    <FaPlus className="text-primary text-sm md:text-sm lg:text-base" />
+                                  <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
+                                    <FaPlus className="text-primary text-sm lg:text-base" />
                                   </div>
                                 </div>
                               )}
@@ -138,8 +211,8 @@ export default function ComboPackagesInlineSection() {
                             <>
                               {pkg.services.length > 0 && (
                                 <div className="flex items-center justify-center">
-                                  <div className="bg-primary/10 rounded-full p-1.5 md:p-1.5 lg:p-2 shadow-sm">
-                                    <FaPlus className="text-primary text-sm md:text-sm lg:text-base" />
+                                  <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
+                                    <FaPlus className="text-primary text-sm lg:text-base" />
                                   </div>
                                 </div>
                               )}
@@ -149,8 +222,8 @@ export default function ComboPackagesInlineSection() {
                                     onClick={() => handleProductClick(product.id)}
                                     className="group w-full flex justify-center"
                                   >
-                                    <div className="flex flex-col items-center justify-between w-[70%] md:w-full h-48 md:h-44 lg:h-48 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                                      <div className="relative w-[70%] h-32 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105 mt-1 md:mt-0">
+                                    <div className="flex flex-col items-center justify-between w-full h-44 lg:h-48 bg-gray-50 rounded-xl p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                      <div className="relative w-24 lg:w-28 xl:w-32 h-24 lg:h-28 xl:h-32 flex-shrink-0 rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                         <Image
                                           src={product.image}
                                           alt={product.title}
@@ -159,10 +232,10 @@ export default function ComboPackagesInlineSection() {
                                         />
                                       </div>
                                       <div className="text-center flex items-center justify-center">
-                                        <div className="flex items-center justify-center gap-1 md:gap-2">
-                                          <h5 className="font-medium text-sm md:text-xs lg:text-sm group-hover:text-primary transition-colors">{product.title}</h5>
+                                        <div className="flex items-center justify-center gap-2">
+                                          <h5 className="font-medium text-xs lg:text-sm group-hover:text-primary transition-colors">{product.title}</h5>
                                           {product.quantity > 1 && (
-                                            <span className="text-xs md:text-xs lg:text-sm text-primary font-medium">x{product.quantity}</span>
+                                            <span className="text-xs lg:text-sm text-primary font-medium">x{product.quantity}</span>
                                           )}
                                         </div>
                                       </div>
@@ -170,8 +243,8 @@ export default function ComboPackagesInlineSection() {
                                   </button>
                                   {index < pkg.products!.length - 1 && (
                                     <div className="flex items-center justify-center">
-                                      <div className="bg-primary/10 rounded-full p-1.5 md:p-1.5 lg:p-2 shadow-sm">
-                                        <FaPlus className="text-primary text-sm md:text-sm lg:text-base" />
+                                      <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
+                                        <FaPlus className="text-primary text-sm lg:text-base" />
                                       </div>
                                     </div>
                                   )}
