@@ -211,49 +211,6 @@ Circadia dermaplaning je poseban i drugačiji od ostalih tehnika dermaplaninga k
     isPopular: true
   },
   {
-    id: 'masaza-lica',
-    title: 'MASAŽA LICA',
-    description: 'Profesionalna masaža lica za opuštanje mišića i poboljšanje cirkulacije',
-    duration: '30 min',
-    price: '25 €',
-    image: '/images/services/toskani-woman-visage-estetski-studio.webp',
-    benefits: [
-      'Opuštanje mišića lica',
-      'Poboljšanje cirkulacije',
-      'Smanjenje napetosti',
-      'Poboljšanje tonusa kože',
-      'Prirodni lift efekt',
-      'Potpuno opuštanje'
-    ],
-    suitableFor: [
-      'Sve dobne skupine',
-      'Osobe s napetim mišićima lica',
-      'Osobe koje traže opuštanje',
-      'Osobe s umornom kožom',
-      'Priprema za druge tretmane'
-    ],
-    preparation: `Prije masaže lica potrebno je:
-- Dolaziti s čistim licem
-- Izbjegavati teške obroke 2 sata prije
-- Dolaziti opušteni i spremni za masažu
-- Komunicirati bilo kakve zdravstvene probleme`,
-    procedure: `1. Konzultacija - Procjena potreba i objašnjenje tehnike
-
-2. Priprema - Čišćenje lica i primjena masnog ulja
-
-3. Masaža - Profesionalna masaža lica s različitim tehnikama
-
-4. Završna faza - Umirujuća masaža i čišćenje
-
-5. Preporuke - Savjeti za kućnu njegu`,
-    aftercare: `Nakon masaže lica preporučujemo:
-- Održavanje opuštenog stanja
-- Redovito vježbanje mišića lica
-- Koristiti blage proizvode za njegu
-- Piti dovoljno vode
-- Redovite masaže za najbolje rezultate`
-  },
-  {
     id: 'marshmallow-facial',
     title: 'MARSHMALLOW FACIAL',
     description: `Marshmallow Facial – Circadia kozmetički protokol s Marshmallow Whip Hydrating maskom.
