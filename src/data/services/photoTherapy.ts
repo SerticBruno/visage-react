@@ -5,9 +5,7 @@ export const photoTherapy: Service = {
   title: 'Dermalux LED fototerapija',
   akuzativTitle: 'Fototerapijom',
   description: 'Zlatni standard profesionalne led fototerapije u službi zdrave i lijepe kože',
-  longDescription: `<strong>Zlatni standard led fototerapije u službi zdrave i lijepe kože</strong>
-
-<strong>Dermalux Flex MD</strong> je medicinski CE certificirani uređaj koji omogućuje <strong>vrhunske i neinvazivne tretmane lica</strong>.
+  longDescription: `<strong>Dermalux Flex MD</strong> je medicinski CE certificirani uređaj koji omogućuje <strong>vrhunske i neinvazivne tretmane lica</strong>.
 
 Djeluje na principu <strong>fototerapije</strong>, odnosno liječenja svjetlom. Koža apsorbira specifične valne duljine kako bi stimulirala <strong>obnovu stanica</strong>, potaknula <strong>proizvodnju kolagena i elastina</strong>, riješila problematična stanja te ubrzala <strong>zacjeljivanje kože</strong>.
 
