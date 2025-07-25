@@ -44,7 +44,6 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
-      image: '/images/services/botox/botox-visage-estetski-studio.webp'
     },
     { 
       id: 'tijek-zahvata', 
