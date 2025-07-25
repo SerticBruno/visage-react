@@ -617,20 +617,33 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
   {
     id: '25',
     title: 'Night Reverse Intensive Cream & Mask',
-    description: `Intenzivna noćna krema i maska za duboku regeneraciju i obnavljanje kože.`,
+    description: `Toskani Night Reverse Intensive krema i maska je prekrasan 2 u 1 proizvod za noć. Snažno obnavlja vašu kožu oštećenu vanjskim čimbenicima. Formula ove kreme inspirirana je epigenetikom, što sprječava prerano starenje i dehidraciju kože.
+
+Krema ubrzava proces oporavka nakon oštećenja stanica UV zračenjem i pruža višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od dnevnih oštećenja.
+
+Pogodna je za kožu bez sjaja, oštećenu kožu izloženu stresu iz okoliša s nedostatkom hidratacije, suhu i dehidriranu kožu te kožu s narušenom barijerom.`,
     category: 'Noćna njega',
-    image: '/images/products/night-reverse-serum-visage-estetski-studio.png',
+    productType: 'Krema',
+    skinType: ['Suha i normalna koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije'],
+    image: '/images/products/toskani-night-reverse-estetski-studio-visage-sisak.png',
     price: '75 EUR',
     volume: '50 ml',
     isNew: true,
-    activeIngredients: ['Retinol', 'Vitamin E', 'Shea maslac', 'Hijaluronska kiselina'],
-    application: [
-      'Nanesite navečer na čistu kožu',
-      'Može se koristiti kao noćna krema ili maska',
-      'Za masku: nanesite deblji sloj i ostavite 15-20 minuta',
-      'Za noćnu kremu: nanesite tanak sloj'
+    activeIngredients: [
+      'Skin Reset Complex (SRC)',
+      'Matične stanice kurkume',
+      'Hijaluronska kiselina',
+      'Probiotik Lactococcus Lactis Lysat'
     ],
-    tags: ['noćna njega', 'maska', 'anti-age', 'regeneracija', 'svi tipovi kože']
+    application: [
+      'Nanesite navečer na očišćenu kožu',
+      'Može se koristiti kao noćna krema ili maska',
+      'Za masku: nanesite više proizvoda i ujutro se umijte',
+      'Za noćnu kremu: nanesite tanak sloj',
+      'Za još bolji rezultat: prvo nakapajte 2-3 kapi Night Reverse Intensive Seruma, zatim nanesite kremu'
+    ],
+    tags: ['noćna njega', 'maska', 'anti-age', 'regeneracija', 'svi tipovi kože', 'epigenetika', 'skin reset complex']
   },
   {
     id: '26',
