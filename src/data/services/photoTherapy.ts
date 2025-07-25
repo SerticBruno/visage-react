@@ -2,9 +2,9 @@ import { Service } from './types';
 
 export const photoTherapy: Service = {
   id: 'foto-terapija',
-  title: 'Fototerapija',
+  title: 'Dermalux LED fototerapija',
   akuzativTitle: 'Fototerapijom',
-  description: 'Napredna fototerapija za tretman kože svjetlom',
+  description: 'Zlatni standard profesionalne led fototerapije u službi zdrave i lijepe kože',
   longDescription: `<strong>Zlatni standard led fototerapije u službi zdrave i lijepe kože</strong>
 
 <strong>Dermalux Flex MD</strong> je medicinski CE certificirani uređaj koji omogućuje <strong>vrhunske i neinvazivne tretmane lica</strong>.
@@ -70,81 +70,48 @@ U <strong>Visage studiju</strong> koristimo najnoviju tehnologiju fototerapije, 
     }
   ],
   stepContents: {
-    'prednosti': `Prednosti fototerapije:
-- Neinvazivna metoda tretmana kože
-- Stimulacija proizvodnje kolagena
-- Poboljšanje cirkulacije u koži
-- Smanjenje upalnih procesa
-- Ujednačavanje tonusa kože
-- Smanjenje ožiljaka i hiperpigmentacije
-- Sigurna i nježna metoda
-- Vidljivi rezultati kroz seriju tretmana
-- Minimalno vrijeme oporavka
-- Prilagođeno različitim tipovima kože`,
-    'kandidati': `Fototerapija je idealna za osobe koje žele:
-- Tretman akni i ožiljaka
-- Poboljšanje tonusa i teksture kože
-- Smanjenje hiperpigmentacije
-- Stimulaciju proizvodnje kolagena
-- Neinvazivne metode tretmana
-- Prirodne rezultate bez kemikalija
+    'prednosti': `Prednosti LED fototerapije:
 
-Pogodna je za sve tipove kože, posebno za:
-- Osobe s problemima akni
-- Osobe s ožiljcima nakon akni
-- Osobe s hiperpigmentacijom
-- Osobe koje traže poboljšanje tonusa kože`,
-    'priprema': `Prije fototerapije potrebno je:
+- Potiče stvaranje kolagena i elastina
+- Potiče obnovu stanica
+- Pomlađuje lice i smanjuje vidljivost bora
+- Umanjuje pigmentacije
+- Tretira crvenilo i iritacije te psorijazu
+- Pomaže pri liječenju problematične kože sklone aknama
+- Pomaže u zacjeljivanju kože nakon operativnih zahvata
+- Može se kombinirati s ostalim tretmanima radi pojačanja učinka tretmana
+- Pogodan i siguran za sve tipove kože`,
+    'kandidati': `LED fototerapija je idealna za osobe koje žele:
+
+- Poboljšanje tonusa i teksture kože
+- Tretmani akni i ožiljaka
+- Smanjenje hiperpigmentacija
+- Tretirati i liječiti crvenilo i psorijazu
+- Ubrzati zacjeljivanje rana
+- Prirodne rezultate`,
+    'priprema': `Prije LED fototerapije potrebno je:
+
 1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
 2. Odabir odgovarajućeg tretmana prema vašim potrebama
-3. Upute za pripremu kože prije tretmana
+3. Prijedlog broja tretmana`,
+    'tijek-zahvata': `Tretman LED fototerapije je precizan postupak koji se provodi u nekoliko faza:
 
-Dan prije tretmana:
-- Očistiti kožu od kozmetike
-- Izbjeći izlaganje suncu
-- Piti dovoljno vode za optimalnu hidrataciju
-- Dolaziti s čistom i suhom kožom`,
-    'tijek-zahvata': `Tretman fototerapije je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
+1. Priprema kože - Čišćenje kože, piling i nanošenje odgovarajuće maske koja je fotopropusna
 
-1. Konzultacija i procjena - Detaljna analiza stanja kože, odabir odgovarajućeg tretmana, plan postupka i objašnjenje.
+2. Primjena LED fototerapije - Precizna primjena odgovarajuće kombinacije svjetlosti. Tretman traje 20 minuta ako se radi u kombinaciji s drugim tretmanom ili 30 minuta, ako se radi kao zaseban tretman.
 
-2. Priprema kože - Čišćenje kože, uklanjanje kozmetike i priprema za tretman.
+Tijekom tretmana su oči zaštićene posebnim naočalama i preporuka je da ih držite zatvorenima.
 
-3. Primjena tretmana - Precizna primjena svjetlosnih impulsa, praćenje reakcije kože i prilagodba intenziteta.
+3. Završna njega - Uklanjanje maske. Nanošenje <a href="/katalog?product=7">Toskani Total Recovery gela</a> i <a href="/katalog?product=31">Sun Shiel-D fluida</a>
 
-4. Završna njega - Primjena umirujućih proizvoda i zaštitnih kremi.
-
-5. Preporuka za kućnu njegu - Preporučujemo korištenje SPF zaštite i redovitu njegu kože.`,
-    'oporavak': `Oporavak je minimalan, uz pravilnu njegu kože. Nuspojave mogu uključivati:
-1. Blago crvenilo kože koje nestaje u roku od nekoliko sati
-2. Osjetljivost na sunce u prvih 24-48 sati
-3. Moguće blago suhoće kože
-4. Potreba za dodatnom hidratacijom
-
-Potrebno je izbjegavati sunce 24-48 sati i koristiti SPF zaštitu.`,
-    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
+4. Preporuka za kućnu njegu - Preporučujemo korištenje <a href="/katalog?product=7">Toskani Total Recovery gela</a> i <a href="/katalog?product=31">Sun Shiel-D fluida</a>.`,
+    'oporavak': `Oporavak je minimalan i uključuje blago i privremeno crvenilo tretiranog područja zbog pojačane cirkulacije. Koža može biti topla na dodir.`,
+    'nakon-tretmana': `Za najbolje rezultate preporuča se minimalno 10 LED fototerapija. Fototerapije bi se radile 2 puta tjedno, a za određena stanja i na dnevnoj bazi.
 
 Nakon fototerapije važno je:
 
-- Zaštita od sunca - Izbjegavajte izravno izlaganje suncu 24-48 sati nakon tretmana.
-
-- SPF zaštita - Koristite SPF 30+ zaštitu svaki dan, čak i u zatvorenom prostoru.
-
-- Umirujuća njega - Koristite umirujuće proizvode ako osjetite blago crvenilo.
-
-- Redovito praćenje - Pratite stanje kože i javite se ako primijetite bilo kakve probleme.
-
-- Kontinuirana njega - Redovito koristite preporučene proizvode za njegu za održavanje rezultata.
-
-- Izbjegavanje agresivnih proizvoda - Ne koristite retinoide ili AHA kiseline 48 sati nakon tretmana.`,
-    'cijena': `Cijena fototerapije ovisi o tipu tretmana i broju potrebnih sesija. Naši fototerapijski tretmani uključuju:
-
-- Tretman akni i ožiljaka
-- Tretman hiperpigmentacije
-- Poboljšanje tonusa kože
-- Stimulacija proizvodnje kolagena
-- Kombinirani tretmani s drugim metodama
-
-Za optimalne rezultate preporučujemo seriju od 6-8 tretmana s intervalima od 2-4 tjedna. Za detaljne informacije o cijenama i mogućnostima plaćanja, dogovorite termin.`
+- Koristiti zaštitu od sunca <a href="/katalog?product=31">Toskani Sun Shiel-D fluid</a>
+- Koristiti preporučenu Toskani kućnu njegu za najbolje rezultate`,
+    'cijena': `Cijena LED fototerapije ovisi o tipu tretmana i broju potrebnih sesija. Za optimalne rezultate preporučujemo minimalno 10 tretmana s intervalima od 2-3 puta tjedno. Za detaljne informacije o cijenama i mogućnostima plaćanja, dogovorite termin.`
   }
 }; 

@@ -20,8 +20,8 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj revitalizaciji kože</strong> u <strong>Visage studiju</strong>.`,
   benefits: [
   ],
-  image: '/images/services/toskani-woman-visage-estetski-studio.webp',
-  heroImage: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp',
+  image: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp',
+  heroImage: '/images/services/prp/prp-visage-estetski-studio.png',
   metaDescription: 'Profesionalna PRP terapija u VISAGE studiju u Siska. Koristite vlastite trombocite za regeneraciju kože. Prirodna i sigurna metoda s vidljivim rezultatima.',
   metaKeywords: 'PRP terapija, regeneracija kože, trombociti, estetski studio Sisak, VISAGE studio, PRP lica, prirodna regeneracija',
   tags: ['prp', 'regeneracija', 'prirodni-tretmani', 'minimalno-invazivni', 'trombociti'],
@@ -32,24 +32,26 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
-      image: '/images/services/prp/prp-prednosti-estetski-studio-sisak.jpeg',
+      image: '/images/services/prp/prp-prednosti-visage-estetski-studio.png',
       focalPoint: '50% 0%',
     },
     { 
       id: 'kandidati', 
       label: 'Kandidati', 
       icon: 'FaUsers',
+      image: '/images/services/prp/prp-kandidati-visage-estetski-studio.png',
     },
     { 
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
+      image: '/images/services/prp/prp-tijek-zahvata-estetski-studio-sisak.jpeg',
     },
     { 
       id: 'tijek-zahvata', 
       label: 'Tijek zahvata', 
       icon: 'FaRegClock',
-      image: '/images/services/prp/prp-tijek-zahvata-estetski-studio-sisak.jpeg'
+      image: '/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png'
     },
     { 
       id: 'oporavak', 
