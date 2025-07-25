@@ -47,8 +47,8 @@ U <strong>Visage studiju</strong> koristimo najnoviju tehnologiju fototerapije, 
       image: '/images/services/mezoterapija/mezoterapija-priprema-visage-estetski-studio.jpg'
     },
     { 
-      id: 'tijek-zahvata', 
-      label: 'Tijek zahvata', 
+      id: 'tijek-tretmana', 
+      label: 'Tijek tretmana', 
       icon: 'FaRegClock',
       image: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp'
     },
@@ -94,7 +94,7 @@ U <strong>Visage studiju</strong> koristimo najnoviju tehnologiju fototerapije, 
 1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
 2. Odabir odgovarajućeg tretmana prema vašim potrebama
 3. Prijedlog broja tretmana`,
-    'tijek-zahvata': `Tretman LED fototerapije je precizan postupak koji se provodi u nekoliko faza:
+    'tijek-tretmana': `Tretman LED fototerapije je precizan postupak koji se provodi u nekoliko faza:
 
 1. Priprema kože - Čišćenje kože, piling i nanošenje odgovarajuće maske koja je fotopropusna
 

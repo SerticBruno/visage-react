@@ -99,13 +99,22 @@ export default function SingleComboPackageModal({
                                     {service.title}
                                   </span>
                                 ) : (
-                                  <Link
-                                    href={`/usluge/${service.id}`}
-                                    className="font-medium hover:underline text-slate-700"
-                                    onClick={(e) => e.stopPropagation()}
-                                  >
-                                    {service.title}
-                                  </Link>
+                                  <div className="flex items-center justify-between w-full">
+                                    <Link
+                                      href={`/usluge/${service.id}`}
+                                      className="font-medium underline text-slate-700 hover:text-slate-900 transition-colors"
+                                      onClick={(e) => e.stopPropagation()}
+                                    >
+                                      {service.title}
+                                    </Link>
+                                    <Link
+                                      href={`/usluge/${service.id}`}
+                                      className="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-800 px-2 py-1 rounded-md transition-colors font-medium"
+                                      onClick={(e) => e.stopPropagation()}
+                                    >
+                                      Saznaj više
+                                    </Link>
+                                  </div>
                                 )}
                                 {service.shortDescription && (
                                   <p className="text-sm text-slate-500 mt-1">
@@ -134,13 +143,22 @@ export default function SingleComboPackageModal({
                                 className="flex items-center p-3 rounded-lg border border-slate-200 bg-white"
                               >
                                 <div className="w-3 h-3 rounded-full mr-3 bg-slate-400" />
-                                <Link
-                                  href={`/katalog?product=${product.id}`}
-                                  className="text-slate-700 font-medium hover:underline"
-                                  onClick={(e) => e.stopPropagation()}
-                                >
-                                  {product.title}
-                                </Link>
+                                <div className="flex items-center justify-between w-full">
+                                  <Link
+                                    href={`/katalog?product=${product.id}`}
+                                    className="text-slate-700 font-medium underline hover:text-slate-900 transition-colors"
+                                    onClick={(e) => e.stopPropagation()}
+                                  >
+                                    {product.title}
+                                  </Link>
+                                  <Link
+                                    href={`/katalog?product=${product.id}`}
+                                    className="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-800 px-2 py-1 rounded-md transition-colors font-medium"
+                                    onClick={(e) => e.stopPropagation()}
+                                  >
+                                    Saznaj više
+                                  </Link>
+                                </div>
                               </div>
                             ))}
                           </div>

@@ -46,8 +46,8 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
       icon: 'FaRegEdit',
     },
     { 
-      id: 'tijek-zahvata', 
-      label: 'Tijek zahvata', 
+      id: 'tijek-tretmana', 
+      label: 'Tijek tretmana', 
       icon: 'FaRegClock',
       image: '/images/services/botox/botox-tijek-zahvata-visage-estetski-studio.webp'
     },
@@ -90,7 +90,7 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
 1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
 2. Preporuka odgovarajućih područja koja će se tretirati
 3. Preporuka broja jedinica za optimalne rezultate`,
-    'tijek-zahvata': `Tretman botoxom je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
+    'tijek-tretmana': `Tretman botoxom je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
 1. Priprema kože - Čišćenje kože, dezinfekcija kože i nanošenje anestetske kreme.
 

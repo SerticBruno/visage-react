@@ -49,8 +49,8 @@ Vratite <strong>samopouzdanje</strong> uz <strong>prirodan volumen</strong> i <s
       image: '/images/services/dermalni-fileri/dermalni-fileri-priprema-visage-estetski-studio-sisak.webp'
     },
     { 
-      id: 'tijek-zahvata', 
-      label: 'Tijek zahvata', 
+      id: 'tijek-tretmana', 
+      label: 'Tijek tretmana', 
       icon: 'FaRegClock',
       image: '/images/services/dermalni-fileri/dermalni-fileri-tijek-zahvata-visage-estetski-studio-sisak.webp'
     },
@@ -94,7 +94,7 @@ Vratite <strong>samopouzdanje</strong> uz <strong>prirodan volumen</strong> i <s
 1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
 2. Preporuka odgovarajućeg filera, ovisno o području tretiranja
 3. Preporuka količine filera za optimalne rezultate`,
-    'tijek-zahvata': `Tretman dermalnim filerima je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
+    'tijek-tretmana': `Tretman dermalnim filerima je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
 1. Priprema kože - Čišćenje i dezinfekcija kože te nanošenje anestetske kreme koja stoji 30 minuta.
 

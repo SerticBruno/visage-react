@@ -45,8 +45,8 @@ U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>in
       focalPoint: '50% 25%'
     },
     { 
-      id: 'tijek-zahvata', 
-      label: 'Tijek zahvata', 
+      id: 'tijek-tretmana', 
+      label: 'Tijek tretmana', 
       icon: 'FaRegClock',
       image: '/images/services/kemijski-piling/toskani-bg.webp'
     },
@@ -91,7 +91,7 @@ Tjedan dana prije tretmana:
 - Izbjegavati izlaganje suncu
 - Prekinuti korištenje agresivnih proizvoda za njegu kože (npr. retinol)
 - Ne smijete laserski uklanjati dlačice`,
-    'tijek-zahvata': `Tretman kemijskim pilingom je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
+    'tijek-tretmana': `Tretman kemijskim pilingom je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
 1. Priprema kože - Čišćenje kože s <a href="/katalog?product=1">Toskani Energizing Cleanserom</a>, odmašćivanje kože i zaštita madeža.
 

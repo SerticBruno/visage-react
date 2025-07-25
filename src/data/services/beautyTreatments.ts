@@ -59,8 +59,8 @@ U <strong>Visage studiju</strong> nudimo različite vrste <strong>beauty tretman
       image: '/images/services/beauty-treatment-visage-estetski-studio.webp'
     },
     { 
-      id: 'tijek-zahvata', 
-      label: 'Tijek zahvata', 
+      id: 'tijek-tretmana', 
+      label: 'Tijek tretmana', 
       icon: 'FaRegClock',
       image: '/images/services/beauty-treatment-visage-estetski-studio.webp'
     },
@@ -117,7 +117,7 @@ Dan prije tretmana:
 - Prekinuti korištenje agresivnih proizvoda za njegu kože
 - Piti dovoljno vode za optimalnu hidrataciju kože
 - Dolaziti opušteni i spremni za tretman`,
-    'tijek-zahvata': `Tretman lica je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
+    'tijek-tretmana': `Tretman lica je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
 1. Konzultacija i procjena - Detaljna analiza stanja kože, odabir odgovarajućeg tretmana, plan postupka i objašnjenje.
 

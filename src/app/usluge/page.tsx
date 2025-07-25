@@ -26,7 +26,7 @@ export default function ServicesPage() {
     <main>
       <HeroSection
         title="Naše usluge"
-        description="Otkrijte našu široku ponudu tretmana za lice i tijelo, dizajniranih da vas učine osjećati se i izgledati najbolje"
+        description="Otkrijte našu široku ponudu tretmana za lice, vlasište i tijelo koji su personalizirani vašim individualnim željama i potrebama"
         image="/images/services/services-hero-visage-estetski-studio.webp"
       />
       <ServicesSection />

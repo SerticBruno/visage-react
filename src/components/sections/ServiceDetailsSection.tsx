@@ -18,7 +18,7 @@ const tabIcons = {
   'prednosti': FaRegFileAlt,
   'kandidati': FaUsers,
   'priprema': FaRegEdit,
-  'tijek-zahvata': FaRegClock,
+  'tijek-tretmana': FaRegClock,
   'oporavak': FaHeart,
   'nakon-tretmana': FaRegFile,
   'cijena': FaHandHoldingUsd
@@ -731,7 +731,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                           >
                             {renderPricingTable(service)}
                           </motion.div>
-                        ) : activeTab === 'tijek-zahvata' 
+                        ) : activeTab === 'tijek-tretmana' 
                           ? renderTreatmentSteps(service.stepContents[step.id])
                           : formatContent(service.stepContents[step.id])
                         }

@@ -48,8 +48,8 @@ U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimal
       focalPoint: '60% 80%'
     },
     { 
-      id: 'tijek-zahvata', 
-      label: 'Tijek zahvata', 
+      id: 'tijek-tretmana', 
+      label: 'Tijek tretmana', 
       icon: 'FaRegClock',
       image: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.png'
     },
@@ -101,7 +101,7 @@ Tjedan dana prije tretmana:
 - Prekinuti korištenje agresivnih proizvoda za njegu kože (npr. retinol)
 - Ne smijete laserski uklanjati dlačice
 - Izbjegavanje odlazaka u solarij`,
-    'tijek-zahvata': `Tretman mezoterapijom je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
+    'tijek-tretmana': `Tretman mezoterapijom je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
 1. Priprema kože - Čišćenje kože s odgovarajućim cleanserom i dezinficiranje područja koje se tretira.
 

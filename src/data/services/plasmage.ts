@@ -48,8 +48,8 @@ Zakažite svoj termin u <strong>Visage studiju</strong> i krenite na put prema r
       image: '/images/services/plasmage/plasmage-priprema-estetski-studio-visage-sisak.jpg'
     },
     { 
-      id: 'tijek-zahvata', 
-      label: 'Tijek zahvata', 
+      id: 'tijek-tretmana', 
+      label: 'Tijek tretmana', 
       icon: 'FaRegClock',
       image: '/images/services/plasmage/plasmage-tijek-zahvata-estetski-studio-visage-sisak.jpg'
     },
@@ -97,7 +97,7 @@ Tjedan dana prije tretmana:
 
 - prekinuti korištenje agresivnih proizvoda za njegu kože
 - ne smijete koristiti laser na području koje se tretira`,
-    'tijek-zahvata': `Tretman Plasmage je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
+    'tijek-tretmana': `Tretman Plasmage je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
 1. Priprema kože - Čišćenje kože i dezinfekcija područja tretiranja. Nanošenje anestetske kreme.
 

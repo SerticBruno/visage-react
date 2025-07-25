@@ -48,8 +48,8 @@ Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa skin boo
       icon: 'FaRegEdit',
     },
     { 
-      id: 'tijek-zahvata', 
-      label: 'Tijek zahvata', 
+      id: 'tijek-tretmana', 
+      label: 'Tijek tretmana', 
       icon: 'FaRegClock',
       image: '/images/services/skin-boosters/skin-boosteri-tijek-zahvata-visage-estetski-studio.png',
       focalPoint: '50% 90%',
@@ -102,7 +102,7 @@ Pogodni su za sve tipove kože i dobne skupine, a posebno za:
 1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
 2. Preporuka odgovarajućeg skin boostera za vaš tip kože
 3. Preporuka broja tretmana za optimalne rezultate`,
-    'tijek-zahvata': `Tretman skin boosterima je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
+    'tijek-tretmana': `Tretman skin boosterima je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
 1. Priprema kože - Čištimo kožu s <a href="/katalog?product=1">Toskani Energizing Cleanserom</a> i dezinficiramo mjesta gdje ćemo injektirati skin booster. Na mjesta injektiranja nanosimo anestetsku kremu kako bi tretman bio što ugodniji.
 

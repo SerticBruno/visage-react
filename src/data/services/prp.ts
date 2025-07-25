@@ -48,8 +48,8 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
       image: '/images/services/prp/prp-tijek-zahvata-estetski-studio-sisak.jpeg',
     },
     { 
-      id: 'tijek-zahvata', 
-      label: 'Tijek zahvata', 
+      id: 'tijek-tretmana', 
+      label: 'Tijek tretmana', 
       icon: 'FaRegClock',
       image: '/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png'
     },
@@ -97,7 +97,7 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
 1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
 2. Izvaditi krv kako bismo utvrdili jeste li kandidat za PRP tretman
 3. Preporuka broja tretmana za optimalne rezultate`,
-    'tijek-zahvata': `Tretman PRP je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
+    'tijek-tretmana': `Tretman PRP je precizan postupak koji se provodi u nekoliko faza. Svaka faza je pažljivo planirana kako bi osigurala optimalne rezultate i maksimalnu sigurnost.
 
 1. Priprema kože - Dezinficiramo kožu te vadimo malu količinu vaše krvi.
 
