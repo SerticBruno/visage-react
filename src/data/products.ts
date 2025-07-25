@@ -713,9 +713,8 @@ Pogodna je za kožu bez sjaja, oštećenu kožu izloženu stresu iz okoliša s n
       'Probiotici'
     ],
     application: [
-      'Nanesite pola ampule jednom dnevno (ujutro)',
-      'Za najbolji učinak koristiti s Toskani Skin Architect kremom',
-      'Kombinirajte sa Sun Shiel-D fluidom'
+      'Nanesite pola ampule jednom dnevno, ujutro',
+      'Za najbolji učinak koristiti s Toskani Skin Architect kremom i Sun Shiel-D fluidom'
     ],
     tags: [
       'ampule',
@@ -748,7 +747,7 @@ Pogodna je za kožu bez sjaja, oštećenu kožu izloženu stresu iz okoliša s n
       'Vitamin C'
     ],
     application: [
-      'Nanesite pola ampule jednom dnevno (ujutro)',
+      'Nanesite pola ampule jednom dnevno, ujutro',
       'Za najbolji učinak koristiti s Toskani Radiance Daily Cream SPF30+'
     ],
     tags: [
@@ -783,10 +782,9 @@ Pogodna je za kožu bez sjaja, oštećenu kožu izloženu stresu iz okoliša s n
       'Vitamin C'
     ],
     application: [
-      'Nanesite pola ampule jednom dnevno (ujutro)',
+      'Nanesite pola ampule jednom dnevno, ujutro',
       'Za jako osjetljivu kožu, nanesti koliko god puta je potrebno tijekom dana',
-      'Za najbolji učinak koristiti s Toskani Recovery gelom',
-      'Kombinirajte sa Sun Shiel-D fluidom'
+      'Za najbolji učinak koristiti s Toskani Recovery gelom i Sun Shiel-D fluidom'
     ],
     tags: [
       'ampule',
@@ -811,9 +809,8 @@ Pogodna je za kožu bez sjaja, oštećenu kožu izloženu stresu iz okoliša s n
     isNew: true,
     activeIngredients: [ 'Ekstrakt Cleome Gynandra', 'Ekstrakt Rhodosorus Marinus', 'Vitamin B5', 'Vitamin C', 'Vitamin E', 'Cink PCA' ],
     application: [
-      'Nanesite pola ampule jednom dnevno (ujutro)',
-      'Za najbolji učinak kombinirati s Toskani Purifying kremom',
-      'Kombinirajte sa Sun Shiel-D fluidom'
+      'Nanesite pola ampule jednom dnevno, ujutro',
+      'Za najbolji učinak kombinirati s Toskani Purifying kremom i Sun Shiel-D fluidom'
     ],
     tags: [ 'ampule', 'pročišćavanje', 'kontrola masnoće', 'akne', 'regulacija sebuma', 'zatvaranje pora', '30-dnevna kura']
   },
@@ -837,8 +834,7 @@ Pogodna je za kožu bez sjaja, oštećenu kožu izloženu stresu iz okoliša s n
     ],
     application: [
       'Nanesite pola ampule jednom dnevno',
-      'Za najbolji učinak koristiti s Toskani Skin Architect kremom',
-      'Kombinirajte sa Toskani Sun Shiel-D fluidom'
+      'Za najbolji učinak koristiti s Toskani Skin Architect kremom i Toskani Sun Shiel-D fluidom'
     ],
     tags: [
       'ampule',
@@ -940,10 +936,8 @@ Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne te
       'Vitamin C'
     ],
     application: [
-      'Nanesite pola ampule jednom dnevno (ujutro)',
-      'Koristite prije posebnih prilika za intenzivan efekt',
-      'Za najbolji učinak koristite s Toskani Skin Architect kremom',
-      'Kombinirajte sa Sun Shiel-D fluidom'
+      'Nanesite pola ampule jednom dnevno, ujutro',
+      'Za najbolji učinak koristite s Toskani Skin Architect kremom i Sun Shiel-D fluidom'
     ],
     tags: [
       'ampule',
