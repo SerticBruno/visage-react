@@ -6,10 +6,10 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Usluge",
-  description: "Otkrijte našu široku ponudu tretmana za lice i tijelo. Od estetske medicine do kozmetičkih tretmana - sve za vašu ljepotu i dobrobit.",
+  description: "Otkrijte široku ponudu tretmana za lice i tijelo. Od estetske medicine do kozmetičkih tretmana - sve za vašu ljepotu i dobrobit.",
   openGraph: {
     title: "Usluge",
-    description: "Otkrijte našu široku ponudu tretmana za lice i tijelo. Od estetske medicine do kozmetičkih tretmana - sve za vašu ljepotu i dobrobit.",
+    description: "Otkrijte široku ponudu tretmana za lice i tijelo. Od estetske medicine do kozmetičkih tretmana - sve za vašu ljepotu i dobrobit.",
     images: [
       {
         url: "/images/services/services-hero-visage-estetski-studio.webp",
@@ -26,7 +26,7 @@ export default function ServicesPage() {
     <main>
       <HeroSection
         title="Naše usluge"
-        description="Otkrijte našu široku ponudu tretmana za lice, vlasište i tijelo koji su personalizirani vašim individualnim željama i potrebama"
+        description="Otkrijte široku ponudu tretmana za lice, vlasište i tijelo koji su personalizirani vašim individualnim željama i potrebama"
         image="/images/services/services-hero-visage-estetski-studio.webp"
       />
       <ServicesSection />
