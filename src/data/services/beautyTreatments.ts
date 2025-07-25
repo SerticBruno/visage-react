@@ -21,13 +21,15 @@ export const beautyTreatments: Service = {
   title: 'Beauty tretmani',
   akuzativTitle: 'beauty tretmanima',
   description: 'Luksuzni beauty tretmani za potpuno opuštanje i njegu kože',
-  longDescription: `Beauty tretmani su luksuzni tretmani za lice i tijelo koji pružaju potpuno opuštanje, duboku njegu i revitalizaciju kože. Ova premium iskustva kombinira najkvalitetnije proizvode s profesionalnim tehnikama za maksimalne rezultate.
+  longDescription: `<strong>Beauty tretmani</strong> su luksuzni tretmani za lice i tijelo koji pružaju <strong>potpuno opuštanje</strong>, <strong>duboku njegu</strong> i <strong>revitalizaciju kože</strong>. Ova premium iskustva kombinira najkvalitetnije proizvode s profesionalnim tehnikama za maksimalne rezultate.
 
-Kroz pažljivo planirane tretmane, beauty tretmani pružaju duboku hidrataciju, poboljšanje tonusa kože i potpuno opuštanje. Svaki tretman je jedinstveno iskustvo koje kombinira terapeutske koristi s luksuznim ambijentom.
+Kroz pažljivo planirane tretmane, <strong>beauty tretmani</strong> pružaju <strong>duboku hidrataciju</strong>, <strong>poboljšanje tonusa kože</strong> i <strong>potpuno opuštanje</strong>. Svaki tretman je jedinstveno iskustvo koje kombinira terapeutske koristi s luksuznim ambijentom.
 
-Beauty tretmani su idealni za sve tipove kože i pružaju trenutne rezultate opuštanja i osvježavanja. Posebno su učinkoviti za dehidriranu kožu, umornu kožu i osobe koje traže premium iskustvo njegovanja.
+<strong>Beauty tretmani</strong> su idealni za sve tipove kože i pružaju <strong>trenutne rezultate opuštanja i osvježavanja</strong>. Posebno su učinkoviti za <strong>dehidriranu kožu</strong>, <strong>umornu kožu</strong> i osobe koje traže <strong>premium iskustvo njegovanja</strong>.
 
-U Visage studiju nudimo različite vrste beauty tretmana, prilagođene vašim potrebama i željama. Svaki tretman je pažljivo planiran za optimalne rezultate i potpuno opuštanje.`,
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/kemijski-piling">kemijski piling</a>, <a href="/usluge/mezoterapija">mezoterapija</a> i <a href="/usluge/skin-boosteri">skin boosteri</a>.
+
+U <strong>Visage studiju</strong> nudimo različite vrste <strong>beauty tretmana</strong>, prilagođene vašim potrebama i željama. Svaki tretman je pažljivo planiran za <strong>optimalne rezultate</strong> i <strong>potpuno opuštanje</strong>.`,
   benefits: [
   ],
   image: '/images/services/socialmedia_peelings_combined.webp',

@@ -124,19 +124,28 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                         <h3 className="text-sm font-semibold text-slate-900 mb-3">
                           {product.category === 'Beauty Tretmani' ? 'Prednosti' : 'Aktivni sastojci'}
                         </h3>
-                        <div className="space-y-2">
-                          {product.activeIngredients.map((ingredient, index) => (
-                            <div key={index} className="flex items-start">
-                              <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
-                              <p className="text-sm text-slate-600 leading-relaxed">{ingredient}</p>
-                            </div>
-                          ))}
-                        </div>
+                        {product.category === 'Beauty Tretmani' ? (
+                          <div className="space-y-2">
+                            {product.activeIngredients.map((ingredient, index) => (
+                              <div key={index} className="flex items-start">
+                                <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
+                                <p className="text-sm text-slate-600 leading-relaxed">{ingredient}</p>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-sm text-slate-600 leading-relaxed">
+                            {product.activeIngredients.join(', ')}
+                          </p>
+                        )}
                       </div>
                     )}
 
                     {product.application && (
                       <div className="bg-slate-50 rounded-xl p-3">
+                        {product.category !== 'Beauty Tretmani' && (
+                          <h3 className="text-sm font-semibold text-slate-900 mb-3">Primjena</h3>
+                        )}
                         <div className="space-y-4">
                           {product.application.map((step, index) => {
                             // Check if the step contains a colon (indicating a section header)
