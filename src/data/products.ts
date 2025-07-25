@@ -754,7 +754,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
 
     Sadrži probiotike, funkcionalne peptide, čimbenike rasta i hijaluronsku kiselinu koji pomažu smanjiti i usporiti znakove starenja.
 
-    Intenzivna kura od 30 dana.`,
+    Intenzivna njega od 30 dana.`,
     category: 'Ampule',
     productType: 'Ampule',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
@@ -790,7 +790,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
 
     Pojačava i ujednačava ton kože, sprječava dehidraciju, gubitak sjaja, ispravlja znakove fotostarenja, mlohavost i pojavu mrlja.
 
-    Intenzivna kura od 30 dana.`,
+    Intenzivna njega od 30 dana.`,
     category: 'Ampule',
     productType: 'Ampule',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
@@ -827,7 +827,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
 
     Hidratiziraju kožu, poboljšavaju elastičnost i strukturu kože i imaju antioksidirajući efekt.
 
-    Intenzivna kura od 30 dana.`,
+    Intenzivna njega od 30 dana.`,
     category: 'Ampule',
     productType: 'Ampule',
     skinType: ['Osjetljiva koža'],
@@ -860,7 +860,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
   {
     id: '29',
     title: 'Purifying Ampule',
-    description: `Purifying ampule - intenzivni svakodnevni hidratantni tretman za masnu kožu sklonu aknama.\n\nSastojci pomažu u ponovnom balansiranju lipidnog sloja kože, sprječavajući pojavu nesavršenosti.\n\nPomažu u zatvaranju pora i toniranju kože zahvaljujući svom adstrigentnom učinku.\n\nOdržavaju glatak i mat ten, reguliraju sebum te umanjuju tragove i ožiljke na koži.\n\nIntenzivna kura od 30 dana.`,
+    description: `Purifying ampule - intenzivni svakodnevni hidratantni tretman za masnu kožu sklonu aknama.\n\nSastojci pomažu u ponovnom balansiranju lipidnog sloja kože, sprječavajući pojavu nesavršenosti.\n\nPomažu u zatvaranju pora i toniranju kože zahvaljujući svom adstrigentnom učinku.\n\nOdržavaju glatak i mat ten, reguliraju sebum te umanjuju tragove i ožiljke na koži.\n\Intenzivna njega od 30 dana.`,
     category: 'Ampule',
     productType: 'Ampule',
     skinType: ['Masna koža'],
