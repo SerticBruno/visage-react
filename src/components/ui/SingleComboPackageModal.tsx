@@ -98,17 +98,19 @@ export default function SingleComboPackageModal({
                                   : 'bg-slate-400'
                               }`} />
                               <div className="flex-1">
-                                <Link
-                                  href={`/usluge/${service.id}`}
-                                  className={`font-medium hover:underline ${
-                                    service.id === serviceId 
-                                      ? 'text-slate-800' 
-                                      : 'text-slate-700'
-                                  }`}
-                                  onClick={(e) => e.stopPropagation()}
-                                >
-                                  {service.title}
-                                </Link>
+                                {service.id === serviceId ? (
+                                  <span className="font-medium text-slate-800">
+                                    {service.title}
+                                  </span>
+                                ) : (
+                                  <Link
+                                    href={`/usluge/${service.id}`}
+                                    className="font-medium hover:underline text-slate-700"
+                                    onClick={(e) => e.stopPropagation()}
+                                  >
+                                    {service.title}
+                                  </Link>
+                                )}
                                 {service.shortDescription && (
                                   <p className="text-sm text-slate-500 mt-1">
                                     {service.shortDescription}
