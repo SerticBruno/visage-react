@@ -2,11 +2,10 @@
 
 import React, { Fragment } from 'react';
 import { Transition } from '@headlessui/react';
-import { FaTimes, FaStar, FaFire, FaCheck, FaGift } from 'react-icons/fa';
+import { FaTimes, FaCheck, FaGift } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ComboPackage } from '@/data/comboPackages';
-import { getServiceInComboPackage } from '@/lib/services';
 
 interface SingleComboPackageModalProps {
   isOpen: boolean;
@@ -21,10 +20,7 @@ export default function SingleComboPackageModal({
   onClose, 
   comboPackage, 
   serviceId, 
-  serviceTitle 
 }: SingleComboPackageModalProps) {
-  const serviceInPackage = getServiceInComboPackage(serviceId, comboPackage);
-
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
