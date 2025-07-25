@@ -14,7 +14,6 @@ export interface PricingItem {
 export const pricingCategories = [
   "Konzultacije",
   "Beauty Tretmani",
-  "Bio Sculpture Sistemi",
   "Botox",
   "Dermalni Fileri",
   "Hijaluronidaza",
@@ -162,64 +161,6 @@ export const pricingData: PricingItem[] = [
     description: "Profesionalno bojanje obrva i trepavica",
     price: "7 EUR",
     category: "Beauty Tretmani"
-  },
-
-  // Bio Sculpture Sistemi
-  {
-    id: "bio-sculpture-evo2-gel-lak-s",
-    title: "Evo 2 Gel Lak S",
-    description: "Comby manikura jednobojni trajni lak kratkih noktiju, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
-    price: "25 EUR",
-    category: "Bio Sculpture Sistemi"
-  },
-  {
-    id: "bio-sculpture-evo2-gel-lak-l",
-    title: "Evo 2 Gel Lak L",
-    description: "Comby manikura jednobojni trajni lak dugih noktiju, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
-    price: "27 EUR",
-    category: "Bio Sculpture Sistemi"
-  },
-  {
-    id: "bio-sculpture-evo2-feet",
-    title: "Evo 2 Feet",
-    description: "Comby manikura, trajni lak na nogama i njegu s ethos bademovim uljem i kremom za pete",
-    price: "25 EUR",
-    category: "Bio Sculpture Sistemi"
-  },
-  {
-    id: "bio-sculpture-evo2-manikura",
-    title: "Evo 2 Manikura",
-    description: "Comby manikura, ethos baza, njega ethos vitaminskom dozom, ethos bademovim uljem i piling",
-    price: "10 EUR",
-    category: "Bio Sculpture Sistemi"
-  },
-  {
-    id: "bio-sculpture-removal",
-    title: "Skidanje Trajnog Laka",
-    description: "Naplaćuje se samo skidanje tuđeg rada",
-    price: "3 EUR",
-    category: "Bio Sculpture Sistemi"
-  },
-  {
-    id: "bio-sculpture-repair",
-    title: "Popravak 1 Nokta",
-    description: "Popravak jednog nokta",
-    price: "3 EUR",
-    category: "Bio Sculpture Sistemi"
-  },
-  {
-    id: "bio-sculpture-extension",
-    title: "Produljenje 1 Nokta",
-    description: "Produljenje jednog nokta",
-    price: "4 EUR",
-    category: "Bio Sculpture Sistemi"
-  },
-  {
-    id: "bio-sculpture-nail-art",
-    title: "Nail Art",
-    description: "Nail art dekoracija",
-    price: "2 EUR",
-    category: "Bio Sculpture Sistemi"
   },
 
   // Botox

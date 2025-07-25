@@ -7,7 +7,7 @@ import { dermalFillers } from './dermalFillers';
 import { plasmage } from './plasmage';
 import { wrinkleTherapy } from './wrinkleTherapy';
 import { beautyTreatments } from './beautyTreatments';
-import { bioSculpture } from './bioSculpture';
+import { photoTherapy } from './photoTherapy';
 
 export const services: Services = {
   'kemijski-piling': chemicalPeel,
@@ -18,7 +18,7 @@ export const services: Services = {
   'plasmage': plasmage,
   'terapija-bora-lica': wrinkleTherapy,
   'beauty-tretmani': beautyTreatments,
-  'bio-sculpture': bioSculpture
+  'foto-terapija': photoTherapy
 };
 
 export type ServiceKey = keyof typeof services; 

@@ -621,7 +621,7 @@ export const blogPosts: BlogPost[] = [
           { type: 'text', text: '\n\n• ' },
           { type: 'text', text: 'Njega Ruku i Noktiju', style: 'bold' },
           { type: 'text', text: ' - Kompletna njega s ' },
-          { type: 'link', text: 'profesionalnom manikurom', href: '/usluge/bio-sculpture' },
+          { type: 'link', text: 'fototerapijom', href: '/usluge/foto-terapija' },
           { type: 'text', text: ' za savršen izgled' }
         ]
       },
