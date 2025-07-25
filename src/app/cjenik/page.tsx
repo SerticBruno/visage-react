@@ -123,7 +123,7 @@ export default function PricingPage() {
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar with Filters */}
             <div className="lg:w-64 flex-shrink-0">
-              <div className="bg-white rounded-lg shadow-md p-6 sticky top-24 space-y-4">
+              <div className="bg-white rounded-lg shadow-md p-6 sticky top-24 h-[calc(100vh-120px)] overflow-y-auto space-y-4">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Filtriraj usluge</h3>
                 
                 {/* Search */}
@@ -177,12 +177,12 @@ export default function PricingPage() {
                   <div 
                     className={`transition-all duration-300 ease-in-out overflow-hidden ${
                       expandedSections.categories 
-                        ? 'max-h-40 opacity-100' 
+                        ? 'max-h-80 opacity-100' 
                         : 'max-h-0 opacity-0'
                     }`}
                   >
                     <div className="relative">
-                      <div className="space-y-1 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+                      <div className="space-y-1 max-h-72 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
                         {pricingCategories.filter(category => category !== "Konzultacije").map((category, index) => (
                           <label 
                             key={category} 
@@ -225,7 +225,7 @@ export default function PricingPage() {
                   <div 
                     className={`transition-all duration-300 ease-in-out overflow-hidden ${
                       expandedSections.badges 
-                        ? 'max-h-40 opacity-100' 
+                        ? 'max-h-60 opacity-100' 
                         : 'max-h-0 opacity-0'
                     }`}
                   >
