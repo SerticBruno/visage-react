@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaChevronRight, FaTimes } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaChevronRight } from 'react-icons/fa';
 import ProductModal from '@/components/ui/ProductModal';
-import { renderTreatmentContent } from '@/lib/beautyTreatmentsUtils';
+import { Product } from '@/data/products';
 
 interface BeautyTreatment {
   id: string;
@@ -27,9 +27,42 @@ interface BeautyTreatmentsSectionProps {
   treatments: BeautyTreatment[];
 }
 
+// Convert BeautyTreatment to Product format for the modal
+const convertTreatmentToProduct = (treatment: BeautyTreatment): Product => {
+  return {
+    id: treatment.id,
+    title: treatment.title,
+    description: treatment.description,
+    category: 'Beauty Tretmani',
+    image: treatment.image,
+    price: treatment.price,
+    isPopular: treatment.isPopular,
+    isNew: treatment.isNew,
+    volume: treatment.duration,
+    activeIngredients: treatment.benefits,
+    application: [
+      `Priprema: ${treatment.preparation}`,
+      `Tijek tretmana: ${treatment.procedure}`,
+      `Nakon tretmana: ${treatment.aftercare}`
+    ],
+    features: treatment.suitableFor,
+    tags: ['beauty-tretmani', 'tretman-lica']
+  };
+};
+
 export default function BeautyTreatmentsSection({ treatments }: BeautyTreatmentsSectionProps) {
   const [selectedTreatment, setSelectedTreatment] = useState<BeautyTreatment | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleTreatmentClick = (treatment: BeautyTreatment) => {
+    setSelectedTreatment(treatment);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedTreatment(null);
+  };
 
   return (
     <section className="bg-gradient-to-b from-white to-[#e5e7eb] py-4">
@@ -45,7 +78,7 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
               className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer group h-full lg:col-span-2"
-              onClick={() => setSelectedTreatment(treatment)}
+              onClick={() => handleTreatmentClick(treatment)}
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
@@ -83,7 +116,7 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
               className={`bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer group h-full lg:col-span-2 ${
                 index === 0 ? 'lg:col-start-2' : 'lg:col-start-4'
               }`}
-              onClick={() => setSelectedTreatment(treatment)}
+              onClick={() => handleTreatmentClick(treatment)}
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
@@ -111,74 +144,13 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
           ))}
         </div>
 
-        {/* Treatment Detail Modal */}
-        <AnimatePresence>
-          {selectedTreatment && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
-              onClick={() => setSelectedTreatment(null)}
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Header */}
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={selectedTreatment.image}
-                    alt={selectedTreatment.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 768px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute top-4 right-4">
-                    <button
-                      onClick={() => setSelectedTreatment(null)}
-                      className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-                    >
-                      <FaTimes className="w-4 h-4" />
-                    </button>
-                  </div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h2 className="text-3xl font-bold text-white mb-2">{selectedTreatment.title}</h2>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 overflow-y-auto max-h-[calc(90vh-400px)] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
-                  <div className="text-gray-600 mb-8 leading-relaxed whitespace-pre-line">{selectedTreatment.description}</div>
-
-                  {/* Treatment Content */}
-                  <div className="space-y-8">
-                    {renderTreatmentContent(selectedTreatment)}
-                  </div>
-
-                  {/* CTA Button */}
-                  <div className="mt-8 text-center">
-                    <button className="bg-black text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">
-                      Rezervirajte svoj tretman
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Product Modal */}
+        <ProductModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          product={selectedTreatment ? convertTreatmentToProduct(selectedTreatment) : null}
+        />
       </div>
-
-      {/* Product Modal */}
-      <ProductModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        product={null}
-      />
     </section>
   );
 } 

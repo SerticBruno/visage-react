@@ -162,7 +162,7 @@ Za optimalne rezultate preporučujemo redovite tretmane svakih 4-6 tjedana. Za d
 export const individualBeautyTreatments: BeautyTreatment[] = [
   {
     id: 'dermaplaning',
-    title: 'DERMAPLANING',
+    title: 'Dermaplaning',
     description: `Dermaplaning – neinvazivni mehanički piling u kojem se nježno uklanjaju površinski slojevi kože, uključujući i sitne dlačice. Ovaj tretman uklanja višak površinskih stanica kože i daje blistav ten.
 
 Dermaplaning sa Circadijom predstavlja najnapredniji protokol svoje vrste. Temeljen na višegodišnjoj Circadia ekspertizi protokola te omogućuje najnaprednije dostupne rezultate na tržištu.
@@ -212,7 +212,7 @@ Circadia dermaplaning je poseban i drugačiji od ostalih tehnika dermaplaninga k
   },
   {
     id: 'marshmallow-facial',
-    title: 'MARSHMALLOW FACIAL',
+    title: 'Marshmallow Facial',
     description: `Marshmallow Facial – Circadia kozmetički protokol s Marshmallow Whip Hydrating maskom.
 
 Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće zdravlje kože.`,
@@ -262,7 +262,7 @@ Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće 
   },
   {
     id: 'firming-peptide-facial',
-    title: 'FIRMING PEPTIDE FACIAL',
+    title: 'Firming Peptide Facial',
     description: `Firming Peptide Facial – Circadia kozmetički potokol s Firming Peptide maskom koja pruža zatezanje i učvršćivanje kože.
 
 Maska kombinira najnoviju tehnologija u području peptida, antioksidansa i znanosti o regeneraciji kože, rezultirajući mikrocirkulacijom, detoksikacijom te trenutnim zatezanjem i učvršćivanjem kože.`,
@@ -314,7 +314,7 @@ UPOZORENJE: Prilikom sušenja maska pruža osjećaj zatezanja!`,
   },
   {
     id: 'signature-dermaplaning-facial',
-    title: 'SIGNATURE DERMAPLANING FACIAL',
+    title: 'Signature Dermaplaning Facial',
     description: `Signature Dermaplaning Facial – Circadia kozmetički protokol koji koristi tehniku dermaplaninga i Marshmallow Whip Hydrating masku.
 
 Terapeutski piling koji ostavlja vašu kožu sjajnom i glatkom.
@@ -370,7 +370,7 @@ Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće 
   },
   {
     id: 'beyond-botox-facial',
-    title: 'BEYOND BOTOX FACIAL',
+    title: 'Beyond Botox Facial',
     description: `CIRCADIA Beyond Botox Facial – Circadia kozmetički potokol koji koristi tehniku dermaplaninga i Firming Peptide masku za zatezanje i učvršćivanje.
 
 Vaša tajna za čvršću i blistaviju kožu.
