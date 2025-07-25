@@ -17,6 +17,7 @@ export interface Product {
   volume?: string;
   activeIngredients?: string[];
   application?: string[];
+  warnings?: string[];
   indications?: string[];
   tags?: string[];
 }

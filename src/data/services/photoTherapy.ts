@@ -50,7 +50,6 @@ U Visage studiju koristimo najnoviju tehnologiju fototerapije, što osigurava op
       id: 'oporavak', 
       label: 'Oporavak', 
       icon: 'FaRegHospital',
-      image: '/images/services/mezoterapija/mezoterapija-nakon-tretmana-visage-estetski-studio.jpg'
     },
     { 
       id: 'nakon-tretmana', 

@@ -301,9 +301,7 @@ Maska kombinira najnoviju tehnologija u području peptida, antioksidansa i znano
 
 6. Circadia krema ovisno o tipu i stanju kože
 
-7. Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
-
-UPOZORENJE: Prilikom sušenja maska pruža osjećaj zatezanja!`,
+7. Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     aftercare: `Nakon Firming Peptide Facial tretmana:
 - Redovito koristiti SPF zaštitu
 - Koristiti blage proizvode za njegu
@@ -417,9 +415,7 @@ Maska kombinira najnoviju tehnologija u području peptida, antioksidansa i znano
 
 9. Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
 
-POKLON: Post Peel Home Care
-
-UPOZORENJE: Prilikom sušenja maska pruža osjećaj zatezanja!`,
+POKLON: Post Peel Home Care`,
     aftercare: `Nakon Beyond Botox Facial tretmana:
 - Izbjegavati izravno sunce 7-10 dana
 - Koristiti blage proizvode za njegu
