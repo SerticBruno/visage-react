@@ -16,6 +16,7 @@ export const pricingCategories = [
   "Beauty Tretmani",
   "Botox",
   "Dermalni Fileri",
+  "Fototerapije",
   "Hijaluronidaza",
   "Kemijski Piling",
   "Mesosynergy",
@@ -87,9 +88,9 @@ export const pricingData: PricingItem[] = [
   {
     id: "led-addon",
     title: "Dermalux LED Terapija Dodatak",
-    description: "Kao dodatak nekom beauty tretmanu u trajanju od 20min",
+    description: "Kao dodatak beauty tretmanu u trajanju od 20min",
     price: "15 EUR",
-    category: "Beauty Tretmani",
+    category: "Fototerapije",
     duration: "20 min"
   },
   {
@@ -97,7 +98,7 @@ export const pricingData: PricingItem[] = [
     title: "Dermalux LED Terapija",
     description: "1 tretman LED svjetlom u trajanju od 30min",
     price: "30 EUR",
-    category: "Beauty Tretmani",
+    category: "Fototerapije",
     duration: "30 min"
   },
   {
@@ -105,7 +106,7 @@ export const pricingData: PricingItem[] = [
     title: "Dermalux LED Standard Paket",
     description: "Paket od 4 tretmana LED svjetlom u trajanju od 30min",
     price: "108 EUR",
-    category: "Beauty Tretmani",
+    category: "Fototerapije",
     isPackage: true,
     packageDetails: "4 tretmana"
   },
@@ -114,7 +115,7 @@ export const pricingData: PricingItem[] = [
     title: "Dermalux LED Classic Paket",
     description: "Paket od 6 tretmana LED svjetlom u trajanju od 30min",
     price: "165 EUR",
-    category: "Beauty Tretmani",
+    category: "Fototerapije",
     isPackage: true,
     packageDetails: "6 tretmana"
   },
@@ -123,7 +124,7 @@ export const pricingData: PricingItem[] = [
     title: "Dermalux LED Premium Paket",
     description: "Paket od 12 tretmana LED svjetlom u trajanju od 30min",
     price: "305 EUR",
-    category: "Beauty Tretmani",
+    category: "Fototerapije",
     isPackage: true,
     packageDetails: "12 tretmana"
   },

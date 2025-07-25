@@ -19,7 +19,7 @@ U Visage studiju koristimo najnoviju tehnologiju fototerapije, što osigurava op
   metaDescription: 'Profesionalna fototerapija u VISAGE studiju u Siska. Napredni tretmani kože svjetlom za akne, ožiljke i poboljšanje tonusa kože. Sigurni i učinkoviti rezultati.',
   metaKeywords: 'fototerapija, svjetlosna terapija, akne, ožiljci, hiperpigmentacija, estetski studio Sisak, VISAGE studio, tretman kože svjetlom',
   tags: ['fototerapija', 'svjetlosna-terapija', 'akne', 'ožiljci', 'hiperpigmentacija', 'nježni-tretmani'],
-  pricingCategory: 'Fototerapija',
+  pricingCategory: 'Fototerapije',
   relatedServices: ['kemijski-piling', 'mezoterapija', 'skin-boosteri'],
   steps: [
     { 
