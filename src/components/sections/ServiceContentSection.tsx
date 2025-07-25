@@ -108,7 +108,9 @@ export default function ServiceContentSection({
                     <button
                       key={comboPackage.id}
                       onClick={() => setOpenComboModal(comboPackage.id)}
-                      className="flex items-center gap-1.5 px-2.5 py-1.5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer text-left min-w-0 flex-1"
+                      className={`flex items-center gap-1.5 px-2.5 py-1.5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer text-left min-w-0 ${
+                        comboPackages.length === 1 ? '' : 'flex-1'
+                      }`}
                     >
                       <div className="w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></div>
                       <div className="min-w-0 flex-1">
@@ -147,7 +149,9 @@ export default function ServiceContentSection({
                     <button
                       key={comboPackage.id}
                       onClick={() => setOpenComboModal(comboPackage.id)}
-                      className="flex items-center gap-1.5 px-2.5 py-1.5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer text-left min-w-0 flex-1"
+                      className={`flex items-center gap-1.5 px-2.5 py-1.5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer text-left min-w-0 ${
+                        comboPackages.length === 1 ? '' : 'flex-1'
+                      }`}
                     >
                       <div className="w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></div>
                       <div className="min-w-0 flex-1">
