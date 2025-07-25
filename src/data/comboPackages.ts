@@ -103,7 +103,7 @@ export const comboPackages: ComboPackage[] = [
         id: "20", 
         title: "Retin Pro Age Cream", 
         quantity: 1,
-        image: "/images/products/retin-pro-age-cream-visage-estetski-studio.webp"
+        image: "/images/products/toskani-retin-pro-age-estetski-studio-visage-sisak.png"
       }
     ],
     benefits: [
@@ -149,7 +149,7 @@ export const comboPackages: ComboPackage[] = [
         id: "22", 
         title: "Unique Pro Age Cream", 
         quantity: 1,
-        image: "/images/products/unique-pro-age-cream-visage-estetski-studio.webp"
+        image: "/images/products/toskani-unique-pro-age-cream-visage-estetski-studio.png"
       }
     ],
     benefits: [
