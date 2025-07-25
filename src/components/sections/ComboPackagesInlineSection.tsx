@@ -4,10 +4,12 @@ import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { comboPackages } from '@/data/comboPackages';
+import { products, Product } from '@/data/products';
 import { FaPlus, FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
+import ProductModal from '@/components/ui/ProductModal';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -16,6 +18,8 @@ import 'swiper/css/navigation';
 export default function ComboPackagesInlineSection() {
   const swiperRef = useRef<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -32,6 +36,14 @@ export default function ComboPackagesInlineSection() {
   const goToSlide = (index: number) => {
     if (swiperRef.current) {
       swiperRef.current.slideToLoop(index);
+    }
+  };
+
+  const handleProductClick = (productId: string) => {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+      setSelectedProduct(product);
+      setIsModalOpen(true);
     }
   };
 
@@ -133,7 +145,10 @@ export default function ComboPackagesInlineSection() {
                               )}
                               {pkg.products.map((product, index) => (
                                 <React.Fragment key={product.id}>
-                                  <Link href={`/katalog?product=${product.id}`} className="group w-full flex justify-center">
+                                  <button 
+                                    onClick={() => handleProductClick(product.id)}
+                                    className="group w-full flex justify-center"
+                                  >
                                     <div className="flex flex-col items-center justify-between w-[70%] md:w-full h-48 md:h-44 lg:h-48 bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-3 lg:p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                                       <div className="relative w-[70%] h-32 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105 mt-1 md:mt-0">
                                         <Image
@@ -152,7 +167,7 @@ export default function ComboPackagesInlineSection() {
                                         </div>
                                       </div>
                                     </div>
-                                  </Link>
+                                  </button>
                                   {index < pkg.products!.length - 1 && (
                                     <div className="flex items-center justify-center">
                                       <div className="bg-primary/10 rounded-full p-1.5 md:p-1.5 lg:p-2 shadow-sm">
@@ -225,6 +240,13 @@ export default function ComboPackagesInlineSection() {
           height: auto;
         }
       `}</style>
+
+      {/* Product Modal */}
+      <ProductModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        product={selectedProduct}
+      />
     </section>
   );
 } 
