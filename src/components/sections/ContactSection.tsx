@@ -285,6 +285,11 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel }: { hasTopPadding?
                   </div>
 
                   <div className="mt-6 pt-6">
+                                {/* <div className="mb-4 p-3 bg-gray-50 border border-gray-200 rounded-lg">
+              <p className="text-xs text-gray-600 leading-relaxed">
+                Slanjem ovog obrasca pristajete na korištenje vaših podataka za određivanje tretmana i kontaktiranje.
+              </p>
+            </div> */}
                     <button
                       type="submit"
                       disabled={isSubmitting}
