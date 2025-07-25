@@ -19,7 +19,7 @@ export const pricingCategories = [
   "Fototerapije",
   "Hijaluronidaza",
   "Kemijski Piling",
-  "Mesosynergy",
+  "Kombinirani Paketi",
   "Mezoterapija",
   "Mezoterapija Dermapenom 4",
   "Mezoterapija Mesoject Gunom",
@@ -262,48 +262,48 @@ export const pricingData: PricingItem[] = [
     packageDetails: "5 tretmana"
   },
 
-  // Mesosynergy
+  // Kombinirani Paketi
   {
-    id: "mesosynergy-standard",
+    id: "kombinirani-standard",
     title: "Standard",
     description: "1 kemijski piling Dusomal, mezoterapija lica, TKN HA3 i skin architect maska",
     price: "380 EUR",
-    category: "Mesosynergy"
+    category: "Kombinirani Paketi"
   },
   {
-    id: "mesosynergy-premium",
+    id: "kombinirani-premium",
     title: "Premium",
     description: "2 kemijski piling Dusomal, mezoterapija lica, TKN HA3 i skin architect maska",
     price: "640 EUR",
-    category: "Mesosynergy"
+    category: "Kombinirani Paketi"
   },
   {
-    id: "mesosynergy-botox-yzone",
+    id: "kombinirani-botox-yzone",
     title: "Botox + Y Zona",
     description: "Kombinirani tretman 50 jedinica botoksa vrata i zatezanja i topljenja podbratka i vrata",
     price: "560 EUR",
-    category: "Mesosynergy"
+    category: "Kombinirani Paketi"
   },
   {
-    id: "mesosynergy-botox-filler",
+    id: "kombinirani-botox-filler",
     title: "Botox + Dermalni Filer",
     description: "Kombinirani tretman 50 jedinica botoksa i 1mL dermalnog filera",
     price: "445 EUR",
-    category: "Mesosynergy"
+    category: "Kombinirani Paketi"
   },
   {
-    id: "mesosynergy-meso-yzone",
+    id: "kombinirani-meso-yzone",
     title: "Mezoterapija Lica + Y Zona",
     description: "Kombinirani tretman 4 mezoterapije lica mesoject gunom i tretman otapanja i zatezanja vrata i podbratka",
     price: "670 EUR",
-    category: "Mesosynergy"
+    category: "Kombinirani Paketi"
   },
   {
-    id: "mesosynergy-meso-filler-botox",
+    id: "kombinirani-meso-filler-botox",
     title: "Mezoterapija Lica i Vrata + Dermalni Filer + Botox",
     description: "1mL dermalnog filera + 50 jedinica botoksa",
     price: "845 EUR",
-    category: "Mesosynergy"
+    category: "Kombinirani Paketi"
   },
 
   // Mezoterapija
