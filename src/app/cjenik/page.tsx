@@ -123,7 +123,7 @@ export default function PricingPage() {
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar with Filters */}
             <div className="lg:w-64 flex-shrink-0">
-              <div className="bg-white rounded-lg shadow-md p-6 sticky top-24 h-[calc(100vh-120px)] overflow-y-auto space-y-4">
+              <div className="bg-white rounded-lg shadow-md p-6 pr-3 ps-7 sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto space-y-3 scrollbar-spaced" style={{ scrollbarGutter: 'stable' }}>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Filtriraj usluge</h3>
                 
                 {/* Search */}
@@ -160,7 +160,7 @@ export default function PricingPage() {
                 </div>
 
                 {/* Categories Section */}
-                <div className="border-t border-gray-200 pt-4 pb-0 mb-0">
+                <div className="border-t border-gray-200 pt-3 pb-0 mb-0">
                   <button
                     onClick={() => toggleSection('categories')}
                     className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
@@ -182,7 +182,7 @@ export default function PricingPage() {
                     }`}
                   >
                     <div className="relative">
-                      <div className="space-y-1 max-h-72 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+                      <div className="space-y-0.5 max-h-72 overflow-y-auto scrollbar-spaced pr-2">
                         {pricingCategories.filter(category => category !== "Konzultacije").map((category, index) => (
                           <label 
                             key={category} 
@@ -208,7 +208,7 @@ export default function PricingPage() {
                 </div>
 
                 {/* Badges Filter Section */}
-                <div className="border-t border-gray-200 pt-4 pb-0 mb-0">
+                <div className="border-t border-gray-200 pt-3 pb-0 mb-0">
                   <button
                     onClick={() => toggleSection('badges')}
                     className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
@@ -263,6 +263,9 @@ export default function PricingPage() {
                 <div className="border-t border-gray-200 pt-6">
                   <p className="text-sm text-gray-600">
                     Pronađeno usluga: <span className="font-semibold">{filteredItems.length}</span>
+                  </p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Prikazano: <span className="font-medium">Sve usluge</span>
                   </p>
                 </div>
               </div>

@@ -484,10 +484,6 @@ function KatalogContent() {
                 <p className="text-sm text-gray-600">
                   Pronađeno proizvoda: <span className="font-semibold">{filteredProducts.length}</span>
                 </p>
-                <p className="text-xs text-gray-500 mt-1">
-                  Prikazano: <span className="font-medium">{productsPerPage}</span> po stranici
-                  {isMobile && <span className="text-blue-600"> (mobilna verzija)</span>}
-                </p>
               </div>
             </div>
           </div>
