@@ -235,7 +235,7 @@ function KatalogContent() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar with Filters */}
           <div className="lg:w-64 flex-shrink-0">
-            <div className="bg-white rounded-lg shadow-md p-6 pr-10 sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto space-y-3 scrollbar-spaced" style={{ scrollbarGutter: 'stable' }}>
+            <div className="bg-white rounded-lg shadow-md p-6 pr-3 ps-7 sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto space-y-3 scrollbar-spaced" style={{ scrollbarGutter: 'stable' }}>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Filtriraj proizvode</h3>
 
               {/* Search */}
