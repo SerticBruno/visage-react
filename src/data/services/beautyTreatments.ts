@@ -170,7 +170,7 @@ Dermaplaning sa Circadijom predstavlja najnapredniji protokol svoje vrste. Temel
 Circadia dermaplaning je poseban i drugačiji od ostalih tehnika dermaplaninga koje se nude na tržištu – koristimo specijalne vrste nožića (made in USA) i posebne protokole koji daju najbolje moguće rezultate ove tehnike!`,
     duration: '60 min',
     price: '45 €',
-    image: '/images/services/woman-face-visage-estetski-studio.webp',
+    image: '/images/services/beauty-tretmani/dermaplaning-visage-estetski-studio-sisak.webp',
     benefits: [
       'Neinvazivni mehanički piling',
       'Uklanjanje površinskih slojeva kože',
@@ -218,7 +218,7 @@ Circadia dermaplaning je poseban i drugačiji od ostalih tehnika dermaplaninga k
 Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće zdravlje kože.`,
     duration: '75 min',
     price: '55 €',
-    image: '/images/services/beauty-treatment-visage-estetski-studio.webp',
+    image: '/images/services/beauty-tretmani/marshmallow-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen svim tipovima kože',
       'Trenutna i intenzivna hidrataciju',
@@ -268,7 +268,7 @@ Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće 
 Maska kombinira najnoviju tehnologija u području peptida, antioksidansa i znanosti o regeneraciji kože, rezultirajući mikrocirkulacijom, detoksikacijom te trenutnim zatezanjem i učvršćivanjem kože.`,
     duration: '90 min',
     price: '65 €',
-    image: '/images/services/skin-boosters-hero-visage-estetski-studio.webp',
+    image: '/images/services/beauty-tretmani/firming-peptide-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen koži s vidljivim znakovima starenja',
       'Trenutno zateže i učvršćuje kožu',
@@ -322,7 +322,7 @@ Terapeutski piling koji ostavlja vašu kožu sjajnom i glatkom.
 Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće zdravlje kože.`,
     duration: '90 min',
     price: '75 €',
-    image: '/images/services/plasmage-hero-visage-estetski-studio.webp',
+    image: '/images/services/beauty-tretmani/sitgnature-dermaplaning-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen svim tipovima kože',
       'Daje koži trenutnu i intenzivnu hidrataciju',
@@ -378,7 +378,7 @@ Vaša tajna za čvršću i blistaviju kožu.
 Maska kombinira najnoviju tehnologija u području peptida, antioksidansa i znanosti o regeneraciji kože, rezultirajući mikrocirkulacijom, detoksikacijom te trenutnim zatezanjem i učvršćivanjem kože.`,
     duration: '120 min',
     price: '85 €',
-    image: '/images/services/botox-treatment-visage-estetski-studio.webp',
+    image: '/images/services/beauty-tretmani/beyond-botox-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen koži s vidljivim znakovima starenja',
       'Trenutno zateže i učvršćuje kožu',
