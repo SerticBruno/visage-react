@@ -20,6 +20,13 @@ export interface Product {
   warnings?: string[];
   indications?: string[];
   tags?: string[];
+  proTips?: ProTip[]; // New field for PRO TIP accordions
+}
+
+// Pro tip interface for product-specific tips
+export interface ProTip {
+  title: string;
+  description: string;
 }
 
 export const productCategories = [
@@ -88,6 +95,24 @@ Gel za čišćenje čuva neke slojeve masnoće na koži što sprječava isušiva
       'Nanesite Bamboo Hydratonic',
       'Nanesite adekvatni TOSKANI mesoserum i kremu'
     ],
+    proTips: [
+      {
+        title: "Najbolje vrijeme za primjenu",
+        description: "Koristite ovaj čistač svako jutro i navečer. Jutarnja primjena uklanja nakupljenu prljavštinu iz noći, a večernja priprema kožu za noćnu regeneraciju."
+      },
+      {
+        title: "Temperatura vode",
+        description: "Koristite mlaku vodu za čišćenje. Previše topla voda može isušiti kožu, a hladna voda neće učinkovito ukloniti masnoće."
+      },
+      {
+        title: "Vrijeme masaže",
+        description: "Masažirajte kožu najmanje 1 minutu kako bi aktivni sastojci imali dovoljno vremena za djelovanje. Ne prekoračujte 2 minute."
+      },
+      {
+        title: "Kombinacija s drugim proizvodima",
+        description: "Nakon čišćenja, obavezno nanesite tonik (Bamboo Hydratonic) kako biste uravnotežili pH kože prije nanosa serumova i kremi."
+      }
+    ],
     tags: ['čišćenje lica', 'normalna koža', 'mješovita koža', 'suha koža']
   },
   {
@@ -114,6 +139,24 @@ Ovo sredstvo za čišćenje može se koristiti i na tijelu.`,
       'Uklonite proizvod s puno vode',
       'Nanesite Bamboo Hydratonic',
       'Prema potrebi nanesite kremu za pročišćavanje i intenzivni serum'
+    ],
+    proTips: [
+      {
+        title: "Frekvencija korištenja",
+        description: "Za masnu kožu koristite 2 puta dnevno. Za mješovitu kožu možete koristiti svaki drugi dan ako primijetite da koža postaje presuha."
+      },
+      {
+        title: "Kombinacija s pilingom",
+        description: "Kombinirajte s Nutritive Scrub-om 1-2 puta tjedno za dubinsko čišćenje pora i uklanjanje mrtvih stanica kože."
+      },
+      {
+        title: "Za problematičnu kožu",
+        description: "Ako imate akne, koristite ujutro i navečer. Za preventivu možete koristiti samo navečer."
+      },
+      {
+        title: "Nakon čišćenja",
+        description: "Obavezno nanesite hidratantnu kremu nakon čišćenja jer ovaj čistač može ostaviti kožu malo suhom."
+      }
     ],
     tags: ['čišćenje lica', 'masna koža', 'mješovita koža']
   },

@@ -1,10 +1,10 @@
 'use client';
 
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Transition } from '@headlessui/react';
-import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt } from 'react-icons/fa';
+import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt, FaChevronDown, FaLightbulb } from 'react-icons/fa';
 import Image from 'next/image';
-import { Product } from '@/data/products';
+import { Product, ProTip } from '@/data/products';
 
 interface ProductModalProps {
   isOpen: boolean;
@@ -13,7 +13,24 @@ interface ProductModalProps {
 }
 
 export default function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
+  const [openProTips, setOpenProTips] = useState<number[]>([]);
+
+
   if (!product) return null;
+
+
+
+
+
+  const toggleProTip = (index: number) => {
+    setOpenProTips(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
+
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -259,6 +276,45 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                       </div>
                     )}
 
+
+
+                    {/* Pro Tips Section */}
+                    {product.proTips && product.proTips.length > 0 && (
+                      <div className="bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl p-3 border border-slate-200">
+                        <h3 className="text-sm font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                          <FaLightbulb className="w-4 h-4 text-slate-600" />
+                          Pro Tipovi
+                        </h3>
+                        <div className="space-y-3">
+                          {product.proTips.map((tip: ProTip, index: number) => (
+                            <div key={index} className="bg-white rounded-lg shadow-sm border border-slate-200">
+                              <button
+                                onClick={() => toggleProTip(index)}
+                                className="w-full text-left p-3 flex items-center justify-between text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors rounded-t-lg cursor-pointer"
+                              >
+                                <span>{tip.title}</span>
+                                <FaChevronDown
+                                  className={`w-4 h-4 transition-transform duration-300 ${openProTips.includes(index) ? 'rotate-180' : ''}`}
+                                />
+                              </button>
+                              <div
+                                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                                  openProTips.includes(index) 
+                                    ? 'max-h-32 opacity-100' 
+                                    : 'max-h-0 opacity-0'
+                                }`}
+                              >
+                                <div className="p-3 text-sm text-slate-700 leading-relaxed border-t border-slate-100">
+                                  {tip.description}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Product Safety Information */}
                     {product.warnings && product.warnings.length > 0 && (
                       <div className="bg-slate-50 rounded-xl p-3">
                         <div className="space-y-3">
@@ -286,6 +342,10 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                         </div>
                       </div>
                     )}
+
+
+
+                    
                   </div>
                 </div>
               </div>
