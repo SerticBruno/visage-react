@@ -12,7 +12,7 @@ interface ServiceContentSectionProps {
   imageAlt: string;
   benefits?: readonly string[];
   serviceName?: string;
-  focalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  focalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | `${number}% ${number}%`;
   hasComboPackages?: boolean;
   comboPackages?: ComboPackage[];
   serviceId?: string;
@@ -33,6 +33,11 @@ export default function ServiceContentSection({
   const [openComboModal, setOpenComboModal] = useState<string | null>(null);
   // Convert focal point to CSS object-position values
   const getObjectPosition = (focalPoint: string) => {
+    // Check if focalPoint is a percentage string (e.g., "25% 30%")
+    if (focalPoint.includes('%')) {
+      return focalPoint;
+    }
+    
     switch (focalPoint) {
       case 'left':
         return 'left center';

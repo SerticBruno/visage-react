@@ -3,6 +3,7 @@ export type ServiceStep = {
   label: string;
   icon: string;
   image?: string;
+  focalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | `${number}% ${number}%`;
 };
 
 export type TreatmentStep = {
@@ -30,7 +31,7 @@ export interface Service {
   tags: string[];
   pricingCategory?: string;
   relatedServices?: string[];
-  focalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  focalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | `${number}% ${number}%`;
 }
 
 export type Services = {

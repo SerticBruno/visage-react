@@ -754,6 +754,30 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                           fill
                           loading={activeTab === service.steps[0].id ? "eager" : "lazy"}
                           className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          style={{ 
+                            objectPosition: (() => {
+                              const step = service.steps.find(s => s.id === activeTab);
+                              if (!step?.focalPoint) return 'center center';
+                              
+                              // Check if focalPoint is a percentage string (e.g., "25% 30%")
+                              if (step.focalPoint.includes('%')) {
+                                return step.focalPoint;
+                              }
+                              
+                              switch (step.focalPoint) {
+                                case 'left': return 'left center';
+                                case 'right': return 'right center';
+                                case 'top': return 'center top';
+                                case 'bottom': return 'center bottom';
+                                case 'top-left': return 'left top';
+                                case 'top-right': return 'right top';
+                                case 'bottom-left': return 'left bottom';
+                                case 'bottom-right': return 'right bottom';
+                                case 'center':
+                                default: return 'center center';
+                              }
+                            })()
+                          }}
                           sizes="(max-width: 768px) 100vw, 50vw"
                           placeholder="blur"
                           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
