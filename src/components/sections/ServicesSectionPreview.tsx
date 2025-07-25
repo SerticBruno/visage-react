@@ -100,26 +100,38 @@ export default function ServicesSectionPreview() {
                     
                     {/* Content Container */}
                     <div className="absolute inset-0 p-3 md:p-6 flex flex-col justify-end transition-all duration-300">
-                      {/* Title - Always visible at bottom */}
-                      <div className="transform transition-all duration-300 group-hover:opacity-0">
-                        <h3 className="text-base md:text-xl font-bold text-white">
+                      {/* Mobile: Always show title and description */}
+                      <div className="md:hidden">
+                        <h3 className="text-xl font-bold text-white mb-2">
+                          {service.title}
+                        </h3>
+                        <div>
+                          <p className="text-base text-white line-clamp-2">
+                            {service.description}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {/* Desktop: Title - Always visible at bottom */}
+                      <div className="hidden md:block transform transition-all duration-300 group-hover:opacity-0">
+                        <h3 className="text-xl font-bold text-white">
                           {service.title}
                         </h3>
                       </div>
                       
-                      {/* Hover Content - Hidden by default, appears on hover */}
-                      <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 transform translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                      {/* Desktop: Hover Content - Hidden by default, appears on hover */}
+                      <div className="hidden md:block absolute bottom-0 left-0 right-0 p-6 transform translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                         {/* Hover Title */}
-                        <h3 className="text-base md:text-xl font-bold text-white mb-2">
+                        <h3 className="text-xl font-bold text-white mb-2">
                           {service.title}
                         </h3>
                         
                         {/* Description and Show More */}
                         <div>
-                          <p className="text-xs md:text-sm text-white line-clamp-2 md:line-clamp-3 mb-2">
+                          <p className="text-sm text-white line-clamp-3 mb-2">
                             {service.description}
                           </p>
-                          <span className="text-xs md:text-sm text-white font-medium underline">
+                          <span className="text-sm text-white font-medium underline">
                             Saznajte više
                           </span>
                         </div>
