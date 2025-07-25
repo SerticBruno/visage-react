@@ -115,8 +115,8 @@ export default function ComboPackagesInlineSection() {
                                 <React.Fragment key={`${item.type}-${item.id}`}>
                                   {item.type === 'service' ? (
                                     <Link href={`/usluge/${item.id}`} className="group">
-                                      <div className="flex flex-col items-center justify-between h-40 bg-gray-50 rounded-lg p-3 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                                        <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                                      <div className="flex flex-col items-center justify-between h-36 bg-gray-50 rounded-lg p-3 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                        <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                           <Image
                                             src={item.image}
                                             alt={item.title}
@@ -139,8 +139,8 @@ export default function ComboPackagesInlineSection() {
                                       onClick={() => handleProductClick(item.id)}
                                       className="group"
                                     >
-                                      <div className="flex flex-col items-center justify-between h-40 bg-gray-50 rounded-lg p-3 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                                        <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                                      <div className="flex flex-col items-center justify-between h-36 bg-gray-50 rounded-lg p-3 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                        <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
                                           <Image
                                             src={item.image}
                                             alt={item.title}
