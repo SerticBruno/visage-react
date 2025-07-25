@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Otkrijte našu široku ponudu tretmana za lice i tijelo. Od estetske medicine do kozmetičkih tretmana - sve za vašu ljepotu i dobrobit.",
     images: [
       {
-        url: "/images/services/usluge-hero.webp",
+        url: "/images/services/services-hero-visage-estetski-studio.webp",
         width: 1200,
         height: 630,
         alt: "VISAGE Studio - Usluge"
@@ -27,7 +27,7 @@ export default function ServicesPage() {
       <HeroSection
         title="Naše usluge"
         description="Otkrijte našu široku ponudu tretmana za lice i tijelo, dizajniranih da vas učine osjećati se i izgledati najbolje"
-        image="/images/services/usluge-hero.webp"
+        image="/images/services/services-hero-visage-estetski-studio.webp"
       />
       <ServicesSection />
       <ComboPackagesInlineSection />

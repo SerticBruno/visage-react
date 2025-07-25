@@ -20,7 +20,7 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa skin booster tretmanima u <strong>Visage studiju</strong>.`,
   benefits: [
   ],
-  image: '/images/services/skinboosteri-hero.webp',
+  image: '/images/services/skin-boosters-hero-visage-estetski-studio.webp',
   heroImage: '/images/services/skin-boosters/skin-booster-visage-estetski-studio-sisak.jpeg',
   focalPoint: 'left',
   metaDescription: 'Profesionalni skin boosteri u VISAGE studiju u Siska. Duboka hidratacija i revitalizacija kože uz pomoć naprednih skin booster tretmana. Vidljivi i dugotrajni rezultati.',

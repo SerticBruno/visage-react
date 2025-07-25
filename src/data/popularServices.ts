@@ -2,7 +2,7 @@ export const popularServices = [
   {
     title: 'Skin Boosteri',
     description: 'Dubinska hidratacija i revitalizacija kože',
-    image: '/images/services/toskani-hero.webp',
+    image: '/images/services/toskani-hero-visage-estetski-studio.webp',
     link: '/usluge/skin-boosteri',
     features: [
       'biostimulira proizvodnju kolagena i elastina',
@@ -26,7 +26,7 @@ export const popularServices = [
   {
     title: 'Plasmage',
     description: 'Revolucionarna tehnologija za pomlađivanje kože',
-    image: '/images/services/plasmage-hero.webp',
+    image: '/images/services/plasmage-hero-visage-estetski-studio.webp',
     link: '/usluge/plasmage',
     features: [
       'vidljivi rezultati nakon jednog tretmana',

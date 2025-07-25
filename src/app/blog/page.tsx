@@ -148,7 +148,7 @@ export default function BlogPage() {
       <HeroSection
         title="Blog"
         description="Otkrijte najnovije vijesti i savjete iz svijeta estetske medicine"
-        image="/images/services/hero-blog.jpg"
+        image="/images/services/blog-hero-visage-estetski-studio.jpg"
       />
 
       <div className="w-full" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>

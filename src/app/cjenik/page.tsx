@@ -106,7 +106,7 @@ export default function PricingPage() {
       <HeroSection
         title="Cjenik usluga"
         description="Pronađite savršenu uslugu za vaše potrebe. Naš cjenik je transparentan i jasno prikazuje sve naše usluge i njihove cijene."
-        image="/images/services/cjenik-hero.webp"
+        image="/images/services/pricing-hero-visage-estetski-studio.webp"
       />
       <div className="w-full" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

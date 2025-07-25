@@ -49,7 +49,7 @@ const NewsletterCTASection = () => {
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
           <Image
-            src="/images/services/toskani-woman.webp"
+            src="/images/services/toskani-woman-visage-estetski-studio.webp"
             alt="VISAGE Studio Newsletter"
             fill
             className="object-cover"

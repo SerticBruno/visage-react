@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: "Kontaktirajte VISAGE Studio u Siska. Dogovorite termin za tretman ili saznajte više o našim uslugama. Dostupni smo za sve vaše upite.",
     images: [
       {
-        url: "/images/services/toskani-woman.webp",
+        url: "/images/services/toskani-woman-visage-estetski-studio.webp",
         width: 1200,
         height: 630,
         alt: "VISAGE Studio - Kontakt"
@@ -32,7 +32,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
       <HeroSection
         title="Kontakt"
         description="Javite nam se za sve informacije i rezervacije"
-        image="/images/services/kontakt-hero.webp"
+        image="/images/services/contact-hero-visage-estetski-studio.webp"
       />
       <ContactSection serviceLabel={serviceLabel} />
     </main>

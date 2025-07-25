@@ -20,7 +20,7 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj revitalizaciji kože</strong> u <strong>Visage studiju</strong>.`,
   benefits: [
   ],
-  image: '/images/services/toskani-woman.webp',
+  image: '/images/services/toskani-woman-visage-estetski-studio.webp',
   heroImage: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp',
   metaDescription: 'Profesionalna PRP terapija u VISAGE studiju u Siska. Koristite vlastite trombocite za regeneraciju kože. Prirodna i sigurna metoda s vidljivim rezultatima.',
   metaKeywords: 'PRP terapija, regeneracija kože, trombociti, estetski studio Sisak, VISAGE studio, PRP lica, prirodna regeneracija',

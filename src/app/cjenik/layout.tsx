@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Pregledajte cjenik naših usluga. Transparentne cijene za sve tretmane estetske medicine i kozmetičke usluge.",
     images: [
       {
-        url: "/images/services/toskani-woman.webp",
+        url: "/images/services/toskani-woman-visage-estetski-studio.webp",
         width: 1200,
         height: 630,
         alt: "VISAGE Studio - Cjenik"

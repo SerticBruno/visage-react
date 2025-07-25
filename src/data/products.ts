@@ -671,24 +671,45 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
   {
     id: '27',
     title: 'Radiance Ampule',
-    description: `Ampula za posvjetljivanje i ujednačavanje tena.`,
+    description: `Radiance ampule su intenzivan dnevni tretman koji sadrži kompleks za posvjetljivanje posljednje generacije koji može prodrijeti i osloboditi 5 različitih aktivnih sastojaka u određenim slojevima kože, a da je ne oštećuje.
+
+    Pojačava i ujednačava ton kože, sprječava dehidraciju, gubitak sjaja, ispravlja znakove fotostarenja, mlohavost i pojavu mrlja.
+
+    Intenzivna kura od 30 dana.`,
     category: 'Ampule',
-    image: '/images/products/radiance-ampule-visage-estetski-studio.webp',
+    image: '/images/products/radiance_box_purifying_box_ampule.webp',
     price: '52 EUR',
     volume: '15x2ml',
     isNew: true,
-    activeIngredients: ['Vitamin C', 'Niacinamid', 'Azelaična kiselina'],
-    application: [
-      'Koristite jednu ampulu dnevno',
-      'Nanesite na čistu kožu',
-      'Slijedite s odgovarajućom kremom'
+    activeIngredients: [
+      'Azeloglicin',
+      'Bisabolol',
+      'Fitinska kiselina',
+      'Vitamin B3',
+      'Vitamin C'
     ],
-    tags: ['ampule', 'posvjetljivanje', 'ujednačavanje tena', 'vitamin C']
+    application: [
+      'Nanesite pola ampule jednom dnevno (ujutro)',
+      'Za najbolji učinak koristiti s Toskani Radiance Daily Cream SPF30+'
+    ],
+    tags: [
+      'ampule',
+      'posvjetljivanje',
+      'ujednačavanje tena',
+      'vitamin C',
+      '30-dnevna kura',
+      'kompleks za posvjetljivanje',
+      'fotostarenje'
+    ]
   },
   {
     id: '28',
     title: 'Sensitive Skin Ampule',
-    description: `Umirujuća ampula za osjetljivu kožu.`,
+    description: `Sensitive skin ampule su intenzivan dnevni tretman, obogaćen prirodnim ekstraktima čija svojstva smiruju, štite i revitaliziraju kožu.
+
+    Hidratiziraju kožu, poboljšavaju elastičnost i strukturu kože i imaju antioksidirajući efekt.
+
+    Intenzivna kura od 30 dana.`,
     category: 'Ampule',
     productType: 'Ampule',
     skinType: ['Osjetljiva koža'],
@@ -696,13 +717,27 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     price: '52 EUR',
     volume: '15x2ml',
     isNew: true,
-    activeIngredients: ['Aloe Vera', 'Centella Asiatica', 'Panthenol'],
-    application: [
-      'Koristite jednu ampulu dnevno',
-      'Nanesite na čistu kožu',
-      'Slijedite s odgovarajućom kremom'
+    activeIngredients: [
+      'Ekstrakt Myrothamnus Flabellifolia',
+      'Ekstrakt Rhodosorus Marinus',
+      'Vitamin B5',
+      'Vitamin C'
     ],
-    tags: ['ampule', 'osjetljiva koža', 'umirivanje', 'regeneracija']
+    application: [
+      'Nanesite pola ampule jednom dnevno (ujutro)',
+      'Za jako osjetljivu kožu, nanesti koliko god puta je potrebno tijekom dana',
+      'Za najbolji učinak koristiti s Toskani Recovery gelom',
+      'Kombinirajte sa Sun Shiel-D fluidom'
+    ],
+    tags: [
+      'ampule',
+      'osjetljiva koža',
+      'umirivanje',
+      'regeneracija',
+      'antioksidansi',
+      '30-dnevna kura',
+      'intenzivni tretman'
+    ]
   },
   {
     id: '29',
@@ -824,5 +859,41 @@ Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne te
       'Nanijeti kremu ujutro i/ili navečer na očišćeno lice, vrat i dekolte.'
     ],
     tags: ['krema', 'anti-age', 'profhilo', 'hijaluronska kiselina', 'njega nakon tretmana', 'svi tipovi kože']
+  },
+  {
+    id: '35',
+    title: 'Vitaflash Ampule',
+    description: `Vitaflash ampula je proizvod za povremenu upotrebu koji pruža trenutni efekt liftinga. Preporuka za korištenje prije bitnih događaja za intenzivan "blic" efekt.
+
+    Sadrži aktivne sastojke koji pružaju trenutni efekt liftinga, omekšavaju bore i posvjetljavaju kožu. Imaju snažan antioksidativni učinak, smanjuju znakove starenja i umora, pružajući svježiji i mlađi izgled.`,
+    category: 'Ampule',
+    productType: 'Ampule',
+    skinType: ['Sve tipove kože', 'Koža sa znakovima starenja'],
+    image: '/images/products/vitaflash-ampule-visage-estetski-studio.webp',
+    price: '30 EUR',
+    volume: '5x2ml',
+    isNew: true,
+    activeIngredients: [
+      'Kolagen',
+      'Elastin',
+      'Ekstrakt mimoze',
+      'Biljni tenzor',
+      'Vitamin C'
+    ],
+    application: [
+      'Nanesite pola ampule jednom dnevno (ujutro)',
+      'Koristite prije posebnih prilika za intenzivan efekt',
+      'Za najbolji učinak koristite s Toskani Skin Architect kremom',
+      'Kombinirajte sa Sun Shiel-D fluidom'
+    ],
+    tags: [
+      'ampule',
+      'lifting efekt',
+      'anti-age',
+      'trenutni efekti',
+      'posvjetljivanje',
+      'posebne prilike',
+      'antioksidansi'
+    ]
   }
 ]; 

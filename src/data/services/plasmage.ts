@@ -21,7 +21,7 @@ Zakažite svoj termin u <strong>Visage studiju</strong> i krenite na put prema r
   benefits: [
   ],
   image: '/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg',
-  heroImage: '/images/services/plasmage-hero.webp',
+  heroImage: '/images/services/plasmage-hero-visage-estetski-studio.webp',
   focalPoint: 'right',
   metaDescription: 'Profesionalna Plasmage terapija u VISAGE studiju u Siska. Lifting i obnavljanje kože uz pomoć revolucionarne plazme i radiofrekvencije. Sigurna i učinkovita metoda.',
   metaKeywords: 'plasmage, lifting kože, plazma, radiofrekvencija, estetski studio Sisak, VISAGE studio, plasmage terapija, obnavljanje kože',

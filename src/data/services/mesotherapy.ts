@@ -19,7 +19,7 @@ U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimal
   benefits: [
   ],
   image: '/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg',
-  heroImage: '/images/services/toskani-hero.webp',
+  heroImage: '/images/services/toskani-hero-visage-estetski-studio.webp',
   focalPoint: 'top',
   metaDescription: 'Profesionalna mezoterapija u VISAGE studiju u Siska. Dubinska hidratacija i revitalizacija kože uz pomoć preciznih mikroinjekcija Mesoject Gun tehnologijom.',
   metaKeywords: 'mezoterapija, hidratacija kože, mikroinjekcije, estetski studio Sisak, VISAGE studio, Mesoject Gun, mezoterapija lica',

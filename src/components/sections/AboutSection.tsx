@@ -23,7 +23,7 @@ const AboutSection = () => {
           </div>
           <div className="relative h-96">
             <Image
-              src="/images/services/toskani-hero.webp"
+              src="/images/services/toskani-hero-visage-estetski-studio.webp"
               alt="VISAGE Studio"
               fill
               className="object-cover rounded-lg"

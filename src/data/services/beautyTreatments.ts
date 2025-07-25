@@ -15,7 +15,7 @@ U Visage studiju nudimo različite vrste beauty tretmana, prilagođene vašim po
   benefits: [
   ],
   image: '/images/services/socialmedia_peelings_combined.webp',
-  heroImage: '/images/services/obrve-i-trepavice.webp',
+  heroImage: '/images/services/eyebrows-eyelashes-visage-estetski-studio.webp',
   metaDescription: 'Profesionalni beauty tretmani u VISAGE studiju u Siska. Luksuzni tretmani za lice i tijelo s premium proizvodima. Potpuno opuštanje i njega kože.',
   metaKeywords: 'beauty tretmani, njega kože, opuštanje, estetski studio Sisak, VISAGE studio, luksuzni tretmani, hidratacija kože',
   tags: ['beauty-tretmani', 'opuštanje', 'njega-kože', 'luksuzni-tretmani', 'hidratacija'],
@@ -26,37 +26,37 @@ U Visage studiju nudimo različite vrste beauty tretmana, prilagođene vašim po
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
-      image: '/images/services/TKNHA3_.webp'
+      image: '/images/services/beauty-treatment-visage-estetski-studio.webp'
     },
     { 
       id: 'kandidati', 
       label: 'Kandidati', 
       icon: 'FaUsers',
-      image: '/images/services/TKNHA3_.webp'
+      image: '/images/services/beauty-treatment-visage-estetski-studio.webp'
     },
     { 
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
-      image: '/images/services/TKNHA3_.webp'
+      image: '/images/services/beauty-treatment-visage-estetski-studio.webp'
     },
     { 
       id: 'tijek-zahvata', 
       label: 'Tijek zahvata', 
       icon: 'FaRegClock',
-      image: '/images/services/TKNHA3_.webp'
+      image: '/images/services/beauty-treatment-visage-estetski-studio.webp'
     },
     { 
       id: 'oporavak', 
       label: 'Oporavak', 
       icon: 'FaRegHospital',
-      image: '/images/services/TKNHA3_.webp'
+      image: '/images/services/beauty-treatment-visage-estetski-studio.webp'
     },
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
       icon: 'FaRegFile',
-      image: '/images/services/TKNHA3_.webp'
+      image: '/images/services/beauty-treatment-visage-estetski-studio.webp'
     },
     { 
       id: 'cijena', 

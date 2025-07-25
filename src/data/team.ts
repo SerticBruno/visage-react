@@ -3,7 +3,7 @@ import { TeamMember } from '@/components/ui/TeamMemberCard';
 export const teamMembers: TeamMember[] = [
   {
     name: 'Tatjana Torinek',
-    image: '/images/services/plasmage-hero.webp',
+    image: '/images/services/plasmage-hero-visage-estetski-studio.webp',
     title: 'dr. spec. med. obiteljske medicine',
     credentials: [
       'dr. spec. med. obiteljske medicine',
@@ -15,7 +15,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Mia Torinek',
-    image: '/images/services/manikura.webp',
+    image: '/images/services/manicure-visage-estetski-studio.webp',
     title: 'mag. oec. smjer marketing',
     credentials: [
       'mag. oec. smjer marketing',
@@ -27,7 +27,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Helena Torinek',
-    image: '/images/services/TKNHA3_.webp',
+    image: '/images/services/beauty-treatment-visage-estetski-studio.webp',
     title: 'dr. med. vet.',
     credentials: [
       'dr. med. vet.',
@@ -47,7 +47,7 @@ export const teamDetails = {
 
 export const teamDetailsSection = {
   image: {
-    src: '/images/services/TKNHA3_.webp',
+          src: '/images/services/beauty-treatment-visage-estetski-studio.webp',
     alt: 'VISAGE Studio team'
   },
   details: [

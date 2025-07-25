@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Pregledajte naš katalog proizvoda za njegu kože. Visokokvalitetni proizvodi TOSKANI i drugih vodećih brendova za profesionalnu i kućnu njegu.",
     images: [
       {
-        url: "/images/services/toskani-woman.webp",
+        url: "/images/services/toskani-woman-visage-estetski-studio.webp",
         width: 1200,
         height: 630,
         alt: "VISAGE Studio - Katalog proizvoda"

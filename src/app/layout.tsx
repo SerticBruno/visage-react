@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     description: "VISAGE Studio je estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI.",
     images: [
       {
-        url: "/images/services/toskani-woman.webp",
+        url: "/images/services/toskani-woman-visage-estetski-studio.webp",
         width: 1200,
         height: 630,
         alt: "VISAGE Studio - Estetski studio Sisak"
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "VISAGE Studio - Estetski studio Sisak",
     description: "VISAGE Studio je estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI.",
-    images: ["/images/services/toskani-woman.webp"],
+            images: ["/images/services/toskani-woman-visage-estetski-studio.webp"],
     creator: "@visagestudio", // Add your Twitter handle if you have one
     site: "@visagestudio", // Add your Twitter handle if you have one
   },

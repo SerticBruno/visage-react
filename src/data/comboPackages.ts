@@ -29,7 +29,7 @@ export const comboPackages: ComboPackage[] = [
     id: "glow-combo",
     title: "Glow Combo",
     description: "Kompletni paket za sjajnu i zdravu kožu",
-    image: "/images/services/toskani-woman.webp",
+    image: "/images/services/toskani-woman-visage-estetski-studio.webp",
     price: "450 EUR",
     oldPrice: "520 EUR",
     services: [
@@ -49,7 +49,7 @@ export const comboPackages: ComboPackage[] = [
         id: "skin-boosteri", 
         title: "Skin Boosteri", 
         quantity: 1,
-        image: "/images/services/toskani-hero.webp"
+        image: "/images/services/toskani-hero-visage-estetski-studio.webp"
       }
     ],
     products: [
@@ -72,7 +72,7 @@ export const comboPackages: ComboPackage[] = [
     id: "anti-age-combo",
     title: "Anti-Age Combo",
     description: "Napredni paket za mladolik izgled",
-    image: "/images/services/toskani-woman.webp",
+    image: "/images/services/toskani-woman-visage-estetski-studio.webp",
     price: "680 EUR",
     oldPrice: "780 EUR",
     services: [
@@ -94,7 +94,7 @@ export const comboPackages: ComboPackage[] = [
         id: "skin-boosteri", 
         title: "Skin Boosteri", 
         quantity: 1,
-        image: "/images/services/toskani-hero.webp",
+        image: "/images/services/toskani-hero-visage-estetski-studio.webp",
         shortDescription: "Napredna hidratacija"
       }
     ],
@@ -118,7 +118,7 @@ export const comboPackages: ComboPackage[] = [
     id: "premium-combo",
     title: "Premium Combo",
     description: "Ekskluzivni paket za najbolje rezultate",
-    image: "/images/services/toskani-woman.webp",
+    image: "/images/services/toskani-woman-visage-estetski-studio.webp",
     price: "890 EUR",
     oldPrice: "1050 EUR",
     services: [

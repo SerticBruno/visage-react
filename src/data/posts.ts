@@ -288,7 +288,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/plasmage-hero.webp',
+        src: '/images/services/plasmage-hero-visage-estetski-studio.webp',
         alt: 'Plazma terapija tretman',
         caption: 'Profesionalni tretman plazma terapije u VISAGE studiju'
       },
@@ -508,7 +508,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/obrve-i-trepavice.webp',
+        src: '/images/services/eyebrows-eyelashes-visage-estetski-studio.webp',
         alt: 'Tretman obrva',
         caption: 'Profesionalni tretman obrva u VISAGE studiju'
       },
@@ -567,7 +567,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/botox-face-girl.webp',
+        src: '/images/services/botox-treatment-visage-estetski-studio.webp',
         alt: 'Tretman trepavica',
         caption: 'Profesionalni tretman trepavica u VISAGE studiju'
       },
@@ -678,7 +678,7 @@ export const blogPosts: BlogPost[] = [
     date: new Date('2024-03-20'),
     author: 'Mia Torinek',
     tags: ['Obrve', 'Trepavice', 'Laminacija', 'Mikroblading', 'Lifting trepavica', 'Tintiranje', 'Estetska medicina', 'Izražajni pogled'],
-    image: '/images/services/obrve-i-trepavice.webp'
+    image: '/images/services/eyebrows-eyelashes-visage-estetski-studio.webp'
   },
   {
     id: 4,
@@ -703,7 +703,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/toskani-hero.webp',
+        src: '/images/services/toskani-hero-visage-estetski-studio.webp',
         alt: 'TOSKANI proizvodi',
         caption: 'TOSKANI linija proizvoda za profesionalnu njegu kože'
       },
@@ -763,7 +763,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/toskani-woman.webp',
+        src: '/images/services/toskani-woman-visage-estetski-studio.webp',
         alt: 'TOSKANI tretman',
         caption: 'Profesionalni tretman s TOSKANI proizvodima u VISAGE studiju'
       },
@@ -876,7 +876,7 @@ export const blogPosts: BlogPost[] = [
     date: new Date('2024-03-25'),
     author: 'Mia Torinek',
     tags: ['TOSKANI', 'Njega kože', 'Kozmetika', 'Profesionalni proizvodi', 'Anti-aging', 'Hidratacija', 'Talijanska kozmetika', 'Prirodni sastojci'],
-    image: '/images/services/toskani-hero.webp'
+    image: '/images/services/toskani-hero-visage-estetski-studio.webp'
   },
   {
     id: 5,
@@ -951,7 +951,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/TKNHA3_.webp',
+        src: '/images/services/beauty-treatment-visage-estetski-studio.webp',
         alt: 'Rezultati mezoterapije',
         caption: 'Vidljivi rezultati nakon serije tretmana mezoterapije'
       },
@@ -1094,7 +1094,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/manikura.webp',
+        src: '/images/services/manicure-visage-estetski-studio.webp',
         alt: 'Profesionalna manikura',
         caption: 'Profesionalni tretman manikure u VISAGE studiju'
       },
@@ -1271,7 +1271,7 @@ export const blogPosts: BlogPost[] = [
     date: new Date('2024-05-09'),
     author: 'Mia Torinek',
     tags: ['Manikura', 'Njega ruku', 'Nokti'],
-    image: '/images/services/manikura.webp'
+    image: '/images/services/manicure-visage-estetski-studio.webp'
   },
   {
     id: 7,
@@ -1287,7 +1287,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/botox-face-girl.webp',
+        src: '/images/services/botox-treatment-visage-estetski-studio.webp',
         alt: 'Kozmetički tretman za muškarce',
         caption: 'Profesionalni tretman za mušku kožu'
       },
@@ -1317,7 +1317,7 @@ export const blogPosts: BlogPost[] = [
     date: new Date('2024-05-11'),
     author: 'dr. T. Torinek',
     tags: ['Muška njega', 'Kozmetika', 'Anti-aging'],
-    image: '/images/services/botox-face-girl.webp'
+    image: '/images/services/botox-treatment-visage-estetski-studio.webp'
   },
   {
     id: 8,
@@ -1342,7 +1342,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/toskani-woman.webp',
+        src: '/images/services/toskani-woman-visage-estetski-studio.webp',
         alt: 'Prirodna njega kože',
         caption: 'Prirodni sastojci za njegu kože u VISAGE studiju'
       },
@@ -1576,7 +1576,7 @@ export const blogPosts: BlogPost[] = [
     date: new Date('2024-05-15'),
     author: 'Mia Torinek',
       tags: ['Prirodna njega', 'TOSKANI', 'Kozmetika', 'Njega kože', 'Prirodni sastojci'],
-    image: '/images/services/toskani-woman.webp'
+    image: '/images/services/toskani-woman-visage-estetski-studio.webp'
   },
   {
     id: 9,
@@ -1859,7 +1859,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/botox-face-girl.webp',
+        src: '/images/services/botox-treatment-visage-estetski-studio.webp',
         alt: 'Anti-aging tretman',
         caption: 'Profesionalni anti-aging tretman u VISAGE studiju'
       },
@@ -2106,7 +2106,7 @@ export const blogPosts: BlogPost[] = [
     date: new Date('2024-05-25'),
     author: 'dr. T. Torinek',
       tags: ['Anti-aging', 'Estetska medicina', 'Njega kože', 'Mladolik izgled', 'Regeneracija kože'],
-    image: '/images/services/botox-face-girl.webp'
+    image: '/images/services/botox-treatment-visage-estetski-studio.webp'
   },
   {
     id: 11,
@@ -2131,7 +2131,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'image',
-        src: '/images/services/plasmage-hero.webp',
+        src: '/images/services/plasmage-hero-visage-estetski-studio.webp',
         alt: 'Plasmage tretman',
         caption: 'Plasmage - revolucionarna kombinacija plazme i radiofrekvencije u VISAGE studiju'
       },
@@ -2436,6 +2436,6 @@ export const blogPosts: BlogPost[] = [
     date: new Date('2024-05-30'),
     author: 'dr. T. Torinek',
       tags: ['Plasmage', 'Anti-aging', 'Estetska medicina', 'Radiofrekvencija', 'Plazma terapija', 'Mladolik izgled'],
-    image: '/images/services/plasmage-hero.webp'
+    image: '/images/services/plasmage-hero-visage-estetski-studio.webp'
   }
 ]; 

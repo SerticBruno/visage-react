@@ -104,7 +104,7 @@ export default function ComboPackagesInlineSection() {
                                   </div>
                                   <div className="text-center flex items-center justify-center">
                                     <div className="flex items-center justify-center gap-1 md:gap-2">
-                                      <h5 className="font-medium text-sm md:text-xs lg:text-sm group-hover:text-primary transition-colors uppercase">{service.title}</h5>
+                                      <h5 className="font-medium text-sm md:text-xs lg:text-sm group-hover:text-primary transition-colors">{service.title}</h5>
                                       {service.quantity > 1 && (
                                         <span className="text-xs md:text-xs lg:text-sm text-primary font-medium">x{service.quantity}</span>
                                       )}
@@ -145,7 +145,7 @@ export default function ComboPackagesInlineSection() {
                                       </div>
                                       <div className="text-center flex items-center justify-center">
                                         <div className="flex items-center justify-center gap-1 md:gap-2">
-                                          <h5 className="font-medium text-sm md:text-xs lg:text-sm group-hover:text-primary transition-colors uppercase">{product.title}</h5>
+                                          <h5 className="font-medium text-sm md:text-xs lg:text-sm group-hover:text-primary transition-colors">{product.title}</h5>
                                           {product.quantity > 1 && (
                                             <span className="text-xs md:text-xs lg:text-sm text-primary font-medium">x{product.quantity}</span>
                                           )}

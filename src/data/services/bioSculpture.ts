@@ -15,7 +15,7 @@ U Visage studiju koristimo originalne Bio Sculpture proizvode i tehnike, što os
   benefits: [
   ],
   image: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp',
-  heroImage: '/images/services/manikura.webp',
+  heroImage: '/images/services/manicure-visage-estetski-studio.webp',
   metaDescription: 'Profesionalni Bio Sculpture sistemi u VISAGE studiju u Siska. Vrhunska njega i ukrašavanje noktiju s originalnim Bio Sculpture proizvodima. Dugotrajni rezultati i prirodan izgled.',
   metaKeywords: 'bio sculpture, nokti, manikura, estetski studio Sisak, VISAGE studio, bio sculpture sistemi, njega noktiju',
   tags: ['bio-sculpture', 'nokti', 'manikura', 'nježni-tretmani', 'gel-lak'],
@@ -26,37 +26,37 @@ U Visage studiju koristimo originalne Bio Sculpture proizvode i tehnike, što os
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
-      image: '/images/services/manikura.webp'
+      image: '/images/services/manicure-visage-estetski-studio.webp'
     },
     { 
       id: 'kandidati', 
       label: 'Kandidati', 
       icon: 'FaUsers',
-      image: '/images/services/manikura.webp'
+      image: '/images/services/manicure-visage-estetski-studio.webp'
     },
     { 
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
-      image: '/images/services/manikura.webp'
+      image: '/images/services/manicure-visage-estetski-studio.webp'
     },
     { 
       id: 'tijek-zahvata', 
       label: 'Tijek zahvata', 
       icon: 'FaRegClock',
-      image: '/images/services/manikura.webp'
+      image: '/images/services/manicure-visage-estetski-studio.webp'
     },
     { 
       id: 'oporavak', 
       label: 'Oporavak', 
       icon: 'FaRegHospital',
-      image: '/images/services/manikura.webp'
+      image: '/images/services/manicure-visage-estetski-studio.webp'
     },
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
       icon: 'FaRegFile',
-      image: '/images/services/manikura.webp'
+      image: '/images/services/manicure-visage-estetski-studio.webp'
     },
     { 
       id: 'cijena', 

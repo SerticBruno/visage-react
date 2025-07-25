@@ -39,7 +39,7 @@ export async function generateMetadata(
       description: `Pregledajte ${totalPosts} ${totalPosts === 1 ? 'članak' : 'članaka'} u kategoriji ${tag} na blogu VISAGE Studija. Stručni članci o estetskoj medicini i kozmetičkim tretmanima.`,
       images: [
         {
-          url: "/images/services/toskani-woman.webp",
+          url: "/images/services/toskani-woman-visage-estetski-studio.webp",
           width: 1200,
           height: 630,
           alt: `VISAGE Studio - Blog - ${tag}`

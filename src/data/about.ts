@@ -7,7 +7,7 @@ export const storyContent = {
     'U našem studiju možete, uz savjet kozmetologinje, kupiti dermokozmetičke proizvode i suplemente za njegu lica, tijela i vlasišta renomiranih svjetskih marki.'
   ],
   image: {
-    src: '/images/services/botox-face-girl.webp',
+          src: '/images/services/botox-treatment-visage-estetski-studio.webp',
     alt: 'VISAGE Studio interior'
   }
 }; 
