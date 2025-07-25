@@ -68,7 +68,7 @@ export default function RelatedServicesSection({ currentService, relatedServices
   }
 
   return (
-    <section className="bg-gradient-to-t from-[#e5e7eb] to-white">
+    <section style={{ background: 'linear-gradient(to top, #e5e7eb, #ffffff)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
