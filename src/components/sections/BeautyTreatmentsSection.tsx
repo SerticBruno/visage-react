@@ -107,10 +107,7 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
                   <p className="text-gray-600 text-sm leading-relaxed line-clamp-6 whitespace-pre-line">{treatment.description}</p>
                 </div>
                 <div className="flex items-center justify-between">
-                  <div className="text-sm text-gray-500">
-                    <span className="font-medium">{treatment.duration}</span>
-                  </div>
-                  <div className="group inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#1e293b] to-[#334155] text-white rounded-lg hover:from-[#334155] hover:to-[#475569] transition-all duration-300 shadow-md hover:shadow-lg text-sm font-medium">
+                  <div className="group inline-flex items-center gap-2 px-4 py-2 bg-[#1e293b] text-white rounded-lg hover:bg-[#334155] transition-all duration-300 shadow-md hover:shadow-lg text-sm font-medium">
                     <span>Saznajte više</span>
                     <FaChevronRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
@@ -150,10 +147,7 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
                   <p className="text-gray-600 text-sm leading-relaxed line-clamp-6 whitespace-pre-line">{treatment.description}</p>
                 </div>
                 <div className="flex items-center justify-between">
-                  <div className="text-sm text-gray-500">
-                    <span className="font-medium">{treatment.duration}</span>
-                  </div>
-                  <div className="group inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#1e293b] to-[#334155] text-white rounded-lg hover:from-[#334155] hover:to-[#475569] transition-all duration-300 shadow-md hover:shadow-lg text-sm font-medium">
+                  <div className="group inline-flex items-center gap-2 px-4 py-2 bg-[#1e293b] text-white rounded-lg hover:bg-[#334155] transition-all duration-300 shadow-md hover:shadow-lg text-sm font-medium">
                     <span>Saznajte više</span>
                     <FaChevronRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>

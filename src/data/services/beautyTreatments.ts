@@ -20,7 +20,7 @@ export const beautyTreatments: Service = {
   id: 'beauty-tretmani',
   title: 'Beauty tretmani',
   akuzativTitle: 'beauty tretmanima',
-  description: 'Luksuzni beauty tretmani za potpuno opuštanje i njegu kože',
+  description: 'Otkrijte Timeless Beauty s našim Circadia profesionalnim kozmetičkim protokolima',
   longDescription: `<strong>Beauty tretmani</strong> su luksuzni tretmani za lice i tijelo koji pružaju <strong>potpuno opuštanje</strong>, <strong>duboku njegu</strong> i <strong>revitalizaciju kože</strong>. Ova premium iskustva kombinira najkvalitetnije proizvode s profesionalnim tehnikama za maksimalne rezultate.
 
 Kroz pažljivo planirane tretmane, <strong>beauty tretmani</strong> pružaju <strong>duboku hidrataciju</strong>, <strong>poboljšanje tonusa kože</strong> i <strong>potpuno opuštanje</strong>. Svaki tretman je jedinstveno iskustvo koje kombinira terapeutske koristi s luksuznim ambijentom.
