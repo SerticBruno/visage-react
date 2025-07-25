@@ -88,6 +88,36 @@ export default function ServiceContentSection({
               </div>
             )}
 
+            {/* Combo packages section - shown above button for both mobile and desktop */}
+            {hasComboPackages && comboPackages.length > 0 && (
+              <div className="p-4 bg-gradient-to-r from-slate-50 to-white rounded-xl border border-slate-200 mb-8">
+                <p className="text-sm text-slate-700 leading-relaxed mb-4">
+                  Ova usluga je također dostupna kao dio naših premium combo paketa koji pružaju kompletnu transformaciju i optimalne rezultate:
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {comboPackages.map((comboPackage) => (
+                    <button
+                      key={comboPackage.id}
+                      onClick={() => setOpenComboModal(comboPackage.id)}
+                      className={`flex items-center gap-1.5 px-2.5 py-1.5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer text-left min-w-0 ${
+                        comboPackages.length === 1 ? '' : 'flex-1'
+                      }`}
+                    >
+                      <div className="w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></div>
+                      <div className="min-w-0 flex-1">
+                        <div className="text-xs font-medium text-slate-800 leading-tight">
+                          {comboPackage.title}
+                        </div>
+                        <div className="text-xs text-slate-600 underline hover:text-slate-800 transition-colors font-medium">
+                          Detalji
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <Link
               href={serviceName ? `/kontakt?service=${encodeURIComponent(serviceName)}` : "/kontakt"}
               className="inline-flex items-center px-8 py-4 border border-slate-600 text-base font-medium rounded-xl shadow-lg text-white bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:shadow-xl"
@@ -97,37 +127,7 @@ export default function ServiceContentSection({
           </div>
 
           <div className="order-2 lg:order-1">
-            {/* Combo packages section - shown above image on mobile */}
-            {hasComboPackages && comboPackages.length > 0 && (
-              <div className="p-4 bg-gradient-to-r from-slate-50 to-white rounded-xl border border-slate-200 mb-6 lg:hidden">
-                <p className="text-sm text-slate-700 leading-relaxed mb-4">
-                  Ova usluga je također dostupna kao dio naših premium combo paketa koji pružaju kompletnu transformaciju i optimalne rezultate:
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {comboPackages.map((comboPackage) => (
-                    <button
-                      key={comboPackage.id}
-                      onClick={() => setOpenComboModal(comboPackage.id)}
-                      className={`flex items-center gap-1.5 px-2.5 py-1.5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer text-left min-w-0 ${
-                        comboPackages.length === 1 ? '' : 'flex-1'
-                      }`}
-                    >
-                      <div className="w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></div>
-                      <div className="min-w-0 flex-1">
-                        <div className="text-xs font-medium text-slate-800 leading-tight">
-                          {comboPackage.title}
-                        </div>
-                        <div className="text-xs text-slate-600 underline hover:text-slate-800 transition-colors font-medium">
-                          Detalji
-                        </div>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="relative h-[400px] lg:h-[600px] rounded-lg overflow-hidden mb-6">
+            <div className="relative h-full min-h-[400px] lg:min-h-[600px] rounded-lg overflow-hidden mb-6">
               <Image
                 src={imageSrc}
                 alt={imageAlt}
@@ -137,36 +137,6 @@ export default function ServiceContentSection({
                 priority
               />
             </div>
-            
-            {/* Combo packages section - shown below image on desktop */}
-            {hasComboPackages && comboPackages.length > 0 && (
-              <div className="p-4 bg-gradient-to-r from-slate-50 to-white rounded-xl border border-slate-200 hidden lg:block">
-                <p className="text-sm text-slate-700 leading-relaxed mb-4">
-                  Ova usluga je također dostupna kao dio naših premium combo paketa koji pružaju kompletnu transformaciju i optimalne rezultate:
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {comboPackages.map((comboPackage) => (
-                    <button
-                      key={comboPackage.id}
-                      onClick={() => setOpenComboModal(comboPackage.id)}
-                      className={`flex items-center gap-1.5 px-2.5 py-1.5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer text-left min-w-0 ${
-                        comboPackages.length === 1 ? '' : 'flex-1'
-                      }`}
-                    >
-                      <div className="w-1.5 h-1.5 bg-slate-400 rounded-full flex-shrink-0"></div>
-                      <div className="min-w-0 flex-1">
-                        <div className="text-xs font-medium text-slate-800 leading-tight">
-                          {comboPackage.title}
-                        </div>
-                        <div className="text-xs text-slate-600 underline hover:text-slate-800 transition-colors font-medium">
-                          Detalji
-                        </div>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
