@@ -18,8 +18,8 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 U <strong>Visage studiju</strong> koristimo najnoviju tehnologiju fototerapije, što osigurava <strong>optimalne rezultate i maksimalnu sigurnost</strong>. Svaki tretman je pažljivo planiran za postizanje željenih rezultata uz <strong>minimalno vrijeme oporavka</strong>.`,
   benefits: [
   ],
-  image: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp',
-  heroImage: '/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg',
+  image: '/images/services/dermalux/dermalux-about-visage-estetski-studio.png',
+  heroImage: '/images/services/dermalux/dermalux-visage-estetski-studio.png',
   metaDescription: 'Profesionalna fototerapija u VISAGE studiju u Siska. Napredni tretmani kože svjetlom za akne, ožiljke i poboljšanje tonusa kože. Sigurni i učinkoviti rezultati.',
   metaKeywords: 'fototerapija, svjetlosna terapija, akne, ožiljci, hiperpigmentacija, estetski studio Sisak, VISAGE studio, tretman kože svjetlom',
   tags: ['fototerapija', 'svjetlosna-terapija', 'akne', 'ožiljci', 'hiperpigmentacija', 'nježni-tretmani'],
@@ -30,25 +30,24 @@ U <strong>Visage studiju</strong> koristimo najnoviju tehnologiju fototerapije, 
       id: 'prednosti', 
       label: 'Prednosti', 
       icon: 'FaRegFileAlt',
-      image: '/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg'
+      image: '/images/services/dermalux/dermalux-prednosti-visage-estetski-studio.jpg'
     },
     { 
       id: 'kandidati', 
       label: 'Kandidati', 
       icon: 'FaUsers',
-      image: '/images/services/mezoterapija/mezoterapija-kandidati-visage-estetski-studio.jpg'
     },
     { 
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
-      image: '/images/services/mezoterapija/mezoterapija-priprema-visage-estetski-studio.jpg'
+      image: '/images/services/dermalux/dermalux-priprema-visage-estetski-studio.png'
     },
     { 
       id: 'tijek-tretmana', 
       label: 'Tijek tretmana', 
       icon: 'FaRegClock',
-      image: '/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp'
+      image: '/images/services/dermalux/dermalux-tijek-zahvata-visage-estetski-studio.png'
     },
     { 
       id: 'oporavak', 
@@ -59,7 +58,7 @@ U <strong>Visage studiju</strong> koristimo najnoviju tehnologiju fototerapije, 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
       icon: 'FaRegFile',
-      image: '/images/services/mezoterapija/mezoterapija-nakon-tretmana-visage-estetski-studio.jpg'
+      image: '/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png'
     },
     { 
       id: 'cijena', 

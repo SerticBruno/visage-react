@@ -20,16 +20,18 @@ export const beautyTreatments: Service = {
   id: 'beauty-tretmani',
   title: 'Beauty tretmani',
   akuzativTitle: 'beauty tretmanima',
-  description: 'Otkrijte Timeless Beauty s našim Circadia profesionalnim kozmetičkim protokolima',
-  longDescription: `<strong>Beauty tretmani</strong> su luksuzni tretmani za lice i tijelo koji pružaju <strong>potpuno opuštanje</strong>, <strong>duboku njegu</strong> i <strong>revitalizaciju kože</strong>. Ova premium iskustva kombinira najkvalitetnije proizvode s profesionalnim tehnikama za maksimalne rezultate.
+  description: 'Otkrijte Timeless beauty s Circadia profesionalnim kozmetičkim protokolima',
+  longDescription: `<strong>Circadia</strong> je profesionalna marka za njegu kože koji koristi prirodu i znanost putem prirodnih cirkadijalnih ritmova kože i tijela.
 
-Kroz pažljivo planirane tretmane, <strong>beauty tretmani</strong> pružaju <strong>duboku hidrataciju</strong>, <strong>poboljšanje tonusa kože</strong> i <strong>potpuno opuštanje</strong>. Svaki tretman je jedinstveno iskustvo koje kombinira terapeutske koristi s luksuznim ambijentom.
+Srž koncepta je <strong>kronobiologija</strong>, znanost o obrani kože od vanjskih oštećenja tijekom dana te poticanju unutarnjih mehanizama popravka tijekom sna.
 
-<strong>Beauty tretmani</strong> su idealni za sve tipove kože i pružaju <strong>trenutne rezultate opuštanja i osvježavanja</strong>. Posebno su učinkoviti za <strong>dehidriranu kožu</strong>, <strong>umornu kožu</strong> i osobe koje traže <strong>premium iskustvo njegovanja</strong>.
+<strong>Circadia formulacije</strong> kombiniraju čiste biljke, matične stanice, vitamine druge generacije i inovativnu tehnologiju peptida kako bi postigle optimalno zdravlje i ljepotu kože.
 
-Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/kemijski-piling">kemijski piling</a>, <a href="/usluge/mezoterapija">mezoterapija</a> i <a href="/usluge/skin-boosteri">skin boosteri</a>.
+<strong>Circadia specijalizirani tretmani</strong> koriste ove tehnologije kako bi riješili mnoga stanja kože, uključujući starenje, akne, dehidraciju, pigmentaciju i rozaceju.
 
-U <strong>Visage studiju</strong> nudimo različite vrste <strong>beauty tretmana</strong>, prilagođene vašim potrebama i željama. Svaki tretman je pažljivo planiran za <strong>optimalne rezultate</strong> i <strong>potpuno opuštanje</strong>.`,
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/fototerapija">Dermalux LED fototerapija</a>, <a href="/usluge/kemijski-piling">kemijski piling</a> i <a href="/usluge/mezoterapija">mezoterapija</a>.
+
+Uživajte u <strong>hidratiziranoj i zdravoj koži</strong> te zaštitite kožu tijekom dana, a popravite preko noći. Naručite se na <strong>beauty tretman</strong> u <strong>Visage studiju</strong>.`,
   benefits: [
   ],
   image: '/images/services/socialmedia_peelings_combined.webp',
