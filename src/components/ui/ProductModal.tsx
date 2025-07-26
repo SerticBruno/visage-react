@@ -60,7 +60,7 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-4 h-full">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={onClose} />
         
         <Transition.Child
@@ -81,18 +81,18 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
               <FaTimes size={20} />
             </button>
             
-            <div className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 h-[calc(100vh-4rem)] md:h-auto md:max-h-[90vh] flex flex-col">
+            <div className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 max-h-[90vh]">
               {/* Header */}
-              <div className="flex justify-between items-start p-4 pb-3 border-b border-slate-100 flex-shrink-0">
+              <div className="flex justify-between items-start p-4 pb-3 border-b border-slate-100">
                 <h2 className="text-xl font-bold text-slate-900">
                   {product.title}
                 </h2>
               </div>
               
               {/* Content */}
-              <div className="flex flex-col md:flex-row flex-1 min-h-0 overflow-hidden">
+              <div className="flex flex-col md:flex-row">
                 {/* Fixed Left Side */}
-                <div className="w-full md:w-2/5 p-6 md:p-4 border-r border-slate-100 flex-shrink-0">
+                <div className="w-full md:w-2/5 p-4 border-r border-slate-100">
                   <div className="relative h-64 md:h-96 bg-slate-50 rounded-xl overflow-hidden shadow-sm">
                     <Image
                       src={product.image}
@@ -144,12 +144,8 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                 </div>
                 
                 {/* Scrollable Right Side */}
-                <div className="w-full md:w-3/5 overflow-y-auto flex-1 modal-scrollable-content" style={{ 
-                  WebkitOverflowScrolling: 'touch',
-                  height: '100%',
-                  maxHeight: 'calc(90vh - 5rem)'
-                }}>
-                  <div className="p-6 md:p-4 space-y-3 pb-8">
+                <div className="w-full md:w-3/5 overflow-y-auto max-h-[calc(90vh-5rem)] modal-scrollable-content">
+                  <div className="p-4 space-y-3">
                     <div className="bg-slate-50 rounded-xl p-3">
                       <h3 className="text-sm font-semibold text-slate-900 mb-1">Opis</h3>
                       <div className="text-sm text-slate-600 leading-relaxed whitespace-pre-line">
@@ -372,6 +368,7 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                           </div>
                         </div>
                       </div>
+                    </div>
 
                     {/* Product Safety Information */}
                     {product.warnings && product.warnings.length > 0 && (
