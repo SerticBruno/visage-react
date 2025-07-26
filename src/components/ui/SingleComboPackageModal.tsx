@@ -47,12 +47,31 @@ export default function SingleComboPackageModal({
             <div className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 max-h-[90vh]">
               {/* Header */}
               <div className="relative h-64 overflow-hidden">
-                <Image
-                  src={comboPackage.image}
-                  alt={comboPackage.title}
-                  fill
-                  className="object-cover"
-                />
+                {/* Combined Service and Product Images */}
+                <div className="relative w-full h-full flex">
+                  {/* Services */}
+                  {comboPackage.services.map((service, index) => (
+                    <div key={`service-${service.id}`} className="relative flex-1">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                  {/* Products */}
+                  {comboPackage.products && comboPackage.products.map((product, index) => (
+                    <div key={`product-${product.id}`} className="relative flex-1">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
                 {/* Header Content */}
@@ -191,10 +210,17 @@ export default function SingleComboPackageModal({
                           )}
                         </div>
                         {comboPackage.oldPrice && (
-                          <div className="text-sm text-slate-600">
+                          <div className="text-sm text-slate-600 mb-4">
                             Uštedite {Math.round((1 - parseFloat(comboPackage.price.replace(/\D/g, '')) / parseFloat(comboPackage.oldPrice.replace(/\D/g, ''))) * 100)}% u odnosu na pojedinačne usluge
                           </div>
                         )}
+                        <Link
+                          href={`/kontakt?combo=${encodeURIComponent(comboPackage.title)}`}
+                          onClick={onClose}
+                          className="w-full inline-flex items-center justify-center px-6 py-3 border border-slate-600 text-base font-medium rounded-xl text-white bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:shadow-lg"
+                        >
+                          Rezervirajte paket
+                        </Link>
                       </div>
 
                       {/* Benefits */}
@@ -215,17 +241,6 @@ export default function SingleComboPackageModal({
                         </ul>
                       </div>
                     </div>
-                  </div>
-
-                  {/* CTA Button */}
-                  <div className="mt-8 pt-6 border-t border-slate-200">
-                    <Link
-                      href={`/kontakt?combo=${encodeURIComponent(comboPackage.title)}`}
-                      onClick={onClose}
-                      className="w-full inline-flex items-center justify-center px-6 py-4 border border-slate-600 text-base font-medium rounded-xl text-white bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:shadow-lg"
-                    >
-                      Rezervirajte ovaj paket
-                    </Link>
                   </div>
                 </div>
               </div>

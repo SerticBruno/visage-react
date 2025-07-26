@@ -30,8 +30,8 @@ export const comboPackages: ComboPackage[] = [
     title: "Neck Refine",
     description: "Elegantna definicija linije čeljusti i svjež izgled vrata",
     image: "/images/services/woman-face-visage-estetski-studio.webp",
-    price: "445 EUR",
-    oldPrice: "525 EUR",
+    price: "635 EUR",
+    oldPrice: "750 EUR",
     services: [
       { 
         id: "botox", 
@@ -39,9 +39,9 @@ export const comboPackages: ComboPackage[] = [
         image: "/images/services/botox/botox-visage-estetski-studio.webp"
       },
       { 
-        id: "dermalni-fileri", 
-        title: "Dermalni Fileri 1 ml", 
-        image: "/images/services/dermalni-fileri/dermalni-fileri-visage-estetski-studio-sisak.webp"
+        id: "mezoterapija", 
+        title: "Y zona 5 mezoterapija otapanja i zatezanja podbratka i vrata", 
+        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
       }
     ],
     benefits: [
@@ -58,7 +58,7 @@ export const comboPackages: ComboPackage[] = [
     id: "hair-boost-combo",
     title: "Hair Boost",
     description: "Intenzivan tretman za poticanje rasta kose i jačanje vlasišta",
-    image: "/images/products/anti-hair-loss-background.webp",
+    image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
     price: "690 EUR",
     oldPrice: "810 EUR",
     services: [
@@ -84,137 +84,103 @@ export const comboPackages: ComboPackage[] = [
     isLimited: true
   },
   {
-    id: "glow-combo",
-    title: "Glow Combo",
-    description: "Kompletni paket za sjajnu i zdravu kožu",
-    image: "/images/services/toskani-woman-visage-estetski-studio.webp",
-    price: "450 EUR",
-    oldPrice: "520 EUR",
+    id: "fresh-up-combo",
+    title: "Fresh Up",
+    description: "Kombinacija liftinga i prirodnog volumena za brzo osvježenje kože",
+    image: "/images/services/woman-face-visage-estetski-studio.webp",
+    price: "445 EUR",
+    oldPrice: "525 EUR",
     services: [
       { 
-        id: "kemijski-piling", 
-        title: "Kemijski Piling", 
-        quantity: 1,
-        image: "/images/services/kemijski-piling/toskani-bg.webp"
-      },
-      { 
-        id: "prp", 
-        title: "PRP", 
-        quantity: 1,
-        image: "/images/services/woman-face-visage-estetski-studio.webp"
-      },
-      { 
-        id: "skin-boosteri", 
-        title: "Skin Boosteri", 
-        quantity: 1,
-        image: "/images/services/toskani-hero-visage-estetski-studio.webp"
-      }
-    ],
-    products: [
-      { 
-        id: "2", 
-        title: "Purifying Cleanser", 
-        quantity: 1,
-        image: "/images/products/purifying-cleanser-visage-estetski-studio.webp"
-      }
-    ],
-    benefits: [
-      "Dubinska hidratacija kože",
-      "Poboljšana tekstura i ton kože",
-      "Smanjenje finih linija",
-      "Zaštita od sunca uključena"
-    ],
-    isPopular: true
-  },
-  {
-    id: "anti-age-combo",
-    title: "Anti-Age Combo",
-    description: "Napredni paket za mladolik izgled",
-    image: "/images/services/toskani-woman-visage-estetski-studio.webp",
-    price: "680 EUR",
-    oldPrice: "780 EUR",
-    services: [
-      { 
-        id: "kemijski-piling", 
-        title: "Kemijski Piling", 
-        quantity: 1,
-        image: "/images/services/kemijski-piling/toskani-bg.webp",
-        shortDescription: "Obnova kože"
-      },
-      { 
-        id: "mezoterapija", 
-        title: "Mezoterapija", 
-        quantity: 1,
-        image: "/images/services/mezoterapija/mezoterapija-tijek-zahvata-visage-estetski-studio.webp",
-        shortDescription: "Dubinska hidratacija"
-      },
-      { 
-        id: "skin-boosteri", 
-        title: "Skin Boosteri", 
-        quantity: 1,
-        image: "/images/services/toskani-hero-visage-estetski-studio.webp",
-        shortDescription: "Napredna hidratacija"
-      }
-    ],
-    products: [
-      { 
-        id: "20", 
-        title: "Retin Pro Age Cream", 
-        quantity: 1,
-        image: "/images/products/toskani-retin-pro-age-estetski-studio-visage-sisak.png"
-      }
-    ],
-    benefits: [
-      "Dubinska regeneracija kože",
-      "Poboljšana elastičnost",
-      "Smanjenje bora",
-      "Svježiji i mladolikiji izgled"
-    ],
-    isLimited: true
-  },
-  {
-    id: "premium-combo",
-    title: "Premium Combo",
-    description: "Ekskluzivni paket za najbolje rezultate",
-    image: "/images/services/toskani-woman-visage-estetski-studio.webp",
-    price: "890 EUR",
-    oldPrice: "1050 EUR",
-    services: [
-      { 
-        id: "plasmage", 
-        title: "Plasmage", 
-        quantity: 1,
-        image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg",
-        shortDescription: "Napredna terapija"
+        id: "botox", 
+        title: "Botox - 50 jedinica", 
+        image: "/images/services/botox/botox-visage-estetski-studio.webp"
       },
       { 
         id: "dermalni-fileri", 
-        title: "Dermalni Fileri", 
-        quantity: 1,
-        image: "/images/services/dermalni-fileri/dermalni-fileri-visage-estetski-studio-sisak.webp",
-        shortDescription: "Volumizacija"
-      },
-      { 
-        id: "kemijski-piling", 
-        title: "Kemijski Piling", 
-        quantity: 1,
-        image: "/images/services/kemijski-piling/toskani-bg.webp",
-        shortDescription: "Obnova kože"
-      }
-    ],
-    products: [
-      { 
-        id: "22", 
-        title: "Unique Pro Age Cream", 
-        quantity: 1,
-        image: "/images/products/toskani-unique-pro-age-cream-visage-estetski-studio.png"
+        title: "Dermalni Filer 1 ml", 
+        image: "/images/services/dermalni-fileri/dermalni-fileri-visage-estetski-studio-sisak.webp"
       }
     ],
     benefits: [
-      "Kompletna transformacija kože",
-      "Maksimalna hidratacija i regeneracija",
-      "Dugotrajni rezultati",
-      "Personalizirani pristup"
+      "Osvježava i pomlađuje lice",
+      "Suptilan, prirodan rezultat",
+      "Smanjuje vidljivost bora i finih linija",
+      "Vraća volumen"
+    ],
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "ultimate-glow-up-combo",
+    title: "Ultimate Glow Up",
+    description: "Ciljani tretmani za osvježenje lica i vrata",
+    image: "/images/services/woman-face-visage-estetski-studio.webp",
+    price: "885 EUR",
+    oldPrice: "1055 EUR",
+    services: [
+      { 
+        id: "botox", 
+        title: "Botox - 50 jedinica", 
+        image: "/images/services/botox/botox-visage-estetski-studio.webp"
+      },
+      { 
+        id: "mezoterapija", 
+        title: "Mezoterapija lica i vrata 4 tretmana", 
+        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
+      },
+      { 
+        id: "dermalni-fileri", 
+        title: "Dermalni Filer 1 ml", 
+        image: "/images/services/dermalni-fileri/dermalni-fileri-visage-estetski-studio-sisak.webp"
+      },
+      { 
+        id: "foto-terapija", 
+        title: "LED Fototerapija 4 tretmana", 
+        image: "/images/services/dermalux/dermalux-about-visage-estetski-studio.png"
+      }
+    ],
+    benefits: [
+      "Potiče proizvodnju kolagena i elastina",
+      "Daje volumen licu",
+      "Osvježava kožu lica",
+      "Poboljšava kvalitetu kože",
+      "Umanjuje bore i fine linije",
+      "Savršen za pripremu za važan događaj"
+    ],
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "skin-revive-combo",
+    title: "Skin Revive",
+    description: "Regeneracija kože na staničnoj razini",
+    image: "/images/services/skin-boosters-hero-visage-estetski-studio.webp",
+    price: "825 EUR",
+    oldPrice: "980 EUR",
+    services: [
+      { 
+        id: "skin-boosteri", 
+        title: "Skin Booster TKN HA3 2 tretmana", 
+        image: "/images/services/skin-boosters/skin-booster-visage-estetski-studio-sisak.jpeg"
+      },
+      { 
+        id: "prp", 
+        title: "2 PRP tretmana", 
+        image: "/images/services/prp/prp-prednosti-estetski-studio-sisak.jpeg"
+      },
+      { 
+        id: "foto-terapija", 
+        title: "2 LED Fototerapija", 
+        image: "/images/services/dermalux/dermalux-about-visage-estetski-studio.png"
+      }
+    ],
+    benefits: [
+      "Idealno za umornu, dehidriranu i oštećenu kožu",
+      "Potiče stvaranje kolagena i elastina",
+      "Vraća hidrataciju i elastičnost koži",
+      "Potiče samostalnu regeneraciju kože",
+      "Poboljšava teksturu kože"
     ],
     isPopular: true,
     isLimited: true

@@ -16,6 +16,7 @@ import { Metadata } from 'next';
 import { popularServices } from '@/data/popularServices';
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
 import ComboPackagesInlineSection from '@/components/sections/ComboPackagesInlineSection';
+import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSectionPreview';
 
 export const metadata: Metadata = {
   title: "Estetski studio Sisak",
@@ -91,7 +92,7 @@ export default function Home() {
         viewAllLink="/usluge"
         viewAllText="Pogledajte sve usluge"
       />
-      <ComboPackagesInlineSection />
+      <ComboPackagesSectionPreview />
       <NewsletterCTASection />
       <ServiceSlider 
         services={popularProductsData}
