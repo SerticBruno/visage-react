@@ -262,10 +262,10 @@ export default function PricingPage() {
                           type="checkbox"
                           checked={selectedBadges.includes('popular')}
                           onChange={() => toggleBadge('popular')}
-                          className="h-4 w-4 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded"
+                          className="h-4 w-4 text-slate-500 focus:ring-slate-500 border-gray-300 rounded"
                         />
                         <span className="text-sm text-gray-700 flex items-center gap-1">
-                          <FaStar className="w-3 h-3 text-yellow-500" />
+                          <FaStar className="w-3 h-3 text-slate-600" />
                           Popularno
                         </span>
                       </label>
@@ -274,10 +274,10 @@ export default function PricingPage() {
                           type="checkbox"
                           checked={selectedBadges.includes('package')}
                           onChange={() => toggleBadge('package')}
-                          className="h-4 w-4 text-green-500 focus:ring-green-500 border-gray-300 rounded"
+                          className="h-4 w-4 text-slate-500 focus:ring-slate-500 border-gray-300 rounded"
                         />
                         <span className="text-sm text-gray-700 flex items-center gap-1">
-                          <FaBox className="w-3 h-3 text-green-500" />
+                          <FaBox className="w-3 h-3 text-slate-600" />
                           Paket
                         </span>
                       </label>
@@ -313,13 +313,13 @@ export default function PricingPage() {
                                 <div className="flex flex-wrap items-center gap-2 mb-2">
                                   <h4 className="text-base font-medium text-gray-900">{item.title}</h4>
                                   {item.isPackage && (
-                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-800">
                                       <FaBox className="mr-1" />
                                       Paket
                                     </span>
                                   )}
                                   {item.isPopular && (
-                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">
+                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-800">
                                       <FaStar className="mr-1" />
                                       Popularno
                                     </span>
