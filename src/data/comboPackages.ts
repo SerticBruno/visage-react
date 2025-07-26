@@ -26,6 +26,48 @@ export interface ComboPackage {
 
 export const comboPackages: ComboPackage[] = [
   {
+    id: "hair-boost-combo",
+    title: "Hair Boost",
+    description: "Intenzivan tretman za poticanje rasta kose i jačanje vlasišta",
+    image: "/images/products/anti-hair-loss-background.webp",
+    price: "690 EUR",
+    oldPrice: "810 EUR",
+    services: [
+      { 
+        id: "mezoterapija", 
+        title: "Mezoterapija vlasišta velike zone", 
+        quantity: 5,
+        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
+        shortDescription: "Dubinska hidratacija vlasišta"
+      },
+      { 
+        id: "prp", 
+        title: "PRP tretman", 
+        quantity: 2,
+        image: "/images/services/prp/prp-prednosti-estetski-studio-sisak.jpeg",
+        shortDescription: "Prirodna regeneracija"
+      }
+    ],
+    products: [
+      { 
+        id: "densihair-boost-capsules", 
+        title: "DensiHair Boost Capsules", 
+        quantity: 1,
+        image: "/images/products/densihair-boost-capsules-visage-estetski-studio.webp",
+        shortDescription: "Dodatna podrška rastu kose"
+      }
+    ],
+    benefits: [
+      "Poboljšava kvalitetu vlasišta",
+      "Potiče rast kose",
+      "Jača kosu i vlasište",
+      "Smanjuje ispadanje kose",
+      "Idealno za tanku, prorjeđenu kosu"
+    ],
+    isPopular: true,
+    isLimited: true
+  },
+  {
     id: "glow-combo",
     title: "Glow Combo",
     description: "Kompletni paket za sjajnu i zdravu kožu",
