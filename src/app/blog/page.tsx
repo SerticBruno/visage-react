@@ -103,48 +103,68 @@ export default function BlogPage() {
 
   const handlePageChange = (newPage: number) => {
     if (newPage !== currentPage) {
+      setIsTransitioning(true);
       setIsScrolling(true);
-      setCurrentPage(newPage);
       
-      requestAnimationFrame(() => {
-        scrollToPosts();
-        setTimeout(() => {
-          setIsScrolling(false);
-        }, 500);
-      });
+      // Fade out first
+      setTimeout(() => {
+        setCurrentPage(newPage);
+        
+        requestAnimationFrame(() => {
+          scrollToPosts();
+          setTimeout(() => {
+            setIsScrolling(false);
+          }, 500);
+        });
+      }, 150); // Half of the transition duration
     }
   };
 
   const toggleCategory = (categoryId: string) => {
+    setIsTransitioning(true);
     setIsFiltering(true);
-    setSelectedCategories(prev => 
-      prev.includes(categoryId)
-        ? prev.filter(c => c !== categoryId)
-        : [...prev, categoryId]
-    );
-    requestAnimationFrame(scrollToPosts);
+    
+    // Fade out first
+    setTimeout(() => {
+      setSelectedCategories(prev => 
+        prev.includes(categoryId)
+          ? prev.filter(c => c !== categoryId)
+          : [...prev, categoryId]
+      );
+      requestAnimationFrame(scrollToPosts);
+    }, 150); // Half of the transition duration
   };
 
   const toggleAuthor = (author: string) => {
+    setIsTransitioning(true);
     setIsFiltering(true);
-    setSelectedAuthors(prev => 
-      prev.includes(author)
-        ? prev.filter(a => a !== author)
-        : [...prev, author]
-    );
-    requestAnimationFrame(scrollToPosts);
+    
+    // Fade out first
+    setTimeout(() => {
+      setSelectedAuthors(prev => 
+        prev.includes(author)
+          ? prev.filter(a => a !== author)
+          : [...prev, author]
+      );
+      requestAnimationFrame(scrollToPosts);
+    }, 150); // Half of the transition duration
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsFiltering(true);
     setSearchTerm(e.target.value);
+    setIsFiltering(true);
     requestAnimationFrame(scrollToPosts);
   };
 
   const handleSort = (option: SortOption) => {
+    setIsTransitioning(true);
     setIsFiltering(true);
-    setSortBy(option);
-    requestAnimationFrame(scrollToPosts);
+    
+    // Fade out first
+    setTimeout(() => {
+      setSortBy(option);
+      requestAnimationFrame(scrollToPosts);
+    }, 150); // Half of the transition duration
   };
 
   return (
@@ -302,7 +322,7 @@ export default function BlogPage() {
 
             {/* Posts Grid */}
             <div className="flex-1">
-              <div ref={postsRef} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-300 ${isScrolling || isFiltering ? 'opacity-25' : 'opacity-100'}`}>
+              <div ref={postsRef} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-300 ${isScrolling || isFiltering || isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                 {currentPosts.map((post) => (
                   <BlogPostCard 
                     key={post.id} 
