@@ -10,7 +10,7 @@ import { popularProducts } from '@/data/popularProducts';
 import { blogPosts } from '@/data/posts';
 
 // Conditionally import FeaturedBlogsSection only when blog is enabled
-const FeaturedBlogsSection = BLOG_ENABLED ? require('@/components/sections/FeaturedBlogsSection').default : null;
+import FeaturedBlogsSection from '@/components/sections/FeaturedBlogsSection';
 import ServiceSlider from '@/components/ui/ServiceSlider';
 import { Metadata } from 'next';
 import { popularServices } from '@/data/popularServices';
@@ -103,7 +103,7 @@ export default function Home() {
       />
       <ServicesSectionPreview/>
       <CTASection gradientDirection='b'/>
-      {BLOG_ENABLED && FeaturedBlogsSection && <FeaturedBlogsSection posts={featuredPosts} />}
+      {BLOG_ENABLED && <FeaturedBlogsSection posts={featuredPosts} />}
       <FAQSection />
       <PartnersSlider />
       <ContactSection hasTopPadding={false}/>
