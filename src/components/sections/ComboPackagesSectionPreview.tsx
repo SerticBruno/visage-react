@@ -8,7 +8,7 @@ import { Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import SingleComboPackageModal from '@/components/ui/SingleComboPackageModal';
-import { ComboPackage } from '@/data/comboPackages';
+
 import 'swiper/css';
 
 export default function ComboPackagesSectionPreview() {
@@ -93,7 +93,7 @@ export default function ComboPackagesSectionPreview() {
                     {/* Combined Cover Photo */}
                     <div className="relative w-full h-full flex">
                       {/* Services */}
-                      {comboPackage.services.map((service, index) => (
+                      {comboPackage.services.map((service) => (
                         <div key={`service-${service.id}`} className="relative flex-1">
                           <Image
                             src={service.image}
@@ -106,7 +106,7 @@ export default function ComboPackagesSectionPreview() {
                         </div>
                       ))}
                       {/* Products */}
-                      {comboPackage.products && comboPackage.products.map((product, index) => (
+                      {comboPackage.products && comboPackage.products.map((product) => (
                         <div key={`product-${product.id}`} className="relative flex-1">
                           <Image
                             src={product.image}

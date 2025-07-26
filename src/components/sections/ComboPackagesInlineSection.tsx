@@ -171,7 +171,6 @@ export default function ComboPackagesInlineSection() {
                         <div className="hidden md:flex flex-row items-center justify-center gap-3 lg:gap-4">
                           {(() => {
                             const totalItems = pkg.services.length + (pkg.products?.length || 0);
-                            const maxItems = 4; // Maximum expected items for width calculation
                             const cardWidth = totalItems <= 2 ? 'w-48 lg:w-56 xl:w-64' : 'w-40 lg:w-44 xl:w-48';
                             
                             return (

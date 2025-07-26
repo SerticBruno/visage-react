@@ -15,7 +15,7 @@ import ServiceSlider from '@/components/ui/ServiceSlider';
 import { Metadata } from 'next';
 import { popularServices } from '@/data/popularServices';
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
-import ComboPackagesInlineSection from '@/components/sections/ComboPackagesInlineSection';
+
 import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSectionPreview';
 
 export const metadata: Metadata = {
