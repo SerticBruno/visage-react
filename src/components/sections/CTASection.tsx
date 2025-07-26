@@ -28,12 +28,10 @@ const CTASection = ({
   // Define gradient styles based on direction
   const getGradientStyle = () => {
     if (gradientDirection === 't') {
-      // 't' = top to bottom gradient (light at top, darker at bottom)
       return {
-        background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)'
+        background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)'
       };
     } else {
-      // 'b' = bottom to top gradient (darker at top, light at bottom)
       return {
         background: 'linear-gradient(to top, #ffffff, #e5e7eb)'
       };

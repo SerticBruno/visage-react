@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { blogPosts } from '@/data/posts';
-import { blogCategories } from '@/data/blogCategories';
 import HeroSection from '@/components/sections/HeroSection';
 import { FaSearch, FaSort, FaSortAmountDown, FaSortAmountUp, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import BlogPostCard from '@/components/ui/BlogPostCard';
@@ -11,7 +10,8 @@ import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 
 const POSTS_PER_PAGE = 6;
 
-// Get unique authors from all posts
+// Get unique tags and authors from all posts
+const allTags = Array.from(new Set(blogPosts.flatMap(post => post.tags)));
 const allAuthors = Array.from(new Set(blogPosts.map(post => post.author)));
 
 type SortOption = 'newest' | 'oldest' | 'title-asc' | 'title-desc';
@@ -19,23 +19,24 @@ type SortOption = 'newest' | 'oldest' | 'title-asc' | 'title-desc';
 export default function BlogPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedAuthors, setSelectedAuthors] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<SortOption>('newest');
   const [isScrolling, setIsScrolling] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
   const postsRef = useRef<HTMLDivElement>(null);
   const categoriesRef = useRef<HTMLDivElement>(null);
+  const [showGradient, setShowGradient] = useState(false);
 
   const filteredPosts = blogPosts
     .filter(post => {
       const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategories = selectedCategories.length === 0 || 
-        selectedCategories.includes(post.category);
+      const matchesTags = selectedTags.length === 0 || 
+        selectedTags.some(tag => post.tags.includes(tag));
       const matchesAuthors = selectedAuthors.length === 0 ||
         selectedAuthors.includes(post.author);
-      return matchesSearch && matchesCategories && matchesAuthors;
+      return matchesSearch && matchesTags && matchesAuthors;
     })
     .sort((a, b) => {
       switch (sortBy) {
@@ -60,7 +61,7 @@ export default function BlogPage() {
   // Reset to first page when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, selectedCategories, selectedAuthors, sortBy]);
+  }, [searchTerm, selectedTags, selectedAuthors, sortBy]);
 
   // Reset filtering state after a delay
   useEffect(() => {
@@ -97,12 +98,12 @@ export default function BlogPage() {
     }
   };
 
-  const toggleCategory = (categoryId: string) => {
+  const toggleTag = (tag: string) => {
     setIsFiltering(true);
-    setSelectedCategories(prev => 
-      prev.includes(categoryId)
-        ? prev.filter(c => c !== categoryId)
-        : [...prev, categoryId]
+    setSelectedTags(prev => 
+      prev.includes(tag)
+        ? prev.filter(t => t !== tag)
+        : [...prev, tag]
     );
     requestAnimationFrame(scrollToPosts);
   };
@@ -127,6 +128,19 @@ export default function BlogPage() {
     setIsFiltering(true);
     setSortBy(option);
     requestAnimationFrame(scrollToPosts);
+  };
+
+  const handleCategoriesScroll = () => {
+    const scrollTop = categoriesRef.current?.scrollTop || 0;
+    const scrollHeight = categoriesRef.current?.scrollHeight || 0;
+    const clientHeight = categoriesRef.current?.clientHeight || 0;
+    const scrollThreshold = scrollHeight - clientHeight - 100;
+
+    if (scrollTop >= scrollThreshold) {
+      setShowGradient(true);
+    } else {
+      setShowGradient(false);
+    }
   };
 
   return (
@@ -176,6 +190,7 @@ export default function BlogPage() {
                 <div className="relative h-[300px]">
                   <div 
                     ref={categoriesRef}
+                    onScroll={handleCategoriesScroll}
                     className="absolute inset-0 overflow-y-auto pr-4 space-y-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
                   >
                     {/* Sort Options */}
@@ -251,26 +266,32 @@ export default function BlogPage() {
                       </div>
                     </div>
 
-                    {/* Categories */}
+                    {/* Tags */}
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-2">
                         Kategorije
                       </label>
                       <div className="space-y-2">
-                        {blogCategories.map((category) => (
-                          <label key={category.id} className="flex items-center space-x-2 cursor-pointer">
+                        {allTags.map((tag) => (
+                          <label key={tag} className="flex items-center space-x-2 cursor-pointer">
                             <input
                               type="checkbox"
-                              checked={selectedCategories.includes(category.id)}
-                              onChange={() => toggleCategory(category.id)}
+                              checked={selectedTags.includes(tag)}
+                              onChange={() => toggleTag(tag)}
                               className="h-4 w-4 text-slate-600 focus:ring-slate-500 border-slate-300 rounded cursor-pointer"
                             />
-                            <span className="text-sm text-slate-700 cursor-pointer">{category.name}</span>
+                            <span className="text-sm text-slate-700 cursor-pointer">{tag}</span>
                           </label>
                         ))}
                       </div>
                     </div>
                   </div>
+                  {/* Gradient overlay to indicate scrollable content */}
+                  <div 
+                    className={`absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent pointer-events-none transition-opacity duration-200 ${
+                      showGradient ? 'opacity-100' : 'opacity-0'
+                    }`} 
+                  />
                 </div>
 
                 {/* Results Count - Moved to bottom */}

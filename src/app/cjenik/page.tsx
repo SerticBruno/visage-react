@@ -335,7 +335,7 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
-      <CTASection gradientDirection='t'/>
+      <CTASection />
       <ContactSection/>
     </main>
   );

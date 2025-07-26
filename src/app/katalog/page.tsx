@@ -662,7 +662,7 @@ function KatalogContent() {
           product={selectedProduct}
         />
       </div>
-      <CTASection gradientDirection='t' />
+      <CTASection />
       <ContactSection hasTopPadding={false} />
     </>
   );

@@ -6,7 +6,6 @@ export const blogPosts: BlogPost[] = [
     title: 'Kemijski piling: otkrivanje vaše prirodne ljepote',
     slug: 'kemijski-piling-blistava-koza',
     excerpt: 'Kroz kontrolirano uklanjanje mrtvih stanica, otkrivamo svježu, mladenačku kožu koja je uvijek bila tu, samo skrivena ispod površine.',
-    category: 'old',
     content: [
       {
         type: 'heading',
@@ -271,7 +270,6 @@ export const blogPosts: BlogPost[] = [
     title: 'Plazma terapija: vaša krv kao eliksir mladosti',
     slug: 'plazma-terapija',
     excerpt: 'Zamislite da vaša vlastita krv može biti ključ do mladosti. Koristi prirodne faktore rasta iz vašeg tijela za potpunu regeneraciju kože.',
-    category: 'recent',
     content: [
       {
         type: 'heading',
@@ -492,7 +490,6 @@ export const blogPosts: BlogPost[] = [
     title: 'Obrve i trepavice: ogledalo duše',
     slug: 'obrve-trepavice',
     excerpt: 'Obrve i trepavice su tajni jezik ljepote koji govori bez riječi. Kroz preciznu umjetnost oblikovanja, stvaramo okvir koji otkriva istinsku ljepotu vaših očiju.',
-    category: 'recent',
     content: [
       {
         type: 'heading',
@@ -688,7 +685,6 @@ export const blogPosts: BlogPost[] = [
     title: 'TOSKANI: talijanska umjetnost ljepote',
     slug: 'toskani-proizvodi',
     excerpt: 'Kombinira mudrost prirode s preciznošću znanosti. Svaki proizvod je priča o kvaliteti, učinkovitosti i posvećenosti savršenstvu.',
-    category: 'new-blogs',
     content: [
       {
         type: 'heading',
@@ -887,7 +883,6 @@ export const blogPosts: BlogPost[] = [
     title: 'Mezoterapija: dubinska hidratacija kože',
     slug: 'mezoterapija',
     excerpt: 'Zamislite da vaša koža može popiti vodu kao spužva. Direktno dostavlja hidrataciju u najdublje slojeve kože, stvarajući efekt koji se može osjetiti i vidjeti.',
-    category: 'new-blogs',
     content: [
       {
         type: 'heading',
@@ -1081,7 +1076,6 @@ export const blogPosts: BlogPost[] = [
     title: 'Manikura: ruke govore priču',
     slug: 'njega-ruku',
     excerpt: 'Ruke su tajni jezik koji govori o vašoj ljepoti bez riječi. Kroz preciznu umjetnost manikure, stvaramo priču o vašem stilu i eleganciji.',
-    category: 'recent',
     content: [
       {
         type: 'heading',
@@ -1284,7 +1278,6 @@ export const blogPosts: BlogPost[] = [
     title: 'Muška ljepota: moderni pristup njezi kože',
     slug: 'kozmeticki-tretmani-za-muskarce',
     excerpt: 'Ljepota nije samo ženska domena. Moderni muškarci prepoznaju da je njega kože znak samopouzdanja i profesionalnosti.',
-    category: 'old',
     content: [
       {
         type: 'text',
@@ -1331,7 +1324,6 @@ export const blogPosts: BlogPost[] = [
     title: 'Prirodna njega kože: priroda kao kozmetičar',
     slug: 'prirodna-njega-koze',
     excerpt: 'Priroda je najbolji kozmetičar - ona već zna što vaša koža treba. Kroz mudro odabrane prirodne sastojke, otkrivamo tajne koje su bile tu od početka vremena.',
-    category: 'new-blogs',
     content: [
       {
         type: 'heading',
@@ -1591,7 +1583,6 @@ export const blogPosts: BlogPost[] = [
     title: 'Zimska bajka za kožu: blistavost i tijekom hladnih mjeseci',
     slug: 'zimski-tretmani-koze',
     excerpt: 'Zima nije vrijeme za sakrivanje ljepote - otkrijte kako vaša koža može blistati čak i kada vani pada snijeg kroz nježnu zaštitu i dubinsku regeneraciju.',
-    category: 'recent',
     content: [
       {
         type: 'heading',
@@ -1850,7 +1841,6 @@ export const blogPosts: BlogPost[] = [
     title: 'Anti-aging tretmani: prepisivanje priče o mladosti',
     slug: 'anti-aging-tretmani',
     excerpt: 'Starenje nije neizbježno - otkrijte kako anti-aging tretmani mogu vratiti vašem licu priču o mladosti, energiji i vitalnosti.',
-    category: 'new-blogs',
     content: [
       {
         type: 'heading',
@@ -2123,7 +2113,6 @@ export const blogPosts: BlogPost[] = [
     title: 'Plasmage: revolucionarna sinergija znanosti i prirode',
     slug: 'plasmage-najnoviji-trend',
     excerpt: 'Otkrijte kako kombinacija prirodnih faktora rasta i napredne tehnologije stvara ljepotu koja se čini nemogućom, ali je potpuno prirodna.',
-    category: 'new-blogs',
     content: [
       {
         type: 'heading',
