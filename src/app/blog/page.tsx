@@ -31,6 +31,7 @@ export default function BlogPage() {
   const [sortBy, setSortBy] = useState<SortOption>('newest');
   const [isScrolling, setIsScrolling] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const postsRef = useRef<HTMLDivElement>(null);
   const categoriesRef = useRef<HTMLDivElement>(null);
 
@@ -78,6 +79,16 @@ export default function BlogPage() {
       return () => clearTimeout(timer);
     }
   }, [isFiltering]);
+
+  // Handle transition state
+  useEffect(() => {
+    if (isTransitioning) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isTransitioning]);
 
   const scrollToPosts = () => {
     const navbarHeight = 80;

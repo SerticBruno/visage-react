@@ -14,6 +14,7 @@ export default function PricingPage() {
   const [selectedBadges, setSelectedBadges] = useState<string[]>([]);
   const [isScrolling] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   
   // Accordion states for filter sections
@@ -46,6 +47,16 @@ export default function PricingPage() {
     }
   }, [isFiltering]);
 
+  // Handle transition state
+  useEffect(() => {
+    if (isTransitioning) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isTransitioning]);
+
   const scrollToContent = () => {
     const navbarHeight = 80;
     const contentTop = contentRef.current?.offsetTop || 0;
@@ -58,28 +69,38 @@ export default function PricingPage() {
   };
 
   const toggleCategory = (category: string) => {
+    setIsTransitioning(true);
     setIsFiltering(true);
-    setSelectedCategories(prev => 
-      prev.includes(category)
-        ? prev.filter(c => c !== category)
-        : [...prev, category]
-    );
-    requestAnimationFrame(scrollToContent);
+    
+    // Fade out first
+    setTimeout(() => {
+      setSelectedCategories(prev => 
+        prev.includes(category)
+          ? prev.filter(c => c !== category)
+          : [...prev, category]
+      );
+      requestAnimationFrame(scrollToContent);
+    }, 150); // Half of the transition duration
   };
 
   const toggleBadge = (badge: string) => {
+    setIsTransitioning(true);
     setIsFiltering(true);
-    setSelectedBadges(prev => 
-      prev.includes(badge)
-        ? prev.filter(b => b !== badge)
-        : [...prev, badge]
-    );
-    requestAnimationFrame(scrollToContent);
+    
+    // Fade out first
+    setTimeout(() => {
+      setSelectedBadges(prev => 
+        prev.includes(badge)
+          ? prev.filter(b => b !== badge)
+          : [...prev, badge]
+      );
+      requestAnimationFrame(scrollToContent);
+    }, 150); // Half of the transition duration
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsFiltering(true);
     setSearchTerm(e.target.value);
+    setIsFiltering(true);
     requestAnimationFrame(scrollToContent);
   };
 
@@ -144,9 +165,14 @@ export default function PricingPage() {
                     {searchTerm && (
                       <button
                         onClick={() => {
+                          setIsTransitioning(true);
                           setIsFiltering(true);
-                          setSearchTerm('');
-                          requestAnimationFrame(scrollToContent);
+                          
+                          // Fade out first, then clear search
+                          setTimeout(() => {
+                            setSearchTerm('');
+                            requestAnimationFrame(scrollToContent);
+                          }, 150); // Half of the transition duration
                         }}
                         className="absolute right-3 top-3.5 w-6 h-6 flex items-center justify-center bg-gray-200 hover:bg-gray-300 text-gray-600 hover:text-gray-800 rounded-full transition-all duration-200 cursor-pointer"
                         aria-label="Očisti pretraživanje"
@@ -272,7 +298,7 @@ export default function PricingPage() {
             {/* Main Content */}
             <div className="flex-1 bg-gradient-to-br from-gray-50 via-white to-gray-50 rounded-lg p-6" ref={contentRef}>
               {/* Content View */}
-              <div className={`transition-opacity duration-300 ${isScrolling || isFiltering ? 'opacity-25' : 'opacity-100'}`}>
+              <div className={`transition-opacity duration-300 ${isScrolling || isFiltering || isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                 <div className="space-y-6">
                   {Object.entries(groupedItems).map(([category, items]) => (
                     <div key={`category-group-${category}`} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
