@@ -54,7 +54,8 @@ function KatalogContent() {
     const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          product.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesProductType = selectedProductTypes.length === 0 || 
-      (product.productType && selectedProductTypes.includes(product.productType));
+      (product.productType && selectedProductTypes.includes(product.productType)) ||
+      (product.category && selectedProductTypes.includes(product.category));
     const matchesSkinType = selectedSkinTypes.length === 0 || 
       (product.skinType && product.skinType.some(skinType => selectedSkinTypes.includes(skinType)));
     const matchesSkinConcern = selectedSkinConcerns.length === 0 || 
