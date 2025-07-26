@@ -229,29 +229,6 @@ export default function ComboPackagesSectionPreview() {
               <FaChevronRight className="w-4 h-4" />
             </button>
           </div>
-
-          {/* View All Combo Packages Button */}
-          <div className="flex justify-center mt-8">
-            <button
-              onClick={() => setOpenComboModal(comboPackages[0].id)}
-              className="group inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <span className="font-medium">Pogledajte sve combo pakete</span>
-              <svg 
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M14 5l7 7m0 0l-7 7m7-7H3" 
-                />
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
       

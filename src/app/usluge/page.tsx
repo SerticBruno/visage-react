@@ -1,7 +1,7 @@
 import ContactSection from '@/components/sections/ContactSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import HeroSection from '@/components/sections/HeroSection';
-import ComboPackagesInlineSection from '@/components/sections/ComboPackagesInlineSection';
+import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSectionPreview';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function ServicesPage() {
         image="/images/services/services-hero-visage-estetski-studio.webp"
       />
       <ServicesSection />
-      <ComboPackagesInlineSection />
+      <ComboPackagesSectionPreview />
       <ContactSection hasTopPadding={false}/>
     </main>
   );
