@@ -16,6 +16,7 @@ export default function Header() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -40,6 +41,15 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const toggleMenu = () => {
     const newMenuState = !isMenuOpen;
     setIsMenuOpen(newMenuState);
@@ -57,8 +67,29 @@ export default function Header() {
   };
 
   const closeAllMenus = () => {
+    // Clear any existing timeout
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
     setIsMenuOpen(false);
     setIsServicesOpen(false);
+  };
+
+  const handleServicesMouseEnter = () => {
+    // Clear any existing timeout
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setIsServicesOpen(true);
+  };
+
+  const handleServicesMouseLeave = () => {
+    // Set a timeout to close the menu after 500ms delay
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 100);
   };
 
   const isActive = (path: string) => {
@@ -119,8 +150,8 @@ export default function Header() {
             <div
               className="relative"
               ref={dropdownRef}
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+              onMouseEnter={handleServicesMouseEnter}
+              onMouseLeave={handleServicesMouseLeave}
             >
               <div className="flex items-center gap-1">
                 <Link 
@@ -154,7 +185,7 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute left-0 top-full w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100 pt-2 before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-2 before:-translate-y-full"
+                    className="absolute left-0 mt-3 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100"
                   >
                     {Object.entries(services).map(([pageName, service]) => (
                       <Link
