@@ -27,7 +27,7 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
       href={getLink()}
       className={`block h-full ${className}`}
     >
-      <div className="group rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+      <div className="group rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
         {/* Image Section */}
         <div className="relative h-48 w-full overflow-hidden">
           <Image

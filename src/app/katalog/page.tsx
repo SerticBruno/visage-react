@@ -582,8 +582,8 @@ function KatalogContent() {
                       </div>
                       <button 
                         className="px-4 py-2 bg-slate-700 text-white rounded-lg text-sm font-medium shadow-sm cursor-pointer
-                                   hover:bg-white hover:text-slate-700 hover:border-slate-700 hover:border hover:shadow-md transition-all duration-200 ease-out
-                                   group-hover:bg-white group-hover:text-slate-700 group-hover:border-slate-700 group-hover:border group-hover:shadow-lg transform-gpu"
+                                   hover:bg-slate-800 hover:shadow-md transition-all duration-200 ease-out
+                                   group-hover:bg-slate-800 group-hover:shadow-lg transform-gpu"
                         onClick={(e) => {
                           e.stopPropagation();
                           openProductModal(product);
