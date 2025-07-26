@@ -21,7 +21,6 @@ export const pricingCategories = [
   "Kemijski Piling",
   "Kombinirani Paketi",
   "LED fototerapija",
-  "Mezoterapija",
   "Mezoterapija Dermapenom 4",
   "Mezoterapija Mesoject Gunom",
   "Plasmage",
@@ -343,34 +342,7 @@ export const pricingData: PricingItem[] = [
     category: "Kombinirani Paketi"
   },
 
-  // Mezoterapija
-  {
-    id: "brows-package",
-    title: "Brows Paket",
-    description: "5 mezoterapija obrva",
-    price: "100 EUR",
-    category: "Mezoterapija",
-    isPackage: true,
-    packageDetails: "5 tretmana"
-  },
-  {
-    id: "hydraboost-lips",
-    title: "Hydraboost Usana",
-    description: "5 mezoterapija usana hijaluronom",
-    price: "100 EUR",
-    category: "Mezoterapija",
-    isPackage: true,
-    packageDetails: "5 tretmana"
-  },
-  {
-    id: "y-zone",
-    title: "Y Zona",
-    description: "5 tretmana topljenja i zatezanja podbratka i vrata",
-    price: "450 EUR",
-    category: "Mezoterapija",
-    isPackage: true,
-    packageDetails: "5 tretmana"
-  },
+
 
   // Mezoterapija Dermapenom 4
   {
@@ -455,6 +427,88 @@ export const pricingData: PricingItem[] = [
     isPackage: true,
     packageDetails: "4 tretmana"
   },
+  {
+    id: "y-zone-dermapen",
+    title: "Y Zona",
+    description: "5 tretmana topljenja i zatezanja podbratka i vrata",
+    price: "540 EUR",
+    category: "Mezoterapija Dermapenom 4",
+    isPackage: true,
+    packageDetails: "5 tretmana"
+  },
+  {
+    id: "hair-s-dermapen",
+    title: "Hair S",
+    description: "1 mezoterapija male zone vlasišta",
+    price: "60 EUR",
+    category: "Mezoterapija Dermapenom 4"
+  },
+  {
+    id: "hair-s-standard-dermapen",
+    title: "Hair S - Standard Paket",
+    description: "5 mezoterapija male zone vlasišta",
+    price: "270 EUR",
+    category: "Mezoterapija Dermapenom 4",
+    isPackage: true,
+    packageDetails: "5 tretmana"
+  },
+  {
+    id: "hair-s-premium-dermapen",
+    title: "Hair S - Premium Paket",
+    description: "10 mezoterapija male zone vlasišta",
+    price: "500 EUR",
+    category: "Mezoterapija Dermapenom 4",
+    isPackage: true,
+    packageDetails: "10 tretmana"
+  },
+  {
+    id: "hair-l-dermapen",
+    title: "Hair L",
+    description: "1 mezoterapija velike zone vlasišta",
+    price: "90 EUR",
+    category: "Mezoterapija Dermapenom 4"
+  },
+  {
+    id: "hair-l-standard-dermapen",
+    title: "Hair L - Standard Paket",
+    description: "5 mezoterapija velike zone vlasišta",
+    price: "405 EUR",
+    category: "Mezoterapija Dermapenom 4",
+    isPackage: true,
+    packageDetails: "5 tretmana"
+  },
+  {
+    id: "hair-l-premium-dermapen",
+    title: "Hair L - Premium Paket",
+    description: "10 mezoterapija velike zone vlasišta",
+    price: "770 EUR",
+    category: "Mezoterapija Dermapenom 4",
+    isPackage: true,
+    packageDetails: "10 tretmana"
+  },
+  {
+    id: "brows-dermapen",
+    title: "Brows",
+    description: "Nadoplata na tretman mezoterapije vlasišta",
+    price: "10 EUR",
+    category: "Mezoterapija Dermapenom 4"
+  },
+  {
+    id: "brows-package-dermapen",
+    title: "Brows Paket",
+    description: "5 mezoterapija obrva",
+    price: "185 EUR",
+    category: "Mezoterapija Dermapenom 4",
+    isPackage: true,
+    packageDetails: "5 tretmana"
+  },
+  {
+    id: "beard-dermapen",
+    title: "Beard",
+    description: "Nadoplata na tretman mezoterapije vlasišta",
+    price: "20 EUR",
+    category: "Mezoterapija Dermapenom 4"
+  },
   // Mezoterapija Mesoject Gunom
   {
     id: "mesoject-standard",
@@ -478,6 +532,15 @@ export const pricingData: PricingItem[] = [
     description: "1 mezoterapija lica, vrata i dekoltea",
     price: "130 EUR",
     category: "Mezoterapija Mesoject Gunom"
+  },
+  {
+    id: "premium-package",
+    title: "Premium Paket",
+    description: "4 mezoterapije lica i vrata",
+    price: "470 EUR",
+    category: "Mezoterapija Mesoject Gunom",
+    isPackage: true,
+    packageDetails: "4 tretmana"
   },
   {
     id: "mesoject-duosomal-standard",
@@ -540,7 +603,7 @@ export const pricingData: PricingItem[] = [
     id: "mesoject-hair-l-premium",
     title: "Hair L - Premium Paket",
     description: "10 mezoterapija velike zone vlasišta",
-    price: "600 EUR",
+    price: "630 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     packageDetails: "10 tretmana"
@@ -578,13 +641,18 @@ export const pricingData: PricingItem[] = [
     packageDetails: "4 tretmana"
   },
   {
-    id: "premium-package",
-    title: "Premium Paket",
-    description: "4 mezoterapije lica i vrata",
-    price: "470 EUR",
-    category: "Mezoterapija Mesoject Gunom",
-    isPackage: true,
-    packageDetails: "4 tretmana"
+    id: "brows-mesoject",
+    title: "Brows",
+    description: "Nadoplata na tretman mezoterapije vlasišta",
+    price: "10 EUR",
+    category: "Mezoterapija Mesoject Gunom"
+  },
+  {
+    id: "beard-mesoject",
+    title: "Beard",
+    description: "Nadoplata na tretman mezoterapije vlasišta",
+    price: "15 EUR",
+    category: "Mezoterapija Mesoject Gunom"
   },
 
   // Plasmage
