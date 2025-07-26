@@ -65,9 +65,9 @@ export const productTypes = [
 export const skinTypes = [
   'Masna koža',
   'Mješovita koža',
+  'Normalna koža',
   'Osjetljiva koža',
-  'Suha koža',
-  'Normalna koža'
+  'Suha koža'
 ];
 
 // New skin concerns for "Problematika kože"
