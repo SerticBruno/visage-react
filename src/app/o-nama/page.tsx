@@ -25,7 +25,7 @@ export default function OnamaPage() {
     <main>
       <HeroSection
         title="O nama"
-        description="Regenerirajte i pomladite svoju kožu!"
+        description="Posjetite nas u Sisku i započnite svoje beauty putovanje!"
         image="/images/background.webp"
       />
       <AboutContent />
