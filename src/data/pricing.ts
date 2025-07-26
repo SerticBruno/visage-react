@@ -16,11 +16,10 @@ export const pricingCategories = [
   "Beauty Tretmani",
   "Botox",
   "Dermalni Fileri",
-  "Fototerapije",
   "Hijaluronidaza",
   "Kemijski Piling",
   "Kombinirani Paketi",
-  "LED fototerapija",
+  "LED Fototerapija",
   "Mezoterapija Dermapenom 4",
   "Mezoterapija Mesoject Gunom",
   "Plasmage",
@@ -85,57 +84,15 @@ export const pricingData: PricingItem[] = [
     price: "200 EUR",
     category: "Beauty Tretmani"
   },
-  {
-    id: "led-addon",
-    title: "Dermalux LED Terapija Dodatak",
-    description: "Kao dodatak beauty tretmanu u trajanju od 30 min",
-    price: "15 EUR",
-    category: "Fototerapije",
-    duration: "20 min"
-  },
-  {
-    id: "led-single",
-    title: "Dermalux LED Terapija",
-    description: "1 tretman LED svjetlom u trajanju od 30 min",
-    price: "30 EUR",
-    category: "Fototerapije",
-    duration: "30 min"
-  },
-  {
-    id: "led-standard",
-    title: "Dermalux LED Standard Paket",
-    description: "Paket od 4 tretmana LED svjetlom u trajanju od 30 min",
-    price: "108 EUR",
-    category: "Fototerapije",
-    isPackage: true,
-    packageDetails: "4 tretmana"
-  },
-  {
-    id: "led-classic",
-    title: "Dermalux LED Classic Paket",
-    description: "Paket od 6 tretmana LED svjetlom u trajanju od 30 min",
-    price: "165 EUR",
-    category: "Fototerapije",
-    isPackage: true,
-    packageDetails: "6 tretmana"
-  },
-  {
-    id: "led-premium",
-    title: "Dermalux LED Premium Paket",
-    description: "Paket od 12 tretmana LED svjetlom u trajanju od 30 min",
-    price: "305 EUR",
-    category: "Fototerapije",
-    isPackage: true,
-    packageDetails: "12 tretmana"
-  },
 
-  // LED fototerapija
+
+  // LED Fototerapija
   {
     id: "led-fototerapija-single",
     title: "LED Fototerapija - Pojedinačni Tretman",
     description: "1 tretman LED fototerapije u trajanju od 30 min",
     price: "25 EUR",
-    category: "LED fototerapija",
+    category: "LED Fototerapija",
     duration: "30 min"
   },
   {
@@ -143,7 +100,7 @@ export const pricingData: PricingItem[] = [
     title: "LED Fototerapija - Standard Paket",
     description: "Paket od 6 tretmana LED fototerapije",
     price: "135 EUR",
-    category: "LED fototerapija",
+    category: "LED Fototerapija",
     isPackage: true,
     packageDetails: "6 tretmana"
   },
@@ -152,7 +109,7 @@ export const pricingData: PricingItem[] = [
     title: "LED Fototerapija - Premium Paket",
     description: "Paket od 10 tretmana LED fototerapije",
     price: "220 EUR",
-    category: "LED fototerapija",
+    category: "LED Fototerapija",
     isPackage: true,
     packageDetails: "10 tretmana"
   },
@@ -161,7 +118,7 @@ export const pricingData: PricingItem[] = [
     title: "LED Fototerapija - Dodatak",
     description: "Kao dodatak drugom tretmanu u trajanju od 15min",
     price: "15 EUR",
-    category: "LED fototerapija",
+    category: "LED Fototerapija",
     duration: "15 min"
   },
   {

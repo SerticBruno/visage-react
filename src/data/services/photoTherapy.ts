@@ -2,7 +2,7 @@ import { Service } from './types';
 
 export const photoTherapy: Service = {
   id: 'foto-terapija',
-  title: 'LED fototerapija',
+  title: 'LED Fototerapija',
   akuzativTitle: 'Fototerapijom',
   description: 'Zlatni standard profesionalne led fototerapije u službi zdrave i lijepe kože',
   longDescription: `<strong>Dermalux Flex MD</strong> je medicinski CE certificirani uređaj koji omogućuje <strong>vrhunske i neinvazivne tretmane lica</strong>.
@@ -78,7 +78,7 @@ U <strong>Visage studiju</strong> koristimo najnoviju tehnologiju fototerapije, 
 - Pomaže u zacjeljivanju kože nakon operativnih zahvata
 - Može se kombinirati s ostalim tretmanima radi pojačanja učinka tretmana
 - Pogodan i siguran za sve tipove kože`,
-    'kandidati': `LED fototerapija je idealna za osobe koje žele:
+    'kandidati': `LED Fototerapija je idealna za osobe koje žele:
 
 - Poboljšanje tonusa i teksture kože
 - Tretmani akni i ožiljaka
@@ -103,7 +103,7 @@ Tijekom tretmana su oči zaštićene posebnim naočalama i preporuka je da ih dr
 
 4. Preporuka za kućnu njegu - Preporučujemo korištenje <a href="/katalog?product=7">Toskani Total Recovery gela</a> i <a href="/katalog?product=31">Sun Shiel-D fluida</a>.`,
     'oporavak': `Oporavak je minimalan i uključuje blago i privremeno crvenilo tretiranog područja zbog pojačane cirkulacije. Koža može biti topla na dodir.`,
-    'nakon-tretmana': `Za najbolje rezultate preporuča se minimalno 10 LED fototerapija. Fototerapije bi se radile 2 puta tjedno, a za određena stanja i na dnevnoj bazi.
+    'nakon-tretmana': `Za najbolje rezultate preporuča se minimalno 10 LED Fototerapija. Fototerapije bi se radile 2 puta tjedno, a za određena stanja i na dnevnoj bazi.
 
 Nakon fototerapije važno je:
 
