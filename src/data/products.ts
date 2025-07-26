@@ -795,7 +795,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     productType: 'Ampule',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija'],
-    image: '/images/products/radiance_box_purifying_box_ampule.webp',
+    image: '/images/products/radiance-ampule-visage-estetski-studio.webp',
     price: '52 EUR',
     volume: '15x2ml',
     isNew: true,

@@ -499,18 +499,26 @@ function KatalogContent() {
                   className={`
                     group bg-gradient-to-b from-white to-slate-50 rounded-xl shadow-sm overflow-hidden
                     ${product.isPopular ? 'ring-1 ring-slate-200/50' : ''}
-                    hover:shadow-xl transition-all duration-300
-                    flex flex-col h-full cursor-pointer relative
+                    hover:shadow-2xl hover:bg-gradient-to-b hover:from-white hover:to-slate-100
+                    transition-all duration-300 ease-out
+                    flex flex-col h-full cursor-pointer relative border border-transparent hover:border-slate-200
+                    transform-gpu will-change-transform
                   `}
+                  style={{
+                    transform: 'translateZ(0)', // Force hardware acceleration
+                  }}
                   onClick={() => openProductModal(product)}
                 >
-                  <div className="relative h-48 bg-slate-50">
+                  <div className="relative h-48 bg-slate-50 overflow-hidden">
                     <Image
                       src={product.image}
                       alt={product.title}
                       fill
-                      className="object-contain p-2 transition-transform duration-300 hover:scale-105"
+                      className="object-contain p-2 transition-transform duration-300 group-hover:scale-105 transform-gpu"
                       loading="lazy"
+                      style={{
+                        transform: 'translateZ(0)', // Force hardware acceleration
+                      }}
                     />
                     {/* Product Badges */}
                     <div className="absolute top-2 right-2 flex flex-col gap-1">
@@ -573,7 +581,9 @@ function KatalogContent() {
                         )}
                       </div>
                       <button 
-                        className="px-4 py-2 bg-slate-700 text-white rounded-lg text-sm font-medium shadow-sm cursor-pointer"
+                        className="px-4 py-2 bg-slate-700 text-white rounded-lg text-sm font-medium shadow-sm cursor-pointer
+                                   hover:bg-white hover:text-slate-700 hover:border-slate-700 hover:border hover:shadow-md transition-all duration-200 ease-out
+                                   group-hover:bg-white group-hover:text-slate-700 group-hover:border-slate-700 group-hover:border group-hover:shadow-lg transform-gpu"
                         onClick={(e) => {
                           e.stopPropagation();
                           openProductModal(product);

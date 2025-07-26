@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt, FaChevronDown, FaLightbulb } from 'react-icons/fa';
 import Image from 'next/image';
@@ -15,6 +15,22 @@ interface ProductModalProps {
 export default function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
   const [openProTips, setOpenProTips] = useState<number[]>([]);
 
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscapeKey);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+    };
+  }, [isOpen, onClose]);
 
   if (!product) return null;
 
