@@ -52,14 +52,6 @@ export const metadata: Metadata = {
     countryName: "Croatia",
     emails: ["info@visagestudio.hr"], // Add your email if you have one
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "VISAGE Studio - Estetski studio Sisak",
-    description: "VISAGE Studio je estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI.",
-            images: ["/images/services/toskani-woman-visage-estetski-studio.webp"],
-    creator: "@visagestudio", // Add your Twitter handle if you have one
-    site: "@visagestudio", // Add your Twitter handle if you have one
-  },
   robots: {
     index: true,
     follow: true,
