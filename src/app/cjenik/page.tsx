@@ -182,20 +182,21 @@ export default function PricingPage() {
                     }`}
                   >
                     <div className="relative">
-                      <div className="space-y-0.5 max-h-72 overflow-y-auto scrollbar-spaced pr-2">
+                      <div className="space-y-2 max-h-72 overflow-y-auto scrollbar-spaced pr-2">
                         {pricingCategories.filter(category => category !== "Konzultacije").map((category, index) => (
                           <label 
                             key={category} 
-                            className={`flex items-start space-x-2 cursor-pointer group ${
+                            className={`flex items-baseline space-x-2 cursor-pointer group ${
                               index === pricingCategories.filter(cat => cat !== "Konzultacije").length - 1 ? 'pb-2' : ''
                             }`}
                           >
-                            <div className="pt-0.5">
+                            <div className="flex items-center">
                               <input
                                 type="checkbox"
                                 checked={selectedCategories.includes(category)}
                                 onChange={() => toggleCategory(category)}
                                 className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                                style={{ transform: 'translateY(2px)' }}
                               />
                             </div>
                             <span className="text-sm text-gray-700 group-hover:text-gray-900">{category}</span>
@@ -229,7 +230,7 @@ export default function PricingPage() {
                         : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="space-y-1 relative">
+                    <div className="space-y-2 relative">
                       <label className="flex items-center space-x-2 cursor-pointer">
                         <input
                           type="checkbox"

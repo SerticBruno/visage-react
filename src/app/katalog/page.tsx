@@ -295,20 +295,21 @@ function KatalogContent() {
                   }`}
                 >
                   <div className="relative">
-                    <div className="space-y-0.5 max-h-36 overflow-y-auto scrollbar-spaced pr-2">
+                    <div className="space-y-2 max-h-36 overflow-y-auto scrollbar-spaced pr-2">
                       {productTypes.map((productType, index) => (
                         <label 
                           key={productType} 
-                          className={`flex items-start space-x-2 cursor-pointer group ${
+                          className={`flex items-baseline space-x-2 cursor-pointer group ${
                             index === productTypes.length - 1 ? 'pb-2' : ''
                           }`}
                         >
-                          <div className="pt-0.5">
+                          <div className="flex items-center">
                             <input
                               type="checkbox"
                               checked={selectedProductTypes.includes(productType)}
                               onChange={() => toggleProductType(productType)}
                               className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                              style={{ transform: 'translateY(2px)' }}
                             />
                           </div>
                           <span className="text-sm text-gray-700 group-hover:text-gray-900">{productType}</span>
@@ -343,20 +344,21 @@ function KatalogContent() {
                   }`}
                 >
                   <div className="relative">
-                    <div className="space-y-0.5 max-h-28 overflow-y-auto scrollbar-spaced pr-2">
+                    <div className="space-y-2 max-h-28 overflow-y-auto scrollbar-spaced pr-2">
                       {skinTypes.map((skinType, index) => (
                         <label 
                           key={skinType} 
-                          className={`flex items-start space-x-2 cursor-pointer group ${
+                          className={`flex items-baseline space-x-2 cursor-pointer group ${
                             index === skinTypes.length - 1 ? 'pb-2' : ''
                           }`}
                         >
-                          <div className="pt-0.5">
+                          <div className="flex items-center">
                             <input
                               type="checkbox"
                               checked={selectedSkinTypes.includes(skinType)}
                               onChange={() => toggleSkinType(skinType)}
                               className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                              style={{ transform: 'translateY(2px)' }}
                             />
                           </div>
                           <span className="text-sm text-gray-700 group-hover:text-gray-900">{skinType}</span>
@@ -391,20 +393,21 @@ function KatalogContent() {
                   }`}
                 >
                   <div className="relative">
-                    <div className="space-y-0.5 max-h-44 overflow-y-auto scrollbar-spaced pr-2">
+                    <div className="space-y-2 max-h-44 overflow-y-auto scrollbar-spaced pr-2">
                       {skinConcerns.map((skinConcern, index) => (
                         <label 
                           key={skinConcern} 
-                          className={`flex items-start space-x-2 cursor-pointer group ${
+                          className={`flex items-baseline space-x-2 cursor-pointer group ${
                             index === skinConcerns.length - 1 ? 'pb-2' : ''
                           }`}
                         >
-                          <div className="pt-0.5">
+                          <div className="flex items-center">
                             <input
                               type="checkbox"
                               checked={selectedSkinConcerns.includes(skinConcern)}
                               onChange={() => toggleSkinConcern(skinConcern)}
                               className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                              style={{ transform: 'translateY(2px)' }}
                             />
                           </div>
                           <span className="text-sm text-gray-700 group-hover:text-gray-900">{skinConcern}</span>
@@ -438,7 +441,7 @@ function KatalogContent() {
                       : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="space-y-1 relative">
+                  <div className="space-y-2 relative">
                     <label className="flex items-center space-x-2 cursor-pointer">
                       <input
                         type="checkbox"
