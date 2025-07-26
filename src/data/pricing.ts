@@ -586,15 +586,6 @@ export const pricingData: PricingItem[] = [
     isPackage: true,
     packageDetails: "4 tretmana"
   },
-  {
-    id: "premium",
-    title: "Premium",
-    description: "4 mezoterapije lica i vrata",
-    price: "470 EUR",
-    category: "Mezoterapija Mesoject Gunom",
-    isPackage: true,
-    packageDetails: "4 tretmana"
-  },
 
   // Plasmage
   {
