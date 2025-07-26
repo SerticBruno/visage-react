@@ -191,8 +191,8 @@ export default function Header() {
                       <Link
                         key={pageName}
                         href={`/usluge/${pageName}`}
-                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-all duration-300 transform hover:translate-x-1 ${
-                          isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold bg-gray-50' : ''
+                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 hover:text-black transition-all duration-300 ${
+                          isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold bg-gray-200' : ''
                         }`}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -368,8 +368,8 @@ export default function Header() {
                           >
                             <Link
                               href={`/usluge/${pageName}`}
-                              className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 transform hover:translate-x-1 text-base ${
-                                isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold' : ''
+                              className={`block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-200 rounded-md transition-all duration-300 text-base ${
+                                isActive(`/usluge/${pageName}`) ? 'text-gray-900 font-bold bg-gray-200' : ''
                               }`}
                               onClick={(e) => handleLinkClick(e, `/usluge/${pageName}`)}
                             >
