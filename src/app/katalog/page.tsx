@@ -33,6 +33,7 @@ function KatalogContent() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
   // Dynamic products per page based on screen size
   const productsPerPage = isMobile ? 6 : 9;
@@ -116,6 +117,16 @@ function KatalogContent() {
     }
   }, [isFiltering]);
 
+  // Handle transition state
+  useEffect(() => {
+    if (isTransitioning) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isTransitioning]);
+
   const scrollToProducts = () => {
     const navbarHeight = 80;
     const productsTop = productsRef.current?.offsetTop || 0;
@@ -133,55 +144,75 @@ function KatalogContent() {
     // Validate that the new page is within bounds
     if (newPage >= 1 && newPage <= totalPages && newPage !== validCurrentPage) {
       console.log('Setting page to:', newPage);
+      setIsTransitioning(true);
       setIsScrolling(true);
-      setCurrentPage(newPage);
       
-      // Use requestAnimationFrame to ensure DOM is updated before scrolling
-      requestAnimationFrame(() => {
-        scrollToProducts();
-        setTimeout(() => {
-          setIsScrolling(false);
-        }, 500);
-      });
+      // Fade out first
+      setTimeout(() => {
+        setCurrentPage(newPage);
+        
+        // Use requestAnimationFrame to ensure DOM is updated before scrolling
+        requestAnimationFrame(() => {
+          scrollToProducts();
+          setTimeout(() => {
+            setIsScrolling(false);
+          }, 500);
+        });
+      }, 150); // Half of the transition duration
     } else {
       console.log('Page change rejected:', { newPage, validCurrentPage, totalPages });
     }
   };
 
   const toggleProductType = (productType: string) => {
+    setIsTransitioning(true);
     setIsFiltering(true);
-    setSelectedProductTypes(prev => 
-      prev.includes(productType)
-        ? prev.filter(p => p !== productType)
-        : [...prev, productType]
-    );
-
-    // Use requestAnimationFrame to ensure DOM is updated before scrolling
-    requestAnimationFrame(scrollToProducts);
+    
+    // Fade out first
+    setTimeout(() => {
+      setSelectedProductTypes(prev => 
+        prev.includes(productType)
+          ? prev.filter(p => p !== productType)
+          : [...prev, productType]
+      );
+      
+      // Use requestAnimationFrame to ensure DOM is updated before scrolling
+      requestAnimationFrame(scrollToProducts);
+    }, 150); // Half of the transition duration
   };
 
   const toggleSkinType = (skinType: string) => {
+    setIsTransitioning(true);
     setIsFiltering(true);
-    setSelectedSkinTypes(prev => 
-      prev.includes(skinType)
-        ? prev.filter(s => s !== skinType)
-        : [...prev, skinType]
-    );
-
-    // Use requestAnimationFrame to ensure DOM is updated before scrolling
-    requestAnimationFrame(scrollToProducts);
+    
+    // Fade out first
+    setTimeout(() => {
+      setSelectedSkinTypes(prev => 
+        prev.includes(skinType)
+          ? prev.filter(s => s !== skinType)
+          : [...prev, skinType]
+      );
+      
+      // Use requestAnimationFrame to ensure DOM is updated before scrolling
+      requestAnimationFrame(scrollToProducts);
+    }, 150); // Half of the transition duration
   };
 
   const toggleSkinConcern = (skinConcern: string) => {
+    setIsTransitioning(true);
     setIsFiltering(true);
-    setSelectedSkinConcerns(prev => 
-      prev.includes(skinConcern)
-        ? prev.filter(c => c !== skinConcern)
-        : [...prev, skinConcern]
-    );
-
-    // Use requestAnimationFrame to ensure DOM is updated before scrolling
-    requestAnimationFrame(scrollToProducts);
+    
+    // Fade out first
+    setTimeout(() => {
+      setSelectedSkinConcerns(prev => 
+        prev.includes(skinConcern)
+          ? prev.filter(c => c !== skinConcern)
+          : [...prev, skinConcern]
+      );
+      
+      // Use requestAnimationFrame to ensure DOM is updated before scrolling
+      requestAnimationFrame(scrollToProducts);
+    }, 150); // Half of the transition duration
   };
 
   const toggleSection = (section: keyof typeof expandedSections) => {
@@ -192,21 +223,26 @@ function KatalogContent() {
   };
 
   const toggleBadge = (badge: string) => {
+    setIsTransitioning(true);
     setIsFiltering(true);
-    setSelectedBadges(prev => 
-      prev.includes(badge)
-        ? prev.filter(b => b !== badge)
-        : [...prev, badge]
-    );
-
-    // Use requestAnimationFrame to ensure DOM is updated before scrolling
-    requestAnimationFrame(scrollToProducts);
+    
+    // Fade out first
+    setTimeout(() => {
+      setSelectedBadges(prev => 
+        prev.includes(badge)
+          ? prev.filter(b => b !== badge)
+          : [...prev, badge]
+      );
+      
+      // Use requestAnimationFrame to ensure DOM is updated before scrolling
+      requestAnimationFrame(scrollToProducts);
+    }, 150); // Half of the transition duration
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsFiltering(true);
     setSearchTerm(e.target.value);
-
+    setIsFiltering(true);
+    
     // Use requestAnimationFrame to ensure DOM is updated before scrolling
     requestAnimationFrame(scrollToProducts);
   };
@@ -257,9 +293,14 @@ function KatalogContent() {
                   {searchTerm && (
                     <button
                       onClick={() => {
+                        setIsTransitioning(true);
                         setIsFiltering(true);
-                        setSearchTerm('');
-                        requestAnimationFrame(scrollToProducts);
+                        
+                        // Fade out first, then clear search
+                        setTimeout(() => {
+                          setSearchTerm('');
+                          requestAnimationFrame(scrollToProducts);
+                        }, 150); // Half of the transition duration
                       }}
                       className="absolute right-3 top-3.5 w-6 h-6 flex items-center justify-center bg-gray-200 hover:bg-gray-300 text-gray-600 hover:text-gray-800 rounded-full transition-all duration-200 cursor-pointer"
                       aria-label="Očisti pretraživanje"
@@ -495,7 +536,7 @@ function KatalogContent() {
           {/* Products Grid */}
           <div className="flex-1" ref={productsRef}>
             {/* Products Grid */}
-            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 transition-opacity duration-300 ${isScrolling || isFiltering ? 'opacity-25' : 'opacity-100'}`}>
+            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 transition-opacity duration-300 ${isScrolling || isFiltering || isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
               {currentProducts.map((product) => (
                 <div
                   key={product.id}
