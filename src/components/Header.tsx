@@ -7,6 +7,7 @@ import { services } from '@/data/services';
 import { FaChevronDown } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BLOG_ENABLED } from '@/lib/config';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -195,15 +196,17 @@ export default function Header() {
               Cjenik
             </Link>
             
-            <Link 
-              href="/blog" 
-              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
-                isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
-              }`}
-              onClick={(e) => handleLinkClick(e, '/blog')}
-            >
-              Blog
-            </Link>
+            {BLOG_ENABLED && (
+              <Link 
+                href="/blog" 
+                className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
+                  isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
+                }`}
+                onClick={(e) => handleLinkClick(e, '/blog')}
+              >
+                Blog
+              </Link>
+            )}
             
             <Link 
               href="/o-nama" 
@@ -369,15 +372,17 @@ export default function Header() {
                 Cjenik
               </Link>
               
-              <Link
-                href="/blog"
-                className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 text-lg ${
-                  isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
-                }`}
-                onClick={(e) => handleLinkClick(e, '/blog')}
-              >
-                Blog
-              </Link>
+              {BLOG_ENABLED && (
+                <Link
+                  href="/blog"
+                  className={`block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 text-lg ${
+                    isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
+                  }`}
+                  onClick={(e) => handleLinkClick(e, '/blog')}
+                >
+                  Blog
+                </Link>
+              )}
               
               <Link
                 href="/o-nama"

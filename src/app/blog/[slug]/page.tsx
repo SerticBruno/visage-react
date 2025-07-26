@@ -1,6 +1,7 @@
 import { blogPosts } from '@/data/posts';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { BLOG_ENABLED } from '@/lib/config';
 import RelatedArticles from '@/components/blog/RelatedArticles';
 import { FaCalendarAlt, FaUser } from 'react-icons/fa';
 import { formatDate, toSlug, toSentenceCase } from '@/lib/utils';
@@ -113,6 +114,11 @@ function renderTextContent(content: TextContent, index: number) {
 export default async function BlogPostPage(
   props: { params: Promise<SegmentParams> }
 ) {
+  // Redirect to 404 if blog is disabled
+  if (!BLOG_ENABLED) {
+    notFound();
+  }
+
   const params = await props.params;
   const post = blogPosts.find(p => p.slug === params.slug);
 

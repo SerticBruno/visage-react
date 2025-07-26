@@ -5,9 +5,12 @@ import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import FAQSection from '@/components/sections/FAQSection';
-import FeaturedBlogsSection from '@/components/sections/FeaturedBlogsSection';
+import { BLOG_ENABLED } from '@/lib/config';
 import { popularProducts } from '@/data/popularProducts';
 import { blogPosts } from '@/data/posts';
+
+// Conditionally import FeaturedBlogsSection only when blog is enabled
+const FeaturedBlogsSection = BLOG_ENABLED ? require('@/components/sections/FeaturedBlogsSection').default : null;
 import ServiceSlider from '@/components/ui/ServiceSlider';
 import { Metadata } from 'next';
 import { popularServices } from '@/data/popularServices';
@@ -32,10 +35,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  // Get the 8 most recent blog posts
-  const featuredPosts = blogPosts
+  // Get the 8 most recent blog posts (only when blog is enabled)
+  const featuredPosts = BLOG_ENABLED ? blogPosts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 8);
+    .slice(0, 8) : [];
 
   // Convert popular services to match Service type
   const popularServicesData = popularServices.map(service => ({
@@ -100,7 +103,7 @@ export default function Home() {
       />
       <ServicesSectionPreview/>
       <CTASection gradientDirection='b'/>
-      <FeaturedBlogsSection posts={featuredPosts} />
+      {BLOG_ENABLED && FeaturedBlogsSection && <FeaturedBlogsSection posts={featuredPosts} />}
       <FAQSection />
       <PartnersSlider />
       <ContactSection hasTopPadding={false}/>

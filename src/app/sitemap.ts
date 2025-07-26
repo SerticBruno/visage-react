@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { services } from '@/data/services'
 import { blogPosts } from '@/data/posts'
+import { BLOG_ENABLED } from '@/lib/config'
 
 // Utility function to convert text to URL-friendly slug
 function toSlug(text: string): string {
@@ -19,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
     '/usluge',
-    '/blog',
+    ...(BLOG_ENABLED ? ['/blog'] : []),
     '/cjenik',
     '/o-nama',
     '/kontakt',
@@ -40,31 +41,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  // Blog post routes
-  const blogRoutes = blogPosts.map(post => ({
+  // Blog post routes (only when blog is enabled)
+  const blogRoutes = BLOG_ENABLED ? blogPosts.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
-  }))
+  })) : []
 
-  // Blog category routes
-  const categories = Array.from(new Set(blogPosts.flatMap(post => post.tags)))
-  const categoryRoutes = categories.map(category => ({
-    url: `${baseUrl}/blog/kategorija/${toSlug(category)}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.5,
-  }))
+  // Blog category routes (only when blog is enabled)
+  const categoryRoutes = BLOG_ENABLED ? (() => {
+    const categories = Array.from(new Set(blogPosts.flatMap(post => post.tags)))
+    return categories.map(category => ({
+      url: `${baseUrl}/blog/kategorija/${toSlug(category)}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
+    }))
+  })() : []
 
-  // Blog author routes
-  const authors = Array.from(new Set(blogPosts.map(post => post.author)))
-  const authorRoutes = authors.map(author => ({
-    url: `${baseUrl}/blog/autor/${toSlug(author)}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.5,
-  }))
+  // Blog author routes (only when blog is enabled)
+  const authorRoutes = BLOG_ENABLED ? (() => {
+    const authors = Array.from(new Set(blogPosts.map(post => post.author)))
+    return authors.map(author => ({
+      url: `${baseUrl}/blog/autor/${toSlug(author)}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
+    }))
+  })() : []
 
   return [
     ...staticRoutes,
