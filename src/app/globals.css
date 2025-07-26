@@ -79,6 +79,20 @@ html.modal-open {
   }
 }
 
+/* Shimmer animation for loading placeholders */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
 /* Line clamp utilities */
 .line-clamp-2 {
   display: -webkit-box;

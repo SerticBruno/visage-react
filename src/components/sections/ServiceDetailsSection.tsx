@@ -759,17 +759,29 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                           
                           return (
                             <>
-                              {/* Blur placeholder */}
+                              {/* Animated glass placeholder */}
                               <div 
-                                className={`absolute inset-0 bg-gray-200 transition-opacity duration-700 ${
+                                className={`absolute inset-0 transition-opacity duration-700 ${
                                   isImageLoaded ? 'opacity-0' : 'opacity-100'
                                 }`}
-                                style={{
-                                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f3f4f6'/%3E%3C/svg%3E")`,
-                                  backgroundSize: 'cover',
-                                  filter: 'blur(20px)',
-                                }}
-                              />
+                              >
+                                {/* Base glass background */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-gray-300 via-gray-350 to-gray-300 rounded-xl" />
+                                
+                                {/* Animated shimmer overlay */}
+                                <div className="absolute inset-0 overflow-hidden rounded-xl">
+                                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 animate-shimmer" />
+                                </div>
+                                
+                                {/* Subtle pattern overlay */}
+                                <div className="absolute inset-0 opacity-10">
+                                  <div className="w-full h-full bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.1)_1px,transparent_0)] bg-[length:20px_20px]" />
+                                </div>
+                                
+                                {/* Glass effect highlights */}
+                                <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-white/30 to-transparent rounded-t-xl" />
+                                <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-white/20 to-transparent rounded-l-xl" />
+                              </div>
                               
                               {/* Actual image with blur-in effect */}
                               <Image
