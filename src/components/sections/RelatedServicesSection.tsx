@@ -190,7 +190,12 @@ export default function RelatedServicesSection({ currentService, relatedServices
           </div>
 
           {/* Desktop Grid */}
-          <div className="hidden lg:grid grid-cols-4 gap-6">
+          <div className={`hidden lg:grid gap-6 ${
+            validServices.length === 1 ? 'lg:grid-cols-1' :
+            validServices.length === 2 ? 'lg:grid-cols-2' :
+            validServices.length === 3 ? 'lg:grid-cols-3' :
+            'lg:grid-cols-4'
+          }`}>
             {validServices.map((service) => (
               <motion.div
                 key={service.id}

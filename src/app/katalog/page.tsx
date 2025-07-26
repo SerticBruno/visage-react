@@ -308,7 +308,7 @@ function KatalogContent() {
                               type="checkbox"
                               checked={selectedProductTypes.includes(productType)}
                               onChange={() => toggleProductType(productType)}
-                              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                              className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
                               style={{ transform: 'translateY(2px)' }}
                             />
                           </div>
@@ -357,7 +357,7 @@ function KatalogContent() {
                               type="checkbox"
                               checked={selectedSkinTypes.includes(skinType)}
                               onChange={() => toggleSkinType(skinType)}
-                              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                              className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
                               style={{ transform: 'translateY(2px)' }}
                             />
                           </div>
@@ -406,7 +406,7 @@ function KatalogContent() {
                               type="checkbox"
                               checked={selectedSkinConcerns.includes(skinConcern)}
                               onChange={() => toggleSkinConcern(skinConcern)}
-                              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                              className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
                               style={{ transform: 'translateY(2px)' }}
                             />
                           </div>
