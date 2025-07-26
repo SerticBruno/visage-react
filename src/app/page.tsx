@@ -102,7 +102,7 @@ export default function Home() {
         viewAllText="Pogledajte sve proizvode"
       />
       <ServicesSectionPreview/>
-      <CTASection gradientDirection='b'/>
+      <CTASection gradientDirection='n'/>
       {BLOG_ENABLED && <FeaturedBlogsSection posts={featuredPosts} />}
       <FAQSection />
       <PartnersSlider />

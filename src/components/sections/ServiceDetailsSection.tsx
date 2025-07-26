@@ -10,6 +10,7 @@ import { pricingData } from '@/data/pricing';
 import { products, Product } from '@/data/products';
 import ProductModal from '@/components/ui/ProductModal';
 
+
 interface ServiceDetailsSectionProps {
   service: Service;
 }
@@ -23,6 +24,8 @@ const tabIcons = {
   'nakon-tretmana': FaRegFile,
   'cijena': FaHandHoldingUsd
 };
+
+
 
 const renderPricingTable = (service: Service) => {
   // For mesotherapy, we want to show multiple categories
@@ -96,6 +99,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   const [hasUserChangedTab, setHasUserChangedTab] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+
 
   const handleNext = () => {
     const currentIndex = service.steps.findIndex(step => step.id === activeTab);
@@ -123,15 +128,6 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
     }
   };
 
-  const scrollToActiveStep = React.useCallback(() => {
-    if (sliderRef.current) {
-      const activeStep = sliderRef.current.querySelector(`[data-step-id="${activeTab}"]`);
-      if (activeStep) {
-        activeStep.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      }
-    }
-  }, [activeTab]);
-
   const handleProductClick = (productId: string) => {
     const product = products.find(p => p.id === productId);
     if (product) {
@@ -142,10 +138,13 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
 
   // Call scrollToActiveStep only when user has manually changed tabs
   React.useEffect(() => {
-    if (hasUserChangedTab) {
-      scrollToActiveStep();
+    if (hasUserChangedTab && sliderRef.current) {
+      const activeStep = sliderRef.current.querySelector(`[data-step-id="${activeTab}"]`);
+      if (activeStep) {
+        activeStep.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
     }
-  }, [activeTab, scrollToActiveStep, hasUserChangedTab]);
+  }, [activeTab, hasUserChangedTab]);
 
   const formatContent = (content: string) => {
     // Check if content contains HTML links
@@ -572,6 +571,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
 
   return (
     <section className="bg-gradient-to-b from-white to-[#e5e7eb]">
+
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Mobile Step Navigation */}
         <div className="lg:hidden mb-8">
@@ -752,7 +752,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                           src={service.steps.find(s => s.id === activeTab)?.image || ''}
                           alt={`${service.title} - ${service.steps.find(s => s.id === activeTab)?.label || ''}`}
                           fill
-                          loading={activeTab === service.steps[0].id ? "eager" : "lazy"}
+                          loading="lazy"
                           className="object-cover transition-transform duration-300 group-hover:scale-105"
                           style={{ 
                             objectPosition: (() => {
@@ -804,6 +804,8 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
           </AnimatePresence>
         </div>
       </div>
+      
+
       
       {/* Product Modal */}
       <ProductModal

@@ -11,7 +11,7 @@ interface CTASectionProps {
   ctaLink?: string;
   secondaryCtaText?: string;
   secondaryCtaLink?: string;
-  gradientDirection?: 't' | 'b';
+  gradientDirection?: 't' | 'b' | 'n';
   hasPadding?: boolean;
 }
 
@@ -32,10 +32,15 @@ const CTASection = ({
       return {
         background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)'
       };
-    } else {
+    } else if (gradientDirection === 'b') {
       // 'b' = bottom to top gradient (darker at top, light at bottom)
       return {
         background: 'linear-gradient(to top, #ffffff, #e5e7eb)'
+      };
+    } else {
+      // 'n' = no gradient, just gray background
+      return {
+        background: '#e5e7eb'
       };
     }
   };
