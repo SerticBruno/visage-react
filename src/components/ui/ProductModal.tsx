@@ -2,9 +2,9 @@
 
 import React, { Fragment, useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
-import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt, FaChevronDown, FaLightbulb } from 'react-icons/fa';
+import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt, FaStar } from 'react-icons/fa';
 import Image from 'next/image';
-import { Product, ProTip } from '@/data/products';
+import { Product } from '@/data/products';
 
 interface ProductModalProps {
   isOpen: boolean;
@@ -13,8 +13,6 @@ interface ProductModalProps {
 }
 
 export default function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
-  const [openProTips, setOpenProTips] = useState<number[]>([]);
-
   // Handle Escape key to close modal
   useEffect(() => {
     const handleEscapeKey = (event: KeyboardEvent) => {
@@ -33,20 +31,6 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
   }, [isOpen, onClose]);
 
   if (!product) return null;
-
-
-
-
-
-  const toggleProTip = (index: number) => {
-    setOpenProTips(prev => 
-      prev.includes(index) 
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
-    );
-  };
-
-
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -111,26 +95,38 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                         </span>
                       )}
                     </div>
-                  </div>
-                  <div className="mt-3 flex items-center justify-between bg-slate-50 rounded-xl p-3">
-                    <div className="flex items-center gap-3">
-                      <div className="flex flex-col">
-                        {product.isOnSale && product.oldPrice ? (
-                          <>
-                            <span className="text-sm text-slate-400 line-through">{product.oldPrice}</span>
-                            <span className="text-xl font-bold text-rose-500">{product.price}</span>
-                          </>
-                        ) : (
-                          <span className="text-xl font-bold text-slate-900">{product.price}</span>
+                    
+                    {/* Price Overlay - Lower Right */}
+                    <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg border border-white/20">
+                      <div className="flex items-center gap-3">
+                        <div className="flex flex-col">
+                          {product.isOnSale && product.oldPrice ? (
+                            <>
+                              <span className="text-sm text-slate-400 line-through">{product.oldPrice}</span>
+                              <span className="text-xl font-bold text-rose-500">{product.price}</span>
+                            </>
+                          ) : (
+                            <span className="text-xl font-bold text-slate-900">{product.price}</span>
+                          )}
+                        </div>
+                        {product.isOnSale && product.oldPrice && (
+                          <span className="bg-rose-500 text-white text-sm font-bold w-12 h-12 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center">
+                            -{Math.round((1 - parseFloat(product.price) / parseFloat(product.oldPrice)) * 100)}%
+                          </span>
                         )}
                       </div>
-                      {product.isOnSale && product.oldPrice && (
-                        <span className="bg-rose-500 text-white text-sm font-bold w-12 h-12 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center">
-                          -{Math.round((1 - parseFloat(product.price) / parseFloat(product.oldPrice)) * 100)}%
-                        </span>
-                      )}
                     </div>
                   </div>
+
+                  {/* Sadržaj Section */}
+                  {product.volume && (
+                    <div className="mt-3 bg-slate-50 rounded-xl p-3">
+                      <h3 className="text-sm font-semibold text-slate-900 mb-1">
+                        {product.category === 'Beauty Tretmani' ? 'Trajanje' : 'Sadržaj'}
+                      </h3>
+                      <p className="text-sm text-slate-600">{product.volume}</p>
+                    </div>
+                  )}
                 </div>
                 
                 {/* Scrollable Right Side */}
@@ -143,41 +139,10 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                       </div>
                     </div>
 
-                    {product.volume && (
-                      <div className="bg-slate-50 rounded-xl p-3">
-                        <h3 className="text-sm font-semibold text-slate-900 mb-1">
-                          {product.category === 'Beauty Tretmani' ? 'Trajanje' : 'Sadržaj'}
-                        </h3>
-                        <p className="text-sm text-slate-600">{product.volume}</p>
-                      </div>
-                    )}
-
-                    {product.activeIngredients && (
-                      <div className="bg-slate-50 rounded-xl p-3">
-                        <h3 className="text-sm font-semibold text-slate-900 mb-3">
-                          {product.category === 'Beauty Tretmani' ? 'Prednosti' : 'Aktivni sastojci'}
-                        </h3>
-                        {product.category === 'Beauty Tretmani' ? (
-                          <div className="space-y-2">
-                            {product.activeIngredients.map((ingredient, index) => (
-                              <div key={index} className="flex items-start">
-                                <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
-                                <p className="text-sm text-slate-600 leading-relaxed">{ingredient}</p>
-                              </div>
-                            ))}
-                          </div>
-                        ) : (
-                          <p className="text-sm text-slate-600 leading-relaxed">
-                            {product.activeIngredients.join(', ')}
-                          </p>
-                        )}
-                      </div>
-                    )}
-
                     {product.application && (
                       <div className="bg-slate-50 rounded-xl p-3">
                         {product.category !== 'Beauty Tretmani' && (
-                          <h3 className="text-sm font-semibold text-slate-900 mb-3">Primjena</h3>
+                          <h3 className="text-sm font-semibold text-slate-900 mb-3">Kako koristiti</h3>
                         )}
                         <div className="space-y-4">
                           {product.application.map((step, index) => {
@@ -292,41 +257,39 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                       </div>
                     )}
 
-
-
-                    {/* Pro Tips Section */}
-                    {product.proTips && product.proTips.length > 0 && (
-                      <div className="bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl p-3 border border-slate-200">
-                        <h3 className="text-sm font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                          <FaLightbulb className="w-4 h-4 text-slate-600" />
-                          Pro Tipovi
-                        </h3>
-                        <div className="space-y-3">
-                          {product.proTips.map((tip: ProTip, index: number) => (
-                            <div key={index} className="bg-white rounded-lg shadow-sm border border-slate-200">
-                              <button
-                                onClick={() => toggleProTip(index)}
-                                className="w-full text-left p-3 flex items-center justify-between text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors rounded-t-lg cursor-pointer"
-                              >
-                                <span>{tip.title}</span>
-                                <FaChevronDown
-                                  className={`w-4 h-4 transition-transform duration-300 ${openProTips.includes(index) ? 'rotate-180' : ''}`}
-                                />
-                              </button>
-                              <div
-                                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                                  openProTips.includes(index) 
-                                    ? 'max-h-32 opacity-100' 
-                                    : 'max-h-0 opacity-0'
-                                }`}
-                              >
-                                <div className="p-3 text-sm text-slate-700 leading-relaxed border-t border-slate-100">
-                                  {tip.description}
-                                </div>
-                              </div>
-                            </div>
-                          ))}
+                    {/* Glow Tip Section */}
+                    <div className="bg-slate-50 rounded-xl p-3">
+                      <h3 className="text-sm font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                        <div className="w-6 h-6 bg-slate-200 rounded-full flex items-center justify-center border border-slate-300">
+                          <FaStar className="w-3 h-3 text-slate-600" />
                         </div>
+                        Glow tip
+                      </h3>
+                      <div className="text-sm text-slate-600 leading-relaxed">
+                        <p>Za najbolje rezultate, koristite ovaj proizvod redovito kao dio vaše dnevne rutine njegovanja kože. Kombinirajte s drugim proizvodima iz naše linije za sinergijski učinak i maksimalnu efikasnost.</p>
+                      </div>
+                    </div>
+
+                    {/* Aktivni sastojci Section */}
+                    {product.activeIngredients && (
+                      <div className="bg-slate-50 rounded-xl p-3">
+                        <h3 className="text-sm font-semibold text-slate-900 mb-3">
+                          {product.category === 'Beauty Tretmani' ? 'Prednosti' : 'Aktivni sastojci'}
+                        </h3>
+                        {product.category === 'Beauty Tretmani' ? (
+                          <div className="space-y-2">
+                            {product.activeIngredients.map((ingredient, index) => (
+                              <div key={index} className="flex items-start">
+                                <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
+                                <p className="text-sm text-slate-600 leading-relaxed">{ingredient}</p>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-sm text-slate-600 leading-relaxed">
+                            {product.activeIngredients.join(', ')}
+                          </p>
+                        )}
                       </div>
                     )}
 
@@ -358,10 +321,6 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                         </div>
                       </div>
                     )}
-
-
-
-                    
                   </div>
                 </div>
               </div>
