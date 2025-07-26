@@ -8,6 +8,8 @@ import { FaSearch, FaSort, FaSortAmountDown, FaSortAmountUp, FaChevronLeft, FaCh
 import BlogPostCard from '@/components/ui/BlogPostCard';
 import ContactSection from '@/components/sections/ContactSection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
+import { BLOG_ENABLED } from '@/lib/config';
+import { notFound } from 'next/navigation';
 
 const POSTS_PER_PAGE = 6;
 
@@ -17,6 +19,11 @@ const allAuthors = Array.from(new Set(blogPosts.map(post => post.author)));
 type SortOption = 'newest' | 'oldest' | 'title-asc' | 'title-desc';
 
 export default function BlogPage() {
+  // Redirect to 404 if blog is disabled
+  if (!BLOG_ENABLED) {
+    notFound();
+  }
+
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);

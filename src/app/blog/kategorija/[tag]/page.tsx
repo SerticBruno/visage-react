@@ -2,6 +2,7 @@ import { blogPosts } from '@/data/posts';
 import { blogCategories } from '@/data/blogCategories';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { BLOG_ENABLED } from '@/lib/config';
 import { FaCalendarAlt, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa';
 import Link from 'next/link';
 import InteractiveLink from '@/components/blog/InteractiveLink';
@@ -51,6 +52,11 @@ export async function generateMetadata(
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
+  // Redirect to 404 if blog is disabled
+  if (!BLOG_ENABLED) {
+    notFound();
+  }
+
   const resolvedParams = await params;
   // Find the category by matching the slug
   const category = blogCategories.find(cat => toSlug(cat.name) === resolvedParams.tag);

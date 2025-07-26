@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link';
 import Image from 'next/image';
+import { BLOG_ENABLED } from '@/lib/config';
 import { useState } from 'react';
 import { FaFacebook, FaWhatsapp, FaInstagram, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { PaymentIcon } from 'react-svg-credit-card-payment-icons';
@@ -135,15 +136,17 @@ const Footer = () => {
                   Cjenik
                 </Link>
               </li>
-              <li>
-                <Link 
-                  href="/blog" 
-                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
-                >
-                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
-                  Blog
-                </Link>
-              </li>
+              {BLOG_ENABLED && (
+                <li>
+                  <Link 
+                    href="/blog" 
+                    className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                  >
+                    <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
+                    Blog
+                  </Link>
+                </li>
+              )}
               <li>
                 <Link 
                   href="/o-nama" 

@@ -1,6 +1,7 @@
 import { blogPosts } from '@/data/posts';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { BLOG_ENABLED } from '@/lib/config';
 import { FaCalendarAlt, FaTag, FaArrowLeft } from 'react-icons/fa';
 import Link from 'next/link';
 import InteractiveLink from '@/components/blog/InteractiveLink';
@@ -50,6 +51,11 @@ export async function generateMetadata(
 }
 
 export default async function AuthorPage({ params }: AuthorPageProps) {
+  // Redirect to 404 if blog is disabled
+  if (!BLOG_ENABLED) {
+    notFound();
+  }
+
   const resolvedParams = await params;
   // Find the author by matching the slug
   const author = blogPosts.find(post => toSlug(post.author) === resolvedParams.author)?.author;
