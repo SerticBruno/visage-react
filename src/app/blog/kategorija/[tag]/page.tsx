@@ -20,6 +20,14 @@ interface CategoryPageProps {
 export async function generateMetadata(
   props: CategoryPageProps
 ): Promise<Metadata> {
+  // Return 404 metadata if blog is disabled
+  if (!BLOG_ENABLED) {
+    return {
+      title: 'Stranica nije pronađena',
+      description: 'Tražena stranica ne postoji.',
+    };
+  }
+
   const resolvedParams = await props.params;
   const category = blogCategories.find(cat => toSlug(cat.name) === resolvedParams.tag);
   

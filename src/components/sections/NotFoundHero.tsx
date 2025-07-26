@@ -19,7 +19,7 @@ const NotFoundHero = () => {
             Stranica nije pronađena
           </h2>
           <p className="text-base text-slate-600 max-w-xl mx-auto mb-6">
-            Oprostite, stranica koju tražite ne postoji ili je premještena.
+            Stranica koju tražite ne postoji ili je premještena.
           </p>
         </div>
 

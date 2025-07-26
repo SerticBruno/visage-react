@@ -19,6 +19,14 @@ type SegmentParams = {
 export async function generateMetadata(
   props: { params: Promise<SegmentParams> }
 ): Promise<Metadata> {
+  // Return 404 metadata if blog is disabled
+  if (!BLOG_ENABLED) {
+    return {
+      title: 'Stranica nije pronađena',
+      description: 'Tražena stranica ne postoji.',
+    };
+  }
+
   const params = await props.params;
   const post = blogPosts.find(p => p.slug === params.slug);
   

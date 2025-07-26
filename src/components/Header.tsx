@@ -154,7 +154,7 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute left-0 mt-3 w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100"
+                    className="absolute left-0 top-full w-56 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100 pt-2 before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-2 before:-translate-y-full"
                   >
                     {Object.entries(services).map(([pageName, service]) => (
                       <Link

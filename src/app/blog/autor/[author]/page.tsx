@@ -19,6 +19,14 @@ interface AuthorPageProps {
 export async function generateMetadata(
   props: AuthorPageProps
 ): Promise<Metadata> {
+  // Return 404 metadata if blog is disabled
+  if (!BLOG_ENABLED) {
+    return {
+      title: 'Stranica nije pronađena',
+      description: 'Tražena stranica ne postoji.',
+    };
+  }
+
   const resolvedParams = await props.params;
   const author = blogPosts.find(post => toSlug(post.author) === resolvedParams.author)?.author;
   
