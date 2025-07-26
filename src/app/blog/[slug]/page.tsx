@@ -161,17 +161,6 @@ export default async function BlogPostPage(
             <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-8">
               {post.excerpt}
             </p>
-            <div className="flex flex-wrap justify-center gap-2">
-              {post.tags.map((tag) => (
-                <InteractiveLink
-                  key={tag}
-                  href={`/blog/kategorija/${toSlug(tag)}`}
-                  className="px-4 py-2 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-slate-200 transition-all duration-300 hover:shadow-sm"
-                >
-                  {tag}
-                </InteractiveLink>
-              ))}
-            </div>
           </div>
         </div>
       </div>

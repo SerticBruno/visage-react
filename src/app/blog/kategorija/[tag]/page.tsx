@@ -1,4 +1,5 @@
 import { blogPosts } from '@/data/posts';
+import { blogCategories } from '@/data/blogCategories';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { FaCalendarAlt, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa';
@@ -9,60 +10,60 @@ import ContactSection from '@/components/sections/ContactSection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import { Metadata } from 'next';
 
-interface TagPageProps {
+interface CategoryPageProps {
   params: Promise<{
     tag: string;
   }>;
 }
 
 export async function generateMetadata(
-  props: TagPageProps
+  props: CategoryPageProps
 ): Promise<Metadata> {
   const resolvedParams = await props.params;
-  const tag = blogPosts.find(post => post.tags.some(t => toSlug(t) === resolvedParams.tag))?.tags.find(t => toSlug(t) === resolvedParams.tag);
+  const category = blogCategories.find(cat => toSlug(cat.name) === resolvedParams.tag);
   
-  if (!tag) {
+  if (!category) {
     return {
       title: 'Kategorija nije pronađena',
     };
   }
 
-  const tagPosts = blogPosts.filter(post => post.tags.includes(tag));
-  const totalPosts = tagPosts.length;
+  const categoryPosts = blogPosts.filter(post => post.category === category.id);
+  const totalPosts = categoryPosts.length;
 
   return {
-    title: `${tag} - Blog`,
-    description: `Pregledajte ${totalPosts} ${totalPosts === 1 ? 'članak' : 'članaka'} u kategoriji ${tag} na blogu VISAGE Studija. Stručni članci o estetskoj medicini i kozmetičkim tretmanima.`,
-    keywords: [tag, "blog", "estetska medicina", "kozmetički tretmani", "VISAGE studio"],
+    title: `${category.name} - Blog`,
+    description: `Pregledajte ${totalPosts} ${totalPosts === 1 ? 'članak' : 'članaka'} u kategoriji ${category.name} na blogu VISAGE Studija. Stručni članci o estetskoj medicini i kozmetičkim tretmanima.`,
+    keywords: [category.name, "blog", "estetska medicina", "kozmetički tretmani", "VISAGE studio"],
     openGraph: {
-      title: `${tag} - Blog`,
-      description: `Pregledajte ${totalPosts} ${totalPosts === 1 ? 'članak' : 'članaka'} u kategoriji ${tag} na blogu VISAGE Studija. Stručni članci o estetskoj medicini i kozmetičkim tretmanima.`,
+      title: `${category.name} - Blog`,
+      description: `Pregledajte ${totalPosts} ${totalPosts === 1 ? 'članak' : 'članaka'} u kategoriji ${category.name} na blogu VISAGE Studija. Stručni članci o estetskoj medicini i kozmetičkim tretmanima.`,
       images: [
         {
           url: "/images/services/toskani-woman-visage-estetski-studio.webp",
           width: 1200,
           height: 630,
-          alt: `VISAGE Studio - Blog - ${tag}`
+          alt: `VISAGE Studio - Blog - ${category.name}`
         }
       ]
     }
   };
 }
 
-export default async function TagPage({ params }: TagPageProps) {
+export default async function CategoryPage({ params }: CategoryPageProps) {
   const resolvedParams = await params;
-  // Find the tag by matching the slug
-  const tag = blogPosts.find(post => post.tags.some(t => toSlug(t) === resolvedParams.tag))?.tags.find(t => toSlug(t) === resolvedParams.tag);
+  // Find the category by matching the slug
+  const category = blogCategories.find(cat => toSlug(cat.name) === resolvedParams.tag);
   
-  if (!tag) {
+  if (!category) {
     notFound();
   }
 
-  const tagPosts = blogPosts.filter(post => post.tags.includes(tag));
+  const categoryPosts = blogPosts.filter(post => post.category === category.id);
 
-  const totalPosts = tagPosts.length;
-  const latestPost = tagPosts[0];
-  const allAuthors = Array.from(new Set(tagPosts.map(post => post.author)));
+  const totalPosts = categoryPosts.length;
+  const latestPost = categoryPosts[0];
+  const allAuthors = Array.from(new Set(categoryPosts.map(post => post.author)));
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -71,12 +72,15 @@ export default async function TagPage({ params }: TagPageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
             <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-6">
-                <FaTag className="w-8 h-8 text-slate-700" />
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: category.color }}>
+                <FaTag className="w-8 h-8 text-white" />
               </div>
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                {tag}
+                {category.name}
               </h1>
+              <p className="text-slate-600 mb-6">
+                {category.description}
+              </p>
               <p className="text-slate-600 mb-6">
                 {totalPosts} {totalPosts === 1 ? 'članak' : 'članaka'} u ovoj kategoriji
               </p>
@@ -143,9 +147,9 @@ export default async function TagPage({ params }: TagPageProps) {
 
           {/* All Posts */}
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Svi članci u kategoriji - {tag}</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6">Svi članci u kategoriji - {category.name}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {tagPosts.map((post) => (
+              {categoryPosts.map((post) => (
                 <article key={post.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="relative aspect-[16/9] w-full">
                     <Link href={`/blog/${post.slug}`}>
@@ -184,22 +188,6 @@ export default async function TagPage({ params }: TagPageProps) {
                         {post.excerpt}
                       </p>
                     </Link>
-                    <div className="flex flex-wrap gap-2">
-                      {post.tags.slice(0, 3).map((tag) => (
-                        <InteractiveLink
-                          key={tag}
-                          href={`/blog/kategorija/${toSlug(tag)}`}
-                          className="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-slate-200 transition-all duration-300 hover:shadow-sm"
-                        >
-                          {tag}
-                        </InteractiveLink>
-                      ))}
-                      {post.tags.length > 3 && (
-                        <span className="px-3 py-1 bg-slate-100 text-slate-500 text-sm rounded-full">
-                          +{post.tags.length - 3}
-                        </span>
-                      )}
-                    </div>
                   </div>
                 </article>
               ))}

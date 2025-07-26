@@ -42,5 +42,6 @@ export interface BlogPost {
   date: Date;
   author: string;
   tags: string[];
+  category: string; // New category field
   image: string;
 } 
