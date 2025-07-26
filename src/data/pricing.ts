@@ -51,10 +51,10 @@ export const pricingData: PricingItem[] = [
   {
     id: "facial-massage",
     title: "Masaža Lica",
-    description: "Trajanje 30min",
+    description: "Trajanje 20min",
     price: "20 EUR",
     category: "Beauty Tretmani",
-    duration: "30 min"
+    duration: "20 min"
   },
   {
     id: "firming-peptide-facial",
@@ -88,7 +88,7 @@ export const pricingData: PricingItem[] = [
   {
     id: "led-addon",
     title: "Dermalux LED Terapija Dodatak",
-    description: "Kao dodatak beauty tretmanu u trajanju od 20min",
+    description: "Kao dodatak beauty tretmanu u trajanju od 30 min",
     price: "15 EUR",
     category: "Fototerapije",
     duration: "20 min"
@@ -96,7 +96,7 @@ export const pricingData: PricingItem[] = [
   {
     id: "led-single",
     title: "Dermalux LED Terapija",
-    description: "1 tretman LED svjetlom u trajanju od 30min",
+    description: "1 tretman LED svjetlom u trajanju od 30 min",
     price: "30 EUR",
     category: "Fototerapije",
     duration: "30 min"
@@ -104,7 +104,7 @@ export const pricingData: PricingItem[] = [
   {
     id: "led-standard",
     title: "Dermalux LED Standard Paket",
-    description: "Paket od 4 tretmana LED svjetlom u trajanju od 30min",
+    description: "Paket od 4 tretmana LED svjetlom u trajanju od 30 min",
     price: "108 EUR",
     category: "Fototerapije",
     isPackage: true,
@@ -113,7 +113,7 @@ export const pricingData: PricingItem[] = [
   {
     id: "led-classic",
     title: "Dermalux LED Classic Paket",
-    description: "Paket od 6 tretmana LED svjetlom u trajanju od 30min",
+    description: "Paket od 6 tretmana LED svjetlom u trajanju od 30 min",
     price: "165 EUR",
     category: "Fototerapije",
     isPackage: true,
@@ -122,7 +122,7 @@ export const pricingData: PricingItem[] = [
   {
     id: "led-premium",
     title: "Dermalux LED Premium Paket",
-    description: "Paket od 12 tretmana LED svjetlom u trajanju od 30min",
+    description: "Paket od 12 tretmana LED svjetlom u trajanju od 30 min",
     price: "305 EUR",
     category: "Fototerapije",
     isPackage: true,
@@ -133,10 +133,10 @@ export const pricingData: PricingItem[] = [
   {
     id: "led-fototerapija-single",
     title: "LED Fototerapija - Pojedinačni Tretman",
-    description: "1 tretman LED fototerapije u trajanju od 20min",
+    description: "1 tretman LED fototerapije u trajanju od 30 min",
     price: "25 EUR",
     category: "LED fototerapija",
-    duration: "20 min"
+    duration: "30 min"
   },
   {
     id: "led-fototerapija-standard",

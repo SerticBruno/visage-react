@@ -262,10 +262,10 @@ export default function PricingPage() {
                           type="checkbox"
                           checked={selectedBadges.includes('popular')}
                           onChange={() => toggleBadge('popular')}
-                          className="h-4 w-4 text-slate-500 focus:ring-slate-500 border-gray-300 rounded"
+                          className="h-4 w-4 text-slate-800 focus:ring-slate-800 border-gray-300 rounded"
                         />
                         <span className="text-sm text-gray-700 flex items-center gap-1">
-                          <FaStar className="w-3 h-3 text-slate-600" />
+                          <FaStar className="w-3 h-3 text-slate-800" />
                           Popularno
                         </span>
                       </label>
@@ -274,10 +274,10 @@ export default function PricingPage() {
                           type="checkbox"
                           checked={selectedBadges.includes('package')}
                           onChange={() => toggleBadge('package')}
-                          className="h-4 w-4 text-slate-500 focus:ring-slate-500 border-gray-300 rounded"
+                          className="h-4 w-4 text-slate-800 focus:ring-slate-800 border-gray-300 rounded"
                         />
                         <span className="text-sm text-gray-700 flex items-center gap-1">
-                          <FaBox className="w-3 h-3 text-slate-600" />
+                          <FaBox className="w-3 h-3 text-slate-800" />
                           Paket
                         </span>
                       </label>
