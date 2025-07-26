@@ -125,12 +125,9 @@ export default function ComboPackagesInlineSection() {
                                           />
                                         </div>
                                         <div className="text-center flex items-center justify-center mt-2">
-                                          <div className="flex items-center justify-center gap-1">
-                                            <h5 className="font-medium text-xs group-hover:text-primary transition-colors">{item.title}</h5>
-                                            {item.quantity > 1 && (
-                                              <span className="text-xs text-primary font-medium">x {item.quantity}</span>
-                                            )}
-                                          </div>
+                                          <h5 className="font-medium text-xs group-hover:text-primary transition-colors">
+                                            {item.title}
+                                          </h5>
                                         </div>
                                       </div>
                                     </Link>
@@ -149,12 +146,9 @@ export default function ComboPackagesInlineSection() {
                                           />
                                         </div>
                                         <div className="text-center flex items-center justify-center mt-2">
-                                          <div className="flex items-center justify-center gap-1">
-                                            <h5 className="font-medium text-xs group-hover:text-primary transition-colors">{item.title}</h5>
-                                            {item.quantity > 1 && (
-                                              <span className="text-xs text-primary font-medium">x {item.quantity}</span>
-                                            )}
-                                          </div>
+                                          <h5 className="font-medium text-xs group-hover:text-primary transition-colors">
+                                            {item.title}
+                                          </h5>
                                         </div>
                                       </div>
                                     </button>
@@ -175,83 +169,87 @@ export default function ComboPackagesInlineSection() {
 
                         {/* Desktop Layout - Original horizontal layout */}
                         <div className="hidden md:flex flex-row items-center justify-center gap-3 lg:gap-4">
-                          {pkg.services.map((service, index) => (
-                            <React.Fragment key={service.id}>
-                              <Link href={`/usluge/${service.id}`} className="group w-full flex justify-center">
-                                <div className="flex flex-col items-center justify-start w-full h-44 lg:h-48 xl:h-52 bg-gray-50 rounded-xl p-3 lg:p-4 pt-4 lg:pt-5 pb-2 lg:pb-3 xl:pb-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                                  <div className="relative w-24 lg:w-28 xl:w-32 h-24 lg:h-28 xl:h-32 flex-shrink-0 rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
-                                    <Image
-                                      src={service.image}
-                                      alt={service.title}
-                                      fill
-                                      className="object-cover"
-                                    />
-                                  </div>
-                                  <div className="text-center flex items-center justify-center mt-3 lg:mt-4">
-                                    <div className="flex items-center justify-center gap-2">
-                                      <h5 className="font-medium text-xs lg:text-sm group-hover:text-primary transition-colors">{service.title}</h5>
-                                      {service.quantity > 1 && (
-                                        <span className="text-xs lg:text-sm text-primary font-medium">x {service.quantity}</span>
-                                      )}
-                                    </div>
-                                  </div>
-                                </div>
-                              </Link>
-                              {index < pkg.services.length - 1 && (
-                                <div className="flex items-center justify-center">
-                                  <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
-                                    <FaPlus className="text-primary text-sm lg:text-base" />
-                                  </div>
-                                </div>
-                              )}
-                            </React.Fragment>
-                          ))}
-
-                          {pkg.products && pkg.products.length > 0 && (
-                            <>
-                              {pkg.services.length > 0 && (
-                                <div className="flex items-center justify-center">
-                                  <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
-                                    <FaPlus className="text-primary text-sm lg:text-base" />
-                                  </div>
-                                </div>
-                              )}
-                              {pkg.products.map((product, index) => (
-                                <React.Fragment key={product.id}>
-                                  <button 
-                                    onClick={() => handleProductClick(product.id)}
-                                    className="group w-full flex justify-center"
-                                  >
-                                    <div className="flex flex-col items-center justify-start w-full h-44 lg:h-48 xl:h-52 bg-gray-50 rounded-xl p-3 lg:p-4 pt-4 lg:pt-5 pb-2 lg:pb-3 xl:pb-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                                      <div className="relative w-24 lg:w-28 xl:w-32 h-24 lg:h-28 xl:h-32 flex-shrink-0 rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
-                                        <Image
-                                          src={product.image}
-                                          alt={product.title}
-                                          fill
-                                          className="object-cover"
-                                        />
-                                      </div>
-                                      <div className="text-center flex items-center justify-center mt-3 lg:mt-4">
-                                        <div className="flex items-center justify-center gap-2">
-                                          <h5 className="font-medium text-xs lg:text-sm group-hover:text-primary transition-colors">{product.title}</h5>
-                                          {product.quantity > 1 && (
-                                            <span className="text-xs lg:text-sm text-primary font-medium">x {product.quantity}</span>
-                                          )}
+                          {(() => {
+                            const totalItems = pkg.services.length + (pkg.products?.length || 0);
+                            const maxItems = 4; // Maximum expected items for width calculation
+                            const cardWidth = totalItems <= 2 ? 'w-48 lg:w-56 xl:w-64' : 'w-40 lg:w-44 xl:w-48';
+                            
+                            return (
+                              <>
+                                {pkg.services.map((service, index) => (
+                                  <React.Fragment key={service.id}>
+                                    <Link href={`/usluge/${service.id}`} className={`group flex justify-center ${cardWidth}`}>
+                                      <div className={`flex flex-col items-center justify-start ${cardWidth} h-44 lg:h-48 xl:h-52 bg-gray-50 rounded-xl p-3 lg:p-4 pt-4 lg:pt-5 pb-2 lg:pb-3 xl:pb-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer`}>
+                                        <div className="relative w-24 lg:w-28 xl:w-32 h-24 lg:h-28 xl:h-32 flex-shrink-0 rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                                          <Image
+                                            src={service.image}
+                                            alt={service.title}
+                                            fill
+                                            className="object-cover"
+                                          />
+                                        </div>
+                                        <div className="text-center flex items-center justify-center mt-3 lg:mt-4">
+                                          <h5 className="font-medium text-xs lg:text-sm group-hover:text-primary transition-colors">
+                                            {service.title}
+                                          </h5>
                                         </div>
                                       </div>
-                                    </div>
-                                  </button>
-                                  {index < pkg.products!.length - 1 && (
-                                    <div className="flex items-center justify-center">
-                                      <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
-                                        <FaPlus className="text-primary text-sm lg:text-base" />
+                                    </Link>
+                                    {index < pkg.services.length - 1 && (
+                                      <div className="flex items-center justify-center">
+                                        <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
+                                          <FaPlus className="text-primary text-sm lg:text-base" />
+                                        </div>
                                       </div>
-                                    </div>
-                                  )}
-                                </React.Fragment>
-                              ))}
-                            </>
-                          )}
+                                    )}
+                                  </React.Fragment>
+                                ))}
+
+                                {pkg.products && pkg.products.length > 0 && (
+                                  <>
+                                    {pkg.services.length > 0 && (
+                                      <div className="flex items-center justify-center">
+                                        <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
+                                          <FaPlus className="text-primary text-sm lg:text-base" />
+                                        </div>
+                                      </div>
+                                    )}
+                                    {pkg.products.map((product, index) => (
+                                      <React.Fragment key={product.id}>
+                                        <button 
+                                          onClick={() => handleProductClick(product.id)}
+                                          className={`group flex justify-center ${cardWidth}`}
+                                        >
+                                          <div className={`flex flex-col items-center justify-start ${cardWidth} h-44 lg:h-48 xl:h-52 bg-gray-50 rounded-xl p-3 lg:p-4 pt-4 lg:pt-5 pb-2 lg:pb-3 xl:pb-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer`}>
+                                            <div className="relative w-24 lg:w-28 xl:w-32 h-24 lg:h-28 xl:h-32 flex-shrink-0 rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                                              <Image
+                                                src={product.image}
+                                                alt={product.title}
+                                                fill
+                                                className="object-cover"
+                                              />
+                                            </div>
+                                            <div className="text-center flex items-center justify-center mt-3 lg:mt-4">
+                                              <h5 className="font-medium text-xs lg:text-sm group-hover:text-primary transition-colors">
+                                                {product.title}
+                                              </h5>
+                                            </div>
+                                          </div>
+                                        </button>
+                                        {index < pkg.products!.length - 1 && (
+                                          <div className="flex items-center justify-center">
+                                            <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
+                                              <FaPlus className="text-primary text-sm lg:text-base" />
+                                            </div>
+                                          </div>
+                                        )}
+                                      </React.Fragment>
+                                    ))}
+                                  </>
+                                )}
+                              </>
+                            );
+                          })()}
                         </div>
                       </div>
 

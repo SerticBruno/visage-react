@@ -8,14 +8,14 @@ export interface ComboPackage {
   services: {
     id: string;
     title: string;
-    quantity: number;
+    quantity?: number;
     image: string;
     shortDescription?: string;
   }[];
   products?: {
     id: string;
     title: string;
-    quantity: number;
+    quantity?: number;
     image: string;
     shortDescription?: string;
   }[];
@@ -26,6 +26,35 @@ export interface ComboPackage {
 
 export const comboPackages: ComboPackage[] = [
   {
+    id: "neck-refine-combo",
+    title: "Neck Refine",
+    description: "Elegantna definicija linije čeljusti i svjež izgled vrata",
+    image: "/images/services/woman-face-visage-estetski-studio.webp",
+    price: "445 EUR",
+    oldPrice: "525 EUR",
+    services: [
+      { 
+        id: "botox", 
+        title: "Botox - 50 jedinica", 
+        image: "/images/services/botox/botox-visage-estetski-studio.webp"
+      },
+      { 
+        id: "dermalni-fileri", 
+        title: "Dermalni Fileri 1 ml", 
+        image: "/images/services/dermalni-fileri/dermalni-fileri-visage-estetski-studio-sisak.webp"
+      }
+    ],
+    benefits: [
+      "Zateže kožu vrata i podbratka",
+      "Umanjuje bore i fine linije",
+      "Vizualno podiže donji dio lica",
+      "Uklanja višak kože",
+      "Poboljšava čvrstoću kože"
+    ],
+    isPopular: true,
+    isLimited: true
+  },
+  {
     id: "hair-boost-combo",
     title: "Hair Boost",
     description: "Intenzivan tretman za poticanje rasta kose i jačanje vlasišta",
@@ -35,26 +64,13 @@ export const comboPackages: ComboPackage[] = [
     services: [
       { 
         id: "mezoterapija", 
-        title: "Mezoterapija vlasišta velike zone", 
-        quantity: 5,
-        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
-        shortDescription: "Dubinska hidratacija vlasišta"
+        title: "5 tretmana mezoterapije vlasišta velike zone", 
+        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
       },
       { 
         id: "prp", 
-        title: "PRP tretman", 
-        quantity: 2,
-        image: "/images/services/prp/prp-prednosti-estetski-studio-sisak.jpeg",
-        shortDescription: "Prirodna regeneracija"
-      }
-    ],
-    products: [
-      { 
-        id: "densihair-boost-capsules", 
-        title: "DensiHair Boost Capsules", 
-        quantity: 1,
-        image: "/images/products/densihair-boost-capsules-visage-estetski-studio.webp",
-        shortDescription: "Dodatna podrška rastu kose"
+        title: "2 PRP tretmana", 
+        image: "/images/services/prp/prp-prednosti-estetski-studio-sisak.jpeg"
       }
     ],
     benefits: [
