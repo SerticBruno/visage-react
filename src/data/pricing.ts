@@ -971,42 +971,42 @@ export const pricingData: PricingItem[] = [
   {
     id: "anti-ageing-ha-ampule",
     title: "Anti-ageing + HA Ampule",
-    description: "15x2ml",
+    description: "15 x 2 ml",
     price: "50 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "radiance-ampule",
     title: "Radiance Ampule",
-    description: "15x2ml",
+    description: "15 x 2 ml",
     price: "50 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "sensitive-skin-ampule",
     title: "Sensitive Skin Ampule",
-    description: "15x2ml",
+    description: "15 x 2 ml",
     price: "50 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "purifying-ampule",
     title: "Purifying Ampule",
-    description: "15x2ml",
+    description: "15 x 2 ml",
     price: "50 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "lipo-proteoglycans-ampule",
     title: "Lipo Proteoglycans Ampule",
-    description: "15x2ml",
+    description: "15 x 2 ml",
     price: "50 EUR",
     category: "TOSKANI Proizvodi"
   },
   {
     id: "vitaflash-ampule",
     title: "Vitaflash Ampule",
-    description: "15x2ml",
+    description: "15 x 2 ml",
     price: "30 EUR",
     category: "TOSKANI Proizvodi"
   },

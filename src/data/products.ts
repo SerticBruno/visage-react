@@ -761,7 +761,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
     image: '/images/products/anti-ageing-ha-ampule-visage-estetski-studio.webp',
     price: '52 EUR',
-    volume: '15x2ml',
+    volume: '15 x 2 ml',
     isNew: true,
     activeIngredients: [
       'Faktori rasta',
@@ -797,7 +797,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija'],
     image: '/images/products/radiance-ampule-visage-estetski-studio.webp',
     price: '52 EUR',
-    volume: '15x2ml',
+    volume: '15 x 2 ml',
     isNew: true,
     activeIngredients: [
       'Azeloglicin',
@@ -834,7 +834,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     skinConcern: ['Hidratacija'],
     image: '/images/products/sensitive-skin-ampule-visage-estetski-studio.webp',
     price: '52 EUR',
-    volume: '15x2ml',
+    volume: '15 x 2 ml',
     isNew: true,
     activeIngredients: [
       'Ekstrakt Myrothamnus Flabellifolia',
@@ -867,7 +867,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     skinConcern: ['Akne i problematična koža'],
     image: '/images/products/purifying-ampule-visage-estetski-studio.webp',
     price: '52 EUR',
-    volume: '15x2ml',
+    volume: '15 x 2 ml',
     isNew: true,
     activeIngredients: [ 'Ekstrakt Cleome Gynandra', 'Ekstrakt Rhodosorus Marinus', 'Vitamin B5', 'Vitamin C', 'Vitamin E', 'Cink PCA' ],
     application: [
@@ -890,7 +890,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
     image: '/images/products/lipo-proteoglycans-ampule-visage-estetski-studio.webp',
     price: '52 EUR',
-    volume: '15x2ml',
+    volume: '15 x 2 ml',
     isNew: true,
     activeIngredients: [
       'Proteoglikani',
