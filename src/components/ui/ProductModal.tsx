@@ -294,7 +294,13 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                                 onClick={(e) => {
                                   const target = e.target as HTMLElement;
                                   if (target.tagName === 'A') {
-                                    handleProductLinkClick(e as any);
+                                    // Create a synthetic event for the anchor element
+                                    const syntheticEvent = {
+                                      ...e,
+                                      currentTarget: target as HTMLAnchorElement,
+                                      target: target as HTMLAnchorElement
+                                    } as React.MouseEvent<HTMLAnchorElement>;
+                                    handleProductLinkClick(syntheticEvent);
                                   }
                                 }}
                               />
