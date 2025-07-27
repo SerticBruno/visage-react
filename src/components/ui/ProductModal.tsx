@@ -10,9 +10,10 @@ interface ProductModalProps {
   isOpen: boolean;
   onClose: () => void;
   product: Product | null;
+  onProductChange?: (productId: string) => void;
 }
 
-export default function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
+export default function ProductModal({ isOpen, onClose, product, onProductChange }: ProductModalProps) {
   // Handle Escape key to close modal
   useEffect(() => {
     const handleEscapeKey = (event: KeyboardEvent) => {
@@ -29,6 +30,15 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
       document.removeEventListener('keydown', handleEscapeKey);
     };
   }, [isOpen, onClose]);
+
+  // Handle product link clicks
+  const handleProductLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    const productId = event.currentTarget.getAttribute('data-product-id');
+    if (productId && onProductChange) {
+      onProductChange(productId);
+    }
+  };
 
   if (!product) return null;
 
@@ -273,7 +283,21 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                         <div className="space-y-3">
                           {product.proTips.map((tip, index) => (
                             <div key={index} className="text-sm text-slate-600 leading-relaxed">
-                              <p>{tip.description}</p>
+                              <div 
+                                className="[&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors [&_a]:cursor-pointer"
+                                dangerouslySetInnerHTML={{ 
+                                  __html: tip.description.replace(
+                                    /<a href='#' data-product-id='(\d+)'>(.*?)<\/a>/g,
+                                    '<a href="#" data-product-id="$1" class="product-link">$2</a>'
+                                  )
+                                }}
+                                onClick={(e) => {
+                                  const target = e.target as HTMLElement;
+                                  if (target.tagName === 'A') {
+                                    handleProductLinkClick(e as any);
+                                  }
+                                }}
+                              />
                             </div>
                           ))}
                         </div>

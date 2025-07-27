@@ -852,6 +852,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         product={selectedProduct}
+        onProductChange={handleProductClick}
       />
     </section>
   );

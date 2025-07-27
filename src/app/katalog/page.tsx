@@ -5,7 +5,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
-import { products, productTypes, skinTypes, skinConcerns, type Product } from '@/data/products';
+import { products, productTypes, skinTypes, skinConcerns, brands, type Product } from '@/data/products';
 import { FaSearch, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaTag, FaFire, FaLeaf } from 'react-icons/fa6';
 import Image from 'next/image';
@@ -18,6 +18,7 @@ function KatalogContent() {
   const [selectedProductTypes, setSelectedProductTypes] = useState<string[]>([]);
   const [selectedSkinTypes, setSelectedSkinTypes] = useState<string[]>([]);
   const [selectedSkinConcerns, setSelectedSkinConcerns] = useState<string[]>([]);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [selectedBadges, setSelectedBadges] = useState<string[]>([]);
   
   // Accordion states for filter sections
@@ -25,6 +26,7 @@ function KatalogContent() {
     productTypes: true,
     skinTypes: false,
     skinConcerns: false,
+    brands: false,
     badges: false
   });
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -62,11 +64,13 @@ function KatalogContent() {
       (product.skinType && product.skinType.some(skinType => selectedSkinTypes.includes(skinType)));
     const matchesSkinConcern = selectedSkinConcerns.length === 0 || 
       (product.skinConcern && product.skinConcern.some(concern => selectedSkinConcerns.includes(concern)));
+    const matchesBrands = selectedBrands.length === 0 || 
+      selectedBrands.includes(product.marka);
     const matchesBadges = selectedBadges.length === 0 || 
       (selectedBadges.includes('new') && product.isNew) ||
       (selectedBadges.includes('sale') && product.isOnSale) ||
       (selectedBadges.includes('limited') && product.isLimited);
-    return matchesSearch && matchesProductType && matchesSkinType && matchesSkinConcern && matchesBadges;
+    return matchesSearch && matchesProductType && matchesSkinType && matchesSkinConcern && matchesBrands && matchesBadges;
   });
 
   // Calculate pagination
@@ -85,7 +89,7 @@ function KatalogContent() {
   // Reset to first page when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, selectedProductTypes, selectedSkinTypes, selectedSkinConcerns, selectedBadges]);
+  }, [searchTerm, selectedProductTypes, selectedSkinTypes, selectedSkinConcerns, selectedBrands, selectedBadges]);
 
   // Handle URL parameter for auto-opening product modal
   useEffect(() => {
@@ -216,6 +220,23 @@ function KatalogContent() {
     }, 150); // Half of the transition duration
   };
 
+  const toggleBrand = (brand: string) => {
+    setIsTransitioning(true);
+    setIsFiltering(true);
+    
+    // Fade out first
+    setTimeout(() => {
+      setSelectedBrands(prev => 
+        prev.includes(brand)
+          ? prev.filter(b => b !== brand)
+          : [...prev, brand]
+      );
+      
+      // Use requestAnimationFrame to ensure DOM is updated before scrolling
+      requestAnimationFrame(scrollToProducts);
+    }, 150); // Half of the transition duration
+  };
+
   const toggleSection = (section: keyof typeof expandedSections) => {
     setExpandedSections(prev => ({
       ...prev,
@@ -251,6 +272,13 @@ function KatalogContent() {
   const openProductModal = (product: Product) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
+  };
+
+  const handleProductChange = (productId: string) => {
+    const newProduct = products.find(p => p.id === productId);
+    if (newProduct) {
+      setSelectedProduct(newProduct);
+    }
   };
 
   return (
@@ -453,6 +481,55 @@ function KatalogContent() {
                             />
                           </div>
                           <span className="text-sm text-gray-700 group-hover:text-gray-900">{skinConcern}</span>
+                        </label>
+                      ))}
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-2 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Brands Section */}
+              <div className="border-t border-gray-200 pt-3 pb-0 mb-0">
+                <button
+                  onClick={() => toggleSection('brands')}
+                  className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
+                >
+                  <label className="block text-sm font-medium text-gray-700 cursor-pointer">
+                    Marke
+                  </label>
+                  {expandedSections.brands ? (
+                    <FaChevronUp className="w-4 h-4 text-gray-500" />
+                  ) : (
+                    <FaChevronDown className="w-4 h-4 text-gray-500" />
+                  )}
+                </button>
+                <div 
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                    expandedSections.brands 
+                      ? 'max-h-32 opacity-100' 
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="relative">
+                    <div className="space-y-2 max-h-28 overflow-y-auto scrollbar-spaced pr-2">
+                      {brands.map((brand, index) => (
+                        <label 
+                          key={brand} 
+                          className={`flex items-baseline space-x-2 cursor-pointer group ${
+                            index === brands.length - 1 ? 'pb-2' : ''
+                          }`}
+                        >
+                          <div className="flex items-center">
+                            <input
+                              type="checkbox"
+                              checked={selectedBrands.includes(brand)}
+                              onChange={() => toggleBrand(brand)}
+                              className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
+                              style={{ transform: 'translateY(2px)' }}
+                            />
+                          </div>
+                          <span className="text-sm text-gray-700 group-hover:text-gray-900">{brand}</span>
                         </label>
                       ))}
                     </div>
@@ -707,6 +784,7 @@ function KatalogContent() {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           product={selectedProduct}
+          onProductChange={handleProductChange}
         />
       </div>
       <CTASection gradientDirection='t' />

@@ -81,6 +81,12 @@ export const skinConcerns = [
   'Postproceduralna njega'
 ];
 
+// Brands for "Marke"
+export const brands = [
+  'TOSKANI',
+  'Profhilo'
+];
+
 export const products: Product[] = [
   {
     id: '1',
@@ -103,7 +109,7 @@ Gel za čišćenje lica čuva neke slojeve masnoće na koži što sprječava isu
     proTips: [
       {
         title: "Glow tip",
-        description: "Za potpuno čišćenje i pripremu lica, koristite s Toskani Bamboo tonikom i Nutritive pilingom."
+        description: "Za potpuno čišćenje i pripremu lica, koristite s <a href='#' data-product-id='3'>Toskani Bamboo tonikom</a> i <a href='#' data-product-id='4'>Nutritive pilingom</a>."
       }
     ],
     tags: ['čišćenje lica', 'normalna koža', 'mješovita koža', 'suha koža']
@@ -133,7 +139,7 @@ Ovaj gel za čišćenje može se koristiti i na tijelu.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolje čišćenje lica sklono aknama, koristite ovaj proizvod 3 puta tjedno u kombinaciji s Toskani Purifying pilingom, koji ćete koristiti 2 puta tjedno."
+        description: "Za najbolje čišćenje lica sklono aknama, koristite ovaj proizvod 3 puta tjedno u kombinaciji s <a href='#' data-product-id='5'>Toskani Purifying pilingom</a>, koji ćete koristiti 2 puta tjedno."
       }
     ],
     tags: ['čišćenje lica', 'masna koža', 'mješovita koža']
@@ -707,7 +713,14 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     volume: '30 kapsula',
     activeIngredients: ['Aminokiseline Lysine', 'Arginine', 'Biotin (B8)', 'Cistin', 'Sabal serrulata', 'Selen', 'Zinc'],
     application: [
-      'Uzmite 2 kapsule na dan kao "šok" tretman prvih 3 mjeseca. Nakon toga uzmite 1 kapsulu dnevno za održavanje rezultata.'
+      'Uzmite 2 kapsule na dan kao "šok" tretman prvih 3 mjeseca.',
+      'Nakon toga uzmite 1 kapsulu dnevno za održavanje rezultata.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolje rezultate, koristite ovaj proizvod redovito i u kombinaciji s mezoterapijom vlasišta."
+      }
     ],
     tags: ['kapsule', 'njega vlasišta', 'dodatak prehrani', 'zaustavljanje gubitka kose', 'jačanje kose']
   },
@@ -768,7 +781,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite ovaj proizvod s odgovarajućom Toskani kremom, Toskani serumom i Toskani Sun Shiel-D fluidom."
+        description: "Za najbolji učinak, koristite ovaj proizvod s odgovarajućom Toskani kremom, Toskani serumom i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>."
       }
     ],
     tags: [
@@ -811,7 +824,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite ovaj proizvod s Toskani Radiance Daily Cream SPF30+, Toskani Radiance Ultimate Mesoserumom i Toskani Sun Shiel-D fluidom."
+        description: "Za najbolji učinak, koristite ovaj proizvod s <a href='#' data-product-id='8'>Toskani Radiance Daily Cream SPF30+</a>, <a href='#' data-product-id='11'>Toskani Radiance Ultimate Mesoserumom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>."
       }
     ],
     tags: [
@@ -854,7 +867,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite ove proizvode s Total Recovery gelom ili Total Recovery kremom i Toskani Sun Shiel-D fluidom."
+        description: "Za najbolji učinak, koristite ove proizvode s <a href='#' data-product-id='7'>Total Recovery gelom</a> ili <a href='#' data-product-id='6'>Total Recovery kremom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>."
       }
     ],
     tags: [
@@ -893,7 +906,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Purifying gelom za čišćenje lica, Toskani Purifying pilingom, Toskani Purifying kremom, Toskani Intensive serumom i Toskani Sun Shiel-D fluidom."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='2'>Toskani Purifying gelom za čišćenje lica</a>, <a href='#' data-product-id='5'>Toskani Purifying pilingom</a>, <a href='#' data-product-id='13'>Toskani Purifying kremom</a>, <a href='#' data-product-id='12'>Toskani Intensive serumom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>."
       }
     ],
     tags: [ 'ampule', 'pročišćavanje', 'kontrola masnoće', 'akne', 'regulacija sebuma', 'zatvaranje pora', '30-dnevna kura']
@@ -922,7 +935,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom, Toskani serumom i Toskani Sun Shiel-D fluidom."
+        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom, Toskani serumom i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>."
       }
     ],
     tags: [
@@ -1050,7 +1063,7 @@ Sadrži aktivne sastojke koji pružaju trenutačni efekt liftinga, omekšavaju b
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom, Toskani serumom i Toskani Sun Shiel-D fluidom."
+        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom, Toskani serumom i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>."
       }
     ],
     tags: [
