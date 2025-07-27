@@ -68,7 +68,7 @@ export default function ComboPackageNavigationModal({
       setCurrentIndex(0);
       setCurrentComboPackage(comboPackages[0]);
     }
-  }, [initialComboPackage, isClosing]);
+  }, [initialComboPackage, isClosing, currentComboPackage]);
 
   // Handle transition state
   useEffect(() => {
