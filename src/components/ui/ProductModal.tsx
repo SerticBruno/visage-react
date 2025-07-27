@@ -262,17 +262,23 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                     )}
 
                     {/* Glow Tip Section */}
-                    <div className="bg-slate-50 rounded-xl p-3">
-                      <h3 className="text-sm font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                        <div className="w-6 h-6 bg-slate-200 rounded-full flex items-center justify-center border border-slate-300">
-                          <FaStar className="w-3 h-3 text-slate-600" />
+                    {product.proTips && product.proTips.length > 0 && (
+                      <div className="bg-slate-50 rounded-xl p-3">
+                        <h3 className="text-sm font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                          <div className="w-6 h-6 bg-slate-200 rounded-full flex items-center justify-center border border-slate-300">
+                            <FaStar className="w-3 h-3 text-slate-600" />
+                          </div>
+                          Glow tip
+                        </h3>
+                        <div className="space-y-3">
+                          {product.proTips.map((tip, index) => (
+                            <div key={index} className="text-sm text-slate-600 leading-relaxed">
+                              <p>{tip.description}</p>
+                            </div>
+                          ))}
                         </div>
-                        Glow tip
-                      </h3>
-                      <div className="text-sm text-slate-600 leading-relaxed">
-                        <p>Za najbolje rezultate, koristite ovaj proizvod redovito kao dio vaše dnevne rutine njegovanja kože. Kombinirajte s drugim proizvodima iz naše linije za sinergijski učinak i maksimalnu efikasnost.</p>
                       </div>
-                    </div>
+                    )}
 
                     {/* Aktivni sastojci Section */}
                     {product.activeIngredients && (

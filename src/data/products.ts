@@ -85,11 +85,9 @@ export const products: Product[] = [
   {
     id: '1',
     title: 'Energizing Cleanser',
-    description: `Gel sredstvo za čišćenje uklanjanje prljavštinu, prašinu i šminku, zajedno s viškom masnoće i mrtvih stanica kože nakupljenim tijekom dana.
+    description: `Gel sredstvo za čišćenje lica uklanjanja prljavštinu, prašinu i šminku, višak masnoće i mrtvih stanica kože nakupljenih tijekom dana.
 
-Gel za čišćenje čuva neke slojeve masnoće na koži što sprječava isušivanje kože.
-
-Čisti, pročišćava i tonizira kožu.`,
+Gel za čišćenje lica čuva neke slojeve masnoće na koži što sprječava isušivanje kože. Čisti, pročišćava i tonizira kožu.`,
     category: 'Čišćenje lica',
     marka: 'TOSKANI',
     productType: 'Čišćenje lica',
@@ -100,28 +98,12 @@ Gel za čišćenje čuva neke slojeve masnoće na koži što sprječava isušiva
     volume: '200 ml',
     activeIngredients: ['Cimet', 'Curcuma', 'Đumbir'],
     application: [
-      'Nanesite svako jutro i noć, izravno na mokru kožu',
-      'Emulgirajte proizvod na licu i vratu i nanesite laganom kružnom masažom tijekom 1 minute',
-      'Uklonite proizvod mokrim ručnikom ili spužvom',
-      'Nanesite Bamboo Hydratonic',
-      'Nanesite adekvatni TOSKANI mesoserum i kremu'
+      'Nanesite dva puta dnevno, svako jutro i noć, izravno na mokru kožu'
     ],
     proTips: [
       {
-        title: "Najbolje vrijeme za primjenu",
-        description: "Koristite ovaj čistač svako jutro i navečer. Jutarnja primjena uklanja nakupljenu prljavštinu iz noći, a večernja priprema kožu za noćnu regeneraciju."
-      },
-      {
-        title: "Temperatura vode",
-        description: "Koristite mlaku vodu za čišćenje. Previše topla voda može isušiti kožu, a hladna voda neće učinkovito ukloniti masnoće."
-      },
-      {
-        title: "Vrijeme masaže",
-        description: "Masažirajte kožu najmanje 1 minutu kako bi aktivni sastojci imali dovoljno vremena za djelovanje. Ne prekoračujte 2 minute."
-      },
-      {
-        title: "Kombinacija s drugim proizvodima",
-        description: "Nakon čišćenja, obavezno nanesite tonik (Bamboo Hydratonic) kako biste uravnotežili pH kože prije nanosa serumova i kremi."
+        title: "Glow tip",
+        description: "Za potpuno čišćenje i pripremu lica, koristite s Toskani Bamboo tonikom i Nutritive pilingom."
       }
     ],
     tags: ['čišćenje lica', 'normalna koža', 'mješovita koža', 'suha koža']
@@ -129,13 +111,13 @@ Gel za čišćenje čuva neke slojeve masnoće na koži što sprječava isušiva
   {
     id: '2',
     title: 'Purifying Cleanser',
-    description: `Gel bez ulja koji nježno čisti lice i područje oko očiju. Preporuča se za mješovitu i masnu kožu.
+    description: `Gel bez ulja koji nježno čisti lice i područje oko očiju. Preporučuje se za mješovitu i masnu kožu.
 
 Ovaj gel za čišćenje uklanja nečistoće i višak sebuma koji začepljuju pore i dovode do stvaranja komedona i prištića na koži sklonoj aknama.
 
 Purifying Cleanser regulira proizvodnju sebuma i ostavlja kožu čistom, svježom, glatkom i mirnom.
 
-Ovo sredstvo za čišćenje može se koristiti i na tijelu.`,
+Ovaj gel za čišćenje može se koristiti i na tijelu.`,
     category: 'Čišćenje lica',
     marka: 'TOSKANI',
     productType: 'Čišćenje lica',
@@ -146,28 +128,12 @@ Ovo sredstvo za čišćenje može se koristiti i na tijelu.`,
     volume: '200 ml',
     activeIngredients: ['Hamamelis Virginiana Extract', 'Mliječna kiselina', 'Purifying Complex', 'Salvia Officinalis Extract', 'Urea'],
     application: [
-      'Nanesite svako jutro i noć, izravno na mokru kožu',
-      'Emulgirajte proizvod na licu i vratu i nanesite ga kružnom masažom tijekom 1 minute',
-      'Uklonite proizvod s puno vode',
-      'Nanesite Bamboo Hydratonic',
-      'Prema potrebi nanesite kremu za pročišćavanje i intenzivni serum'
+      'Nanesite jednom dnevno, navečer, izravno na mokru kožu'
     ],
     proTips: [
       {
-        title: "Frekvencija korištenja",
-        description: "Za masnu kožu koristite 2 puta dnevno. Za mješovitu kožu možete koristiti svaki drugi dan ako primijetite da koža postaje presuha."
-      },
-      {
-        title: "Kombinacija s pilingom",
-        description: "Kombinirajte s Nutritive Scrub-om 1-2 puta tjedno za dubinsko čišćenje pora i uklanjanje mrtvih stanica kože."
-      },
-      {
-        title: "Za problematičnu kožu",
-        description: "Ako imate akne, koristite ujutro i navečer. Za preventivu možete koristiti samo navečer."
-      },
-      {
-        title: "Nakon čišćenja",
-        description: "Obavezno nanesite hidratantnu kremu nakon čišćenja jer ovaj čistač može ostaviti kožu malo suhom."
+        title: "Glow tip",
+        description: "Za najbolje čišćenje lica sklono aknama, koristite ovaj proizvod 3 puta tjedno u kombinaciji s Toskani Purifying pilingom, koji ćete koristiti 2 puta tjedno."
       }
     ],
     tags: ['čišćenje lica', 'masna koža', 'mješovita koža']
