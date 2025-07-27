@@ -168,12 +168,10 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                                 );
                               }
                               
-                              // Regular numbered step
+                              // Regular bullet point step
                               return (
                                 <div key={index} className="flex items-start">
-                                  <span className="flex-shrink-0 w-5 h-5 bg-slate-200 rounded-full flex items-center justify-center mr-3 mt-0.5">
-                                    <span className="text-xs font-semibold text-slate-600">{index + 1}</span>
-                                  </span>
+                                  <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
                                   <p className="text-sm text-slate-600 leading-relaxed">{step}</p>
                                 </div>
                               );

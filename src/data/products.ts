@@ -776,7 +776,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
   {
     id: '26',
     title: 'Anti-ageing + HA Ampule',
-    description: `Anti Ageing + HA ampule pružaju čvrstoću i svjetlinu koži vašeg lica, omekšavajući bore i znakove umora. Učvršćuje i pruža trenutnu i dugotrajnu hidrataciju.
+    description: `Anti Ageing + HA ampule pružaju čvrstoću i svjetlinu koži vašeg lica, omekšavajući bore i znakove umora. Učvršćuje i pruža trenutačnu i dugotrajnu hidrataciju.
 
     Sadrži probiotike, funkcionalne peptide, čimbenike rasta i hijaluronsku kiselinu koji pomažu smanjiti i usporiti znakove starenja.
 
@@ -788,7 +788,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
     image: '/images/products/anti-ageing-ha-ampule-visage-estetski-studio.webp',
     price: '52 EUR',
-    volume: '15 x 2 ml',
+    volume: '15 ampula x 2 ml',
     isNew: true,
     activeIngredients: [
       'Faktori rasta',
@@ -797,8 +797,13 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
       'Probiotici'
     ],
     application: [
-      'Nanesite pola ampule jednom dnevno, ujutro',
-      'Za najbolji učinak koristiti s Toskani Skin Architect kremom i Sun Shiel-D fluidom'
+      'Nanesite pola ampule jednom dnevno, ujutro'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite ovaj proizvod s odgovarajućom Toskani kremom, Toskani serumom i Toskani Sun Shiel-D fluidom."
+      }
     ],
     tags: [
       'ampule',
@@ -825,7 +830,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija'],
     image: '/images/products/radiance-ampule-visage-estetski-studio.webp',
     price: '52 EUR',
-    volume: '15 x 2 ml',
+    volume: '15 ampula x 2 ml',
     isNew: true,
     activeIngredients: [
       'Azeloglicin',
@@ -835,8 +840,13 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
       'Vitamin C'
     ],
     application: [
-      'Nanesite pola ampule jednom dnevno, ujutro',
-      'Za najbolji učinak koristiti s Toskani Radiance Daily Cream SPF30+'
+      'Nanesite pola ampule jednom dnevno, ujutro'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite ovaj proizvod s Toskani Radiance Daily Cream SPF30+, Toskani Radiance Ultimate Mesoserumom i Toskani Sun Shiel-D fluidom."
+      }
     ],
     tags: [
       'ampule',
@@ -853,7 +863,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     title: 'Sensitive Skin Ampule',
     description: `Sensitive skin ampule su intenzivan dnevni tretman, obogaćen prirodnim ekstraktima čija svojstva smiruju, štite i revitaliziraju kožu.
 
-    Hidratiziraju kožu, poboljšavaju elastičnost i strukturu kože i imaju antioksidirajući efekt.
+    Hidratiziraju kožu, poboljšavaju elastičnost i strukturu kože i imaju antioksidirajuća svojstva.
 
     Intenzivna njega od 30 dana.`,
     category: 'Ampule',
@@ -863,7 +873,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     skinConcern: ['Hidratacija'],
     image: '/images/products/sensitive-skin-ampule-visage-estetski-studio.webp',
     price: '52 EUR',
-    volume: '15 x 2 ml',
+    volume: '15 ampula x 2 ml',
     isNew: true,
     activeIngredients: [
       'Ekstrakt Myrothamnus Flabellifolia',
@@ -873,8 +883,13 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     ],
     application: [
       'Nanesite pola ampule jednom dnevno, ujutro',
-      'Za jako osjetljivu kožu, nanesti koliko god puta je potrebno tijekom dana',
-      'Za najbolji učinak koristiti s Toskani Recovery gelom i Sun Shiel-D fluidom'
+      'Za jako osjetljivu kožu, nanijeti koliko god puta je potrebno tijekom dana'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite ove proizvode s Total Recovery gelom ili Total Recovery kremom i Toskani Sun Shiel-D fluidom."
+      }
     ],
     tags: [
       'ampule',
@@ -889,7 +904,13 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
   {
     id: '29',
     title: 'Purifying Ampule',
-    description: `Purifying ampule - intenzivni svakodnevni hidratantni tretman za masnu kožu sklonu aknama.\n\nSastojci pomažu u ponovnom balansiranju lipidnog sloja kože, sprječavajući pojavu nesavršenosti.\n\nPomažu u zatvaranju pora i toniranju kože zahvaljujući svom adstrigentnom učinku.\n\nOdržavaju glatak i mat ten, reguliraju sebum te umanjuju tragove i ožiljke na koži.\n\Intenzivna njega od 30 dana.`,
+    description: `Purifying ampule - intenzivni svakodnevni hidratantni tretman za masnu kožu sklonu aknama.
+
+    Sastojci pomažu u ponovnom balansiranju lipidnog sloja kože, sprječavajući pojavu nesavršenosti. Pomažu u zatvaranju pora i toniranju kože zahvaljujući svom adstringentnom učinku.
+
+    Održavaju gladak i mat ten, reguliraju sebum te umanjuju tragove i ožiljke na koži.
+
+    Intenzivna njega od 30 dana.`,
     category: 'Ampule',
     marka: 'TOSKANI',
     productType: 'Ampule',
@@ -897,23 +918,24 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     skinConcern: ['Akne i problematična koža'],
     image: '/images/products/purifying-ampule-visage-estetski-studio.webp',
     price: '52 EUR',
-    volume: '15 x 2 ml',
+    volume: '15 ampula x 2 ml',
     isNew: true,
     activeIngredients: [ 'Ekstrakt Cleome Gynandra', 'Ekstrakt Rhodosorus Marinus', 'Vitamin B5', 'Vitamin C', 'Vitamin E', 'Cink PCA' ],
     application: [
-      'Nanesite pola ampule jednom dnevno, ujutro',
-      'Za najbolji učinak kombinirati s Toskani Purifying kremom i Sun Shiel-D fluidom'
+      'Nanesite pola ampule jednom dnevno, ujutro'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Purifying gelom za čišćenje lica, Toskani Purifying pilingom, Toskani Purifying kremom, Toskani Intensive serumom i Toskani Sun Shiel-D fluidom."
+      }
     ],
     tags: [ 'ampule', 'pročišćavanje', 'kontrola masnoće', 'akne', 'regulacija sebuma', 'zatvaranje pora', '30-dnevna kura']
   },
   {
     id: '30',
     title: 'Lipo Proteoglycans Ampule',
-    description: `Lipo Proteoglycans ampule su intenzivan dnevni tretman koji pomaže u obnavljanju vezivnog tkiva i stimulaciji proizvodnje kolagena.
-
-    Formuliran s liposomskim proteoglikanima prirodnog porijekla, koji dubinski hidratiziraju i posjeduju svojstva učvršćivanja te posvjetljuju kožu.
-
-    Intenzivna dnevna kura od 30 dana.`,
+    description: `Lipo Proteoglycans ampule su intenzivan dnevni tretman koji pomaže u obnavljanju vezivnog tkiva i stimulaciji proizvodnje kolagena. Formuliran s liposomskim proteoglikanima prirodnog porijekla, koji dubinski hidratiziraju i posjeduju svojstva učvršćivanja te posvjetljuju kožu. Intenzivna dnevna kura od 30 dana.`,
     category: 'Ampule',
     marka: 'TOSKANI',
     productType: 'Ampule',
@@ -921,7 +943,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
     image: '/images/products/lipo-proteoglycans-ampule-visage-estetski-studio.webp',
     price: '52 EUR',
-    volume: '15 x 2 ml',
+    volume: '15 ampula x 2 ml',
     isNew: true,
     activeIngredients: [
       'Proteoglikani',
@@ -929,8 +951,13 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
       'Vitamin F'
     ],
     application: [
-      'Nanesite pola ampule jednom dnevno',
-      'Za najbolji učinak koristiti s Toskani Skin Architect kremom i Toskani Sun Shiel-D fluidom'
+      'Nanesite pola ampule jednom dnevno'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom, Toskani serumom i Toskani Sun Shiel-D fluidom."
+      }
     ],
     tags: [
       'ampule',
@@ -1030,9 +1057,11 @@ Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne te
   {
     id: '35',
     title: 'Vitaflash Ampule',
-    description: `Vitaflash ampula je proizvod za povremenu upotrebu koji pruža trenutni efekt liftinga. Preporuka za korištenje prije bitnih događaja za intenzivan "blic" efekt.
+    description: `Vitaflash ampula je proizvod za povremenu upotrebu koji pruža trenutačni efekt liftinga.
 
-    Sadrži aktivne sastojke koji pružaju trenutni efekt liftinga, omekšavaju bore i posvjetljavaju kožu. Imaju snažan antioksidativni učinak, smanjuju znakove starenja i umora, pružajući svježiji i mlađi izgled.`,
+Preporuka za korištenje prije bitnih događaja za intenzivan "blic" efekt.
+
+Sadrži aktivne sastojke koji pružaju trenutačni efekt liftinga, omekšavaju bore i posvjetljavaju kožu. Imaju snažan antioksidativni učinak, smanjuju znakove starenja i umora, pružajući svježiji i mlađi izgled.`,
     category: 'Ampule',
     marka: 'TOSKANI',
     productType: 'Ampule',
@@ -1040,7 +1069,7 @@ Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne te
     skinConcern: ['Anti-aging njega', 'Hidratacija', 'Hiperpigmentacije'],
     image: '/images/products/vitaflash-ampule-visage-estetski-studio.webp',
     price: '30 EUR',
-    volume: '5x2ml',
+    volume: '15 ampula x 2 ml',
     isNew: true,
     activeIngredients: [
       'Kolagen',
@@ -1050,8 +1079,13 @@ Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne te
       'Vitamin C'
     ],
     application: [
-      'Nanesite pola ampule jednom dnevno, ujutro',
-      'Za najbolji učinak koristite s Toskani Skin Architect kremom i Sun Shiel-D fluidom'
+      'Nanesite pola ampule jednom dnevno, ujutro'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom, Toskani serumom i Toskani Sun Shiel-D fluidom."
+      }
     ],
     tags: [
       'ampule',
