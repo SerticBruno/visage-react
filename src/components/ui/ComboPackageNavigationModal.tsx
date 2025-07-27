@@ -181,10 +181,7 @@ export default function ComboPackageNavigationModal({
               <FaChevronRight size={24} className="sm:w-7 sm:h-7" />
             </button>
 
-            {/* Package Counter - Outside Modal */}
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 text-white bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
-              {currentIndex + 1} / {comboPackages.length}
-            </div>
+
             
             <div className="w-[1000px] max-w-[95vw] h-[600px] transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200">
               {/* Content - Fixed Left + Scrollable Right */}
