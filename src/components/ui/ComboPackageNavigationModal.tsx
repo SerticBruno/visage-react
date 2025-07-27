@@ -186,11 +186,11 @@ export default function ComboPackageNavigationModal({
             <div className="w-full max-w-4xl md:w-[1000px] max-h-[95vh] md:h-[600px] transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 flex flex-col">
               {/* Content - Fixed Left + Scrollable Right */}
               <div className="flex flex-col lg:flex-row h-full min-h-0">
-                {/* Mobile Layout - First Row with Images and Info */}
-                <div className="lg:hidden w-full p-3 flex gap-3 items-stretch">
-                  {/* Images - 75% width */}
-                  <div className="w-3/4 relative bg-slate-50 rounded-xl overflow-hidden shadow-sm flex-shrink-0">
-                    <div className={`relative w-full h-full flex flex-col transition-opacity duration-500 ${
+                {/* Mobile Layout */}
+                <div className="lg:hidden w-full p-3 space-y-3">
+                  {/* Images - Full width */}
+                  <div className="w-full relative h-48 bg-slate-50 rounded-xl overflow-hidden shadow-sm">
+                    <div className={`relative w-full h-full flex flex-row transition-opacity duration-500 ${
                       imagesLoaded ? 'opacity-100' : 'opacity-0'
                     }`}>
                       {/* Services - Max 3 */}
@@ -219,49 +219,6 @@ export default function ComboPackageNavigationModal({
                       ))}
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                  </div>
-
-                  {/* Right side info - 25% width */}
-                  <div className="w-1/4 space-y-2 flex flex-col">
-                    {/* Price Section - Takes remaining space */}
-                    <div className="bg-slate-50 rounded-lg p-2 flex-1 flex flex-col justify-center">
-                      <h3 className="text-xs font-semibold text-slate-900 mb-2">
-                        Cijena
-                      </h3>
-                      <div className="flex flex-col items-center">
-                        <span className="text-lg font-bold text-slate-900">
-                          {currentComboPackage.price}
-                        </span>
-                        {currentComboPackage.oldPrice && (
-                          <span className="text-xs text-slate-400 line-through">
-                            {currentComboPackage.oldPrice}
-                          </span>
-                        )}
-                        {currentComboPackage.oldPrice && (
-                          <span className="bg-rose-500 text-white text-xs font-bold w-8 h-8 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center mt-1">
-                            -{Math.round((1 - parseFloat(currentComboPackage.price.replace(/\D/g, '')) / parseFloat(currentComboPackage.oldPrice.replace(/\D/g, ''))) * 100)}%
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    
-                    {/* Services Count */}
-                    <div className="bg-slate-50 rounded-lg p-2">
-                      <h3 className="text-xs font-semibold text-slate-900 mb-1">
-                        Tretmani
-                      </h3>
-                      <p className="text-xs text-slate-600">{currentComboPackage.services.length} tretmana</p>
-                    </div>
-                    
-                    {/* Products Count */}
-                    {currentComboPackage.products && currentComboPackage.products.length > 0 && (
-                      <div className="bg-slate-50 rounded-lg p-2">
-                        <h3 className="text-xs font-semibold text-slate-900 mb-1">
-                          Proizvodi
-                        </h3>
-                        <p className="text-xs text-slate-600">{currentComboPackage.products.length} proizvoda</p>
-                      </div>
-                    )}
                   </div>
                 </div>
 

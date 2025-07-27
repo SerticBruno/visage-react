@@ -56,7 +56,7 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-6 pt-16 pb-16 md:p-4">
         <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={onClose} />
         
         <Transition.Child
@@ -77,11 +77,46 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
               <FaTimes size={20} />
             </button>
             
-            <div className="w-[1000px] max-w-[95vw] h-[600px] transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200">
+            <div className="w-full max-w-4xl md:w-[1000px] max-h-[95vh] md:h-[600px] transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 flex flex-col">
               {/* Content - Fixed Left + Scrollable Right */}
-              <div className="flex flex-col lg:flex-row">
-                {/* Fixed Left Side - Only Image */}
-                <div className="w-full lg:w-2/5 p-6 border-r border-slate-100">
+              <div className="flex flex-col lg:flex-row h-full min-h-0">
+                {/* Mobile Layout */}
+                <div className="lg:hidden w-full p-3 space-y-3">
+                  {/* Image - Full width */}
+                  <div className="w-full relative h-48 bg-slate-50 rounded-xl overflow-hidden shadow-sm">
+                    <Image
+                      src={treatment.image}
+                      alt={treatment.title}
+                      fill
+                      className="object-contain"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  </div>
+
+                  {/* Second row - Price and Duration in 50/50 columns */}
+                  <div className="flex gap-3">
+                    {/* Price Section - 50% width */}
+                    <div className="w-1/2 bg-slate-50 rounded-lg p-3">
+                      <h3 className="text-sm font-semibold text-slate-900 mb-2">
+                        Cijena
+                      </h3>
+                      <p className="text-lg font-bold text-slate-900">{treatment.price}</p>
+                    </div>
+                    
+                    {/* Duration Section - 50% width */}
+                    <div className="w-1/2 bg-slate-50 rounded-lg p-3">
+                      <h3 className="text-sm font-semibold text-slate-900 mb-2">
+                        Trajanje
+                      </h3>
+                      <p className="text-lg font-bold text-slate-900">{treatment.duration}</p>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                {/* Desktop Layout - Fixed Left Side */}
+                <div className="hidden lg:block w-2/5 p-6 border-r border-slate-100">
                   <div className="relative h-[calc(600px-3rem)] bg-slate-50 rounded-xl overflow-hidden shadow-sm">
                     <Image
                       src={treatment.image}
@@ -94,8 +129,8 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
                 </div>
                 
                 {/* Scrollable Right Side */}
-                <div className="w-full lg:w-3/5 overflow-y-auto max-h-[600px]">
-                  <div className="p-6">
+                <div className="w-full lg:w-3/5 overflow-y-auto max-h-[calc(95vh-12rem)] lg:max-h-[600px] flex-1 min-h-0">
+                  <div className="p-3 lg:p-6">
                     
                     {/* Title and Description */}
                     <div className="bg-slate-50 rounded-xl p-3 mb-4">
@@ -132,22 +167,20 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
                       </div>
                     </div>
 
-                    {/* Key Benefits */}
-                    {treatment.keyBenefits && treatment.keyBenefits.length > 0 && (
-                      <div className="bg-slate-50 rounded-xl p-3 mb-4">
-                        <h3 className="text-sm font-semibold text-slate-900 mb-2">
-                          Prednosti
-                        </h3>
-                        <ul className="space-y-2">
-                          {treatment.keyBenefits.map((benefit, index) => (
-                            <li key={index} className="flex items-start text-slate-700">
-                              <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
-                              <span className="text-sm leading-relaxed">{benefit}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                    {/* Benefits */}
+                    <div className="bg-slate-50 rounded-xl p-3 mb-4">
+                      <h3 className="text-sm font-semibold text-slate-900 mb-2">
+                        Prednosti
+                      </h3>
+                      <ul className="space-y-2">
+                        {treatment.benefits.map((benefit, index) => (
+                          <li key={index} className="flex items-start text-slate-700">
+                            <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
+                            <span className="text-sm leading-relaxed">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                     
                     {/* Procedure Steps */}
                     {steps.length > 0 && (
