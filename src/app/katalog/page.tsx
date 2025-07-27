@@ -53,7 +53,8 @@ function KatalogContent() {
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         product.description.toLowerCase().includes(searchTerm.toLowerCase());
+                         product.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         product.marka.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesProductType = selectedProductTypes.length === 0 || 
       (product.productType && selectedProductTypes.includes(product.productType)) ||
       (product.category && selectedProductTypes.includes(product.category));
@@ -284,7 +285,7 @@ function KatalogContent() {
                   <input
                     id="search"
                     type="text"
-                    placeholder="Naziv ili opis..."
+                    placeholder="Naziv, opis ili marka..."
                     className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm"
                     value={searchTerm}
                     onChange={handleSearch}
@@ -588,7 +589,9 @@ function KatalogContent() {
                   </div>
                   <div className="p-4 flex flex-col flex-grow">
                     <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-lg font-bold text-slate-900">{product.title}</h3>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-slate-900">{product.title}</h3>
+                      </div>
                       {product.isPopular && (
                         <span className="flex items-center text-amber-500">
                           <FaStar className="mr-1" />

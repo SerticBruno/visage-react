@@ -114,9 +114,14 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                   {/* Sadržaj Section */}
                   {product.volume && (
                     <div className="mt-3 bg-slate-50 rounded-xl p-3">
-                      <h3 className="text-sm font-semibold text-slate-900 mb-1">
-                        {product.category === 'Beauty Tretmani' ? 'Trajanje' : 'Sadržaj'}
-                      </h3>
+                      <div className="flex items-center justify-between mb-1">
+                        <h3 className="text-sm font-semibold text-slate-900">
+                          {product.category === 'Beauty Tretmani' ? 'Trajanje' : 'Sadržaj'}
+                        </h3>
+                        <span className="text-sm font-medium text-slate-600">
+                          {product.marka}
+                        </span>
+                      </div>
                       <p className="text-sm text-slate-600">{product.volume}</p>
                     </div>
                   )}

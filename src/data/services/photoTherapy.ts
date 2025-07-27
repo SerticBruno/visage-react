@@ -5,21 +5,21 @@ export const photoTherapy: Service = {
   title: 'LED Fototerapija',
   akuzativTitle: 'Fototerapijom',
   description: 'Zlatni standard profesionalne LED fototerapije u službi zdrave i lijepe kože',
-  longDescription: `[**Dermalux Flex MD**](https://dermaluxled.com/flex-md/ "‌") je medicinski CE certificirani uređaj koji omogućuje **vrhunske i neinvazivne** tretmane lica.
+  longDescription: `<a href="https://dermaluxled.com/flex-md/" target="_blank">Dermalux Flex MD</a> je medicinski CE certificirani uređaj koji omogućuje <strong>vrhunske i neinvazivne </strong>tretmane lica.
 
-Koristi terapeutsku svjetlosnu energiju za **pomlađivanje** i **korekciju** **kože**. Djeluje na principu **fototerapije**, odnosno liječenja svjetlom, s dokazanim učincima.
+Koristi terapeutsku svjetlosnu energiju za <strong>pomlađivanje</strong> i <strong>korekciju</strong> kože. Djeluje na principu <strong>fototerapije</strong>, odnosno liječenja svjetlom, s dokazanim učincima.
 
- Koža apsorbira specifične valne duljine kako bi stimulirala **obnovu stanica**, potaknula **proizvodnju kolagena i elastina**, **riješila problematična stanja** te ubrzala **zacjeljivanje kože**.
+ Koža apsorbira specifične valne duljine kako bi stimulirala <strong>obnovu stanica</strong>, potaknula <strong>proizvodnju kolagena i elastina</strong>, <strong>riješila problematična stanja</strong> te ubrzala <strong>zacjeljivanje kože</strong>.
 
-Upravo je [Dermalux Flex MD ](https://dermaluxled.com/flex-md/ "‌")najmanje **3 puta snažniji** u usporedbi s ostalim LED uređajima te vrste. [Dermalux Flex MD](https://dermaluxled.com/results/ "‌") fototerapija je dokazana zbog svojih svjetlosnih **regenerativnih** i **protuupalnih** prednosti bez stvaranja traume za kožu, što ju čini **sigurnom** i prikladnom za **sve tipove kože.**
+Upravo je <a href="https://dermaluxled.com/flex-md/" target="_blank">Dermalux Flex MD</a> najmanje <strong>3 puta snažniji</strong> u usporedbi s ostalim LED uređajima te vrste. <a href="https://dermaluxled.com/results/" target="_blank">Dermalux Flex MD</a> fototerapija je dokazana zbog svojih svjetlosnih <strong>regenerativnih</strong> i <strong>protuupalnih</strong> prednosti bez stvaranja traume za kožu, što ju čini <strong>sigurnom</strong> i prikladnom za <strong>sve tipove kože</strong>.
 
-Tretman je **ugodan, bezbolan, siguran** te pruža niz dobrobiti za kožu.
+Tretman je <strong>ugodan, bezbolan, siguran</strong> te pruža niz dobrobiti za kožu.
 
-Nakon samo **jednog tretmana** [Dermalux Flex MD](https://dermaluxled.com/results/ "‌") fototerapije klijenti mogu očekivati **trenutačno poboljšanje tonusa kože, hidratacije i sjaja**, dok terapeutsko svjetlo istovremeno potiče **dublje stanične procese za dugotrajne dobiti kože**.
+Nakon samo <strong>jednog tretmana</strong> <a href="https://dermaluxled.com/results/" target="_blank">Dermalux Flex MD</a> fototerapije klijenti mogu očekivati <strong>trenutačno poboljšanje tonusa kože, hidratacije i sjaja</strong>, dok terapeutsko svjetlo istovremeno potiče <strong>dublje stanične procese za dugotrajne dobiti kože</strong>.
 
-Koristi se najčešće u **sinergiji s drugim estetskim tretmanima**: [mezoterapija](https://visage-react.vercel.app/usluge/mezoterapija "‌"), [beauty tretmani](https://visage-react.vercel.app/usluge/beauty-tretmani "‌") i [skin boosteri](https://visage-react.vercel.app/usluge/skin-boosteri "‌")
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/mezoterapija">mezoterapija</a>, <a href="/usluge/beauty-tretmani">beauty tretmani</a> i <a href="/usluge/skin-boosteri">skin boosteri</a>
 
-U **Visage studiju** koristimo  fototerapije, što osigurava **optimalne rezultate i maksimalnu sigurnost**. Svaki tretman je pažljivo planiran za postizanje željenih rezultata uz **minimalno vrijeme oporavka**.`,
+U <strong>Visage studiju</strong> koristimo <strong>Dermalux</strong> fototerapije, što osigurava <strong>optimalne rezultate i maksimalnu sigurnost</strong>. Svaki tretman je pažljivo planiran za postizanje željenih rezultata uz <strong>minimalno vrijeme oporavka</strong>.`,
   benefits: [
   ],
   image: '/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png'  ,

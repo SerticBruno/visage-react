@@ -136,7 +136,7 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
                     {treatment.keyBenefits && treatment.keyBenefits.length > 0 && (
                       <div className="bg-slate-50 rounded-xl p-3 mb-4">
                         <h3 className="text-sm font-semibold text-slate-900 mb-2">
-                          Ključne prednosti
+                          Prednosti
                         </h3>
                         <ul className="space-y-2">
                           {treatment.keyBenefits.map((benefit, index) => (

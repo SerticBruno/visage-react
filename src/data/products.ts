@@ -3,6 +3,7 @@ export interface Product {
   title: string;
   description: string;
   category: string;
+  marka: string; // Brand field
   productType?: string; // New field for "Tip proizvoda"
   skinType?: string[]; // New field for "Tip kože"
   skinConcern?: string[]; // New field for "Problematika kože"
@@ -90,6 +91,7 @@ Gel za čišćenje čuva neke slojeve masnoće na koži što sprječava isušiva
 
 Čisti, pročišćava i tonizira kožu.`,
     category: 'Čišćenje lica',
+    marka: 'TOSKANI',
     productType: 'Čišćenje lica',
     skinType: ['Suha koža', 'Normalna koža', 'Mješovita koža', 'Osjetljiva koža'],
     skinConcern: ['Anti-aging njega', 'Hiperpigmentacije'],
@@ -135,6 +137,7 @@ Purifying Cleanser regulira proizvodnju sebuma i ostavlja kožu čistom, svježo
 
 Ovo sredstvo za čišćenje može se koristiti i na tijelu.`,
     category: 'Čišćenje lica',
+    marka: 'TOSKANI',
     productType: 'Čišćenje lica',
     skinType: ['Masna koža', 'Mješovita koža'],
     skinConcern: ['Akne i problematična koža'],
@@ -178,6 +181,7 @@ Ovaj tonik sa svježim mirisom revitalizira i hidratizira kožu za potpuno proč
 
 Kombinira visoku koncentraciju biljnih ekstrakata kao što su bambus, limun i naranča, koji su prirodni izvor alfa-hidroksi kiselina.`,
     category: 'Tonik',
+    marka: 'TOSKANI',
     productType: 'Tonik',
     skinType: ['Masna koža', 'Mješovita koža', 'Osjetljiva koža', 'Suha koža', 'Normalna koža'],
     skinConcern: ['Akne i problematična koža', 'Anti-aging njega', 'Hiperpigmentacije'],
@@ -200,6 +204,7 @@ Kombinira visoku koncentraciju biljnih ekstrakata kao što su bambus, limun i na
 
 Ovaj piling ostavlja kožu osvježenom, vidljivo čišću i mekšom uz zdrav sjaj u koji ćete se zaljubiti.`,
     category: 'Piling',
+    marka: 'TOSKANI',
     productType: 'Piling',
     skinType: ['Masna koža', 'Mješovita koža', 'Osjetljiva koža', 'Suha koža', 'Normalna koža'],
     skinConcern: ['Anti-aging njega', 'Hiperpigmentacije'],
@@ -230,6 +235,7 @@ Koža izgleda sjajnije, dok su sjaj i suhoća svedeni na minimum.
 
 Formuliran je s ekstraktom hamamelisa s adstringentnim svojstvima, koji ostavlja osvježenu i ujednačenu kožu.`,
     category: 'Piling',
+    marka: 'TOSKANI',
     productType: 'Piling',
     skinType: ['Masna koža'],
     skinConcern: ['Akne i problematična koža'],
@@ -259,6 +265,7 @@ Pruža snažne učinke obnavljanja kože.
 
 Poboljšava izgled oštećene kože.`,
     category: 'Krema',
+    marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Suha koža', 'Osjetljiva koža'],
     skinConcern: ['Postproceduralna njega'],
@@ -282,6 +289,7 @@ Poboljšava izgled oštećene kože.`,
 
 Štiti i vlaži epidermu, pogodujući oporavku osjetljive kože nakon iritacija ili invazivnih tretmana.`,
     category: 'Krema',
+    marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža'],
     skinConcern: ['Postproceduralna njega'],
@@ -310,6 +318,7 @@ Sadrži liposomske aktivne sastojke za promicanje maksimalne učinkovitosti proi
 
 Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjeloj koži, koži nejednake pigmentacije te kao dodatak profesionalnim tretmanima za ujednačavanje tona kože (Spot Out Kit Plus, kemijski piling)`,
     category: 'Zaštita od sunca',
+    marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža'],
     skinConcern: ['Hiperpigmentacije'],
@@ -331,6 +340,7 @@ Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjel
     title: 'Anti Ageing Eye Contour',
     description: 'Posebno formuliran hidratantni serum za smanjenje umora, tretiranje bora, osvježavanje područja oko očiju, hidrataciju i umirivanje nježne kože oko očiju. Njegovi aktivni sastojci koji djeluju u sinergiji kako bi se oduprli pojavi bora, umanjili bore i već formirane linije. Također pomaže u sprječavanju gubitka čvrstoće, pomaže koži da se vrati u njezino prirodno zdravlje i pruža ukupni učinak pomlađivanja.',
     category: 'Okoloočna njega',
+    marka: 'TOSKANI',
     productType: 'Okoloočna njega',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega'],
@@ -351,6 +361,7 @@ Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjel
     title: 'Radiance Eye Contour',
     description: 'Učinkovita krema za područje oko očiju koja ublažuje hiperpigmentacije i probleme s mikrocirkulacijom, koji uzrokuju podočnjake. Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkulaciji područja oko očiju i kapaka.',
     category: 'Okoloočna njega',
+    marka: 'TOSKANI',
     productType: 'Okoloočna njega',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Hiperpigmentacije', 'Anti-aging njega'],
@@ -376,6 +387,7 @@ Posebno razvijen za ujednačavanje tona kože i smanjenje nesavršenosti: sprje�
 
 Vaš novi saveznik u borbi protiv hiperpigmetacija sa učinkovitim djelovanjem već u 1. mjesecu upotrebe!`,
     category: 'Serum',
+    marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Hiperpigmentacije'],
@@ -401,6 +413,7 @@ Ovaj tretman treba povremeno koristiti kako bi se ubrzao nestanak lokaliziranih 
 
 Intenzivni serum indiciran je za lokalizirano liječenje mrlja.`,
     category: 'Serum',
+    marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Masna koža'],
     skinConcern: ['Akne i problematična koža'],
@@ -428,6 +441,7 @@ Purifying krema također pomaže koži u borbi protiv slobodnih radikala i pruž
 
 Ova fluidna emulzija ublažava nelagodu kože i preporučljivo je koristiti kremu dva puta dnevno, ujutro i navečer.`,
     category: 'Krema',
+    marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Masna koža'],
     skinConcern: ['Akne i problematična koža'],
@@ -453,6 +467,7 @@ Pomaže pri minimiziranju vidljivih znakova starenja.
 
 Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućih znakova starenja: opuštenu kožu.`,
     category: 'Serum',
+    marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega'],
@@ -482,6 +497,7 @@ Koži pruža čvrstoću i elastičnost uz primjetan lifting učinak.
 
 Hijaluronska kiselina niske molekularne težine (<100Kda), za dublju i dugotrajniju hidrataciju.`,
     category: 'Krema',
+    marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega'],
@@ -507,6 +523,7 @@ Pomaže popraviti kožu od oštećenja uzrokovanih sunčevim zračenjem, zagađe
 
 Jača barijeru kože, pogodan je za sve tipove kože, no najviše se preporučuje suhoj i dehidriranoj koži.`,
     category: 'Noćna njega',
+    marka: 'TOSKANI',
     productType: 'Noćna njega',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega'],
@@ -535,6 +552,7 @@ Jača kožnu barijeru.
 
 Pogodan je za biološku dob 20+ godina i sve tipove kože.`,
     category: 'Serum',
+    marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
@@ -560,6 +578,7 @@ Pomaže u sprječavanju prvih znakova starenja, pruža maksimalnu hidrataciju te
 
 Pogodno za biološku dob 20+ godina i sve tipove kože.`,
     category: 'Krema',
+    marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
@@ -585,6 +604,7 @@ Sastoji se od kompleksa biljnog retinola i liposomalnog retinaldehida s velikom 
 
 Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     category: 'Serum',
+    marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
@@ -613,6 +633,7 @@ Sadrži spoj nastao od hijaluronske i retinoične kiseline te retinola biljnog p
 
 Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     category: 'Krema',
+    marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
@@ -639,6 +660,7 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
 
 Pogodno za biološku dob 45+ godina i za sve tipove kože.`,
     category: 'Serum',
+    marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
@@ -662,6 +684,7 @@ Pogodno za biološku dob 45+ godina i za sve tipove kože.`,
 
 Pogodno za biološku dob 45+ godina i sve tipove kože.`,
     category: 'Krema',
+    marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
@@ -691,6 +714,7 @@ Losion protiv gubitka kose jača i revitalizira folikul dlake stimulirajući faz
 
 Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlasištu.`,
     category: 'Njega vlasišta',
+    marka: 'TOSKANI',
     productType: 'Njega vlasišta',
     skinConcern: ['Opadanje kose'],
     image: '/images/products/anti-hair-loss-lotion-visage-estetski-studio.webp',
@@ -709,6 +733,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     title: 'DensiHair Boost Capsules',
     description: `Dodatak prehrani koji sadrži Sabal serrulata, vitamine i aminokiseline za jačanje kose i zaustavljanje gubitka kose.`,
     category: 'Njega vlasišta',
+    marka: 'TOSKANI',
     productType: 'Kapsule',
     skinConcern: ['Opadanje kose'],
     image: '/images/products/densihair-boost-capsules-visage-estetski-studio.webp',
@@ -729,6 +754,7 @@ Krema je namijenjena svima koji pare od kože bez sjaja, oštećene kože koja j
 
 Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od dnevnih oštećenja.`,
     category: 'Noćna njega',
+    marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega'],
@@ -756,6 +782,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
 
     Intenzivna njega od 30 dana.`,
     category: 'Ampule',
+    marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
@@ -792,6 +819,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
 
     Intenzivna njega od 30 dana.`,
     category: 'Ampule',
+    marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija'],
@@ -829,6 +857,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
 
     Intenzivna njega od 30 dana.`,
     category: 'Ampule',
+    marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Osjetljiva koža'],
     skinConcern: ['Hidratacija'],
@@ -862,6 +891,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     title: 'Purifying Ampule',
     description: `Purifying ampule - intenzivni svakodnevni hidratantni tretman za masnu kožu sklonu aknama.\n\nSastojci pomažu u ponovnom balansiranju lipidnog sloja kože, sprječavajući pojavu nesavršenosti.\n\nPomažu u zatvaranju pora i toniranju kože zahvaljujući svom adstrigentnom učinku.\n\nOdržavaju glatak i mat ten, reguliraju sebum te umanjuju tragove i ožiljke na koži.\n\Intenzivna njega od 30 dana.`,
     category: 'Ampule',
+    marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Masna koža'],
     skinConcern: ['Akne i problematična koža'],
@@ -885,6 +915,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
 
     Intenzivna dnevna kura od 30 dana.`,
     category: 'Ampule',
+    marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
@@ -916,6 +947,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     title: 'SUN SHIEL-D Fluid SPF50+',
     description: `Fluid za lice ultra lagane teksture koji je pogodan i za osjetljivu kožu.\n\nNije komedogen, što ga čini dobrim izborom i za masnu kožu.\n\nVrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.\n\nPruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
     category: 'Zaštita od sunca',
+    marka: 'TOSKANI',
     productType: 'Fluid',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Akne i problematična koža', 'Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Postproceduralna njega'],
@@ -935,6 +967,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     title: 'Sun Shiel-d Tonirani Fluid SPF50+',
     description: `Tonirani fluid za lice ultra lagane teksture koji je pogodan i za osjetljivu kožu te pomaže ujednačiti ton kože.\n\nNije komedogen, što ga čini dobrim izborom i za masnu kožu.\n\nVrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.\n\nPruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
     category: 'Zaštita od sunca',
+    marka: 'TOSKANI',
     productType: 'Fluid',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Akne i problematična koža', 'Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Postproceduralna njega'],
@@ -954,6 +987,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     title: 'Sun Shiel-D Body & Facial Sprej SPF50+',
     description: `Sprej za lice i tijelo ultra lagane teksture koji je pogodan i za osjetljivu kožu.\n\nVrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.\n\nPruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.\n\nVodootporan je.`,
     category: 'Zaštita od sunca',
+    marka: 'TOSKANI',
     productType: 'Sprej',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Postproceduralna njega'],
@@ -980,6 +1014,7 @@ Vraća zaštitnu barijeru osjetljive kože koja je iritirana i crvena zbog oksid
 
 Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne težine obnavija i održava integritet hidrolipidnog sloja kože, HA niske molekularne težine održava optimalnu hidriranost kože.`,
     category: 'Krema',
+    marka: 'Profhilo',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hidratacija'],
@@ -999,6 +1034,7 @@ Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne te
 
     Sadrži aktivne sastojke koji pružaju trenutni efekt liftinga, omekšavaju bore i posvjetljavaju kožu. Imaju snažan antioksidativni učinak, smanjuju znakove starenja i umora, pružajući svježiji i mlađi izgled.`,
     category: 'Ampule',
+    marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega', 'Hidratacija', 'Hiperpigmentacije'],
