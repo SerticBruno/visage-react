@@ -4,12 +4,12 @@ import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { comboPackages } from '@/data/comboPackages';
-import { products, Product } from '@/data/products';
+
 import { FaPlus, FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
-import ProductModal from '@/components/ui/ProductModal';
+
 import ComboPackageNavigationModal from '@/components/ui/ComboPackageNavigationModal';
 
 // Import Swiper styles
@@ -19,8 +19,8 @@ import 'swiper/css/navigation';
 export default function ComboPackagesInlineSection() {
   const swiperRef = useRef<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
   const [openComboModal, setOpenComboModal] = useState<string | null>(null);
 
   const handlePrev = () => {
@@ -41,13 +41,7 @@ export default function ComboPackagesInlineSection() {
     }
   };
 
-  const handleProductClick = (productId: string) => {
-    const product = products.find(p => p.id === productId);
-    if (product) {
-      setSelectedProduct(product);
-      setIsModalOpen(true);
-    }
-  };
+
 
   return (
     <section className="pb-12" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
@@ -107,7 +101,7 @@ export default function ComboPackagesInlineSection() {
                         <div className="md:hidden">
                           <div className="grid grid-cols-2 gap-3 mb-4">
                             {/* Services only - Max 3 */}
-                            {pkg.services.slice(0, 3).map((service, index) => (
+                            {pkg.services.slice(0, 3).map((service) => (
                               <Link key={service.id} href={`/usluge/${service.id}`} className="group">
                                 <div className="flex flex-col items-center justify-start h-36 bg-gray-50 rounded-lg p-3 pt-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                                   <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
@@ -228,20 +222,12 @@ export default function ComboPackagesInlineSection() {
         }
       `}</style>
 
-      {/* Product Modal */}
-      <ProductModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        product={selectedProduct}
-      />
-
       {/* Combo Package Navigation Modal */}
       <ComboPackageNavigationModal
         isOpen={openComboModal !== null}
         onClose={() => setOpenComboModal(null)}
         initialComboPackage={openComboModal ? comboPackages.find(pkg => pkg.id === openComboModal) : undefined}
         serviceId=""
-        serviceTitle=""
       />
     </section>
   );

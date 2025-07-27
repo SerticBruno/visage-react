@@ -34,7 +34,7 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
 
   // Parse the description to separate the main text from the procedure steps
   const parseDescription = (description: string) => {
-    const parts = description.split('KAKO IZGLEDA TRETMAN:');
+    const parts = description.split('Kako izgleda tretman:');
     
     if (parts.length === 2) {
       const mainText = parts[0].trim();
@@ -131,12 +131,29 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
                         </button>
                       </div>
                     </div>
+
+                    {/* Key Benefits */}
+                    {treatment.keyBenefits && treatment.keyBenefits.length > 0 && (
+                      <div className="bg-slate-50 rounded-xl p-3 mb-4">
+                        <h3 className="text-sm font-semibold text-slate-900 mb-2">
+                          Ključne prednosti
+                        </h3>
+                        <ul className="space-y-2">
+                          {treatment.keyBenefits.map((benefit, index) => (
+                            <li key={index} className="flex items-start text-slate-700">
+                              <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
+                              <span className="text-sm leading-relaxed">{benefit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                     
                     {/* Procedure Steps */}
                     {steps.length > 0 && (
                       <div className="bg-slate-50 rounded-xl p-4">
                         <h3 className="text-sm font-semibold text-slate-900 mb-3">
-                          KAKO IZGLEDA TRETMAN:
+                          Kako izgleda tretman:
                         </h3>
                         <ul className="space-y-2">
                           {steps.map((step, index) => (

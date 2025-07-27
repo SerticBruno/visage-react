@@ -225,7 +225,6 @@ export default function ComboPackagesSectionPreview() {
         onClose={() => setOpenComboModal(null)}
         initialComboPackage={openComboModal ? comboPackages.find(pkg => pkg.id === openComboModal) : undefined}
         serviceId=""
-        serviceTitle=""
       />
     </section>
   );

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaChevronRight } from 'react-icons/fa';
 import BeautyTreatmentModal from '@/components/ui/BeautyTreatmentModal';
-import { beautyTreatmentProcedures } from '@/data/beautyTreatmentsSection';
+
 
 interface BeautyTreatment {
   id: string;

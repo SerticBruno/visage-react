@@ -1,9 +1,9 @@
 'use client';
 
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { Transition } from '@headlessui/react';
-import { FaTimes, FaCheck, FaGift, FaChevronLeft, FaChevronRight, FaEuroSign, FaStar } from 'react-icons/fa';
+import { FaTimes, FaCheck, FaGift, FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ComboPackage, comboPackages } from '@/data/comboPackages';
@@ -13,7 +13,6 @@ interface ComboPackageNavigationModalProps {
   onClose: () => void;
   initialComboPackage?: ComboPackage;
   serviceId?: string;
-  serviceTitle?: string;
 }
 
 export default function ComboPackageNavigationModal({ 
@@ -21,7 +20,6 @@ export default function ComboPackageNavigationModal({
   onClose, 
   initialComboPackage,
   serviceId,
-  serviceTitle,
 }: ComboPackageNavigationModalProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentComboPackage, setCurrentComboPackage] = useState<ComboPackage | null>(null);
@@ -55,7 +53,7 @@ export default function ComboPackageNavigationModal({
     }
   }, [isTransitioning]);
 
-  const handlePrevious = () => {
+  const handlePrevious = useCallback(() => {
     if (isTransitioning) return;
     
     setIsTransitioning(true);
@@ -66,9 +64,9 @@ export default function ComboPackageNavigationModal({
       setCurrentIndex(newIndex);
       setCurrentComboPackage(comboPackages[newIndex]);
     }, 150); // Half of the transition duration
-  };
+  }, [currentIndex, isTransitioning]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (isTransitioning) return;
     
     setIsTransitioning(true);
@@ -79,7 +77,7 @@ export default function ComboPackageNavigationModal({
       setCurrentIndex(newIndex);
       setCurrentComboPackage(comboPackages[newIndex]);
     }, 150); // Half of the transition duration
-  };
+  }, [currentIndex, isTransitioning]);
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -97,7 +95,7 @@ export default function ComboPackageNavigationModal({
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, currentIndex, isTransitioning]);
+  }, [isOpen, currentIndex, isTransitioning, handleNext, handlePrevious, onClose]);
 
   const calculateSavings = (oldPrice: string, newPrice: string) => {
     const old = parseFloat(oldPrice.replace(/\D/g, ''));
