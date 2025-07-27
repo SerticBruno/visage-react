@@ -34,16 +34,16 @@ export default function ComboPackageNavigationModal({
 
   // Initialize with the initial combo package or first one
   useEffect(() => {
-    if (initialComboPackage) {
+    if (initialComboPackage && !isClosing) {
       const index = comboPackages.findIndex(pkg => pkg.id === initialComboPackage.id);
       setCurrentIndex(index >= 0 ? index : 0);
       setCurrentComboPackage(initialComboPackage);
-    } else if (!currentComboPackage) {
+    } else if (!currentComboPackage && !isClosing) {
       // Only set to first package if no current package is set
       setCurrentIndex(0);
       setCurrentComboPackage(comboPackages[0]);
     }
-  }, [initialComboPackage, currentComboPackage]);
+  }, [initialComboPackage, isClosing]);
 
   // Handle transition state
   useEffect(() => {
@@ -81,13 +81,22 @@ export default function ComboPackageNavigationModal({
     }, 150); // Half of the transition duration
   }, [currentIndex, isTransitioning]);
 
+  const handleClose = useCallback(() => {
+    setIsClosing(true);
+    onClose();
+    // Reset closing state after transition
+    setTimeout(() => {
+      setIsClosing(false);
+    }, 300);
+  }, [onClose]);
+
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (!isOpen || isTransitioning) return;
       
       if (event.key === 'Escape') {
-        onClose();
+        handleClose();
       } else if (event.key === 'ArrowLeft') {
         handlePrevious();
       } else if (event.key === 'ArrowRight') {
@@ -97,7 +106,7 @@ export default function ComboPackageNavigationModal({
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, currentIndex, isTransitioning, handleNext, handlePrevious, onClose]);
+  }, [isOpen, currentIndex, isTransitioning, handleNext, handlePrevious, handleClose]);
 
   const calculateSavings = (oldPrice: string, newPrice: string) => {
     const old = parseFloat(oldPrice.replace(/\D/g, ''));
@@ -110,7 +119,7 @@ export default function ComboPackageNavigationModal({
   const modalContent = (
     <Transition appear show={isOpen} as={Fragment}>
       <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-        <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={onClose} />
+        <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={handleClose} />
         
         <Transition.Child
           as={Fragment}
@@ -124,7 +133,7 @@ export default function ComboPackageNavigationModal({
           <div className="relative">
             {/* Close Button - Outside Modal */}
             <button
-              onClick={onClose}
+              onClick={handleClose}
               className="absolute -top-4 -right-4 z-20 text-slate-400 hover:text-slate-600 focus:outline-none transition-colors cursor-pointer p-2 hover:bg-slate-100 rounded-full bg-white shadow-md"
             >
               <FaTimes size={20} />

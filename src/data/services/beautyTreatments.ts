@@ -239,7 +239,7 @@ Circadia serum ovisno o tipu i stanju kože
 Circadia krema ovisno o tipu i stanju kože
 Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     duration: '75 min',
-    price: '55 €',
+    price: '60 EUR',
     image: '/images/services/beauty-tretmani/marshmallow-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen svim tipovima kože',
@@ -306,7 +306,7 @@ Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
 
 UPOZORENJE: Prilikom sušenja maska pruža osjećaj zatezanja!`,
     duration: '90 min',
-    price: '65 €',
+    price: '60 EUR',
     image: '/images/services/beauty-tretmani/firming-peptide-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen koži s vidljivim znakovima starenja',
@@ -373,7 +373,7 @@ Circadia serum ovisno o tipu i stanju kože
 Circadia krema ovisno o tipu i stanju kože
 Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     duration: '90 min',
-    price: '75 €',
+    price: '100 EUR',
     image: '/images/services/beauty-tretmani/sitgnature-dermaplaning-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen svim tipovima kože',
