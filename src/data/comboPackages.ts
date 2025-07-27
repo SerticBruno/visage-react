@@ -70,7 +70,7 @@ export const comboPackages: ComboPackage[] = [
       { 
         id: "prp", 
         title: "2 PRP tretmana", 
-        image: "/images/services/prp/prp-prednosti-estetski-studio-sisak.jpeg"
+        image: "/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png"
       }
     ],
     benefits: [
@@ -137,7 +137,7 @@ export const comboPackages: ComboPackage[] = [
       { 
         id: "foto-terapija", 
         title: "LED Fototerapija 4 tretmana", 
-        image: "/images/services/dermalux/dermalux-about-visage-estetski-studio.png"
+        image: "/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png"
       }
     ],
     benefits: [
@@ -162,17 +162,17 @@ export const comboPackages: ComboPackage[] = [
       { 
         id: "skin-boosteri", 
         title: "Skin Booster TKN HA3 2 tretmana", 
-        image: "/images/services/skin-boosters/skin-booster-visage-estetski-studio-sisak.jpeg"
+        image: "/images/services/skin-boosters/skin-booster-nakon-tretmana-visage-estetski-studio-sisak.jpeg"
       },
       { 
         id: "prp", 
         title: "2 PRP tretmana", 
-        image: "/images/services/prp/prp-prednosti-estetski-studio-sisak.jpeg"
+        image: "/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png"
       },
       { 
         id: "foto-terapija", 
         title: "2 LED Fototerapija", 
-        image: "/images/services/dermalux/dermalux-about-visage-estetski-studio.png"
+        image: "/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png"
       }
     ],
     benefits: [
@@ -201,12 +201,12 @@ export const comboPackages: ComboPackage[] = [
       { 
         id: "mezoterapija-y-zona", 
         title: "Y zona 5 tretmana", 
-        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
+        image: "/images/services/mezoterapija/mezoterapija-prednosti-visage-estetski-studio.png"
       },
       { 
         id: "foto-terapija", 
         title: "Fototerapija 5 tretmana", 
-        image: "/images/services/dermalux/dermalux-about-visage-estetski-studio.png"
+        image: "/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png"
       }
     ],
     products: [
@@ -251,8 +251,8 @@ export const comboPackages: ComboPackage[] = [
       },
       { 
         id: "skin-boosteri", 
-        title: "Skin Booster", 
-        image: "/images/services/skin-boosters/skin-booster-visage-estetski-studio-sisak.jpeg"
+        title: "Skin Booster TKN HA3", 
+        image: "/images/services/skin-boosters/skin-boosteri-prednosti-visage-estetski-studio.png"
       }
     ],
     products: [
@@ -293,7 +293,7 @@ export const comboPackages: ComboPackage[] = [
       { 
         id: "profhilo", 
         title: "2 Profhilo tretmana", 
-        image: "/images/services/skin-boosters/skin-booster-visage-estetski-studio-sisak.jpeg"
+        image: "/images/services/skin-boosters/skin-boosteri-oporavak-visage-estetski-studio.png"
       }
     ],
     products: [
@@ -355,6 +355,123 @@ export const comboPackages: ComboPackage[] = [
       "Smanjuju se fine linije i opuštenost",
       "Smanjuje se vidljivost bora",
       "Kućna njega za bržu regeneraciju kože i dugotrajan rezultat"
+    ],
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "radiant-skin-combo",
+    title: "RADIANT SKIN",
+    description: "Reset kože, piling, obnova i zaštita u jednom tretmanu",
+    image: "/images/services/woman-face-visage-estetski-studio.webp",
+    price: "545 EUR",
+    oldPrice: "642 EUR",
+    services: [
+      { 
+        id: "prp", 
+        title: "2 PRP tretmana", 
+        image: "/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png"
+      },
+      { 
+        id: "kemijski-piling", 
+        title: "2 duosomal kemijska pilinga", 
+        image: "/images/services/kemijski-piling/kemijski-piling-prednosti-estetski-studio-sisak.jpg"
+      }
+    ],
+    products: [
+      {
+        id: "total-recovery-gel",
+        title: "Total Recovery Gel",
+        image: "/images/products/total-recovery-gel-visage-estetski-studio.webp"
+      }
+    ],
+    benefits: [
+      "uklanja mrtve stanice s površine kože",
+      "pruža bolju propusnost kože",
+      "pomaže u poboljšanju tonusa kože",
+      "poboljšava teksturu kože",
+      "potiče stvaranje kolagena i elastina",
+      "koristi vlastite biološke resurse minimizirajući rizik od alergijske reakcije"
+    ],
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "eye-lift-combo",
+    title: "EYE LIFT",
+    description: "Osvježenje i podizanje okoloočnih bora",
+    image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg",
+    price: "420 EUR",
+    oldPrice: "498 EUR",
+    services: [
+      { 
+        id: "plasmage", 
+        title: "Plasmage okoloočnih bora", 
+        image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg"
+      },
+      { 
+        id: "botox", 
+        title: "Botox 50 jedinica", 
+        image: "/images/services/botox/botox-visage-estetski-studio.webp"
+      }
+    ],
+    products: [
+      {
+        id: "total-recovery-gel",
+        title: "Total Recovery Gel",
+        image: "/images/products/total-recovery-gel-visage-estetski-studio.webp"
+      },
+      {
+        id: "okolocna-njega",
+        title: "Okoloočna njega (Anti-Aging ili Radiance)",
+        image: "/images/products/radiance-eye-contour-visage-estetski-studio.webp"
+      },
+      {
+        id: "sun-shield-fluid",
+        title: "Sun Shiel-D Fluid",
+        image: "/images/products/sun-shiel-d-fluid-spf50-visage-estetski-studio.png"
+      }
+    ],
+    benefits: [
+      "Nekirurško podizanje okoloočnih bora",
+      "Uklanjanje viška kože",
+      "Smanjuje fine linije i opuštenost",
+      "Smanjuje vidljivost bora",
+      "Kućna njega za bržu regeneraciju kože"
+    ],
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "lumifusion-combo",
+    title: "LumiFusion",
+    description: "Zaboravi na umornu kožu!",
+    image: "/images/services/woman-face-visage-estetski-studio.webp",
+    price: "300 EUR",
+    oldPrice: "350 EUR",
+    services: [
+      { 
+        id: "prp", 
+        title: "PRP tretman", 
+        image: "/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png"
+      },
+      { 
+        id: "dermaplaning", 
+        title: "Dermaplaning", 
+        image: "/images/services/beauty-tretmani/dermaplaning-visage-estetski-studio-sisak.webp"
+      },
+      { 
+        id: "foto-terapija", 
+        title: "LED Fototerapija", 
+        image: "/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png"
+      }
+    ],
+    benefits: [
+      "trenutna glatkoća i sjaj",
+      "regeneracija iz vlastite plazme",
+      "potiče se proizvodnja kolagena i elastina",
+      "ujednačen i osvježen ten",
+      "poboljšava kvalitetu kože"
     ],
     isPopular: true,
     isLimited: true

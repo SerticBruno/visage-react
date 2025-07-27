@@ -92,25 +92,12 @@ export default function ComboPackagesSectionPreview() {
                   <div className="relative h-48 md:h-64">
                     {/* Combined Cover Photo */}
                     <div className="relative w-full h-full flex">
-                      {/* Services */}
-                      {comboPackage.services.map((service) => (
+                      {/* Services - Max 3 */}
+                      {comboPackage.services.slice(0, 3).map((service) => (
                         <div key={`service-${service.id}`} className="relative flex-1">
                           <Image
                             src={service.image}
                             alt={service.title}
-                            fill
-                            loading="lazy"
-                            className="object-cover transition-all duration-300 group-hover:scale-110"
-                            sizes="(max-width: 768px) 80vw, 40vw"
-                          />
-                        </div>
-                      ))}
-                      {/* Products */}
-                      {comboPackage.products && comboPackage.products.map((product) => (
-                        <div key={`product-${product.id}`} className="relative flex-1">
-                          <Image
-                            src={product.image}
-                            alt={product.title}
                             fill
                             loading="lazy"
                             className="object-cover transition-all duration-300 group-hover:scale-110"

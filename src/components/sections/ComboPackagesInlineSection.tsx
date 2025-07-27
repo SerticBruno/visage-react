@@ -106,78 +106,38 @@ export default function ComboPackagesInlineSection() {
                         {/* Mobile Layout - 2 cards per row */}
                         <div className="md:hidden">
                           <div className="grid grid-cols-2 gap-3 mb-4">
-                            {/* Combine all services and products into a single array for mobile */}
-                            {(() => {
-                              const allItems = [
-                                ...pkg.services.map(service => ({ ...service, type: 'service' as const })),
-                                ...(pkg.products || []).map(product => ({ ...product, type: 'product' as const }))
-                              ];
-                              
-                              return allItems.map((item, index) => (
-                                <React.Fragment key={`${item.type}-${item.id}`}>
-                                  {item.type === 'service' ? (
-                                    <Link href={`/usluge/${item.id}`} className="group">
-                                      <div className="flex flex-col items-center justify-start h-36 bg-gray-50 rounded-lg p-3 pt-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                                        <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
-                                          <Image
-                                            src={item.image}
-                                            alt={item.title}
-                                            fill
-                                            className="object-cover"
-                                          />
-                                        </div>
-                                        <div className="text-center flex items-center justify-center mt-2">
-                                          <h5 className="font-medium text-xs group-hover:text-primary transition-colors">
-                                            {item.title}
-                                          </h5>
-                                        </div>
-                                      </div>
-                                    </Link>
-                                  ) : (
-                                    <button 
-                                      onClick={() => handleProductClick(item.id)}
-                                      className="group"
-                                    >
-                                      <div className="flex flex-col items-center justify-start h-36 bg-gray-50 rounded-lg p-3 pt-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                                        <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
-                                          <Image
-                                            src={item.image}
-                                            alt={item.title}
-                                            fill
-                                            className="object-cover"
-                                          />
-                                        </div>
-                                        <div className="text-center flex items-center justify-center mt-2">
-                                          <h5 className="font-medium text-xs group-hover:text-primary transition-colors">
-                                            {item.title}
-                                          </h5>
-                                        </div>
-                                      </div>
-                                    </button>
-                                  )}
-                                  {/* Add plus icon between items, but not after the last item in a row */}
-                                  {index < allItems.length - 1 && index % 2 === 1 && (
-                                    <div className="col-span-2 flex justify-center my-2">
-                                      <div className="bg-primary/10 rounded-full p-1.5 shadow-sm">
-                                        <FaPlus className="text-primary text-sm" />
-                                      </div>
-                                    </div>
-                                  )}
-                                </React.Fragment>
-                              ));
-                            })()}
+                            {/* Services only - Max 3 */}
+                            {pkg.services.slice(0, 3).map((service, index) => (
+                              <Link key={service.id} href={`/usluge/${service.id}`} className="group">
+                                <div className="flex flex-col items-center justify-start h-36 bg-gray-50 rounded-lg p-3 pt-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                                  <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden shadow-md transition-transform group-hover:scale-105">
+                                    <Image
+                                      src={service.image}
+                                      alt={service.title}
+                                      fill
+                                      className="object-cover"
+                                    />
+                                  </div>
+                                  <div className="text-center flex items-center justify-center mt-2">
+                                    <h5 className="font-medium text-xs group-hover:text-primary transition-colors">
+                                      {service.title}
+                                    </h5>
+                                  </div>
+                                </div>
+                              </Link>
+                            ))}
                           </div>
                         </div>
 
-                        {/* Desktop Layout - Original horizontal layout */}
-                        <div className="hidden md:flex flex-row items-center justify-center gap-3 lg:gap-4">
+                        {/* Desktop Layout */}
+                        <div className="hidden md:flex items-center justify-center gap-4 lg:gap-6 xl:gap-8">
                           {(() => {
-                            const totalItems = pkg.services.length + (pkg.products?.length || 0);
-                            const cardWidth = totalItems <= 2 ? 'w-48 lg:w-56 xl:w-64' : 'w-40 lg:w-44 xl:w-48';
+                            const totalServices = pkg.services.length;
+                            const cardWidth = totalServices <= 2 ? 'w-48 lg:w-56 xl:w-64' : 'w-40 lg:w-44 xl:w-48';
                             
                             return (
                               <>
-                                {pkg.services.map((service, index) => (
+                                {pkg.services.slice(0, 3).map((service, index) => (
                                   <React.Fragment key={service.id}>
                                     <Link href={`/usluge/${service.id}`} className={`group flex justify-center ${cardWidth}`}>
                                       <div className={`flex flex-col items-center justify-start ${cardWidth} h-44 lg:h-48 xl:h-52 bg-gray-50 rounded-xl p-3 lg:p-4 pt-4 lg:pt-5 pb-2 lg:pb-3 xl:pb-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer`}>
@@ -196,58 +156,13 @@ export default function ComboPackagesInlineSection() {
                                         </div>
                                       </div>
                                     </Link>
-                                    {index < pkg.services.length - 1 && (
+                                    {index < Math.min(pkg.services.length, 3) - 1 && (
                                       <div className="flex items-center justify-center">
-                                        <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
-                                          <FaPlus className="text-primary text-sm lg:text-base" />
-                                        </div>
+                                        <FaPlus className="text-gray-400 w-4 h-4 lg:w-5 lg:h-5" />
                                       </div>
                                     )}
                                   </React.Fragment>
                                 ))}
-
-                                {pkg.products && pkg.products.length > 0 && (
-                                  <>
-                                    {pkg.services.length > 0 && (
-                                      <div className="flex items-center justify-center">
-                                        <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
-                                          <FaPlus className="text-primary text-sm lg:text-base" />
-                                        </div>
-                                      </div>
-                                    )}
-                                    {pkg.products.map((product, index) => (
-                                      <React.Fragment key={product.id}>
-                                        <button 
-                                          onClick={() => handleProductClick(product.id)}
-                                          className={`group flex justify-center ${cardWidth}`}
-                                        >
-                                          <div className={`flex flex-col items-center justify-start ${cardWidth} h-44 lg:h-48 xl:h-52 bg-gray-50 rounded-xl p-3 lg:p-4 pt-4 lg:pt-5 pb-2 lg:pb-3 xl:pb-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer`}>
-                                            <div className="relative w-24 lg:w-28 xl:w-32 h-24 lg:h-28 xl:h-32 flex-shrink-0 rounded-xl overflow-hidden shadow-md transition-transform group-hover:scale-105">
-                                              <Image
-                                                src={product.image}
-                                                alt={product.title}
-                                                fill
-                                                className="object-cover"
-                                              />
-                                            </div>
-                                            <div className="text-center flex items-center justify-center mt-3 lg:mt-4">
-                                              <h5 className="font-medium text-xs lg:text-sm group-hover:text-primary transition-colors">
-                                                {product.title}
-                                              </h5>
-                                            </div>
-                                          </div>
-                                        </button>
-                                        {index < pkg.products!.length - 1 && (
-                                          <div className="flex items-center justify-center">
-                                            <div className="bg-primary/10 rounded-full p-1.5 lg:p-2 shadow-sm">
-                                              <FaPlus className="text-primary text-sm lg:text-base" />
-                                            </div>
-                                          </div>
-                                        )}
-                                      </React.Fragment>
-                                    ))}
-                                  </>
-                                )}
                               </>
                             );
                           })()}

@@ -160,8 +160,8 @@ export default function ComboPackageNavigationModal({
                   <div className="relative h-[calc(600px-3rem)] bg-slate-50 rounded-xl overflow-hidden shadow-sm">
                     {/* Combined Service and Product Images - Vertical Layout */}
                     <div className="relative w-full h-full flex flex-col">
-                      {/* Services */}
-                      {currentComboPackage.services.map((service) => (
+                      {/* Services - Max 3 */}
+                      {currentComboPackage.services.slice(0, 3).map((service) => (
                         <div 
                           key={`service-${service.id}`} 
                           className={`relative flex-1 transition-all ${
@@ -181,20 +181,6 @@ export default function ComboPackageNavigationModal({
                               <FaCheck className="text-slate-500 bg-white rounded-full p-1 shadow-md" size={16} />
                             </div>
                           )}
-                        </div>
-                      ))}
-                      {/* Products */}
-                      {currentComboPackage.products && currentComboPackage.products.map((product) => (
-                        <div 
-                          key={`product-${product.id}`} 
-                          className="relative flex-1"
-                        >
-                          <Image
-                            src={product.image}
-                            alt={product.title}
-                            fill
-                            className="object-cover"
-                          />
                         </div>
                       ))}
                     </div>
@@ -336,8 +322,7 @@ export default function ComboPackageNavigationModal({
 
                     {/* Benefits */}
                     <div className="bg-slate-50 rounded-xl p-3">
-                      <h3 className="text-sm font-semibold text-slate-900 mb-2 flex items-center gap-2">
-                        <FaCheck className="text-slate-600" />
+                      <h3 className="text-sm font-semibold text-slate-900 mb-2">
                         Prednosti paketa
                       </h3>
                       <ul className="space-y-2">
