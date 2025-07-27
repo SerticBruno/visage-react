@@ -19,6 +19,10 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 
 Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj revitalizaciji kože</strong> u <strong>Visage studiju</strong>.`,
   benefits: [
+    'prirodna i dugotrajna regeneracija kože i vlasišta',
+    'poboljšanje tonusa i hidratacije kože',
+    'potiče proizvodnju kolagena i elastina',
+    'za sve tipove kože'
   ],
   image: '/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png',
   heroImage: '/images/services/prp/prp-visage-estetski-studio.png',

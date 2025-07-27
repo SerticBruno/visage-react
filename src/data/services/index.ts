@@ -21,4 +21,10 @@ export const services: Services = {
   'foto-terapija': photoTherapy
 };
 
-export type ServiceKey = keyof typeof services; 
+export type ServiceKey = keyof typeof services;
+
+// Utility function to get popular services
+export const getPopularServices = () => {
+  const popularServiceIds = ['skin-boosteri', 'mezoterapija', 'plasmage', 'prp'];
+  return popularServiceIds.map(id => services[id]).filter(Boolean);
+}; 

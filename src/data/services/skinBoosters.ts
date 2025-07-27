@@ -19,6 +19,10 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 
 Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa skin booster tretmanima u <strong>Visage studiju</strong>.`,
   benefits: [
+    'biostimulira proizvodnju kolagena i elastina',
+    'trenutni rezultati',
+    'dugoročna hidratacija i obnova kože',
+    'poboljšana kvaliteta kože'
   ],
   image: '/images/services/skin-boosters-hero-visage-estetski-studio.webp',
   heroImage: '/images/services/skin-boosters/skin-booster-visage-estetski-studio-sisak.jpeg',

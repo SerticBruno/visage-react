@@ -19,6 +19,10 @@ Koristi se najčešće u sinergiji s drugim estetskim tretmanima: <a href="/uslu
 
 Zakažite svoj termin u <strong>Visage studiju</strong> i krenite na put prema revitaliziranoj i pomlađenoj koži.`,
   benefits: [
+    'vidljivi rezultati nakon jednog tretmana',
+    'neinvazivan tretman',
+    'uklanja višak kože bez potrebe za kirurškim zahvatima',
+    'regenerira i zateže kožu'
   ],
   image: '/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg',
   heroImage: '/images/services/plasmage-hero-visage-estetski-studio.webp',

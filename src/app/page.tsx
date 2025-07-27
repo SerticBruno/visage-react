@@ -13,7 +13,7 @@ import { blogPosts } from '@/data/posts';
 import FeaturedBlogsSection from '@/components/sections/FeaturedBlogsSection';
 import ServiceSlider from '@/components/ui/ServiceSlider';
 import { Metadata } from 'next';
-import { popularServices } from '@/data/popularServices';
+import { getPopularServices } from '@/data/services';
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
 
 import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSectionPreview';
@@ -41,21 +41,8 @@ export default function Home() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 8) : [];
 
-  // Convert popular services to match Service type
-  const popularServicesData = popularServices.map(service => ({
-    id: service.link.split('/').pop() || '',
-    title: service.title,
-    description: service.description,
-    longDescription: service.description,
-    image: service.image,
-    heroImage: service.image,
-    benefits: service.features,
-    metaDescription: service.description,
-    metaKeywords: '',
-    steps: [],
-    stepContents: {},
-    tags: []
-  }));
+  // Get popular services using the utility function
+  const popularServicesData = getPopularServices();
 
   // Convert popular products to match Service type for the slider
   const popularProductsData = getPopularProducts().map(product => ({

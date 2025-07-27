@@ -31,7 +31,7 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
         {/* Image Section */}
         <div className="relative h-48 w-full overflow-hidden">
           <Image
-            src={service.image}
+            src={service.heroImage}
             alt={service.title}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
