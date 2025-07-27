@@ -59,8 +59,8 @@ export const comboPackages: ComboPackage[] = [
     title: "Hair Boost",
     description: "Intenzivan tretman za poticanje rasta kose i jačanje vlasišta",
     image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
-    price: "690 EUR",
-    oldPrice: "810 EUR",
+    price: "735 EUR",
+    oldPrice: "865 EUR",
     services: [
       { 
         id: "mezoterapija", 
@@ -156,7 +156,7 @@ export const comboPackages: ComboPackage[] = [
     title: "Skin Revive",
     description: "Regeneracija kože na staničnoj razini",
     image: "/images/services/skin-boosters-hero-visage-estetski-studio.webp",
-    price: "825 EUR",
+    price: "830 EUR",
     oldPrice: "980 EUR",
     services: [
       { 
@@ -181,6 +181,180 @@ export const comboPackages: ComboPackage[] = [
       "Vraća hidrataciju i elastičnost koži",
       "Potiče samostalnu regeneraciju kože",
       "Poboljšava teksturu kože"
+    ],
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "glow-define-combo",
+    title: "Glow & Define",
+    description: "Ciljani tretmani za svježinu i definiciju donjeg dijela lica",
+    image: "/images/services/woman-face-visage-estetski-studio.webp",
+    price: "920 EUR",
+    oldPrice: "1123 EUR",
+    services: [
+      { 
+        id: "mezoterapija-dermapen", 
+        title: "Mezoterapija dermapenom 4 tretmana", 
+        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
+      },
+      { 
+        id: "mezoterapija-y-zona", 
+        title: "Y zona 5 tretmana", 
+        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
+      },
+      { 
+        id: "foto-terapija", 
+        title: "Fototerapija 5 tretmana", 
+        image: "/images/services/dermalux/dermalux-about-visage-estetski-studio.png"
+      }
+    ],
+    products: [
+      {
+        id: "total-recovery-gel",
+        title: "Total Recovery Gel",
+        image: "/images/products/total-recovery-gel-visage-estetski-studio.webp"
+      },
+      {
+        id: "sun-shield-fluid",
+        title: "Sun Shiel-D Fluid",
+        image: "/images/products/sun-shiel-d-fluid-spf50-visage-estetski-studio.png"
+      }
+    ],
+    benefits: [
+      "Dubinska hidratacija",
+      "Zatezanje kože vrata i podbratka",
+      "Uklanjanje viška kože",
+      "Zatezanje kože lica",
+      "Poticanje proizvodnje kolagena i elastina"
+    ],
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "mesosynergy-combo",
+    title: "Mesosynergy",
+    description: "Biostimulirajući tretman koji povezuje sve elemente mezoterapije",
+    image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
+    price: "485 EUR",
+    oldPrice: "570 EUR",
+    services: [
+      { 
+        id: "kemijski-piling", 
+        title: "Duosomal kemijski piling", 
+        image: "/images/services/kemijski-piling/kemijski-piling-prednosti-estetski-studio-sisak.jpg"
+      },
+      { 
+        id: "mezoterapija", 
+        title: "Mezoterapija lica", 
+        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
+      },
+      { 
+        id: "skin-boosteri", 
+        title: "Skin Booster", 
+        image: "/images/services/skin-boosters/skin-booster-visage-estetski-studio-sisak.jpeg"
+      }
+    ],
+    products: [
+      {
+        id: "toskani-pro-age",
+        title: "Odgovarajući serum i krema iz Toskani Pro Age linije",
+        image: "/images/products/toskani-products.webp"
+      }
+    ],
+    benefits: [
+      "Poboljšana kvaliteta kože",
+      "Poboljšana čvrstoća kože",
+      "Manje vidljive bore",
+      "Usporen proces starenja",
+      "Glatka i nježna koža na dodir"
+    ],
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "profhilo-perfect-combo",
+    title: "Profhilo Perfect",
+    description: "Vratite sjaj i čvrstoću koži uz kombinaciju kemijskog pilinga, mezoterapije i bioremodulatora",
+    image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
+    price: "855 EUR",
+    oldPrice: "1009 EUR",
+    services: [
+      { 
+        id: "kemijski-piling", 
+        title: "2 duosomal kemijska pilinga", 
+        image: "/images/services/kemijski-piling/kemijski-piling-prednosti-estetski-studio-sisak.jpg"
+      },
+      { 
+        id: "mezoterapija", 
+        title: "2 tretmana mezoterapije lica", 
+        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
+      },
+      { 
+        id: "profhilo", 
+        title: "2 Profhilo tretmana", 
+        image: "/images/services/skin-boosters/skin-booster-visage-estetski-studio-sisak.jpeg"
+      }
+    ],
+    products: [
+      {
+        id: "profhilo-cream",
+        title: "Krema Profhilo",
+        image: "/images/products/profhilo-haenkenium-cream-cover-visage-estetski-studio.webp"
+      }
+    ],
+    benefits: [
+      "Cjeloviti anti-age pristup",
+      "Obnova kože iznutra i izvana",
+      "Dugotrajna hidratacija i sjaj",
+      "Vidljivo ujednačen i pomlađen ten",
+      "Idealno za umornu, dehidriranu i zrelu kožu"
+    ],
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "eye-refresh-combo",
+    title: "Eye Refresh",
+    description: "Otvoren i osvježen pogled bez skalpela",
+    image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg",
+    price: "780 EUR",
+    oldPrice: "918 EUR",
+    services: [
+      { 
+        id: "plasmage", 
+        title: "Plasmage donjeg ili gornjeg kapka", 
+        image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg"
+      },
+      { 
+        id: "botox", 
+        title: "Botox 50 jedinica", 
+        image: "/images/services/botox/botox-visage-estetski-studio.webp"
+      }
+    ],
+    products: [
+      {
+        id: "total-recovery-gel",
+        title: "Total Recovery Gel",
+        image: "/images/products/total-recovery-gel-visage-estetski-studio.webp"
+      },
+      {
+        id: "sun-shield-fluid",
+        title: "Sun Shiel-D Fluid",
+        image: "/images/products/sun-shiel-d-fluid-spf50-visage-estetski-studio.png"
+      },
+      {
+        id: "okolocna-njega",
+        title: "Okoloočna njega (Anti-Aging ili Radiance)",
+        image: "/images/products/radiance-eye-contour-visage-estetski-studio.webp"
+      }
+    ],
+    benefits: [
+      "Nekirurško podizanje kapka",
+      "Uklanjanje viška kože",
+      "Smanjuju se fine linije i opuštenost",
+      "Smanjuje se vidljivost bora",
+      "Kućna njega za bržu regeneraciju kože i dugotrajan rezultat"
     ],
     isPopular: true,
     isLimited: true

@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import ProductModal from '@/components/ui/ProductModal';
+import ComboPackageNavigationModal from '@/components/ui/ComboPackageNavigationModal';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -20,6 +21,7 @@ export default function ComboPackagesInlineSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [openComboModal, setOpenComboModal] = useState<string | null>(null);
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -74,7 +76,7 @@ export default function ComboPackagesInlineSection() {
           >
             {comboPackages.map((pkg) => (
               <SwiperSlide key={pkg.id} style={{ marginBottom: '2rem' }}>
-                <div className="relative">
+                <div className="relative cursor-pointer" onClick={() => setOpenComboModal(pkg.id)}>
                   {/* Title Badge - Overlapping the container */}
                   <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
                     <div className="bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg font-bold text-base md:text-lg">
@@ -316,6 +318,15 @@ export default function ComboPackagesInlineSection() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         product={selectedProduct}
+      />
+
+      {/* Combo Package Navigation Modal */}
+      <ComboPackageNavigationModal
+        isOpen={openComboModal !== null}
+        onClose={() => setOpenComboModal(null)}
+        initialComboPackage={openComboModal ? comboPackages.find(pkg => pkg.id === openComboModal) : undefined}
+        serviceId=""
+        serviceTitle=""
       />
     </section>
   );

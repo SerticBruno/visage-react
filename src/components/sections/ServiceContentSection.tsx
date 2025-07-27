@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import SingleComboPackageModal from "@/components/ui/SingleComboPackageModal";
+import ComboPackageNavigationModal from "@/components/ui/ComboPackageNavigationModal";
 import { ComboPackage } from "@/data/comboPackages";
 
 interface ServiceContentSectionProps {
@@ -141,19 +141,16 @@ export default function ServiceContentSection({
         </div>
       </div>
       
-      {/* Combo Package Modals */}
-      {hasComboPackages && comboPackages.length > 0 && serviceId && 
-        comboPackages.map((comboPackage) => (
-          <SingleComboPackageModal
-            key={comboPackage.id}
-            isOpen={openComboModal === comboPackage.id}
-            onClose={() => setOpenComboModal(null)}
-            comboPackage={comboPackage}
-            serviceId={serviceId}
-            serviceTitle={title}
-          />
-        ))
-      }
+      {/* Combo Package Navigation Modal */}
+      {hasComboPackages && comboPackages.length > 0 && serviceId && (
+        <ComboPackageNavigationModal
+          isOpen={openComboModal !== null}
+          onClose={() => setOpenComboModal(null)}
+          initialComboPackage={openComboModal ? comboPackages.find(pkg => pkg.id === openComboModal) : undefined}
+          serviceId={serviceId}
+          serviceTitle={title}
+        />
+      )}
     </section>
   );
 } 

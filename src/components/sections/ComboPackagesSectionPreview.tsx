@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import SingleComboPackageModal from '@/components/ui/SingleComboPackageModal';
+import ComboPackageNavigationModal from '@/components/ui/ComboPackageNavigationModal';
 
 import 'swiper/css';
 
@@ -232,17 +232,14 @@ export default function ComboPackagesSectionPreview() {
         </div>
       </div>
       
-      {/* Combo Package Modals */}
-      {comboPackages.map((comboPackage) => (
-        <SingleComboPackageModal
-          key={comboPackage.id}
-          isOpen={openComboModal === comboPackage.id}
-          onClose={() => setOpenComboModal(null)}
-          comboPackage={comboPackage}
-          serviceId=""
-          serviceTitle=""
-        />
-      ))}
+      {/* Combo Package Navigation Modal */}
+      <ComboPackageNavigationModal
+        isOpen={openComboModal !== null}
+        onClose={() => setOpenComboModal(null)}
+        initialComboPackage={openComboModal ? comboPackages.find(pkg => pkg.id === openComboModal) : undefined}
+        serviceId=""
+        serviceTitle=""
+      />
     </section>
   );
 } 
