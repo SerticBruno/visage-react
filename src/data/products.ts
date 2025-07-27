@@ -307,7 +307,7 @@ Poboljšava izgled oštećene kože.`,
   },
   {
     id: '8',
-    title: 'Radiance Daily Cream SPF 30+',
+    title: 'Radiance Daily Cream SPF30+',
     description: `Krema je za svakodnevnu upotrebu koja je namijenjena ispravljanju znakova fotostarenja. Pogodna je za sve tipove kože.
 
 Sprječava dehidraciju, gubitak sjaja, mlitavost i pojavu bora i mrlja.
@@ -955,7 +955,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     price: '36 EUR',
     volume: '50ml',
     isNew: true,
-    activeIngredients: ['SPF 50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks'],
+    activeIngredients: ['SPF50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks'],
     application: [
       'Nanesite fluid 30 minuta prije izlaganja suncu',
       'Nanesite 1 do 2 puta kroz dan (ujutro i popodne)'
@@ -975,7 +975,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     price: '39 EUR',
     volume: '50ml',
     isNew: true,
-    activeIngredients: ['SPF 50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks', 'Toner'],
+    activeIngredients: ['SPF50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks', 'Toner'],
     application: [
       'Nanesite fluid 30 minuta prije izlaganja suncu',
       'Nanesite 1 do 2 puta kroz dan (ujutro i popodne)'
@@ -995,7 +995,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     price: '42 EUR',
     volume: '200ml',
     isNew: true,
-    activeIngredients: ['SPF 50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks'],
+    activeIngredients: ['SPF50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks'],
     application: [
       'Protresite prije upotrebe',
       'Nanesite sprej 30 minuta prije izlaganja suncu',

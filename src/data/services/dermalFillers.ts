@@ -100,9 +100,9 @@ Vratite <strong>samopouzdanje</strong> uz <strong>prirodan volumen</strong> i <s
 
 2. Aplikacija filera - Precizne injekcije u odabrana područja, kontinuirano praćenje rezultata, prilagodba količine filera i masiranje.
 
-3. Završna njega - Umasiravanje <a href="/katalog?product=8">Toskani Total Recovery gelom</a>, postproceduralnog proizvoda koji ublažava crvenilo i iritaciju kože, te nanošenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.
+3. Završna njega - Umasiravanje <a href="/katalog?product=8">Toskani Total Recovery gelom</a>, postproceduralnog proizvoda koji ublažava crvenilo i iritaciju kože, te nanošenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.
 
-4. Preporuka za kućnu njegu - Preporučujemo korištenje Toskani Skin Architect kućne njege koja uključuje kremu, serum i okoloočnu njegu. Svaki dan koristiti kremu sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.`,
+4. Preporuka za kućnu njegu - Preporučujemo korištenje Toskani Skin Architect kućne njege koja uključuje kremu, serum i okoloočnu njegu. Svaki dan koristiti kremu sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.`,
     'oporavak': `Oporavak je obično kratak i ljudi se vraćaju svakodnevnim aktivnostima odmah nakon tretmana.
 
 Moguće su blage nuspojave poput:

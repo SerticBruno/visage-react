@@ -980,7 +980,7 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "radiance-daily-cream",
-    title: "Radiance Daily Cream SPF 30+",
+    title: "Radiance Daily Cream SPF30+",
     description: "50 ml",
     price: "60 EUR",
     category: "TOSKANI Proizvodi"

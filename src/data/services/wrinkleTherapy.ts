@@ -98,7 +98,7 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
 
 3. Završna njega - Nanošenje After creama na tretirana područja uz minimalan pritisak.
 
-4. Preporuka za kućnu njegu - Preporučujemo korištenje odgovarajućih Toskani proizvoda iz Pro Age linije i korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF 50+.`,
+4. Preporuka za kućnu njegu - Preporučujemo korištenje odgovarajućih Toskani proizvoda iz Pro Age linije i korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF50+.`,
     'oporavak': `Oporavak može trajati 1 do 2 dana, a prezentira se kao:
 
 - modrica

@@ -130,7 +130,7 @@ Dan prije tretmana:
 
 4. Završna njega - Primjena regenerativnih seruma, zaštitnog krema sa SPF faktorom i finalna masaža.
 
-5. Preporuka za kućnu njegu - Preporučujemo korištenje blagih proizvoda za čišćenje, hidratantnih kremova i obavezno korištenje SPF 50+ zaštite.`,
+5. Preporuka za kućnu njegu - Preporučujemo korištenje blagih proizvoda za čišćenje, hidratantnih kremova i obavezno korištenje SPF50+ zaštite.`,
     'oporavak': `Oporavak je minimalan, uz osvježavanje i opuštanje kože. Nuspojave mogu uključivati:
 1. Osvježavanje kože
 2. Poboljšana hidratacija
@@ -142,7 +142,7 @@ Potrebno je izbjegavati izravno sunce 24 sata i koristiti blage proizvode za nje
 
 Nakon beauty tretmana važno je:
 
-- Zaštita od sunca - Obavezno koristite kremu sa zaštitnim faktorom SPF 50+ i izbjegavajte izravno izlaganje suncu 24 sata.
+- Zaštita od sunca - Obavezno koristite kremu sa zaštitnim faktorom SPF50+ i izbjegavajte izravno izlaganje suncu 24 sata.
 
 - Njega kože - Koristite blage proizvode za čišćenje i hidrataciju kože, izbjegavajte agresivne proizvode.
 

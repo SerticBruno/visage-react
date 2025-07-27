@@ -27,12 +27,12 @@ export const popularProducts = [
   },
   {
     id: '8',
-    title: 'Radiance Daily Cream SPF 30+',
+    title: 'Radiance Daily Cream SPF30+',
     description: 'Krema za svakodnevnu upotrebu koja je namijenjena ispravljanju znakova fotostarenja.',
     image: '/images/products/radiance-daily-cream-visage-estetski-studio.webp',
     link: '/proizvodi/radiance-daily-cream',
     features: [
-      'zaštita od sunca SPF 30+',
+      'zaštita od sunca SPF30+',
       'ispravlja znakove fotostarenja',
       'prikladna za svakodnevnu upotrebu',
       'pogodna za sve tipove kože'

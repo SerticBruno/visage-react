@@ -108,9 +108,9 @@ Pogodni su za sve tipove kože i dobne skupine, a posebno za:
 
 2. Primjena skin boostera - Skin boosteri se injektiraju u 4, odnosno 5 mjesta sa svake strane lica.
 
-3. Završna njega - Mjesta uboda masiramo <a href="/katalog?product=8">Toskani Total Recovery gelom</a> i nanosimo kremu sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.
+3. Završna njega - Mjesta uboda masiramo <a href="/katalog?product=8">Toskani Total Recovery gelom</a> i nanosimo kremu sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.
 
-4. Preporuka za kućnu njegu - Preporučujemo korištenje odgovarajućih proizvoda iz Toskani Pro Age linije, kako bi rezultati bili što dugotrajniji, te korištenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.`,
+4. Preporuka za kućnu njegu - Preporučujemo korištenje odgovarajućih proizvoda iz Toskani Pro Age linije, kako bi rezultati bili što dugotrajniji, te korištenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.`,
     'oporavak': `Oporavak može trajati do 5 dana, ovisno o mjestu injektiranja.
 
 Nuspojave mogu uključivati:

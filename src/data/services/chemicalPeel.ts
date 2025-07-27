@@ -97,9 +97,9 @@ Tjedan dana prije tretmana:
 
 2. Priprema kemijskog pilinga - Nanošenje kemijskog pilinga, praćenje reakcije kože i neutralizacija pilinga.
 
-3. Završna njega - Nanošenje Toskani Antistress maske koja ima umirujuća svojstva za kožu i držanje iste 10ak minuta, nanošenje <a href="/katalog?product=8">Toskani Total Recovery gela</a> koji pomaže regeneraciji kože i nanošenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.
+3. Završna njega - Nanošenje Toskani Antistress maske koja ima umirujuća svojstva za kožu i držanje iste 10ak minuta, nanošenje <a href="/katalog?product=8">Toskani Total Recovery gela</a> koji pomaže regeneraciji kože i nanošenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.
 
-4. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade kemijski piling preporučamo korištenje <a href="/katalog?product=8">Toskani Total Recovery gela</a> i obavezno je korištenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.`,
+4. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade kemijski piling preporučamo korištenje <a href="/katalog?product=8">Toskani Total Recovery gela</a> i obavezno je korištenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.`,
     'oporavak': 'Oporavak može trajati nekoliko dana, uz blago crvenilo i ljuštenje kože. Nuspojave mogu uključivati:\n1. Crvenilo\n2. Osjetljivost\n3. Peckanje\n4. Stvaranje ljuskica\n5. Perutanje kože',
     'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
 
@@ -113,7 +113,7 @@ Nakon kemijskog pilinga se preporuča:
 - Izbjegavajte izlaganje suncu i solariju
 - Ne skidati ljuskice i pustiti kožu da se sama obnovi
 - Korištenje <a href="/katalog?product=8">Toskani Recovery gela</a>
-- Korištenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>`,
+- Korištenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>`,
     'cijena': 'Cijena ovisi o tipu pilinga i broju potrebnih tretmana.'
   }
 }; 

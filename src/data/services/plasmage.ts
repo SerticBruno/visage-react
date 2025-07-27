@@ -103,9 +103,9 @@ Tjedan dana prije tretmana:
 
 2. Primjena Plasmage uređaja - Preciznim i kontroliranim impulsnim iskrama aparat stvarta niz sitnih točkica na koži.
 
-3. Završna njega - Nakon zahvata se stavlja <a href="/katalog?product=8">Toskani Total Recovery Cream</a> i lagano umasirava. Nanosi se krema sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.
+3. Završna njega - Nakon zahvata se stavlja <a href="/katalog?product=8">Toskani Total Recovery Cream</a> i lagano umasirava. Nanosi se krema sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.
 
-4. Preporučena kućna njega - Preporučujemo korištenje <a href="/katalog?product=8">Toskani Total Recovery gela</a> sve dok ne otpadnu točkice i svakodnevno nanošenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>.`,
+4. Preporučena kućna njega - Preporučujemo korištenje <a href="/katalog?product=8">Toskani Total Recovery gela</a> sve dok ne otpadnu točkice i svakodnevno nanošenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.`,
     'oporavak': `Oporavak ovisi o području tretiranja. Sitne točkice ili krastice najčešće otpadnu nakon tjedan dana, no za potpunu regeneraciju kože je potrebno i do mjesec dana.
 
 Nuspojave mogu uključivati:
@@ -119,7 +119,7 @@ Nuspojave mogu uključivati:
 - izbjegavati sunce i dugo zadržavanje ispred elektroničkih uređaja
 - izbjegavati treninge 2 dana
 - nanositi minimalno tjedan dana <a href="/katalog?product=8">Total Recovery gel</a> na tretirano područje
-- nanositi kremu sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF 50+</a>`,
+- nanositi kremu sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>`,
     'cijena': `Cijena Plasmage tretmana ovisi o području tretmana i broju potrebnih tretmana. Naši Plasmage tretmani uključuju:
 
 - Plasmage oko očiju - Za lifting i obnavljanje okoloočnog područja
