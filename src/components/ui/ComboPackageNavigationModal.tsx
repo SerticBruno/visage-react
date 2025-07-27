@@ -143,7 +143,7 @@ export default function ComboPackageNavigationModal({
 
   const modalContent = (
     <Transition appear show={isOpen} as={Fragment}>
-      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-6 pt-16 pb-16 md:p-4">
         <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={handleClose} />
         
         <Transition.Child
@@ -183,11 +183,90 @@ export default function ComboPackageNavigationModal({
 
 
             
-            <div className="w-[1000px] max-w-[95vw] h-[600px] transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200">
+            <div className="w-full max-w-4xl md:w-[1000px] max-h-[95vh] md:h-[600px] transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 flex flex-col">
               {/* Content - Fixed Left + Scrollable Right */}
-              <div className="flex flex-col lg:flex-row">
-                {/* Fixed Left Side - Only Images */}
-                <div className={`w-full lg:w-2/5 p-6 border-r border-slate-100 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+              <div className="flex flex-col lg:flex-row h-full min-h-0">
+                {/* Mobile Layout - First Row with Images and Info */}
+                <div className="lg:hidden w-full p-3 flex gap-3 items-stretch">
+                  {/* Images - 75% width */}
+                  <div className="w-3/4 relative bg-slate-50 rounded-xl overflow-hidden shadow-sm flex-shrink-0">
+                    <div className={`relative w-full h-full flex flex-col transition-opacity duration-500 ${
+                      imagesLoaded ? 'opacity-100' : 'opacity-0'
+                    }`}>
+                      {/* Services - Max 3 */}
+                      {currentComboPackage.services.slice(0, 3).map((service) => (
+                        <div 
+                          key={`service-${service.id}`} 
+                          className={`relative flex-1 transition-all ${
+                            service.id === serviceId 
+                              ? 'ring-2 ring-slate-400 ring-offset-2' 
+                              : ''
+                          }`}
+                        >
+                          <Image
+                            src={service.image}
+                            alt={service.title}
+                            fill
+                            className="object-cover"
+                            onLoad={() => handleImageLoad(service.image)}
+                          />
+                          {service.id === serviceId && (
+                            <div className="absolute top-2 right-2">
+                              <FaCheck className="text-slate-500 bg-white rounded-full p-1 shadow-md" size={16} />
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  </div>
+
+                  {/* Right side info - 25% width */}
+                  <div className="w-1/4 space-y-2 flex flex-col">
+                    {/* Price Section - Takes remaining space */}
+                    <div className="bg-slate-50 rounded-lg p-2 flex-1 flex flex-col justify-center">
+                      <h3 className="text-xs font-semibold text-slate-900 mb-2">
+                        Cijena
+                      </h3>
+                      <div className="flex flex-col items-center">
+                        <span className="text-lg font-bold text-slate-900">
+                          {currentComboPackage.price}
+                        </span>
+                        {currentComboPackage.oldPrice && (
+                          <span className="text-xs text-slate-400 line-through">
+                            {currentComboPackage.oldPrice}
+                          </span>
+                        )}
+                        {currentComboPackage.oldPrice && (
+                          <span className="bg-rose-500 text-white text-xs font-bold w-8 h-8 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center mt-1">
+                            -{Math.round((1 - parseFloat(currentComboPackage.price.replace(/\D/g, '')) / parseFloat(currentComboPackage.oldPrice.replace(/\D/g, ''))) * 100)}%
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    
+                    {/* Services Count */}
+                    <div className="bg-slate-50 rounded-lg p-2">
+                      <h3 className="text-xs font-semibold text-slate-900 mb-1">
+                        Tretmani
+                      </h3>
+                      <p className="text-xs text-slate-600">{currentComboPackage.services.length} tretmana</p>
+                    </div>
+                    
+                    {/* Products Count */}
+                    {currentComboPackage.products && currentComboPackage.products.length > 0 && (
+                      <div className="bg-slate-50 rounded-lg p-2">
+                        <h3 className="text-xs font-semibold text-slate-900 mb-1">
+                          Proizvodi
+                        </h3>
+                        <p className="text-xs text-slate-600">{currentComboPackage.products.length} proizvoda</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Desktop Layout - Fixed Left Side */}
+                <div className={`hidden lg:block w-2/5 p-6 border-r border-slate-100 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                   <div className="relative h-[calc(600px-3rem)] bg-slate-50 rounded-xl overflow-hidden shadow-sm">
                     {/* Loading Overlay */}
                     <div className={`absolute inset-0 bg-slate-200 transition-opacity duration-500 z-10 ${
@@ -234,8 +313,8 @@ export default function ComboPackageNavigationModal({
                 </div>
                 
                 {/* Scrollable Right Side */}
-                <div className="w-full lg:w-3/5 overflow-y-auto max-h-[600px]">
-                  <div className={`p-4 space-y-3 transition-all duration-500 ${
+                <div className="w-full lg:w-3/5 overflow-y-auto max-h-[calc(95vh-12rem)] lg:max-h-[600px] flex-1 min-h-0">
+                  <div className={`p-3 lg:p-4 space-y-3 transition-all duration-500 ${
                     isTransitioning 
                       ? 'opacity-25 blur-sm' 
                       : imagesLoaded 
