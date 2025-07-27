@@ -35,7 +35,7 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 Uživajte u <strong>hidratiziranoj i zdravoj koži</strong> te zaštitite kožu tijekom dana, a popravite preko noći. Naručite se na <strong>beauty tretman</strong> u <strong>Visage studiju</strong>.`,
   benefits: [
   ],
-  image: '/images/services/beauty-tretmani/circadia-beauty-tretmani-visage-estetski-studio.png',
+  image: '/images/services/beauty-tretmani/beauty-tretmani-about-visage-estetski-studio.png',
   heroImage: '/images/services/eyebrows-eyelashes-visage-estetski-studio.webp',
   metaDescription: 'Profesionalni beauty tretmani u VISAGE studiju u Siska. Luksuzni tretmani za lice i tijelo s premium proizvodima. Potpuno opuštanje i njega kože.',
   metaKeywords: 'beauty tretmani, njega kože, opuštanje, estetski studio Sisak, VISAGE studio, luksuzni tretmani, hidratacija kože',

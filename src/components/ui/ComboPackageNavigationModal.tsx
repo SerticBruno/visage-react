@@ -40,7 +40,7 @@ export default function ComboPackageNavigationModal({
       setLoadedImages(new Set());
       setImagesLoaded(false);
     }
-  }, [currentComboPackage?.id]);
+  }, [currentComboPackage]);
 
   // Check if all images are loaded
   useEffect(() => {

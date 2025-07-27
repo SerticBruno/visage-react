@@ -4,22 +4,25 @@ export const photoTherapy: Service = {
   id: 'foto-terapija',
   title: 'LED Fototerapija',
   akuzativTitle: 'Fototerapijom',
-  description: 'Zlatni standard profesionalne led fototerapije u službi zdrave i lijepe kože',
-  longDescription: `<strong>Dermalux Flex MD</strong> je medicinski CE certificirani uređaj koji omogućuje <strong>vrhunske i neinvazivne tretmane lica</strong>.
+  description: 'Zlatni standard profesionalne LED fototerapije u službi zdrave i lijepe kože',
+  longDescription: `[**Dermalux Flex MD**](https://dermaluxled.com/flex-md/ "‌") je medicinski CE certificirani uređaj koji omogućuje **vrhunske i neinvazivne** tretmane lica.
 
-Djeluje na principu <strong>fototerapije</strong>, odnosno liječenja svjetlom. Koža apsorbira specifične valne duljine kako bi stimulirala <strong>obnovu stanica</strong>, potaknula <strong>proizvodnju kolagena i elastina</strong>, riješila problematična stanja te ubrzala <strong>zacjeljivanje kože</strong>.
+Koristi terapeutsku svjetlosnu energiju za **pomlađivanje** i **korekciju** **kože**. Djeluje na principu **fototerapije**, odnosno liječenja svjetlom, s dokazanim učincima.
 
-Tretman je <strong>ugodan, bezbolan, siguran</strong> te pruža niz dobrobiti za kožu.
+ Koža apsorbira specifične valne duljine kako bi stimulirala **obnovu stanica**, potaknula **proizvodnju kolagena i elastina**, **riješila problematična stanja** te ubrzala **zacjeljivanje kože**.
 
-Nakon samo <strong>jednog tretmana</strong> Flex MD LED fototerapije klijenti mogu očekivati <strong>trenutačno poboljšanje tonusa kože, hidratacije i sjaja</strong>, dok terapeutsko svjetlo istovremeno potiče <strong>dublje stanične procese za dugotrajne dobiti kože</strong>.
+Upravo je [Dermalux Flex MD ](https://dermaluxled.com/flex-md/ "‌")najmanje **3 puta snažniji** u usporedbi s ostalim LED uređajima te vrste. [Dermalux Flex MD](https://dermaluxled.com/results/ "‌") fototerapija je dokazana zbog svojih svjetlosnih **regenerativnih** i **protuupalnih** prednosti bez stvaranja traume za kožu, što ju čini **sigurnom** i prikladnom za **sve tipove kože.**
 
-Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/mezoterapija">mezoterapija</a>, <a href="/usluge/beauty-tretmani">beauty tretmani</a> i <a href="/usluge/skin-boosteri">skin boosteri</a>
+Tretman je **ugodan, bezbolan, siguran** te pruža niz dobrobiti za kožu.
 
-U <strong>Visage studiju</strong> koristimo najnoviju tehnologiju fototerapije, što osigurava <strong>optimalne rezultate i maksimalnu sigurnost</strong>. Svaki tretman je pažljivo planiran za postizanje željenih rezultata uz <strong>minimalno vrijeme oporavka</strong>.`,
+Nakon samo **jednog tretmana** [Dermalux Flex MD](https://dermaluxled.com/results/ "‌") fototerapije klijenti mogu očekivati **trenutačno poboljšanje tonusa kože, hidratacije i sjaja**, dok terapeutsko svjetlo istovremeno potiče **dublje stanične procese za dugotrajne dobiti kože**.
+
+Koristi se najčešće u **sinergiji s drugim estetskim tretmanima**: [mezoterapija](https://visage-react.vercel.app/usluge/mezoterapija "‌"), [beauty tretmani](https://visage-react.vercel.app/usluge/beauty-tretmani "‌") i [skin boosteri](https://visage-react.vercel.app/usluge/skin-boosteri "‌")
+
+U **Visage studiju** koristimo  fototerapije, što osigurava **optimalne rezultate i maksimalnu sigurnost**. Svaki tretman je pažljivo planiran za postizanje željenih rezultata uz **minimalno vrijeme oporavka**.`,
   benefits: [
   ],
-  image: '/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png'
-  ,
+  image: '/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png'  ,
   heroImage: '/images/services/dermalux/dermalux-visage-estetski-studio.png',
   metaDescription: 'Profesionalna fototerapija u VISAGE studiju u Siska. Napredni tretmani kože svjetlom za akne, ožiljke i poboljšanje tonusa kože. Sigurni i učinkoviti rezultati.',
   metaKeywords: 'fototerapija, svjetlosna terapija, akne, ožiljci, hiperpigmentacija, estetski studio Sisak, VISAGE studio, tretman kože svjetlom',
