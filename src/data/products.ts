@@ -22,6 +22,9 @@ export interface Product {
   indications?: string[];
   tags?: string[];
   proTips?: ProTip[]; // New field for PRO TIP accordions
+  // Optional properties for slider/card display
+  link?: string; // Custom link for the product card
+  benefits?: string[]; // Alternative to features for slider display
 }
 
 // Pro tip interface for product-specific tips
@@ -305,6 +308,12 @@ Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjel
       'Tek kad je Radiance Mesoserum potpuno suh, možete nanijeti Radiance Eye Contour i Radiance kremu na isti način.',
       'Ostavite da se krema upije prije nanošenja bilo koje vrste šminke'
     ],
+    benefits: [
+      'zaštita od sunca SPF30+',
+      'ispravlja znakove fotostarenja',
+      'prikladna za svakodnevnu upotrebu',
+      'pogodna za sve tipove kože'
+    ],
     tags: ['spf', 'hiperpigmentacije', 'fotostarenje', 'dnevna njega', 'svi tipovi kože']
   },
   {
@@ -373,6 +382,12 @@ Vaš novi saveznik u borbi protiv hiperpigmetacija sa učinkovitim djelovanjem v
       'Nanesite proizvod laganim tapkanjem prstiju 2-3 kapi po površini lica, vrata i dekoltea pola minute. Možete koristiti sve prste obje ruke sa svake strane lica. Ne produžujte je silom ili agresivno trljajući kožu',
       'Tek kad je Radiance Mesoserum potpuno suh, možete nanijeti Radiance Eye Contour i Radiance kremu na isti način.',
       'Ostavite da se krema upije prije nanošenja bilo koje vrste šminke'
+    ],
+    benefits: [
+      'sadrži najstabilniji oblik vitamina C',
+      'posvjetljuje i učvršćuje kožu',
+      'zaštita kože od slobodnih radikala',
+      'potiče sintezu kolagena i elastina'
     ],
     tags: ['serum', 'hiperpigmentacije', 'fotostarenje', 'svi tipovi kože']
   },
@@ -484,6 +499,12 @@ Hijaluronska kiselina niske molekularne težine (<100Kda), za dublju i dugotrajn
       'Nanesite proizvod nježno tapkajući prstima po površini vase kože pola minute.  Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.',
       'Tek kada se Skin Architect Mesoserum u potpunosti osuši možete staviti Antiaging Eye Contour i Skin Architect kremu na isti način. Pustite kremu da se u potpunosti upije prije nego nanesete bilo kakvu vrstu šminke.'
     ],
+    benefits: [
+      'poboljšanje izgleda finih linija i bora',
+      'odgađa učinke starenja kože',
+      'pruža snažno hidratantno i hranjivo djelovanje',
+      'pruža lifting učinak i vraća elastičnost koži'
+    ],
     tags: ['krema', 'anti-age', 'njega nakon dermalnih filera', 'njega nakon skin boostera', 'svi tipovi kože']
   },
   {
@@ -593,6 +614,12 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     ],
     warnings: [
       'SIGURNOST: Ne sadrži retinol! Ovaj proizvod sadrži derivate retinola koji nisu fotoosjetljivi i potpuno su sigurni za korištenje. Pogodan je i za osjetljivu kožu te ne zahtijeva posebne mjere opreza.'
+    ],
+    benefits: [
+      'sadrži bakuchiol i retinal',
+      'prikladan za osjetljivu kožu',
+      'anti-age djelovanje',
+      'preporučuje se za 30+/40+ godina'
     ],
     tags: ['serum', 'anti-age', '30+/40 godina', 'svi tipovi kože', 'osjetljiva koža']
   },
@@ -1077,3 +1104,9 @@ Sadrži aktivne sastojke koji pružaju trenutačni efekt liftinga, omekšavaju b
     ]
   }
 ]; 
+
+// Utility function to get popular products
+export const getPopularProducts = () => {
+  const popularProductIds = ['11', '15', '8', '19'];
+  return products.filter(product => popularProductIds.includes(product.id));
+};

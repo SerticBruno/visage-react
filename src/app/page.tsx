@@ -6,7 +6,7 @@ import CTASection from '@/components/sections/CTASection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import FAQSection from '@/components/sections/FAQSection';
 import { BLOG_ENABLED } from '@/lib/config';
-import { popularProducts } from '@/data/popularProducts';
+import { getPopularProducts } from '@/data/products';
 import { blogPosts } from '@/data/posts';
 
 // Conditionally import FeaturedBlogsSection only when blog is enabled
@@ -57,15 +57,15 @@ export default function Home() {
     tags: []
   }));
 
-  // Convert popular products to match Service type
-  const popularProductsData = popularProducts.map(product => ({
+  // Convert popular products to match Service type for the slider
+  const popularProductsData = getPopularProducts().map(product => ({
     id: product.id,
     title: product.title,
     description: product.description,
     longDescription: product.description,
     image: product.image,
     heroImage: product.image,
-    benefits: product.features,
+    benefits: product.benefits || product.features || [],
     metaDescription: product.description,
     metaKeywords: '',
     steps: [],
