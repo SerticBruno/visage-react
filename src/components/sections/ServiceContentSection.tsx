@@ -91,9 +91,9 @@ export default function ServiceContentSection({
             {/* Combo packages section - shown above button for both mobile and desktop */}
             {hasComboPackages && comboPackages.length > 0 && (
               <div className="mb-8">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">Dostupno u combo paketima</h2>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4">Dostupno u kombiniranim paketima</h2>
                 <p className="text-sm text-slate-700 leading-relaxed mb-4">
-                  Ova usluga je također dostupna kao dio naših premium combo paketa koji pružaju kompletnu transformaciju i optimalne rezultate:
+                  Ova usluga je također dostupna kao dio naših premium kombiniranih paketa koji pružaju kompletnu transformaciju i optimalne rezultate:
                 </p>
                 
                 {/* Combo Package Cards - Optimal layout based on count */}
@@ -258,28 +258,6 @@ export default function ServiceContentSection({
                     })}
                   </div>
                 )}
-
-                {/* Button Layout */}
-                <div className="flex flex-wrap gap-2">
-                  {comboPackages.map((comboPackage) => (
-                    <button
-                      key={comboPackage.id}
-                      onClick={() => setOpenComboModal(comboPackage.id)}
-                      className={`flex items-center px-2.5 py-1.5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer text-left min-w-0 ${
-                        comboPackages.length === 1 ? '' : 'flex-1'
-                      }`}
-                    >
-                      <div className="min-w-0 flex-1">
-                        <div className="text-xs font-medium text-slate-800 leading-tight">
-                          {comboPackage.title}
-                        </div>
-                        <div className="text-xs text-slate-600 underline hover:text-slate-800 transition-colors font-medium">
-                          Detalji
-                        </div>
-                      </div>
-                    </button>
-                  ))}
-                </div>
               </div>
             )}
 

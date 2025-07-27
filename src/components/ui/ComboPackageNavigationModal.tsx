@@ -26,10 +26,35 @@ export default function ComboPackageNavigationModal({
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   // Handle mounting for SSR
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  // Reset image loading state when combo package changes
+  useEffect(() => {
+    if (currentComboPackage) {
+      setLoadedImages(new Set());
+      setImagesLoaded(false);
+    }
+  }, [currentComboPackage?.id]);
+
+  // Check if all images are loaded
+  useEffect(() => {
+    if (currentComboPackage) {
+      const totalImages = currentComboPackage.services.slice(0, 3).length;
+      if (loadedImages.size === totalImages && totalImages > 0) {
+        setImagesLoaded(true);
+      }
+    }
+  }, [loadedImages, currentComboPackage]);
+
+  // Handle image load
+  const handleImageLoad = useCallback((imageSrc: string) => {
+    setLoadedImages(prev => new Set([...prev, imageSrc]));
   }, []);
 
   // Initialize with the initial combo package or first one
@@ -167,8 +192,21 @@ export default function ComboPackageNavigationModal({
                 {/* Fixed Left Side - Only Images */}
                 <div className={`w-full lg:w-2/5 p-6 border-r border-slate-100 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                   <div className="relative h-[calc(600px-3rem)] bg-slate-50 rounded-xl overflow-hidden shadow-sm">
+                    {/* Loading Overlay */}
+                    <div className={`absolute inset-0 bg-slate-200 transition-opacity duration-500 z-10 ${
+                      imagesLoaded ? 'opacity-0' : 'opacity-100'
+                    }`}>
+                      <div className="flex items-center justify-center h-full">
+                        <div className="animate-pulse text-slate-400">
+                          <div className="w-8 h-8 border-2 border-slate-300 border-t-slate-600 rounded-full animate-spin"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
                     {/* Combined Service and Product Images - Vertical Layout */}
-                    <div className="relative w-full h-full flex flex-col">
+                    <div className={`relative w-full h-full flex flex-col transition-opacity duration-500 ${
+                      imagesLoaded ? 'opacity-100' : 'opacity-0'
+                    }`}>
                       {/* Services - Max 3 */}
                       {currentComboPackage.services.slice(0, 3).map((service) => (
                         <div 
@@ -184,6 +222,7 @@ export default function ComboPackageNavigationModal({
                             alt={service.title}
                             fill
                             className="object-cover"
+                            onLoad={() => handleImageLoad(service.image)}
                           />
                           {service.id === serviceId && (
                             <div className="absolute top-2 right-2">
@@ -199,7 +238,13 @@ export default function ComboPackageNavigationModal({
                 
                 {/* Scrollable Right Side */}
                 <div className="w-full lg:w-3/5 overflow-y-auto max-h-[600px]">
-                  <div className={`p-4 space-y-3 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+                  <div className={`p-4 space-y-3 transition-all duration-500 ${
+                    isTransitioning 
+                      ? 'opacity-25 blur-sm' 
+                      : imagesLoaded 
+                        ? 'opacity-100 blur-0' 
+                        : 'opacity-0 blur-md'
+                  }`}>
                     
                     {/* Title and Description */}
                     <div className="bg-slate-50 rounded-xl p-3">
