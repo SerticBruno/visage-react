@@ -56,13 +56,6 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
             </button>
             
             <div className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 max-h-[90vh]">
-              {/* Header */}
-              <div className="flex justify-between items-start p-4 pb-3 border-b border-slate-100">
-                <h2 className="text-xl font-bold text-slate-900">
-                  {product.title}
-                </h2>
-              </div>
-              
               {/* Content */}
               <div className="flex flex-col md:flex-row">
                 {/* Fixed Left Side */}
@@ -132,6 +125,14 @@ export default function ProductModal({ isOpen, onClose, product }: ProductModalP
                 {/* Scrollable Right Side */}
                 <div className="w-full md:w-3/5 overflow-y-auto max-h-[calc(90vh-5rem)]">
                   <div className="p-4 space-y-3">
+                    {/* Title Section */}
+                    <div className="bg-slate-50 rounded-xl p-3">
+                      <h2 className="text-xl font-bold text-slate-900 mb-2">
+                        {product.title}
+                      </h2>
+                    </div>
+
+                    {/* Opis Section */}
                     <div className="bg-slate-50 rounded-xl p-3">
                       <h3 className="text-sm font-semibold text-slate-900 mb-1">Opis</h3>
                       <div className="text-sm text-slate-600 leading-relaxed whitespace-pre-line">
