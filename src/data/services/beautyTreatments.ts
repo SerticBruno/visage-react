@@ -167,13 +167,20 @@ export const individualBeautyTreatments: BeautyTreatment[] = [
   {
     id: 'dermaplaning',
     title: 'Dermaplaning',
-    description: `Dermaplaning – neinvazivni mehanički piling u kojem se nježno uklanjaju površinski slojevi kože, uključujući i sitne dlačice.
+    description: `Dermaplaning - neinvazivni mehanički piling u kojem se nježno uklanjaju površinski slojevi kože, uključujući i sitne dlačice. Ovaj tretman uklanja višak površinskih stanica kože i daje blistav ten.
 
-Ovaj tretman uklanja višak površinskih stanica kože i daje blistav ten.
+Dermaplaning sa Circadijom predstavlja najnapredniji protokol svoje vrste. Temeljen na višegodišnjoj Circadia ekspertizi protokola te omogućuje najnaprednije dostupne rezultate na tržištu. 
 
-Dermaplaning sa Circadijom predstavlja najnapredniji protokol svoje vrste. Temeljen na višegodišnjoj Circadia ekspertizi protokola te omogućuje najnaprednije dostupne rezultate na tržištu.
+Circadia dermaplaning je poseban i drugačiji od ostalih tehnika dermaplaninga koje se nude na tržištu – koristimo specijalne vrste nožića (made in USA) i posebne protokole koji daju najbolje moguće rezultate ove tehnike!
 
-Circadia dermaplaning je poseban i drugačiji od ostalih tehnika dermaplaninga koje se nude na tržištu – koristimo specijalne vrste nožića (made in USA) i posebne protokole koji daju najbolje moguće rezultate ove tehnike!`,
+KAKO IZGLEDA TRETMAN:
+
+Čišćenje lica sa Circadia proizvodima za čišćenje lica
+Dermaplaning
+Aplikacija Snow Algae & Spirulina Cooling Mask
+Maska se suši 10 do 20 minuta
+Uklanjanje maske
+Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     duration: '60 min',
     price: '45 €',
     image: '/images/services/beauty-tretmani/dermaplaning-visage-estetski-studio-sisak.webp',
@@ -219,11 +226,17 @@ Circadia dermaplaning je poseban i drugačiji od ostalih tehnika dermaplaninga k
   {
     id: 'marshmallow-facial',
     title: 'Marshmallow Facial',
-    description: `Marshmallow Facial – Circadia kozmetički protokol s Marshmallow Whip Hydrating maskom.
+    description: `Marshmallow Facial – Circadia kozmetički protokol s Marshmallow Whip Hydrating maskom. Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće zdravlje kože. Idealno za sve tipove kože koje traže intenzivnu hidrataciju i umirujući učinak.
 
-Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće zdravlje kože.
+KAKO IZGLEDA TRETMAN:
 
-Idealno za sve tipove kože koje traže intenzivnu hidrataciju i umirujući učinak.`,
+Čišćenje lica sa Circadia proizvodima za čišćenje lica
+Aplikacija Marshmallow Whip Hydrating Mask
+Maska se suši 10 do 20 minuta
+Uklanjanje maske
+Circadia serum ovisno o tipu i stanju kože
+Circadia krema ovisno o tipu i stanju kože
+Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     duration: '75 min',
     price: '55 €',
     image: '/images/services/beauty-tretmani/marshmallow-visage-estetski-studio-sisak.webp',
@@ -271,13 +284,17 @@ Idealno za sve tipove kože koje traže intenzivnu hidrataciju i umirujući uči
   {
     id: 'firming-peptide-facial',
     title: 'Firming Peptide Facial',
-    description: `Firming Peptide Facial – Circadia kozmetički protokol s Firming Peptide maskom koja pruža zatezanje i učvršćivanje kože.
+    description: `Firming Peptide Facial – Circadia kozmetički protokol s Firming Peptide maskom koja pruža zatezanje i učvršćivanje kože. Maska kombinira najnoviju tehnologiju u području peptida, antioksidansa i znanosti o regeneraciji kože. Rezultira mikrocirkulacijom, detoksikacijom te trenutnim zatezanjem i učvršćivanjem kože. Idealno za kožu s vidljivim znakovima starenja.
 
-Maska kombinira najnoviju tehnologiju u području peptida, antioksidansa i znanosti o regeneraciji kože.
+KAKO IZGLEDA TRETMAN:
 
-Rezultira mikrocirkulacijom, detoksikacijom te trenutnim zatezanjem i učvršćivanjem kože.
-
-Idealno za kožu s vidljivim znakovima starenja.`,
+Čišćenje lica sa Circadia proizvodima za čišćenje lica
+Aplikacija Firming Peptide Mask
+Maska se suši 10 do 30 minuta
+Uklanjanje maske
+Circadia serum ovisno o tipu i stanju kože
+Circadia krema ovisno o tipu i stanju kože
+Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     duration: '90 min',
     price: '65 €',
     image: '/images/services/beauty-tretmani/firming-peptide-visage-estetski-studio-sisak.webp',
@@ -325,13 +342,19 @@ Idealno za kožu s vidljivim znakovima starenja.`,
   {
     id: 'signature-dermaplaning-facial',
     title: 'Signature Dermaplaning Facial',
-    description: `Signature Dermaplaning Facial – Circadia kozmetički protokol koji koristi tehniku dermaplaninga i Marshmallow Whip Hydrating masku.
+    description: `Signature Dermaplaning Facial – Circadia kozmetički protokol koji koristi tehniku dermaplaninga i Marshmallow Whip Hydrating masku. Terapeutski piling koji ostavlja vašu kožu sjajnom i glatkom. Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće zdravlje kože. Premium tretman koji kombinira najbolje od dermaplaninga i hidratacije.
 
-Terapeutski piling koji ostavlja vašu kožu sjajnom i glatkom.
+KAKO IZGLEDA TRETMAN:
 
-Maska hidratizira, a ljekoviti i umirujući biljni sastojci poboljšavaju opće zdravlje kože.
-
-Premium tretman koji kombinira najbolje od dermaplaninga i hidratacije.`,
+Čišćenje lica sa Circadia proizvodima za čišćenje lica
+Dermaplaning
+Caviar Lime & Passionfruit Enzym piling
+Aplikacija Marshmallow Whip Hydrating Mask
+Maska se suši 10 do 20 minuta
+Uklanjanje maske
+Circadia serum ovisno o tipu i stanju kože
+Circadia krema ovisno o tipu i stanju kože
+Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     duration: '90 min',
     price: '75 €',
     image: '/images/services/beauty-tretmani/sitgnature-dermaplaning-visage-estetski-studio-sisak.webp',
@@ -383,15 +406,21 @@ Premium tretman koji kombinira najbolje od dermaplaninga i hidratacije.`,
   {
     id: 'beyond-botox-facial',
     title: 'Beyond Botox Facial',
-    description: `CIRCADIA Beyond Botox Facial – Circadia kozmetički protokol koji koristi tehniku dermaplaninga i Firming Peptide masku za zatezanje i učvršćivanje.
+    description: `CIRCADIA Beyond Botox Facial – Circadia kozmetički protokol koji koristi tehniku dermaplaninga i Firming Peptide masku za zatezanje i učvršćivanje. Vaša tajna za čvršću i blistaviju kožu. Maska kombinira najnoviju tehnologiju u području peptida, antioksidansa i znanosti o regeneraciji kože. Rezultira mikrocirkulacijom, detoksikacijom te trenutnim zatezanjem i učvršćivanjem kože. Najnapredniji tretman za dramatične rezultate.
 
-Vaša tajna za čvršću i blistaviju kožu.
+KAKO IZGLEDA TRETMAN:
 
-Maska kombinira najnoviju tehnologiju u području peptida, antioksidansa i znanosti o regeneraciji kože.
+Čišćenje lica sa Circadia proizvodima za čišćenje lica
+Dermaplaning
+Kemijski piling laktičnom kiselinom ili enzimski piling
+Aplikacija Firming Peptide Mask
+Maska se suši 10 do 30 minuta
+Uklanjanje maske
+Circadia serum ovisno o tipu i stanju kože
+Circadia krema ovisno o tipu i stanju kože
+Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
 
-Rezultira mikrocirkulacijom, detoksikacijom te trenutnim zatezanjem i učvršćivanjem kože.
-
-Najnapredniji tretman za dramatične rezultate.`,
+POKLON: Post Peel Home Care`,
     duration: '120 min',
     price: '85 €',
     image: '/images/services/beauty-tretmani/beyond-botox-visage-estetski-studio-sisak.webp',

@@ -4,8 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaChevronRight } from 'react-icons/fa';
-import ProductModal from '@/components/ui/ProductModal';
-import { Product } from '@/data/products';
+import BeautyTreatmentModal from '@/components/ui/BeautyTreatmentModal';
 import { beautyTreatmentProcedures } from '@/data/beautyTreatmentsSection';
 
 interface BeautyTreatment {
@@ -28,33 +27,7 @@ interface BeautyTreatmentsSectionProps {
   treatments: BeautyTreatment[];
 }
 
-// Convert BeautyTreatment to Product format for the modal
-const convertTreatmentToProduct = (treatment: BeautyTreatment): Product => {
-  // Get warnings from beautyTreatmentProcedures
-  const procedure = beautyTreatmentProcedures[treatment.id];
-  const warnings = procedure?.warnings || [];
-  
-  return {
-    id: treatment.id,
-    title: treatment.title,
-    description: treatment.description,
-    category: 'Beauty Tretmani',
-    image: treatment.image,
-    price: treatment.price,
-    isPopular: treatment.isPopular,
-    isNew: treatment.isNew,
-    volume: treatment.duration,
-    activeIngredients: treatment.benefits,
-    application: [
-      `Priprema: ${treatment.preparation}`,
-      `Tijek tretmana: ${treatment.procedure}`,
-      `Nakon tretmana: ${treatment.aftercare}`
-    ],
-    warnings: warnings,
-    features: treatment.suitableFor,
-    tags: ['beauty-tretmani', 'tretman-lica']
-  };
-};
+
 
 export default function BeautyTreatmentsSection({ treatments }: BeautyTreatmentsSectionProps) {
   const [selectedTreatment, setSelectedTreatment] = useState<BeautyTreatment | null>(null);
@@ -157,11 +130,11 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
           ))}
         </div>
 
-        {/* Product Modal */}
-        <ProductModal
+        {/* Beauty Treatment Modal */}
+        <BeautyTreatmentModal
           isOpen={isModalOpen}
           onClose={handleCloseModal}
-          product={selectedTreatment ? convertTreatmentToProduct(selectedTreatment) : null}
+          treatment={selectedTreatment}
         />
       </div>
     </section>
