@@ -11,6 +11,7 @@ export interface ComboPackage {
     quantity?: number;
     image: string;
     shortDescription?: string;
+    linkId?: string;
   }[];
   products?: {
     id: string;
@@ -196,12 +197,14 @@ export const comboPackages: ComboPackage[] = [
       { 
         id: "mezoterapija-dermapen", 
         title: "Mezoterapija dermapenom 4 tretmana", 
-        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
+        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
+        linkId: "mezoterapija"
       },
       { 
         id: "mezoterapija-y-zona", 
         title: "Y zona 5 tretmana", 
-        image: "/images/services/mezoterapija/mezoterapija-prednosti-visage-estetski-studio.png"
+        image: "/images/services/mezoterapija/mezoterapija-prednosti-visage-estetski-studio.png",
+        linkId: "mezoterapija"
       },
       { 
         id: "foto-terapija", 
@@ -361,7 +364,7 @@ export const comboPackages: ComboPackage[] = [
   },
   {
     id: "radiant-skin-combo",
-    title: "RADIANT SKIN",
+    title: "Radiant Skin",
     description: "Reset kože, piling, obnova i zaštita u jednom tretmanu",
     image: "/images/services/woman-face-visage-estetski-studio.webp",
     price: "545 EUR",
@@ -398,7 +401,7 @@ export const comboPackages: ComboPackage[] = [
   },
   {
     id: "eye-lift-combo",
-    title: "EYE LIFT",
+    title: "Eye Lift",
     description: "Osvježenje i podizanje okoloočnih bora",
     image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg",
     price: "420 EUR",
@@ -458,7 +461,8 @@ export const comboPackages: ComboPackage[] = [
       { 
         id: "dermaplaning", 
         title: "Dermaplaning", 
-        image: "/images/services/beauty-tretmani/dermaplaning-visage-estetski-studio-sisak.webp"
+        image: "/images/services/beauty-tretmani/dermaplaning-visage-estetski-studio-sisak.webp",
+        linkId: "beauty-tretmani"
       },
       { 
         id: "foto-terapija", 

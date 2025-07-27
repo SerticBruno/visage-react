@@ -1,7 +1,7 @@
 import { Service } from './types';
 
 export const wrinkleTherapy: Service = {
-  id: 'terapija-bora-lica',
+  id: 'botox',
   title: 'Botox',
   akuzativTitle: 'terapijom bora lica',
   description: 'Glatka i osvježena koža bez bora',

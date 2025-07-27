@@ -15,7 +15,7 @@ Najčešće se koristi za izvođenje <strong>blefaroplazme</strong>, što je nov
 
 Rezultati su vidljivi odmah nakon prvog tretmana, no konačni rezultati su vidljivi kroz <strong>6 do 8 tjedana</strong> kada se koža u potpunosti regenerira. Ponekad je potrebna korekcija kako bi se postigao najbolji rezultat.
 
-Koristi se najčešće u sinergiji s drugim estetskim tretmanima: <a href="/usluge/skin-boosteri">skin boosteri</a>, <a href="/usluge/terapija-bora-lica">terapija bora lica</a> i <a href="/usluge/mezoterapija">mezoterapija</a>.
+Koristi se najčešće u sinergiji s drugim estetskim tretmanima: <a href="/usluge/skin-boosteri">skin boosteri</a>, <a href="/usluge/botox">terapija bora lica</a> i <a href="/usluge/mezoterapija">mezoterapija</a>.
 
 Zakažite svoj termin u <strong>Visage studiju</strong> i krenite na put prema revitaliziranoj i pomlađenoj koži.`,
   benefits: [
@@ -27,7 +27,7 @@ Zakažite svoj termin u <strong>Visage studiju</strong> i krenite na put prema r
   metaKeywords: 'plasmage, lifting kože, plazma, radiofrekvencija, estetski studio Sisak, VISAGE studio, plasmage terapija, obnavljanje kože',
   tags: ['plasmage', 'lifting', 'plazma', 'minimalno-invazivni', 'radiofrekvencija'],
   pricingCategory: 'Plasmage',
-  relatedServices: ['skin-boosteri', 'terapija-bora-lica', 'mezoterapija'],
+  relatedServices: ['skin-boosteri', 'botox', 'mezoterapija'],
   steps: [
     { 
       id: 'prednosti', 

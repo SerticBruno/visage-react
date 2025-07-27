@@ -256,7 +256,7 @@ export default function ComboPackageNavigationModal({
                         {currentComboPackage.services.map((service) => (
                           <Link
                             key={service.id}
-                            href={`/usluge/${service.id}`}
+                            href={`/usluge/${service.linkId || service.id}`}
                             onClick={(e) => e.stopPropagation()}
                             className={`flex items-start p-2 rounded-lg border transition-colors block ${
                               service.id === serviceId 

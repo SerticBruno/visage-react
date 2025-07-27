@@ -15,7 +15,7 @@ Već nakon <strong>jednog tretmana</strong> možete primjetiti <strong>vidno pob
 
 <strong>Regije koje se mogu tretirati</strong> su: nazolabijalne bore, marionetske bore, usne, jagodice, čeljust i brada.
 
-Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/terapija-bora-lica">terapija bora lica</a>, <a href="/usluge/skin-boosteri">skin boosteri</a> i <a href="/usluge/mezoterapija">mezoterapija</a>.
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/botox">terapija bora lica</a>, <a href="/usluge/skin-boosteri">skin boosteri</a> i <a href="/usluge/mezoterapija">mezoterapija</a>.
 
 U <strong>Visage studiju</strong> koristimo <strong>Aliaxin</strong> i <strong>Skin Architect</strong> filere.
 
@@ -28,7 +28,7 @@ Vratite <strong>samopouzdanje</strong> uz <strong>prirodan volumen</strong> i <s
   metaKeywords: 'dermalni fileri, volumizacija lica, konture lica, estetski studio Sisak, VISAGE studio, hijaluronski fileri, volumizacija obraza',
   tags: ['dermalni-fileri', 'volumizacija', 'konture-lica', 'minimalno-invazivni', 'hijaluronski-fileri'],
   pricingCategory: 'Dermalni Fileri',
-  relatedServices: ['terapija-bora-lica', 'skin-boosteri', 'mezoterapija'],
+  relatedServices: ['botox', 'skin-boosteri', 'mezoterapija'],
   steps: [
     { 
       id: 'prednosti', 

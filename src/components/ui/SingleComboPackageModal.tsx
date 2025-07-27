@@ -120,14 +120,14 @@ export default function SingleComboPackageModal({
                                 ) : (
                                   <div className="flex items-center justify-between w-full">
                                     <Link
-                                      href={`/usluge/${service.id}`}
+                                      href={`/usluge/${service.linkId || service.id}`}
                                       className="font-medium underline text-slate-700 hover:text-slate-900 transition-colors"
                                       onClick={(e) => e.stopPropagation()}
                                     >
                                       {service.title}
                                     </Link>
                                     <Link
-                                      href={`/usluge/${service.id}`}
+                                      href={`/usluge/${service.linkId || service.id}`}
                                       className="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-800 px-2 py-1 rounded-md transition-colors font-medium"
                                       onClick={(e) => e.stopPropagation()}
                                     >

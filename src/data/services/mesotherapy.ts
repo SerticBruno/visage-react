@@ -13,7 +13,7 @@ export const mesotherapy: Service = {
 
 <strong>Mezoterapija se najčešće primjenjuje na</strong>: lice, vrat, dekolte, vlasište i vanjsku stranu šaka.
 
-Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/skin-boosteri">skin boosteri</a>, <a href="/usluge/terapija-bora-lica">terapija bora lica</a>, <a href="/usluge/kemijski-piling">kemijski piling</a> i <a href="/usluge/foto-terapija">dermalux led fototerapija</a>.
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/skin-boosteri">skin boosteri</a>, <a href="/usluge/botox">terapija bora lica</a>, <a href="/usluge/kemijski-piling">kemijski piling</a> i <a href="/usluge/foto-terapija">dermalux led fototerapija</a>.
 
 U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimalno prilagođen pojedincu</strong>, njegovim potrebama i željama.`,
   benefits: [
@@ -25,7 +25,7 @@ U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimal
   metaKeywords: 'mezoterapija, hidratacija kože, mikroinjekcije, estetski studio Sisak, VISAGE studio, Mesoject Gun, mezoterapija lica',
   tags: ['mezoterapija', 'hidratacija', 'mikroinjekcije', 'revitalizacija', 'mesoject-gun'],
   pricingCategory: 'Mezoterapija Mesoject Gunom',
-  relatedServices: ['skin-boosteri', 'terapija-bora-lica', 'kemijski-piling', 'foto-terapija'],
+  relatedServices: ['skin-boosteri', 'botox', 'kemijski-piling', 'foto-terapija'],
   steps: [
     { 
       id: 'prednosti', 

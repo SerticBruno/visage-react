@@ -7,6 +7,7 @@ export interface PricingItem {
   duration?: string;
   features?: string[];
   isPopular?: boolean;
+  isLimited?: boolean;
   isPackage?: boolean;
   packageDetails?: string;
 }
@@ -297,6 +298,116 @@ export const pricingData: PricingItem[] = [
     description: "1mL dermalnog filera + 50 jedinica botoksa",
     price: "845 EUR",
     category: "Kombinirani Paketi"
+  },
+
+  // New Combo Packages
+  {
+    id: "neck-refine-combo",
+    title: "Neck Refine",
+    description: "Uključuje botox 50 jedinica, Y zona 5 mezoterapija otapanja i zatezanja podbratka i vrata",
+    price: "635 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "hair-boost-combo",
+    title: "Hair Boost",
+    description: "Uključuje 5 tretmana mezoterapije vlasišta velike zone i 2 PRP tretmana",
+    price: "735 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "fresh-up-combo",
+    title: "Fresh Up",
+    description: "Uključuje botox 50 jedinica, dermalni filer 1ml",
+    price: "445 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "ultimate-glow-up-combo",
+    title: "Ultimate Glow Up",
+    description: "Uključuje botox 50 jedinica, mezoterapija lica i vrata 4 tretmana, dermalni filer 1ml, LED fototerapija 4 tretmana",
+    price: "885 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "skin-revive-combo",
+    title: "Skin Revive",
+    description: "Uključuje skin booster TKN HA3 2 tretmana, 2 PRP tretmana, 2 LED fototerapija",
+    price: "830 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "glow-define-combo",
+    title: "Glow & Define",
+    description: "Uključuje mezoterapija dermapenom 4 4 tretmana, Y zona 5 tretmana, fototerapija 5 tretmana",
+    price: "920 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "mesosynergy-combo",
+    title: "Mesosynergy",
+    description: "Uključuje duosomal kemijski piling, mezoterapija lica, skin booster",
+    price: "485 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "profhilo-perfect-combo",
+    title: "Profhilo Perfect",
+    description: "Uključuje 2 duosomal kemijska pilinga, 2 tretmana mezoterapije lica, 2 Profhilo tretmana",
+    price: "855 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "eye-refresh-combo",
+    title: "Eye Refresh",
+    description: "Uključuje plasmage donjeg ili gornjeg kapka, botox 50 jedinica",
+    price: "780 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "radiant-skin-combo",
+    title: "Radiant Skin",
+    description: "Uključuje 2 PRP tretmana, 2 duosomal kemijska pilinga",
+    price: "545 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "eye-lift-combo",
+    title: "Eye Lift",
+    description: "Uključuje plasmage okoloočnih bora, botox 50 jedinica",
+    price: "420 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
+  },
+  {
+    id: "lumifusion-combo",
+    title: "LumiFusion",
+    description: "Uključuje PRP tretman, dermaplaning i LED fototerapiju",
+    price: "300 EUR",
+    category: "Kombinirani Paketi",
+    isPopular: true,
+    isLimited: true
   },
 
 

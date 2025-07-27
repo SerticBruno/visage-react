@@ -446,7 +446,7 @@ Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
 
 POKLON: Post Peel Home Care`,
     duration: '120 min',
-    price: '85 €',
+    price: '200 EUR',
     image: '/images/services/beauty-tretmani/beyond-botox-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen koži s vidljivim znakovima starenja',

@@ -16,7 +16,7 @@ export const services: Services = {
   'skin-boosteri': skinBoosteri,
   'dermalni-fileri': dermalFillers,
   'plasmage': plasmage,
-  'terapija-bora-lica': wrinkleTherapy,
+  'botox': wrinkleTherapy,
   'beauty-tretmani': beautyTreatments,
   'foto-terapija': photoTherapy
 };
