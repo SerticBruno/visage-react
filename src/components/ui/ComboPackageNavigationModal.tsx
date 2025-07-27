@@ -25,6 +25,7 @@ export default function ComboPackageNavigationModal({
   const [currentComboPackage, setCurrentComboPackage] = useState<ComboPackage | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   // Handle mounting for SSR
   useEffect(() => {
@@ -37,11 +38,12 @@ export default function ComboPackageNavigationModal({
       const index = comboPackages.findIndex(pkg => pkg.id === initialComboPackage.id);
       setCurrentIndex(index >= 0 ? index : 0);
       setCurrentComboPackage(initialComboPackage);
-    } else {
+    } else if (!currentComboPackage) {
+      // Only set to first package if no current package is set
       setCurrentIndex(0);
       setCurrentComboPackage(comboPackages[0]);
     }
-  }, [initialComboPackage, isOpen]);
+  }, [initialComboPackage, currentComboPackage]);
 
   // Handle transition state
   useEffect(() => {
