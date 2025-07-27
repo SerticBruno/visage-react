@@ -35,14 +35,14 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "750 EUR",
     services: [
       { 
-        id: "botox", 
-        title: "Botox - 50 jedinica", 
-        image: "/images/services/botox/botox-visage-estetski-studio.webp"
-      },
-      { 
         id: "mezoterapija", 
         title: "Y zona 5 mezoterapija otapanja i zatezanja podbratka i vrata", 
         image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
+      },
+      { 
+        id: "botox", 
+        title: "Botox - 50 jedinica", 
+        image: "/images/services/botox/botox-visage-estetski-studio.webp"
       }
     ],
     benefits: [
@@ -64,14 +64,14 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "865 EUR",
     services: [
       { 
-        id: "mezoterapija", 
-        title: "5 tretmana mezoterapije vlasišta velike zone", 
-        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
-      },
-      { 
         id: "prp", 
         title: "2 PRP tretmana", 
         image: "/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png"
+      },
+      { 
+        id: "mezoterapija", 
+        title: "5 tretmana mezoterapije vlasišta velike zone", 
+        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.png"
       }
     ],
     benefits: [
@@ -93,14 +93,14 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "525 EUR",
     services: [
       { 
-        id: "botox", 
-        title: "Botox - 50 jedinica", 
-        image: "/images/services/botox/botox-visage-estetski-studio.webp"
-      },
-      { 
         id: "dermalni-fileri", 
         title: "Dermalni Filer 1 ml", 
         image: "/images/services/dermalni-fileri/dermalni-fileri-visage-estetski-studio-sisak.webp"
+      },
+      { 
+        id: "botox", 
+        title: "Botox - 50 jedinica", 
+        image: "/images/services/botox-treatment-visage-estetski-studio.webp"
       }
     ],
     benefits: [
@@ -121,9 +121,9 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "1055 EUR",
     services: [
       { 
-        id: "botox", 
-        title: "Botox - 50 jedinica", 
-        image: "/images/services/botox/botox-visage-estetski-studio.webp"
+        id: "foto-terapija", 
+        title: "LED Fototerapija 4 tretmana", 
+        image: "/images/services/dermalux/dermalux-priprema-visage-estetski-studio.png"
       },
       { 
         id: "mezoterapija", 
@@ -131,14 +131,14 @@ export const comboPackages: ComboPackage[] = [
         image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
       },
       { 
+        id: "botox", 
+        title: "Botox - 50 jedinica", 
+        image: "/images/services/botox/botox-visage-estetski-studio.webp"
+      },
+      { 
         id: "dermalni-fileri", 
         title: "Dermalni Filer 1 ml", 
         image: "/images/services/dermalni-fileri/dermalni-fileri-visage-estetski-studio-sisak.webp"
-      },
-      { 
-        id: "foto-terapija", 
-        title: "LED Fototerapija 4 tretmana", 
-        image: "/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png"
       }
     ],
     benefits: [
@@ -161,9 +161,9 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "980 EUR",
     services: [
       { 
-        id: "skin-boosteri", 
-        title: "Skin Booster TKN HA3 2 tretmana", 
-        image: "/images/services/skin-boosters/skin-booster-nakon-tretmana-visage-estetski-studio-sisak.jpeg"
+        id: "foto-terapija", 
+        title: "2 LED Fototerapija", 
+        image: "/images/services/dermalux/dermalux-visage-estetski-studio.png"
       },
       { 
         id: "prp", 
@@ -171,9 +171,9 @@ export const comboPackages: ComboPackage[] = [
         image: "/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png"
       },
       { 
-        id: "foto-terapija", 
-        title: "2 LED Fototerapija", 
-        image: "/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png"
+        id: "skin-boosteri", 
+        title: "Skin Booster TKN HA3 2 tretmana", 
+        image: "/images/services/skin-boosters/skin-booster-nakon-tretmana-visage-estetski-studio-sisak.jpeg"
       }
     ],
     benefits: [
@@ -201,15 +201,15 @@ export const comboPackages: ComboPackage[] = [
         linkId: "mezoterapija"
       },
       { 
+        id: "foto-terapija", 
+        title: "Fototerapija 5 tretmana", 
+        image: "/images/services/dermalux/dermalux-visage-estetski-studio.png"
+      },
+      { 
         id: "mezoterapija-y-zona", 
         title: "Y zona 5 tretmana", 
         image: "/images/services/mezoterapija/mezoterapija-prednosti-visage-estetski-studio.png",
         linkId: "mezoterapija"
-      },
-      { 
-        id: "foto-terapija", 
-        title: "Fototerapija 5 tretmana", 
-        image: "/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png"
       }
     ],
     products: [
@@ -243,19 +243,19 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "570 EUR",
     services: [
       { 
-        id: "kemijski-piling", 
-        title: "Duosomal kemijski piling", 
-        image: "/images/services/kemijski-piling/kemijski-piling-prednosti-estetski-studio-sisak.jpg"
-      },
-      { 
         id: "mezoterapija", 
         title: "Mezoterapija lica", 
-        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
+        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.png"
       },
       { 
         id: "skin-boosteri", 
         title: "Skin Booster TKN HA3", 
         image: "/images/services/skin-boosters/skin-boosteri-prednosti-visage-estetski-studio.png"
+      },
+      { 
+        id: "kemijski-piling", 
+        title: "Duosomal kemijski piling", 
+        image: "/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg"
       }
     ],
     products: [
@@ -284,14 +284,14 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "1009 EUR",
     services: [
       { 
-        id: "kemijski-piling", 
-        title: "2 duosomal kemijska pilinga", 
-        image: "/images/services/kemijski-piling/kemijski-piling-prednosti-estetski-studio-sisak.jpg"
-      },
-      { 
         id: "mezoterapija", 
         title: "2 tretmana mezoterapije lica", 
         image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
+      },
+      { 
+        id: "kemijski-piling", 
+        title: "2 duosomal kemijska pilinga", 
+        image: "/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg"
       },
       { 
         id: "profhilo", 
@@ -371,14 +371,14 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "642 EUR",
     services: [
       { 
+        id: "kemijski-piling", 
+        title: "2 duosomal kemijska pilinga", 
+        image: "/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg"
+      },
+      { 
         id: "prp", 
         title: "2 PRP tretmana", 
         image: "/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png"
-      },
-      { 
-        id: "kemijski-piling", 
-        title: "2 duosomal kemijska pilinga", 
-        image: "/images/services/kemijski-piling/kemijski-piling-prednosti-estetski-studio-sisak.jpg"
       }
     ],
     products: [
@@ -408,14 +408,14 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "498 EUR",
     services: [
       { 
-        id: "plasmage", 
-        title: "Plasmage okoloočnih bora", 
-        image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg"
-      },
-      { 
         id: "botox", 
         title: "Botox 50 jedinica", 
-        image: "/images/services/botox/botox-visage-estetski-studio.webp"
+        image: "/images/services/botox-treatment-visage-estetski-studio.webp"
+      },
+      { 
+        id: "plasmage", 
+        title: "Plasmage okoloočnih bora", 
+        image: "/images/services/plasmage-hero-visage-estetski-studio.webp"
       }
     ],
     products: [
@@ -454,11 +454,6 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "350 EUR",
     services: [
       { 
-        id: "prp", 
-        title: "PRP tretman", 
-        image: "/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png"
-      },
-      { 
         id: "dermaplaning", 
         title: "Dermaplaning", 
         image: "/images/services/beauty-tretmani/dermaplaning-visage-estetski-studio-sisak.webp",
@@ -467,7 +462,12 @@ export const comboPackages: ComboPackage[] = [
       { 
         id: "foto-terapija", 
         title: "LED Fototerapija", 
-        image: "/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png"
+        image: "/images/services/dermalux/dermalux-priprema-visage-estetski-studio.png"
+      },
+      { 
+        id: "prp", 
+        title: "PRP tretman", 
+        image: "/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png"
       }
     ],
     benefits: [
