@@ -294,7 +294,7 @@ export const comboPackages: ComboPackage[] = [
         image: "/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg"
       },
       { 
-        id: "profhilo", 
+        id: "skin-boosteri", 
         title: "2 Profhilo tretmana", 
         image: "/images/services/skin-boosters/skin-boosteri-oporavak-visage-estetski-studio.png"
       }
