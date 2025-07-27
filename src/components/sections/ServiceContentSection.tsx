@@ -96,46 +96,185 @@ export default function ServiceContentSection({
                   Ova usluga je također dostupna kao dio naših premium combo paketa koji pružaju kompletnu transformaciju i optimalne rezultate:
                 </p>
                 
-                {/* Combo Package Cards - Simplified design */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                {/* Combo Package Cards - Optimal layout based on count */}
+                {comboPackages.length === 5 ? (
+                  // Special layout for 5 cards: 3 in first row, 2 in second row
+                  <div className="space-y-4 mb-6">
+                    {/* First row: 3 cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {comboPackages.slice(0, 3).map((comboPackage) => (
+                        <button
+                          key={comboPackage.id}
+                          onClick={() => setOpenComboModal(comboPackage.id)}
+                          className="group relative bg-white rounded-lg shadow-lg overflow-hidden block transition-all duration-300 hover:scale-105 w-full text-left cursor-pointer"
+                        >
+                          <div className="relative h-24 md:h-32">
+                            {/* Combined Cover Photo */}
+                            <div className="relative w-full h-full flex">
+                              {/* Services - Max 3 */}
+                              {comboPackage.services.slice(0, 3).map((service) => (
+                                <div key={`service-${service.id}`} className="relative flex-1">
+                                  <Image
+                                    src={service.image}
+                                    alt={service.title}
+                                    fill
+                                    loading="lazy"
+                                    className="object-cover transition-all duration-300 group-hover:scale-110"
+                                    sizes="(max-width: 768px) 80vw, 40vw"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300" />
+                            
+                            {/* Content Container */}
+                            <div className="absolute inset-0 p-3 flex flex-col justify-between transition-all duration-300">
+                              {/* Title - Always visible */}
+                              <h3 className="text-sm md:text-base font-bold text-white">
+                                {comboPackage.title}
+                              </h3>
+                              
+                              {/* Hover Content - Hidden by default, appears on hover */}
+                              <div className="transform translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                                <span className="text-xs md:text-sm text-white font-medium underline">
+                                  Saznajte više
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                    
+                    {/* Second row: 2 cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {comboPackages.slice(3, 5).map((comboPackage) => (
+                        <button
+                          key={comboPackage.id}
+                          onClick={() => setOpenComboModal(comboPackage.id)}
+                          className="group relative bg-white rounded-lg shadow-lg overflow-hidden block transition-all duration-300 hover:scale-105 w-full text-left cursor-pointer"
+                        >
+                          <div className="relative h-24 md:h-32">
+                            {/* Combined Cover Photo */}
+                            <div className="relative w-full h-full flex">
+                              {/* Services - Max 3 */}
+                              {comboPackage.services.slice(0, 3).map((service) => (
+                                <div key={`service-${service.id}`} className="relative flex-1">
+                                  <Image
+                                    src={service.image}
+                                    alt={service.title}
+                                    fill
+                                    loading="lazy"
+                                    className="object-cover transition-all duration-300 group-hover:scale-110"
+                                    sizes="(max-width: 768px) 80vw, 40vw"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300" />
+                            
+                            {/* Content Container */}
+                            <div className="absolute inset-0 p-3 flex flex-col justify-between transition-all duration-300">
+                              {/* Title - Always visible */}
+                              <h3 className="text-sm md:text-base font-bold text-white">
+                                {comboPackage.title}
+                              </h3>
+                              
+                              {/* Hover Content - Hidden by default, appears on hover */}
+                              <div className="transform translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                                <span className="text-xs md:text-sm text-white font-medium underline">
+                                  Saznajte više
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  // Standard grid layout for other cases
+                  <div className={`grid gap-4 mb-6 ${
+                    comboPackages.length === 2
+                      ? 'grid-cols-1 md:grid-cols-2' // 2 cards: always 2 columns on medium+ screens
+                      : comboPackages.length === 4 
+                      ? 'grid-cols-1 md:grid-cols-2' 
+                      : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+                  }`}>
+                    {comboPackages.map((comboPackage, index) => {
+                      // Calculate optimal layout based on total count
+                      const totalCount = comboPackages.length;
+                      let gridColumnClass = '';
+                      
+                      if (totalCount > 5) {
+                        // 6+ cards: 3 in first row, remaining cards fill subsequent rows
+                        if (index >= 3) {
+                          gridColumnClass = 'md:col-span-2 lg:col-span-3';
+                        }
+                      }
+                      
+                      return (
+                        <button
+                          key={comboPackage.id}
+                          onClick={() => setOpenComboModal(comboPackage.id)}
+                          className={`group relative bg-white rounded-lg shadow-lg overflow-hidden block transition-all duration-300 hover:scale-105 w-full text-left cursor-pointer ${gridColumnClass}`}
+                        >
+                          <div className="relative h-24 md:h-32">
+                            {/* Combined Cover Photo */}
+                            <div className="relative w-full h-full flex">
+                              {/* Services - Max 3 */}
+                              {comboPackage.services.slice(0, 3).map((service) => (
+                                <div key={`service-${service.id}`} className="relative flex-1">
+                                  <Image
+                                    src={service.image}
+                                    alt={service.title}
+                                    fill
+                                    loading="lazy"
+                                    className="object-cover transition-all duration-300 group-hover:scale-110"
+                                    sizes="(max-width: 768px) 80vw, 40vw"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300" />
+                            
+                            {/* Content Container */}
+                            <div className="absolute inset-0 p-3 flex flex-col justify-between transition-all duration-300">
+                              {/* Title - Always visible */}
+                              <h3 className="text-sm md:text-base font-bold text-white">
+                                {comboPackage.title}
+                              </h3>
+                              
+                              {/* Hover Content - Hidden by default, appears on hover */}
+                              <div className="transform translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                                <span className="text-xs md:text-sm text-white font-medium underline">
+                                  Saznajte više
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Button Layout */}
+                <div className="flex flex-wrap gap-2">
                   {comboPackages.map((comboPackage) => (
                     <button
                       key={comboPackage.id}
                       onClick={() => setOpenComboModal(comboPackage.id)}
-                      className="group relative bg-white rounded-lg shadow-lg overflow-hidden block transition-all duration-300 hover:scale-105 w-full text-left cursor-pointer"
+                      className={`flex items-center px-2.5 py-1.5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer text-left min-w-0 ${
+                        comboPackages.length === 1 ? '' : 'flex-1'
+                      }`}
                     >
-                      <div className="relative h-24 md:h-32">
-                        {/* Combined Cover Photo */}
-                        <div className="relative w-full h-full flex">
-                          {/* Services - Max 3 */}
-                          {comboPackage.services.slice(0, 3).map((service) => (
-                            <div key={`service-${service.id}`} className="relative flex-1">
-                              <Image
-                                src={service.image}
-                                alt={service.title}
-                                fill
-                                loading="lazy"
-                                className="object-cover transition-all duration-300 group-hover:scale-110"
-                                sizes="(max-width: 768px) 80vw, 40vw"
-                              />
-                            </div>
-                          ))}
+                      <div className="min-w-0 flex-1">
+                        <div className="text-xs font-medium text-slate-800 leading-tight">
+                          {comboPackage.title}
                         </div>
-                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300" />
-                        
-                        {/* Content Container */}
-                        <div className="absolute inset-0 p-3 flex flex-col justify-between transition-all duration-300">
-                          {/* Title - Always visible */}
-                          <h3 className="text-sm md:text-base font-bold text-white">
-                            {comboPackage.title}
-                          </h3>
-                          
-                          {/* Hover Content - Hidden by default, appears on hover */}
-                          <div className="transform translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                            <span className="text-xs md:text-sm text-white font-medium underline">
-                              Saznajte više
-                            </span>
-                          </div>
+                        <div className="text-xs text-slate-600 underline hover:text-slate-800 transition-colors font-medium">
+                          Detalji
                         </div>
                       </div>
                     </button>
