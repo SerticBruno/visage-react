@@ -454,7 +454,7 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "350 EUR",
     services: [
       { 
-        id: "dermaplaning", 
+        id: "beauty-tretmani", 
         title: "Dermaplaning", 
         image: "/images/services/beauty-tretmani/dermaplaning-visage-estetski-studio-sisak.webp",
         linkId: "beauty-tretmani"
