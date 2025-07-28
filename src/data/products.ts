@@ -151,7 +151,9 @@ Ovaj gel za čišćenje može se koristiti i na tijelu.`,
   {
     id: '3',
     title: 'Bamboo Hydratonic',
-    description: `Tonik bez ulja koji obnavlja kožu i temeljito čisti uklanjajući sve tragove prljavštine i šminke. Pogodan je za sve tipove kože.
+    description: `Tonik bez ulja koji obnavlja kožu i temeljito čisti uklanjajući sve tragove prljavštine i šminke.
+
+Pogodan je za sve tipove kože.
 
 Ovaj tonik sa svježim mirisom revitalizira i hidratizira kožu za potpuno pročišćen i osvježen osjećaj.
 
@@ -166,37 +168,44 @@ Kombinira visoku koncentraciju biljnih ekstrakata kao što su bambus, limun i na
     volume: '200 ml',
     activeIngredients: ['Aloe Vera Ekstrakt', 'Bambusova voda', 'Ekstrakt javora', 'ekstrakti naranče i limuna'],
     application: [
-      'Uklonite šminku i očistite kožu energizirajućim sredstvom za čišćenje kako biste uklonili nečistoću s lica',
-      'Nanesite laganom maglicom proizvoda na lice, uvijek održavajući razumnu udaljenost, ili pomoću pamučne podloge',
-      'Koža će na kraju biti potpuno čista, svježa, glađa i spremna za sljedeće tretmane (profesionalna upotreba)',
-      'Kod kuće, kada završite s primjenom Bamboo Hydratonic-a, nanesite mesoserum i kremu koji odgovaraju vašem tipu kože'
+      'Pošpricajte 2 do 3 puta po čistom licu'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristiti s Toskani Energizing gelom za čišćenje lica, Toskani Nutritive pilingom, odgovarajućom Toskani kremom, Toskani serumom i Toskani Sun Shiel-D fluidom."
+      }
     ],
     tags: ['tonik', 'svi tipovi kože']
   },
   {
     id: '4',
     title: 'Nutritive Scrub',
-    description: `Idealan za suhu i normalnu kožu, TOSKANI Nutritive Scrub sadrži ulje Rosa Mochata, sjemenke i vitamin E koji učinkovito zaglađuju kožu i smanjuju nesavršenosti za zdraviji i mlađi izgled.
+    description: `Nutritive piling je idealan za suhu i normalnu kožu.
 
-Ovaj piling ostavlja kožu osvježenom, vidljivo čišću i mekšom uz zdrav sjaj u koji ćete se zaljubiti.`,
+Sadrži ulje Rosa Mochata, sjemenke i vitamin E koji učinkovito zaglađuju kožu i smanjuju nesavršenosti za zdraviji i mlađi izgled.
+
+Nutritive piling ostavlja kožu osvježenom, vidljivo čišću i mekšom uz zdrav sjaj u koji ćete se zaljubiti.`,
     category: 'Piling',
     marka: 'TOSKANI',
     productType: 'Piling',
-    skinType: ['Masna koža', 'Mješovita koža', 'Osjetljiva koža', 'Suha koža', 'Normalna koža'],
+    skinType: ['Suha koža', 'Normalna koža'],
     skinConcern: ['Anti-aging njega', 'Hiperpigmentacije'],
     image: '/images/products/nutritive-scrub-visage-estetski-studio.webp',
     price: '45 EUR',
     volume: '200 ml',
     activeIngredients: ['Blueberry Extract', 'Lemon Extract', 'Maple Extract', 'Musk rose oil', 'Orange Extract', 'Vitamin E'],
     application: [
-      'Uklonite šminku i temeljito očistite lice Energizing gel sredstvom za čišćenje',
-      'Navlažite lice Bamboo Hydratonic-om ili (toplom) vodom. Nikada ne koristite vruću vodu. Može isušiti i oštetiti kožu',
-      'Ulijte hranjivi piling na vrhove prstiju i nježno trljajte ruke kako biste stvorili pjenušavu pjenu',
-      'Nutritivnim pilingom nježno masirajte lice, vrat i dekolte, ravnomjernim kružnim pokretima i usredotočite se na problematična područja kao što su t-zona, brada i kutovi usta',
-      'Pričekajte 10-15 minuta',
-      'Zatim isperite mlakom vodom i slijedite to prskanjem hladne vode kako biste stegnuli i zatvorili pore',
-      'Kad završite, nježno tapkajte lice ručnikom. Ne trljajte ili grubo sušite lice. Uvijek budite nježni',
-      'Nanesite mesoserum i kremu TOSKANI koji su prikladniji za vašu kožu'
+      'Navlažite lice Toskani Bamboo tonikom ili toplom vodom. Nikada ne koristite vruću vodu. Može isušiti i oštetiti kožu',
+      'Ulijte piling na vrhove prstiju i nježno trljajte ruke kako biste stvorili pjenušavu pjenu',
+      'Pilingom nježno masirajte lice, vrat i dekolte, ravnomjernim kružnim pokretima i usredotočite se na problematična područja kao što su t-zona, brada i kutovi usta',
+      'Pričekajte 10-15 minuta i isperite lice mlakom vodom.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom, Toskani serumom i Toskani Sun Shiel-D fluidom."
+      }
     ],
     tags: ['piling', 'suha koža', 'normalna koža']
   },
@@ -205,30 +214,29 @@ Ovaj piling ostavlja kožu osvježenom, vidljivo čišću i mekšom uz zdrav sja
     title: 'Purifying Scrub',
     description: `Piling na bazi vode koji čisti kožu i preporučuje se za mješovitu i masnu kožu.
 
-Formuliran s marokanskom glinom, ovaj piling uklanja višak ulja i stanica sa površinskih slojeva kože pročišćavajući pore.
+Formuliran s marokanskom glinom, ovaj piling uklanja višak ulja i stanica s površinskih slojeva kože pročišćavajući pore. Koža izgleda sjajnije, dok su sjaj i suhoća svedeni na minimum.
 
-Koža izgleda sjajnije, dok su sjaj i suhoća svedeni na minimum.
-
-Formuliran je s ekstraktom hamamelisa s adstringentnim svojstvima, koji ostavlja osvježenu i ujednačenu kožu.`,
+Ekstrakt hamamelisa s adstringentnim svojstvima ostavlja osvježenu i ujednačenu kožu.`,
     category: 'Piling',
     marka: 'TOSKANI',
     productType: 'Piling',
-    skinType: ['Masna koža'],
+    skinType: ['Masna koža', 'Mješovita koža'],
     skinConcern: ['Akne i problematična koža'],
     image: '/images/products/purifying-scrub-visage-estetski-studio.webp',
     price: '45 EUR',
     volume: '200 ml',
     activeIngredients: ['Hamamelis Virginiana Extract', 'Marokanska glina od lave', 'Vitamin E'],
     application: [
-      'Uklonite šminku i očistite lice Energizing gel sredstvom za čišćenje',
-      'Navlažite lice Bamboo hidratonskom ili (toplom) vodom.',
-      'Nanesite pročišćavajući piling uz pomoć prstiju.',
-      'Nježno masirajte piling po licu, vratu i dekolteu',
-      'Koristite ravnomjerne kružne pokrete i usredotočite se na problematična područja poput t-zone, brade i kutova usta',
-      'Neka piling djeluje na kožu oko 4 minute.',
-      'Zatim uklonite proizvod vodom sobne temperature.',
-      'Kad završite, nježno tapkajte lice ručnikom.',
-      'Nanesite mesoserum i kremu TOSKANI koji su prikladni za vašu kožu'
+      'Navlažite lice Toskani Bamboo tonikom ili toplom vodom. Nikada ne koristite vruću vodu. Može isušiti i oštetiti kožu',
+      'Ulijte piling na vrhove prstiju i nježno trljajte ruke kako biste stvorili pjenušavu pjenu',
+      'Pilingom nježno masirajte lice, vrat i dekolte, ravnomjernim kružnim pokretima i usredotočite se na problematična područja kao što su t-zona, brada i kutovi usta',
+      'Pričekajte 4 minute i isperite lice mlakom vodom.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Purifying gelom za čišćenje lica, Toskani Purifying kremom, Toskani Purifying Intensive serumom i Toskani Sun Shiel-D fluidom."
+      }
     ],
     tags: ['piling', 'masna koža', 'mješovita koža']
   },
@@ -284,15 +292,15 @@ Poboljšava izgled oštećene kože.`,
   {
     id: '8',
     title: 'Radiance Daily Cream SPF30+',
-    description: `Krema je za svakodnevnu upotrebu koja je namijenjena ispravljanju znakova fotostarenja. Pogodna je za sve tipove kože.
+    description: `Krema je za svakodnevnu upotrebu koja je namijenjena ispravljanju znakova fotostarenja.
 
-Sprječava dehidraciju, gubitak sjaja, mlitavost i pojavu bora i mrlja.
+Pogodna je za sve tipove kože.
 
-Osim toga, Radiance dnevna krema ima visoki zaštitni faktor za zaštitu od oštećenja uzrokovanih izlaganjem suncu.
+Sprječava dehidraciju, gubitak sjaja, mlitavost i pojavu bora i mrlja. Osim toga, Radiance dnevna krema ima visoki zaštitni faktor za zaštitu od oštećenja uzrokovanih izlaganjem suncu.
 
 Sadrži liposomske aktivne sastojke za promicanje maksimalne učinkovitosti proizvoda.
 
-Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjeloj koži, koži nejednake pigmentacije te kao dodatak profesionalnim tretmanima za ujednačavanje tona kože (Spot Out Kit Plus, kemijski piling)`,
+Preporučuje se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjeloj koži, koži nejednake pigmentacije.`,
     category: 'Zaštita od sunca',
     marka: 'TOSKANI',
     productType: 'Krema',
@@ -302,18 +310,13 @@ Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjel
     price: '60 EUR',
     volume: '50 ml',
     application: [
-      'Nanesite jednom dnevno, ujutro.',
-      'Uklonite šminku i očistite kožu Energizing Cleanser gelom za čišćenje, a tonizirajte Bamboo hidratonikom',
-      'Nanesite male količine Radiance Mesoserum-a na cijelo lice',
-      'Nanesite proizvod laganim tapkanjem prstiju 2-3 kapi po površini lica, vrata i dekoltea pola minute. Možete koristiti sve prste obje ruke sa svake strane lica. Ne produžujte je silom ili agresivno trljajući kožu',
-      'Tek kad je Radiance Mesoserum potpuno suh, možete nanijeti Radiance Eye Contour i Radiance kremu na isti način.',
-      'Ostavite da se krema upije prije nanošenja bilo koje vrste šminke'
+      'Nanesite dva puta dnevno, ujutro i navečer.'
     ],
-    benefits: [
-      'zaštita od sunca SPF30+',
-      'ispravlja znakove fotostarenja',
-      'prikladna za svakodnevnu upotrebu',
-      'pogodna za sve tipove kože'
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Radiance Ultimate serumom, Radiance Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima za ujednačavanje tona kože, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['spf', 'hiperpigmentacije', 'fotostarenje', 'dnevna njega', 'svi tipovi kože']
   },
@@ -365,9 +368,9 @@ Preporuča se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjel
     title: 'Radiance Ultimate Mesoserum',
     description: `Serum prikladan za sve tipove kože i učinkovit saveznik u borbi protiv hiperpigmentacija i pjega.
 
-Posebno razvijen za ujednačavanje tona kože i smanjenje nesavršenosti: sprječava razvoj novih diskoloracija kože, hidrira, spriječava i uklanja tamne mrlje uzrokovane suncem, vraća sjaj i zdravi izgled koži, poboljšava izgled ožiljaka.
+Posebno razvijen za ujednačavanje tona kože i smanjenje nesavršenosti: sprječava razvoj novih diskoloracija kože, hidrira, sprječava i uklanja tamne mrlje uzrokovane suncem, vraća sjaj i zdravi izgled koži, poboljšava izgled ožiljaka.
 
-Vaš novi saveznik u borbi protiv hiperpigmetacija sa učinkovitim djelovanjem već u 1. mjesecu upotrebe!`,
+Vaš novi saveznik u borbi protiv hiperpigmentacija s učinkovitim djelovanjem već u 1. mjesecu upotrebe!`,
     category: 'Serum',
     marka: 'TOSKANI',
     productType: 'Serum',
@@ -378,17 +381,13 @@ Vaš novi saveznik u borbi protiv hiperpigmetacija sa učinkovitim djelovanjem v
     volume: '30 ml',
     activeIngredients: ['Alfa Arbutin', 'Aspergillus Ferment', 'Azelaična kiselina', 'Azeloglicina', 'Ferulinska kiselina', 'Kojična kiselina', 'Mliječna kiselina', 'Niacinamid', 'Retinol', 'traneksamična kiselina', 'Vitamin C'],
     application: [
-      'Uklonite šminku i očistite kožu Energizing Cleanser gelom za čišćenje, a tonizirajte Bamboo hidratonikom',
-      'Nanesite malu količinu Radiance Mesoserum-a na cijelo lice',
-      'Nanesite proizvod laganim tapkanjem prstiju 2-3 kapi po površini lica, vrata i dekoltea pola minute. Možete koristiti sve prste obje ruke sa svake strane lica. Ne produžujte je silom ili agresivno trljajući kožu',
-      'Tek kad je Radiance Mesoserum potpuno suh, možete nanijeti Radiance Eye Contour i Radiance kremu na isti način.',
-      'Ostavite da se krema upije prije nanošenja bilo koje vrste šminke'
+      'Nanesite malu količinu seruma dva puta dnevno, ujutro i navečer'
     ],
-    benefits: [
-      'sadrži najstabilniji oblik vitamina C',
-      'posvjetljuje i učvršćuje kožu',
-      'zaštita kože od slobodnih radikala',
-      'potiče sintezu kolagena i elastina'
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Daily Radiance kremom SPF30+, Toskani Radiance Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima za ujednačavanje tona kože, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['serum', 'hiperpigmentacije', 'fotostarenje', 'svi tipovi kože']
   },
@@ -453,7 +452,7 @@ Ova fluidna emulzija ublažava nelagodu kože i preporučljivo je koristiti krem
 
 Pomaže pri minimiziranju vidljivih znakova starenja.
 
-Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućih znakova starenja: opuštenu kožu.`,
+Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih znakova starenja: opuštenu kožu.`,
     category: 'Serum',
     marka: 'TOSKANI',
     productType: 'Serum',
@@ -464,11 +463,13 @@ Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućih znak
     volume: '30 ml',
     activeIngredients: ['Acetyl Hexapeptide-8', 'DMAE', 'Elastin', 'Hijaluronska kiselina', 'L-Carnitine', 'Prirodni Kolagen', 'Tokoferol', 'Vitamin E'],
     application: [
-      'Preporučuje se nanošenje Skin Architect Mesoseruma prije Skin Architect kreme',
-      'Uklonite šminku i očistite kožu pomoću Energizing Cleansera te tonificirajte s Bamboo Hydratonicom.',
-      'Nanesite malu količinu Skin Architect Mesoseruma na cijelo lice te brzo razmažite',
-      'Nanesite proizvod nježno tapkajući prstima po površini vase kože pola minute. Možete koristiti sve prste na objema rukama sa svake strane vašeg lica. Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.',
-      'Tek kada se Skin Architect Mesoserum u potpunosti osuši možete staviti Antiaging Eye Contour i Skin Architect kremu na isti način. Pustite kremu da se u potpunosti upije prije nego nanesete bilo kakvu vrstu šminke.'
+      'Nanesite malu količinu seruma na cijelo lice dva puta na dan, ujutro i navečer'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Skin Architect kremom, Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima s anti-age učincima, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['serum', 'anti-age', 'njega nakon dermalnih filera', 'njega nakon skin boostera', 'svi tipovi kože']
   },
@@ -477,13 +478,9 @@ Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućih znak
     title: 'Skin Architect Cream',
     description: `Visoko koncentrirana krema protiv bora koja koristi prirodne sastojke za poboljšanje izgleda finih linija i dubokih bora.
 
-Sadrži medicinsku hijaluronsku kiselinu i acetil heksapeptid-8 kao liposomski biomimetički peptid.
+Sadrži medicinsku hijaluronsku kiselinu i acetil heksapeptid-8 kao liposomski biomimetički peptid. Oni, s ostalim sastojcima, pomažu odgoditi učinke starenja na koži i pružaju snažno hidratantno i hranjivo djelovanje.
 
-Oni, zajedno s ostalim sastojcima, pomažu odgoditi učinke starenja na koži i pružaju snažno hidratantno i hranjivo djelovanje.
-
-Koži pruža čvrstoću i elastičnost uz primjetan lifting učinak.
-
-Hijaluronska kiselina niske molekularne težine (<100Kda), za dublju i dugotrajniju hidrataciju.`,
+Koži pruža čvrstoću i elastičnost uz primjetan lifting učinak. Hijaluronska kiselina niske molekularne težine (<100Kda), za dublju i dugotrajniju hidrataciju.`,
     category: 'Krema',
     marka: 'TOSKANI',
     productType: 'Krema',
@@ -494,17 +491,13 @@ Hijaluronska kiselina niske molekularne težine (<100Kda), za dublju i dugotrajn
     volume: '50 ml',
     activeIngredients: ['Acetyl Hexapeptide-8', 'DMAE', 'Elastin', 'Hijaluronska kiselina', 'L-Carnitine', 'Organic Silicon', 'Prirodni Kolagen', 'Retinol', 'Shea Maslac', 'Tokoferol', 'Vitamin E'],
     application: [
-      'Preporučuje se nanošenje Skin Architect Mesoseruma prije Skin Architect kreme',
-      'Uklonite šminku i očistite kožu pomoću Energizing Cleansera te tonificirajte s Bamboo Hydratonicom.',
-      'Nanesite malu količinu Skin Architect Mesoseruma na cijelo lice te brzo razmažite',
-      'Nanesite proizvod nježno tapkajući prstima po površini vase kože pola minute.  Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.',
-      'Tek kada se Skin Architect Mesoserum u potpunosti osuši možete staviti Antiaging Eye Contour i Skin Architect kremu na isti način. Pustite kremu da se u potpunosti upije prije nego nanesete bilo kakvu vrstu šminke.'
+      'Nanesite malu količinu kreme na cijelo lice dva puta dnevno, ujutro i navečer'
     ],
-    benefits: [
-      'poboljšanje izgleda finih linija i bora',
-      'odgađa učinke starenja kože',
-      'pruža snažno hidratantno i hranjivo djelovanje',
-      'pruža lifting učinak i vraća elastičnost koži'
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Skin Architect serumom, Toskani Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima s anti-age učincima, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['krema', 'anti-age', 'njega nakon dermalnih filera', 'njega nakon skin boostera', 'svi tipovi kože']
   },
@@ -726,6 +719,12 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
       'Masirajte vlasište i ostavite da se prirodno osuši. Može se primijeniti izravno kao intenzivni dnevni tretman ili kao preventivni tretman svaki drugi dan.',
       'Izbjegavajte kontakt s očima, ustima i drugim sluznicama'
     ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s DensiHair Boost kapsulama i mezoterapijom vlasišta."
+      }
+    ],
     tags: ['sprej', 'njega vlasišta', 'zaustavljanje gubitka kose', 'jačanje kose', 'alopecija']
   },
   {
@@ -747,7 +746,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolje rezultate, koristite ovaj proizvod redovito i u kombinaciji s mezoterapijom vlasišta."
+        description: "Za najbolji učinak, koristite s Anti Hair-Loss losionom i mezoterapijom vlasišta."
       }
     ],
     tags: ['kapsule', 'njega vlasišta', 'dodatak prehrani', 'zaustavljanje gubitka kose', 'jačanje kose']
@@ -979,7 +978,13 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
   {
     id: '31',
     title: 'SUN SHIEL-D Fluid SPF50+',
-    description: `Fluid za lice ultra lagane teksture koji je pogodan i za osjetljivu kožu.\n\nNije komedogen, što ga čini dobrim izborom i za masnu kožu.\n\nVrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.\n\nPruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
+    description: `Fluid za lice ultra lagane teksture koji je pogodan i za osjetljivu kožu.
+
+Nije komedogen, što ga čini dobrim izborom i za masnu kožu.
+
+Vrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.
+
+Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
     category: 'Zaštita od sunca',
     marka: 'TOSKANI',
     productType: 'Fluid',
@@ -989,17 +994,29 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     price: '36 EUR',
     volume: '50ml',
     isNew: true,
-    activeIngredients: ['SPF50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks'],
+    activeIngredients: ['Lithops Cell Nectar', 'Glikokaliks'],
     application: [
       'Nanesite fluid 30 minuta prije izlaganja suncu',
-      'Nanesite 1 do 2 puta kroz dan (ujutro i popodne)'
+      'Nanesite 1 do 2 puta tijekom dana (ujutro i popodne)'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom i Toskani serumom."
+      }
     ],
     tags: ['spf', 'zaštita od sunca', 'lice', 'fluidna tekstura', 'nekomedogen']
   },
   {
     id: '32',
     title: 'Sun Shiel-d Tonirani Fluid SPF50+',
-    description: `Tonirani fluid za lice ultra lagane teksture koji je pogodan i za osjetljivu kožu te pomaže ujednačiti ton kože.\n\nNije komedogen, što ga čini dobrim izborom i za masnu kožu.\n\nVrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.\n\nPruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
+    description: `Tonirani fluid za lice ultra lagane teksture koji je pogodan i za osjetljivu kožu te pomaže ujednačiti ton kože.
+
+Nije komedogen, što ga čini dobrim izborom i za masnu kožu.
+
+Vrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.
+
+Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
     category: 'Zaštita od sunca',
     marka: 'TOSKANI',
     productType: 'Fluid',
@@ -1009,17 +1026,29 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     price: '39 EUR',
     volume: '50ml',
     isNew: true,
-    activeIngredients: ['SPF50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks', 'Toner'],
+    activeIngredients: ['Lithops Cell Nectar', 'Glikokaliks'],
     application: [
       'Nanesite fluid 30 minuta prije izlaganja suncu',
-      'Nanesite 1 do 2 puta kroz dan (ujutro i popodne)'
+      'Nanesite 1 do 2 puta tijekom dana (ujutro i popodne)'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom i Toskani serumom."
+      }
     ],
     tags: ['spf', 'zaštita od sunca', 'lice', 'fluidna tekstura', 'toner', 'nekomedogen']
   },
   {
     id: '33',
     title: 'Sun Shiel-D Body & Facial Sprej SPF50+',
-    description: `Sprej za lice i tijelo ultra lagane teksture koji je pogodan i za osjetljivu kožu.\n\nVrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.\n\nPruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.\n\nVodootporan je.`,
+    description: `Sprej za lice i tijelo ultra lagane teksture koji je pogodan i za osjetljivu kožu.
+
+Vrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.
+
+Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.
+
+Vodootporan je.`,
     category: 'Zaštita od sunca',
     marka: 'TOSKANI',
     productType: 'Sprej',
@@ -1029,11 +1058,17 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     price: '42 EUR',
     volume: '200ml',
     isNew: true,
-    activeIngredients: ['SPF50+', 'UVA/UVB/IR/HEV zaštita', 'Lithops Cell Nectar', 'Glikokaliks'],
+    activeIngredients: ['Lithops Cell Nectar', 'Glikokaliks'],
     application: [
       'Protresite prije upotrebe',
       'Nanesite sprej 30 minuta prije izlaganja suncu',
-      'Nanesite 1 do 2 puta kroz dan (ujutro i popodne)'
+      'Nanesite 1 do 2 puta tijekom dana (ujutro i popodne)'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom i Toskani serumom."
+      }
     ],
     tags: ['spf', 'zaštita od sunca', 'tijelo i lice', 'sprej', 'vodootporan']
   },
