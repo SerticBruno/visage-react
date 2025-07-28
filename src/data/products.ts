@@ -329,9 +329,11 @@ Preporučuje se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarj
   {
     id: '9',
     title: 'Antiaging Eye Contour',
-    description: `Posebno formuliran hidratantni serum za smanjenje umora, tretiranje bora, osvježavanje područja oko očiju, hidrataciju i umirivanje nježne kože oko očiju. 
-    
-    Njegovi aktivni sastojci koji djeluju u sinergiji kako bi se oduprli pojavi bora, umanjili bore i već formirane linije. Također pomaže u sprječavanju gubitka čvrstoće, pomaže koži da se vrati u njezino prirodno zdravlje i pruža ukupni učinak pomlađivanja.`,
+    description: `Posebno formuliran hidratantni serum za smanjenje umora, tretiranje bora, osvježavanje područja oko očiju, hidrataciju i umirivanje nježne kože oko očiju.
+
+Njegovi aktivni sastojci koji djeluju u sinergiji kako bi se oduprli pojavi bora, umanjili bore i već formirane linije.
+
+Također pomaže u sprječavanju gubitka čvrstoće, pomaže koži da se vrati u njezino prirodno zdravlje i pruža ukupni učinak pomlađivanja.`,
     category: 'Okoloočna njega',
     marka: 'TOSKANI',
     productType: 'Okoloočna njega',
@@ -342,17 +344,23 @@ Preporučuje se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarj
     volume: '15 ml',
     activeIngredients: ['Acetyl Hexapeptide-8', 'DMAE', 'Ekstrakti Ginkgo Bilobe', 'Hijaluronska kiselina', 'Maslinovo ulje', 'Organski silicij'],
     application: [
-      'Nanesite ujutro i navečer na čistu kožu',
-      'Nanesite laganim tapkanjem prstiju po području oko očiju',
-      'Izbjegavajte direktan kontakt s očima',
-      'Slijedite s odgovarajućom kremom'
+      'Nanesite dva puta dnevno, ujutro i navečer na čistu kožu',
+      'Lagano umasirajte u okoloočno područje'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućim Toskani proizvodima iz Anti-Age njege."
+      }
     ],
     tags: ['okoloočna njega', 'anti-age', 'ublažavanje finih linija']
   },
   {
     id: '10',
     title: 'Radiance Eye Contour',
-    description: 'Učinkovita krema za područje oko očiju koja ublažuje hiperpigmentacije i probleme s mikrocirkulacijom, koji uzrokuju podočnjake. Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkulaciji područja oko očiju i kapaka.',
+    description: `Učinkovita krema za područje oko očiju koja ublažuje hiperpigmentacije i probleme s mikrocirkulacijom, koji uzrokuju podočnjake.
+
+Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkulaciji područja oko očiju i kapaka.`,
     category: 'Okoloočna njega',
     marka: 'TOSKANI',
     productType: 'Okoloočna njega',
@@ -363,11 +371,14 @@ Preporučuje se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarj
     volume: '15 ml',
     activeIngredients: ['Ekstrakt Aesculus Hippocastanum', 'Ekstrakti Ginkgo Bilobe', 'Hesperidin Metil halkon', 'Peptidi'],
     application: [
-      'Uklonite šminku i očistite kožu energizirajućim sredstvom za čišćenje, a tonizirajte Bamboo hydra tonikom',
-      'Nanesite male količine Radiance Mesoserum-a na cijelo lice i brzo se širite',
-      'Nanesite proizvod laganim tapkanjem prstiju po površini lica pola minute. Možete koristiti sve prste obje ruke sa svake strane lica. Ne produžujte je silom ili agresivno trljajući kožu',
-      'Tek kad je Radiance Mesoserum potpuno suh, možete nanijeti Radiance Eye Contour',
-      'Radiance Daily kremu na isti način. Ostavite da se krema upije prije nanošenja bilo koje vrste šminke'
+      'Nanesite dva puta dnevno, ujutro i navečer na čistu kožu',
+      'Lagano umasirajte u okoloočno područje'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Radiance Daily Cream SPF30+, Toskani Radiance Ultimate serumom i Toskani Sun Shiel-D fluidom."
+      }
     ],
     tags: ['okoloočna njega', 'hiperpigmentacije', 'posvjetljivanje podočnjaka']
   },
