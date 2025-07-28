@@ -264,48 +264,6 @@ export const pricingData: PricingItem[] = [
   },
 
   // Kombinirani Paketi
-  {
-    id: "kombinirani-standard",
-    title: "Standard",
-    description: "1 kemijski piling Dusomal, mezoterapija lica, TKN HA3 i skin architect maska",
-    price: "380 EUR",
-    category: "Kombinirani Paketi"
-  },
-  {
-    id: "kombinirani-premium",
-    title: "Premium",
-    description: "2 kemijski piling Dusomal, mezoterapija lica, TKN HA3 i skin architect maska",
-    price: "640 EUR",
-    category: "Kombinirani Paketi"
-  },
-  {
-    id: "kombinirani-botox-yzone",
-    title: "Botox + Y Zona",
-    description: "Kombinirani tretman 50 jedinica botoksa vrata i zatezanja i topljenja podbratka i vrata",
-    price: "560 EUR",
-    category: "Kombinirani Paketi"
-  },
-  {
-    id: "kombinirani-botox-filler",
-    title: "Botox + Dermalni Filer",
-    description: "Kombinirani tretman 50 jedinica botoksa i 1mL dermalnog filera",
-    price: "445 EUR",
-    category: "Kombinirani Paketi"
-  },
-  {
-    id: "kombinirani-meso-yzone",
-    title: "Mezoterapija Lica + Y Zona",
-    description: "Kombinirani tretman 4 mezoterapije lica mesoject gunom i tretman otapanja i zatezanja vrata i podbratka",
-    price: "670 EUR",
-    category: "Kombinirani Paketi"
-  },
-  {
-    id: "kombinirani-meso-filler-botox",
-    title: "Mezoterapija Lica i Vrata + Dermalni Filer + Botox",
-    description: "1mL dermalnog filera + 50 jedinica botoksa",
-    price: "845 EUR",
-    category: "Kombinirani Paketi"
-  },
 
   // New Combo Packages
   {
