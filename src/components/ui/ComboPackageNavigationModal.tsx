@@ -77,7 +77,7 @@ export default function ComboPackageNavigationModal({
       setCurrentIndex(0);
       setCurrentComboPackage(comboPackages[0]);
     }
-  }, [initialComboPackage, isClosing, comboPackages]);
+  }, [initialComboPackage, isClosing, currentComboPackage]);
 
   // Handle transition state
   useEffect(() => {
@@ -104,7 +104,7 @@ export default function ComboPackageNavigationModal({
       setCurrentIndex(newIndex);
       setCurrentComboPackage(comboPackages[newIndex]);
     }, 150); // Half of the transition duration
-  }, [currentIndex, isTransitioning, comboPackages]);
+  }, [currentIndex, isTransitioning]);
 
   const handleNext = useCallback(() => {
     if (isTransitioning) return;
@@ -121,7 +121,7 @@ export default function ComboPackageNavigationModal({
       setCurrentIndex(newIndex);
       setCurrentComboPackage(comboPackages[newIndex]);
     }, 150); // Half of the transition duration
-  }, [currentIndex, isTransitioning, comboPackages]);
+  }, [currentIndex, isTransitioning]);
 
   const handleClose = useCallback(() => {
     setIsClosing(true);

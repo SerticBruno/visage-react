@@ -34,6 +34,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
         description="Javite nam se za sve informacije i rezervacije"
         image="/images/services/contact-hero-visage-estetski-studio.webp"
       />
+      <ContactSection serviceLabel={serviceLabel} />
     </main>
   );
 } 

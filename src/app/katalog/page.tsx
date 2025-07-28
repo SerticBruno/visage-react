@@ -4,13 +4,13 @@ import { useState, useRef, useEffect, Fragment, Suspense } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
-import CTASection from '@/components/sections/CTASection';
 import { products, productTypes, skinTypes, skinConcerns, brands, type Product } from '@/data/products';
 import { FaSearch, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaTag, FaFire, FaLeaf } from 'react-icons/fa6';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import ProductModal from '@/components/ui/ProductModal';
+import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 
 function KatalogContent() {
   const searchParams = useSearchParams();
@@ -787,7 +787,7 @@ function KatalogContent() {
           onProductChange={handleProductChange}
         />
       </div>
-      <CTASection gradientDirection='t' />
+      <NewsletterCTASection></NewsletterCTASection>
       <ContactSection hasTopPadding={false} />
     </>
   );
