@@ -25,6 +25,9 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
   metaDescription: 'Profesionalna terapija bora lica u VISAGE studiju u Siska. Smanjite i spriječite bore uz pomoć naprednih anti-aging metoda. Prirodni i dugotrajni rezultati.',
   metaKeywords: 'terapija bora, bore lica, prevencija bora, anti-aging, estetski studio Sisak, VISAGE studio, smanjenje bora',
   tags: ['terapija-bora', 'prevencija-bora', 'anti-aging', 'nježni-tretmani', 'lifting-lica'],
+  isPopular: true,
+  isBestseller: true,
+  isRecommended: true,
   pricingCategory: 'Botox',
   relatedServices: ['mezoterapija', 'skin-boosteri', 'dermalni-fileri'],
   steps: [

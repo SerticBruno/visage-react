@@ -9,6 +9,8 @@ export interface PricingItem {
   isPopular?: boolean;
   isLimited?: boolean;
   isPackage?: boolean;
+  isBestseller?: boolean; // New field for bestseller tag
+  isRecommended?: boolean; // New field for recommended tag
   packageDetails?: string;
 }
 
@@ -76,14 +78,15 @@ export const pricingData: PricingItem[] = [
     description: "Čišćenje lica, dermaplaning, enzimski piling, Marshmallow Whip Hydrating maska, serum, krema, spf",
     price: "100 EUR",
     category: "Beauty Tretmani",
-    isPopular: true
+    isRecommended: true
   },
   {
     id: "beyond-botox-facial",
     title: "Beyond Botox Facial",
     description: "Čišćenje lica, dermaplaning, kemijski piling, Firming peptide maska, okoloočna njega, serum, krema, spf",
     price: "200 EUR",
-    category: "Beauty Tretmani"
+    category: "Beauty Tretmani",
+    isRecommended: true
   },
 
 
@@ -171,7 +174,9 @@ export const pricingData: PricingItem[] = [
     title: "Botox 50",
     description: "50 jedinica botoxa",
     price: "210 EUR",
-    category: "Botox"
+    category: "Botox",
+    isPopular: true,
+    isBestseller: true,
   },
   {
     id: "botox-100",
@@ -187,7 +192,9 @@ export const pricingData: PricingItem[] = [
     title: "Aliaxin",
     description: "1 ml",
     price: "315 EUR",
-    category: "Dermalni Fileri"
+    category: "Dermalni Fileri",
+    isPopular: true,
+    isRecommended: true
   },
   {
     id: "skin-architect-filler",

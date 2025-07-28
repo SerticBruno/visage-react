@@ -14,6 +14,10 @@ export interface Product {
   isNew?: boolean;
   isOnSale?: boolean;
   isLimited?: boolean;
+  isBestseller?: boolean; // New field for bestseller tag
+  isForDay?: boolean; // New field for day use tag
+  isForNight?: boolean; // New field for night use tag
+  isRecommended?: boolean; // New field for recommended tag
   features?: string[];
   volume?: string;
   activeIngredients?: string[];
@@ -106,6 +110,7 @@ Gel za čišćenje lica čuva neke slojeve masnoće na koži što sprječava isu
     image: '/images/products/energizing-cleanser-visage-estetski-studio.webp',
     price: '40 EUR',
     volume: '200 ml',
+    isPopular: true,
     activeIngredients: ['Cimet', 'Curcuma', 'Đumbir'],
     application: [
       'Nanesite dva puta dnevno, svako jutro i noć, izravno na mokru kožu'
@@ -309,6 +314,7 @@ Preporučuje se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarj
     image: '/images/products/radiance-daily-cream-visage-estetski-studio.webp',
     price: '60 EUR',
     volume: '50 ml',
+    isPopular: true,
     application: [
       'Nanesite dva puta dnevno, ujutro i navečer.'
     ],
@@ -381,6 +387,8 @@ Vaš novi saveznik u borbi protiv hiperpigmentacija s učinkovitim djelovanjem v
     image: '/images/products/radiance-ultimate-mesoserum-estetski-studio-visage-sisak.jpg',
     price: '77 EUR',
     volume: '30 ml',
+    isPopular: true,
+    isRecommended: true,
     activeIngredients: ['Alfa Arbutin', 'Aspergillus Ferment', 'Azelaična kiselina', 'Azeloglicina', 'Ferulinska kiselina', 'Kojična kiselina', 'Mliječna kiselina', 'Niacinamid', 'Retinol', 'traneksamična kiselina', 'Vitamin C'],
     application: [
       'Nanesite malu količinu seruma dva puta dnevno, ujutro i navečer'
@@ -493,6 +501,8 @@ Koži pruža čvrstoću i elastičnost uz primjetan lifting učinak. Hijaluronsk
     image: '/images/products/skin-architect-cream-visage-estetski-studio.webp',
     price: '68 EUR',
     volume: '50 ml',
+    isPopular: true,
+    isRecommended: true,
     activeIngredients: ['Acetyl Hexapeptide-8', 'DMAE', 'Elastin', 'Hijaluronska kiselina', 'L-Carnitine', 'Organic Silicon', 'Prirodni Kolagen', 'Retinol', 'Shea Maslac', 'Tokoferol', 'Vitamin E'],
     application: [
       'Nanesite malu količinu kreme na cijelo lice dva puta dnevno, ujutro i navečer'
@@ -521,6 +531,8 @@ Jača barijeru kože, pogodan je za sve tipove kože, no najviše se preporučuj
     image: '/images/products/night-reverse-serum-visage-estetski-studio.png',
     price: '85 EUR',
     volume: '30 ml',
+    isPopular: true,
+    isRecommended: true,
     activeIngredients: ['Probiotici', 'algae extract', 'Byfida ferment Lysate', 'tetrapeptide-26', 'TRC (Total Restoring Complex)'],
     application: [
       'Uklonite šminku i očistite kožu pomoću Energizing Cleansera te tonificirajte s Bamboo Hydratonicom.',
@@ -778,6 +790,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     price: '75 EUR',
     volume: '50 ml',
     isNew: true,
+    isRecommended: true,
     activeIngredients: [
       'Hijaluronska kiselina',
       'Skin Reset Complex'
@@ -1004,6 +1017,7 @@ Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od o
     price: '36 EUR',
     volume: '50ml',
     isNew: true,
+    isRecommended: true,
     activeIngredients: ['Lithops Cell Nectar', 'Glikokaliks'],
     application: [
       'Nanesite fluid 30 minuta prije izlaganja suncu',

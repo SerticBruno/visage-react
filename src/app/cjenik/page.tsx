@@ -2,7 +2,8 @@
 
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { pricingData, pricingCategories, PricingItem } from '@/data/pricing';
-import { FaSearch, FaStar, FaBox, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaSearch, FaBox, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaFire, FaGem, FaCrown } from 'react-icons/fa6';
 import React from 'react';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
@@ -32,7 +33,9 @@ export default function PricingPage() {
       const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(item.category);
       const matchesBadges = selectedBadges.length === 0 || 
         (selectedBadges.includes('popular') && item.isPopular) ||
-        (selectedBadges.includes('package') && item.isPackage);
+        (selectedBadges.includes('package') && item.isPackage) ||
+        (selectedBadges.includes('bestseller') && item.isBestseller) ||
+        (selectedBadges.includes('recommended') && item.isRecommended);
       return matchesSearch && matchesCategory && matchesBadges;
     });
   }, [searchTerm, selectedCategories, selectedBadges]);
@@ -252,7 +255,7 @@ export default function PricingPage() {
                   <div 
                     className={`transition-all duration-300 ease-in-out overflow-hidden ${
                       expandedSections.badges 
-                        ? 'max-h-60 opacity-100' 
+                        ? 'max-h-80 opacity-100' 
                         : 'max-h-0 opacity-0'
                     }`}
                   >
@@ -262,23 +265,47 @@ export default function PricingPage() {
                           type="checkbox"
                           checked={selectedBadges.includes('popular')}
                           onChange={() => toggleBadge('popular')}
-                          className="h-4 w-4 text-slate-800 focus:ring-slate-800 border-gray-300 rounded"
+                          className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
                         />
                         <span className="text-sm text-gray-700 flex items-center gap-1">
-                          <FaStar className="w-3 h-3 text-slate-800" />
+                          <FaFire className="w-3 h-3 text-gray-600" />
                           Popularno
+                        </span>
+                      </label>
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={selectedBadges.includes('bestseller')}
+                          onChange={() => toggleBadge('bestseller')}
+                          className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
+                        />
+                        <span className="text-sm text-gray-700 flex items-center gap-1">
+                          <FaGem className="w-3 h-3 text-gray-600" />
+                          Bestseller
+                        </span>
+                      </label>
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={selectedBadges.includes('package')}
+                          onChange={() => toggleBadge('package')}
+                          className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
+                        />
+                        <span className="text-sm text-gray-700 flex items-center gap-1">
+                          <FaBox className="w-3 h-3 text-gray-600" />
+                          Paket
                         </span>
                       </label>
                       <label className="flex items-center space-x-2 cursor-pointer pb-2">
                         <input
                           type="checkbox"
-                          checked={selectedBadges.includes('package')}
-                          onChange={() => toggleBadge('package')}
-                          className="h-4 w-4 text-slate-800 focus:ring-slate-800 border-gray-300 rounded"
+                          checked={selectedBadges.includes('recommended')}
+                          onChange={() => toggleBadge('recommended')}
+                          className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
                         />
                         <span className="text-sm text-gray-700 flex items-center gap-1">
-                          <FaBox className="w-3 h-3 text-slate-800" />
-                          Paket
+                          <FaCrown className="w-3 h-3 text-gray-600" />
+                          Naša preporuka
                         </span>
                       </label>
                       <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
@@ -312,16 +339,28 @@ export default function PricingPage() {
                               <div className="flex-1">
                                 <div className="flex flex-wrap items-center gap-2 mb-2">
                                   <h4 className="text-base font-medium text-gray-900">{item.title}</h4>
+                                  {item.isPopular && (
+                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-800 text-white">
+                                      <FaFire className="mr-1" />
+                                      Popularno
+                                    </span>
+                                  )}
+                                  {item.isBestseller && (
+                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-800 text-white">
+                                      <FaGem className="mr-1" />
+                                      Bestseller
+                                    </span>
+                                  )}
                                   {item.isPackage && (
-                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-800">
+                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-800 text-white">
                                       <FaBox className="mr-1" />
                                       Paket
                                     </span>
                                   )}
-                                  {item.isPopular && (
-                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-800">
-                                      <FaStar className="mr-1" />
-                                      Popularno
+                                  {item.isRecommended && (
+                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-800 text-white">
+                                      <FaCrown className="mr-1" />
+                                      Preporuka
                                     </span>
                                   )}
                                 </div>

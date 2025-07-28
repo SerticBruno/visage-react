@@ -29,6 +29,10 @@ export interface Service {
   };
   treatmentSteps?: TreatmentStep[];
   tags: string[];
+  isPopular?: boolean; // New field for popular tag
+  isBestseller?: boolean; // New field for bestseller tag
+  isPackage?: boolean; // New field for package tag
+  isRecommended?: boolean; // New field for recommended tag
   pricingCategory?: string;
   relatedServices?: string[];
   focalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | `${number}% ${number}%`;
