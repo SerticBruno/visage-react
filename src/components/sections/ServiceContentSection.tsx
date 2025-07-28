@@ -23,7 +23,6 @@ export default function ServiceContentSection({
   description,
   imageSrc,
   imageAlt,
-  benefits = [],
   serviceName,
   focalPoint = 'center',
   hasComboPackages = false,

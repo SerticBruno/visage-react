@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useState, useCallback } from 'react';
 import { Transition } from '@headlessui/react';
 import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt, FaStar } from 'react-icons/fa';
 import Image from 'next/image';
-import { Product, products } from '@/data/products';
+import { Product } from '@/data/products';
 
 interface ProductModalProps {
   isOpen: boolean;
@@ -62,6 +62,15 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
     }
   }, [product, isClosing, currentProduct]);
 
+  const handleClose = useCallback(() => {
+    setIsClosing(true);
+    onClose();
+    // Reset closing state after transition
+    setTimeout(() => {
+      setIsClosing(false);
+    }, 300);
+  }, [onClose]);
+
   // Handle transition state
   useEffect(() => {
     if (isTransitioning) {
@@ -87,16 +96,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
     return () => {
       document.removeEventListener('keydown', handleEscapeKey);
     };
-  }, [isOpen]);
-
-  const handleClose = useCallback(() => {
-    setIsClosing(true);
-    onClose();
-    // Reset closing state after transition
-    setTimeout(() => {
-      setIsClosing(false);
-    }, 300);
-  }, [onClose]);
+  }, [isOpen, handleClose]);
 
   // Handle product link clicks with transition
   const handleProductLinkClick = useCallback((productId: string) => {

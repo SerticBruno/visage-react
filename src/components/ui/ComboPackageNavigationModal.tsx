@@ -66,7 +66,7 @@ export default function ComboPackageNavigationModal({
       comboPackagesLength: comboPackages.length 
     });
     
-    if (initialComboPackage && !isClosing && !currentComboPackage) {
+    if (initialComboPackage && !isClosing) {
       const index = comboPackages.findIndex(pkg => pkg.id === initialComboPackage.id);
       console.log('Found initial package at index:', index);
       setCurrentIndex(index >= 0 ? index : 0);
@@ -77,7 +77,7 @@ export default function ComboPackageNavigationModal({
       setCurrentIndex(0);
       setCurrentComboPackage(comboPackages[0]);
     }
-  }, [initialComboPackage, isClosing, currentComboPackage]);
+  }, [initialComboPackage, isClosing]);
 
   // Handle transition state
   useEffect(() => {
@@ -463,7 +463,7 @@ export default function ComboPackageNavigationModal({
                 </div>
                 
                 {/* Scrollable Right Side - Desktop Only */}
-                <div className="hidden lg:block w-3/5 overflow-y-auto max-h-[calc(90vh-5rem)] flex-1 min-h-0">
+                <div className="hidden lg:block w-3/5 overflow-y-auto max-h-[600px] flex-1 min-h-0">
                   <div className={`p-4 space-y-3 transition-all duration-500 ${
                     isTransitioning 
                       ? 'opacity-25 blur-sm' 
