@@ -59,7 +59,6 @@ export const renderTreatmentContent = (treatment: BeautyTreatment) => {
         <div className="bg-gray-50 rounded-lg p-4">
           <div className="text-center">
             <div className="text-2xl font-bold text-gray-900 mb-1">{treatment.price}</div>
-            <div className="text-gray-600 text-sm mb-2">Trajanje: {treatment.duration}</div>
             <p className="text-gray-600 text-sm">
               Za detaljne informacije i rezervacije, slobodno nas kontaktirajte
             </p>

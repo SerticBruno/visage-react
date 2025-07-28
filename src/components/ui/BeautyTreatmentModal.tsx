@@ -113,9 +113,6 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
                             <span className="text-2xl font-bold text-slate-900">
                               {treatment.price}
                             </span>
-                            <div className="flex items-center gap-2 text-sm text-slate-600">
-                              <span>{treatment.duration}</span>
-                            </div>
                           </div>
                         </div>
                         <button
@@ -199,9 +196,6 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
                             <span className="text-2xl font-bold text-slate-900">
                               {treatment.price}
                             </span>
-                            <div className="flex items-center gap-2 text-sm text-slate-600">
-                              <span>{treatment.duration}</span>
-                            </div>
                           </div>
                         </div>
                         <button

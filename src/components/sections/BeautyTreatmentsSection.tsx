@@ -11,7 +11,6 @@ interface BeautyTreatment {
   id: string;
   title: string;
   description: string;
-  duration: string;
   price: string;
   image: string;
   benefits: string[];

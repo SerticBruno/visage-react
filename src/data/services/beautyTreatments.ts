@@ -4,7 +4,6 @@ export interface BeautyTreatment {
   id: string;
   title: string;
   description: string;
-  duration: string;
   price: string;
   image: string;
   benefits: string[];
@@ -185,7 +184,6 @@ Aplikacija Snow Algae & Spirulina Cooling Mask
 Maska se suši 10 do 20 minuta
 Uklanjanje maske
 Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
-    duration: '60 min',
     price: '70 EUR',
     image: '/images/services/beauty-tretmani/dermaplaning-visage-estetski-studio-sisak.webp',
     benefits: [
@@ -241,7 +239,6 @@ Uklanjanje maske
 Circadia serum ovisno o tipu i stanju kože
 Circadia krema ovisno o tipu i stanju kože
 Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
-    duration: '75 min',
     price: '60 EUR',
     image: '/images/services/beauty-tretmani/marshmallow-visage-estetski-studio-sisak.webp',
     benefits: [
@@ -308,7 +305,6 @@ Circadia krema ovisno o tipu i stanju kože
 Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
 
 UPOZORENJE: Prilikom sušenja maska pruža osjećaj zatezanja!`,
-    duration: '90 min',
     price: '60 EUR',
     image: '/images/services/beauty-tretmani/firming-peptide-visage-estetski-studio-sisak.webp',
     benefits: [
@@ -375,7 +371,6 @@ Uklanjanje maske
 Circadia serum ovisno o tipu i stanju kože
 Circadia krema ovisno o tipu i stanju kože
 Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
-    duration: '90 min',
     price: '100 EUR',
     image: '/images/services/beauty-tretmani/sitgnature-dermaplaning-visage-estetski-studio-sisak.webp',
     benefits: [
@@ -448,7 +443,6 @@ Circadia krema ovisno o tipu i stanju kože
 Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
 
 POKLON: Post Peel Home Care`,
-    duration: '120 min',
     price: '200 EUR',
     image: '/images/services/beauty-tretmani/beyond-botox-visage-estetski-studio-sisak.webp',
     benefits: [
