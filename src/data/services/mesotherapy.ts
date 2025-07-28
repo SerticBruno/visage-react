@@ -57,7 +57,8 @@ U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimal
       id: 'tijek-tretmana', 
       label: 'Tijek tretmana', 
       icon: 'FaRegClock',
-      image: '/images/services/mezoterapija/mezoterapija-tijek-tretmana-visage-estetski-studio.jpeg'
+      image: '/images/services/mezoterapija/mezoterapija-tijek-tretmana-visage-estetski-studio.jpeg',
+      focalPoint: '50% 0%'
     },
     { 
       id: 'oporavak', 
