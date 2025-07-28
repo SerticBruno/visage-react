@@ -1099,7 +1099,7 @@ export const pricingData: PricingItem[] = [
   },
   {
     id: "anti-ageing-eye-contour",
-    title: "Anti Ageing Eye Contour",
+    title: "Antiaging Eye Contour",
     description: "15 ml",
     price: "45 EUR",
     category: "TOSKANI Proizvodi"

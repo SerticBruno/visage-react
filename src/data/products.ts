@@ -322,8 +322,10 @@ Preporučuje se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarj
   },
   {
     id: '9',
-    title: 'Anti Ageing Eye Contour',
-    description: 'Posebno formuliran hidratantni serum za smanjenje umora, tretiranje bora, osvježavanje područja oko očiju, hidrataciju i umirivanje nježne kože oko očiju. Njegovi aktivni sastojci koji djeluju u sinergiji kako bi se oduprli pojavi bora, umanjili bore i već formirane linije. Također pomaže u sprječavanju gubitka čvrstoće, pomaže koži da se vrati u njezino prirodno zdravlje i pruža ukupni učinak pomlađivanja.',
+    title: 'Antiaging Eye Contour',
+    description: `Posebno formuliran hidratantni serum za smanjenje umora, tretiranje bora, osvježavanje područja oko očiju, hidrataciju i umirivanje nježne kože oko očiju. 
+    
+    Njegovi aktivni sastojci koji djeluju u sinergiji kako bi se oduprli pojavi bora, umanjili bore i već formirane linije. Također pomaže u sprječavanju gubitka čvrstoće, pomaže koži da se vrati u njezino prirodno zdravlje i pruža ukupni učinak pomlađivanja.`,
     category: 'Okoloočna njega',
     marka: 'TOSKANI',
     productType: 'Okoloočna njega',
@@ -394,11 +396,11 @@ Vaš novi saveznik u borbi protiv hiperpigmentacija s učinkovitim djelovanjem v
   {
     id: '12',
     title: 'Purifying Intensive Serum',
-    description: `Gel za isušivanje koji je antibakterijski i vrlo učinkovit protiv mrlja i nesavršenosti.
+    description: `Serum za isušivanje koji je antibakterijski i vrlo učinkovit protiv mrlja i nesavršenosti.
 
 Ovaj tretman treba povremeno koristiti kako bi se ubrzao nestanak lokaliziranih mrlja, štiteći ih od trenja i bakterija.
 
-Intenzivni serum indiciran je za lokalizirano liječenje mrlja.`,
+Intenzivni serum indiciran je za lokalizirano liječenje mrlja i upala.`,
     category: 'Serum',
     marka: 'TOSKANI',
     productType: 'Serum',
@@ -409,24 +411,24 @@ Intenzivni serum indiciran je za lokalizirano liječenje mrlja.`,
     volume: '15 ml',
     activeIngredients: ['Purifying actives', 'Purifying Complex', 'Salicylic Acid'],
     application: [
-      'Uklonite šminku i očistite kožu Purifying sredstvom za čišćenje, a tonizirajte Bamboo hidratonikom',
-      'Nanesite sitne točkice Purifying kreme na cijelo lice, a zatim lagano i brzo pomiješajte cijelo lice',
-      'Koristite kratke lagane, ali čvrste poteze za nanošenje proizvoda. Ne istežite, ne povlačite i ne trljajte kožu',
-      'Dok je krema još mokra, pola minute polako tapkajte površinom lica. Možete vrlo lagano koristiti sve prste na obje ruke s obje strane lica',
       'Kada se pojave akne, prištići i miteseri, s vremena na vrijeme tijekom dana lokalno nanesite Purifying Intensive serum preko zone s aktivnim lezijama.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Purifying gelom za čišćenje lica, Toskani Purifying pilingom, Toskani Purifying kremom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji pomažu u rješavanju problematične kože, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['serum', 'akne', 'prištići', 'lokalizirano liječenje']
   },
   {
     id: '13',
     title: 'Purifying Cream',
-    description: `Tekuća emulzija prikladna za masnu i kožu sklonu aknama.
+    description: `Krema prikladna za masnu i kožu sklonu aknama.
 
 Njeni aktivni sastojci djeluju zajedno kako bi smanjili upalu, smanjili bakterije i regulirali proizvodnju sebuma.
 
-Purifying krema također pomaže koži u borbi protiv slobodnih radikala i pruža vrlo nježan piling uz održavanje razine potrebne hidratacije u koži.
-
-Ova fluidna emulzija ublažava nelagodu kože i preporučljivo je koristiti kremu dva puta dnevno, ujutro i navečer.`,
+Purifying krema također pomaže koži u borbi protiv slobodnih radikala i pruža vrlo nježan piling uz održavanje razine potrebne hidratacije u koži.`,
     category: 'Krema',
     marka: 'TOSKANI',
     productType: 'Krema',
@@ -437,11 +439,13 @@ Ova fluidna emulzija ublažava nelagodu kože i preporučljivo je koristiti krem
     volume: '50 ml',
     activeIngredients: ['Ekstrakt lista Hamamelis virginiana', 'Lactic Acid', 'Purifying actives', 'Purifying Complex', 'Rhodosorus Marinus Extract', 'Salicylic Acid', 'Zinc'],
     application: [
-      'Uklonite šminku i očistite kožu Purifying gel sredstvom za čišćenje, a tonizirajte Bamboo hidratonikom',
-      'Nanesite sitne točkice pročišćujuće kreme na cijelo lice, a zatim lagano i brzo pomiješajte cijelo lice',
-      'Koristite kratke lagane, ali čvrste poteze za nanošenje proizvoda. Ne istežite, ne povlačite i ne trljajte kožu',
-      'Dok je krema još mokra, pola minute polako tapkajte površinom lica. Možete vrlo lagano koristiti sve prste na obje ruke s obje strane lica',
-      'Kada se pojave lokalizirani provali, s vremena na vrijeme tijekom dana lokalno nanesite Purifying Intensive serum preko zone s aktivnim lezijama'
+      'Nanesite kremu dva puta dnevno, ujutro i navečer'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Purifying Intensive serumom, koji nanosite na lokalizirane upale, Toskani Purifying pilingom, Toskani Purifying gelom za čišćenje lica i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji pomažu u rješavanju problematične kože, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['krema', 'akne', 'prištići', 'masna koža']
   },
@@ -533,11 +537,7 @@ Jača barijeru kože, pogodan je za sve tipove kože, no najviše se preporučuj
 
 Sadrži Alpsku termalnu vodu i ekstrakt morskog podrijetla koji pomaže zagladiti bore pružajući koži čvrstoću, hidrataciju i elastičnost.
 
-Pomaže u sprječavanju prvih znakova starenja.
-
-Jača kožnu barijeru.
-
-Pogodan je za biološku dob 20+ godina i sve tipove kože.`,
+Pomaže u sprječavanju prvih znakova starenja. Jača kožnu barijeru. Pogodan je za biološku dob 20+ godina i sve tipove kože.`,
     category: 'Serum',
     marka: 'TOSKANI',
     productType: 'Serum',
@@ -548,11 +548,13 @@ Pogodan je za biološku dob 20+ godina i sve tipove kože.`,
     volume: '30 ml',
     activeIngredients: ['Nicotinamide (B3)', 'Derived from vitamin C', 'Glacier termal water', 'Pseudoalteromona ferment extract'],
     application: [
-      'Nanesite ujutro i navečer na čistu kožu.',
-      'Preporučuje se nanošenje Glacier Pro Age seruma prije Glacier Pro Age kreme.',
-      'Uklonite šminku i očistite kožu pomoću Energizing Cleansera te tonificirajte s Bamboo Hydratonicom.',
-      'Nanesite malu količinu seruma na cijelo lice te brzo razmažite i umasirajte.',
-      'Nanesite proizvod nježno tapkajući prstima po površini vase kože pola minute. Možete koristiti sve prste na objema rukama sa svake strane vašeg lica. Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.'
+      'Nanesite malu količinu seruma na cijelo lice dva puta dnevno, ujutro i navečer'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Glacier Pro Age kremom, Radiance Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['serum', 'anti-age', '20+ godina', 'svi tipovi kože']
   },
@@ -574,11 +576,13 @@ Pogodno za biološku dob 20+ godina i sve tipove kože.`,
     volume: '50 ml',
     activeIngredients: ['Encapsuled ceramide', 'Glacier termal water', 'Kaempherol', 'Liposomal hyaluronic acid'],
     application: [
-      'Nanesite jednom ujutro i navečer na čistu kožu.',
-      'Preporučuje se nanošenje Glacier Pro Age seruma prije Glacier Pro Age kreme.',
-      'Uklonite šminku i očistite kožu pomoću Energizing Cleansera te tonificirajte s Bamboo Hydratonicom.',
-      'Nanesite malu količinu kreme na cijelo lice te brzo razmažite i umasirajte.',
-      'Nanesite proizvod nježno tapkajući prstima po površini vase kože pola minute. Možete koristiti sve prste na objema rukama sa svake strane vašeg lica. Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.'
+      'Nanesite malu količinu kreme na cijelo lice dva puta dnevno, ujutro i navečer'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Glacier Pro Age serumom, Radiance Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['krema', 'anti-age', '20+ godina', 'svi tipovi kože']
   },
@@ -600,20 +604,16 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     volume: '30 ml',
     activeIngredients: ['Bakuchiol (99% Pure Bakuchiol)', 'Kappaphycus alvarezii extract and Caesalpinia spinosa fruit extract', 'Plant extract of tara and red algae', 'Retinal (retinaldehyde) Lipocapsules', 'Retinol like: Nicotiana Benthamiana Hexapeptide-40 sh-Polypeptide-76'],
     application: [
-      'Nanesite ujutro i navečer na čistu kožu.',
-      'Preporučuje se nanošenje Retin Pro Age seruma prije Retin Pro Age kreme.',
-      'Uklonite šminku i očistite kožu pomoću Energizing Cleansera te tonificirajte s Bamboo Hydratonicom.',
-      'Nanesite malu količinu seruma na cijelo lice te brzo razmažite i umasirajte.',
-      'Nanesite proizvod nježno tapkajući prstima po površini vase kože pola minute. Možete koristiti sve prste na objema rukama sa svake strane vašeg lica. Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.'
+      'Nanesite malu količinu seruma na cijelo lice dva puta dnevno, ujutro i navečer'
     ],
     warnings: [
-      'SIGURNOST: Ne sadrži retinol! Ovaj proizvod sadrži derivate retinola koji nisu fotoosjetljivi i potpuno su sigurni za korištenje. Pogodan je i za osjetljivu kožu te ne zahtijeva posebne mjere opreza.'
+      'Ne sadrži retinol! Ovaj proizvod sadrži derivate retinola koji nisu fotoosjetljivi i potpuno su sigurni za korištenje. Pogodan je i za osjetljivu kožu te ne zahtijeva posebne mjere opreza.'
     ],
-    benefits: [
-      'sadrži bakuchiol i retinal',
-      'prikladan za osjetljivu kožu',
-      'anti-age djelovanje',
-      'preporučuje se za 30+/40+ godina'
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Retin Pro Age kremom, Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['serum', 'anti-age', '30+/40 godina', 'svi tipovi kože', 'osjetljiva koža']
   },
@@ -635,21 +635,25 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     volume: '50 ml',
     activeIngredients: ['Kappaphycus alvarezii extract and Caesalpinia spinosa fruit extract', 'Plant based Collagen-Like: Acacia', 'Plant extract of tara and red algae', 'Retinol like: Nicotiana Benthamiana Hexapeptide-40 sh-Polypeptide-76', 'Sodium Retinoyl Hyaluronate (HA+ retinoic acid)'],
     application: [
-      'Nanesite ujutro i navečer na čistu kožu.',
-      'Preporučuje se nanošenje Retin Pro Age seruma prije Retin Pro Age kreme.',
-      'Uklonite šminku i očistite kožu pomoću Energizing Cleansera te tonificirajte s Bamboo Hydratonicom.',
-      'Nanesite malu količinu kreme na cijelo lice te brzo razmažite i umasirajte.',
-      'Nanesite proizvod nježno tapkajući prstima po površini vase kože pola minute. Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.'
+      'Nanesite malu količinu kreme na cijelo lice dva puta dnevno, ujutro i navečer'
     ],
     warnings: [
-      'SIGURNOST: Ne sadrži retinol! Ovaj proizvod sadrži derivate retinola koji nisu fotoosjetljivi i potpuno su sigurni za korištenje. Pogodan je i za osjetljivu kožu te ne zahtijeva posebne mjere opreza.'
+      'Ne sadrži retinol! Ovaj proizvod sadrži derivate retinola koji nisu fotoosjetljivi i potpuno su sigurni za korištenje. Pogodan je i za osjetljivu kožu te ne zahtijeva posebne mjere opreza.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Retin Pro Age serumom, Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['krema', 'anti-age', '30+/40 godina', 'svi tipovi kože', 'osjetljiva koža']
   },
   {
     id: '21',
     title: 'Unique Pro Age Serum',
-    description: `Hranjivi i luksuzni dnevni serum za svakodnevnu primjenu sa širokim izborom anti-age aktivnih sastojaka usmjerenih na svaki od problema koji najviše zabrinjavaju: zategnutost, marionetske bore, Y zona (oval lica i vrat).
+    description: `Hranjivi i luksuzni dnevni serum za svakodnevnu primjenu.
+
+S posebno biranim kompleksima anti-age aktivnih sastojaka koji ciljano djeluju na razne tipove znakova starenja: zategnutost, marionetske bore, Y zona (oval lica i vrat).
 
 Pogodno za biološku dob 45+ godina i za sve tipove kože.`,
     category: 'Serum',
@@ -662,18 +666,22 @@ Pogodno za biološku dob 45+ godina i za sve tipove kože.`,
     volume: '30 ml',
     activeIngredients: ['Bacuri butter', 'Cell oil', 'Manosa-6-fosfato', 'Olea Vita PLF', 'Plant based Collagen Fragment'],
     application: [
-      'Nanesite ujutro i navečer na čistu kožu.',
-      'Preporučuje se nanošenje Unique Pro Age seruma prije Unique Pro Age kreme.',
-      'Uklonite šminku i očistite kožu pomoću Energizing Cleansera te tonificirajte s Bamboo Hydratonicom.',
-      'Nanesite malu količinu seruma na cijelo lice.',
-      'Nanesite proizvod nježno tapkajući prstima po površini vaše kože pola minute.  Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.'
+      'Nanesite malu količinu seruma na cijelo lice dva puta dnevno, ujutro i navečer'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Unique Pro Age kremom, Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['serum', 'anti-age', '45+ godina', 'svi tipovi kože']
   },
   {
     id: '22',
     title: 'Unique Pro Age Cream',
-    description: `Hranjivi i luksuzni dnevni tretman za svakodnevnu primjenu sa širokim izborom anti-age aktivnih sastojaka usmjerenih na svaki od problema koji najviše zabrinjavaju: zategnutost, marionetske bore, Y zona (oval lica i vrat).
+    description: `Globalni anti-aging za zrelu i suhu kožu.
+
+S posebno biranim kompleksima anti-age aktivnih sastojaka koji ciljano djeluju na razne tipove znakova starenja: zategnutost, marionetske bore, Y zona (oval lica i vrat).
 
 Pogodno za biološku dob 45+ godina i sve tipove kože.`,
     category: 'Krema',
@@ -686,11 +694,13 @@ Pogodno za biološku dob 45+ godina i sve tipove kože.`,
     volume: '50 ml',
     activeIngredients: ['4D Hyaluronic Acid:: cross-linked, high, medium and low molecular weight', 'Aminobutyric acid (GABA):', 'Bacuri butter', 'Nourishing Oils: (Meadowfoam, Canola Oil, Helianthus Annuus, Argan, Polyglutamic Acid (PGA)'],
     application: [
-      'Nanesite ujutro i navečer na čistu kožu.',
-      'Preporučuje se nanošenje Unique Pro Age seruma prije Unique Pro Age kreme.',
-      'Uklonite šminku i očistite kožu pomoću Energizing Cleansera te tonificirajte s Bamboo Hydratonicom.',
-      'Nanesite malu količinu kreme na cijelo lice te brzo razmažite i umasirajte.',
-      'Nanesite proizvod nježno tapkajući prstima po površini vaše kože pola minute.  Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.'
+      'Nanesite malu količinu kreme na cijelo lice dva puta dnevno, ujutro i navečer'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Unique Pro Age serumom, Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+      }
     ],
     tags: ['krema', 'anti-age', '45+ godina', 'svi tipovi kože']
   },
@@ -1079,9 +1089,9 @@ Vodootporan je.`,
 
 Zahvaljujući povezanosti hijaluronskih kiselina niske i velike molekularne težine i Haenkenium® (ekstrakt Salvia haenkei), Profhilo Haenkenium krema djeluje kao štit za slobodne radikale.
 
-Vraća zaštitnu barijeru osjetljive kože koja je iritirana i crvena zbog oksidativnog stresa ili nakon dermostetskih tretmana.
+Vraća zaštitnu barijeru osjetljive kože koja je iritirana i crvena zbog oksidativnog stresa ili nakon estetskih tretmana.
 
-Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne težine obnavija i održava integritet hidrolipidnog sloja kože, HA niske molekularne težine održava optimalnu hidriranost kože.`,
+Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne težine obnavlja i održava integritet hidrolipidnog sloja kože, HA niske molekularne težine održava optimalnu hidriranost kože.`,
     category: 'Krema',
     marka: 'Profhilo',
     productType: 'Krema',
@@ -1092,7 +1102,13 @@ Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne te
     volume: '50 ml',
     activeIngredients: ['Hijaluronska kiselina visoke molekularne težine', 'Hijaluronska kiselina niske molekularne težine', 'Haenkenium® (ekstrakt Salvia haenkei)'],
     application: [
-      'Nanijeti kremu ujutro i/ili navečer na očišćeno lice, vrat i dekolte.'
+      'Nanijeti kremu dva puta dnevno na očišćeno lice, vrat i dekolte.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristiti kao kućna njega nakon tretmana Profhilo. Njegu nadopuniti Toskani Sun Shiel-D fluidom i Toskani Anti-Ageing + HA"
+      }
     ],
     tags: ['krema', 'anti-age', 'profhilo', 'hijaluronska kiselina', 'njega nakon tretmana', 'svi tipovi kože']
   },
