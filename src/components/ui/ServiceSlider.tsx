@@ -19,6 +19,7 @@ interface ServiceSliderProps {
   showViewAll?: boolean;
   viewAllLink?: string;
   viewAllText?: string;
+  imageFit?: 'cover' | 'contain';
 }
 
 export default function ServiceSlider({ 
@@ -27,7 +28,8 @@ export default function ServiceSlider({
   description = "Otkrijte našu paletu profesionalnih tretmana za lice i tijelo",
   showViewAll = false,
   viewAllLink = "/usluge",
-  viewAllText = "Pogledajte sve usluge"
+  viewAllText = "Pogledajte sve usluge",
+  imageFit = "cover"
 }: ServiceSliderProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
@@ -115,7 +117,7 @@ export default function ServiceSlider({
               {services.map((service: Service) => (
                 <SwiperSlide key={`slide-${service.id}`} className="!h-auto">
                   <div className="h-full pb-8 px-3">
-                    <ServiceCard service={service} className="h-full" />
+                    <ServiceCard service={service} className="h-full" imageFit={imageFit} />
                   </div>
                 </SwiperSlide>
               ))}
@@ -157,7 +159,7 @@ export default function ServiceSlider({
           {/* Desktop Grid */}
           <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service: Service) => (
-              <ServiceCard key={service.id} service={service} />
+              <ServiceCard key={service.id} service={service} imageFit={imageFit} />
             ))}
           </div>
 

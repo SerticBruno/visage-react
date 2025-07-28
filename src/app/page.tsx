@@ -88,6 +88,7 @@ export default function Home() {
         showViewAll={true}
         viewAllLink="/katalog"
         viewAllText="Pogledajte sve proizvode"
+        imageFit="contain"
       />
       <ServicesSectionPreview/>
       <CTASection gradientDirection='n'/>

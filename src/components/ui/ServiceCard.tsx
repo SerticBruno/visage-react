@@ -6,9 +6,10 @@ import { Service } from '@/data/services/types';
 interface ServiceCardProps {
   service: Service;
   className?: string;
+  imageFit?: 'cover' | 'contain';
 }
 
-export default function ServiceCard({ service, className = '' }: ServiceCardProps) {
+export default function ServiceCard({ service, className = '', imageFit = 'cover' }: ServiceCardProps) {
   // Check if this is a product card by checking if the ID is numeric (product IDs are numeric)
   const isProductCard = service.id && /^\d+$/.test(service.id);
   
@@ -34,7 +35,7 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
             src={service.heroImage}
             alt={service.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className={`object-${imageFit} transition-transform duration-500 group-hover:scale-105`}
             priority={false}
           />
           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-300" />

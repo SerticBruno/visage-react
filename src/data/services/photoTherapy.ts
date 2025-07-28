@@ -22,7 +22,7 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 U <strong>Visage studiju</strong> koristimo <strong>Dermalux</strong> fototerapije, što osigurava <strong>optimalne rezultate i maksimalnu sigurnost</strong>. Svaki tretman je pažljivo planiran za postizanje željenih rezultata uz <strong>minimalno vrijeme oporavka</strong>.`,
   benefits: [
   ],
-  image: '/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png'  ,
+  image: '/images/services/dermalux/dermalux-priprema-visage-estetski-studio.png',
   heroImage: '/images/services/dermalux/dermalux-visage-estetski-studio.png',
   metaDescription: 'Profesionalna fototerapija u VISAGE studiju u Siska. Napredni tretmani kože svjetlom za akne, ožiljke i poboljšanje tonusa kože. Sigurni i učinkoviti rezultati.',
   metaKeywords: 'fototerapija, svjetlosna terapija, akne, ožiljci, hiperpigmentacija, estetski studio Sisak, VISAGE studio, tretman kože svjetlom',
@@ -45,7 +45,7 @@ U <strong>Visage studiju</strong> koristimo <strong>Dermalux</strong> fototerapi
       id: 'priprema', 
       label: 'Priprema', 
       icon: 'FaRegEdit',
-      image: '/images/services/dermalux/dermalux-priprema-visage-estetski-studio.png'
+      image: '/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png'
     },
     { 
       id: 'tijek-tretmana', 
