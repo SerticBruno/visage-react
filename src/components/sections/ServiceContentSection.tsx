@@ -71,22 +71,6 @@ export default function ServiceContentSection({
               className="text-l text-gray-600 mb-8 leading-relaxed whitespace-pre-line [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors [&_a]:cursor-pointer"
               dangerouslySetInnerHTML={{ __html: description }}
             />
-            
-            {benefits.length > 0 && (
-              <div className="mb-8">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">Prednosti</h2>
-                <ul className="space-y-2">
-                  {benefits.map((benefit, index) => (
-                    <li key={index} className="flex items-start">
-                      <svg className="h-6 w-6 text-slate-700 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-600">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
 
             {/* Combo packages section - shown above button for both mobile and desktop */}
             {hasComboPackages && comboPackages.length > 0 && (
