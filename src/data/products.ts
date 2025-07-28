@@ -389,11 +389,7 @@ Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkula
   {
     id: '11',
     title: 'Radiance Ultimate Mesoserum',
-    description: `Serum prikladan za sve tipove kože i učinkovit saveznik u borbi protiv hiperpigmentacija i pjega.
-
-Posebno razvijen za ujednačavanje tona kože i smanjenje nesavršenosti: sprječava razvoj novih diskoloracija kože, hidrira, sprječava i uklanja tamne mrlje uzrokovane suncem, vraća sjaj i zdravi izgled koži, poboljšava izgled ožiljaka.
-
-Vaš novi saveznik u borbi protiv hiperpigmentacija s učinkovitim djelovanjem već u 1. mjesecu upotrebe!`,
+    description: `Vaš novi saveznik u borbi protiv hiperpigmentacija koji učinkovito ujednačava ton kože i smanjuje nesavršenosti.`,
     category: 'Serum',
     marka: 'TOSKANI',
     productType: 'Serum',
@@ -404,6 +400,11 @@ Vaš novi saveznik u borbi protiv hiperpigmentacija s učinkovitim djelovanjem v
     volume: '30 ml',
     isPopular: true,
     isRecommended: true,
+    benefits: [
+      'uklanja hiperpigmentacije i sprječava razvoj novih',
+      'vraća sjaj i zdravi izgled koži',
+      'poboljšava izgled ožiljaka'
+    ],
     activeIngredients: ['Alfa Arbutin', 'Aspergillus Ferment', 'Azelaična kiselina', 'Azeloglicina', 'Ferulinska kiselina', 'Kojična kiselina', 'Mliječna kiselina', 'Niacinamid', 'Retinol', 'traneksamična kiselina', 'Vitamin C'],
     application: [
       'Nanesite malu količinu seruma dva puta dnevno, ujutro i navečer'
@@ -502,12 +503,8 @@ Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih zn
   },
   {
     id: '15',
-    title: 'Skin Architect Cream',
-    description: `Visoko koncentrirana krema protiv bora koja koristi prirodne sastojke za poboljšanje izgleda finih linija i dubokih bora.
-
-Sadrži medicinsku hijaluronsku kiselinu i acetil heksapeptid-8 kao liposomski biomimetički peptid. Oni, s ostalim sastojcima, pomažu odgoditi učinke starenja na koži i pružaju snažno hidratantno i hranjivo djelovanje.
-
-Koži pruža čvrstoću i elastičnost uz primjetan lifting učinak. Hijaluronska kiselina niske molekularne težine (<100Kda), za dublju i dugotrajniju hidrataciju.`,
+    title: 'Skin Architect krema',
+    description: `Visoko koncentrirana krema protiv bora koja pruža koži čvrstoću i elastičnost uz primjetan lifting učinak.`,
     category: 'Krema',
     marka: 'TOSKANI',
     productType: 'Krema',
@@ -518,6 +515,11 @@ Koži pruža čvrstoću i elastičnost uz primjetan lifting učinak. Hijaluronsk
     volume: '50 ml',
     isPopular: true,
     isRecommended: true,
+    benefits: [
+      'poboljšanje čvrstoće, teksture i hidratacije kože',
+      'poboljšanje izgleda finih linija i bora',
+      'za glatku kožu mladolikog izgleda'
+    ],
     activeIngredients: ['Acetyl Hexapeptide-8', 'DMAE', 'Elastin', 'Hijaluronska kiselina', 'L-Carnitine', 'Organic Silicon', 'Prirodni Kolagen', 'Retinol', 'Shea Maslac', 'Tokoferol', 'Vitamin E'],
     application: [
       'Nanesite malu količinu kreme na cijelo lice dva puta dnevno, ujutro i navečer'
@@ -708,12 +710,8 @@ Pogodno za biološku dob 45+ godina i za sve tipove kože.`,
   },
   {
     id: '22',
-    title: 'Unique Pro Age Cream',
-    description: `Globalni anti-aging za zrelu i suhu kožu.
-
-S posebno biranim kompleksima anti-age aktivnih sastojaka koji ciljano djeluju na razne tipove znakova starenja: zategnutost, marionetske bore, Y zona (oval lica i vrat).
-
-Pogodno za biološku dob 45+ godina i sve tipove kože.`,
+    title: 'Unique Pro Age krema',
+    description: `Globalni anti-aging za zrelu i suhu kožu s posebno biranim kompleksima anti-age aktivnih sastojaka.`,
     category: 'Krema',
     marka: 'TOSKANI',
     productType: 'Krema',
@@ -722,6 +720,12 @@ Pogodno za biološku dob 45+ godina i sve tipove kože.`,
     image: '/images/products/toskani-unique-pro-age-cream-visage-estetski-studio.png',
     price: '70 EUR',
     volume: '50 ml',
+    isPopular: true,
+    benefits: [
+      'poboljšava zategnutost kože',
+      'poboljšava čvrstoću kože',
+      'dubinski hidratizira'
+    ],
     activeIngredients: ['4D Hyaluronic Acid:: cross-linked, high, medium and low molecular weight', 'Aminobutyric acid (GABA):', 'Bacuri butter', 'Nourishing Oils: (Meadowfoam, Canola Oil, Helianthus Annuus, Argan, Polyglutamic Acid (PGA)'],
     application: [
       'Nanesite malu količinu kreme na cijelo lice dva puta dnevno, ujutro i navečer'
@@ -1025,14 +1029,8 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
   },
   {
     id: '31',
-    title: 'SUN SHIEL-D Fluid SPF50+',
-    description: `Fluid za lice ultra lagane teksture koji je pogodan i za osjetljivu kožu.
-
-Nije komedogen, što ga čini dobrim izborom i za masnu kožu.
-
-Vrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.
-
-Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
+    title: 'Sun Shiel-D fluid',
+    description: `Regenerativna zaštita kože od sunca koja potiče i poboljšava sintezu vitamina D.`,
     category: 'Zaštita od sunca',
     marka: 'TOSKANI',
     productType: 'Fluid',
@@ -1043,6 +1041,12 @@ Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od o
     volume: '50ml',
     isNew: true,
     isRecommended: true,
+    isPopular: true,
+    benefits: [
+      'zaštita od UVA, UVB, IR, HEV zračenja',
+      'potiče sintezu vitamina D',
+      'potiče dubinsku hidrataciju'
+    ],
     activeIngredients: ['Lithops Cell Nectar', 'Glikokaliks'],
     application: [
       'Nanesite fluid 30 minuta prije izlaganja suncu',
@@ -1198,6 +1202,15 @@ Sadrži aktivne sastojke koji pružaju trenutačni efekt liftinga, omekšavaju b
 
 // Utility function to get popular products
 export const getPopularProducts = () => {
-  const popularProductIds = ['11', '15', '8', '19'];
-  return products.filter(product => popularProductIds.includes(product.id));
+  const popularProductIds = ['15', '31', '11', '22'];
+  const popularProducts: Product[] = [];
+  
+  for (const id of popularProductIds) {
+    const product = products.find(p => p.id === id);
+    if (product) {
+      popularProducts.push(product);
+    }
+  }
+  
+  return popularProducts;
 };
