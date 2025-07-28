@@ -5,6 +5,7 @@ export const plasmage: Service = {
   title: 'Plasmage',
   akuzativTitle: 'plasmage tretmanom',
   description: 'Revolucionarna tehnologija za pomlađivanje kože',
+  previewDescription: 'Bojite se kirurških zahvata, a želite ukloniti višak kože i svježiji izgled? Plasmage tretman je revolucionarna tehnologija koja omogućuje neinvazivno pomlađivanje kože.',
   longDescription: `Bojite se <strong>kirurških zahvata</strong>, a želite ukloniti višak kože i svježiji izgled? <strong>Plasmage tretman</strong> je revolucionarna tehnologija koja omogućuje neinvazivno pomlađivanje kože s minimalnim vremenom oporavka.
 
 <strong>Plasmage</strong> je medicinski uređaj za neinvazivnu mikrokirurgiju. Plasmage tretman koristi naprednu tehnologiju plazme kako bi potaknuo procese regeneracije i obnove kože. Kroz precizno kontrolirane impulsne iskre aparat stvara niz sitnih točkica na koži. Tako se tkivo regenerira, učvršćuje, podiže, preoblikuje i obnavlja, dok okolna koža ostaje nedirnuta.
@@ -19,10 +20,10 @@ Koristi se najčešće u sinergiji s drugim estetskim tretmanima: <a href="/uslu
 
 Zakažite svoj termin u <strong>Visage studiju</strong> i krenite na put prema revitaliziranoj i pomlađenoj koži.`,
   benefits: [
+    'poboljšava tonus i teksturu kože',
+    'dugotrajni učinci',
     'vidljivi rezultati nakon jednog tretmana',
-    'neinvazivan tretman',
-    'uklanja višak kože bez potrebe za kirurškim zahvatima',
-    'regenerira i zateže kožu'
+    'siguran, učinkovit i neinvazivan tretman'
   ],
   image: '/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg',
   heroImage: '/images/services/plasmage-hero-visage-estetski-studio.webp',

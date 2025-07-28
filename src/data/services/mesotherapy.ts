@@ -18,10 +18,10 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 
 U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimalno prilagođen pojedincu</strong>, njegovim potrebama i željama.`,
   benefits: [
-    'poboljšanje kvalitete kože i vlasišta',
-    'poboljšanje teksture kože',
-    'prilagodljivost tretmana individualnim potrebama',
-    'brzi rezultati'
+    'stimulacija proizvodnje kolagena i elastina',
+    'poboljšanje tonusa i teksture kože',
+    'smanjenje gubitka kose',
+    'prilagodljivost tretmana prema individualnim potrebama'
   ],
   image: '/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg',
   heroImage: '/images/services/mezoterapija/mezoterapija-visage-estetski-studio.png',

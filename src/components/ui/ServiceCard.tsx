@@ -49,13 +49,13 @@ export default function ServiceCard({ service, className = '', imageFit = 'cover
         {/* Content Section */}
         <div className="flex-1 p-6 flex flex-col">
           <div className="flex flex-col flex-grow">
-            <p className="text-base text-[#334155] mb-6 leading-relaxed line-clamp-3">
-              {service.description}
+            <p className="text-base text-[#334155] mb-6 leading-relaxed">
+              {service.previewDescription}
             </p>
             
             {/* Benefits List */}
             <div className="mb-6 space-y-2">
-              {service.benefits.slice(0, 3).map((benefit, idx) => (
+              {service.benefits.map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
                     <FaCheck className="w-3 h-3 text-gray-600" />

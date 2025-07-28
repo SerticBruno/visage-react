@@ -399,6 +399,7 @@ Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkula
 Posebno razvijen za ujednačavanje tona kože i smanjenje nesavršenosti: sprječava razvoj novih diskoloracija kože, hidrira, sprječava i uklanja tamne mrlje uzrokovane suncem, vraća sjaj i zdravi izgled koži, poboljšava izgled ožiljaka.
 
 Vaš novi saveznik u borbi protiv hiperpigmentacija s učinkovitim djelovanjem već u 1. mjesecu upotrebe!`,
+    previewDescription: 'Vaš novi saveznik u borbi protiv hiperpigmentacija koji učinkovito ujednačava ton kože i smanjuje nesavršenosti',
     category: 'Serum',
     marka: 'TOSKANI',
     productType: 'Serum',
@@ -518,6 +519,7 @@ Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih zn
 Pomaže pri minimiziranju vidljivih znakova starenja.
 
 Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih znakova starenja: opuštenu kožu.`,
+    previewDescription: 'Visoko koncentrirana krema protiv bora koja pruža koži čvrstoću i elastičnost uz primjetan lifting učinak.',
     category: 'Krema',
     marka: 'TOSKANI',
     productType: 'Krema',
@@ -729,6 +731,7 @@ Pogodno za biološku dob 45+ godina i za sve tipove kože.`,
 S posebno biranim kompleksima anti-age aktivnih sastojaka koji ciljano djeluju na razne tipove znakova starenja: zategnutost, marionetske bore, Y zona (oval lica i vrat).
 
 Pogodno za biološku dob 45+ godina i sve tipove kože.`,
+    previewDescription: 'Globalni anti-aging za zrelu i suhu kožu s posebno biranim kompleksima anti-age aktivnih sastojaka',
     category: 'Krema',
     marka: 'TOSKANI',
     productType: 'Krema',
@@ -1050,6 +1053,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     description: `Fluid za lice ultra lagane teksture koji je pogodan i za osjetljivu kožu. Nije komedogen, što ga čini dobrim izborom i za masnu kožu. 
     
     Vrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D. Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
+    previewDescription: 'Regenerativna zaštita kože od sunca koja potiče i poboljšava sintezu vitamina D',
     category: 'Zaštita od sunca',
     marka: 'TOSKANI',
     productType: 'Fluid',
@@ -1222,7 +1226,7 @@ Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne te
 
 // Utility function to get popular products
 export const getPopularProducts = () => {
-  const popularProductIds = ['15', '31', '11', '22'];
+  const popularProductIds = ['15', '31', '22', '11'];
   const popularProducts: Product[] = [];
   
   for (const id of popularProductIds) {

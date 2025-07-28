@@ -5,6 +5,7 @@ export const skinBoosteri: Service = {
   title: 'Skin boosteri',
   akuzativTitle: 'skin boosterima',
   description: 'Hidratacija i revitalizacija kože',
+  previewDescription: 'Skin boosteri su inovativni preparati koji pružaju dubinsku hidrataciju i hranjive tvari koži, dajući vam blistav i zdrav izgled.',
   longDescription: `Doživite <strong>revolucionarnu metodu hidratacije i revitalizacije kože</strong> s našim <strong>skin booster tretmanima</strong>!
 
 <strong>Skin boosteri</strong> su <strong>inovativni preparati</strong> koji pružaju <strong>dubinsku hidrataciju</strong> i <strong>hranjive tvari koži</strong>, dajući vam <strong>blistav i zdrav izgled</strong>.
@@ -19,10 +20,10 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 
 Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa skin booster tretmanima u <strong>Visage studiju</strong>.`,
   benefits: [
-    'biostimulira proizvodnju kolagena i elastina',
-    'trenutni rezultati',
-    'dugoročna hidratacija i obnova kože',
-    'poboljšana kvaliteta kože'
+    'potiču obnovu kože',
+    'potiču dugoročnu hidrataciju',
+    'poboljšavaju kvalitetu kože',
+    'poboljšavaju elastičnost i čvrstoću kože'
   ],
   image: '/images/services/skin-boosters-hero-visage-estetski-studio.webp',
   heroImage: '/images/services/skin-boosters/skin-booster-visage-estetski-studio-sisak.jpeg',

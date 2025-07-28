@@ -49,6 +49,7 @@ export default function Home() {
     id: product.id,
     title: product.title,
     description: product.description,
+    previewDescription: product.previewDescription || product.description,
     longDescription: product.description,
     image: product.image,
     heroImage: product.image,

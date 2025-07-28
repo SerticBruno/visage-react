@@ -5,6 +5,7 @@ export const prp: Service = {
   title: 'PRP',
   akuzativTitle: 'PRP tretmanom',
   description: 'Prirodna obnova i revitalizacija kože',
+  previewDescription: 'Bez dodataka, bez kemije, bez rizika, samo čista snaga regeneracije iz vlastitih stanica. PRP tretman pruža prirodnu i dugotrajnu revitalizaciju kože.',
   longDescription: `Bez dodataka, bez kemije, bez rizika, samo <strong>čista snaga regeneracije</strong> iz vlastitih stanica. <strong>PRP tretman</strong> pruža <strong>prirodnu i dugotrajnu revitalizaciju kože</strong>.
 
 <strong>PRP tretman</strong> ili tretman <strong>plazmom bogatom trombocitima</strong> je primjena vlastite krvi plazme koja je bogata <strong>faktorima rasta</strong> i <strong>proteinima</strong> kako bi se potaknula <strong>regeneracija kože</strong>.
@@ -19,10 +20,10 @@ Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong
 
 Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj revitalizaciji kože</strong> u <strong>Visage studiju</strong>.`,
   benefits: [
-    'prirodna i dugotrajna regeneracija kože i vlasišta',
-    'poboljšanje tonusa i hidratacije kože',
-    'potiče proizvodnju kolagena i elastina',
-    'za sve tipove kože'
+    'siguran tretman, jer koristi vašu vlastitu krvnu plazmu',
+    'potiče samostalnu regeneraciju kože i vlasišta',
+    'poboljšava kvalitetu kože i vlasišta',
+    'povećava hidrataciju kože'
   ],
   image: '/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png',
   heroImage: '/images/services/prp/prp-visage-estetski-studio.png',
