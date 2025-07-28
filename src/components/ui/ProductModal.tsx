@@ -1,10 +1,10 @@
 'use client';
 
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState, useCallback } from 'react';
 import { Transition } from '@headlessui/react';
 import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt, FaStar } from 'react-icons/fa';
 import Image from 'next/image';
-import { Product } from '@/data/products';
+import { Product, products } from '@/data/products';
 
 interface ProductModalProps {
   isOpen: boolean;
@@ -14,11 +14,69 @@ interface ProductModalProps {
 }
 
 export default function ProductModal({ isOpen, onClose, product, onProductChange }: ProductModalProps) {
+  const [currentProduct, setCurrentProduct] = useState<Product | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Handle mounting for SSR
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Reset image loading state when product changes
+  useEffect(() => {
+    if (currentProduct) {
+      setLoadedImages(new Set());
+      setImagesLoaded(false);
+    }
+  }, [currentProduct]);
+
+  // Check if all images are loaded
+  useEffect(() => {
+    if (currentProduct) {
+      const totalImages = 1; // Product image
+      if (loadedImages.size === totalImages && totalImages > 0) {
+        setImagesLoaded(true);
+      }
+    }
+  }, [loadedImages, currentProduct]);
+
+  // Handle image load
+  const handleImageLoad = useCallback((imageSrc: string) => {
+    setLoadedImages(prev => new Set([...prev, imageSrc]));
+  }, []);
+
+  // Initialize with the product prop
+  useEffect(() => {
+    if (product && !isClosing && !currentProduct) {
+      setCurrentProduct(product);
+    } else if (product && !isClosing && currentProduct && product.id !== currentProduct.id) {
+      // Product changed, trigger transition
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentProduct(product);
+      }, 150); // Half of the transition duration
+    }
+  }, [product, isClosing, currentProduct]);
+
+  // Handle transition state
+  useEffect(() => {
+    if (isTransitioning) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isTransitioning]);
+
   // Handle Escape key to close modal
   useEffect(() => {
     const handleEscapeKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && isOpen) {
-        onClose();
+        handleClose();
       }
     };
 
@@ -29,23 +87,34 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
     return () => {
       document.removeEventListener('keydown', handleEscapeKey);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
-  // Handle product link clicks
-  const handleProductLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-    const productId = event.currentTarget.getAttribute('data-product-id');
+  const handleClose = useCallback(() => {
+    setIsClosing(true);
+    onClose();
+    // Reset closing state after transition
+    setTimeout(() => {
+      setIsClosing(false);
+    }, 300);
+  }, [onClose]);
+
+  // Handle product link clicks with transition
+  const handleProductLinkClick = useCallback((productId: string) => {
     if (productId && onProductChange) {
-      onProductChange(productId);
+      // Trigger transition
+      setIsTransitioning(true);
+      setTimeout(() => {
+        onProductChange(productId);
+      }, 150); // Half of the transition duration
     }
-  };
+  }, [onProductChange]);
 
-  if (!product) return null;
+  if (!currentProduct || !mounted) return null;
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-6 pt-12 pb-12 md:p-4">
-        <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={onClose} />
+        <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={handleClose} />
         
         <Transition.Child
           as={Fragment}
@@ -59,7 +128,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
           <div className="relative">
             {/* Close Button - Outside Modal */}
             <button
-              onClick={onClose}
+              onClick={handleClose}
               className="absolute -top-4 -right-4 z-20 text-slate-400 hover:text-slate-600 focus:outline-none transition-colors cursor-pointer p-2 hover:bg-slate-100 rounded-full bg-white shadow-md"
             >
               <FaTimes size={20} />
@@ -73,35 +142,36 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                   {/* Left side - Image and Title */}
                   <div className="w-3/4 flex flex-col gap-3">
                     {/* Title Section */}
-                    <div className="bg-slate-50 rounded-xl p-3">
+                    <div className={`bg-slate-50 rounded-xl p-3 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                       <h2 className="text-lg font-bold text-slate-900">
-                        {product.title}
+                        {currentProduct.title}
                       </h2>
                     </div>
                     
                     {/* Image */}
-                    <div className="relative bg-slate-50 rounded-xl overflow-hidden shadow-sm flex-1">
+                    <div className={`relative bg-slate-50 rounded-xl overflow-hidden shadow-sm flex-1 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                       <Image
-                        src={product.image}
-                        alt={product.title}
+                        src={currentProduct.image}
+                        alt={currentProduct.title}
                         fill
                         className="object-contain"
+                        onLoad={() => handleImageLoad(currentProduct.image)}
                       />
                       {/* Product Badges in Modal */}
                       <div className="absolute top-2 right-2 flex flex-col gap-1">
-                        {product.isNew && (
+                        {currentProduct.isNew && (
                           <span className="bg-emerald-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
                             <FaLeaf className="w-3 h-3" />
                             Novo
                           </span>
                         )}
-                        {product.isOnSale && product.oldPrice && (
+                        {currentProduct.isOnSale && currentProduct.oldPrice && (
                           <span className="bg-rose-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
                             <FaTag className="w-3 h-3" />
                             Akcija
                           </span>
                         )}
-                        {product.isLimited && (
+                        {currentProduct.isLimited && (
                           <span className="bg-violet-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
                             <FaFire className="w-3 h-3" />
                             Limitirano
@@ -114,43 +184,43 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                    {/* Right side info - 25% width */}
                    <div className="w-1/4 space-y-2 flex flex-col">
                      {/* Price Section - Takes remaining space */}
-                     <div className="bg-slate-50 rounded-lg p-2 flex-1 flex flex-col justify-center">
+                     <div className={`bg-slate-50 rounded-lg p-2 flex-1 flex flex-col justify-center transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                        <h3 className="text-xs font-semibold text-slate-900 mb-2">
                          Cijena
                        </h3>
                        <div className="flex flex-col items-center">
-                         {product.isOnSale && product.oldPrice ? (
+                         {currentProduct.isOnSale && currentProduct.oldPrice ? (
                            <>
-                             <span className="text-xs text-slate-400 line-through">{product.oldPrice}</span>
-                             <span className="text-lg font-bold text-rose-500">{product.price}</span>
+                             <span className="text-xs text-slate-400 line-through">{currentProduct.oldPrice}</span>
+                             <span className="text-lg font-bold text-rose-500">{currentProduct.price}</span>
                            </>
                          ) : (
-                           <span className="text-lg font-bold text-slate-900">{product.price}</span>
+                           <span className="text-lg font-bold text-slate-900">{currentProduct.price}</span>
                          )}
-                         {product.isOnSale && product.oldPrice && (
+                         {currentProduct.isOnSale && currentProduct.oldPrice && (
                            <span className="bg-rose-500 text-white text-xs font-bold w-8 h-8 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center mt-1">
-                             -{Math.round((1 - parseFloat(product.price) / parseFloat(product.oldPrice)) * 100)}%
+                             -{Math.round((1 - parseFloat(currentProduct.price) / parseFloat(currentProduct.oldPrice)) * 100)}%
                            </span>
                          )}
                        </div>
                      </div>
                      
                      {/* Sadržaj Section */}
-                     {product.volume && (
-                       <div className="bg-slate-50 rounded-lg p-2">
+                     {currentProduct.volume && (
+                       <div className={`bg-slate-50 rounded-lg p-2 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                          <h3 className="text-xs font-semibold text-slate-900 mb-1">
-                           {product.category === 'Beauty Tretmani' ? 'Trajanje' : 'Sadržaj'}
+                           {currentProduct.category === 'Beauty Tretmani' ? 'Trajanje' : 'Sadržaj'}
                          </h3>
-                         <p className="text-xs text-slate-600">{product.volume}</p>
+                         <p className="text-xs text-slate-600">{currentProduct.volume}</p>
                        </div>
                      )}
                      
                      {/* Marka Section */}
-                     <div className="bg-slate-50 rounded-lg p-2">
+                     <div className={`bg-slate-50 rounded-lg p-2 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                        <h3 className="text-xs font-semibold text-slate-900 mb-1">
                          Marka
                        </h3>
-                       <p className="text-xs text-slate-600">{product.marka}</p>
+                       <p className="text-xs text-slate-600">{currentProduct.marka}</p>
                      </div>
                    </div>
                 </div>
@@ -158,57 +228,57 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                 {/* Desktop Layout - Fixed Left Side */}
                 <div className="hidden md:block w-2/5 p-4 border-r border-slate-100 flex-shrink-0">
                   {/* Title Section */}
-                  <div className="bg-slate-50 rounded-xl p-4 mb-4">
+                  <div className={`bg-slate-50 rounded-xl p-4 mb-4 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                     <h2 className="text-xl font-bold text-slate-900">
-                      {product.title}
+                      {currentProduct.title}
                     </h2>
                   </div>
                   
-                  <div className="relative h-96 bg-slate-50 rounded-xl overflow-hidden shadow-sm">
+                  <div className={`relative h-96 bg-slate-50 rounded-xl overflow-hidden shadow-sm transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                     <Image
-                      src={product.image}
-                      alt={product.title}
+                      src={currentProduct.image}
+                      alt={currentProduct.title}
                       fill
                       className="object-cover"
+                      onLoad={() => handleImageLoad(currentProduct.image)}
                     />
                     {/* Product Badges in Modal */}
                     <div className="absolute top-4 right-4 flex flex-col gap-2">
-                      {product.isNew && (
-                        <span className="bg-emerald-500 text-white text-sm font-semibold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-sm">
+                      {currentProduct.isNew && (
+                        <span className="bg-emerald-500 text-white text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-2 shadow-lg">
                           <FaLeaf className="w-4 h-4" />
                           Novo
                         </span>
                       )}
-                      {product.isOnSale && product.oldPrice && (
-                        <span className="bg-rose-500 text-white text-sm font-semibold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-sm">
+                      {currentProduct.isOnSale && currentProduct.oldPrice && (
+                        <span className="bg-rose-500 text-white text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-2 shadow-lg">
                           <FaTag className="w-4 h-4" />
                           Akcija
                         </span>
                       )}
-                      {product.isLimited && (
-                        <span className="bg-violet-500 text-white text-sm font-semibold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-sm">
+                      {currentProduct.isLimited && (
+                        <span className="bg-violet-500 text-white text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-2 shadow-lg">
                           <FaFire className="w-4 h-4" />
                           Limitirano
                         </span>
                       )}
                     </div>
-                    
-                    {/* Price Overlay - Lower Right */}
+
                     <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg border border-white/20">
                       <div className="flex items-center gap-3">
                         <div className="flex flex-col">
-                          {product.isOnSale && product.oldPrice ? (
+                          {currentProduct.isOnSale && currentProduct.oldPrice ? (
                             <>
-                              <span className="text-sm text-slate-400 line-through">{product.oldPrice}</span>
-                              <span className="text-xl font-bold text-rose-500">{product.price}</span>
+                              <span className="text-sm text-slate-400 line-through">{currentProduct.oldPrice}</span>
+                              <span className="text-xl font-bold text-rose-500">{currentProduct.price}</span>
                             </>
                           ) : (
-                            <span className="text-xl font-bold text-slate-900">{product.price}</span>
+                            <span className="text-xl font-bold text-slate-900">{currentProduct.price}</span>
                           )}
                         </div>
-                        {product.isOnSale && product.oldPrice && (
+                        {currentProduct.isOnSale && currentProduct.oldPrice && (
                           <span className="bg-rose-500 text-white text-sm font-bold w-12 h-12 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center">
-                            -{Math.round((1 - parseFloat(product.price) / parseFloat(product.oldPrice)) * 100)}%
+                            -{Math.round((1 - parseFloat(currentProduct.price) / parseFloat(currentProduct.oldPrice)) * 100)}%
                           </span>
                         )}
                       </div>
@@ -216,142 +286,85 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                   </div>
 
                   {/* Sadržaj Section */}
-                  {product.volume && (
-                    <div className="mt-3 bg-slate-50 rounded-xl p-3">
+                  {currentProduct.volume && (
+                    <div className={`mt-3 bg-slate-50 rounded-xl p-3 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                       <div className="flex items-center justify-between mb-1">
                         <h3 className="text-sm font-semibold text-slate-900">
-                          {product.category === 'Beauty Tretmani' ? 'Trajanje' : 'Sadržaj'}
+                          {currentProduct.category === 'Beauty Tretmani' ? 'Trajanje' : 'Sadržaj'}
                         </h3>
                         <span className="text-sm font-medium text-slate-600">
-                          {product.marka}
+                          {currentProduct.marka}
                         </span>
                       </div>
-                      <p className="text-sm text-slate-600">{product.volume}</p>
+                      <p className="text-sm text-slate-600">{currentProduct.volume}</p>
                     </div>
                   )}
                 </div>
                 
                 {/* Scrollable Right Side */}
                 <div className="w-full md:w-3/5 overflow-y-auto flex-1 min-h-0">
-                  <div className="p-3 md:p-4 space-y-3">
+                  <div className={`p-3 md:p-4 space-y-3 transition-all duration-500 ${
+                    isTransitioning 
+                      ? 'opacity-25 blur-sm' 
+                      : imagesLoaded 
+                        ? 'opacity-100 blur-0' 
+                        : 'opacity-0 blur-md'
+                  }`}>
 
                     {/* Opis Section */}
                     <div className="bg-slate-50 rounded-xl p-3">
                       <h3 className="text-sm font-semibold text-slate-900 mb-1">Opis</h3>
                       <div className="text-sm text-slate-600 leading-relaxed whitespace-pre-line">
-                        {product.description}
+                        {currentProduct.description}
                       </div>
                     </div>
 
-                    {product.application && (
+                    {currentProduct.application && (
                       <div className="bg-slate-50 rounded-xl p-3">
-                        {product.category !== 'Beauty Tretmani' && (
+                        {currentProduct.category !== 'Beauty Tretmani' && (
                           <h3 className="text-sm font-semibold text-slate-900 mb-3">Kako koristiti</h3>
                         )}
                         <div className="space-y-4">
-                          {product.application.map((step, index) => {
-                            // Check if the step contains a colon (indicating a section header)
-                            const hasHeader = step.includes(':');
-                            const [header, content] = hasHeader ? step.split(': ', 2) : [null, step];
-                            
-                            if (!hasHeader) {
-                              // Check if this is a warning step
-                              if (step.trim() === 'UPOZORENJE') {
-                                return (
-                                  <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-3">
-                                    <div className="text-sm font-medium text-gray-800">
-                                      UPOZORENJE
-                                    </div>
-                                  </div>
-                                );
-                              }
+                          {currentProduct.application.map((step, index) => {
+                            // Check if the step contains HTML links
+                            if (step.includes('<a href=')) {
+                              // Process the content to replace catalog links with modal triggers
+                              const processedStep = step.replace(
+                                /<a href="\/katalog\?product=(\d+)">([^<]+)<\/a>/g,
+                                (match, productId, linkText) => {
+                                  return `<a href="#" class="product-link" data-product-id="${productId}">${linkText}</a>`;
+                                }
+                              );
                               
-                              // Regular bullet point step
                               return (
                                 <div key={index} className="flex items-start">
-                                  <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
-                                  <p className="text-sm text-slate-600 leading-relaxed">{step}</p>
+                                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                                    <span className="text-xs font-semibold text-slate-700">{index + 1}</span>
+                                  </div>
+                                  <div 
+                                    className="text-sm text-slate-600 leading-relaxed [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors [&_a]:cursor-pointer"
+                                    dangerouslySetInnerHTML={{ __html: processedStep }}
+                                    onClick={(e) => {
+                                      const target = e.target as HTMLElement;
+                                      if (target.tagName === 'A') {
+                                        e.preventDefault();
+                                        const productId = target.getAttribute('data-product-id');
+                                        if (productId) {
+                                          handleProductLinkClick(productId);
+                                        }
+                                      }
+                                    }}
+                                  />
                                 </div>
                               );
                             }
-
-                            // Parse the content to detect list items
-                            const parseContent = (content: string) => {
-                              const lines = content.split('\n').filter(line => line.trim());
-                              const items = [];
-                              let currentWarning = null;
-                              
-                              for (const line of lines) {
-                                const trimmedLine = line.trim();
-                                if (trimmedLine.startsWith('- ')) {
-                                  // Unordered list item
-                                  items.push({ type: 'unordered', text: trimmedLine.substring(2) });
-                                } else if (/^\d+\./.test(trimmedLine)) {
-                                  // Ordered list item
-                                  const match = trimmedLine.match(/^\d+\.\s*(.+)/);
-                                  if (match) {
-                                    items.push({ type: 'ordered', number: trimmedLine.match(/^\d+/)?.[0], text: match[1] });
-                                  }
-                                } else if (trimmedLine === 'UPOZORENJE') {
-                                  // Start of warning section
-                                  currentWarning = { type: 'warning', text: 'UPOZORENJE' };
-                                } else if (currentWarning && trimmedLine) {
-                                  // Add content to current warning
-                                  currentWarning.text += '\n' + trimmedLine;
-                                } else if (trimmedLine) {
-                                  // Regular text
-                                  items.push({ type: 'text', text: trimmedLine });
-                                }
-                              }
-                              
-                              // Add the warning if we have one
-                              if (currentWarning) {
-                                items.push(currentWarning);
-                              }
-                              
-                              return items;
-                            };
-
-                            const items = parseContent(content);
                             
                             return (
-                              <div key={index} className="border-l-4 border-slate-400 pl-6 bg-gradient-to-r from-slate-50 to-white rounded-r-lg py-5 shadow-sm">
-                                <h4 className="text-sm font-semibold text-slate-800 mb-3">
-                                  {header}
-                                </h4>
-                                <div className="space-y-3">
-                                  {items.map((item, itemIndex) => {
-                                    if (item.type === 'unordered') {
-                                      return (
-                                        <div key={itemIndex} className="flex items-start">
-                                          <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
-                                          <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
-                                        </div>
-                                      );
-                                    } else if (item.type === 'ordered') {
-                                      return (
-                                        <div key={itemIndex} className="flex items-start">
-                                          <span className="flex-shrink-0 w-5 h-5 bg-slate-200 rounded-full flex items-center justify-center mr-3 mt-0.5">
-                                            <span className="text-xs font-semibold text-slate-600">{item.number}</span>
-                                          </span>
-                                          <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
-                                        </div>
-                                      );
-                                    } else if (item.type === 'warning') {
-                                      return (
-                                        <div key={itemIndex} className="bg-gray-50 border border-gray-200 rounded-lg p-3">
-                                          <div className="text-sm font-medium text-gray-800 whitespace-pre-line">
-                                            {item.text}
-                                          </div>
-                                        </div>
-                                      );
-                                    } else {
-                                      return (
-                                        <p key={itemIndex} className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
-                                      );
-                                    }
-                                  })}
+                              <div key={index} className="flex items-start">
+                                <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 flex items-center justify-center mr-3 mt-0.5 shadow-sm ring-1 ring-slate-200/50">
+                                  <span className="text-xs font-semibold text-slate-700">{index + 1}</span>
                                 </div>
+                                <p className="text-sm text-slate-600 leading-relaxed">{step}</p>
                               </div>
                             );
                           })}
@@ -360,7 +373,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                     )}
 
                     {/* Glow Tip Section */}
-                    {product.proTips && product.proTips.length > 0 && (
+                    {currentProduct.proTips && currentProduct.proTips.length > 0 && (
                       <div className="bg-slate-50 rounded-xl p-3">
                         <h3 className="text-sm font-semibold text-slate-900 mb-3 flex items-center gap-2">
                           <div className="w-6 h-6 bg-slate-200 rounded-full flex items-center justify-center border border-slate-300">
@@ -369,7 +382,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                           Glow tip
                         </h3>
                         <div className="space-y-3">
-                          {product.proTips.map((tip, index) => (
+                          {currentProduct.proTips.map((tip, index) => (
                             <div key={index} className="text-sm text-slate-600 leading-relaxed">
                               <div 
                                 className="[&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors [&_a]:cursor-pointer"
@@ -382,13 +395,11 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                                 onClick={(e) => {
                                   const target = e.target as HTMLElement;
                                   if (target.tagName === 'A') {
-                                    // Create a synthetic event for the anchor element
-                                    const syntheticEvent = {
-                                      ...e,
-                                      currentTarget: target as HTMLAnchorElement,
-                                      target: target as HTMLAnchorElement
-                                    } as React.MouseEvent<HTMLAnchorElement>;
-                                    handleProductLinkClick(syntheticEvent);
+                                    e.preventDefault();
+                                    const productId = target.getAttribute('data-product-id');
+                                    if (productId) {
+                                      handleProductLinkClick(productId);
+                                    }
                                   }
                                 }}
                               />
@@ -399,14 +410,14 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                     )}
 
                     {/* Aktivni sastojci Section */}
-                    {product.activeIngredients && (
+                    {currentProduct.activeIngredients && (
                       <div className="bg-slate-50 rounded-xl p-3">
                         <h3 className="text-sm font-semibold text-slate-900 mb-3">
-                          {product.category === 'Beauty Tretmani' ? 'Prednosti' : 'Aktivni sastojci'}
+                          {currentProduct.category === 'Beauty Tretmani' ? 'Prednosti' : 'Aktivni sastojci'}
                         </h3>
-                        {product.category === 'Beauty Tretmani' ? (
+                        {currentProduct.category === 'Beauty Tretmani' ? (
                           <div className="space-y-2">
-                            {product.activeIngredients.map((ingredient, index) => (
+                            {currentProduct.activeIngredients.map((ingredient, index) => (
                               <div key={index} className="flex items-start">
                                 <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
                                 <p className="text-sm text-slate-600 leading-relaxed">{ingredient}</p>
@@ -415,33 +426,33 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                           </div>
                         ) : (
                           <p className="text-sm text-slate-600 leading-relaxed">
-                            {product.activeIngredients.join(', ')}
+                            {currentProduct.activeIngredients.join(', ')}
                           </p>
                         )}
                       </div>
                     )}
 
                     {/* Product Safety Information */}
-                    {product.warnings && product.warnings.length > 0 && (
+                    {currentProduct.warnings && currentProduct.warnings.length > 0 && (
                       <div className="space-y-3">
-                        {product.warnings.map((warning, index) => {
+                        {currentProduct.warnings.map((warning, index) => {
                           // Extract everything after "SIGURNOST:" or "UPOZORENJE" (with or without colon)
                           const warningText = warning.replace(/^(SIGURNOST|UPOZORENJE)\s*:?\s*/, '');
                           const isSafetyWarning = warning.startsWith('SIGURNOST');
                           
-                                                      return (
-                              <div key={index} className={`${isSafetyWarning ? 'bg-slate-50 border-slate-200' : 'bg-gray-50 border-gray-200'} border rounded-lg p-4 shadow-sm`}>
-                                <div className="flex items-center gap-3 mb-2">
-                                  <FaShieldAlt className={`w-5 h-5 ${isSafetyWarning ? 'text-slate-600' : 'text-gray-600'}`} />
-                                  <div className={`text-sm font-semibold ${isSafetyWarning ? 'text-slate-800' : 'text-gray-800'}`}>
-                                    {isSafetyWarning ? 'Sigurnosna informacija' : 'Upozorenje'}
-                                  </div>
-                                </div>
-                                <div className={`text-sm ${isSafetyWarning ? 'text-slate-700' : 'text-gray-800'} leading-relaxed`}>
-                                  {warningText}
+                          return (
+                            <div key={index} className={`${isSafetyWarning ? 'bg-slate-50 border-slate-200' : 'bg-gray-50 border-gray-200'} border rounded-lg p-4 shadow-sm`}>
+                              <div className="flex items-center gap-3 mb-2">
+                                <FaShieldAlt className={`w-5 h-5 ${isSafetyWarning ? 'text-slate-600' : 'text-gray-600'}`} />
+                                <div className={`text-sm font-semibold ${isSafetyWarning ? 'text-slate-800' : 'text-gray-800'}`}>
+                                  {isSafetyWarning ? 'Sigurnosna informacija' : 'Upozorenje'}
                                 </div>
                               </div>
-                            );
+                              <div className={`text-sm ${isSafetyWarning ? 'text-slate-700' : 'text-gray-800'} leading-relaxed`}>
+                                {warningText}
+                              </div>
+                            </div>
+                          );
                         })}
                       </div>
                     )}
