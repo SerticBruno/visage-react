@@ -250,23 +250,24 @@ Ekstrakt hamamelisa s adstringentnim svojstvima ostavlja osvježenu i ujednačen
     title: 'Total Recovery Cream',
     description: `Zaštitna, hidratantna i hranjiva krema koja pruža moćnu regeneraciju suhe i normalne kože.
 
-Pruža snažne učinke obnavljanja kože.
-
-Poboljšava izgled oštećene kože.`,
+Pruža snažne učinke obnavljanja kože. Poboljšava izgled oštećene kože.`,
     category: 'Krema',
     marka: 'TOSKANI',
     productType: 'Krema',
-    skinType: ['Suha koža', 'Osjetljiva koža'],
+    skinType: ['Suha koža', 'Normalna koža'],
     skinConcern: ['Regeneracija'],
     image: '/images/products/total-recovery-cream-visage-estetski-studio.webp',
     price: '55 EUR',
     volume: '50 ml',
     activeIngredients: ['Acetil dipeptid-3 aminoheksanoat', 'Acetil heksapeptid-46', 'Allantoin', 'Betaine', 'Bisabolol', 'Diaminopropionoyl Tripeptide-33', 'Resveratrol', 'Tokoferol'],
     application: [
-      'Uklonite šminku i očistite kožu energizirajućim sredstvom za čišćenje, a tonizirajte bambusovim hidratonikom',
-      'Nanesite kremu za oporavak po cijelom licu i brzo se razmažite',
-      'Nanesite proizvod laganim tapkanjem prstiju po površini lica pola minute. Možete koristiti sve prste obje ruke sa svake strane lica. Ne produžujte je silom niti agresivno trljajući kožu',
-      'Pustite da to potpuno utone prije nego što nanesete temelj i uobičajeni make-up'
+      'Nanesite 2 puta dnevno, ujutro i navečer'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Sun Shiel-D fluidom. Koristite kao kućnu njegu nakon tretmana mezoterapije."
+      }
     ],
     tags: ['hidratacija', 'protiv iritacija', 'suha koža', 'normalna koža', 'dnevna njega', 'njega nakon kemijskog pilinga', 'njega nakon mezoterapije']
   },
@@ -274,25 +275,28 @@ Poboljšava izgled oštećene kože.`,
   {
     id: '7',
     title: 'Total Recovery Gel',
-    description: `Obnavljajući, hidratantni i umirujući gel s aloe verom za mješovitu i masnu kožu.
+    description: `Obnavljajući, hidratantni i umirujući gel s aloe verom za normalnu, mješovitu i masnu kožu.
 
 Štiti i vlaži epidermu, pogodujući oporavku osjetljive kože nakon iritacija ili invazivnih tretmana.`,
     category: 'Krema',
     marka: 'TOSKANI',
     productType: 'Krema',
-    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža'],
+    skinType: ['Normalna koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Regeneracija'],
     image: '/images/products/total-recovery-gel-visage-estetski-studio.webp',
     price: '37 EUR',
     volume: '50 ml',
     activeIngredients: ['Aloe Vera Ekstrakt', 'Ekstrakt mimoze Tenuiflora', 'Elastin', 'Hidrolizirani proteini pšenice', 'Kolagen', 'Shea Maslac', 'Vegetable Tensor'],
     application: [
-      'Uklonite šminku i očistite kožu energizirajućim sredstvom za čišćenje, a tonizirajte bambusovim hidratonikom',
-      'Nanesite gel za oporavak na cijelo lice i brzo ga razmažite',
-      'Nanesite proizvod laganim tapkanjem prstiju po površini lica pola minute. Možete koristiti sve prste obje ruke sa svake strane lica. Ne produžujte je silom ili agresivno trljajući kožu',
-      'Neka se potpuno upije prije nanošenja podloge i normalne šminke. Preporučuje se nanošenje dva puta dnevno (ujutro i navečer) ili onoliko puta koliko je potrebno'
+      'Koristite 2 puta dnevno, ujutro i navečer'
     ],
-    tags: ['hidratacija', 'protiv iritacija', 'masna koža', 'mješovita koža', 'dnevna njega', 'njega nakon kemijskog pilinga', 'njega nakon mezoterapije']
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Sun Shiel-D fluidom. Koristite kao kućnu njegu nakon tretmana mezoterapije."
+      }
+    ],
+    tags: ['hidratacija', 'protiv iritacija', 'normalna koža', 'mješovita koža', 'masna koža', 'dnevna njega', 'njega nakon kemijskog pilinga', 'njega nakon mezoterapije']
   },
   {
     id: '8',
@@ -546,10 +550,13 @@ Jača barijeru kože, pogodan je za sve tipove kože, no najviše se preporučuj
     isRecommended: true,
     activeIngredients: ['Probiotici', 'algae extract', 'Byfida ferment Lysate', 'tetrapeptide-26', 'TRC (Total Restoring Complex)'],
     application: [
-      'Uklonite šminku i očistite kožu pomoću Energizing Cleansera te tonificirajte s Bamboo Hydratonicom.',
-      'Nanesite Anti Anging Eye Contour na područje oko očiju.',
-      'Nanesite jednu ili dvije kapljice Night Reverse seruma u malu količinu Skin Architect kreme.',
-      'Nanesite nježno tapkajući prstima po površini vase kože pola minute. Ne nanosite primjenjujući silu ili agresivno trljajući površinu kože.'
+      'Nanesite jednu pumpicu seruma jednom dnevno, navečer'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Anti Aging Eye Contour okoloočnom kremom, Toskani Night Reverse Advanced kremom ili Toskani Skin Architect kremom. Nanesite jednu pumpicu seruma u kremu i nanesite na lice. Za najbolje rezultate koristiti s odgovarajućim Toskani proizvodima iz Anti-Age njege."
+      }
     ],
     tags: ['serum', 'noćna njega', 'anti-age', 'svi tipovi kože', 'suha koža', 'dehidrirana koža']
   },
@@ -787,7 +794,9 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
   {
     id: '25',
     title: 'Night Reverse Intensive Cream & Mask',
-    description: `Night Reverse Intensive krema i maska je 2 u 1 proizvod za noć. Snažno obnavlja vašu kožu oštećenu vanjskim čimbenicima. Formula ove kreme inspirirana je epigenetikom. Time se sprječava prerano starenje i dehidracija kože.
+    description: `Night Reverse Intensive krema i maska je 2 u 1 proizvod za noć. Snažno obnavlja vašu kožu oštećenu vanjskim čimbenicima.
+
+Formula ove kreme inspirirana je epigenetikom. Time se sprječava prerano starenje i dehidracija kože.
 
 Krema je namijenjena svima koji pare od kože bez sjaja, oštećene kože koja je redovito izložena utjecajima iz okoline. Također, za kožu kojoj nedostaje hidratacije.
 
@@ -807,9 +816,14 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
       'Skin Reset Complex'
     ],
     application: [
-      'Nanesite malu količinu seruma jednom dnevno, navečer',
-      'Za najbolji učinak koristiti s Night Reverse Intensive serumom. Prvo nakapajte 2 do 3 kapi Night Reverse Intensive Seruma, a zatim nanesite ovu kremu',
+      'Nanesite malu količinu kreme jednom dnevno, navečer',
       'Ako želite da djeluje kao noćna maska nanesite više proizvoda i ujutro se umijte'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Toskani Anti Aging okoloočnom kremom, Toskani Night Reverse Advanced serumom. Nanesite jednu pumpicu seruma u malu količinu kreme i nanesite na lice. Za najbolje rezultate koristiti s odgovarajućim Toskani proizvodima iz Anti-Age njege."
+      }
     ],
     tags: ['noćna njega', 'maska', 'anti-age', 'regeneracija', 'svi tipovi kože', 'epigenetika', 'skin reset complex']
   },

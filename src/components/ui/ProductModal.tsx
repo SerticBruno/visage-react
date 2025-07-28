@@ -258,8 +258,8 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                               // Check if this is a warning step
                               if (step.trim() === 'UPOZORENJE') {
                                 return (
-                                  <div key={index} className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
-                                    <div className="text-sm font-medium text-yellow-800">
+                                  <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                    <div className="text-sm font-medium text-gray-800">
                                       UPOZORENJE
                                     </div>
                                   </div>
@@ -339,8 +339,8 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                                       );
                                     } else if (item.type === 'warning') {
                                       return (
-                                        <div key={itemIndex} className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
-                                          <div className="text-sm font-medium text-yellow-800 whitespace-pre-line">
+                                        <div key={itemIndex} className="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                          <div className="text-sm font-medium text-gray-800 whitespace-pre-line">
                                             {item.text}
                                           </div>
                                         </div>
@@ -423,30 +423,26 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
 
                     {/* Product Safety Information */}
                     {product.warnings && product.warnings.length > 0 && (
-                      <div className="bg-slate-50 rounded-xl p-3">
-                        <div className="space-y-3">
-                          {product.warnings.map((warning, index) => {
-                            // Extract everything after "SIGURNOST:" or "UPOZORENJE" (with or without colon)
-                            const warningText = warning.replace(/^(SIGURNOST|UPOZORENJE)\s*:?\s*/, '');
-                            const isSafetyWarning = warning.startsWith('SIGURNOST');
-                            
-                            return (
-                              <div key={index} className={`${isSafetyWarning ? 'bg-slate-50 border-slate-200' : 'bg-yellow-50 border-yellow-200'} border rounded-lg p-4 shadow-sm`}>
-                                <div className="flex items-start gap-3">
-                                  <FaShieldAlt className={`w-5 h-5 mt-0.5 ${isSafetyWarning ? 'text-slate-600' : 'text-yellow-600'}`} />
-                                  <div className="flex-1">
-                                    <div className={`text-sm font-semibold ${isSafetyWarning ? 'text-slate-800' : 'text-yellow-800'} mb-1`}>
-                                      {isSafetyWarning ? 'Sigurnosna informacija' : 'Upozorenje'}
-                                    </div>
-                                    <div className={`text-sm ${isSafetyWarning ? 'text-slate-700' : 'text-yellow-800'} leading-relaxed`}>
-                                      {warningText}
-                                    </div>
+                      <div className="space-y-3">
+                        {product.warnings.map((warning, index) => {
+                          // Extract everything after "SIGURNOST:" or "UPOZORENJE" (with or without colon)
+                          const warningText = warning.replace(/^(SIGURNOST|UPOZORENJE)\s*:?\s*/, '');
+                          const isSafetyWarning = warning.startsWith('SIGURNOST');
+                          
+                                                      return (
+                              <div key={index} className={`${isSafetyWarning ? 'bg-slate-50 border-slate-200' : 'bg-gray-50 border-gray-200'} border rounded-lg p-4 shadow-sm`}>
+                                <div className="flex items-center gap-3 mb-2">
+                                  <FaShieldAlt className={`w-5 h-5 ${isSafetyWarning ? 'text-slate-600' : 'text-gray-600'}`} />
+                                  <div className={`text-sm font-semibold ${isSafetyWarning ? 'text-slate-800' : 'text-gray-800'}`}>
+                                    {isSafetyWarning ? 'Sigurnosna informacija' : 'Upozorenje'}
                                   </div>
+                                </div>
+                                <div className={`text-sm ${isSafetyWarning ? 'text-slate-700' : 'text-gray-800'} leading-relaxed`}>
+                                  {warningText}
                                 </div>
                               </div>
                             );
-                          })}
-                        </div>
+                        })}
                       </div>
                     )}
                   </div>
