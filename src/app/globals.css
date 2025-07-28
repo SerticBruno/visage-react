@@ -158,3 +158,20 @@ html.modal-open {
 .combo-packages-swiper .swiper-slide {
   height: auto;
 }
+
+/* Custom checkbox styling for mobile - override default blue color */
+input[type="checkbox"] {
+  /* Override default mobile checkbox colors */
+  accent-color: #6b7280; /* gray-500 */
+}
+
+/* Ensure consistent checkbox colors across all devices */
+input[type="checkbox"]:checked {
+  background-color: #6b7280 !important; /* gray-500 */
+  border-color: #6b7280 !important; /* gray-500 */
+}
+
+/* Focus ring color for checkboxes */
+input[type="checkbox"]:focus {
+  --tw-ring-color: #6b7280 !important; /* gray-500 */
+}
