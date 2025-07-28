@@ -17,6 +17,7 @@ export interface Service {
   title: string;
   akuzativTitle?: string;
   description: string;
+  previewDescription?: string;
   longDescription: string;
   image: string;
   heroImage: string;

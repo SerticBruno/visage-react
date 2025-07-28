@@ -2,6 +2,7 @@ export interface Product {
   id: string;
   title: string;
   description: string;
+  previewDescription?: string;
   category: string;
   marka: string; // Brand field
   productType?: string; // New field for "Tip proizvoda"
@@ -102,6 +103,7 @@ export const products: Product[] = [
     description: `Gel sredstvo za čišćenje lica uklanjanja prljavštinu, prašinu i šminku, višak masnoće i mrtvih stanica kože nakupljenih tijekom dana.
 
 Gel za čišćenje lica čuva neke slojeve masnoće na koži što sprječava isušivanje kože. Čisti, pročišćava i tonizira kožu.`,
+    previewDescription: 'Gel sredstvo za čišćenje lica koje nježno čisti i tonizira kožu, čuvajući prirodnu hidrataciju',
     category: 'Čišćenje lica',
     marka: 'TOSKANI',
     productType: 'Čišćenje lica',
@@ -133,6 +135,7 @@ Ovaj gel za čišćenje uklanja nečistoće i višak sebuma koji začepljuju por
 Purifying Cleanser regulira proizvodnju sebuma i ostavlja kožu čistom, svježom, glatkom i mirnom.
 
 Ovaj gel za čišćenje može se koristiti i na tijelu.`,
+    previewDescription: 'Gel bez ulja koji regulira proizvodnju sebuma i čisti kožu sklonu aknama',
     category: 'Čišćenje lica',
     marka: 'TOSKANI',
     productType: 'Čišćenje lica',
@@ -163,6 +166,7 @@ Pogodan je za sve tipove kože.
 Ovaj tonik sa svježim mirisom revitalizira i hidratizira kožu za potpuno pročišćen i osvježen osjećaj.
 
 Kombinira visoku koncentraciju biljnih ekstrakata kao što su bambus, limun i naranča, koji su prirodni izvor alfa-hidroksi kiselina.`,
+    previewDescription: 'Tonik koji revitalizira i hidratizira kožu s prirodnim ekstraktima bambusa, limuna i naranče',
     category: 'Tonik',
     marka: 'TOSKANI',
     productType: 'Tonik',
@@ -191,6 +195,7 @@ Kombinira visoku koncentraciju biljnih ekstrakata kao što su bambus, limun i na
 Sadrži ulje Rosa Mochata, sjemenke i vitamin E koji učinkovito zaglađuju kožu i smanjuju nesavršenosti za zdraviji i mlađi izgled.
 
 Nutritive piling ostavlja kožu osvježenom, vidljivo čišću i mekšom uz zdrav sjaj u koji ćete se zaljubiti.`,
+    previewDescription: 'Piling koji zaglađuje kožu i smanjuje nesavršenosti s uljem Rosa Mochata i vitaminom E',
     category: 'Piling',
     marka: 'TOSKANI',
     productType: 'Piling',
@@ -389,7 +394,11 @@ Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkula
   {
     id: '11',
     title: 'Radiance Ultimate Mesoserum',
-    description: `Vaš novi saveznik u borbi protiv hiperpigmentacija koji učinkovito ujednačava ton kože i smanjuje nesavršenosti.`,
+    description: `Serum prikladan za sve tipove kože i učinkovit saveznik u borbi protiv hiperpigmentacija i pjega.
+
+Posebno razvijen za ujednačavanje tona kože i smanjenje nesavršenosti: sprječava razvoj novih diskoloracija kože, hidrira, sprječava i uklanja tamne mrlje uzrokovane suncem, vraća sjaj i zdravi izgled koži, poboljšava izgled ožiljaka.
+
+Vaš novi saveznik u borbi protiv hiperpigmentacija s učinkovitim djelovanjem već u 1. mjesecu upotrebe!`,
     category: 'Serum',
     marka: 'TOSKANI',
     productType: 'Serum',
@@ -504,7 +513,11 @@ Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih zn
   {
     id: '15',
     title: 'Skin Architect krema',
-    description: `Visoko koncentrirana krema protiv bora koja pruža koži čvrstoću i elastičnost uz primjetan lifting učinak.`,
+    description: `Serum za popravak i učvršćivanje. Osigurava snažne njegujuće i hidratantne efekte.
+
+Pomaže pri minimiziranju vidljivih znakova starenja.
+
+Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih znakova starenja: opuštenu kožu.`,
     category: 'Krema',
     marka: 'TOSKANI',
     productType: 'Krema',
@@ -711,7 +724,11 @@ Pogodno za biološku dob 45+ godina i za sve tipove kože.`,
   {
     id: '22',
     title: 'Unique Pro Age krema',
-    description: `Globalni anti-aging za zrelu i suhu kožu s posebno biranim kompleksima anti-age aktivnih sastojaka.`,
+    description: `Globalni anti-aging za zrelu i suhu kožu.
+
+S posebno biranim kompleksima anti-age aktivnih sastojaka koji ciljano djeluju na razne tipove znakova starenja: zategnutost, marionetske bore, Y zona (oval lica i vrat).
+
+Pogodno za biološku dob 45+ godina i sve tipove kože.`,
     category: 'Krema',
     marka: 'TOSKANI',
     productType: 'Krema',
@@ -1030,7 +1047,9 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
   {
     id: '31',
     title: 'Sun Shiel-D fluid',
-    description: `Regenerativna zaštita kože od sunca koja potiče i poboljšava sintezu vitamina D.`,
+    description: `Fluid za lice ultra lagane teksture koji je pogodan i za osjetljivu kožu. Nije komedogen, što ga čini dobrim izborom i za masnu kožu. 
+    
+    Vrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D. Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
     category: 'Zaštita od sunca',
     marka: 'TOSKANI',
     productType: 'Fluid',

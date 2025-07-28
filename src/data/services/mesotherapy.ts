@@ -5,6 +5,7 @@ export const mesotherapy: Service = {
   title: 'Mezoterapija',
   akuzativTitle: 'mezoterapijom',
   description: 'Dubinska njega za vašu kožu',
+  previewDescription: 'Mezoterapija je inovativni tretman koji pruža dubinsku hidrataciju, obnavljanje i poboljšanje kvalitete kože i vlasišta',
   longDescription: `Neovisno o vašim potrebama, <strong>mezoterapija</strong> pruža <strong>personaliziranu njegu</strong> koja cilja na vaše specifične probleme, uključujući <strong>dehidriranu kožu</strong>, <strong>gubitak tonusa</strong> ili <strong>neujednačen ten</strong>. Rezultat: <strong>osvježena, hidratizirana koža s mladenačkom sjajem</strong>.
 
 <strong>Mezoterapija</strong> je <strong>inovativni tretman</strong> koji pruža <strong>dubinsku hidrataciju</strong>, <strong>obnavljanje</strong> i <strong>pomlađivanje kože</strong>, ostavljajući kožu <strong>osvježenom i sjajnom</strong>.
