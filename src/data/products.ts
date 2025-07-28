@@ -178,7 +178,7 @@ Kombinira visoku koncentraciju biljnih ekstrakata kao što su bambus, limun i na
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristiti s Toskani Energizing gelom za čišćenje lica, Toskani Nutritive pilingom, odgovarajućom Toskani kremom, Toskani serumom i Toskani Sun Shiel-D fluidom."
+        description: "Za najbolji učinak, koristiti s <a href='#' data-product-id='1'>Toskani Energizing gelom za čišćenje lica</a>, <a href='#' data-product-id='4'>Toskani Nutritive pilingom</a>, odgovarajućom Toskani kremom, Toskani serumom i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>."
       }
     ],
     tags: ['tonik', 'svi tipovi kože']
@@ -209,7 +209,7 @@ Nutritive piling ostavlja kožu osvježenom, vidljivo čišću i mekšom uz zdra
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom, Toskani serumom i Toskani Sun Shiel-D fluidom."
+        description: "Za najbolji učinak, koristite s odgovarajućom Toskani kremom, Toskani serumom i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>."
       }
     ],
     tags: ['piling', 'suha koža', 'normalna koža']
@@ -240,7 +240,7 @@ Ekstrakt hamamelisa s adstringentnim svojstvima ostavlja osvježenu i ujednačen
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Purifying gelom za čišćenje lica, Toskani Purifying kremom, Toskani Purifying Intensive serumom i Toskani Sun Shiel-D fluidom."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='2'>Toskani Purifying gelom za čišćenje lica</a>, <a href='#' data-product-id='13'>Toskani Purifying kremom</a>, <a href='#' data-product-id='12'>Toskani Purifying Intensive serumom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>."
       }
     ],
     tags: ['piling', 'masna koža', 'mješovita koža']
@@ -266,7 +266,7 @@ Pruža snažne učinke obnavljanja kože. Poboljšava izgled oštećene kože.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Sun Shiel-D fluidom. Koristite kao kućnu njegu nakon tretmana mezoterapije."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristite kao kućnu njegu nakon tretmana mezoterapije."
       }
     ],
     tags: ['hidratacija', 'protiv iritacija', 'suha koža', 'normalna koža', 'dnevna njega', 'njega nakon kemijskog pilinga', 'njega nakon mezoterapije']
@@ -293,7 +293,7 @@ Pruža snažne učinke obnavljanja kože. Poboljšava izgled oštećene kože.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Sun Shiel-D fluidom. Koristite kao kućnu njegu nakon tretmana mezoterapije."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristite kao kućnu njegu nakon tretmana mezoterapije."
       }
     ],
     tags: ['hidratacija', 'protiv iritacija', 'normalna koža', 'mješovita koža', 'masna koža', 'dnevna njega', 'njega nakon kemijskog pilinga', 'njega nakon mezoterapije']
@@ -325,7 +325,7 @@ Preporučuje se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarj
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Radiance Ultimate serumom, Radiance Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima za ujednačavanje tona kože, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='11'>Toskani Radiance Ultimate serumom</a>, <a href='#' data-product-id='10'>Radiance Eye Contour okoloočnom njegom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima za ujednačavanje tona kože, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['spf', 'hiperpigmentacije', 'fotostarenje', 'dnevna njega', 'svi tipovi kože']
@@ -381,7 +381,7 @@ Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkula
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Radiance Daily Cream SPF30+, Toskani Radiance Ultimate serumom i Toskani Sun Shiel-D fluidom."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='8'>Toskani Radiance Daily Cream SPF30+</a>, <a href='#' data-product-id='11'>Toskani Radiance Ultimate serumom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>."
       }
     ],
     tags: ['okoloočna njega', 'hiperpigmentacije', 'posvjetljivanje podočnjaka']
@@ -412,7 +412,7 @@ Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkula
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Daily Radiance kremom SPF30+, Toskani Radiance Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima za ujednačavanje tona kože, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='8'>Toskani Daily Radiance kremom SPF30+</a>, <a href='#' data-product-id='10'>Toskani Radiance Eye Contour okoloočnom njegom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima za ujednačavanje tona kože, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['serum', 'hiperpigmentacije', 'fotostarenje', 'svi tipovi kože']
@@ -440,7 +440,7 @@ Intenzivni serum indiciran je za lokalizirano liječenje mrlja i upala.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Purifying gelom za čišćenje lica, Toskani Purifying pilingom, Toskani Purifying kremom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji pomažu u rješavanju problematične kože, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='2'>Toskani Purifying gelom za čišćenje lica</a>, <a href='#' data-product-id='5'>Toskani Purifying pilingom</a>, <a href='#' data-product-id='13'>Toskani Purifying kremom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima koji pomažu u rješavanju problematične kože, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['serum', 'akne', 'prištići', 'lokalizirano liječenje']
@@ -468,7 +468,7 @@ Purifying krema također pomaže koži u borbi protiv slobodnih radikala i pruž
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Purifying Intensive serumom, koji nanosite na lokalizirane upale, Toskani Purifying pilingom, Toskani Purifying gelom za čišćenje lica i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji pomažu u rješavanju problematične kože, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='12'>Toskani Purifying Intensive serumom</a>, koji nanosite na lokalizirane upale, <a href='#' data-product-id='5'>Toskani Purifying pilingom</a>, <a href='#' data-product-id='2'>Toskani Purifying gelom za čišćenje lica</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima koji pomažu u rješavanju problematične kože, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['krema', 'akne', 'prištići', 'masna koža']
@@ -496,7 +496,7 @@ Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih zn
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Skin Architect kremom, Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima s anti-age učincima, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='15'>Toskani Skin Architect kremom</a>, <a href='#' data-product-id='9'>Antiaging Eye Contour okoloočnom njegom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima s anti-age učincima, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['serum', 'anti-age', 'njega nakon dermalnih filera', 'njega nakon skin boostera', 'svi tipovi kože']
@@ -527,7 +527,7 @@ Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih zn
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Skin Architect serumom, Toskani Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima s anti-age učincima, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='14'>Toskani Skin Architect serumom</a>, <a href='#' data-product-id='9'>Toskani Antiaging Eye Contour okoloočnom njegom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima s anti-age učincima, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['krema', 'anti-age', 'njega nakon dermalnih filera', 'njega nakon skin boostera', 'svi tipovi kože']
@@ -557,7 +557,7 @@ Jača barijeru kože, pogodan je za sve tipove kože, no najviše se preporučuj
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Anti Aging Eye Contour okoloočnom kremom, Toskani Night Reverse Advanced kremom ili Toskani Skin Architect kremom. Nanesite jednu pumpicu seruma u kremu i nanesite na lice. Za najbolje rezultate koristiti s odgovarajućim Toskani proizvodima iz Anti-Age njege."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='9'>Toskani Anti Aging Eye Contour okoloočnom kremom</a>, <a href='#' data-product-id='25'>Toskani Night Reverse Advanced kremom</a> ili <a href='#' data-product-id='15'>Toskani Skin Architect kremom</a>. Nanesite jednu pumpicu seruma u kremu i nanesite na lice. Za najbolje rezultate koristiti s odgovarajućim Toskani proizvodima iz Anti-Age njege."
       }
     ],
     tags: ['serum', 'noćna njega', 'anti-age', 'svi tipovi kože', 'suha koža', 'dehidrirana koža']
@@ -585,7 +585,7 @@ Pomaže u sprječavanju prvih znakova starenja. Jača kožnu barijeru. Pogodan j
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Glacier Pro Age kremom, Radiance Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='18'>Glacier Pro Age kremom</a>, <a href='#' data-product-id='10'>Radiance Eye Contour okoloočnom njegom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['serum', 'anti-age', '20+ godina', 'svi tipovi kože']
@@ -613,7 +613,7 @@ Pogodno za biološku dob 20+ godina i sve tipove kože.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Glacier Pro Age serumom, Radiance Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='17'>Glacier Pro Age serumom</a>, <a href='#' data-product-id='10'>Radiance Eye Contour okoloočnom njegom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['krema', 'anti-age', '20+ godina', 'svi tipovi kože']
@@ -644,7 +644,7 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Retin Pro Age kremom, Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='20'>Retin Pro Age kremom</a>, <a href='#' data-product-id='9'>Antiaging Eye Contour okoloočnom njegom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['serum', 'anti-age', '30+/40 godina', 'svi tipovi kože', 'osjetljiva koža']
@@ -675,7 +675,7 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Retin Pro Age serumom, Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='19'>Retin Pro Age serumom</a>, <a href='#' data-product-id='9'>Antiaging Eye Contour okoloočnom njegom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['krema', 'anti-age', '30+/40 godina', 'svi tipovi kože', 'osjetljiva koža']
@@ -703,7 +703,7 @@ Pogodno za biološku dob 45+ godina i za sve tipove kože.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Unique Pro Age kremom, Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='22'>Unique Pro Age kremom</a>, <a href='#' data-product-id='9'>Antiaging Eye Contour okoloočnom njegom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['serum', 'anti-age', '45+ godina', 'svi tipovi kože']
@@ -733,7 +733,7 @@ Pogodno za biološku dob 45+ godina i za sve tipove kože.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Unique Pro Age serumom, Antiaging Eye Contour okoloočnom njegom i Toskani Sun Shiel-D fluidom. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='21'>Unique Pro Age serumom</a>, <a href='#' data-product-id='9'>Antiaging Eye Contour okoloočnom njegom</a> i <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a>. Koristiti kao dodatak profesionalnim tretmanima koji imaju anti-age učinke, kao što su mezoterapija i kemijski piling."
       }
     ],
     tags: ['krema', 'anti-age', '45+ godina', 'svi tipovi kože']
@@ -766,7 +766,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s DensiHair Boost kapsulama i mezoterapijom vlasišta."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='24'>DensiHair Boost kapsulama</a> i mezoterapijom vlasišta."
       }
     ],
     tags: ['sprej', 'njega vlasišta', 'zaustavljanje gubitka kose', 'jačanje kose', 'alopecija']
@@ -826,7 +826,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Toskani Anti Aging okoloočnom kremom, Toskani Night Reverse Advanced serumom. Nanesite jednu pumpicu seruma u malu količinu kreme i nanesite na lice. Za najbolje rezultate koristiti s odgovarajućim Toskani proizvodima iz Anti-Age njege."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='9'>Toskani Anti Aging okoloočnom kremom</a>, <a href='#' data-product-id='16'>Toskani Night Reverse Advanced serumom</a>. Nanesite jednu pumpicu seruma u malu količinu kreme i nanesite na lice. Za najbolje rezultate koristiti s odgovarajućim Toskani proizvodima iz Anti-Age njege."
       }
     ],
     tags: ['noćna njega', 'maska', 'anti-age', 'regeneracija', 'svi tipovi kože', 'epigenetika', 'skin reset complex']
@@ -1127,36 +1127,6 @@ Vodootporan je.`,
   },
   {
     id: '34',
-    title: 'Profhilo Haenkenium',
-    description: `Anti-age krema preoblikuje lice, vrat i dekolte, dajući elastičnost i čvrstoću te ublažavajući sitne bore.
-
-Zahvaljujući povezanosti hijaluronskih kiselina niske i velike molekularne težine i Haenkenium® (ekstrakt Salvia haenkei), Profhilo Haenkenium krema djeluje kao štit za slobodne radikale.
-
-Vraća zaštitnu barijeru osjetljive kože koja je iritirana i crvena zbog oksidativnog stresa ili nakon estetskih tretmana.
-
-Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne težine obnavlja i održava integritet hidrolipidnog sloja kože, HA niske molekularne težine održava optimalnu hidriranost kože.`,
-    category: 'Krema',
-    marka: 'Profhilo',
-    productType: 'Krema',
-    skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
-    skinConcern: ['Anti-aging njega', 'Hidratacija'],
-    image: '/images/products/profhilo-haenkenium-estetski-studio-visage-sisak.png',
-    price: '54 EUR',
-    volume: '50 ml',
-    activeIngredients: ['Hijaluronska kiselina visoke molekularne težine', 'Hijaluronska kiselina niske molekularne težine', 'Haenkenium® (ekstrakt Salvia haenkei)'],
-    application: [
-      'Nanijeti kremu dva puta dnevno na očišćeno lice, vrat i dekolte.'
-    ],
-    proTips: [
-      {
-        title: "Glow tip",
-        description: "Za najbolji učinak, koristiti kao kućna njega nakon tretmana Profhilo. Njegu nadopuniti Toskani Sun Shiel-D fluidom i Toskani Anti-Ageing + HA"
-      }
-    ],
-    tags: ['krema', 'anti-age', 'profhilo', 'hijaluronska kiselina', 'njega nakon tretmana', 'svi tipovi kože']
-  },
-  {
-    id: '35',
     title: 'Vitaflash Ampule',
     description: `Vitaflash ampula je proizvod za povremenu upotrebu koji pruža trenutačni efekt liftinga.
 
@@ -1197,7 +1167,38 @@ Sadrži aktivne sastojke koji pružaju trenutačni efekt liftinga, omekšavaju b
       'posebne prilike',
       'antioksidansi'
     ]
+  },
+  {
+    id: '35',
+    title: 'Profhilo Haenkenium',
+    description: `Anti-age krema preoblikuje lice, vrat i dekolte, dajući elastičnost i čvrstoću te ublažavajući sitne bore.
+
+Zahvaljujući povezanosti hijaluronskih kiselina niske i velike molekularne težine i Haenkenium® (ekstrakt Salvia haenkei), Profhilo Haenkenium krema djeluje kao štit za slobodne radikale.
+
+Vraća zaštitnu barijeru osjetljive kože koja je iritirana i crvena zbog oksidativnog stresa ili nakon estetskih tretmana.
+
+Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne težine obnavlja i održava integritet hidrolipidnog sloja kože, HA niske molekularne težine održava optimalnu hidriranost kože.`,
+    category: 'Krema',
+    marka: 'Profhilo',
+    productType: 'Krema',
+    skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
+    skinConcern: ['Anti-aging njega', 'Hidratacija'],
+    image: '/images/products/profhilo-haenkenium-estetski-studio-visage-sisak.png',
+    price: '54 EUR',
+    volume: '50 ml',
+    activeIngredients: ['Hijaluronska kiselina visoke molekularne težine', 'Hijaluronska kiselina niske molekularne težine', 'Haenkenium® (ekstrakt Salvia haenkei)'],
+    application: [
+      'Nanijeti kremu dva puta dnevno na očišćeno lice, vrat i dekolte.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristiti kao kućna njega nakon tretmana Profhilo. Njegu nadopuniti <a href='#' data-product-id='31'>Toskani Sun Shiel-D fluidom</a> i <a href='#' data-product-id='26'>Toskani Anti-Ageing + HA</a>"
+      }
+    ],
+    tags: ['krema', 'anti-age', 'profhilo', 'hijaluronska kiselina', 'njega nakon tretmana', 'svi tipovi kože']
   }
+  
 ]; 
 
 // Utility function to get popular products
