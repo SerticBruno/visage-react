@@ -59,16 +59,25 @@ export default function ComboPackageNavigationModal({
 
   // Initialize with the initial combo package or first one
   useEffect(() => {
-    if (initialComboPackage && !isClosing) {
+    console.log('Initialization effect', { 
+      initialComboPackage: initialComboPackage?.title, 
+      isClosing, 
+      currentComboPackage: currentComboPackage?.title,
+      comboPackagesLength: comboPackages.length 
+    });
+    
+    if (initialComboPackage && !isClosing && !currentComboPackage) {
       const index = comboPackages.findIndex(pkg => pkg.id === initialComboPackage.id);
+      console.log('Found initial package at index:', index);
       setCurrentIndex(index >= 0 ? index : 0);
       setCurrentComboPackage(initialComboPackage);
     } else if (!currentComboPackage && !isClosing) {
       // Only set to first package if no current package is set
+      console.log('Setting to first package');
       setCurrentIndex(0);
       setCurrentComboPackage(comboPackages[0]);
     }
-  }, [initialComboPackage, isClosing, currentComboPackage]);
+  }, [initialComboPackage, isClosing, comboPackages]);
 
   // Handle transition state
   useEffect(() => {
@@ -83,28 +92,36 @@ export default function ComboPackageNavigationModal({
   const handlePrevious = useCallback(() => {
     if (isTransitioning) return;
     
+    console.log('handlePrevious called', { currentIndex, comboPackagesLength: comboPackages.length });
+    
     setIsTransitioning(true);
     const newIndex = currentIndex === 0 ? comboPackages.length - 1 : currentIndex - 1;
+    
+    console.log('New index will be:', newIndex, 'Package:', comboPackages[newIndex]?.title);
     
     // Fade out first
     setTimeout(() => {
       setCurrentIndex(newIndex);
       setCurrentComboPackage(comboPackages[newIndex]);
     }, 150); // Half of the transition duration
-  }, [currentIndex, isTransitioning]);
+  }, [currentIndex, isTransitioning, comboPackages]);
 
   const handleNext = useCallback(() => {
     if (isTransitioning) return;
     
+    console.log('handleNext called', { currentIndex, comboPackagesLength: comboPackages.length });
+    
     setIsTransitioning(true);
     const newIndex = currentIndex === comboPackages.length - 1 ? 0 : currentIndex + 1;
+    
+    console.log('New index will be:', newIndex, 'Package:', comboPackages[newIndex]?.title);
     
     // Fade out first
     setTimeout(() => {
       setCurrentIndex(newIndex);
       setCurrentComboPackage(comboPackages[newIndex]);
     }, 150); // Half of the transition duration
-  }, [currentIndex, isTransitioning]);
+  }, [currentIndex, isTransitioning, comboPackages]);
 
   const handleClose = useCallback(() => {
     setIsClosing(true);
@@ -143,7 +160,7 @@ export default function ComboPackageNavigationModal({
 
   const modalContent = (
     <Transition appear show={isOpen} as={Fragment}>
-      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-6 pt-16 pb-16 md:p-4">
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4">
         <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={handleClose} />
         
         <Transition.Child
@@ -155,41 +172,50 @@ export default function ComboPackageNavigationModal({
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <div className="relative">
-            {/* Close Button - Outside Modal */}
+          <div className="relative w-full h-full lg:h-auto max-w-4xl max-h-full lg:max-h-none flex items-center justify-center">
+            {/* Close Button - Mobile: Inside Modal, Desktop: Outside Modal */}
             <button
               onClick={handleClose}
-              className="absolute -top-4 -right-4 z-20 text-slate-400 hover:text-slate-600 focus:outline-none transition-colors cursor-pointer p-2 hover:bg-slate-100 rounded-full bg-white shadow-md"
+              className="absolute top-2 right-2 lg:-top-4 lg:-right-4 z-20 text-slate-400 hover:text-slate-600 focus:outline-none transition-colors cursor-pointer p-2 hover:bg-slate-100 rounded-full bg-white shadow-md"
             >
               <FaTimes size={20} />
             </button>
 
-            {/* Navigation Arrows - Outside Container */}
+            {/* Navigation Arrows - Outside Container (Desktop Only) */}
             <button
-              onClick={handlePrevious}
-              className="absolute -left-16 sm:-left-20 top-1/2 -translate-y-1/2 z-20 text-slate-600 hover:text-slate-800 focus:outline-none transition-all duration-300 cursor-pointer p-3 sm:p-4 hover:bg-white/80 rounded-full bg-white/60 shadow-lg hover:shadow-xl"
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePrevious();
+              }}
+              className="hidden lg:block absolute -left-16 sm:-left-20 top-1/2 -translate-y-1/2 z-20 text-slate-600 hover:text-slate-800 focus:outline-none transition-all duration-300 cursor-pointer p-3 sm:p-4 hover:bg-white/80 rounded-full bg-white/60 shadow-lg hover:shadow-xl"
               aria-label="Previous combo package"
+              disabled={isTransitioning}
             >
               <FaChevronLeft size={24} className="sm:w-7 sm:h-7" />
             </button>
 
             <button
-              onClick={handleNext}
-              className="absolute -right-16 sm:-right-20 top-1/2 -translate-y-1/2 z-20 text-slate-600 hover:text-slate-800 focus:outline-none transition-all duration-300 cursor-pointer p-3 sm:p-4 hover:bg-white/80 rounded-full bg-white/60 shadow-lg hover:shadow-xl"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNext();
+              }}
+              className="hidden lg:block absolute -right-16 sm:-right-20 top-1/2 -translate-y-1/2 z-20 text-slate-600 hover:text-slate-800 focus:outline-none transition-all duration-300 cursor-pointer p-3 sm:p-4 hover:bg-white/80 rounded-full bg-white/60 shadow-lg hover:shadow-xl"
               aria-label="Next combo package"
+              disabled={isTransitioning}
             >
               <FaChevronRight size={24} className="sm:w-7 sm:h-7" />
             </button>
 
-
             
-            <div className="w-full max-w-4xl md:w-[1000px] max-h-[95vh] md:h-[600px] transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 flex flex-col">
+            <div className="w-full h-full lg:h-auto max-w-4xl max-h-full lg:max-h-none transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 flex flex-col">
               {/* Content - Fixed Left + Scrollable Right */}
               <div className="flex flex-col lg:flex-row h-full min-h-0">
                 {/* Mobile Layout */}
-                <div className="lg:hidden w-full p-3 space-y-3">
-                  {/* Images - Full width */}
-                  <div className="w-full relative h-48 bg-slate-50 rounded-xl overflow-hidden shadow-sm">
+                <div className="lg:hidden w-full h-full flex flex-col">
+                  {/* Images - Fixed height */}
+                  <div className={`w-full relative h-32 sm:h-40 bg-slate-50 rounded-t-xl overflow-hidden shadow-sm flex-shrink-0 transition-opacity duration-300 ${
+                    isTransitioning ? 'opacity-25' : 'opacity-100'
+                  }`}>
                     <div className={`relative w-full h-full flex flex-row transition-opacity duration-500 ${
                       imagesLoaded ? 'opacity-100' : 'opacity-0'
                     }`}>
@@ -219,6 +245,173 @@ export default function ComboPackageNavigationModal({
                       ))}
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  </div>
+                  
+                  {/* Scrollable Content */}
+                  <div className={`flex-1 overflow-y-auto p-3 space-y-3 transition-all duration-500 ${
+                    isTransitioning 
+                      ? 'opacity-25 blur-sm' 
+                      : imagesLoaded 
+                        ? 'opacity-100 blur-0' 
+                        : 'opacity-0 blur-md'
+                  }`}>
+                    {/* Title and Description */}
+                    <div className="bg-slate-50 rounded-xl p-3">
+                      <h2 className="text-xl font-bold text-slate-900 mb-2">
+                        {currentComboPackage.title}
+                      </h2>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        {currentComboPackage.description}
+                      </p>
+                    </div>
+                    
+                    {/* Pricing Section */}
+                    <div className="bg-gradient-to-br from-slate-100 to-slate-50 rounded-xl p-4 border border-slate-200 shadow-sm">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-1">
+                            <span className="text-2xl font-bold text-slate-900">
+                              {currentComboPackage.price}
+                            </span>
+                            {currentComboPackage.oldPrice && (
+                              <span className="text-lg text-slate-500 line-through">
+                                {currentComboPackage.oldPrice}
+                              </span>
+                            )}
+                          </div>
+                          {currentComboPackage.oldPrice && (
+                            <div className="flex items-center gap-2">
+                              <div className="text-xs text-slate-700 font-semibold bg-slate-200 px-2 py-1 rounded-lg">
+                                Ušteda {calculateSavings(currentComboPackage.oldPrice, currentComboPackage.price)}
+                              </div>
+                              <div className="text-xs text-slate-600">
+                                ({Math.round((1 - parseFloat(currentComboPackage.price.replace(/\D/g, '')) / parseFloat(currentComboPackage.oldPrice.replace(/\D/g, ''))) * 100)}% popusta)
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        <Link
+                          href={`/kontakt?combo=${encodeURIComponent(currentComboPackage.title)}`}
+                          onClick={onClose}
+                          className="inline-flex items-center justify-center px-6 py-2 border border-slate-600 text-sm font-medium rounded-lg text-white bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:shadow-lg whitespace-nowrap"
+                        >
+                          Rezervirajte paket
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Services Details */}
+                    <div className="bg-slate-50 rounded-xl p-3">
+                      <h3 className="text-sm font-semibold text-slate-900 mb-2 flex items-center gap-2">
+                        <FaGift className="text-slate-600" />
+                        Uključene usluge
+                      </h3>
+                      <div className="space-y-2">
+                        {currentComboPackage.services.map((service) => {
+                          const isCurrentService = service.id === serviceId;
+                          
+                          const content = (
+                            <>
+                              <div className={`w-2 h-2 rounded-full mr-2 mt-1.5 flex-shrink-0 ${
+                                isCurrentService 
+                                  ? 'bg-slate-600' 
+                                  : 'bg-slate-400'
+                              }`} />
+                              
+                              <div className="flex-1 min-w-0">
+                                {isCurrentService ? (
+                                  <span className="text-sm font-medium text-slate-800">
+                                    {service.title}
+                                  </span>
+                                ) : (
+                                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                    <span className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors truncate">
+                                      {service.title}
+                                    </span>
+                                    <span className="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-800 px-2 py-1 rounded transition-colors font-medium whitespace-nowrap flex-shrink-0">
+                                      Saznaj više
+                                    </span>
+                                  </div>
+                                )}
+                                {service.shortDescription && (
+                                  <p className="text-xs text-slate-500 mt-1">
+                                    {service.shortDescription}
+                                  </p>
+                                )}
+                              </div>
+                              {isCurrentService && (
+                                <FaCheck className="text-slate-600 ml-2 mt-1.5 flex-shrink-0" size={12} />
+                              )}
+                            </>
+                          );
+
+                          return isCurrentService ? (
+                            <div
+                              key={service.id}
+                              className="flex items-start p-2 rounded-lg border border-slate-300 bg-white"
+                            >
+                              {content}
+                            </div>
+                          ) : (
+                            <Link
+                              key={service.id}
+                              href={`/usluge/${service.linkId || service.id}`}
+                              onClick={(e) => e.stopPropagation()}
+                              className="flex items-start p-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors block"
+                            >
+                              {content}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Products Details */}
+                    {currentComboPackage.products && currentComboPackage.products.length > 0 && (
+                      <div className="bg-slate-50 rounded-xl p-3">
+                        <h3 className="text-sm font-semibold text-slate-900 mb-2 flex items-center gap-2">
+                          <FaStar className="text-slate-600" />
+                          Uključeni proizvodi
+                        </h3>
+                        <div className="space-y-2">
+                          {currentComboPackage.products.map((product) => (
+                            <Link
+                              key={product.id}
+                              href={`/katalog?product=${product.id}`}
+                              onClick={(e) => e.stopPropagation()}
+                              className="flex items-start p-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors block"
+                            >
+                              <div className="w-2 h-2 rounded-full mr-2 mt-1.5 flex-shrink-0 bg-slate-400" />
+                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 flex-1 min-w-0">
+                                <span className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors truncate">
+                                  {product.title}
+                                </span>
+                                <span className="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-800 px-2 py-1 rounded transition-colors font-medium whitespace-nowrap flex-shrink-0">
+                                  Saznaj više
+                                </span>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Benefits */}
+                    <div className="bg-slate-50 rounded-xl p-3">
+                      <h3 className="text-sm font-semibold text-slate-900 mb-2">
+                        Prednosti paketa
+                      </h3>
+                      <ul className="space-y-2">
+                        {currentComboPackage.benefits.map((benefit, index) => (
+                          <li key={index} className="flex items-start text-slate-700">
+                            <svg className="h-4 w-4 text-slate-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span className="text-sm leading-relaxed">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
 
@@ -269,9 +462,9 @@ export default function ComboPackageNavigationModal({
                   </div>
                 </div>
                 
-                {/* Scrollable Right Side */}
-                <div className="w-full lg:w-3/5 overflow-y-auto max-h-[calc(95vh-12rem)] lg:max-h-[600px] flex-1 min-h-0">
-                  <div className={`p-3 lg:p-4 space-y-3 transition-all duration-500 ${
+                {/* Scrollable Right Side - Desktop Only */}
+                <div className="hidden lg:block w-3/5 overflow-y-auto max-h-[calc(90vh-5rem)] flex-1 min-h-0">
+                  <div className={`p-4 space-y-3 transition-all duration-500 ${
                     isTransitioning 
                       ? 'opacity-25 blur-sm' 
                       : imagesLoaded 

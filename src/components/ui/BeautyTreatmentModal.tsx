@@ -56,7 +56,7 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-6 pt-16 pb-16 md:p-4">
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4">
         <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={onClose} />
         
         <Transition.Child
@@ -68,51 +68,100 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <div className="relative">
-            {/* Close Button - Outside Modal */}
+          <div className="relative w-full h-full lg:h-auto max-w-4xl max-h-full lg:max-h-none flex items-center justify-center">
+            {/* Close Button - Mobile: Inside Modal, Desktop: Outside Modal */}
             <button
               onClick={onClose}
-              className="absolute -top-4 -right-4 z-20 text-slate-400 hover:text-slate-600 focus:outline-none transition-colors cursor-pointer p-2 hover:bg-slate-100 rounded-full bg-white shadow-md"
+              className="absolute top-2 right-2 lg:-top-4 lg:-right-4 z-20 text-slate-400 hover:text-slate-600 focus:outline-none transition-colors cursor-pointer p-2 hover:bg-slate-100 rounded-full bg-white shadow-md"
             >
               <FaTimes size={20} />
             </button>
             
-            <div className="w-full max-w-4xl md:w-[1000px] max-h-[95vh] md:h-[600px] transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 flex flex-col">
+            <div className="w-full h-full lg:h-auto max-w-4xl max-h-full lg:max-h-none transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 flex flex-col">
               {/* Content - Fixed Left + Scrollable Right */}
               <div className="flex flex-col lg:flex-row h-full min-h-0">
                 {/* Mobile Layout */}
-                <div className="lg:hidden w-full p-3 space-y-3">
-                  {/* Image - Full width */}
-                  <div className="w-full relative h-48 bg-slate-50 rounded-xl overflow-hidden shadow-sm">
+                <div className="lg:hidden w-full h-full flex flex-col">
+                  {/* Image - Fixed height */}
+                  <div className="w-full relative h-32 sm:h-40 bg-slate-50 rounded-t-xl overflow-hidden shadow-sm flex-shrink-0">
                     <Image
                       src={treatment.image}
                       alt={treatment.title}
                       fill
-                      className="object-contain"
+                      className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   </div>
-
-                  {/* Second row - Price and Duration in 50/50 columns */}
-                  <div className="flex gap-3">
-                    {/* Price Section - 50% width */}
-                    <div className="w-1/2 bg-slate-50 rounded-lg p-3">
-                      <h3 className="text-sm font-semibold text-slate-900 mb-2">
-                        Cijena
-                      </h3>
-                      <p className="text-lg font-bold text-slate-900">{treatment.price}</p>
+                  
+                  {/* Scrollable Content */}
+                  <div className="flex-1 overflow-y-auto p-3 space-y-3">
+                    {/* Title and Description */}
+                    <div className="bg-slate-50 rounded-xl p-3">
+                      <h2 className="text-xl font-bold text-slate-900 mb-2">
+                        {treatment.title}
+                      </h2>
+                      <div className="text-sm text-slate-600 leading-relaxed whitespace-pre-line">
+                        {mainText}
+                      </div>
                     </div>
                     
-                    {/* Duration Section - 50% width */}
-                    <div className="w-1/2 bg-slate-50 rounded-lg p-3">
-                      <h3 className="text-sm font-semibold text-slate-900 mb-2">
-                        Trajanje
-                      </h3>
-                      <p className="text-lg font-bold text-slate-900">{treatment.duration}</p>
+                    {/* Pricing Section */}
+                    <div className="bg-gradient-to-br from-slate-100 to-slate-50 rounded-xl p-4 border border-slate-200 shadow-sm">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-1">
+                            <span className="text-2xl font-bold text-slate-900">
+                              {treatment.price}
+                            </span>
+                            <div className="flex items-center gap-2 text-sm text-slate-600">
+                              <span>{treatment.duration}</span>
+                            </div>
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => {
+                            // Handle booking action
+                            window.open('/kontakt', '_blank');
+                          }}
+                          className="inline-flex items-center justify-center px-6 py-2 border border-slate-600 text-sm font-medium rounded-lg text-white bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:shadow-lg whitespace-nowrap"
+                        >
+                          Rezervirajte tretman
+                        </button>
+                      </div>
                     </div>
+
+                    {/* Benefits */}
+                    <div className="bg-slate-50 rounded-xl p-3">
+                      <h3 className="text-sm font-semibold text-slate-900 mb-2">
+                        Prednosti
+                      </h3>
+                      <ul className="space-y-2">
+                        {treatment.benefits.map((benefit, index) => (
+                          <li key={index} className="flex items-start text-slate-700">
+                            <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
+                            <span className="text-sm leading-relaxed">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    {/* Procedure Steps */}
+                    {steps.length > 0 && (
+                      <div className="bg-slate-50 rounded-xl p-4">
+                        <h3 className="text-sm font-semibold text-slate-900 mb-3">
+                          Kako izgleda tretman:
+                        </h3>
+                        <ul className="space-y-2">
+                          {steps.map((step, index) => (
+                            <li key={index} className="flex items-start text-slate-700">
+                              <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 mt-2"></span>
+                              <span className="text-sm leading-relaxed">{step}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
-
-
                 </div>
 
                 {/* Desktop Layout - Fixed Left Side */}
@@ -128,9 +177,9 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
                   </div>
                 </div>
                 
-                {/* Scrollable Right Side */}
-                <div className="w-full lg:w-3/5 overflow-y-auto max-h-[calc(95vh-12rem)] lg:max-h-[600px] flex-1 min-h-0">
-                  <div className="p-3 lg:p-6">
+                {/* Scrollable Right Side - Desktop Only */}
+                <div className="hidden lg:block w-3/5 overflow-y-auto max-h-[600px] flex-1 min-h-0">
+                  <div className="p-6">
                     
                     {/* Title and Description */}
                     <div className="bg-slate-50 rounded-xl p-3 mb-4">

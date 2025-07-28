@@ -67,40 +67,49 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
             
             <div className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 max-h-[95vh] md:max-h-[90vh] flex flex-col">
               {/* Content */}
-              <div className="flex flex-col md:flex-row h-full min-h-0">
+              <div className="flex flex-col md:flex-row h-full min-h-0 overflow-hidden">
                 {/* Mobile Layout - First Row with Image and Info */}
                 <div className="md:hidden w-full p-3 flex gap-3 items-stretch">
-                  {/* Image - 75% width */}
-                  <div className="w-3/4 relative bg-slate-50 rounded-xl overflow-hidden shadow-sm flex-shrink-0">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      fill
-                      className="object-contain"
-                    />
-                    {/* Product Badges in Modal */}
-                    <div className="absolute top-2 right-2 flex flex-col gap-1">
-                      {product.isNew && (
-                        <span className="bg-emerald-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                          <FaLeaf className="w-3 h-3" />
-                          Novo
-                        </span>
-                      )}
-                      {product.isOnSale && product.oldPrice && (
-                        <span className="bg-rose-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                          <FaTag className="w-3 h-3" />
-                          Akcija
-                        </span>
-                      )}
-                      {product.isLimited && (
-                        <span className="bg-violet-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                          <FaFire className="w-3 h-3" />
-                          Limitirano
-                        </span>
-                      )}
+                  {/* Left side - Image and Title */}
+                  <div className="w-3/4 flex flex-col gap-3">
+                    {/* Title Section */}
+                    <div className="bg-slate-50 rounded-xl p-3">
+                      <h2 className="text-lg font-bold text-slate-900">
+                        {product.title}
+                      </h2>
                     </div>
                     
-                                       </div>
+                    {/* Image */}
+                    <div className="relative bg-slate-50 rounded-xl overflow-hidden shadow-sm flex-1">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        fill
+                        className="object-contain"
+                      />
+                      {/* Product Badges in Modal */}
+                      <div className="absolute top-2 right-2 flex flex-col gap-1">
+                        {product.isNew && (
+                          <span className="bg-emerald-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                            <FaLeaf className="w-3 h-3" />
+                            Novo
+                          </span>
+                        )}
+                        {product.isOnSale && product.oldPrice && (
+                          <span className="bg-rose-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                            <FaTag className="w-3 h-3" />
+                            Akcija
+                          </span>
+                        )}
+                        {product.isLimited && (
+                          <span className="bg-violet-500 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                            <FaFire className="w-3 h-3" />
+                            Limitirano
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
 
                    {/* Right side info - 25% width */}
                    <div className="w-1/4 space-y-2 flex flex-col">
@@ -148,6 +157,13 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
 
                 {/* Desktop Layout - Fixed Left Side */}
                 <div className="hidden md:block w-2/5 p-4 border-r border-slate-100 flex-shrink-0">
+                  {/* Title Section */}
+                  <div className="bg-slate-50 rounded-xl p-4 mb-4">
+                    <h2 className="text-xl font-bold text-slate-900">
+                      {product.title}
+                    </h2>
+                  </div>
+                  
                   <div className="relative h-96 bg-slate-50 rounded-xl overflow-hidden shadow-sm">
                     <Image
                       src={product.image}
@@ -216,14 +232,8 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                 </div>
                 
                 {/* Scrollable Right Side */}
-                <div className="w-full md:w-3/5 overflow-y-auto max-h-[calc(95vh-12rem)] md:max-h-[calc(90vh-5rem)] flex-1 min-h-0">
+                <div className="w-full md:w-3/5 overflow-y-auto flex-1 min-h-0">
                   <div className="p-3 md:p-4 space-y-3">
-                    {/* Title Section */}
-                    <div className="bg-slate-50 rounded-xl p-3">
-                      <h2 className="text-xl font-bold text-slate-900 mb-2">
-                        {product.title}
-                      </h2>
-                    </div>
 
                     {/* Opis Section */}
                     <div className="bg-slate-50 rounded-xl p-3">
