@@ -602,6 +602,34 @@ function KatalogContent() {
                 </div>
               </div>
 
+              {/* Clear Filters Button */}
+              {(searchTerm || selectedProductTypes.length > 0 || selectedSkinTypes.length > 0 || selectedSkinConcerns.length > 0 || selectedBrands.length > 0 || selectedBadges.length > 0) && (
+                <div className="border-t border-gray-200 pt-4">
+                  <button
+                    onClick={() => {
+                      setIsTransitioning(true);
+                      setIsFiltering(true);
+                      
+                      // Fade out first, then clear all filters
+                      setTimeout(() => {
+                        setSearchTerm('');
+                        setSelectedProductTypes([]);
+                        setSelectedSkinTypes([]);
+                        setSelectedSkinConcerns([]);
+                        setSelectedBrands([]);
+                        setSelectedBadges([]);
+                        requestAnimationFrame(scrollToProducts);
+                      }, 150); // Half of the transition duration
+                    }}
+                    className="w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium shadow-sm cursor-pointer
+                               hover:bg-gray-200 hover:shadow-md transition-all duration-200 ease-out
+                               border border-gray-200 hover:border-gray-300"
+                  >
+                    Očisti sve filtere
+                  </button>
+                </div>
+              )}
+
               {/* Results Count */}
               <div className="border-t border-gray-200 pt-6">
                 <p className="text-sm text-gray-600">
@@ -788,7 +816,7 @@ function KatalogContent() {
         />
       </div>
       <NewsletterCTASection></NewsletterCTASection>
-      <ContactSection hasTopPadding={false} />
+      <ContactSection hasTopPadding={true} />
     </>
   );
 }

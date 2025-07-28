@@ -61,13 +61,13 @@ const ContactInfoCard = ({ icon: Icon, title, content, link, linkText }: {
   );
 };
 
-const ContactSection = ({ hasTopPadding = true, serviceLabel }: { hasTopPadding?: boolean, serviceLabel?: string }) => {
+const ContactSection = ({ hasTopPadding = true, serviceLabel, comboLabel }: { hasTopPadding?: boolean, serviceLabel?: string, comboLabel?: string }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: '',
-    service: serviceLabel || '',
+    service: serviceLabel || comboLabel || '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -75,9 +75,9 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel }: { hasTopPadding?
   const formRef = useRef<HTMLDivElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
 
-  // Scroll to form when serviceLabel is provided
+  // Scroll to form when serviceLabel or comboLabel is provided
   useEffect(() => {
-    if (serviceLabel && formRef.current) {
+    if ((serviceLabel || comboLabel) && formRef.current) {
       setTimeout(() => {
         const element = formRef.current;
         if (element) {
@@ -90,7 +90,7 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel }: { hasTopPadding?
         }
       }, 100);
     }
-  }, [serviceLabel]);
+  }, [serviceLabel, comboLabel]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -112,7 +112,7 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel }: { hasTopPadding?
       if (response.ok) {
         setSubmitStatus('success');
         setSubmitMessage('Poruka je uspješno poslana! Javit ćemo vam se u najkraćem mogućem roku.');
-        setFormData({ name: '', email: '', phone: '', message: '', service: serviceLabel || '' });
+        setFormData({ name: '', email: '', phone: '', message: '', service: serviceLabel || comboLabel || '' });
         
         // Scroll to success message after a short delay
         setTimeout(() => {
@@ -184,12 +184,12 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel }: { hasTopPadding?
           {/* Contact Form - Left side */}
           <div className="lg:col-span-5 flex" ref={formRef}>
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-6 sm:p-8 w-full flex flex-col">
-              {serviceLabel && (
+              {(serviceLabel || comboLabel) && (
                 <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                     <span className="text-sm sm:text-base font-medium text-blue-900">
-                      Odabrani tretman: <span className="font-semibold">{serviceLabel}</span>
+                      Odabrani tretman: <span className="font-semibold">{serviceLabel || comboLabel}</span>
                     </span>
                   </div>
                 </div>

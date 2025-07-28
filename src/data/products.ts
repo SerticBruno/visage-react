@@ -71,7 +71,8 @@ export const skinTypes = [
   'Mješovita koža',
   'Normalna koža',
   'Osjetljiva koža',
-  'Suha koža'
+  'Suha koža',
+  'Zrela koža'
 ];
 
 // New skin concerns for "Problematika kože"

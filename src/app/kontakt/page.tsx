@@ -20,12 +20,13 @@ export const metadata: Metadata = {
 };
 
 interface KontaktPageProps {
-  searchParams: Promise<{ service?: string }>;
+  searchParams: Promise<{ service?: string; combo?: string }>;
 }
 
 export default async function KontaktPage({ searchParams }: KontaktPageProps) {
   const resolvedSearchParams = await searchParams;
   const serviceLabel = resolvedSearchParams.service ? decodeURIComponent(resolvedSearchParams.service) : undefined;
+  const comboLabel = resolvedSearchParams.combo ? decodeURIComponent(resolvedSearchParams.combo) : undefined;
 
   return (
     <main>
@@ -34,7 +35,7 @@ export default async function KontaktPage({ searchParams }: KontaktPageProps) {
         description="Javite nam se za sve informacije i rezervacije"
         image="/images/services/contact-hero-visage-estetski-studio.webp"
       />
-      <ContactSection serviceLabel={serviceLabel} />
+      <ContactSection serviceLabel={serviceLabel} comboLabel={comboLabel} />
     </main>
   );
 } 
