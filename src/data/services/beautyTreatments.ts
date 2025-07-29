@@ -426,7 +426,7 @@ Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
   {
     id: 'beyond-botox-facial',
     title: 'Beyond Botox Facial',
-    description: `Circadia kozmetički protokol koji koristi tehniku dermaplaninga i Firming Peptide masku za zatezanje i učvršćivanje. 
+    description: `Circadia kozmetički protokol koji koristi tehniku dermaplaninga, kemijskog pilinga i Firming Peptide masku za zatezanje i učvršćivanje. 
     
     Maska kombinira najnoviju tehnologiju u području peptida, antioksidansa i znanosti o regeneraciji kože, rezultirajući mikrocirkulacijom, detoksikacijom te trenutnim zatezanjem i učvršćivanjem kože.
 
@@ -440,9 +440,7 @@ Maska se suši 10 do 30 minuta
 Uklanjanje maske
 Circadia serum ovisno o tipu i stanju kože
 Circadia krema ovisno o tipu i stanju kože
-Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
-
-POKLON: Post Peel Home Care`,
+Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     price: '200 EUR',
     image: '/images/services/beauty-tretmani/beyond-botox-visage-estetski-studio-sisak.webp',
     benefits: [
@@ -486,9 +484,7 @@ POKLON: Post Peel Home Care`,
 
 8. Circadia krema ovisno o tipu i stanju kože
 
-9. Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
-
-POKLON: Post Peel Home Care`,
+9. Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     aftercare: `Nakon Beyond Botox Facial tretmana:
 - Izbjegavati izravno sunce 7-10 dana
 - Koristiti blage proizvode za njegu

@@ -105,7 +105,7 @@ Tjedan dana prije tretmana:
 
 Napraviti 4 do 6 tretmana u razmaku od 2 do 3 tjedna, ovisno o stanju kože, te ponavljanje svakih 3 do 6 mjeseci.
 
-Nakon kemijskog pilinga se preporuča:
+Nakon kemijskog pilinga se preporučuje:
 
 - Ne nanosite kozmetiku s retinolom minimalno tjedan dana nakon tretmana
 - Ne koristiti grube ručnike tijekom skincare rutine
