@@ -532,8 +532,7 @@ Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih zn
     isRecommended: true,
     benefits: [
       'poboljšanje čvrstoće, teksture i hidratacije kože',
-      'poboljšanje izgleda finih linija i bora',
-      'za glatku kožu mladolikog izgleda'
+      'poboljšanje izgleda finih linija i bora'
     ],
     activeIngredients: ['Acetyl Hexapeptide-8', 'DMAE', 'Elastin', 'Hijaluronska kiselina', 'L-Carnitine', 'Organic Silicon', 'Prirodni Kolagen', 'Retinol', 'Shea Maslac', 'Tokoferol', 'Vitamin E'],
     application: [
