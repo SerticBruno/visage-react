@@ -22,8 +22,7 @@ Zakažite svoj termin u <strong>Visage studiju</strong> i krenite na put prema r
   benefits: [
     'poboljšava tonus i teksturu kože',
     'dugotrajni učinci',
-    'vidljivi rezultati nakon jednog tretmana',
-    'siguran, učinkovit i neinvazivan tretman'
+    'vidljivi rezultati nakon jednog tretmana'
   ],
   image: '/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg',
   heroImage: '/images/services/plasmage-hero-visage-estetski-studio.webp',
