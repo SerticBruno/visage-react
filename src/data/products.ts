@@ -514,11 +514,11 @@ Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih zn
   {
     id: '15',
     title: 'Skin Architect krema',
-    description: `Serum za popravak i učvršćivanje. Osigurava snažne njegujuće i hidratantne efekte.
+    description: `Visoko koncentrirana krema protiv bora koja koristi prirodne sastojke za poboljšanje izgleda finih linija i dubokih bora.
 
-Pomaže pri minimiziranju vidljivih znakova starenja.
+Sadrži medicinsku hijaluronsku kiselinu i acetil heksapeptid-8 kao liposomski biomimetički peptid. Oni, s ostalim sastojcima, pomažu odgoditi učinke starenja na koži i pružaju snažno hidratantno i hranjivo djelovanje.
 
-Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih znakova starenja: opuštenu kožu.`,
+Koži pruža čvrstoću i elastičnost uz primjetan lifting učinak. Hijaluronska kiselina niske molekularne težine (<100Kda), za dublju i dugotrajniju hidrataciju.`,
     previewDescription: 'Visoko koncentrirana krema protiv bora koja pruža koži čvrstoću i elastičnost uz primjetan lifting učinak.',
     category: 'Krema',
     marka: 'TOSKANI',
