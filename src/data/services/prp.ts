@@ -110,19 +110,19 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
 
 3. Priprema kože ili vlasišta - Čistimo kožu s <a href="/katalog?product=1">Toskani Energizing Cleanserom</a>, dok vlasište odmastimo s kemijskim pilingom u spreju.
 
-4. Odabir načina izvođenja PRP tretmana - PRP tretman se može raditi s mezoterapijskim iglama, gdje je bol svedena na minimum korištenjem anestetske kreme. Nadalje, PRP tretman se može raditi s Mesoject gunom, pri čemu nema nelagode.
+4. PRP tretman se može raditi s mezoterapijskim iglama, gdje je bol svedena na minimum korištenjem anestetske kreme. Nadalje, PRP tretman se može raditi s Mesoject gunom, pri čemu nema nelagode.
 
 5. Završna njega - Nanošenje Toskani Antistress maske koja ima umirujuća svojstva na kožu, nanošenje <a href="/katalog?product=8">Toskani Total Recovery gela</a> koji pomaže regeneraciji kože i nanošenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.
 
-6. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade PRP tretman preporučavamo korištenje <a href="/katalog?product=8">Toskani Total Recovery gela</a> i kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.`,
-    'oporavak': `Moguće nuspojave su osjetljivost i blago crvenilo tretiranog područja koje može trajati oko 24h.
+6. Preporuka za kućnu njegu - Svim klijentima koji kod nas rade PRP tretman preporučujemo korištenje <a href="/katalog?product=8">Toskani Total Recovery gela</a> i kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.`,
+    'oporavak': `Moguće nuspojave su osjetljivost i blago crvenilo tretiranog područja koje može trajati oko 24 h.
 
 Odmah nakon završetka tretmana moguće je nastaviti s uobičajenim aktivnostima.`,
-    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
+    'nakon-tretmana': `Za najbolje rezultate preporučuje se protokol:
 
 Napraviti 2 ili 3 PRP tretmana u razmaku od mjesec dana, ovisno o stanju kože, te ponavljati tretman svakih 6 do 12 mjeseci.
 
-Nakon PRP tretmana se preporuča:
+Nakon PRP tretmana preporučuje se:
 
 - Koristiti <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>
 - Izbjegavati odlazak u saunu i solarij

@@ -123,7 +123,7 @@ Nuspojave mogu uključivati:
 1. Crvenilo na mjestu injektiranja
 2. Hematom na mjestu injektiranja
 3. Osjetljivost mjesta injektiranja`,
-    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
+    'nakon-tretmana': `Za najbolje rezultate preporučuje se protokol:
 
 Napraviti 2 ili 3 tretmana u razmaku od mjesec dana, ovisno o stanju kože, te ponavljati tretman svakih 3 do 6 mjeseci.
 

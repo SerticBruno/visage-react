@@ -107,10 +107,10 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
 - modrica
 - crvenilo
 - osjetljivost`,
-    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
+    'nakon-tretmana': `Za najbolje rezultate preporučuje se protokol:
 
 Napraviti botox svakih 3 do 6 mjeseci kako bi lice što duže održalo mladenački izgled i svježinu.
-Od 30.-te godine se preporuča koristiti kao prevencija protiv prvih znakova starenja.
+Od 30.-te godine preporučuje se koristiti kao prevencija protiv prvih znakova starenja.
 
 Nakon botoxa prepruča se:
 

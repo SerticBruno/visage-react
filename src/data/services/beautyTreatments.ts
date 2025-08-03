@@ -140,7 +140,7 @@ Dan prije tretmana:
 4. Poboljšan tonus kože
 
 Potrebno je izbjegavati izravno sunce 24 sata i koristiti blage proizvode za njegu kože.`,
-    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
+    'nakon-tretmana': `Za najbolje rezultate preporučuje se protokol:
 
 Nakon beauty tretmana važno je:
 

@@ -116,7 +116,7 @@ Moguće su blage nuspojave poput:
 4. Osjetljivosti
 
 Uobičajeno se povuku u roku od tjedan dana.`,
-    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
+    'nakon-tretmana': `Za najbolje rezultate preporučuje se protokol:
 
 Svakih 12 do 24 mjeseci ponovno aplicirati filer kako bi se što dulje zadržao mladolik izgled i kontura lica.
 

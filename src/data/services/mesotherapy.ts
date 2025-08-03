@@ -124,7 +124,7 @@ Nuspojave mogu uključivati:
 1. Crvenilo
 2. Ljuskanje kože
 3. Osjetljivost`,
-    'nakon-tretmana': `Za najbolje rezultate se preporučuje protokol:
+    'nakon-tretmana': `Za najbolje rezultate preporučuje se protokol:
 
 Napraviti 4 do 10 tretmana u razmaku od 2 do 4 tjedna, ovisno o stanju kože ili vlasišta, te ponavljanje tretmana svakih 6 do 9 mjeseci.
 
