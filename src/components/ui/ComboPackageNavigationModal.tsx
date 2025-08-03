@@ -312,7 +312,7 @@ export default function ComboPackageNavigationModal({
                           
                           const content = (
                             <>
-                              <div className={`w-2 h-2 rounded-full mr-2 mt-1.5 flex-shrink-0 ${
+                              <div className={`w-2 h-2 rounded-full mr-2 mt-2 flex-shrink-0 ${
                                 isCurrentService 
                                   ? 'bg-slate-600' 
                                   : 'bg-slate-400'
@@ -320,12 +320,12 @@ export default function ComboPackageNavigationModal({
                               
                               <div className="flex-1 min-w-0">
                                 {isCurrentService ? (
-                                  <span className="text-sm font-medium text-slate-800">
+                                  <span className="text-sm font-medium text-slate-800 break-words">
                                     {service.title}
                                   </span>
                                 ) : (
-                                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                                    <span className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors truncate">
+                                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                                    <span className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors break-words">
                                       {service.title}
                                     </span>
                                     <span className="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-800 px-2 py-1 rounded transition-colors font-medium whitespace-nowrap flex-shrink-0">
@@ -340,7 +340,7 @@ export default function ComboPackageNavigationModal({
                                 )}
                               </div>
                               {isCurrentService && (
-                                <FaCheck className="text-slate-600 ml-2 mt-1.5 flex-shrink-0" size={12} />
+                                <FaCheck className="text-slate-600 ml-2 mt-2 flex-shrink-0" size={12} />
                               )}
                             </>
                           );
@@ -529,7 +529,7 @@ export default function ComboPackageNavigationModal({
                           
                           const content = (
                             <>
-                              <div className={`w-2 h-2 rounded-full mr-2 mt-1.5 flex-shrink-0 ${
+                              <div className={`w-2 h-2 rounded-full mr-2 mt-2 flex-shrink-0 ${
                                 isCurrentService 
                                   ? 'bg-slate-600' 
                                   : 'bg-slate-400'
@@ -537,12 +537,12 @@ export default function ComboPackageNavigationModal({
                               
                               <div className="flex-1 min-w-0">
                                 {isCurrentService ? (
-                                  <span className="text-sm font-medium text-slate-800">
+                                  <span className="text-sm font-medium text-slate-800 break-words">
                                     {service.title}
                                   </span>
                                 ) : (
-                                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                                    <span className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors truncate">
+                                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                                    <span className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors break-words">
                                       {service.title}
                                     </span>
                                     <span className="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-800 px-2 py-1 rounded transition-colors font-medium whitespace-nowrap flex-shrink-0">
@@ -557,7 +557,7 @@ export default function ComboPackageNavigationModal({
                                 )}
                               </div>
                               {isCurrentService && (
-                                <FaCheck className="text-slate-600 ml-2 mt-1.5 flex-shrink-0" size={12} />
+                                <FaCheck className="text-slate-600 ml-2 mt-2 flex-shrink-0" size={12} />
                               )}
                             </>
                           );
@@ -598,9 +598,9 @@ export default function ComboPackageNavigationModal({
                               onClick={(e) => e.stopPropagation()}
                               className="flex items-start p-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors block"
                             >
-                              <div className="w-2 h-2 rounded-full mr-2 mt-1.5 flex-shrink-0 bg-slate-400" />
-                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 flex-1 min-w-0">
-                                <span className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors truncate">
+                              <div className="w-2 h-2 rounded-full mr-2 mt-2 flex-shrink-0 bg-slate-400" />
+                              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 flex-1 min-w-0">
+                                <span className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors break-words">
                                   {product.title}
                                 </span>
                                 <span className="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-800 px-2 py-1 rounded transition-colors font-medium whitespace-nowrap flex-shrink-0">

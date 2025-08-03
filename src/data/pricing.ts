@@ -83,7 +83,7 @@ export const pricingData: PricingItem[] = [
   {
     id: "beyond-botox-facial",
     title: "Beyond Botox Facial",
-    description: "Čišćenje lica, dermaplaning, kemijski piling, Firming peptide maska, okoloočna njega, serum, krema, spf",
+    description: "Čišćenje lica, dermaplaning, kemijski piling, 1 LED fototerapija, Firming peptide maska, okoloočna njega, serum, krema, spf",
     price: "200 EUR",
     category: "Beauty Tretmani",
     isRecommended: true
