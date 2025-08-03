@@ -326,7 +326,7 @@ export const comboPackages: ComboPackage[] = [
     services: [
       { 
         id: "plasmage", 
-        title: "Bleferoplazma gornjeg ili donjeg kapka - 1 tretman", 
+        title: "Nekirurško podizanje gornjeg ili donjeg kapka - 1 tretman", 
         image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg"
       },
       { 

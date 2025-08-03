@@ -67,6 +67,7 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
       icon: 'FaRegFile',
+      image: '/images/services/prp/prp-nakon-tretmana-visage-estetski-studio.jpeg'
     },
     { 
       id: 'cijena', 

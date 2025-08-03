@@ -10,9 +10,7 @@ export const skinBoosteri: Service = {
 
 <strong>Skin boosteri</strong> su <strong>inovativni preparati</strong> koji pružaju <strong>dubinsku hidrataciju</strong> i <strong>hranjive tvari koži</strong>, dajući vam <strong>blistav i zdrav izgled</strong>.
 
-Sastoje od <strong>neumrežene hijaluronske kiseline</strong> i dovode do <strong>čvršće i elastičnije kože</strong>.
-
-Već <strong>prvi tjedan nakon tretmana</strong> se mogu vidjeti <strong>trenutačni učinci hidratacije</strong>, dok se <strong>značajniji rezultati</strong> mogu primjetiti <strong>mjesec dana nakon tretmana</strong>.
+Sastoje se od <strong>neumrežene hijaluronske kiseline</strong> i dovode do <strong>čvršće i elastičnije kože</strong>. Već <strong>prvi tjedan nakon tretmana</strong> se mogu vidjeti <strong>trenutačni učinci hidratacije</strong>, dok se <strong>značajniji rezultati</strong> mogu primjetiti <strong>mjesec dana nakon tretmana</strong>.
 
 U <strong>Visage studiju</strong> koristimo <strong>bioremodulator Profhilo</strong> i <strong>biorevitalizator TKN HA3</strong>.
 
