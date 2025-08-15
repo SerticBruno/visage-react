@@ -93,7 +93,8 @@ export const skinConcerns = [
 // Brands for "Marke"
 export const brands = [
   'TOSKANI',
-  'Profhilo'
+  'Profhilo',
+  'Circadia'
 ];
 
 export const products: Product[] = [
@@ -1219,6 +1220,143 @@ Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne te
       }
     ],
     tags: ['krema', 'anti-age', 'profhilo', 'hijaluronska kiselina', 'njega nakon tretmana', 'svi tipovi kože']
+  },
+  {
+    id: '36',
+    title: 'Cleansing Gel with Salicylic Acid',
+    description: `Lagani gel za čišćenje koji stvara kremastu pjenu koja dubinski čisti i uklanja višak sebuma, dok beta-hidroksi salicilna kiselina pomaže omekšavanju i pilingu kože.
+
+Namijenjen masnoj koži i koži sklonoj aknama.
+
+Može se koristiti i na tijelu.`,
+    category: 'Čišćenje lica',
+    marka: 'Circadia',
+    productType: 'Čišćenje lica',
+    skinType: ['Masna koža'],
+    skinConcern: ['Akne i problematična koža'],
+    image: '/images/products/circadia/circadia-cleansing-gel-visage-estetski-studio.webp',
+    price: '34 EUR',
+    volume: '118 ml',
+    activeIngredients: ['Sodium C14-16 Olefin Sulfonate Sulfate', 'Panthenol (provitamin B5)', 'Cocoamidopropyl betaine', 'Linoleamidopropyl PG-dimonium chloride phosphate', 'Salicylic acid'],
+    application: [
+      'Nanesite malu količinu na vrhove prstiju, nježno zapjenite na licu i dobro isperite. Izbjegavajte područje oko očiju.',
+      'Koristi se svaka 2 do 3 dana.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Circadia Spot Stop tretmanom, Circadia Daytime Control losionom, Circadia White Willow & Juniper Clearing tonikom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom."
+      }
+    ],
+    tags: ['čišćenje lica', 'masna koža', 'akne i problematična koža', 'circadia marka']
+  },
+  {
+    id: '37',
+    title: 'Micro-Exfoliating Honey Cleanser',
+    description: `Gel s pilingom za čišćenje lica. Patentirane mikrokuglice prirodnog pčelinjeg voska nježno čiste i pilingiraju dok apsorbiraju višak ulja.
+
+Pogodan za sve tipove kože.
+
+Pogodan za svakodnevno korištenje.`,
+    category: 'Čišćenje lica',
+    marka: 'Circadia',
+    productType: 'Čišćenje lica',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Akne i problematična koža', 'Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    image: '/images/products/circadia/circadia-micro-exfoliating-honey-visage-estetski-studio.webp',
+    price: '55 EUR',
+    volume: '236 ml',
+    activeIngredients: ['Stepan Mild PCL', 'HoneyBeads®', 'Cocomidopropyl betaine'],
+    application: [
+      'Nanesite količinu veličine novčića na vrhove prstiju i nanesite na lice. Nježno umasirajte i isperite temeljito.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristiti s odgovarajućim Circadia tonikom, Circadia serumom i Circadia kremom, ovisno o tipu kože i problematici. Koristiti s Light Day Suncreen Broad Spectrum SPF37 kremom."
+      }
+    ],
+    tags: ['čišćenje lica', 'piling', 'svi tipovi kože', 'sve problematike (osim opadanje kose)']
+  },
+  {
+    id: '38',
+    title: 'Vitamin Veil Cleanser',
+    description: `Jedinstveni nepjenušavi čistač na bazi sojinog ulja koji nježno uklanja šminku, prljavštinu i nečistoće ostavljajući za sobom nevidljivu koprenu antioksidansa.
+
+Čistač na bazi ulja, koji je odličan za suhu i dehidriranu kožu.
+
+Pomaže očuvanju barijere kože i sadrži mješavinu prirodnih ulja i vitamina E.`,
+    category: 'Čišćenje lica',
+    marka: 'Circadia',
+    productType: 'Čišćenje lica',
+    skinType: ['Suha koža', 'Normalna koža'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    image: '/images/products/circadia/circadia-vitamin-veil-cleanser-visage-estetski-studio.webp',
+    price: '55 EUR',
+    volume: '236 ml',
+    activeIngredients: ['Soybean Oil (GMO-free)', 'Cranberry Oil', 'Seabuckthorn Oil', 'Meadowsweet Oil Coumarins', 'Tocopherol (Vitamin E)'],
+    application: [
+      'Nanesite čistač na vrhove prstiju i nanesite ga po cijelom licu i vratu. Dobro isperite.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristiti u kombinaciji s Circadia Lipid Replacing Cleansing gelom kako biste napravili double-cleansing. Koristite ga s odgovarajućim Circadia tonikom, Circadia serumom i Circadia kremom, ovisno o tipu kože i problematici. Na kraju nanesite Light Day Sunscreen Broad Spectrum SPF37 kremu."
+      }
+    ],
+    tags: ['čišćenje lica', 'suha koža', 'normalna koža', 'sva problematika (osim opadanja kose)']
+  },
+  {
+    id: '39',
+    title: 'Lipid Replacing Cleansing Gel',
+    description: `Osvježavajući gel za čišćenje lica koji učinkovito uklanja prljavštinu, šminku i višak lipida bez oštećenja barijere kože ili denaturacije keratina.
+
+Namijenjen svim tipovima kože, posebno normalnoj i mješovitoj koži.`,
+    category: 'Čišćenje lica',
+    marka: 'Circadia',
+    productType: 'Čišćenje lica',
+    skinType: ['Normalna koža', 'Mješovita koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    image: '/images/products/circadia/circadia-lipid-replacing-gel-visage-estetski-studio.webp',
+    price: '55 EUR',
+    volume: '236 ml',
+    activeIngredients: ['Stepan Mild PCL', 'Panthenol (provitamin B5)', 'Allantoin', 'Mallow (Malva Sylvestris) leaf extract', 'Seaweed (Laminaria japonica) extract', 'Sacha inchi (Plukenetia Volubilis seed, a.k.a. "Incan-peanut") extract'],
+    application: [
+      'Nanesite malu količinu na vrhove prstiju. Napravite pjenu na licu i isperite temeljito.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućim Circadia tonikom, Circadia serumom i Circadia kremom, ovisno o tipu kože i problematici. Koristite s Light Day Sunscreen Broad Spectrum SPF37 kremom."
+      }
+    ],
+    tags: ['čišćenje lica', 'svi tipovi kože (osim masna koža)', 'sve problematike (osim opadanja kose)']
+  },
+  {
+    id: '40',
+    title: 'Amandola Milk Cleanser',
+    description: `Njegujući čistač od bademovog mlijeka koji sadrži mliječnu kiselinu i mandeličnu kiselinu koje nježno eksfoliraju, hidratiziraju i posvjetljuju oštećenu kožu.
+
+Posebno namijenjen suhoj, dehidriranoj koži i koži sklonoj hiperpigmentacijama.`,
+    category: 'Čišćenje lica',
+    marka: 'Circadia',
+    productType: 'Čišćenje lica',
+    skinType: ['Suha koža', 'Normalna koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    image: '/images/products/circadia/circadia-amandola-milk-visage-estetski-studio.webp',
+    price: '55 EUR',
+    volume: '236 ml',
+    activeIngredients: ['Lactic acid', 'Mandelic acid', 'Oat protein', 'Supreme amande douce Natural (Sweet almond milk)'],
+    application: [
+      'Nanesite količinu čistača veličine novčića na vrhove prstiju i nanesite ga po cijelom licu i vratu. Dobro isperite.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućim Circadia tonikom, Circadia serumom i Circadia kremom, ovisno o tipu i problematici kože. Koristite s Light Day Sunscreen Broad Spectrum SPF37."
+      }
+    ],
+    tags: ['čišćenje lica', 'svi tipovi kože', 'sve problematike (osim opadanja kose)']
   }
   
 ]; 
