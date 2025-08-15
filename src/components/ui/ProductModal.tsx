@@ -150,13 +150,13 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                     
                     {/* Image */}
                     <div className={`relative bg-slate-50 rounded-xl overflow-hidden shadow-sm flex-1 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
-                      <Image
-                        src={currentProduct.image}
-                        alt={currentProduct.title}
-                        fill
-                        className="object-contain"
-                        onLoad={() => handleImageLoad(currentProduct.image)}
-                      />
+                                             <Image
+                         src={currentProduct.image}
+                         alt={currentProduct.title}
+                         fill
+                         className={`object-contain ${currentProduct.imageNeedsResize ? 'scale-75' : ''}`}
+                         onLoad={() => handleImageLoad(currentProduct.image)}
+                       />
                       {/* Product Badges in Modal */}
                       <div className="absolute top-2 right-2 flex flex-col gap-1">
                         {currentProduct.isNew && (
@@ -239,7 +239,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                       src={currentProduct.image}
                       alt={currentProduct.title}
                       fill
-                      className="object-cover"
+                      className={`object-contain ${currentProduct.imageNeedsResize ? 'scale-75' : ''}`}
                       onLoad={() => handleImageLoad(currentProduct.image)}
                     />
                     {/* Product Badges in Modal */}

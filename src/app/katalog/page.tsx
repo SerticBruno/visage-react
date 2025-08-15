@@ -690,7 +690,7 @@ function KatalogContent() {
                       src={product.image}
                       alt={product.title}
                       fill
-                      className="object-contain p-2 transition-transform duration-300 group-hover:scale-105 transform-gpu"
+                      className={`object-contain p-2 transition-transform duration-300 transform-gpu ${product.imageNeedsResize ? 'scale-75' : 'group-hover:scale-105'}`}
                       loading="lazy"
                       style={{
                         transform: 'translateZ(0)', // Force hardware acceleration

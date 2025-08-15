@@ -30,6 +30,8 @@ export interface Product {
   // Optional properties for slider/card display
   link?: string; // Custom link for the product card
   benefits?: string[]; // Alternative to features for slider display
+  // Image sizing properties
+  imageNeedsResize?: boolean; // Flag for images that need smaller sizing
 }
 
 // Pro tip interface for product-specific tips
@@ -1245,10 +1247,11 @@ Može se koristiti i na tijelu.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s Circadia Spot Stop tretmanom, Circadia Daytime Control losionom, Circadia White Willow & Juniper Clearing tonikom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom."
+        description: "Za najbolji učinak, koristite s <a href='#' data-product-id='spot-stop'>Circadia Spot Stop serumom</a>, <a href='#' data-product-id='daytime-control'>Circadia Daytime Control losionom</a>, <a href='#' data-product-id='white-willow-juniper'>Circadia White Willow & Juniper Clearing tonikom</a> i <a href='#' data-product-id='light-day-spf37'>Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom</a>."
       }
     ],
-    tags: ['čišćenje lica', 'masna koža', 'akne i problematična koža', 'circadia marka']
+    tags: ['čišćenje lica', 'masna koža', 'akne i problematična koža', 'circadia marka'],
+    imageNeedsResize: true
   },
   {
     id: '37',
@@ -1273,10 +1276,11 @@ Pogodan za svakodnevno korištenje.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristiti s odgovarajućim Circadia tonikom, Circadia serumom i Circadia kremom, ovisno o tipu kože i problematici. Koristiti s Light Day Suncreen Broad Spectrum SPF37 kremom."
+        description: "Za najbolji učinak, koristiti s odgovarajućim <a href='#' data-product-id='circadia-tonik'>Circadia tonikom</a>, <a href='#' data-product-id='circadia-serum'>Circadia serumom</a> i <a href='#' data-product-id='circadia-krema'>Circadia kremom</a>, ovisno o tipu kože i problematici. Koristiti s <a href='#' data-product-id='light-day-spf37'>Light Day Suncreen Broad Spectrum SPF37 kremom</a>."
       }
     ],
-    tags: ['čišćenje lica', 'piling', 'svi tipovi kože', 'sve problematike (osim opadanje kose)']
+    tags: ['čišćenje lica', 'piling', 'svi tipovi kože', 'sve problematike (osim opadanje kose)'],
+    imageNeedsResize: true
   },
   {
     id: '38',
@@ -1301,10 +1305,11 @@ Pomaže očuvanju barijere kože i sadrži mješavinu prirodnih ulja i vitamina 
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristiti u kombinaciji s Circadia Lipid Replacing Cleansing gelom kako biste napravili double-cleansing. Koristite ga s odgovarajućim Circadia tonikom, Circadia serumom i Circadia kremom, ovisno o tipu kože i problematici. Na kraju nanesite Light Day Sunscreen Broad Spectrum SPF37 kremu."
+        description: "Za najbolji učinak, koristiti u kombinaciji s <a href='#' data-product-id='39'>Circadia Lipid Replacing Cleansing gelom</a> kako biste napravili double-cleansing. Koristite ga s odgovarajućim <a href='#' data-product-id='circadia-tonik'>Circadia tonikom</a>, <a href='#' data-product-id='circadia-serum'>Circadia serumom</a> i <a href='#' data-product-id='circadia-krema'>Circadia kremom</a>, ovisno o tipu kože i problematici. Na kraju nanesite <a href='#' data-product-id='light-day-spf37'>Light Day Sunscreen Broad Spectrum SPF37 kremu</a>."
       }
     ],
-    tags: ['čišćenje lica', 'suha koža', 'normalna koža', 'sva problematika (osim opadanja kose)']
+    tags: ['čišćenje lica', 'suha koža', 'normalna koža', 'sva problematika (osim opadanja kose)'],
+    imageNeedsResize: true
   },
   {
     id: '39',
@@ -1327,10 +1332,11 @@ Namijenjen svim tipovima kože, posebno normalnoj i mješovitoj koži.`,
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s odgovarajućim Circadia tonikom, Circadia serumom i Circadia kremom, ovisno o tipu kože i problematici. Koristite s Light Day Sunscreen Broad Spectrum SPF37 kremom."
+        description: "Za najbolji učinak, koristite s odgovarajućim <a href='#' data-product-id='circadia-tonik'>Circadia tonikom</a>, <a href='#' data-product-id='circadia-serum'>Circadia serumom</a> i <a href='#' data-product-id='circadia-krema'>Circadia kremom</a>, ovisno o tipu kože i problematici. Koristite s <a href='#' data-product-id='light-day-spf37'>Light Day Sunscreen Broad Spectrum SPF37 kremom</a>."
       }
     ],
-    tags: ['čišćenje lica', 'svi tipovi kože (osim masna koža)', 'sve problematike (osim opadanja kose)']
+    tags: ['čišćenje lica', 'svi tipovi kože (osim masna koža)', 'sve problematike (osim opadanja kose)'],
+    imageNeedsResize: true
   },
   {
     id: '40',
@@ -1353,10 +1359,11 @@ Posebno namijenjen suhoj, dehidriranoj koži i koži sklonoj hiperpigmentacijama
     proTips: [
       {
         title: "Glow tip",
-        description: "Za najbolji učinak, koristite s odgovarajućim Circadia tonikom, Circadia serumom i Circadia kremom, ovisno o tipu i problematici kože. Koristite s Light Day Sunscreen Broad Spectrum SPF37."
+        description: "Za najbolji učinak, koristite s odgovarajućim <a href='#' data-product-id='circadia-tonik'>Circadia tonikom</a>, <a href='#' data-product-id='circadia-serum'>Circadia serumom</a> i <a href='#' data-product-id='circadia-krema'>Circadia kremom</a>, ovisno o tipu i problematici kože. Koristite s <a href='#' data-product-id='light-day-spf37'>Light Day Sunscreen Broad Spectrum SPF37</a>."
       }
     ],
-    tags: ['čišćenje lica', 'svi tipovi kože', 'sve problematike (osim opadanja kose)']
+    tags: ['čišćenje lica', 'svi tipovi kože', 'sve problematike (osim opadanja kose)'],
+    imageNeedsResize: true
   }
   
 ]; 
