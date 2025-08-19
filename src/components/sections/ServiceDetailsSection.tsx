@@ -575,7 +575,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
   };
 
   return (
-    <section className="bg-gradient-to-b from-white to-[#e5e7eb]">
+    <section style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
 
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Mobile Step Navigation */}
