@@ -49,7 +49,7 @@ export default function ComboPackagesInlineSection() {
                           <div className="text-center">
                             <div className="flex items-center justify-center gap-1 md:gap-2">
                               <h5 className="font-medium text-sm md:text-base">{service.title}</h5>
-                              {service.quantity > 1 && (
+                              {service.quantity && service.quantity > 1 && (
                                 <span className="text-xs md:text-sm text-primary font-medium">x{service.quantity}</span>
                               )}
                             </div>
@@ -93,7 +93,7 @@ export default function ComboPackagesInlineSection() {
                               <div className="text-center">
                                 <div className="flex items-center justify-center gap-1 md:gap-2">
                                   <h5 className="font-medium text-sm md:text-base">{product.title}</h5>
-                                  {product.quantity > 1 && (
+                                  {product.quantity && product.quantity > 1 && (
                                     <span className="text-xs md:text-sm text-primary font-medium">x{product.quantity}</span>
                                   )}
                                 </div>
