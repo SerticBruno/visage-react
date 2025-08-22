@@ -60,8 +60,8 @@ export const comboPackages: ComboPackage[] = [
     title: "Hair Boost",
     description: "Intenzivan tretman za poticanje rasta kose i jačanje vlasišta",
     image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
-    price: "735 EUR",
-    oldPrice: "865 EUR",
+    price: "770 EUR",
+    oldPrice: "905 EUR",
     services: [
       { 
         id: "prp", 
@@ -117,8 +117,8 @@ export const comboPackages: ComboPackage[] = [
     title: "Ultimate Glow Up",
     description: "Ciljani tretmani za osvježenje lica i vrata",
     image: "/images/services/woman-face-visage-estetski-studio.webp",
-    price: "885 EUR",
-    oldPrice: "1055 EUR",
+    price: "820 EUR",
+    oldPrice: "965 EUR",
     services: [
       { 
         id: "foto-terapija", 
@@ -157,8 +157,8 @@ export const comboPackages: ComboPackage[] = [
     title: "Skin Revive",
     description: "Regeneracija kože na staničnoj razini",
     image: "/images/services/skin-boosters-hero-visage-estetski-studio.webp",
-    price: "830 EUR",
-    oldPrice: "980 EUR",
+    price: "926 EUR",
+    oldPrice: "1090 EUR",
     services: [
       { 
         id: "foto-terapija", 
@@ -191,8 +191,8 @@ export const comboPackages: ComboPackage[] = [
     title: "Glow & Define",
     description: "Ciljani tretmani za svježinu i definiciju donjeg dijela lica",
     image: "/images/services/woman-face-visage-estetski-studio.webp",
-    price: "920 EUR",
-    oldPrice: "1123 EUR",
+    price: "930 EUR",
+    oldPrice: "1095 EUR",
     services: [
       { 
         id: "mezoterapija-dermapen", 
@@ -212,18 +212,6 @@ export const comboPackages: ComboPackage[] = [
         linkId: "mezoterapija"
       }
     ],
-    products: [
-      {
-        id: "total-recovery-gel",
-        title: "Total Recovery Gel",
-        image: "/images/products/total-recovery-gel-visage-estetski-studio.webp"
-      },
-      {
-        id: "sun-shield-fluid",
-        title: "Sun Shiel-D Fluid",
-        image: "/images/products/sun-shiel-d-fluid-spf50-visage-estetski-studio.png"
-      }
-    ],
     benefits: [
       "Dubinska hidratacija",
       "Zatezanje kože vrata i podbratka",
@@ -239,8 +227,8 @@ export const comboPackages: ComboPackage[] = [
     title: "Mesosynergy",
     description: "Biostimulirajući tretman koji povezuje sve elemente mezoterapije",
     image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
-    price: "485 EUR",
-    oldPrice: "570 EUR",
+    price: "360 EUR",
+    oldPrice: "425 EUR",
     services: [
       { 
         id: "mezoterapija", 
@@ -258,13 +246,6 @@ export const comboPackages: ComboPackage[] = [
         image: "/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg"
       }
     ],
-    products: [
-      {
-        id: "toskani-pro-age",
-        title: "Odgovarajući serum i krema iz Toskani Pro Age linije",
-        image: "/images/products/toskani-products.webp"
-      }
-    ],
     benefits: [
       "Poboljšana kvaliteta kože",
       "Poboljšana čvrstoća kože",
@@ -280,8 +261,8 @@ export const comboPackages: ComboPackage[] = [
     title: "Profhilo Perfect",
     description: "Vratite sjaj i čvrstoću koži uz kombinaciju kemijskog pilinga, mezoterapije i bioremodulatora",
     image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
-    price: "855 EUR",
-    oldPrice: "1009 EUR",
+    price: "850 EUR",
+    oldPrice: "1000 EUR",
     services: [
       { 
         id: "mezoterapija", 
@@ -299,13 +280,6 @@ export const comboPackages: ComboPackage[] = [
         image: "/images/services/skin-boosters/skin-boosteri-oporavak-visage-estetski-studio.png"
       }
     ],
-    products: [
-      {
-        id: "profhilo-cream",
-        title: "Krema Profhilo",
-        image: "/images/products/profhilo-haenkenium-cream-cover-visage-estetski-studio.webp"
-      }
-    ],
     benefits: [
       "Cjeloviti anti-age pristup",
       "Obnova kože iznutra i izvana",
@@ -321,8 +295,8 @@ export const comboPackages: ComboPackage[] = [
     title: "Eye Refresh",
     description: "Otvoren i osvježen pogled bez skalpela",
     image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg",
-    price: "780 EUR",
-    oldPrice: "918 EUR",
+    price: "720 EUR",
+    oldPrice: "8245 EUR",
     services: [
       { 
         id: "plasmage", 
@@ -333,23 +307,6 @@ export const comboPackages: ComboPackage[] = [
         id: "botox", 
         title: "Botox 50 jedinica", 
         image: "/images/services/botox/botox-visage-estetski-studio.webp"
-      }
-    ],
-    products: [
-      {
-        id: "total-recovery-gel",
-        title: "Total Recovery Gel",
-        image: "/images/products/total-recovery-gel-visage-estetski-studio.webp"
-      },
-      {
-        id: "sun-shield-fluid",
-        title: "Sun Shiel-D Fluid",
-        image: "/images/products/sun-shiel-d-fluid-spf50-visage-estetski-studio.png"
-      },
-      {
-        id: "okolocna-njega",
-        title: "Okoloočna njega (Anti-Aging ili Radiance)",
-        image: "/images/products/radiance-eye-contour-visage-estetski-studio.webp"
       }
     ],
     benefits: [
@@ -367,8 +324,8 @@ export const comboPackages: ComboPackage[] = [
     title: "Radiant Skin",
     description: "Reset kože, piling, obnova i zaštita u jednom tretmanu",
     image: "/images/services/woman-face-visage-estetski-studio.webp",
-    price: "545 EUR",
-    oldPrice: "642 EUR",
+    price: "560 EUR",
+    oldPrice: "660 EUR",
     services: [
       { 
         id: "kemijski-piling", 
@@ -379,13 +336,6 @@ export const comboPackages: ComboPackage[] = [
         id: "prp", 
         title: "PRP - 2 tretmana", 
         image: "/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png"
-      }
-    ],
-    products: [
-      {
-        id: "total-recovery-gel",
-        title: "Total Recovery Gel",
-        image: "/images/products/total-recovery-gel-visage-estetski-studio.webp"
       }
     ],
     benefits: [
@@ -404,8 +354,8 @@ export const comboPackages: ComboPackage[] = [
     title: "Eye Lift",
     description: "Osvježenje i podizanje okoloočnih bora",
     image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg",
-    price: "420 EUR",
-    oldPrice: "498 EUR",
+    price: "435 EUR",
+    oldPrice: "510 EUR",
     services: [
       { 
         id: "plasmage", 
@@ -416,23 +366,6 @@ export const comboPackages: ComboPackage[] = [
         id: "botox", 
         title: "Botox 50 jedinica", 
         image: "/images/services/botox-treatment-visage-estetski-studio.webp"
-      }
-    ],
-    products: [
-      {
-        id: "total-recovery-gel",
-        title: "Total Recovery Gel",
-        image: "/images/products/total-recovery-gel-visage-estetski-studio.webp"
-      },
-      {
-        id: "okolocna-njega",
-        title: "Okoloočna njega (Anti-Aging ili Radiance)",
-        image: "/images/products/radiance-eye-contour-visage-estetski-studio.webp"
-      },
-      {
-        id: "sun-shield-fluid",
-        title: "Sun Shiel-D Fluid",
-        image: "/images/products/sun-shiel-d-fluid-spf50-visage-estetski-studio.png"
       }
     ],
     benefits: [
