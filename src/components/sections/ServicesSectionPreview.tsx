@@ -36,7 +36,7 @@ export default function ServicesSectionPreview() {
   };
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#e5e7eb]">
+    <section className="px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
