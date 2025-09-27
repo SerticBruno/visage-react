@@ -117,8 +117,8 @@ const PartnersSlider = () => {
         </div>
 
         <div className="relative">
-          <div className="absolute inset-y-0 left-0 w-24 z-10"></div>
-          <div className="absolute inset-y-0 right-0 w-24 z-10"></div>
+          <div className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none"></div>
           
           <Swiper
             modules={[Autoplay, Pagination, Navigation]}
@@ -186,22 +186,22 @@ const PartnersSlider = () => {
           </Swiper>
           
           {/* Navigation Controls */}
-          <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="flex items-center justify-center gap-4 mt-8 relative z-20">
             <button
               onClick={handlePrev}
-              className="w-8 h-8 bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              className="w-8 h-8 bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer relative z-20"
               aria-label="Previous partner"
             >
               <FaChevronLeft className="w-4 h-4" />
             </button>
             
             {/* Custom Pagination Dots */}
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 relative z-20">
               {partners.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer relative z-20 ${
                     index === activeIndex 
                       ? 'bg-slate-600 scale-125' 
                       : 'bg-slate-300 hover:bg-slate-400'
@@ -213,7 +213,7 @@ const PartnersSlider = () => {
             
             <button
               onClick={handleNext}
-              className="w-8 h-8 bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer"
+              className="w-8 h-8 bg-white text-slate-800 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center cursor-pointer relative z-20"
               aria-label="Next partner"
             >
               <FaChevronRight className="w-4 h-4" />
