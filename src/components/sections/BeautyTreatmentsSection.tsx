@@ -46,7 +46,7 @@ export default function BeautyTreatmentsSection({ treatments }: BeautyTreatments
   };
 
   return (
-    <section className="bg-gradient-to-b from-white to-[#e5e7eb] py-8">
+    <section className="py-8" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Treatments Grid - 3+2 Layout with Offset */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-8 gap-x-16">
