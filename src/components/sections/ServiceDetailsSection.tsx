@@ -527,7 +527,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
               transition={{ delay: 0.1 * idx }}
               className="relative pl-12"
             >
-              <div className="absolute left-0 top-0 flex items-center h-full">
+              <div className="absolute left-0 top-0 flex items-start">
                 <span className="text-2xl font-bold text-slate-700">{number}.</span>
               </div>
               <div>
