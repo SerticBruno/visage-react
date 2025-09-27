@@ -398,7 +398,7 @@ export const pricingData: PricingItem[] = [
     id: "microneedling-face-premium",
     title: "Microneedling Face Premium Paket",
     description: "paket od 6 tretmana lica Dermapenom 4",
-    price: "650 EUR",
+    price: "615 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     packageDetails: "6 tretmana"

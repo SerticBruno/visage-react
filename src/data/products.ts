@@ -89,7 +89,8 @@ export const skinConcerns = [
   'Hiperpigmentacije',
   'Hidratacija',
   'Opadanje kose',
-  'Regeneracija'
+  'Osjetljiva koža i koža sklona rozaceji',
+  'Umirivanje kože'
 ];
 
 // Brands for "Marke"
@@ -263,7 +264,7 @@ Pruža snažne učinke obnavljanja kože. Poboljšava izgled oštećene kože.`,
     marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Suha koža', 'Normalna koža'],
-    skinConcern: ['Regeneracija', 'Hidratacija'],
+    skinConcern: ['Umirivanje kože', 'Hidratacija', 'Osjetljiva koža i koža sklona rozaceji'],
     image: '/images/products/total-recovery-cream-visage-estetski-studio.webp',
     price: '55 EUR',
     volume: '50 ml',
@@ -290,7 +291,7 @@ Pruža snažne učinke obnavljanja kože. Poboljšava izgled oštećene kože.`,
     marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Mješovita koža', 'Masna koža'],
-    skinConcern: ['Regeneracija', 'Hidratacija'],
+    skinConcern: ['Umirivanje kože', 'Hidratacija', 'Osjetljiva koža i koža sklona rozaceji'],
     image: '/images/products/total-recovery-gel-visage-estetski-studio.webp',
     price: '37 EUR',
     volume: '50 ml',
@@ -851,7 +852,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
         description: "Za najbolji učinak, koristite s <a href='#' data-product-id='9'>Toskani Anti Aging okoloočnom kremom</a>, <a href='#' data-product-id='16'>Toskani Night Reverse Advanced serumom</a>. Nanesite jednu pumpicu seruma u malu količinu kreme i nanesite na lice. Za najbolje rezultate koristiti s odgovarajućim Toskani proizvodima iz Anti-Age njege."
       }
     ],
-    tags: ['noćna njega', 'maska', 'anti-age', 'regeneracija', 'svi tipovi kože', 'epigenetika', 'skin reset complex']
+    tags: ['noćna njega', 'maska', 'anti-age', 'Umirivanje kože', 'svi tipovi kože', 'epigenetika', 'skin reset complex']
   },
   {
     id: '26',
@@ -975,7 +976,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
       'ampule',
       'osjetljiva koža',
       'umirivanje',
-      'regeneracija',
+      'Umirivanje kože',
       'antioksidansi',
       '30-dnevna kura',
       'intenzivni tretman'
@@ -1060,7 +1061,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     marka: 'TOSKANI',
     productType: 'Fluid',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
-    skinConcern: ['Akne i problematična koža', 'Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    skinConcern: ['Akne i problematična koža', 'Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Umirivanje kože', 'Osjetljiva koža i koža sklona rozaceji'],
     image: '/images/products/toskani-sun-shield-visage-estetski-studio.png',
     price: '36 EUR',
     volume: '50ml',
@@ -1099,7 +1100,7 @@ Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od o
     marka: 'TOSKANI',
     productType: 'Fluid',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
-    skinConcern: ['Akne i problematična koža', 'Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    skinConcern: ['Akne i problematična koža', 'Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Umirivanje kože', 'Osjetljiva koža i koža sklona rozaceji'],
     image: '/images/products/sun-shiel-d-tonirani-fluid-spf50-visage-estetski-studio.png',
     price: '39 EUR',
     volume: '50ml',
@@ -1131,7 +1132,7 @@ Vodootporan je.`,
     marka: 'TOSKANI',
     productType: 'Sprej',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
-    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Umirivanje kože'],
     image: '/images/products/toskani-sun-shield-body-spray-visage-estetski-studio.webp',
     price: '42 EUR',
     volume: '200ml',
@@ -1265,7 +1266,7 @@ Pogodan za svakodnevno korištenje.`,
     marka: 'Circadia',
     productType: 'Čišćenje lica',
     skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
-    skinConcern: ['Akne i problematična koža', 'Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    skinConcern: ['Akne i problematična koža', 'Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Umirivanje kože'],
     image: '/images/products/circadia/circadia-micro-exfoliating-honey-visage-estetski-studio.webp',
     price: '55 EUR',
     volume: '236 ml',
@@ -1294,7 +1295,7 @@ Pomaže očuvanju barijere kože i sadrži mješavinu prirodnih ulja i vitamina 
     marka: 'Circadia',
     productType: 'Čišćenje lica',
     skinType: ['Suha koža', 'Normalna koža'],
-    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Umirivanje kože'],
     image: '/images/products/circadia/circadia-vitamin-veil-cleanser-visage-estetski-studio.webp',
     price: '55 EUR',
     volume: '236 ml',
@@ -1321,7 +1322,7 @@ Namijenjen svim tipovima kože, posebno normalnoj i mješovitoj koži.`,
     marka: 'Circadia',
     productType: 'Čišćenje lica',
     skinType: ['Normalna koža', 'Mješovita koža', 'Suha koža', 'Osjetljiva koža'],
-    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Umirivanje kože'],
     image: '/images/products/circadia/circadia-lipid-replacing-gel-visage-estetski-studio.webp',
     price: '55 EUR',
     volume: '236 ml',
@@ -1348,7 +1349,7 @@ Posebno namijenjen suhoj, dehidriranoj koži i koži sklonoj hiperpigmentacijama
     marka: 'Circadia',
     productType: 'Čišćenje lica',
     skinType: ['Suha koža', 'Normalna koža', 'Osjetljiva koža'],
-    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Umirivanje kože'],
     image: '/images/products/circadia/circadia-amandola-milk-visage-estetski-studio.webp',
     price: '55 EUR',
     volume: '236 ml',
@@ -1503,7 +1504,7 @@ Namijenjen je svim tipovima kože i ima hidratantna i anti-age svojstva.`,
     marka: 'Circadia',
     productType: 'Krema',
     skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
-    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Umirivanje kože', 'Osjetljiva koža i koža sklona rozaceji'],
     image: '/images/products/circadia/CircadiaLightDaySunscreenBroadSpectrumSPF37.webp',
     price: '69 EUR',
     volume: '59 ml',
@@ -1782,7 +1783,7 @@ Brzo upijajući balzam koji smiruje kožu.`,
     marka: 'Circadia',
     productType: 'Krema',
     skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
-    skinConcern: ['Hidratacija', 'Regeneracija'],
+    skinConcern: ['Hidratacija', 'Umirivanje kože', 'Osjetljiva koža i koža sklona rozaceji'],
     image: '/images/products/circadia/CircadiaPostPeel.webp',
     price: '77 EUR',
     volume: '59 ml',
@@ -1796,7 +1797,7 @@ Brzo upijajući balzam koji smiruje kožu.`,
         description: "Koristite nakon kemijskog pilinga, mezoterapije ili PRP tretmana. Ne nanosite na oštećenu kožu. Koristite s Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
       }
     ],
-    tags: ['krema', 'svi tipovi kože', 'hidratacija', 'regeneracija'],
+    tags: ['krema', 'svi tipovi kože', 'hidratacija', 'Umirivanje kože'],
     imageNeedsResize: true
   },
   {
@@ -1811,7 +1812,7 @@ Namijenjen osjetljivoj koži, koži sklonoj crvenilu, iziritiranoj koži, koži 
     marka: 'Circadia',
     productType: 'Serum',
     skinType: ['Osjetljiva koža'],
-    skinConcern: ['Regeneracija'],
+    skinConcern: ['Umirivanje kože', 'Osjetljiva koža i koža sklona rozaceji'],
     image: '/images/products/circadia/CircadiaChronoCalm.webp',
     price: '69 EUR',
     volume: '15 ml',
@@ -1825,7 +1826,7 @@ Namijenjen osjetljivoj koži, koži sklonoj crvenilu, iziritiranoj koži, koži 
         description: "Za najbolji učinak, koristite s Circadia Aloe & Calendula tonikom, Circadia Tranquili kremom i Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
       }
     ],
-    tags: ['serum', 'osjetljiva koža', 'regeneracija'],
+    tags: ['serum', 'osjetljiva koža', 'Umirivanje kože'],
     imageNeedsResize: true
   },
   {
@@ -1842,7 +1843,7 @@ Odmah nakon uporabe koža je manje iritirana, mekša i hidratizirana.`,
     marka: 'Circadia',
     productType: 'Krema',
     skinType: ['Osjetljiva koža'],
-    skinConcern: ['Regeneracija'],
+    skinConcern: ['Umirivanje kože', 'Osjetljiva koža i koža sklona rozaceji'],
     image: '/images/products/circadia/CircadiaTranquilicream.webp',
     price: '69 EUR',
     volume: '15 ml',
@@ -1856,7 +1857,7 @@ Odmah nakon uporabe koža je manje iritirana, mekša i hidratizirana.`,
         description: "Za najbolji učinak, koristite s Circadia Aloe & Calendula tonikom, Circadia Chrono-Calm serumom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
       }
     ],
-    tags: ['krema', 'osjetljiva koža', 'regeneracija'],
+    tags: ['krema', 'osjetljiva koža', 'Umirivanje kože'],
     imageNeedsResize: true
   },
   {
@@ -1871,7 +1872,7 @@ Hidratizira i umiruje nadraženu kožu te smiruje tegobe povezane s rosaceom i n
     marka: 'Circadia',
     productType: 'Tonik',
     skinType: ['Osjetljiva koža'],
-    skinConcern: ['Regeneracija'],
+    skinConcern: ['Umirivanje kože', 'Osjetljiva koža i koža sklona rozaceji'],
     image: '/images/products/circadia/CircadiaAloe&CalendulaMist.webp',
     price: '38 EUR',
     volume: '118 ml',
@@ -1885,7 +1886,7 @@ Hidratizira i umiruje nadraženu kožu te smiruje tegobe povezane s rosaceom i n
         description: "Za najbolji učinak, koristite s Circadia Chrono-Calm serumom, Circadia Tranquili kremom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
       }
     ],
-    tags: ['tonik', 'osjetljiva koža', 'osjetljiva koža i koža sklona rozaceji', 'umirivanje kože'],
+    tags: ['tonik', 'osjetljiva koža', 'Osjetljiva koža i koža sklona rozaceji', 'umirivanje kože'],
     imageNeedsResize: true
   },
   {
@@ -1898,7 +1899,7 @@ Za osobe kojima je dijagnosticirana rozacea. Lagan je i podržava funkciju barij
     marka: 'Circadia',
     productType: 'Krema',
     skinType: ['Osjetljiva koža'],
-    skinConcern: ['Regeneracija'],
+    skinConcern: ['Umirivanje kože', 'Osjetljiva koža i koža sklona rozaceji'],
     image: '/images/products/circadia/CircadiaRoseEaseRelief.webp',
     price: '85 EUR',
     volume: '50 g',
@@ -1913,7 +1914,7 @@ Za osobe kojima je dijagnosticirana rozacea. Lagan je i podržava funkciju barij
         description: "Za najbolji učinak, koristiti s Aloe & Calendula Calming tonikom, Circadia Chrono-Calm serumom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
       }
     ],
-    tags: ['krema', 'osjetljiva koža', 'osjetljiva koža i koža sklona rozaceji'],
+    tags: ['krema', 'osjetljiva koža', 'Osjetljiva koža i koža sklona rozaceji'],
     imageNeedsResize: true
   }
   
