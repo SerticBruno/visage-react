@@ -1519,6 +1519,256 @@ Namijenjen je svim tipovima kože i ima hidratantna i anti-age svojstva.`,
     ],
     tags: ['krema', 'zaštita od sunca', 'svi tipovi kože', 'sve problematike (osim opadanja kose)'],
     imageNeedsResize: true
+  },
+  {
+    id: '46',
+    title: 'Serum 71',
+    description: `Serum 71 je formulacija bogata hranjivim sastojcima i pojačivačima imuniteta s moćnim triom traneksamične, mandelične i azelaične kiseline.
+
+Sadrži Beta glukan druge generacije i Neodermyl®, bakarni peptid nove generacije koji pomaže u obnavljanju kolagena i elastina.
+
+Pogodan za sve tipove kože.
+
+Ima anti-aging svojstva i svojstva posvjetljivanja kože.`,
+    category: 'Serum',
+    marka: 'Circadia',
+    productType: 'Serum',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije'],
+    image: '/images/products/circadia/CircadiaSerum71.webp',
+    price: '89 EUR',
+    volume: '15 ml',
+    activeIngredients: ['Tranexamic Acid: 2%', 'Azelaic Acid: 0.3%', 'Mandelic Acid: 5%', 'CM-Glucan Forte', 'NeoDermyl'],
+    application: [
+      'Svaku večer nanesite jednu pumpicu seruma na lice.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućim Circadia tonikom, Circadia AquaPorin Hydratating kremom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['serum', 'svi tipovi kože', 'anti-age', 'hiperpigmentacije'],
+    imageNeedsResize: true
+  },
+  {
+    id: '47',
+    title: 'Nighttime Repair',
+    description: `Ova napredna formula cilja na znakove starenja popravljajući oštećenja i sprječavajući daljnju štetu. S dodatnom snagom vitamina A, peptida i ceramida, nudi poboljšane koristi. Ne samo da štiti od UV oštećenja i pomaže u popravku DNA, već učinkovito smanjuje pojavu bora poticanjem sinteze kolagena.
+
+Smanjuje bore i povećava čvrstoću i elastičnost kože. Pomlađuje stanice kože i nudi visoku antioksidativnu zaštitu.
+
+Pogodan za korištenje na oštećenoj koži i koži koja pokazuje prve znakove starenja`,
+    category: 'Krema',
+    marka: 'Circadia',
+    productType: 'Krema',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega'],
+    image: '/images/products/circadia/CircadiaNighttimeRepair.webp',
+    price: '93 EUR',
+    volume: '59 ml',
+    warnings: [
+      'Sadrži umjerenu količinu Vitamina A (0,3%) koja je pogodna za početak korištenja proizvoda s retinolom!'
+    ],
+    activeIngredients: ['Vitamin A (Retinyl acetate)', 'SK-Influx', 'Synchrolife® (Rosmarinus Officinalis, Extract (and) Palmitoyl Tetrapeptide-7 (and) Chrysin)', 'TECA', 'Timecode'],
+    application: [
+      'U večernjim satima, nanijeti jednu pumpicu na čistu kožu lica i vrata potezima prema gore.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite u kombinaciji s odgovarajućim Circadia tonikom, Circadia Vitamin C Reversal serumom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['krema', 'svi tipovi kože', 'anti-age'],
+    imageNeedsResize: true
+  },
+  {
+    id: '48',
+    title: 'Nighttime Repair Plus',
+    description: `S većim postotkom vitamina A od Nighttime Repair. Ova napredna formula cilja na znakove starenja ispravljajući štetu i sprječavajući daljnja oštećenja kože. S dodanom snagom vitamina A, peptida i ceramida, pruža poboljšane koristi.
+
+Namijenjen zreloj koži ili koži s većim oštećenjima
+
+Smanjuje bore, povećava elastičnost i čvrstoću kože, nudi visoku antioksidacijsku zaštitu i oživljava stanice kože.`,
+    category: 'Krema',
+    marka: 'Circadia',
+    productType: 'Krema',
+    skinType: ['Zrela koža'],
+    skinConcern: ['Anti-aging njega'],
+    image: '/images/products/circadia/CircadiaNighttimeRepairPlus.webp',
+    price: '116 EUR',
+    volume: '59 ml',
+    activeIngredients: ['Vitamin A (Retinyl acetate)', 'SK-Influx', 'Synchrolife® (Rosmarinus Officinalis, Extract (and) Palmitoyl Tetrapeptide-7 (and) Chrysin)', 'TECA', 'Timecode'],
+    application: [
+      'Uvečer, na čistu kožu lica i vrata nanijeti jednu pumpicu potezima prema gore.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite u kombinaciji s odgovarajućim Circadia tonikom, Circadia Vitamin C Reversal serumom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['krema', 'zrela koža', 'anti-age'],
+    imageNeedsResize: true
+  },
+  {
+    id: '49',
+    title: 'MeriStem serum',
+    description: `Serum koji sadrži egzotične ekstrakte matičnih stanica jabuke i planinskog ljiljana koji sinergijski djeluju kako bi usporili starenje dok istovremeno štite kožu od oštećenja slobodnih radikala.
+
+Sadrži sastojke koji pomažu stanicama kože da izgrade novo tkivo te je bogat antioksidansima.
+
+Smanjuje bore i fine linije te revitalizira kožu i čini ju elastičnom.
+
+Namijenjen svim tipovima kože.`,
+    category: 'Serum',
+    marka: 'Circadia',
+    productType: 'Serum',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega'],
+    image: '/images/products/circadia/CircadiaMeriStemSerum.webp',
+    price: '62 EUR',
+    volume: '15 ml',
+    activeIngredients: ['Apple (Malus Domestica) stem cell extract', 'Distinctive Phytostem Edelweiss stem cell extract (Leontopodium alpinum meristem cell culture extract)', 'Aloe Vera Gel-Eco (Aloe barbadensis) extract', 'Cyclopeptide-5'],
+    application: [
+      'Koristite ujutro i navečer na očišćenoj koži.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućim Circadia tonikom, Circadia Phito-Pep 1.6 kremom i Circadia Light Day Sunscreen Broad Spectrum SPF37."
+      }
+    ],
+    tags: ['serum', 'svi tipovi kože', 'anti-age'],
+    imageNeedsResize: true
+  },
+  {
+    id: '50',
+    title: 'Phito-Pep 1.6',
+    description: `PhiTo-Pep 1.6 je hidratantna krema obogaćena peptidima koja održava vrhunsko stanje kože, optimalnu funkciju barijere i razinu vlage s mješavinom hidratantnih agensa, peptida i biljnih ekstrakata posebno za klijente koji počinju primjećivati znakove starenja.
+
+Ovaj proizvod također može biti korišten kao alternativni tretman vitaminu A (retinolu) za zrelu kožu.
+
+Štiti kožu od oštećenja slobodnim radikalima koji uzrokuju oštećenje lipida i DNA te ima antioksidativna svojstva.
+
+Namijenjen svim tipovima kože.`,
+    category: 'Krema',
+    marka: 'Circadia',
+    productType: 'Krema',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega'],
+    image: '/images/products/circadia/CircadiaPhito-Pep1.6krema.webp',
+    price: '85 EUR',
+    volume: '59 ml',
+    application: [
+      'Nakon čišćenja kože i nanošenja seruma nanesite malu količinu kreme na lice i vrat.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristiti s odgovarajućim Circadia tonikom, Circadia MeriStem serumom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['krema', 'svi tipovi kože', 'anti-age'],
+    imageNeedsResize: true
+  },
+  {
+    id: '51',
+    title: 'Revita-Cyte Complex',
+    description: `Formuliran kao alternativa za vitamin A losion koji se koristi kada su retinoidi kontraindicirani.
+
+Losion s peptidima, antioksidantima, biljnim sastojcima i vitaminima koji stiti od okolišnih i UV oštećenja
+
+Ovaj kompleks protiv bora s anti-age učinkom pomaže koži da se osjeća i izgleda čvršće i glađe, pružajući istovremeno trenutačnu mekoću pri nanošenju.
+
+Namijenjen osjetljivoj i oštećenoj koži, koži osjetljivoj na Vitamin A, koži sa znakovima starenja, suhoj koži.
+
+Namijenjen za sve tipove kože.`,
+    category: 'Krema',
+    marka: 'Circadia',
+    productType: 'Krema',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega'],
+    image: '/images/products/circadia/Revita-CyteComplex.webp',
+    price: '153 EUR',
+    volume: '59 ml',
+    activeIngredients: ['EUK-134', 'Pepha-ctive (Microalgae extract)', 'Revitalin PF (Purified mitochondrial and cytoplasmic fraction from yeast)', 'Oat Beta Glucan', 'Thymulen 4 (Acetyl-Tetrapeptide-2)', 'Exo-T (Exopolysaccharide from microorganisms living in rims of Polynesian atolls)', 'Chronocyclin (Chronopeptide)', 'Tocopherol (Vitamin E)'],
+    application: [
+      'Koristite svake večeri, nakon čišćenja i nanošenja seruma. Količinu graška na vrhovima prstiju i nježno nanesite na lice i vrat uz lagane pokrete prema gore.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućim Circadia tonikom, Circadia Cyto-Comm i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['krema', 'svi tipovi kože', 'anti-age'],
+    imageNeedsResize: true
+  },
+  {
+    id: '52',
+    title: 'Cyto-Comm',
+    description: `Ovaj lagani hidratantni serum dizajniran je za poboljša prirodne komunikacijske puteve kože, čime pomaže u procesima popravka i restrukturiranja.
+
+Komunikacija između stanica vitalna je za zdravlje kože!
+
+Odličan za kožu kojoj nedostaje kolagena i elastičnosti.
+
+Posebna formulacija amino-kiselina smanjuje opuštenost kože i bore, dok peptidi smanjuju pojavu sitnih linija i bora.
+
+Namijenjen svim tipovima kože, posebno koži sa znakovima starenja`,
+    category: 'Serum',
+    marka: 'Circadia',
+    productType: 'Serum',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega'],
+    image: '/images/products/circadia/CircadiaCytoComm.webp',
+    price: '69 EUR',
+    volume: '15 ml',
+    activeIngredients: ['DermalRx LuShield (Osmanthus Fragrans Flower Extract)', 'DermCom (Crocus Crysanthus bulb extract)', 'Progeline (F3acetyl Tripeptide-2)', 'Vita C (Aminopropyl ascorbyl phosphate)', 'L-Glycine', 'L-Lysine', 'L-Proline', 'L-Valine', 'L-Alanine'],
+    application: [
+      'Uvečer, nakon čišćenja i toniranja, nanesite Cyto-Comm.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s odgovarajućim Circadia tonikom, Circadia Revita-Cyte Complex kremom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['serum', 'svi tipovi kože', 'anti-age'],
+    imageNeedsResize: true
+  },
+  {
+    id: '53',
+    title: 'Myo-Cyte Plus',
+    description: `Ovaj nagrađivani serum sadrži Matrixyl®, Matrixyl® 3000, Snap 8 i InylineTM, kako bi znatno poboljšao izgled izražajnih linija.
+
+Multi-peptidna formula inhibira određene spojeve koji uzrokuju bore u koži te je odličan za mimičke i duboke bore.
+
+Stimulira proizvodnju i regeneraciju kolagena i povećava elastičnost kože.
+
+Namijenjen je zreloj koži.`,
+    category: 'Serum',
+    marka: 'Circadia',
+    productType: 'Serum',
+    skinType: ['Zrela koža'],
+    skinConcern: ['Anti-aging njega'],
+    image: '/images/products/circadia/CircadiaMyo-CytePlus.webp',
+    price: '220 EUR',
+    volume: '15 ml',
+    activeIngredients: ['Matrixyl™ (Palmitoyl Pentapeptide)', 'Matrixyl 3000™ (Palmitoyl Pentapeptide-3)', 'Snap-8 (Acetyl Octapeptide-3)', 'Inyline (Acetyl Hexapeptide-30)', 'Hyaluronic Acid', 'L-Proline', 'L-Carnosine', 'L-Threonine', 'L-Glycine', 'Passion Flower Extract'],
+    application: [
+      'Ujutro i navečer nakon čišćenja, nanesite jednu ili dvije kapi na vrhove prstiju i nježno umasirajte na područja izraženih bora na licu (čelo, oko usta i vanjski kut očiju). Ne nanosite na kapke.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak koristite s odgovarajućim Circadia tonikom, Circadia AquaPorin Hydrating kremom i Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['serum', 'svi tipovi kože', 'anti-age'],
+    imageNeedsResize: true
   }
   
 ]; 
