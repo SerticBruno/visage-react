@@ -74,7 +74,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="www.instagram.com/visage.aestheticstudio"
+                href="https://www.instagram.com/visage.aestheticstudio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors transform hover:scale-110"
