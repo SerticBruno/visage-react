@@ -33,7 +33,7 @@ U <strong>Visage studiju</strong> koristimo <strong>Dermalux</strong> fototerapi
     { 
       id: 'prednosti', 
       label: 'Prednosti', 
-      icon: 'FaRegFileAlt',
+      icon: 'FaStar',
       image: '/images/services/dermalux/dermalux-prednosti-visage-estetski-studio.jpg'
     },
     { 
@@ -44,7 +44,7 @@ U <strong>Visage studiju</strong> koristimo <strong>Dermalux</strong> fototerapi
     { 
       id: 'priprema', 
       label: 'Priprema', 
-      icon: 'FaRegEdit',
+      icon: 'FaClipboard',
       image: '/images/services/dermalux/dermalux-nakon-tretmana-visage-estetski-studio.png'
     },
     { 
@@ -61,7 +61,7 @@ U <strong>Visage studiju</strong> koristimo <strong>Dermalux</strong> fototerapi
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
-      icon: 'FaRegFile',
+      icon: 'FaHome',
       image: '/images/services/dermalux/dermalux-about-visage-estetski-studio.png'
     },
     { 

@@ -36,7 +36,7 @@ Vratite <strong>samopouzdanje</strong> uz <strong>prirodan volumen</strong> i <s
     { 
       id: 'prednosti', 
       label: 'Prednosti', 
-      icon: 'FaRegFileAlt',
+      icon: 'FaStar',
       image: '/images/services/dermalni-fileri/dermalni-fileri-prednosti-visage-estetski-studio-sisak.webp'
     },
     { 
@@ -48,7 +48,7 @@ Vratite <strong>samopouzdanje</strong> uz <strong>prirodan volumen</strong> i <s
     { 
       id: 'priprema', 
       label: 'Priprema', 
-      icon: 'FaRegEdit',
+      icon: 'FaClipboard',
       image: '/images/services/dermalni-fileri/dermalni-fileri-priprema-visage-estetski-studio-sisak.webp'
     },
     { 
@@ -65,7 +65,7 @@ Vratite <strong>samopouzdanje</strong> uz <strong>prirodan volumen</strong> i <s
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
-      icon: 'FaRegFile',
+      icon: 'FaHome',
       image: '/images/services/dermalni-fileri/dermalni-fileri-nakon-tretmana-visage-estetski-studio-sisak.webp'
     },
     { 

@@ -36,7 +36,7 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
     { 
       id: 'prednosti', 
       label: 'Prednosti', 
-      icon: 'FaRegFileAlt',
+      icon: 'FaStar',
       image: '/images/services/prp/prp-prednosti-estetski-studio-sisak.jpeg',
       focalPoint: '50% 0%',
     },
@@ -49,7 +49,7 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
     { 
       id: 'priprema', 
       label: 'Priprema', 
-      icon: 'FaRegEdit',
+      icon: 'FaClipboard',
       image: '/images/services/prp/prp-tijek-zahvata-estetski-studio-sisak.jpeg',
     },
     { 
@@ -66,7 +66,7 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
-      icon: 'FaRegFile',
+      icon: 'FaHome',
       image: '/images/services/prp/prp-nakon-tretmana-visage-estetski-studio.jpeg'
     },
     { 

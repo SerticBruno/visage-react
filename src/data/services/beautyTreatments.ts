@@ -48,7 +48,7 @@ Uživajte u <strong>hidratiziranoj i zdravoj koži</strong> te zaštitite kožu 
     { 
       id: 'prednosti', 
       label: 'Prednosti', 
-      icon: 'FaRegFileAlt',
+      icon: 'FaStar',
       image: '/images/services/beauty-treatment-visage-estetski-studio.webp'
     },
     { 
@@ -60,7 +60,7 @@ Uživajte u <strong>hidratiziranoj i zdravoj koži</strong> te zaštitite kožu 
     { 
       id: 'priprema', 
       label: 'Priprema', 
-      icon: 'FaRegEdit',
+      icon: 'FaClipboard',
       image: '/images/services/beauty-treatment-visage-estetski-studio.webp'
     },
     { 
@@ -78,7 +78,7 @@ Uživajte u <strong>hidratiziranoj i zdravoj koži</strong> te zaštitite kožu 
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
-      icon: 'FaRegFile',
+      icon: 'FaHome',
       image: '/images/services/beauty-treatment-visage-estetski-studio.webp'
     },
     { 

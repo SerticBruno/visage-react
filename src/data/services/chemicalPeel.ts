@@ -27,7 +27,7 @@ U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>in
     { 
       id: 'prednosti', 
       label: 'Prednosti', 
-      icon: 'FaRegFileAlt',
+      icon: 'FaStar',
       image: '/images/services/kemijski-piling/kemijski-piling-prednosti-estetski-studio-sisak.jpg',
       focalPoint: '30% 25%'
     },
@@ -40,7 +40,7 @@ U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>in
     { 
       id: 'priprema', 
       label: 'Priprema', 
-      icon: 'FaRegEdit',
+      icon: 'FaClipboard',
       image: '/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg',
       focalPoint: '50% 25%'
     },
@@ -58,7 +58,7 @@ U <strong>Visage studiju</strong> prilagođavamo svaki tretman vašim <strong>in
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
-      icon: 'FaRegFile',
+      icon: 'FaHome',
       image: '/images/services/kemijski-piling/kemijski-piling-toskani-estetski-studio.png'
     },
     { 
@@ -105,7 +105,7 @@ Tjedan dana prije tretmana:
 
 Napraviti 4 do 6 tretmana u razmaku od 2 do 3 tjedna, ovisno o stanju kože, te ponavljanje svakih 3 do 6 mjeseci.
 
-Nakon kemijskog pilinga se preporučuje:
+Nakon kemijskog pilinga preporučuje se:
 
 - Ne nanosite kozmetiku s retinolom minimalno tjedan dana nakon tretmana
 - Ne koristiti grube ručnike tijekom skincare rutine

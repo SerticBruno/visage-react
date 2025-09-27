@@ -36,7 +36,7 @@ Zakažite svoj termin u <strong>Visage studiju</strong> i krenite na put prema r
     { 
       id: 'prednosti', 
       label: 'Prednosti', 
-      icon: 'FaRegFileAlt',
+      icon: 'FaStar',
       image: '/images/services/plasmage/plasmage-prednosti-estetski-studio-visage-sisak.jpg'
     },
     { 
@@ -48,7 +48,7 @@ Zakažite svoj termin u <strong>Visage studiju</strong> i krenite na put prema r
     { 
       id: 'priprema', 
       label: 'Priprema', 
-      icon: 'FaRegEdit',
+      icon: 'FaClipboard',
       image: '/images/services/plasmage/plasmage-priprema-estetski-studio-visage-sisak.jpg'
     },
     { 
@@ -65,7 +65,7 @@ Zakažite svoj termin u <strong>Visage studiju</strong> i krenite na put prema r
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
-      icon: 'FaRegFile',
+      icon: 'FaHome',
       image: '/images/services/plasmage/plasmage-nakon-zahvata-estetski-studio-visage-sisak.jpg'
     },
     { 

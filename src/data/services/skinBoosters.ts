@@ -35,7 +35,7 @@ Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa skin boo
     { 
       id: 'prednosti', 
       label: 'Prednosti', 
-      icon: 'FaRegFileAlt',
+      icon: 'FaStar',
       image: '/images/services/skin-boosters/skin-boosteri-prednosti-visage-estetski-studio.png',
       focalPoint: '50% 20%',
     },
@@ -48,7 +48,7 @@ Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa skin boo
     { 
       id: 'priprema', 
       label: 'Priprema', 
-      icon: 'FaRegEdit',
+      icon: 'FaClipboard',
     },
     { 
       id: 'tijek-tretmana', 
@@ -67,7 +67,7 @@ Osvježite svoju kožu i otkrijte <strong>snagu hidratacije</strong> sa skin boo
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
-      icon: 'FaRegFile',
+      icon: 'FaHome',
       image: '/images/services/skin-boosters/skin-booster-nakon-tretmana-visage-estetski-studio-sisak.jpeg',
       focalPoint: '40% 15%',
     },

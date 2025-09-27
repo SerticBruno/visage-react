@@ -12,6 +12,17 @@ import { useIntersectionObserver } from '@/lib/useIntersectionObserver';
 
 import 'swiper/css';
 
+// Utility function to calculate discount percentage
+const calculateDiscountPercentage = (oldPrice: string, currentPrice: string): number => {
+  const oldPriceNum = parseFloat(oldPrice.replace(/[^\d.]/g, ''));
+  const currentPriceNum = parseFloat(currentPrice.replace(/[^\d.]/g, ''));
+  
+  if (oldPriceNum <= 0 || currentPriceNum <= 0) return 0;
+  
+  const discount = ((oldPriceNum - currentPriceNum) / oldPriceNum) * 100;
+  return Math.round(discount);
+};
+
 export default function ComboPackagesSectionPreview() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [openComboModal, setOpenComboModal] = useState<string | null>(null);
@@ -102,7 +113,12 @@ export default function ComboPackagesSectionPreview() {
             }}
             className="pb-12"
           >
-            {comboPackages.map((comboPackage) => (
+            {comboPackages.map((comboPackage) => {
+              const discountPercentage = comboPackage.oldPrice 
+                ? calculateDiscountPercentage(comboPackage.oldPrice, comboPackage.price)
+                : 0;
+              
+              return (
               <SwiperSlide key={comboPackage.id} className="!p-2 !pb-6">
                 <button
                   onClick={() => setOpenComboModal(comboPackage.id)}
@@ -147,6 +163,11 @@ export default function ComboPackagesSectionPreview() {
                                 {comboPackage.oldPrice}
                               </span>
                             )}
+                            {discountPercentage > 0 && (
+                              <div className="bg-white/90 text-gray-800 text-xs font-bold px-2 py-1 rounded-full shadow-sm">
+                                -{discountPercentage}%
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -164,6 +185,11 @@ export default function ComboPackagesSectionPreview() {
                             <span className="text-sm text-white/80 line-through">
                               {comboPackage.oldPrice}
                             </span>
+                          )}
+                          {discountPercentage > 0 && (
+                            <div className="bg-white/90 text-gray-800 text-xs font-bold px-2 py-1 rounded-full shadow-sm">
+                              -{discountPercentage}%
+                            </div>
                           )}
                         </div>
                       </div>
@@ -190,6 +216,11 @@ export default function ComboPackagesSectionPreview() {
                                   {comboPackage.oldPrice}
                                 </span>
                               )}
+                              {discountPercentage > 0 && (
+                                <div className="bg-white/90 text-gray-800 text-xs font-bold px-2 py-1 rounded-full shadow-sm">
+                                  -{discountPercentage}%
+                                </div>
+                              )}
                             </div>
                             <span className="text-sm text-white font-medium underline">
                               Saznajte više
@@ -201,7 +232,8 @@ export default function ComboPackagesSectionPreview() {
                   </div>
                 </button>
               </SwiperSlide>
-            ))}
+              );
+            })}
           </Swiper>
 
           {/* Navigation and Pagination */}

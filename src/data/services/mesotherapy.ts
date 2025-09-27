@@ -37,7 +37,7 @@ U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimal
     { 
       id: 'prednosti', 
       label: 'Prednosti', 
-      icon: 'FaRegFileAlt',
+      icon: 'FaStar',
       image: '/images/services/mezoterapija/mezoterapija-prednosti-visage-estetski-studio.png',
       focalPoint: '60% 30%'
     },
@@ -50,7 +50,7 @@ U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimal
     { 
       id: 'priprema', 
       label: 'Priprema', 
-      icon: 'FaRegEdit',
+      icon: 'FaClipboard',
       image: '/images/services/mezoterapija/mezoterapija-priprema-visage-estetski-studio.jpg',
       focalPoint: '60% 80%'
     },
@@ -69,7 +69,7 @@ U <strong>Visage studiju</strong> je svaki tretman mezoterapije <strong>maksimal
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
-      icon: 'FaRegFile',
+      icon: 'FaHome',
       image: '/images/services/mezoterapija/mezoterapija-nakon-tretmana-visage-estetski-studio.jpg'
     },
     { 

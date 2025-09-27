@@ -34,7 +34,7 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
     { 
       id: 'prednosti', 
       label: 'Prednosti', 
-      icon: 'FaRegFileAlt',
+      icon: 'FaStar',
       image: '/images/services/botox/botox-prednosti-visage-estetski-studio.webp'
     },
     { 
@@ -46,7 +46,7 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
     { 
       id: 'priprema', 
       label: 'Priprema', 
-      icon: 'FaRegEdit',
+      icon: 'FaClipboard',
     },
     { 
       id: 'tijek-tretmana', 
@@ -62,7 +62,7 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
     { 
       id: 'nakon-tretmana', 
       label: 'Nakon tretmana', 
-      icon: 'FaRegFile',
+      icon: 'FaHome',
       image: '/images/services/botox/botox-nakon-tretmana-visage-estetski-studio.webp'
     },
     { 

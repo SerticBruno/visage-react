@@ -296,7 +296,7 @@ export const comboPackages: ComboPackage[] = [
     description: "Otvoren i osvježen pogled bez skalpela",
     image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg",
     price: "720 EUR",
-    oldPrice: "8245 EUR",
+    oldPrice: "845 EUR",
     services: [
       { 
         id: "plasmage", 
