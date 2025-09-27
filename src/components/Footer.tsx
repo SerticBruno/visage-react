@@ -112,27 +112,24 @@ const Footer = () => {
               <li>
                 <Link 
                   href="/usluge" 
-                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
-                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
                   Usluge
                 </Link>
               </li>
               <li>
                 <Link 
                   href="/katalog" 
-                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
-                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
                   Katalog
                 </Link>
               </li>
               <li>
                 <Link 
                   href="/cjenik" 
-                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
-                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
                   Cjenik
                 </Link>
               </li>
@@ -140,9 +137,8 @@ const Footer = () => {
                 <li>
                   <Link 
                     href="/blog" 
-                    className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-gray-300 hover:text-white transition-colors"
                   >
-                    <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
                     Blog
                   </Link>
                 </li>
@@ -150,27 +146,24 @@ const Footer = () => {
               <li>
                 <Link 
                   href="/o-nama" 
-                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
-                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
                   O nama
                 </Link>
               </li>
               <li>
                 <Link 
                   href="/kontakt" 
-                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
-                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
                   Kontakt
                 </Link>
               </li>
               <li>
                 <Link 
                   href="/privatnost" 
-                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 group"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
-                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-white transition-colors"></span>
                   Politika privatnosti
                 </Link>
               </li>
