@@ -163,11 +163,6 @@ export default function ComboPackagesSectionPreview() {
                                 {comboPackage.oldPrice}
                               </span>
                             )}
-                            {discountPercentage > 0 && (
-                              <div className="bg-white/90 text-gray-800 text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                                -{discountPercentage}%
-                              </div>
-                            )}
                           </div>
                         </div>
                       </div>
@@ -185,11 +180,6 @@ export default function ComboPackagesSectionPreview() {
                             <span className="text-sm text-white/80 line-through">
                               {comboPackage.oldPrice}
                             </span>
-                          )}
-                          {discountPercentage > 0 && (
-                            <div className="bg-white/90 text-gray-800 text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                              -{discountPercentage}%
-                            </div>
                           )}
                         </div>
                       </div>
@@ -215,11 +205,6 @@ export default function ComboPackagesSectionPreview() {
                                 <span className="text-sm text-white/80 line-through">
                                   {comboPackage.oldPrice}
                                 </span>
-                              )}
-                              {discountPercentage > 0 && (
-                                <div className="bg-white/90 text-gray-800 text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                                  -{discountPercentage}%
-                                </div>
                               )}
                             </div>
                             <span className="text-sm text-white font-medium underline">

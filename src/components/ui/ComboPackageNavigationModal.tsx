@@ -57,37 +57,22 @@ export default function ComboPackageNavigationModal({
     setLoadedImages(prev => new Set([...prev, imageSrc]));
   }, []);
 
-  // Initialize with the initial combo package or first one
+  // Initialize when modal opens
   useEffect(() => {
-    console.log('Initialization effect', { 
-      initialComboPackage: initialComboPackage?.title, 
-      isClosing, 
-      currentComboPackage: currentComboPackage?.title,
-      comboPackagesLength: comboPackages.length 
-    });
-    
-    if (initialComboPackage && !isClosing) {
-      const index = comboPackages.findIndex(pkg => pkg.id === initialComboPackage.id);
-      console.log('Found initial package at index:', index);
-      setCurrentIndex(index >= 0 ? index : 0);
-      setCurrentComboPackage(initialComboPackage);
-    } else if (!currentComboPackage && !isClosing) {
-      // Only set to first package if no current package is set
-      console.log('Setting to first package');
-      setCurrentIndex(0);
-      setCurrentComboPackage(comboPackages[0]);
+    if (isOpen && !isClosing) {
+      if (initialComboPackage) {
+        const index = comboPackages.findIndex(pkg => pkg.id === initialComboPackage.id);
+        console.log('Modal opened with initial package:', initialComboPackage.title, 'at index:', index);
+        setCurrentIndex(index >= 0 ? index : 0);
+        setCurrentComboPackage(initialComboPackage);
+      } else {
+        console.log('Modal opened without initial package, setting to first');
+        setCurrentIndex(0);
+        setCurrentComboPackage(comboPackages[0]);
+      }
     }
-  }, [initialComboPackage, isClosing, currentComboPackage]);
+  }, [isOpen, initialComboPackage, isClosing]);
 
-  // Handle transition state
-  useEffect(() => {
-    if (isTransitioning) {
-      const timer = setTimeout(() => {
-        setIsTransitioning(false);
-      }, 300);
-      return () => clearTimeout(timer);
-    }
-  }, [isTransitioning]);
 
   const handlePrevious = useCallback(() => {
     if (isTransitioning) return;
@@ -99,11 +84,14 @@ export default function ComboPackageNavigationModal({
     
     console.log('New index will be:', newIndex, 'Package:', comboPackages[newIndex]?.title);
     
-    // Fade out first
+    // Update both state values immediately
+    setCurrentIndex(newIndex);
+    setCurrentComboPackage(comboPackages[newIndex]);
+    
+    // Reset transition state after a short delay
     setTimeout(() => {
-      setCurrentIndex(newIndex);
-      setCurrentComboPackage(comboPackages[newIndex]);
-    }, 150); // Half of the transition duration
+      setIsTransitioning(false);
+    }, 150);
   }, [currentIndex, isTransitioning]);
 
   const handleNext = useCallback(() => {
@@ -116,11 +104,14 @@ export default function ComboPackageNavigationModal({
     
     console.log('New index will be:', newIndex, 'Package:', comboPackages[newIndex]?.title);
     
-    // Fade out first
+    // Update both state values immediately
+    setCurrentIndex(newIndex);
+    setCurrentComboPackage(comboPackages[newIndex]);
+    
+    // Reset transition state after a short delay
     setTimeout(() => {
-      setCurrentIndex(newIndex);
-      setCurrentComboPackage(comboPackages[newIndex]);
-    }, 150); // Half of the transition duration
+      setIsTransitioning(false);
+    }, 150);
   }, [currentIndex, isTransitioning]);
 
   const handleClose = useCallback(() => {
@@ -248,12 +239,10 @@ export default function ComboPackageNavigationModal({
                   </div>
                   
                   {/* Scrollable Content */}
-                  <div className={`flex-1 overflow-y-auto p-3 space-y-3 transition-all duration-500 ${
-                    isTransitioning 
-                      ? 'opacity-25 blur-sm' 
-                      : imagesLoaded 
-                        ? 'opacity-100 blur-0' 
-                        : 'opacity-0 blur-md'
+                  <div className={`flex-1 overflow-y-auto p-3 space-y-3 transition-opacity duration-300 ${
+                    imagesLoaded 
+                      ? 'opacity-100' 
+                      : 'opacity-0'
                   }`}>
                     {/* Title and Description */}
                     <div className="bg-slate-50 rounded-xl p-3">
@@ -416,7 +405,7 @@ export default function ComboPackageNavigationModal({
                 </div>
 
                 {/* Desktop Layout - Fixed Left Side */}
-                <div className={`hidden lg:block w-2/5 p-6 border-r border-slate-100 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+                <div className="hidden lg:block w-2/5 p-6 border-r border-slate-100">
                   <div className="relative h-[calc(600px-3rem)] bg-slate-50 rounded-xl overflow-hidden shadow-sm">
                     {/* Loading Overlay */}
                     <div className={`absolute inset-0 bg-slate-200 transition-opacity duration-500 z-10 ${
@@ -464,12 +453,10 @@ export default function ComboPackageNavigationModal({
                 
                 {/* Scrollable Right Side - Desktop Only */}
                 <div className="hidden lg:block w-3/5 overflow-y-auto max-h-[600px] flex-1 min-h-0">
-                  <div className={`p-4 space-y-3 transition-all duration-500 ${
-                    isTransitioning 
-                      ? 'opacity-25 blur-sm' 
-                      : imagesLoaded 
-                        ? 'opacity-100 blur-0' 
-                        : 'opacity-0 blur-md'
+                  <div className={`p-4 space-y-3 transition-opacity duration-300 ${
+                    imagesLoaded 
+                      ? 'opacity-100' 
+                      : 'opacity-0'
                   }`}>
                     
                     {/* Title and Description */}
