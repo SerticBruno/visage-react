@@ -17,8 +17,8 @@ export const services: Services = {
   'dermalni-fileri': dermalFillers,
   'plasmage': plasmage,
   'botox': wrinkleTherapy,
-  'beauty-tretmani': beautyTreatments,
-  'foto-terapija': photoTherapy
+  'foto-terapija': photoTherapy,
+  'beauty-tretmani': beautyTreatments
 };
 
 export type ServiceKey = keyof typeof services;
