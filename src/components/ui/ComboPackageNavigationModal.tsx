@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Fragment, useEffect, useState, useCallback } from 'react';
+import React, { Fragment, useEffect, useState, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Transition } from '@headlessui/react';
 import { FaTimes, FaCheck, FaGift, FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
@@ -24,103 +24,99 @@ export default function ComboPackageNavigationModal({
   comboPackages: filteredComboPackages,
 }: ComboPackageNavigationModalProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentComboPackage, setCurrentComboPackage] = useState<ComboPackage | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  
+  const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const lastClickTimeRef = useRef<number>(0);
 
   // Use filtered packages if provided, otherwise use all packages
   const packagesToUse = filteredComboPackages || comboPackages;
+  const currentComboPackage = packagesToUse[currentIndex] || null;
 
   // Handle mounting for SSR
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Reset image loading state when combo package changes
+  // Cleanup timeouts on unmount
   useEffect(() => {
-    if (currentComboPackage) {
-      setLoadedImages(new Set());
-      setImagesLoaded(false);
-    }
-  }, [currentComboPackage]);
-
-  // Check if all images are loaded
-  useEffect(() => {
-    if (currentComboPackage) {
-      const totalImages = currentComboPackage.services.slice(0, 3).length;
-      if (loadedImages.size === totalImages && totalImages > 0) {
-        setImagesLoaded(true);
+    return () => {
+      if (transitionTimeoutRef.current) {
+        clearTimeout(transitionTimeoutRef.current);
       }
-    }
-  }, [loadedImages, currentComboPackage]);
-
-  // Handle image load
-  const handleImageLoad = useCallback((imageSrc: string) => {
-    setLoadedImages(prev => new Set([...prev, imageSrc]));
+    };
   }, []);
 
   // Initialize when modal opens
   useEffect(() => {
-    if (isOpen && !isClosing) {
+    if (isOpen && !isClosing && packagesToUse.length > 0) {
+      setIsTransitioning(false);
+      
       if (initialComboPackage) {
         const index = packagesToUse.findIndex(pkg => pkg.id === initialComboPackage.id);
-        console.log('Modal opened with initial package:', initialComboPackage.title, 'at index:', index);
         setCurrentIndex(index >= 0 ? index : 0);
-        setCurrentComboPackage(initialComboPackage);
       } else {
-        console.log('Modal opened without initial package, setting to first');
         setCurrentIndex(0);
-        setCurrentComboPackage(packagesToUse[0]);
       }
     }
   }, [isOpen, initialComboPackage, isClosing, packagesToUse]);
 
 
   const handlePrevious = useCallback(() => {
-    if (isTransitioning) return;
+    const now = Date.now();
+    if (isTransitioning || packagesToUse.length === 0 || now - lastClickTimeRef.current < 200) return;
     
-    console.log('handlePrevious called', { currentIndex, comboPackagesLength: packagesToUse.length });
+    lastClickTimeRef.current = now;
+    
+    // Clear any existing timeout
+    if (transitionTimeoutRef.current) {
+      clearTimeout(transitionTimeoutRef.current);
+    }
     
     setIsTransitioning(true);
+    
     const newIndex = currentIndex === 0 ? packagesToUse.length - 1 : currentIndex - 1;
-    
-    console.log('New index will be:', newIndex, 'Package:', packagesToUse[newIndex]?.title);
-    
-    // Update both state values immediately
     setCurrentIndex(newIndex);
-    setCurrentComboPackage(packagesToUse[newIndex]);
     
     // Reset transition state after a short delay
-    setTimeout(() => {
+    transitionTimeoutRef.current = setTimeout(() => {
       setIsTransitioning(false);
+      transitionTimeoutRef.current = null;
     }, 150);
-  }, [currentIndex, isTransitioning, packagesToUse]);
+  }, [currentIndex, isTransitioning, packagesToUse.length]);
 
   const handleNext = useCallback(() => {
-    if (isTransitioning) return;
+    const now = Date.now();
+    if (isTransitioning || packagesToUse.length === 0 || now - lastClickTimeRef.current < 200) return;
     
-    console.log('handleNext called', { currentIndex, comboPackagesLength: packagesToUse.length });
+    lastClickTimeRef.current = now;
+    
+    // Clear any existing timeout
+    if (transitionTimeoutRef.current) {
+      clearTimeout(transitionTimeoutRef.current);
+    }
     
     setIsTransitioning(true);
+    
     const newIndex = currentIndex === packagesToUse.length - 1 ? 0 : currentIndex + 1;
-    
-    console.log('New index will be:', newIndex, 'Package:', packagesToUse[newIndex]?.title);
-    
-    // Update both state values immediately
     setCurrentIndex(newIndex);
-    setCurrentComboPackage(packagesToUse[newIndex]);
     
     // Reset transition state after a short delay
-    setTimeout(() => {
+    transitionTimeoutRef.current = setTimeout(() => {
       setIsTransitioning(false);
+      transitionTimeoutRef.current = null;
     }, 150);
-  }, [currentIndex, isTransitioning, packagesToUse]);
+  }, [currentIndex, isTransitioning, packagesToUse.length]);
 
   const handleClose = useCallback(() => {
+    if (transitionTimeoutRef.current) {
+      clearTimeout(transitionTimeoutRef.current);
+      transitionTimeoutRef.current = null;
+    }
     setIsClosing(true);
+    setIsTransitioning(false);
     onClose();
     // Reset closing state after transition
     setTimeout(() => {
@@ -142,9 +138,11 @@ export default function ComboPackageNavigationModal({
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, currentIndex, isTransitioning, handleNext, handlePrevious, handleClose]);
+    if (isOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [isOpen, isTransitioning, handleNext, handlePrevious, handleClose]);
 
   const calculateSavings = (oldPrice: string, newPrice: string) => {
     const old = parseFloat(oldPrice.replace(/\D/g, ''));
@@ -210,11 +208,9 @@ export default function ComboPackageNavigationModal({
                 <div className="lg:hidden w-full h-full flex flex-col">
                   {/* Images - Fixed height */}
                   <div className={`w-full relative h-32 sm:h-40 bg-slate-50 rounded-t-xl overflow-hidden shadow-sm flex-shrink-0 transition-opacity duration-300 ${
-                    isTransitioning ? 'opacity-25' : 'opacity-100'
+                    isTransitioning ? 'opacity-50' : 'opacity-100'
                   }`}>
-                    <div className={`relative w-full h-full flex flex-row transition-opacity duration-500 ${
-                      imagesLoaded ? 'opacity-100' : 'opacity-0'
-                    }`}>
+                    <div className="relative w-full h-full flex flex-row">
                       {/* Services - Max 3 */}
                       {currentComboPackage.services.slice(0, 3).map((service) => (
                         <div 
@@ -230,7 +226,6 @@ export default function ComboPackageNavigationModal({
                             alt={service.title}
                             fill
                             className="object-cover"
-                            onLoad={() => handleImageLoad(service.image)}
                           />
                           {service.id === serviceId && (
                             <div className="absolute top-2 right-2">
@@ -245,9 +240,7 @@ export default function ComboPackageNavigationModal({
                   
                   {/* Scrollable Content */}
                   <div className={`flex-1 overflow-y-auto p-3 space-y-3 transition-opacity duration-300 ${
-                    imagesLoaded 
-                      ? 'opacity-100' 
-                      : 'opacity-0'
+                    isTransitioning ? 'opacity-50' : 'opacity-100'
                   }`}>
                     {/* Title and Description */}
                     <div className="bg-slate-50 rounded-xl p-3">
@@ -411,22 +404,11 @@ export default function ComboPackageNavigationModal({
 
                 {/* Desktop Layout - Fixed Left Side */}
                 <div className="hidden lg:block w-2/5 p-6 border-r border-slate-100">
-                  <div className="relative h-[calc(600px-3rem)] bg-slate-50 rounded-xl overflow-hidden shadow-sm">
-                    {/* Loading Overlay */}
-                    <div className={`absolute inset-0 bg-slate-200 transition-opacity duration-500 z-10 ${
-                      imagesLoaded ? 'opacity-0' : 'opacity-100'
-                    }`}>
-                      <div className="flex items-center justify-center h-full">
-                        <div className="animate-pulse text-slate-400">
-                          <div className="w-8 h-8 border-2 border-slate-300 border-t-slate-600 rounded-full animate-spin"></div>
-                        </div>
-                      </div>
-                    </div>
-                    
+                  <div className={`relative h-[calc(600px-3rem)] bg-slate-50 rounded-xl overflow-hidden shadow-sm transition-opacity duration-300 ${
+                    isTransitioning ? 'opacity-50' : 'opacity-100'
+                  }`}>
                     {/* Combined Service and Product Images - Vertical Layout */}
-                    <div className={`relative w-full h-full flex flex-col transition-opacity duration-500 ${
-                      imagesLoaded ? 'opacity-100' : 'opacity-0'
-                    }`}>
+                    <div className="relative w-full h-full flex flex-col">
                       {/* Services - Max 3 */}
                       {currentComboPackage.services.slice(0, 3).map((service) => (
                         <div 
@@ -442,7 +424,6 @@ export default function ComboPackageNavigationModal({
                             alt={service.title}
                             fill
                             className="object-cover"
-                            onLoad={() => handleImageLoad(service.image)}
                           />
                           {service.id === serviceId && (
                             <div className="absolute top-2 right-2">
@@ -459,9 +440,7 @@ export default function ComboPackageNavigationModal({
                 {/* Scrollable Right Side - Desktop Only */}
                 <div className="hidden lg:block w-3/5 overflow-y-auto max-h-[600px] flex-1 min-h-0">
                   <div className={`p-4 space-y-3 transition-opacity duration-300 ${
-                    imagesLoaded 
-                      ? 'opacity-100' 
-                      : 'opacity-0'
+                    isTransitioning ? 'opacity-50' : 'opacity-100'
                   }`}>
                     
                     {/* Title and Description */}

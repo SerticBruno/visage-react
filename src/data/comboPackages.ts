@@ -231,19 +231,19 @@ export const comboPackages: ComboPackage[] = [
     oldPrice: "425 EUR",
     services: [
       { 
-        id: "mezoterapija", 
+        id: "kemijski-piling", 
         title: "Kemijski piling Duosomal - 1 tretman", 
+        image: "/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg"
+      },
+      { 
+        id: "mezoterapija", 
+        title: "Mezoterapija lica Mesoject gunom - 1 tretman", 
         image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.png"
       },
       { 
         id: "skin-boosteri", 
-        title: "Mezoterapija lica Mesoject gunom - 1 tretman", 
-        image: "/images/services/skin-boosters/skin-boosteri-prednosti-visage-estetski-studio.png"
-      },
-      { 
-        id: "kemijski-piling", 
         title: "Skin booster TKN HA3 - 1 tretman", 
-        image: "/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg"
+        image: "/images/services/skin-boosters/skin-boosteri-prednosti-visage-estetski-studio.png"
       }
     ],
     benefits: [
