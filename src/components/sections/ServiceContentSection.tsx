@@ -274,6 +274,7 @@ export default function ServiceContentSection({
           onClose={() => setOpenComboModal(null)}
           initialComboPackage={openComboModal ? comboPackages.find(pkg => pkg.id === openComboModal) : undefined}
           serviceId={serviceId}
+          comboPackages={comboPackages}
         />
       )}
     </section>

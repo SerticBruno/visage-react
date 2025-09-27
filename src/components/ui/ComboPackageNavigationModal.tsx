@@ -13,6 +13,7 @@ interface ComboPackageNavigationModalProps {
   onClose: () => void;
   initialComboPackage?: ComboPackage;
   serviceId?: string;
+  comboPackages?: ComboPackage[];
 }
 
 export default function ComboPackageNavigationModal({ 
@@ -20,6 +21,7 @@ export default function ComboPackageNavigationModal({
   onClose, 
   initialComboPackage,
   serviceId,
+  comboPackages: filteredComboPackages,
 }: ComboPackageNavigationModalProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentComboPackage, setCurrentComboPackage] = useState<ComboPackage | null>(null);
@@ -28,6 +30,9 @@ export default function ComboPackageNavigationModal({
   const [isClosing, setIsClosing] = useState(false);
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
   const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Use filtered packages if provided, otherwise use all packages
+  const packagesToUse = filteredComboPackages || comboPackages;
 
   // Handle mounting for SSR
   useEffect(() => {
@@ -61,58 +66,58 @@ export default function ComboPackageNavigationModal({
   useEffect(() => {
     if (isOpen && !isClosing) {
       if (initialComboPackage) {
-        const index = comboPackages.findIndex(pkg => pkg.id === initialComboPackage.id);
+        const index = packagesToUse.findIndex(pkg => pkg.id === initialComboPackage.id);
         console.log('Modal opened with initial package:', initialComboPackage.title, 'at index:', index);
         setCurrentIndex(index >= 0 ? index : 0);
         setCurrentComboPackage(initialComboPackage);
       } else {
         console.log('Modal opened without initial package, setting to first');
         setCurrentIndex(0);
-        setCurrentComboPackage(comboPackages[0]);
+        setCurrentComboPackage(packagesToUse[0]);
       }
     }
-  }, [isOpen, initialComboPackage, isClosing]);
+  }, [isOpen, initialComboPackage, isClosing, packagesToUse]);
 
 
   const handlePrevious = useCallback(() => {
     if (isTransitioning) return;
     
-    console.log('handlePrevious called', { currentIndex, comboPackagesLength: comboPackages.length });
+    console.log('handlePrevious called', { currentIndex, comboPackagesLength: packagesToUse.length });
     
     setIsTransitioning(true);
-    const newIndex = currentIndex === 0 ? comboPackages.length - 1 : currentIndex - 1;
+    const newIndex = currentIndex === 0 ? packagesToUse.length - 1 : currentIndex - 1;
     
-    console.log('New index will be:', newIndex, 'Package:', comboPackages[newIndex]?.title);
+    console.log('New index will be:', newIndex, 'Package:', packagesToUse[newIndex]?.title);
     
     // Update both state values immediately
     setCurrentIndex(newIndex);
-    setCurrentComboPackage(comboPackages[newIndex]);
+    setCurrentComboPackage(packagesToUse[newIndex]);
     
     // Reset transition state after a short delay
     setTimeout(() => {
       setIsTransitioning(false);
     }, 150);
-  }, [currentIndex, isTransitioning]);
+  }, [currentIndex, isTransitioning, packagesToUse]);
 
   const handleNext = useCallback(() => {
     if (isTransitioning) return;
     
-    console.log('handleNext called', { currentIndex, comboPackagesLength: comboPackages.length });
+    console.log('handleNext called', { currentIndex, comboPackagesLength: packagesToUse.length });
     
     setIsTransitioning(true);
-    const newIndex = currentIndex === comboPackages.length - 1 ? 0 : currentIndex + 1;
+    const newIndex = currentIndex === packagesToUse.length - 1 ? 0 : currentIndex + 1;
     
-    console.log('New index will be:', newIndex, 'Package:', comboPackages[newIndex]?.title);
+    console.log('New index will be:', newIndex, 'Package:', packagesToUse[newIndex]?.title);
     
     // Update both state values immediately
     setCurrentIndex(newIndex);
-    setCurrentComboPackage(comboPackages[newIndex]);
+    setCurrentComboPackage(packagesToUse[newIndex]);
     
     // Reset transition state after a short delay
     setTimeout(() => {
       setIsTransitioning(false);
     }, 150);
-  }, [currentIndex, isTransitioning]);
+  }, [currentIndex, isTransitioning, packagesToUse]);
 
   const handleClose = useCallback(() => {
     setIsClosing(true);
