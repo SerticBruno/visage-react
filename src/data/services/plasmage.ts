@@ -105,7 +105,7 @@ Tjedan dana prije tretmana:
 
 1. Priprema kože - Čišćenje kože i dezinfekcija područja tretiranja. Nanošenje anestetske kreme.
 
-2. Primjena Plasmage uređaja - Preciznim i kontroliranim impulsnim iskrama aparat stvarta niz sitnih točkica na koži.
+2. Primjena Plasmage uređaja - Preciznim i kontroliranim impulsnim iskrama aparat stvara niz sitnih točkica na koži.
 
 3. Završna njega - Nakon zahvata se stavlja <a href="/katalog?product=8">Toskani Total Recovery Cream</a> i lagano umasirava. Nanosi se krema sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.
 

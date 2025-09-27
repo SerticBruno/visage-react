@@ -74,20 +74,20 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
   stepContents: {
     'prednosti': `Prednosti terapije bore lica su:
 
-- brzi i vidljivi rezultati
-- smanjivanje vidljivosti postojećih bora
-- prevencija pojave novih bora
-- prirodni rezultati
-- sigurna metoda
-- minimalni downtime`,
+- Brzi i vidljivi rezultati
+- Smanjivanje vidljivosti postojećih bora
+- Prevencija pojave novih bora
+- Prirodni rezultati
+- Sigurna metoda
+- Minimalni downtime`,
     'kandidati': `Botox je idealan za osobe koje žele:
 
-- smanjiti postojeće bore i fine linije
-- spriječiti pojavu novih bora
-- postići prirodan izgled
-- tretirati hiperhidrozu
-- smanjiti migrene
-- tretirati bore na području čela, očiju, usta i okoloočnog područja`,
+- Smanjiti postojeće bore i fine linije
+- Spriječiti pojavu novih bora
+- Postići prirodan izgled
+- Tretirati hiperhidrozu
+- Smanjiti migrene
+- Tretirati bore na području čela, očiju, usta i okoloočnog područja`,
     'priprema': `Prije terapije bora potrebno je:
 
 1. Dogovoriti konzultacije kako bismo napravili procjenu stanja kože
@@ -104,20 +104,20 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
 4. Preporuka za kućnu njegu - Preporučujemo korištenje odgovarajućih Toskani proizvoda iz Pro Age linije i korištenje kreme sa zaštitnim faktorom Toskani Sun Shiel-D SPF50+.`,
     'oporavak': `Oporavak može trajati 1 do 2 dana, a prezentira se kao:
 
-- modrica
-- crvenilo
-- osjetljivost`,
+- Modrica
+- Crvenilo
+- Osjetljivost`,
     'nakon-tretmana': `Za najbolje rezultate preporučuje se protokol:
 
 Napraviti botox svakih 3 do 6 mjeseci kako bi lice što duže održalo mladenački izgled i svježinu.
 Od 30.-te godine preporučuje se koristiti kao prevencija protiv prvih znakova starenja.
 
-Nakon botoxa prepruča se:
+Nakon botoxa preporučuje se:
 
-- izbjegavanje trljanja tretiranog područja
-- izbjegavanje treninga isti dan
-- ne lijegati u krevet između 6 do 12h kako bi se osiguralo optimalno djelovanje
-- ne saginjati se`,
+- Izbjegavanje trljanja tretiranog područja
+- Izbjegavanje treninga isti dan
+- Ne lijegati u krevet između 6 do 12h kako bi se osiguralo optimalno djelovanje
+- Ne saginjati se`,
     'cijena': `Cijena terapije bora ovisi o količini potrebnog Botoxa i području tretmana. Naši Botox tretmani uključuju:
 
 - Botox 25 - 25 jedinica Botoxa za manje područja (npr. međuobrvno područje)

@@ -11,7 +11,7 @@ export const dermalFillers: Service = {
 
 <strong>Razvoj novih formula</strong> i <strong>tehnika injektiranja</strong> omogućava <strong>prilagođavanje tretmana</strong> specifičnim potrebama klijenta.
 
-Već nakon <strong>jednog tretmana</strong> možete primjetiti <strong>vidno poboljšanje u volumenu kože</strong> i <strong>smanjenju bora</strong>, no <strong>potpuni efekt</strong> se vidi <strong>2 tjedna nakon aplikacije filera</strong>.
+Već nakon <strong>jednog tretmana</strong> možete primijetiti <strong>vidno poboljšanje u volumenu kože</strong> i <strong>smanjenju bora</strong>, no <strong>potpuni efekt</strong> se vidi <strong>2 tjedna nakon aplikacije filera</strong>.
 
 <strong>Regije koje se mogu tretirati</strong> su: nazolabijalne bore, marionetske bore, usne, jagodice, čeljust i brada.
 

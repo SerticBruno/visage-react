@@ -1364,6 +1364,161 @@ Posebno namijenjen suhoj, dehidriranoj koži i koži sklonoj hiperpigmentacijama
     ],
     tags: ['čišćenje lica', 'svi tipovi kože', 'sve problematike (osim opadanja kose)'],
     imageNeedsResize: true
+  },
+  {
+    id: '41',
+    title: 'Vitamin C Reversal Serum',
+    description: `Moćan serum za borbu protiv starenja koji sadrži najstabilniji oblik vitamina C za povećanje čvrstoće i neutralizaciju slobodnih radikala.
+
+Ovaj lagani serum također sadrži hijaluronsku kiselinu i vitamin B5 za hidrataciju i umirenje.
+
+Namijenjen svim tipovima kože, a posebno za anti-age djelovanje.
+
+Posvjetljuje i učvršćuje kožu.`,
+    category: 'Serum',
+    marka: 'Circadia',
+    productType: 'Serum',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije'],
+    image: '/images/products/circadia/CircadiaVitaminC.webp',
+    price: '89 EUR',
+    volume: '15 ml',
+    activeIngredients: ['Magnesium ascorbyl phosphate (Vitamin C)', 'Sodium hyaluronate', 'Panthenol'],
+    application: [
+      'Ujutro i uvečer nakon čišćenja, poprskajte lice i zatim nanesite nekoliko kapi na vrhove prstiju te lagano tapkajte po licu i vratu.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Circadia Blueberry & White Tea Hydrating tonikom, AquaPorin Hydrating kremom i Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['serum', 'svi tipovi kože', 'anti-age', 'hiperpigmentacije'],
+    imageNeedsResize: true
+  },
+  {
+    id: '42',
+    title: 'Licorice & Bearberry Brightening Mist',
+    description: `Tonik s nevjerojatnom kombinacijom sladića, medvjeđeg grožđa i drugih prirodnih ekstrakata koji su poznati po posvjetljivanju kože.
+
+Pomaže u posvjetljivanju tamnih mrlja i poboljšanju sjaja. Hidratizira i omekšava kožu.
+
+Namijenjena oštećenoj koži, koži s pigmentacijama, koži sa znakovima starenja i melazmom nakon trudnoće.
+
+Ne sadrži hidrokinone ili kojnu kiselinu.`,
+    category: 'Tonik',
+    marka: 'Circadia',
+    productType: 'Tonik',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Hiperpigmentacije'],
+    image: '/images/products/circadia/CircadiaLicorice&BearberryBrighteningMist.webp',
+    price: '47 EUR',
+    volume: '118 ml',
+    activeIngredients: ['MariMoist (Chondrus Crispus extract)', 'Extracts of Licorice, bearberry, and Mulberry', 'Melfade PF (Bearberry leaf extract and magnesium ascorbyl phosphate)', 'Melanostatin 5'],
+    application: [
+      'Nanesite dva puta na dan, nakon čišćenja kože. Zatvorite oči i lagano poprskajte lice.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristiti nakon čišćenja lica s Circadia Amandola Milk gelom za čišćenje. Zatim nanesite Circadia Bright White serum i Circadia White Veil Brightener kremu. Koristite s Circadia Light Day Sunscreen Broad Spectrum SPF37."
+      }
+    ],
+    tags: ['tonik', 'svi tipovi kože', 'hiperpigmentacije'],
+    imageNeedsResize: true
+  },
+  {
+    id: '43',
+    title: 'Bright White Serum',
+    description: `Lagani mliječni serum formuliran je s moćnim antioksidansima i inhibitorima proizvodnje melanina kako bi posvijetlio kožu i smanjio pojavu hiperpigmentacije.
+
+Namijenjen oštećenoj koži, koži s pigmentacijama i znakovima starenja. Posvjetljuje hiperpigmentacijske mrlje, mrlje od sunca i melazme nakon trudnoće.
+
+Hidratizira kožu i posvjetljuje ju.
+
+Koristi se kao spot tretman.`,
+    category: 'Serum',
+    marka: 'Circadia',
+    productType: 'Serum',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Hiperpigmentacije'],
+    image: '/images/products/circadia/CirciadiaBrightWhite.webp',
+    price: '77 EUR',
+    volume: '15 ml',
+    activeIngredients: ['Regufade (Trans-Resveratrol)', 'BV-OSC (Tetrahexyldecyl Ascorbate)', 'Vitamin E acetate (Alpha-tocopherol acetate)', 'Phenylethyl Resorcinol (SymWhite)', 'Marrubium Stem cell extract', 'Tyrostat-11(Rumex Occidentalis extract)'],
+    application: [
+      'U večernjim satima, tretirajte problematična područja.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Circadia Licorice & Bearberry Brightening tonikom, Circadia White Veil Brightener kremom i Circadia Light Day Sunscreen Broad Spectrum SPF37."
+      }
+    ],
+    tags: ['serum', 'svi tipovi kože', 'hiperpigmentacije'],
+    imageNeedsResize: true
+  },
+  {
+    id: '44',
+    title: 'White Veil Brightener',
+    description: `Svilenkasti, brzo upijajući losion sadrži SepiWhite MSH, Chromabright i b-White, koji su klinički pokazali da osvjetljavaju hiperpigmentiranu kožu i posvjetljuju ten.
+
+Namijenjen oštećenoj koži, koži s pigmentacijama i znakovima starenja.
+
+Učinkovito posvjetljuje neravnomjerno pigmentiranu kožu
+
+Inhibira proizvodnju tirozinaze.
+
+Ne sadrži hidrokinon ili kojnu kiselinu.`,
+    category: 'Krema',
+    marka: 'Circadia',
+    productType: 'Krema',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Hiperpigmentacije'],
+    image: '/images/products/circadia/CircadiaWhiteVeilBrightener.webp',
+    price: '101 EUR',
+    volume: '59 ml',
+    activeIngredients: ['Niacinamide', 'Alpha-Arbutin', 'SepiWhite MSH (Undecylenoyl phenylalanine)', 'B-white (Oligopeptide-68)', 'K3 Vita C (Aminopropyl ascorbyl phosphate)', 'Chromobright (Dimethylmethoxy chromanyl palmitate)'],
+    application: [
+      'Nanesite svake večeri na čitavo lice nakon čišćenja.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Circadia Licorice & Bearberry Brightening tonikom, Circadia Bright Light serumom ili Circadia Vitamin C Reversal serumom te Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['krema', 'svi tipovi kože', 'hiperpigmentacije'],
+    imageNeedsResize: true
+  },
+  {
+    id: '45',
+    title: 'Light Day Sunscreen Broad Spectrum SPF37',
+    description: `Lagana krema koja sadrži ekstrakt kulture matičnih stanica grožđa kako bi poboljšao fotoprotekciju i odgodio starenje stanica. Brzo se upija i ima elegantan osjećaj, namijenjen je svakodnevnoj uporabi.
+
+Sadrži UVA/UVB zaštitu.
+
+Namijenjen je svim tipovima kože i ima hidratantna i anti-age svojstva.`,
+    category: 'Zaštita od sunca',
+    marka: 'Circadia',
+    productType: 'Krema',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Anti-aging njega', 'Hiperpigmentacije', 'Hidratacija', 'Regeneracija'],
+    image: '/images/products/circadia/CircadiaLightDaySunscreenBroadSpectrumSPF37.webp',
+    price: '69 EUR',
+    volume: '59 ml',
+    activeIngredients: ['SolaStay (Ethylhexyl Methoxycrylene)', 'PhytoCellTech Solar Vitis (grape stem cell extract)', 'Lipochroman 6 (Dimethylmethoxy chromanol)', 'Preventhilia (Diaminopropionoyl Tripeptide-33)'],
+    application: [
+      'Nanesite obilno (oko 2 g ili 1/3 žličice) na lice, vrat i uši 15 minuta prije izlaganja suncu.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite svaki dan uz odgovarajući Circadia tonik, Circadia serum i Circadia kremu, ovisno o tipu i problematici kože."
+      }
+    ],
+    tags: ['krema', 'zaštita od sunca', 'svi tipovi kože', 'sve problematike (osim opadanja kose)'],
+    imageNeedsResize: true
   }
   
 ]; 
