@@ -8,6 +8,7 @@ import { Service } from '@/data/services/types';
 import ServiceCard from './ServiceCard';
 import SectionHeading from './SectionHeading';
 import Link from 'next/link';
+import { useIntersectionObserver } from '@/lib/useIntersectionObserver';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -35,8 +36,15 @@ export default function ServiceSlider({
   const [isPaused, setIsPaused] = useState(false);
   const swiperRef = useRef<SwiperType | null>(null);
   const autoPlayIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  
+  // Use intersection observer to detect when slider comes into view
+  const [sliderRef, isInView] = useIntersectionObserver<HTMLDivElement>({
+    threshold: 0.3,
+    rootMargin: '0px',
+    triggerOnce: false
+  });
 
-  // Auto-play functionality
+  // Auto-play functionality - only start when in view
   useEffect(() => {
     const startAutoPlay = () => {
       if (autoPlayIntervalRef.current) {
@@ -47,17 +55,25 @@ export default function ServiceSlider({
         if (!isPaused && swiperRef.current) {
           swiperRef.current.slideNext();
         }
-      }, 5000); // 5 seconds
+      }, 3000); // 5 seconds
     };
 
-    startAutoPlay();
+    if (isInView && !isPaused) {
+      startAutoPlay();
+    } else {
+      // Stop autoplay when not in view or paused
+      if (autoPlayIntervalRef.current) {
+        clearInterval(autoPlayIntervalRef.current);
+        autoPlayIntervalRef.current = null;
+      }
+    }
 
     return () => {
       if (autoPlayIntervalRef.current) {
         clearInterval(autoPlayIntervalRef.current);
       }
     };
-  }, [isPaused]);
+  }, [isPaused, isInView]);
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -86,7 +102,7 @@ export default function ServiceSlider({
   };
 
   return (
-    <div className="relative w-full py-20" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
+    <div ref={sliderRef} className="relative w-full py-20" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
       <div className="container mx-auto px-4 max-w-7xl">
         <SectionHeading
           title={title}

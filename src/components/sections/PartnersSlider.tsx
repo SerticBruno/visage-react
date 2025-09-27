@@ -1,11 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import type { Swiper as SwiperType } from 'swiper';
+import { useIntersectionObserver } from '@/lib/useIntersectionObserver';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,6 +16,24 @@ import 'swiper/css/navigation';
 const PartnersSlider = () => {
   const swiperRef = React.useRef<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = React.useState(0);
+  
+  // Use intersection observer to detect when slider comes into view
+  const [sliderRef, isInView] = useIntersectionObserver<HTMLElement>({
+    threshold: 0.3,
+    rootMargin: '0px',
+    triggerOnce: false
+  });
+
+  // Control autoplay based on visibility
+  useEffect(() => {
+    if (swiperRef.current) {
+      if (isInView) {
+        swiperRef.current.autoplay.start();
+      } else {
+        swiperRef.current.autoplay.stop();
+      }
+    }
+  }, [isInView]);
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -86,7 +105,7 @@ const PartnersSlider = () => {
   ];
 
   return (
-    <section className="pb-18" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
+    <section ref={sliderRef} className="pb-18" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
