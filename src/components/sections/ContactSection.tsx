@@ -82,9 +82,10 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel, comboLabel }: { ha
         const element = formRef.current;
         if (element) {
           const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
-          const offset = 100; // Reduced offset for more subtle scroll
+          const navbarHeight = 80; // h-20 = 80px
+          const offset = 20; // Small additional offset for better visual spacing
           window.scrollTo({
-            top: elementTop - offset,
+            top: elementTop - navbarHeight - offset,
             behavior: 'smooth'
           });
         }
@@ -182,7 +183,7 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel, comboLabel }: { ha
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
           {/* Contact Form - Left side */}
-          <div className="lg:col-span-5 flex" ref={formRef}>
+          <div id="contact-form" className="lg:col-span-5 flex scroll-mt-24" ref={formRef}>
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-6 sm:p-8 w-full flex flex-col">
               {(serviceLabel || comboLabel) && (
                 <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg">

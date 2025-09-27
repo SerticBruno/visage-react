@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaChevronDown, FaQuestionCircle } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 
 interface FAQItem {
   question: string;
@@ -11,11 +12,11 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
   {
     question: "Koje usluge nudite?",
-    answer: "Nudimo širok spektar nekirurških estetskih usluga: mezoterapija, skin boosteri, PRP tretman, dermalni fileri, botox, plasmage, kemijski piling. Nadalje nudimo sljedeće beauty tretmane: Circadia Signature Dermaplaning facial, Circadia Beyond Botox Facial, Circadia Marshmallow Facial, Circadia Firming Peptide Facial i Dermalux Flex fototerapiju."
+    answer: "Nudimo širok spektar nekirurških estetskih usluga: <a href='/usluge/mezoterapija'>mezoterapija</a>, <a href='/usluge/skin-boosteri'>skin boosteri</a>, <a href='/usluge/prp'>PRP tretman</a>, <a href='/usluge/dermalni-fileri'>dermalni fileri</a>, <a href='/usluge/botox'>botox</a>, <a href='/usluge/plasmage'>plasmage</a>, <a href='/usluge/kemijski-piling'>kemijski piling</a>. Nadalje nudimo sljedeće beauty tretmane: <a href='/usluge/beauty-tretmani'>Circadia Signature Dermaplaning facial</a>, <a href='/usluge/beauty-tretmani'>Circadia Beyond Botox Facial</a>, <a href='/usluge/beauty-tretmani'>Circadia Marshmallow Facial</a>, <a href='/usluge/beauty-tretmani'>Circadia Firming Peptide Facial</a> i <a href='/usluge/foto-terapija'>Dermalux Flex fototerapiju</a>."
   },
   {
     question: "Gdje mogu dogovoriti termin?",
-    answer: "Termin možete dogovoriti preko naših društvenih mreža, putem našeg Whatsappa, e-maila ili forme na službenoj web stranici."
+    answer: "Termin možete dogovoriti preko naših društvenih mreža, putem našeg Whatsappa, e-maila ili <a href='/kontakt' class='contact-form-link'>forme na službenoj web stranici</a>."
   },
   {
     question: "Koje je vaše radno vrijeme?",
@@ -27,16 +28,66 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "Koje su cijene vaših usluga?",
-    answer: "Cijene usluga variraju ovisno o vrsti tretmana i trajanju tretmana. Detaljan cjenik možete pogledati na našoj službenoj web stranici i društvenim mrežama."
+    answer: "Cijene usluga variraju ovisno o vrsti tretmana i trajanju tretmana. <a href='/cjenik'>Detaljan cjenik</a> možete pogledati na našoj službenoj web stranici i društvenim mrežama."
   }
 ];
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const router = useRouter();
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  const handleContactFormClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    router.push('/kontakt');
+    
+    // Wait for navigation to complete, then scroll to form
+    setTimeout(() => {
+      const element = document.getElementById('contact-form');
+      if (element) {
+        const navbarHeight = 80; // h-20 = 80px
+        const offset = 20; // Small additional offset
+        const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: elementTop - navbarHeight - offset,
+          behavior: 'smooth'
+        });
+      }
+    }, 500);
+  };
+
+  // Add click event listeners to contact form links
+  useEffect(() => {
+    const handleContactFormLinkClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.classList.contains('contact-form-link')) {
+        e.preventDefault();
+        router.push('/kontakt');
+        
+        // Wait for navigation to complete, then scroll to form
+        setTimeout(() => {
+          const element = document.getElementById('contact-form');
+          if (element) {
+            const navbarHeight = 80; // h-20 = 80px
+            const offset = 20; // Small additional offset
+            const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+              top: elementTop - navbarHeight - offset,
+              behavior: 'smooth'
+            });
+          }
+        }, 500);
+      }
+    };
+
+    document.addEventListener('click', handleContactFormLinkClick);
+    return () => {
+      document.removeEventListener('click', handleContactFormLinkClick);
+    };
+  }, [router]);
 
   return (
     <section className="py-18" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
@@ -91,9 +142,10 @@ export default function FAQSection() {
                 }`}
               >
                 <div className="border-t border-slate-100 pt-6">
-                  <p className="text-slate-600 leading-relaxed">
-                    {item.answer}
-                  </p>
+                  <div 
+                    className="text-slate-600 leading-relaxed [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:hover:no-underline [&_a]:transition-colors [&_a]:cursor-pointer"
+                    dangerouslySetInnerHTML={{ __html: item.answer }}
+                  />
                 </div>
               </div>
             </div>
