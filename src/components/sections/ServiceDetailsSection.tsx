@@ -673,7 +673,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                     className={`
                       whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-all duration-300 cursor-pointer
                       ${activeTab === step.id
-                        ? 'border-black text-black'
+                        ? 'border-[#000000] text-black'
                         : 'border-transparent text-black hover:border-gray-300'
                       }
                     `}
