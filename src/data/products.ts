@@ -1916,6 +1916,58 @@ Za osobe kojima je dijagnosticirana rozacea. Lagan je i podržava funkciju barij
     ],
     tags: ['krema', 'osjetljiva koža', 'Osjetljiva koža i koža sklona rozaceji'],
     imageNeedsResize: true
+  },
+  {
+    id: 'emergency-eye-lift',
+    title: 'Emergency Eye Lift',
+    description: 'Ovaj kristalno prozirni gel trenutno zateže i podiže područje oko očiju te popunjava fine linije za mlađi izgled. Ima učinak trenutačnog zatezanje i učvršćivanja područja oko očiju. Hidratizira i popunjava fine linije i bore. Namijenjen je svim tipovima kože. Savršen je za primjenu prije posebnog događaja, s dugotrajnim rezultatima. Dužim korištenjem pomlađuje područje oko očiju.',
+    previewDescription: 'Kristalno prozirni gel za trenutno zatezanje i podizanje područja oko očiju',
+    category: 'Serum',
+    marka: 'Circadia',
+    productType: 'Gel',
+    skinType: ['Svi tipovi kože'],
+    skinConcern: ['Anti-age', 'Hidratacija', 'Okoloočno područje'],
+    image: '/images/products/circadia/CircadiaEmergencyEyeLift.webp',
+    price: '69 EUR',
+    volume: '15 ml',
+    activeIngredients: ['Sodium Hyaluronate', 'Panthenol (provitamin B5)', 'Pentacare (Hydrolyzed gluten and Ceratonia Siliqua Gum)', 'Pephatight (Microalgae extract)', 'Distinctive Phytostem Gardenia stem cell extract (Gardenia jasminoides meristem cell culture)'],
+    application: [
+      'Koristite po potrebi. Nanesite jednu kap na vrh prsta i nježno umasirajte.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, nanesite gel, stavite silikonski jastučić za okoloočno područje i držite ga dok se ne osuši. Koristite ga s Circadia Vitamin C serumom, Circadia AquaPorin Hydrating kremom i Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom. Možete ga koristiti kao make-up primer."
+      }
+    ],
+    tags: ['okoloočno područje', 'svi tipovi kože', 'anti-age', 'hidratacija'],
+    imageNeedsResize: true
+  },
+  {
+    id: 'full-circle-eye-repair',
+    title: 'Full Circle Eye Repair',
+    description: 'Pojačava prirodni ciklus obnove kože dok pomaže u sprječavanju nastanka novih linija i smanjenju natečenosti. Peptidi potiču, popravljaju i povećavaju formiranje kolagena te smanjuju nastanak novih linija. Vitamin A jača potpornu tkivu, pomaže u rastu i popravku epidermisa, potiče fibroblastične stanice da proizvode kolagen i zadebljavaju kožu, poboljšavajući čvrstoću i elastičnost. Djeluje na smanjenje nakupljanja tekućine na području oko očiju.',
+    previewDescription: 'Set za okoloočnu njegu koji pojačava prirodni ciklus obnove kože',
+    category: 'Set',
+    marka: 'Circadia',
+    productType: 'Set',
+    skinType: ['Svi tipovi kože'],
+    skinConcern: ['Anti-age', 'Hidratacija', 'Okoloočna njega', 'Hiperpigmentacije'],
+    image: '/images/products/circadia/CircadiaFullCircleEyeRepair.webp',
+    price: '154 EUR',
+    volume: '30 ml',
+    activeIngredients: ['Argireline (acetyl hexapeptide-8)', 'Haloxyl (N-hydroxylsuccinimide, Chrysin, Palmitoyl oligopeptide, Palmitoyl Tetrapep-tide-7)', 'A2G (L-ascorbic acid 2-glucoside)'],
+    application: [
+      'Set se sastoji od dnevne i noćne okoloočne njege. Nanesite malu količinu proizvoda ujutro i navečer na čisto lice.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristiti s Circadia Vitamin C serumom, Circadia AquaPorin Hydrating kremom i Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['okoloočna njega', 'svi tipovi kože', 'anti-age', 'hidratacija', 'hiperpigmentacije'],
+    imageNeedsResize: true
   }
   
 ]; 
