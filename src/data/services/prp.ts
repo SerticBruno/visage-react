@@ -111,7 +111,7 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
 
 3. Priprema kože ili vlasišta - Čistimo kožu s <a href="/katalog?product=1">Toskani Energizing Cleanserom</a>, dok vlasište odmastimo s kemijskim pilingom u spreju.
 
-4. PRP tretman se može raditi s mezoterapijskim iglama, gdje je bol svedena na minimum korištenjem anestetske kreme. Nadalje, PRP tretman se može raditi s Mesoject gunom, pri čemu nema nelagode.
+4. Primjena PRP tretmana - PRP tretman se može raditi s mezoterapijskim iglama, gdje je bol svedena na minimum korištenjem anestetske kreme. Nadalje, PRP tretman se može raditi s Mesoject gunom, pri čemu nema nelagode.
 
 5. Završna njega - Nanošenje Toskani Antistress maske koja ima umirujuća svojstva na kožu, nanošenje <a href="/katalog?product=8">Toskani Total Recovery gela</a> koji pomaže regeneraciji kože i nanošenje kreme sa zaštitnim faktorom <a href="/katalog?product=39">Toskani Sun Shiel-D SPF50+</a>.
 
