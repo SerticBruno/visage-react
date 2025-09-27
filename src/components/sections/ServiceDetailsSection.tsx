@@ -751,7 +751,17 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.15 }}
-                        className="relative h-[400px] rounded-xl overflow-hidden shadow-xl"
+                        className="relative h-[400px] rounded-xl overflow-hidden shadow-xl mb-8"
+                        style={{
+                          WebkitTransform: 'translateZ(0)',
+                          transform: 'translateZ(0)',
+                          WebkitBackfaceVisibility: 'hidden',
+                          backfaceVisibility: 'hidden',
+                          WebkitMask: 'border-box',
+                          mask: 'border-box',
+                          WebkitMaskClip: 'border-box',
+                          maskClip: 'border-box'
+                        }}
                       >
                         {(() => {
                           const currentImage = service.steps.find(s => s.id === activeTab)?.image || '';
@@ -815,7 +825,15 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                                       case 'center':
                                       default: return 'center center';
                                     }
-                                  })()
+                                  })(),
+                                  WebkitTransform: 'translateZ(0)',
+                                  transform: 'translateZ(0)',
+                                  WebkitBackfaceVisibility: 'hidden',
+                                  backfaceVisibility: 'hidden',
+                                  WebkitPerspective: '1000px',
+                                  perspective: '1000px',
+                                  WebkitBorderRadius: 'inherit',
+                                  borderRadius: 'inherit'
                                 }}
                                 sizes="(max-width: 768px) 100vw, 50vw"
                               />
