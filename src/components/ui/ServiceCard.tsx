@@ -28,15 +28,35 @@ export default function ServiceCard({ service, className = '', imageFit = 'cover
       href={getLink()}
       className={`block h-full ${className}`}
     >
-      <div className="group rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
+      <div className="group rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col" style={{
+        WebkitTransform: 'translateZ(0)',
+        transform: 'translateZ(0)',
+        WebkitBackfaceVisibility: 'hidden',
+        backfaceVisibility: 'hidden'
+      }}>
         {/* Image Section */}
-        <div className="relative h-48 w-full overflow-hidden">
+        <div className="relative h-48 w-full overflow-hidden rounded-t-2xl" style={{
+          WebkitMask: 'border-box',
+          mask: 'border-box',
+          WebkitMaskClip: 'border-box',
+          maskClip: 'border-box'
+        }}>
           <Image
             src={service.heroImage}
             alt={service.title}
             fill
             className={`object-${imageFit} transition-transform duration-500 group-hover:scale-105`}
             priority={false}
+            style={{
+              WebkitTransform: 'translateZ(0)',
+              transform: 'translateZ(0)',
+              WebkitBackfaceVisibility: 'hidden',
+              backfaceVisibility: 'hidden',
+              WebkitPerspective: '1000px',
+              perspective: '1000px',
+              WebkitBorderRadius: 'inherit',
+              borderRadius: 'inherit'
+            }}
           />
           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-300" />
           <div className="absolute bottom-0 left-0 right-0 p-4">
