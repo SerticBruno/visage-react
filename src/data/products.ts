@@ -1769,6 +1769,152 @@ Namijenjen je zreloj koži.`,
     ],
     tags: ['serum', 'svi tipovi kože', 'anti-age'],
     imageNeedsResize: true
+  },
+  {
+    id: '54',
+    title: 'Post Peel Balm',
+    description: `Ova umirujuća krema odlična je za upotrebu nakon kemijskih pilinga kako bi smirila i umirila kožu.
+
+Sadrži kompleks lipida identičan koži koji povećava kapacitet zadržavanja vode i pruža polu-okluzivnu i zaštitnu barijeru.
+
+Brzo upijajući balzam koji smiruje kožu.`,
+    category: 'Krema',
+    marka: 'Circadia',
+    productType: 'Krema',
+    skinType: ['Masna koža', 'Mješovita koža', 'Normalna koža', 'Suha koža', 'Osjetljiva koža'],
+    skinConcern: ['Hidratacija', 'Regeneracija'],
+    image: '/images/products/circadia/CircadiaPostPeel.webp',
+    price: '77 EUR',
+    volume: '59 ml',
+    activeIngredients: ['Thermostressine (Acetyl Tetrapeptide-22)', 'Panthenol (provitamin B5)', 'Royal Jelly', 'Squalane butter 45 (squalane, Caprylic/ Capric Triglyceride, Behenyl Behenate, and Tribehenin)', 'Meadowfoam Seed Oil Enhanced [Vegetable oil (Olus Oil)]'],
+    application: [
+      'Nanesite dva puta dnevno, ujutro i navečer, ili koliko je god potrebno kroz dan kako bi umirio kožu.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Koristite nakon kemijskog pilinga, mezoterapije ili PRP tretmana. Ne nanosite na oštećenu kožu. Koristite s Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['krema', 'svi tipovi kože', 'hidratacija', 'regeneracija'],
+    imageNeedsResize: true
+  },
+  {
+    id: '55',
+    title: 'Chrono-Calm',
+    description: `Chrono-Calm je lagani hidratantni serum na bazi vode koji umiruje kronično iritiranu kožu i poboljšava izgled crvenila i proširenih kapilara.
+
+Sadrži peptide koji smanjuju crvenilo lica i proširenje krvnih žila te biljne ekstrakte koji aktiviraju sustav popravka kože te imaju protuupalna i antioksidativna svojstva.
+
+Namijenjen osjetljivoj koži, koži sklonoj crvenilu, iziritiranoj koži, koži s vidljivim kapilarima i rosaceom`,
+    category: 'Serum',
+    marka: 'Circadia',
+    productType: 'Serum',
+    skinType: ['Osjetljiva koža'],
+    skinConcern: ['Regeneracija'],
+    image: '/images/products/circadia/CircadiaChronoCalm.webp',
+    price: '69 EUR',
+    volume: '15 ml',
+    activeIngredients: ['Telangyn (AcetylTripeptide-33)', 'MAXnolia (Extract blend of Magnolia bark and grape seeds)', 'Panthenol- (provitamin B5)', 'Aldavine (two sulphated polysaccharides extracted from algae)', 'Abbysine PF (Exopolysaccharide from an extremophile living in deep-sea hydrothermal vents)', 'Ginger extract Anti-inflammatory', 'Marshmallow extract', 'QuenchT'],
+    application: [
+      'Nanesite dva puta dnevno na očišćenu kožu.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Circadia Aloe & Calendula tonikom, Circadia Tranquili kremom i Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['serum', 'osjetljiva koža', 'regeneracija'],
+    imageNeedsResize: true
+  },
+  {
+    id: '56',
+    title: 'Tranquili-Cream',
+    description: `Krema osmišljena za osobe s osjetljivom kožom i/ili rozacejom.
+
+Sadrži hidratizirajuće agense i moćne antiiritante koji pomažu u smanjenju crvenila i osjećaja svrbeža te poboljšavaju mekoću i ugodnost kože pri nanošenju.
+
+Ekstrakti biljaka djeluju na smanjenje crvenila, iritacija i svrbeža kože. Sadrži peptide i njegujuće lipidne komplekse koji pomažu obnoviti integritet barijere kože.
+
+Odmah nakon uporabe koža je manje iritirana, mekša i hidratizirana.`,
+    category: 'Krema',
+    marka: 'Circadia',
+    productType: 'Krema',
+    skinType: ['Osjetljiva koža'],
+    skinConcern: ['Regeneracija'],
+    image: '/images/products/circadia/CircadiaTranquilicream.webp',
+    price: '69 EUR',
+    volume: '15 ml',
+    activeIngredients: ['SepiCalm VG (Sodium palmitoyl proline and Nymphaea alba flower extract)', 'DermCom (Crocus Crysanthus bulb extract)', 'Caresoft (Purified fraction of Curculigo orchioides root)', 'Symsitive 1609 (4-t-Butylcyclohexanol)', 'Marrubium Stem cell (Marrubium vulgare meristem cell culture)'],
+    application: [
+      'Ujutro i navečer, nakon čišćenja i toniziranja lica te nanošenja odgovarajućeg seruma, nanesite lagano na lice i vrat.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Circadia Aloe & Calendula tonikom, Circadia Chrono-Calm serumom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['krema', 'osjetljiva koža', 'regeneracija'],
+    imageNeedsResize: true
+  },
+  {
+    id: '57',
+    title: 'Aloe & Calendula Calming Mist',
+    description: `Umirujuća mješavina aloe, kalendule, cvijeta bazge, ruže i ekstrakata morske bičevine pomaže smiriti nelagodu povezanu s rozacejom i osjetljivom kožom.
+
+Ekstrakt aloe potiče zacjeljivanje kože i ima umirujuće djelovanje.
+
+Hidratizira i umiruje nadraženu kožu te smiruje tegobe povezane s rosaceom i nadraženom kožom.`,
+    category: 'Tonik',
+    marka: 'Circadia',
+    productType: 'Tonik',
+    skinType: ['Osjetljiva koža'],
+    skinConcern: ['Regeneracija'],
+    image: '/images/products/circadia/CircadiaAloe&CalendulaMist.webp',
+    price: '38 EUR',
+    volume: '118 ml',
+    activeIngredients: ['MariMoist (Chondrus Crispus extract)', 'SepiCalm VG (Sodium palmitoyl proline and Nymphaea alba flower extract)', 'Aloe Vera Gel (Aloe Barbadensis Leaf extract)', 'Calendula (Calendula officinalis)', 'Chamomile extract [Chamomilla Recutita (Matricaria) Flower]', 'Elderflower (Sambucus Nigra Flower) extract', 'Rose (Rosa Centifolia Flower) extract'],
+    application: [
+      'Nakon čišćenja, zatvorite oči i lagano poprskajte.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristite s Circadia Chrono-Calm serumom, Circadia Tranquili kremom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['tonik', 'osjetljiva koža', 'osjetljiva koža i koža sklona rozaceji', 'umirivanje kože'],
+    imageNeedsResize: true
+  },
+  {
+    id: '58',
+    title: 'Rose-Ease Relief Cream',
+    description: `Ova krema pomaže smiriti crvenilo i iritaciju povezanu s rosaceom, dok pomaže u kontroli grinja demodexa, za koju se smatra da pridonosi rosacei.
+
+Za osobe kojima je dijagnosticirana rozacea. Lagan je i podržava funkciju barijere i zadržavanje vlage.`,
+    category: 'Krema',
+    marka: 'Circadia',
+    productType: 'Krema',
+    skinType: ['Osjetljiva koža'],
+    skinConcern: ['Regeneracija'],
+    image: '/images/products/circadia/CircadiaRoseEaseRelief.webp',
+    price: '85 EUR',
+    volume: '50 g',
+    activeIngredients: ['Linoleic Esters', 'Evening Primrose', 'Rosemary', 'Cinnamon oil'],
+    application: [
+      'Ujutro i navečer nakon čišćenja lagano nanesite na zahvaćena područja.',
+      'Započnite s korištenjem 2 do 3 puta tjedno, a zatim postupno povećavajte broj korištenja u tjednu.'
+    ],
+    proTips: [
+      {
+        title: "Glow tip",
+        description: "Za najbolji učinak, koristiti s Aloe & Calendula Calming tonikom, Circadia Chrono-Calm serumom i Circadia Light Day Sunscreen Broad Spectrum SPF37 kremom sa zaštitnim faktorom."
+      }
+    ],
+    tags: ['krema', 'osjetljiva koža', 'osjetljiva koža i koža sklona rozaceji'],
+    imageNeedsResize: true
   }
   
 ]; 
