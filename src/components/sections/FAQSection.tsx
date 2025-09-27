@@ -40,24 +40,6 @@ export default function FAQSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const handleContactFormClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    router.push('/kontakt');
-    
-    // Wait for navigation to complete, then scroll to form
-    setTimeout(() => {
-      const element = document.getElementById('contact-form');
-      if (element) {
-        const navbarHeight = 80; // h-20 = 80px
-        const offset = 20; // Small additional offset
-        const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-          top: elementTop - navbarHeight - offset,
-          behavior: 'smooth'
-        });
-      }
-    }, 500);
-  };
 
   // Add click event listeners to contact form links
   useEffect(() => {

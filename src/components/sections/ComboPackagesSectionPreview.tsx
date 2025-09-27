@@ -12,16 +12,6 @@ import { useIntersectionObserver } from '@/lib/useIntersectionObserver';
 
 import 'swiper/css';
 
-// Utility function to calculate discount percentage
-const calculateDiscountPercentage = (oldPrice: string, currentPrice: string): number => {
-  const oldPriceNum = parseFloat(oldPrice.replace(/[^\d.]/g, ''));
-  const currentPriceNum = parseFloat(currentPrice.replace(/[^\d.]/g, ''));
-  
-  if (oldPriceNum <= 0 || currentPriceNum <= 0) return 0;
-  
-  const discount = ((oldPriceNum - currentPriceNum) / oldPriceNum) * 100;
-  return Math.round(discount);
-};
 
 export default function ComboPackagesSectionPreview() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -114,10 +104,6 @@ export default function ComboPackagesSectionPreview() {
             className="pb-12"
           >
             {comboPackages.map((comboPackage) => {
-              const discountPercentage = comboPackage.oldPrice 
-                ? calculateDiscountPercentage(comboPackage.oldPrice, comboPackage.price)
-                : 0;
-              
               return (
               <SwiperSlide key={comboPackage.id} className="!p-2 !pb-6">
                 <button

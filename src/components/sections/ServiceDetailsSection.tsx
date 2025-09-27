@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Service } from '@/data/services/types';
-import { FaUsers, FaRegClock, FaHandHoldingUsd, FaCheck, FaChevronRight, FaStar, FaBox, FaClipboardCheck, FaClipboard, FaHome } from 'react-icons/fa';
+import { FaUsers, FaRegClock, FaHandHoldingUsd, FaCheck, FaChevronRight, FaStar, FaBox, FaClipboard, FaHome } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa6';
 import { pricingData } from '@/data/pricing';
 import { products, Product } from '@/data/products';
