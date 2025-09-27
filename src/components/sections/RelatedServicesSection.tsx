@@ -129,8 +129,19 @@ export default function RelatedServicesSection({ currentService, relatedServices
                         transition={{ delay: 0.1 }}
                         whileHover={{ y: -5 }}
                         className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col"
+                        style={{
+                          WebkitTransform: 'translateZ(0)',
+                          transform: 'translateZ(0)',
+                          WebkitBackfaceVisibility: 'hidden',
+                          backfaceVisibility: 'hidden'
+                        }}
                       >
-                        <div className="relative h-48 overflow-hidden">
+                        <div className="relative h-48 overflow-hidden rounded-t-xl" style={{
+                          WebkitMask: 'border-box',
+                          mask: 'border-box',
+                          WebkitMaskClip: 'border-box',
+                          maskClip: 'border-box'
+                        }}>
                           <Image
                             src={service.heroImage}
                             alt={service.title}
@@ -138,6 +149,16 @@ export default function RelatedServicesSection({ currentService, relatedServices
                             loading="lazy"
                             className="object-cover transition-transform duration-300 group-hover:scale-105"
                             sizes="(max-width: 1024px) 80vw, 33vw"
+                            style={{
+                              WebkitTransform: 'translateZ(0)',
+                              transform: 'translateZ(0)',
+                              WebkitBackfaceVisibility: 'hidden',
+                              backfaceVisibility: 'hidden',
+                              WebkitPerspective: '1000px',
+                              perspective: '1000px',
+                              WebkitBorderRadius: 'inherit',
+                              borderRadius: 'inherit'
+                            }}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
@@ -209,8 +230,18 @@ export default function RelatedServicesSection({ currentService, relatedServices
                   href={`/usluge/${service.id}`}
                   className="block h-full"
                 >
-                  <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-                    <div className="relative h-48 overflow-hidden">
+                  <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col" style={{
+                    WebkitTransform: 'translateZ(0)',
+                    transform: 'translateZ(0)',
+                    WebkitBackfaceVisibility: 'hidden',
+                    backfaceVisibility: 'hidden'
+                  }}>
+                    <div className="relative h-48 overflow-hidden rounded-t-xl" style={{
+                      WebkitMask: 'border-box',
+                      mask: 'border-box',
+                      WebkitMaskClip: 'border-box',
+                      maskClip: 'border-box'
+                    }}>
                       <Image
                         src={service.heroImage}
                         alt={service.title}
@@ -218,6 +249,16 @@ export default function RelatedServicesSection({ currentService, relatedServices
                         loading="lazy"
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 1024px) 80vw, 33vw"
+                        style={{
+                          WebkitTransform: 'translateZ(0)',
+                          transform: 'translateZ(0)',
+                          WebkitBackfaceVisibility: 'hidden',
+                          backfaceVisibility: 'hidden',
+                          WebkitPerspective: '1000px',
+                          perspective: '1000px',
+                          WebkitBorderRadius: 'inherit',
+                          borderRadius: 'inherit'
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
