@@ -74,7 +74,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://instagram.com/visagestudio"
+                href="www.instagram.com/visage.aestheticstudio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors transform hover:scale-110"
@@ -92,7 +92,7 @@ const Footer = () => {
                 <FaWhatsapp size={24} />
               </a>
               <a
-                href="https://facebook.com/visagestudio"
+                href="https://www.facebook.com/profile.php?id=61555201097471"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors transform hover:scale-110"
