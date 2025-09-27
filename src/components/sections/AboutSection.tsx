@@ -12,7 +12,7 @@ const AboutSection = () => {
               VISAGE Studio je estetski studio u centru Siska specijaliziran za nekirurške estetske tretmane.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              Kod nas možete, po prvi put u Sisku, obavljati neke od najpopularnijih neinvazivnih tretmana: <Link href="/usluge/mezoterapija" className="text-slate-700 underline hover:text-slate-900 transition-colors">mezoterapiju Mesoject Gunom i Dermpenom 4</Link> te bleferoplazmu <Link href="/usluge/plasmage" className="text-slate-700 underline hover:text-slate-900 transition-colors">Plasmage uređajem</Link>.
+              Kod nas možete, po prvi put u Sisku, obavljati neke od najpopularnijih neinvazivnih tretmana: <Link href="/usluge/mezoterapija" className="text-slate-700 underline hover:text-slate-900 transition-colors">mezoterapiju Mesoject Gunom i Dermapenom 4</Link> te bleferoplazmu <Link href="/usluge/plasmage" className="text-slate-700 underline hover:text-slate-900 transition-colors">Plasmage uređajem</Link>.
             </p>
             <Link
               href="/o-nama"
