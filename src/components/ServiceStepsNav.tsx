@@ -65,7 +65,7 @@ export default function ServiceStepsNav({ steps }: ServiceStepsNavProps) {
             >
               <div className={`rounded-full p-3 mb-2 transition-all duration-300 ${isActive 
                 ? 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 shadow-md transform scale-110 ring-2 ring-white' 
-                : 'bg-gray-50 group-hover:bg-gradient-to-br group-hover:from-slate-50 group-hover:via-slate-100 group-hover:to-slate-200 group-hover:shadow-sm group-hover:transform group-hover:scale-105 group-hover:ring-1 group-hover:ring-slate-200/50'}`}>
+                : 'bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 group-hover:from-slate-50 group-hover:via-slate-100 group-hover:to-slate-200 group-hover:shadow-sm group-hover:transform group-hover:scale-105 group-hover:ring-1 group-hover:ring-slate-200/50 border border-gray-200'}`}>
                 {Icon && <Icon size={44} className="transition-transform duration-300 group-hover:scale-110" />}
               </div>
               <span className={`mt-1 text-sm font-medium transition-all duration-300 ${isActive 

@@ -604,7 +604,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         transition-all duration-200
                         ${activeTab === step.id 
                           ? 'bg-gradient-to-br from-black to-gray-800 text-white scale-110 shadow-lg' 
-                          : 'bg-white text-black shadow-md'
+                          : 'bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 text-gray-700 shadow-md border border-gray-200'
                         }
                       `}>
                         {React.createElement(tabIcons[step.id as keyof typeof tabIcons], {
