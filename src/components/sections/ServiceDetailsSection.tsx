@@ -751,7 +751,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.15 }}
-                        className="relative h-[400px] rounded-xl overflow-hidden shadow-xl group cursor-pointer"
+                        className="relative h-[400px] rounded-xl overflow-hidden shadow-xl"
                       >
                         {(() => {
                           const currentImage = service.steps.find(s => s.id === activeTab)?.image || '';
@@ -790,7 +790,7 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                                 fill
                                 loading="lazy"
                                 onLoad={() => handleImageLoad(currentImage)}
-                                className={`object-cover transition-all duration-700 group-hover:scale-105 ${
+                                className={`object-cover transition-all duration-700 ${
                                   isImageLoaded ? 'opacity-100 blur-0' : 'opacity-0 blur-lg'
                                 }`}
                                 style={{ 
@@ -822,7 +822,6 @@ export default function ServiceDetailsSection({ service }: ServiceDetailsSection
                             </>
                           );
                         })()}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </motion.div>
                     )}
 
