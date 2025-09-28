@@ -80,6 +80,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         ctaText="Rezervirajte svoj tretman"
         ctaLink="/kontakt"
         serviceName={currentService.title}
+        mobileFocalPoint={currentService.mobileFocalPoint}
       />
       <ServiceContentSection
         title={currentService.title}

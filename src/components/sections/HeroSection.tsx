@@ -15,6 +15,7 @@ interface HeroSectionProps {
   variant?: 'home' | 'default';
   serviceName?: string;
   titleIcon?: React.ReactNode;
+  mobileFocalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | `${number}% ${number}%`;
 }
 
 const HeroSection = ({
@@ -26,8 +27,28 @@ const HeroSection = ({
   variant = 'default',
   serviceName,
   titleIcon,
+  mobileFocalPoint,
 }: HeroSectionProps) => {
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+
+  // Utility function to convert focal point to CSS object-position
+  const getObjectPosition = (focalPoint?: string) => {
+    if (!focalPoint) return 'center';
+    
+    const positionMap: { [key: string]: string } = {
+      'left': 'left center',
+      'center': 'center center',
+      'right': 'right center',
+      'top': 'center top',
+      'bottom': 'center bottom',
+      'top-left': 'left top',
+      'top-right': 'right top',
+      'bottom-left': 'left bottom',
+      'bottom-right': 'right bottom',
+    };
+    
+    return positionMap[focalPoint] || focalPoint;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,11 +110,12 @@ const HeroSection = ({
       <div className="absolute inset-0 z-0">
         {image ? (
           <div className="relative w-full h-full">
+            {/* Desktop Image */}
             <Image
               src={image}
               alt={title}
               fill
-              className="object-cover transform scale-105"
+              className="object-cover transform scale-105 hidden md:block"
               priority
               quality={100}
               sizes="100vw"
@@ -103,6 +125,25 @@ const HeroSection = ({
                 left: 0,
                 width: '100%',
                 height: '100%',
+                objectPosition: 'center center',
+              }}
+            />
+            {/* Mobile Image with custom focal point */}
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-cover transform scale-105 block md:hidden"
+              priority
+              quality={100}
+              sizes="100vw"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectPosition: getObjectPosition(mobileFocalPoint),
               }}
             />
           </div>

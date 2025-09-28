@@ -32,6 +32,7 @@ Otkrijte <strong>moć PRP tretmana</strong> i prepustite se <strong>potpunoj rev
   tags: ['prp', 'regeneracija', 'prirodni-tretmani', 'minimalno-invazivni', 'trombociti'],
   pricingCategory: 'PRP',
   relatedServices: ['skin-boosteri', 'mezoterapija', 'kemijski-piling', 'foto-terapija'],
+  mobileFocalPoint: 'right',
   steps: [
     { 
       id: 'prednosti', 

@@ -37,6 +37,7 @@ export interface Service {
   pricingCategory?: string;
   relatedServices?: string[];
   focalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | `${number}% ${number}%`;
+  mobileFocalPoint?: 'left' | 'center' | 'right' | 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | `${number}% ${number}%`;
 }
 
 export type Services = {
