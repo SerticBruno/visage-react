@@ -1597,7 +1597,7 @@ Smanjuje bore, povećava elastičnost i čvrstoću kože, nudi visoku antioksida
     productType: 'Krema',
     skinType: ['Zrela koža'],
     skinConcern: ['Anti-aging njega'],
-    image: '/images/products/circadia/CircadiaNighttimeRepairPlus.webp',
+    image: '/images/products/circadia/CircadianighttimeRepairPlus.webp',
     price: '116 EUR',
     volume: '59 ml',
     activeIngredients: ['Vitamin A (Retinyl acetate)', 'SK-Influx', 'Synchrolife® (Rosmarinus Officinalis, Extract (and) Palmitoyl Tetrapeptide-7 (and) Chrysin)', 'TECA', 'Timecode'],
