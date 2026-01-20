@@ -157,14 +157,14 @@ export const pricingData: PricingItem[] = [
     price: "315 EUR",
     category: "Dermalni Fileri",
     isPopular: true,
-    isRecommended: true
   },
   {
     id: "model-h",
     title: "Model H",
     description: "1 ml",
     price: "315 EUR",
-    category: "Dermalni Fileri"
+    category: "Dermalni Fileri",
+    isPopular: true,
   },
 
   // Hijaluronidaza
