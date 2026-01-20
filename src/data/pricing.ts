@@ -10,6 +10,7 @@ export interface PricingItem {
   isLimited?: boolean;
   isPackage?: boolean;
   isRecommended?: boolean; // New field for recommended tag
+  isNew?: boolean; // New field for "Novo" tag
   packageDetails?: string;
 }
 
@@ -95,6 +96,7 @@ export const pricingData: PricingItem[] = [
     description: "1 tretman LED fototerapije u trajanju od 30 min",
     price: "25 EUR",
     category: "LED Fototerapija",
+    isNew: true,
     duration: "30 min"
   },
   {
@@ -104,6 +106,7 @@ export const pricingData: PricingItem[] = [
     price: "135 EUR",
     category: "LED Fototerapija",
     isPackage: true,
+    isNew: true,
     packageDetails: "6 tretmana"
   },
   {
@@ -114,6 +117,7 @@ export const pricingData: PricingItem[] = [
     category: "LED Fototerapija",
     isPopular: true,
     isPackage: true,
+    isNew: true,
     packageDetails: "10 tretmana"
   },
   {
@@ -121,6 +125,7 @@ export const pricingData: PricingItem[] = [
     title: "LED Fototerapija - Dodatak",
     description: "Kao dodatak drugom tretmanu u trajanju od 15min",
     price: "15 EUR",
+    isNew: true,
     category: "LED Fototerapija",
     duration: "15 min"
   },
@@ -164,9 +169,8 @@ export const pricingData: PricingItem[] = [
     description: "1 ml",
     price: "315 EUR",
     category: "Dermalni Fileri",
-    isPopular: true,
+    isNew: true,
   },
-
   // Hijaluronidaza
   {
     id: "hyaluronidase",
@@ -191,6 +195,7 @@ export const pricingData: PricingItem[] = [
     price: "195 EUR",
     category: "Kemijski Piling",
     isPackage: true,
+    isRecommended: true,
     packageDetails: "4 tretmana"
   },
   {
@@ -209,24 +214,6 @@ export const pricingData: PricingItem[] = [
     isPackage: true,
     packageDetails: "4 tretmana"
   },
-  {
-    id: "chemical-peel-duosomal",
-    title: "Duosomal",
-    description: "1 tretman kemijskog pilinga duosomal",
-    price: "65 EUR",
-    category: "Kemijski Piling"
-  },
-  {
-    id: "chemical-peel-duosomal-package",
-    title: "Duosomal Paket",
-    description: "5 tretmana kemijskog pilinga Duosomal",
-    price: "290 EUR",
-    category: "Kemijski Piling",
-    isPackage: true,
-    packageDetails: "5 tretmana"
-  },
-
-  // Kombinirani Paketi
 
   // New Combo Packages
   {
@@ -236,6 +223,7 @@ export const pricingData: PricingItem[] = [
     price: "635 EUR",
     category: "Kombinirani Paketi",
     isPopular: true,
+    isNew: true,
     isLimited: true
   },
   {
@@ -244,7 +232,7 @@ export const pricingData: PricingItem[] = [
     description: "Uključuje 5 tretmana mezoterapije vlasišta velike zone i 2 PRP tretmana",
     price: "735 EUR",
     category: "Kombinirani Paketi",
-    isPopular: true,
+    isRecommended: true,
     isLimited: true
   },
   {
@@ -253,7 +241,6 @@ export const pricingData: PricingItem[] = [
     description: "Uključuje botox 50 jedinica, dermalni filer 1ml",
     price: "445 EUR",
     category: "Kombinirani Paketi",
-    isPopular: true,
     isLimited: true
   },
   {
@@ -262,7 +249,6 @@ export const pricingData: PricingItem[] = [
     description: "Uključuje botox 50 jedinica, mezoterapija lica i vrata 4 tretmana, dermalni filer 1ml, LED fototerapija 4 tretmana",
     price: "885 EUR",
     category: "Kombinirani Paketi",
-    isPopular: true,
     isLimited: true
   },
   {
@@ -271,7 +257,6 @@ export const pricingData: PricingItem[] = [
     description: "Uključuje skin booster TKN HA3 2 tretmana, 2 PRP tretmana, 2 LED fototerapija",
     price: "830 EUR",
     category: "Kombinirani Paketi",
-    isPopular: true,
     isLimited: true
   },
   {
@@ -280,7 +265,7 @@ export const pricingData: PricingItem[] = [
     description: "Uključuje mezoterapija dermapenom 4 4 tretmana, Y zona 5 tretmana, fototerapija 5 tretmana",
     price: "920 EUR",
     category: "Kombinirani Paketi",
-    isPopular: true,
+    isNew: true,
     isLimited: true
   },
   {
@@ -289,7 +274,6 @@ export const pricingData: PricingItem[] = [
     description: "Uključuje duosomal kemijski piling, mezoterapija lica, skin booster",
     price: "485 EUR",
     category: "Kombinirani Paketi",
-    isPopular: true,
     isLimited: true
   },
   {
@@ -298,7 +282,7 @@ export const pricingData: PricingItem[] = [
     description: "Uključuje 2 duosomal kemijska pilinga, 2 tretmana mezoterapije lica, 2 Profhilo tretmana",
     price: "855 EUR",
     category: "Kombinirani Paketi",
-    isPopular: true,
+    isRecommended: true,
     isLimited: true
   },
   {
@@ -316,7 +300,6 @@ export const pricingData: PricingItem[] = [
     description: "Uključuje 2 PRP tretmana, 2 duosomal kemijska pilinga",
     price: "545 EUR",
     category: "Kombinirani Paketi",
-    isPopular: true,
     isLimited: true
   },
   {
@@ -334,7 +317,7 @@ export const pricingData: PricingItem[] = [
     description: "Uključuje PRP tretman, dermaplaning i LED fototerapiju",
     price: "300 EUR",
     category: "Kombinirani Paketi",
-    isPopular: true,
+    isNew: true,
     isLimited: true
   },
 
@@ -355,6 +338,8 @@ export const pricingData: PricingItem[] = [
     price: "435 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
+    isRecommended: true,
+    isPopular: true,
     packageDetails: "4 tretmana"
   },
   {
@@ -396,6 +381,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Face",
     description: "1 tretman lica egzosomima",
     price: "175 EUR",
+    isNew: true,
     category: "Mezoterapija Dermapenom 4"
   },
   {
@@ -405,6 +391,7 @@ export const pricingData: PricingItem[] = [
     price: "630 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
+    isNew: true,
     packageDetails: "4 tretmana"
   },
   {
@@ -412,6 +399,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Hair",
     description: "1 tretman vlasišta egzosomima",
     price: "175 EUR",
+    isNew: true,
     category: "Mezoterapija Dermapenom 4"
   },
   {
@@ -421,6 +409,7 @@ export const pricingData: PricingItem[] = [
     price: "630 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
+    isNew: true,
     packageDetails: "4 tretmana"
   },
   {
@@ -430,6 +419,8 @@ export const pricingData: PricingItem[] = [
     price: "540 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
+    isPopular: true,
+    isNew: true,
     packageDetails: "5 tretmana"
   },
   {
@@ -471,6 +462,7 @@ export const pricingData: PricingItem[] = [
     price: "405 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
+    isPopular: true,
     packageDetails: "5 tretmana"
   },
   {
@@ -568,6 +560,7 @@ export const pricingData: PricingItem[] = [
     price: "200 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
+    isPopular: true,
     packageDetails: "5 tretmana"
   },
   {
@@ -593,6 +586,7 @@ export const pricingData: PricingItem[] = [
     price: "335 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
+    isRecommended: true,
     packageDetails: "5 tretmana"
   },
   {
@@ -609,6 +603,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Face",
     description: "Jedan tretman lica egzosomima",
     price: "150 EUR",
+    isNew: true,
     category: "Mezoterapija Mesoject Gunom"
   },
   {
@@ -618,6 +613,8 @@ export const pricingData: PricingItem[] = [
     price: "540 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
+    isRecommended: true,
+    isNew: true,
     packageDetails: "4 tretmana"
   },
   {
@@ -625,6 +622,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Hair",
     description: "Jedan tretman vlasišta egzosomima",
     price: "150 EUR",
+    isNew: true,
     category: "Mezoterapija Mesoject Gunom"
   },
   {
@@ -634,6 +632,7 @@ export const pricingData: PricingItem[] = [
     price: "540 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
+    isNew: true,
     packageDetails: "4 tretmana"
   },
   {
@@ -657,6 +656,7 @@ export const pricingData: PricingItem[] = [
     title: "Eyes Standard",
     description: "Nekirurško podizanje gornjeg ili donjeg kapka",
     price: "600 EUR",
+    isPopular: true,
     category: "Plasmage"
   },
   {
@@ -678,6 +678,7 @@ export const pricingData: PricingItem[] = [
     title: "Anti-Age Tretman",
     description: "Tretman uklanjanja bora plasmageom",
     price: "300 EUR",
+    isRecommended: true,
     category: "Plasmage"
   },
   {
@@ -710,6 +711,8 @@ export const pricingData: PricingItem[] = [
     price: "475 EUR",
     category: "PRP",
     isPackage: true,
+    isPopular: true,
+    isRecommended: true,
     packageDetails: "2 tretmana"
   },
   {
@@ -719,6 +722,7 @@ export const pricingData: PricingItem[] = [
     price: "675 EUR",
     category: "PRP",
     isPackage: true,
+    isPopular: true,
     packageDetails: "3 tretmana"
   },
   {
@@ -748,6 +752,7 @@ export const pricingData: PricingItem[] = [
     price: "475 EUR",
     category: "Skin Boosteri",
     isPackage: true,
+    isRecommended: true,
     packageDetails: "2 tretmana"
   },
   {
@@ -773,6 +778,7 @@ export const pricingData: PricingItem[] = [
     price: "635 EUR",
     category: "Skin Boosteri",
     isPackage: true,
+    isPopular: true,
     packageDetails: "2 tretmana"
   },
 
@@ -782,6 +788,7 @@ export const pricingData: PricingItem[] = [
     title: "Energizing Cleanser",
     description: "200 ml",
     price: "40 EUR",
+    isPopular: true,
     category: "TOSKANI Proizvodi"
   },
   {
@@ -796,6 +803,7 @@ export const pricingData: PricingItem[] = [
     title: "Bamboo Hydratonic",
     description: "200 ml",
     price: "30 EUR",
+    isPopular: true,
     category: "TOSKANI Proizvodi"
   },
   {
@@ -817,13 +825,8 @@ export const pricingData: PricingItem[] = [
     title: "Total Recovery Gel",
     description: "50 ml",
     price: "35 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "radiance-daily-cream",
-    title: "Radiance Daily Cream SPF30+",
-    description: "50 ml",
-    price: "60 EUR",
+    isPopular: true,
+    isRecommended: true,
     category: "TOSKANI Proizvodi"
   },
   {
@@ -834,87 +837,11 @@ export const pricingData: PricingItem[] = [
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "radiance-ultimate-mesoserum",
-    title: "Radiance Ultimate Mesoserum",
-    description: "30 ml",
-    price: "75 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "purifying-intensive-serum",
-    title: "Purifying Intensive Serum",
-    description: "15 ml",
-    price: "40 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "purifying-cream",
-    title: "Purifying Cream",
-    description: "50 ml",
-    price: "56 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "skin-architect-mesoserum",
-    title: "Skin Architect Mesoserum",
-    description: "30 ml",
-    price: "70 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "skin-architect-cream",
-    title: "Skin Architect Cream",
-    description: "50 ml",
-    price: "60 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "glacier-pro-age-serum",
-    title: "Glacier Pro Age Serum",
-    description: "30 ml",
-    price: "65 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "glacier-pro-age-cream",
-    title: "Glacier Pro Age Cream",
-    description: "50 ml",
-    price: "60 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "retin-pro-age-serum",
-    title: "Retin Pro Age Serum",
-    description: "30 ml",
-    price: "70 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "retin-pro-age-cream",
-    title: "Retin Pro Age Cream",
-    description: "50 ml",
-    price: "65 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "unique-pro-age-serum",
-    title: "Unique Pro Age Serum",
-    description: "30 ml",
-    price: "70 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "unique-pro-age-cream",
-    title: "Unique Pro Age Cream",
-    description: "50 ml",
-    price: "65 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
     id: "anti-hair-loss-lotion",
     title: "Anti Hair-Loss Lotion",
     description: "100 ml",
     price: "45 EUR",
+    isNew: true,
     category: "TOSKANI Proizvodi"
   },
   {
@@ -922,20 +849,7 @@ export const pricingData: PricingItem[] = [
     title: "DensiHair Boost Capsules",
     description: "30 kapsula",
     price: "35 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "night-reverse-advanced-serum",
-    title: "Night Reverse Advanced Serum",
-    description: "30 ml",
-    price: "80 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
-    id: "night-reverse-intensive-cream-mask",
-    title: "Night Reverse Intensive Cream & Mask",
-    description: "50 ml",
-    price: "70 EUR",
+    isNew: true,
     category: "TOSKANI Proizvodi"
   },
   {
@@ -950,6 +864,7 @@ export const pricingData: PricingItem[] = [
     title: "Anti-ageing + HA Ampule",
     description: "15 ampula  2 ml",
     price: "50 EUR",
+    isPopular: true,
     category: "TOSKANI Proizvodi"
   },
   {
@@ -981,17 +896,12 @@ export const pricingData: PricingItem[] = [
     category: "TOSKANI Proizvodi"
   },
   {
-    id: "vitaflash-ampule",
-    title: "Vitaflash Ampule",
-    description: "15 ampula  2 ml",
-    price: "30 EUR",
-    category: "TOSKANI Proizvodi"
-  },
-  {
     id: "sun-shield-d-facial-cream",
     title: "Sun Shiel-D Sun Fluid Facial Cream",
     description: "50ml",
     price: "36 EUR",
+    isPopular: true,
+    isRecommended: true,
     category: "TOSKANI Proizvodi"
   },
   {

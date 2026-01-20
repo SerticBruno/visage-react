@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { pricingData, pricingCategories, PricingItem } from '@/data/pricing';
-import { FaSearch, FaBox, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaSearch, FaBox, FaChevronDown, FaChevronUp, FaStar } from 'react-icons/fa';
 import { FaFire, FaGem, FaCrown } from 'react-icons/fa6';
 import React from 'react';
 import HeroSection from '@/components/sections/HeroSection';
@@ -34,7 +34,8 @@ export default function PricingPage() {
       const matchesBadges = selectedBadges.length === 0 || 
         (selectedBadges.includes('popular') && item.isPopular) ||
         (selectedBadges.includes('package') && item.isPackage) ||
-        (selectedBadges.includes('recommended') && item.isRecommended);
+        (selectedBadges.includes('recommended') && item.isRecommended) ||
+        (selectedBadges.includes('new') && item.isNew);
       return matchesSearch && matchesCategory && matchesBadges;
     });
   }, [searchTerm, selectedCategories, selectedBadges]);
@@ -283,7 +284,7 @@ export default function PricingPage() {
                           Paket
                         </span>
                       </label>
-                      <label className="flex items-center space-x-2 cursor-pointer pb-2">
+                      <label className="flex items-center space-x-2 cursor-pointer">
                         <input
                           type="checkbox"
                           checked={selectedBadges.includes('recommended')}
@@ -293,6 +294,18 @@ export default function PricingPage() {
                         <span className="text-sm text-gray-700 flex items-center gap-1">
                           <FaCrown className="w-3 h-3 text-gray-600" />
                           Naša preporuka
+                        </span>
+                      </label>
+                      <label className="flex items-center space-x-2 cursor-pointer pb-2">
+                        <input
+                          type="checkbox"
+                          checked={selectedBadges.includes('new')}
+                          onChange={() => toggleBadge('new')}
+                          className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
+                        />
+                        <span className="text-sm text-gray-700 flex items-center gap-1">
+                          <FaStar className="w-3 h-3 text-gray-600" />
+                          Novo
                         </span>
                       </label>
                       <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
@@ -342,6 +355,12 @@ export default function PricingPage() {
                                     <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-800 text-white">
                                       <FaCrown className="mr-1" />
                                       Preporuka
+                                    </span>
+                                  )}
+                                  {item.isNew && (
+                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-800 text-white">
+                                      <FaStar className="mr-1" />
+                                      Novo
                                     </span>
                                   )}
                                 </div>

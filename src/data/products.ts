@@ -15,6 +15,7 @@ export interface Product {
   isNew?: boolean;
   isOnSale?: boolean;
   isLimited?: boolean;
+  isBestseller?: boolean; // New field for bestseller tag
   isForDay?: boolean; // New field for day use tag
   isForNight?: boolean; // New field for night use tag
   isRecommended?: boolean; // New field for recommended tag
