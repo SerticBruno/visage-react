@@ -14,7 +14,6 @@ export interface BeautyTreatment {
   keyBenefits?: string[];
   isPopular?: boolean;
   isNew?: boolean;
-  isBestseller?: boolean; // New field for bestseller tag
   isPackage?: boolean; // New field for package tag
   isRecommended?: boolean; // New field for recommended tag
 }

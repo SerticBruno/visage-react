@@ -28,7 +28,6 @@ Vratite <strong>samopouzdanje</strong> uz <strong>prirodan volumen</strong> i <s
   metaKeywords: 'dermalni fileri, volumizacija lica, konture lica, estetski studio Sisak, VISAGE studio, hijaluronski fileri, volumizacija obraza',
   tags: ['dermalni-fileri', 'volumizacija', 'konture-lica', 'minimalno-invazivni', 'hijaluronski-fileri'],
   isPopular: true,
-  isBestseller: true,
   isRecommended: true,
   pricingCategory: 'Dermalni Fileri',
   relatedServices: ['botox', 'skin-boosteri', 'mezoterapija'],

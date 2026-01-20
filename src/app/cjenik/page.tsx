@@ -34,7 +34,6 @@ export default function PricingPage() {
       const matchesBadges = selectedBadges.length === 0 || 
         (selectedBadges.includes('popular') && item.isPopular) ||
         (selectedBadges.includes('package') && item.isPackage) ||
-        (selectedBadges.includes('bestseller') && item.isBestseller) ||
         (selectedBadges.includes('recommended') && item.isRecommended);
       return matchesSearch && matchesCategory && matchesBadges;
     });
@@ -244,7 +243,7 @@ export default function PricingPage() {
                     className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
                   >
                     <label className="block text-sm font-medium text-gray-700 cursor-pointer">
-                      Oznake
+                      Tagovi
                     </label>
                     {expandedSections.badges ? (
                       <FaChevronUp className="w-4 h-4 text-gray-500" />
@@ -270,18 +269,6 @@ export default function PricingPage() {
                         <span className="text-sm text-gray-700 flex items-center gap-1">
                           <FaFire className="w-3 h-3 text-gray-600" />
                           Popularno
-                        </span>
-                      </label>
-                      <label className="flex items-center space-x-2 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={selectedBadges.includes('bestseller')}
-                          onChange={() => toggleBadge('bestseller')}
-                          className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
-                        />
-                        <span className="text-sm text-gray-700 flex items-center gap-1">
-                          <FaGem className="w-3 h-3 text-gray-600" />
-                          Bestseller
                         </span>
                       </label>
                       <label className="flex items-center space-x-2 cursor-pointer">
@@ -343,12 +330,6 @@ export default function PricingPage() {
                                     <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-800 text-white">
                                       <FaFire className="mr-1" />
                                       Popularno
-                                    </span>
-                                  )}
-                                  {item.isBestseller && (
-                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-800 text-white">
-                                      <FaGem className="mr-1" />
-                                      Bestseller
                                     </span>
                                   )}
                                   {item.isPackage && (

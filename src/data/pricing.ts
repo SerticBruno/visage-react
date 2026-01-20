@@ -9,7 +9,6 @@ export interface PricingItem {
   isPopular?: boolean;
   isLimited?: boolean;
   isPackage?: boolean;
-  isBestseller?: boolean; // New field for bestseller tag
   isRecommended?: boolean; // New field for recommended tag
   packageDetails?: string;
 }
@@ -85,7 +84,7 @@ export const pricingData: PricingItem[] = [
     description: "Čišćenje lica, dermaplaning, kemijski piling, 1 LED fototerapija, Firming peptide maska, okoloočna njega, serum, krema, spf",
     price: "200 EUR",
     category: "Beauty Tretmani",
-    isRecommended: true
+    isPopular: true
   },
 
 
@@ -113,6 +112,7 @@ export const pricingData: PricingItem[] = [
     description: "Paket od 10 tretmana LED fototerapije",
     price: "220 EUR",
     category: "LED Fototerapija",
+    isPopular: true,
     isPackage: true,
     packageDetails: "10 tretmana"
   },
@@ -139,7 +139,7 @@ export const pricingData: PricingItem[] = [
     price: "210 EUR",
     category: "Botox",
     isPopular: true,
-    isBestseller: true,
+    isRecommended: true,
   },
   {
     id: "botox-100",
@@ -160,8 +160,8 @@ export const pricingData: PricingItem[] = [
     isRecommended: true
   },
   {
-    id: "skin-architect-filler",
-    title: "Skin Architect Filler",
+    id: "model-h",
+    title: "Model H",
     description: "1 ml",
     price: "315 EUR",
     category: "Dermalni Fileri"

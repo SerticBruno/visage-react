@@ -68,7 +68,6 @@ function KatalogContent() {
       selectedBrands.includes(product.marka);
     const matchesBadges = selectedBadges.length === 0 || 
       (selectedBadges.includes('popular') && product.isPopular) ||
-      (selectedBadges.includes('bestseller') && product.isBestseller) ||
       (selectedBadges.includes('day') && product.isForDay) ||
       (selectedBadges.includes('night') && product.isForNight) ||
       (selectedBadges.includes('recommended') && product.isRecommended);
@@ -547,7 +546,7 @@ function KatalogContent() {
                   className="flex items-center justify-between w-full text-left mb-2 focus:outline-none cursor-pointer"
                 >
                   <label className="block text-sm font-medium text-gray-700 cursor-pointer">
-                    Oznake
+                    Tagovi
                   </label>
                   {expandedSections.badges ? (
                     <FaChevronUp className="w-4 h-4 text-gray-500" />
@@ -573,18 +572,6 @@ function KatalogContent() {
                       <span className="text-sm text-gray-700 flex items-center gap-1">
                         <FaFire className="w-3 h-3 text-gray-600" />
                         Popularno
-                      </span>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={selectedBadges.includes('bestseller')}
-                        onChange={() => toggleBadge('bestseller')}
-                        className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
-                      />
-                      <span className="text-sm text-gray-700 flex items-center gap-1">
-                        <FaGem className="w-3 h-3 text-gray-600" />
-                        Bestseller
                       </span>
                     </label>
                     <label className="flex items-center space-x-2 cursor-pointer">
@@ -702,12 +689,6 @@ function KatalogContent() {
                         <span className="bg-gray-800 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
                           <FaFire className="w-3 h-3" />
                           Popularno
-                        </span>
-                      )}
-                      {product.isBestseller && (
-                        <span className="bg-gray-800 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                          <FaGem className="w-3 h-3" />
-                          Bestseller
                         </span>
                       )}
                       {product.isForDay && (
