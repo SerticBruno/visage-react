@@ -693,14 +693,14 @@ export const pricingData: PricingItem[] = [
     id: "plasmage-eyes-standard",
     title: "Eyes Standard",
     description: "Nekirurško podizanje gornjeg ili donjeg kapka",
-    price: "635 EUR",
+    price: "600 EUR",
     category: "Plasmage"
   },
   {
     id: "plasmage-eyes-premium",
     title: "Eyes Premium",
     description: "Nekirurško podizanje gornjeg i donjeg kapka",
-    price: "885 EUR",
+    price: "850 EUR",
     category: "Plasmage"
   },
   {
