@@ -134,7 +134,6 @@ Nakon tretmana skin boosterima važno je:
 
 - TKN HA3 - Napredni skin booster za duboku hidrataciju
 - Profhilo - Premium skin booster za revitalizaciju
-- RRS HA Long Lasting - Dugotrajni skin booster
 
 Za optimalne rezultate preporučujemo seriju od 2-3 tretmana s intervalima od 4-6 tjedana. Za detaljne informacije o cijenama i mogućnostima plaćanja, dogovorite termin.`
   }

@@ -27,7 +27,6 @@ export const pricingCategories = [
   "Mezoterapija Mesoject Gunom",
   "Plasmage",
   "PRP",
-  "RRS",
   "Skin Boosteri",
   "TOSKANI Proizvodi"
 ];
@@ -125,42 +124,6 @@ export const pricingData: PricingItem[] = [
     category: "LED Fototerapija",
     duration: "15 min"
   },
-  {
-    id: "brow-lift",
-    title: "Brow Lift",
-    description: "Laminacija i bojanje obrva",
-    price: "25 EUR",
-    category: "Beauty Tretmani"
-  },
-  {
-    id: "brow-shaping",
-    title: "Oblikovanje Obrva",
-    description: "Čupanje obrva pincetom",
-    price: "7 EUR",
-    category: "Beauty Tretmani"
-  },
-  {
-    id: "hd-brows",
-    title: "HD Brows",
-    description: "Oblikovanje i bojanje obrva",
-    price: "10 EUR",
-    category: "Beauty Tretmani"
-  },
-  {
-    id: "brow-tint",
-    title: "Bojanje Obrva ili Trepavica",
-    description: "Profesionalno bojanje obrva ili trepavica",
-    price: "4 EUR",
-    category: "Beauty Tretmani"
-  },
-  {
-    id: "brow-lash-tint",
-    title: "Bojanje Obrva i Trepavica",
-    description: "Profesionalno bojanje obrva i trepavica",
-    price: "7 EUR",
-    category: "Beauty Tretmani"
-  },
-
   // Botox
   {
     id: "botox-25",
@@ -768,78 +731,7 @@ export const pricingData: PricingItem[] = [
     packageDetails: "4 tretmana"
   },
 
-  // RRS
-  {
-    id: "rrs-xl-hair",
-    title: "RRS XL Hair",
-    description: "1 tretman vlasišta",
-    price: "85 EUR",
-    category: "RRS"
-  },
-  {
-    id: "rrs-xl-hair-package",
-    title: "RRS XL Hair",
-    description: "5 tretmana vlasišta",
-    price: "380 EUR",
-    category: "RRS",
-    isPackage: true,
-    packageDetails: "5 tretmana"
-  },
-  {
-    id: "rrs-ha-eyes",
-    title: "RRS HA Eyes",
-    description: "1 tretman okoloočnog područja",
-    price: "75 EUR",
-    category: "RRS"
-  },
-  {
-    id: "rrs-ha-eyes-package",
-    title: "RRS HA Eyes Paket",
-    description: "4 tretmana okoloočnog područja",
-    price: "270 EUR",
-    category: "RRS",
-    isPackage: true,
-    packageDetails: "4 tretmana"
-  },
-  {
-    id: "rrs-hyalift",
-    title: "RRS Hyalift",
-    description: "1 ampula RRS Hyalift",
-    price: "160 EUR",
-    category: "RRS"
-  },
-  {
-    id: "rrs-hyalift-package",
-    title: "RRS Hyalift Paket",
-    description: "4 ampule RRS Hyalift",
-    price: "575 EUR",
-    category: "RRS",
-    isPackage: true,
-    packageDetails: "4 ampule"
-  },
-  {
-    id: "rrs-silisorg",
-    title: "RRS Silisorg/Silisorg HA",
-    description: "1 ampula",
-    price: "80 EUR",
-    category: "RRS"
-  },
-  {
-    id: "rrs-tensor-lift",
-    title: "RRS Tensor Lift",
-    description: "1 ampula",
-    price: "160 EUR",
-    category: "RRS"
-  },
-  {
-    id: "rrs-tensor-lift-package",
-    title: "RRS Tensor Lift Paket",
-    description: "4 ampule",
-    price: "575 EUR",
-    category: "RRS",
-    isPackage: true,
-    packageDetails: "4 ampule"
-  },
+  
 
   // Skin Boosteri
   {
@@ -879,22 +771,6 @@ export const pricingData: PricingItem[] = [
     title: "Profhilo Paket",
     description: "2 tretmana Profhilo",
     price: "635 EUR",
-    category: "Skin Boosteri",
-    isPackage: true,
-    packageDetails: "2 tretmana"
-  },
-  {
-    id: "skin-booster-rrs-ha",
-    title: "RRS HA Long Lasting",
-    description: "1 tretman RRS HA Long Lasting",
-    price: "285 EUR",
-    category: "Skin Boosteri"
-  },
-  {
-    id: "skin-booster-rrs-ha-package",
-    title: "RRS HA Long Lasting Paket",
-    description: "2 tretmana RRS HA Long Lasting",
-    price: "500 EUR",
     category: "Skin Boosteri",
     isPackage: true,
     packageDetails: "2 tretmana"
