@@ -577,18 +577,6 @@ function KatalogContent() {
                     <label className="flex items-center space-x-2 cursor-pointer">
                       <input
                         type="checkbox"
-                        checked={selectedBadges.includes('day')}
-                        onChange={() => toggleBadge('day')}
-                        className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
-                      />
-                      <span className="text-sm text-gray-700 flex items-center gap-1">
-                        <FaSun className="w-3 h-3 text-gray-600" />
-                        Za dan
-                      </span>
-                    </label>
-                    <label className="flex items-center space-x-2 cursor-pointer">
-                      <input
-                        type="checkbox"
                         checked={selectedBadges.includes('night')}
                         onChange={() => toggleBadge('night')}
                         className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"

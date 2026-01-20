@@ -566,6 +566,7 @@ Jača barijeru kože, pogodan je za sve tipove kože, no najviše se preporučuj
     image: '/images/products/night-reverse-serum-visage-estetski-studio.png',
     price: '85 EUR',
     volume: '30 ml',
+    isForNight: true,
     isPopular: true,
     isRecommended: true,
     activeIngredients: ['Probiotici', 'algae extract', 'Byfida ferment Lysate', 'tetrapeptide-26', 'TRC (Total Restoring Complex)'],
@@ -831,6 +832,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     category: 'Noćna njega',
     marka: 'TOSKANI',
     productType: 'Krema',
+    isForNight: true,
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
     skinConcern: ['Anti-aging njega'],
     image: '/images/products/toskani-night-reverse-estetski-studio-visage-sisak.png',
@@ -1567,6 +1569,7 @@ Pogodan za korištenje na oštećenoj koži i koži koja pokazuje prve znakove s
     skinConcern: ['Anti-aging njega'],
     image: '/images/products/circadia/CircadiaNighttimeRepair.webp',
     price: '93 EUR',
+    isForNight: true,
     volume: '59 ml',
     warnings: [
       'Sadrži umjerenu količinu Vitamina A (0,3%) koja je pogodna za početak korištenja proizvoda s retinolom!'
@@ -1594,6 +1597,7 @@ Namijenjen zreloj koži ili koži s većim oštećenjima
 Smanjuje bore, povećava elastičnost i čvrstoću kože, nudi visoku antioksidacijsku zaštitu i oživljava stanice kože.`,
     category: 'Krema',
     marka: 'Circadia',
+    isForNight: true,
     productType: 'Krema',
     skinType: ['Zrela koža'],
     skinConcern: ['Anti-aging njega'],
