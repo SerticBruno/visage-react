@@ -3,7 +3,7 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { pricingData, pricingCategories, PricingItem } from '@/data/pricing';
 import { FaSearch, FaBox, FaChevronDown, FaChevronUp, FaStar } from 'react-icons/fa';
-import { FaFire, FaGem, FaCrown } from 'react-icons/fa6';
+import { FaFire, FaCrown } from 'react-icons/fa6';
 import React from 'react';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
