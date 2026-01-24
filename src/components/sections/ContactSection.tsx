@@ -160,20 +160,6 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel, comboLabel }: { ha
 
   const contactInfo = [
     {
-      icon: FaMapMarkerAlt,
-      title: 'Adresa',
-      content: ['Ulica Stjepana i Antuna Radića 49', '44 000, Sisak'],
-      link: 'https://www.google.com/maps/dir//Ulica+Stjepana+i+Antuna+Radića+49,+44000,+Sisak/@45.4839999,16.3719999,17z',
-      linkText: 'Pronađite nas'
-    },
-    {
-      icon: FaWhatsapp,
-      title: 'WhatsApp',
-      content: ['091 110 50 20', 'Javite nam se putem WhatsAppa'],
-      link: 'https://wa.me/385911105020',
-      linkText: 'Pošaljite poruku'
-    },
-    {
       icon: FaInstagram,
       title: 'Instagram',
       content: 'Pratite nas na Instagramu',
@@ -184,6 +170,20 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel, comboLabel }: { ha
       icon: FaClock,
       title: 'Radno vrijeme',
       content: ['Po dogovoru']
+    },
+    {
+      icon: FaWhatsapp,
+      title: 'WhatsApp',
+      content: ['091 110 50 20', 'Javite nam se putem WhatsAppa'],
+      link: 'https://wa.me/385911105020',
+      linkText: 'Pošaljite poruku'
+    },
+    {
+      icon: FaMapMarkerAlt,
+      title: 'Adresa',
+      content: ['Ulica Stjepana i Antuna Radića 49', '44 000, Sisak'],
+      link: 'https://www.google.com/maps/dir//Ulica+Stjepana+i+Antuna+Radića+49,+44000,+Sisak/@45.4839999,16.3719999,17z',
+      linkText: 'Pronađite nas'
     }
   ];
 
