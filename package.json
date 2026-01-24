@@ -14,7 +14,7 @@
     "@types/nodemailer": "^6.4.17",
     "@vercel/analytics": "^1.5.0",
     "framer-motion": "^12.9.4",
-    "next": "15.3.1",
+    "next": "15.3.8",
     "nodemailer": "^7.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
