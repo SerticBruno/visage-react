@@ -643,7 +643,7 @@ function KatalogContent() {
           {/* Products Grid */}
           <div className="flex-1" ref={productsRef}>
             {/* Products Grid */}
-            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 transition-opacity duration-300 ${isScrolling || isFiltering || isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+            <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 transition-opacity duration-300 ${isScrolling || isFiltering || isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
               {currentProducts.map((product) => (
                 <div
                   key={product.id}
@@ -660,7 +660,7 @@ function KatalogContent() {
                   }}
                   onClick={() => openProductModal(product)}
                 >
-                  <div className="relative h-48 bg-slate-50 overflow-hidden">
+                  <div className="relative h-36 sm:h-40 lg:h-48 bg-slate-50 overflow-hidden">
                     <Image
                       src={product.image}
                       alt={product.title}
@@ -672,40 +672,40 @@ function KatalogContent() {
                       }}
                     />
                     {/* Product Badges */}
-                    <div className="absolute top-2 right-2 flex flex-col gap-1">
+                    <div className="absolute top-1 right-1 sm:top-2 sm:right-2 flex flex-col gap-0.5 sm:gap-1">
                       {product.isPopular && (
-                        <span className="bg-gray-800 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                          <FaFire className="w-3 h-3" />
-                          Popularno
+                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full flex items-center gap-0.5 sm:gap-1 shadow-sm">
+                          <FaFire className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                          <span className="hidden sm:inline">Popularno</span>
                         </span>
                       )}
                       {product.isForDay && (
-                        <span className="bg-gray-800 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                          <FaSun className="w-3 h-3" />
-                          Za dan
+                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full flex items-center gap-0.5 sm:gap-1 shadow-sm">
+                          <FaSun className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                          <span className="hidden sm:inline">Za dan</span>
                         </span>
                       )}
                       {product.isForNight && (
-                        <span className="bg-gray-800 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                          <FaMoon className="w-3 h-3" />
-                          Za noć
+                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full flex items-center gap-0.5 sm:gap-1 shadow-sm">
+                          <FaMoon className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                          <span className="hidden sm:inline">Za noć</span>
                         </span>
                       )}
                       {product.isRecommended && (
-                        <span className="bg-gray-800 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                          <FaCrown className="w-3 h-3" />
-                          Preporuka
+                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full flex items-center gap-0.5 sm:gap-1 shadow-sm">
+                          <FaCrown className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                          <span className="hidden sm:inline">Preporuka</span>
                         </span>
                       )}
                     </div>
                   </div>
-                  <div className="p-4 flex flex-col flex-grow">
-                    <div className="flex justify-between items-start mb-2">
+                  <div className="p-2 sm:p-4 flex flex-col flex-grow">
+                    <div className="flex justify-between items-start mb-1 sm:mb-2">
                       <div className="flex-1">
-                        <h3 className="text-lg font-bold text-slate-900">{product.title}</h3>
+                        <h3 className="text-sm sm:text-base lg:text-lg font-bold text-slate-900 line-clamp-2">{product.title}</h3>
                       </div>
                     </div>
-                    <div className="text-slate-600 text-sm mb-4 flex-grow">
+                    <div className="text-slate-600 text-xs sm:text-sm mb-2 sm:mb-4 flex-grow">
                       <p className="overflow-hidden" style={{
                         display: '-webkit-box',
                         WebkitLineClamp: 2,
@@ -715,26 +715,26 @@ function KatalogContent() {
                         {product.description}
                       </p>
                     </div>
-                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
-                      <div className="flex items-center gap-2">
-                        <div className="flex flex-col h-12 justify-center">
+                    <div className="flex items-center justify-between mt-auto pt-2 sm:pt-4 border-t border-slate-100">
+                      <div className="flex items-center gap-1 sm:gap-2">
+                        <div className="flex flex-col h-10 sm:h-12 justify-center">
                           {product.isOnSale && product.oldPrice ? (
                             <>
-                              <span className="text-sm text-slate-400 line-through">{product.oldPrice}</span>
-                              <span className="text-xl font-bold text-rose-500">{product.price}</span>
+                              <span className="text-xs sm:text-sm text-slate-400 line-through">{product.oldPrice}</span>
+                              <span className="text-base sm:text-lg lg:text-xl font-bold text-rose-500">{product.price}</span>
                             </>
                           ) : (
-                            <span className="text-xl font-bold text-slate-900">{product.price}</span>
+                            <span className="text-base sm:text-lg lg:text-xl font-bold text-slate-900">{product.price}</span>
                           )}
                         </div>
                         {product.isOnSale && product.oldPrice && (
-                          <span className="bg-rose-500 text-white text-xs font-bold w-10 h-10 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center">
+                          <span className="bg-rose-500 text-white text-xs font-bold w-8 h-8 sm:w-10 sm:h-10 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center">
                             -{Math.round((1 - parseFloat(product.price) / parseFloat(product.oldPrice)) * 100)}%
                           </span>
                         )}
                       </div>
                       <button 
-                        className="px-4 py-2 bg-slate-700 text-white rounded-lg text-sm font-medium shadow-sm cursor-pointer
+                        className="px-2 sm:px-4 py-1.5 sm:py-2 bg-slate-700 text-white rounded-lg text-xs sm:text-sm font-medium shadow-sm cursor-pointer
                                    hover:bg-slate-800 hover:shadow-md transition-all duration-200 ease-out
                                    group-hover:bg-slate-800 group-hover:shadow-lg transform-gpu"
                         onClick={(e) => {
@@ -752,26 +752,26 @@ function KatalogContent() {
 
             {/* Pagination */}
             {totalPages > 1 && (
-              <div className="mt-8 flex justify-center items-center space-x-2">
+              <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-2">
+                {/* Arrows on sides for desktop, hidden on mobile */}
                 <button
                   onClick={() => {
                     handlePageChange(Math.max(validCurrentPage - 1, 1));
                   }}
                   disabled={validCurrentPage === 1}
-                  className="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm"
+                  className="hidden sm:flex px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm flex-shrink-0"
                   aria-label="Prethodna stranica"
                 >
-                  <span className="hidden sm:inline">Prethodna</span>
-                  <FaChevronLeft className="sm:hidden w-4 h-4" />
+                  Prethodna
                 </button>
-                <div className="flex items-center space-x-1 sm:space-x-2">
+                <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                     <button
                       key={page}
                       onClick={() => {
                         handlePageChange(page);
                       }}
-                      className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all duration-300 text-sm sm:text-base ${
+                      className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all duration-300 text-sm sm:text-base flex-shrink-0 ${
                         validCurrentPage === page
                           ? 'bg-slate-800 text-white shadow-md'
                           : 'text-slate-600 hover:bg-slate-50 hover:border hover:border-slate-200 hover:shadow-sm'
@@ -786,12 +786,34 @@ function KatalogContent() {
                     handlePageChange(Math.min(validCurrentPage + 1, totalPages));
                   }}
                   disabled={validCurrentPage === totalPages}
-                  className="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm"
+                  className="hidden sm:flex px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm flex-shrink-0"
                   aria-label="Sljedeća stranica"
                 >
-                  <span className="hidden sm:inline">Sljedeća</span>
-                  <FaChevronRight className="sm:hidden w-4 h-4" />
+                  Sljedeća
                 </button>
+                {/* Arrows beneath for mobile only */}
+                <div className="flex sm:hidden items-center gap-2">
+                  <button
+                    onClick={() => {
+                      handlePageChange(Math.max(validCurrentPage - 1, 1));
+                    }}
+                    disabled={validCurrentPage === 1}
+                    className="px-3 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm flex-shrink-0"
+                    aria-label="Prethodna stranica"
+                  >
+                    <FaChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => {
+                      handlePageChange(Math.min(validCurrentPage + 1, totalPages));
+                    }}
+                    disabled={validCurrentPage === totalPages}
+                    className="px-3 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer hover:border-slate-300 hover:shadow-sm flex-shrink-0"
+                    aria-label="Sljedeća stranica"
+                  >
+                    <FaChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             )}
 
