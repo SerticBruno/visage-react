@@ -16,7 +16,7 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "Gdje mogu dogovoriti termin?",
-    answer: "Termin možete dogovoriti preko <a href='https://www.facebook.com/profile.php?id=61555201097471' target='_blank' rel='noopener noreferrer'>Facebooka</a>, <a href='https://www.instagram.com/visage.aestheticstudio' target='_blank' rel='noopener noreferrer'>Instagrama</a> ili <a href='https://wa.me/385911105020' target='_blank' rel='noopener noreferrer'>Whatsappa</a>, slanjem maila na <a href='mailto:contact@visagestudio.hr'>contact@visagestudio.hr</a> te <a href='/kontakt' class='contact-form-link'>forme na službenoj web stranici</a>."
+    answer: "Termin možete dogovoriti preko <a href='https://www.facebook.com/profile.php?id=61555201097471' target='_blank' rel='noopener noreferrer'>Facebooka</a>, <a href='https://www.instagram.com/visage.estheticstudio' target='_blank' rel='noopener noreferrer'>Instagrama</a> ili <a href='https://wa.me/385911105020' target='_blank' rel='noopener noreferrer'>Whatsappa</a>, slanjem maila na <a href='mailto:contact@visagestudio.hr'>contact@visagestudio.hr</a> te <a href='/kontakt' class='contact-form-link'>forme na službenoj web stranici</a>."
   },
   {
     question: "Koje je vaše radno vrijeme?",

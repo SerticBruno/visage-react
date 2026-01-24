@@ -93,6 +93,46 @@ html.modal-open {
   animation: shimmer 2s ease-in-out infinite;
 }
 
+/* Diagonal shimmer sweep animation for map loading */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translate(-100%, -100%) skewX(-20deg);
+  }
+  100% {
+    transform: translate(200%, 200%) skewX(-20deg);
+  }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 2s ease-in-out infinite;
+}
+
+.shimmer-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 45%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.3) 55%,
+    transparent 100%
+  );
+  transform: translate(-100%, -100%) skewX(-20deg);
+  animation: shimmer-sweep 2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Line clamp utilities */
 .line-clamp-2 {
   display: -webkit-box;

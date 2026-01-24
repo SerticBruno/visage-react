@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { FaMapMarkerAlt, FaPhone, FaClock, FaWhatsapp } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaClock, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import { IconType } from 'react-icons';
 
 const ContactInfoCard = ({ icon: Icon, title, content, link, linkText }: { 
@@ -72,8 +72,24 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel, comboLabel }: { ha
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitMessage, setSubmitMessage] = useState('');
+  const [mapLoaded, setMapLoaded] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
+  const mapTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Fallback: Hide loading placeholder after a reasonable time even if onLoad doesn't fire
+  useEffect(() => {
+    // Set a timeout as fallback (Google Maps iframes sometimes don't fire onLoad due to CORS)
+    mapTimeoutRef.current = setTimeout(() => {
+      setMapLoaded(true);
+    }, 3000); // Hide loading after 3 seconds
+
+    return () => {
+      if (mapTimeoutRef.current) {
+        clearTimeout(mapTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Scroll to form when serviceLabel or comboLabel is provided
   useEffect(() => {
@@ -153,16 +169,16 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel, comboLabel }: { ha
     {
       icon: FaWhatsapp,
       title: 'WhatsApp',
-      content: 'Javite nam se putem WhatsAppa',
+      content: ['091 110 50 20', 'Javite nam se putem WhatsAppa'],
       link: 'https://wa.me/385911105020',
       linkText: 'Pošaljite poruku'
     },
     {
-      icon: FaPhone,
-      title: 'Telefon',
-      content: '091 110 50 20',
-      link: 'tel:+385911105020',
-      linkText: 'Nazovite nas'
+      icon: FaInstagram,
+      title: 'Instagram',
+      content: 'Pratite nas na Instagramu',
+      link: 'https://www.instagram.com/visage.estheticstudio',
+      linkText: 'Pogledajte profil'
     },
     {
       icon: FaClock,
@@ -316,17 +332,41 @@ const ContactSection = ({ hasTopPadding = true, serviceLabel, comboLabel }: { ha
 
           {/* Contact Info and Map - Right side */}
           <div className="lg:col-span-7 flex flex-col space-y-6 sm:space-y-8">
-            {/* Google Maps */}
-            <div className="flex-grow min-h-64 sm:min-h-80 lg:min-h-[400px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl">
+            {/* Google Maps - Loading immediately with placeholder */}
+            <div className="flex-grow min-h-64 sm:min-h-80 lg:min-h-[400px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl relative bg-gray-100">
+              {/* Map iframe - starts loading immediately, always visible */}
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.9999999999995!2d16.371999999999998!3d45.483999999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4766a7a7a7a7a7a7%3A0x7a7a7a7a7a7a7a7a!2sUlica%20Stjepana%20i%20Antuna%20Radi%C4%87a%2049%2C%2044000%2C%20Sisak!5e0!3m2!1shr!2shr!4v1234567890!5m2!1shr!2shr"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
-                loading="lazy"
+                loading="eager"
                 referrerPolicy="no-referrer-when-downgrade"
+                title="Lokacija Visage Estetski Studio"
+                onLoad={() => {
+                  if (mapTimeoutRef.current) {
+                    clearTimeout(mapTimeoutRef.current);
+                  }
+                  setMapLoaded(true);
+                }}
               ></iframe>
+              
+              {/* Loading placeholder overlay - shown until map loads */}
+              {!mapLoaded && (
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-gray-50 to-gray-100 z-10 transition-opacity duration-500 shimmer-overlay">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="relative z-10">
+                      <div className="relative bg-white p-6 rounded-full shadow-lg">
+                        <FaMapMarkerAlt size={32} className="text-gray-600" />
+                      </div>
+                    </div>
+                    <p className="mt-6 text-gray-600 text-sm sm:text-base font-medium relative z-10">
+                      Učitavanje karte...
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
             {/* Contact Information Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
