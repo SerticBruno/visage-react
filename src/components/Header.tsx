@@ -41,6 +41,66 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  // Prevent body scroll when menu is open and handle page scroll to close menu
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Prevent body scroll when menu is open
+      const originalStyle = window.getComputedStyle(document.body).overflow;
+      document.body.style.overflow = 'hidden';
+      
+      // Close menu if user tries to scroll the page (touchmove on body/window)
+      const handleTouchMove = (e: TouchEvent) => {
+        // If touch is not within the menu, prevent scroll and close menu
+        if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target as Node)) {
+          e.preventDefault();
+          setIsMenuOpen(false);
+          setIsServicesOpen(false);
+        }
+      };
+      
+      // Close menu on wheel scroll (mouse wheel) if not scrolling within menu
+      const handleWheel = (e: WheelEvent) => {
+        // If wheel event is not within the menu, close menu
+        if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target as Node)) {
+          setIsMenuOpen(false);
+          setIsServicesOpen(false);
+        }
+      };
+      
+      // Also close on window scroll (for programmatic scrolls or other cases)
+      let scrollTimeout: NodeJS.Timeout;
+      const handleScroll = () => {
+        // Debounce scroll events
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          // Only close if scroll happened outside the menu
+          // This handles cases where page scrolls programmatically
+          if (mobileMenuRef.current) {
+            const menuRect = mobileMenuRef.current.getBoundingClientRect();
+            const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+            // If we scrolled significantly and menu is still visible, close it
+            if (scrollY > 0 && menuRect.top < window.innerHeight) {
+              setIsMenuOpen(false);
+              setIsServicesOpen(false);
+            }
+          }
+        }, 100);
+      };
+      
+      window.addEventListener('touchmove', handleTouchMove, { passive: false });
+      window.addEventListener('wheel', handleWheel, { passive: true });
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      
+      return () => {
+        document.body.style.overflow = originalStyle;
+        window.removeEventListener('touchmove', handleTouchMove);
+        window.removeEventListener('wheel', handleWheel);
+        window.removeEventListener('scroll', handleScroll);
+        clearTimeout(scrollTimeout);
+      };
+    }
+  }, [isMenuOpen]);
+
   // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
@@ -302,7 +362,7 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden fixed top-20 left-0 right-0 bg-white border-t border-gray-100 overflow-hidden"
+            className="lg:hidden fixed top-20 left-0 right-0 bg-white border-t border-gray-100 overflow-y-auto max-h-[calc(100vh-5rem)]"
           >
             <motion.div 
               className="px-2 pt-2 pb-3 space-y-1"
