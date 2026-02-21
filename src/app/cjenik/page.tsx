@@ -23,6 +23,8 @@ export default function PricingPage() {
     categories: true,
     badges: false
   });
+  // Mobile: filter panel collapsed by default
+  const [isFilterOpen, setIsFilterOpen] = useState(true);
 
   const filteredItems = useMemo(() => {
     return pricingData.filter(item => {
@@ -147,9 +149,30 @@ export default function PricingPage() {
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar with Filters */}
             <div className="lg:w-64 flex-shrink-0">
-              <div className="bg-white rounded-lg shadow-md p-6 pr-3 ps-7 sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto space-y-3 scrollbar-spaced" style={{ scrollbarGutter: 'stable' }}>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Filtriraj usluge</h3>
-                
+              <div className="bg-white rounded-lg shadow-md sticky top-24 lg:max-h-[calc(100vh-120px)] overflow-y-auto scrollbar-spaced" style={{ scrollbarGutter: 'stable' }}>
+                {/* Mobile: collapsible filter header */}
+                <button
+                  type="button"
+                  onClick={() => setIsFilterOpen((open) => !open)}
+                  className="lg:hidden flex items-center justify-between w-full p-6 pr-3 ps-7 text-left focus:outline-none rounded-t-lg hover:bg-gray-50/80 transition-colors"
+                  aria-expanded={isFilterOpen}
+                  aria-controls="cjenik-filter-content"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900">Filtriraj usluge</h3>
+                  {isFilterOpen ? (
+                    <FaChevronUp className="w-5 h-5 text-gray-500 flex-shrink-0" aria-hidden />
+                  ) : (
+                    <FaChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0" aria-hidden />
+                  )}
+                </button>
+                <h3 className="hidden lg:block text-lg font-semibold text-gray-900 mb-2 px-6 pr-3 ps-7 pt-6">Filtriraj usluge</h3>
+                <div
+                  id="cjenik-filter-content"
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isFilterOpen ? 'max-h-[85vh]' : 'max-h-0'
+                  } lg:max-h-[calc(100vh-180px)] lg:opacity-100`}
+                >
+                  <div className="p-6 pr-3 ps-7 pt-0 lg:pt-0 space-y-3">
                 {/* Search */}
                 <div>
                   <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-2">
@@ -318,6 +341,8 @@ export default function PricingPage() {
                   <p className="text-sm text-gray-600">
                     Pronađeno usluga: <span className="font-semibold">{filteredItems.length}</span>
                   </p>
+                </div>
+                  </div>
                 </div>
               </div>
             </div>
