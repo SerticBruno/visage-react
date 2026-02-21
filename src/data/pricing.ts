@@ -230,7 +230,7 @@ export const pricingData: PricingItem[] = [
     id: "hair-boost-combo",
     title: "Hair Boost",
     description: "Uključuje 5 tretmana mezoterapije vlasišta velike zone i 2 PRP tretmana",
-    price: "735 EUR",
+    price: "784 EUR",
     category: "Kombinirani Paketi",
     isRecommended: true,
     isLimited: true
