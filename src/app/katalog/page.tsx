@@ -6,7 +6,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import { products, productTypes, skinTypes, skinConcerns, brands, type Product } from '@/data/products';
 import { FaSearch, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { FaFire, FaSun, FaMoon, FaCrown } from 'react-icons/fa6';
+import { FaFire, FaSun, FaMoon, FaCrown, FaStar } from 'react-icons/fa6';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import ProductModal from '@/components/ui/ProductModal';
@@ -72,7 +72,8 @@ function KatalogContent() {
       (selectedBadges.includes('popular') && product.isPopular) ||
       (selectedBadges.includes('day') && product.isForDay) ||
       (selectedBadges.includes('night') && product.isForNight) ||
-      (selectedBadges.includes('recommended') && product.isRecommended);
+      (selectedBadges.includes('recommended') && product.isRecommended) ||
+      (selectedBadges.includes('novo') && product.isNew);
     return matchesSearch && matchesProductType && matchesSkinType && matchesSkinConcern && matchesBrands && matchesBadges;
   });
 
@@ -588,6 +589,18 @@ function KatalogContent() {
                     <label className="flex items-center space-x-2 cursor-pointer">
                       <input
                         type="checkbox"
+                        checked={selectedBadges.includes('novo')}
+                        onChange={() => toggleBadge('novo')}
+                        className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
+                      />
+                      <span className="text-sm text-gray-700 flex items-center gap-1">
+                        <FaStar className="w-3 h-3 text-gray-600" />
+                        Novo
+                      </span>
+                    </label>
+                    <label className="flex items-center space-x-2 cursor-pointer">
+                      <input
+                        type="checkbox"
                         checked={selectedBadges.includes('popular')}
                         onChange={() => toggleBadge('popular')}
                         className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
@@ -697,27 +710,33 @@ function KatalogContent() {
                       }}
                     />
                     {/* Product Badges */}
-                    <div className="absolute top-1 right-1 sm:top-2 sm:right-2 flex flex-col gap-0.5 sm:gap-1">
+                    <div className="absolute top-1 right-1 sm:top-2 sm:right-2 flex flex-col items-end gap-0.5 sm:gap-1">
+                      {product.isNew && (
+                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full inline-flex items-center gap-0.5 sm:gap-1 shadow-sm w-fit">
+                          <FaStar className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                          <span className="hidden sm:inline">Novo</span>
+                        </span>
+                      )}
                       {product.isPopular && (
-                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full flex items-center gap-0.5 sm:gap-1 shadow-sm">
+                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full inline-flex items-center gap-0.5 sm:gap-1 shadow-sm w-fit">
                           <FaFire className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                           <span className="hidden sm:inline">Popularno</span>
                         </span>
                       )}
                       {product.isForDay && (
-                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full flex items-center gap-0.5 sm:gap-1 shadow-sm">
+                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full inline-flex items-center gap-0.5 sm:gap-1 shadow-sm w-fit">
                           <FaSun className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                           <span className="hidden sm:inline">Za dan</span>
                         </span>
                       )}
                       {product.isForNight && (
-                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full flex items-center gap-0.5 sm:gap-1 shadow-sm">
+                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full inline-flex items-center gap-0.5 sm:gap-1 shadow-sm w-fit">
                           <FaMoon className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                           <span className="hidden sm:inline">Za noć</span>
                         </span>
                       )}
                       {product.isRecommended && (
-                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full flex items-center gap-0.5 sm:gap-1 shadow-sm">
+                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full inline-flex items-center gap-0.5 sm:gap-1 shadow-sm w-fit">
                           <FaCrown className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                           <span className="hidden sm:inline">Preporuka</span>
                         </span>
