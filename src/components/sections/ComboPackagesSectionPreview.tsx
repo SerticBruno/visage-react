@@ -12,8 +12,14 @@ import { useIntersectionObserver } from '@/lib/useIntersectionObserver';
 
 import 'swiper/css';
 
+interface ComboPackagesSectionPreviewProps {
+  /** Optional extra top padding - Tailwind class (e.g. 'pt-20', 'pt-24') */
+  paddingTop?: string;
+  /** Optional bottom padding - Tailwind class (e.g. 'pb-4', 'pb-8'). Default is pb-16 when not set. */
+  paddingBottom?: string;
+}
 
-export default function ComboPackagesSectionPreview() {
+export default function ComboPackagesSectionPreview({ paddingTop, paddingBottom }: ComboPackagesSectionPreviewProps = {}) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [openComboModal, setOpenComboModal] = useState<string | null>(null);
   const swiperRef = useRef<SwiperType | null>(null);
@@ -58,7 +64,7 @@ export default function ComboPackagesSectionPreview() {
   };
 
   return (
-    <section ref={sliderRef} className="px-4 pb-16 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
+    <section ref={sliderRef} className={`px-4 sm:px-6 lg:px-8 ${paddingBottom ?? 'pb-16'} ${paddingTop ?? ''}`.trim()} style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">

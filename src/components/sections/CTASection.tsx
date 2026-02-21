@@ -11,6 +11,7 @@ interface CTASectionProps {
   ctaLink?: string;
   secondaryCtaText?: string;
   secondaryCtaLink?: string;
+  /** 't' = top to bottom (white → gray), 'b' = bottom to top (gray → white), 'n' = no gradient (solid gray) */
   gradientDirection?: 't' | 'b' | 'n';
   hasPadding?: boolean;
 }
