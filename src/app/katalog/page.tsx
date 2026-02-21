@@ -325,8 +325,8 @@ function KatalogContent() {
               <div
                 id="katalog-filter-content"
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  isFilterOpen ? 'max-h-[85vh]' : 'max-h-0'
-                } lg:max-h-[calc(100vh-180px)] lg:opacity-100`}
+                  isFilterOpen ? 'max-h-[85vh] overflow-y-auto' : 'max-h-0'
+                } lg:max-h-none lg:overflow-visible lg:opacity-100`}
               >
                 <div className="p-6 pr-3 ps-7 pt-0 lg:pt-0 space-y-3">
               {/* Search */}
