@@ -169,8 +169,8 @@ export default function PricingPage() {
                 <div
                   id="cjenik-filter-content"
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isFilterOpen ? 'max-h-[85vh]' : 'max-h-0'
-                  } lg:max-h-[calc(100vh-180px)] lg:opacity-100`}
+                    isFilterOpen ? 'max-h-[85vh] overflow-y-auto' : 'max-h-0'
+                  } lg:max-h-none lg:overflow-visible lg:opacity-100`}
                 >
                   <div className="p-6 pr-3 ps-7 pt-0 lg:pt-0 space-y-3">
                 {/* Search */}
@@ -335,6 +335,29 @@ export default function PricingPage() {
                     </div>
                   </div>
                 </div>
+
+                {/* Clear Filters Button */}
+                {(searchTerm || selectedCategories.length > 0 || selectedBadges.length > 0) && (
+                  <div className="border-t border-gray-200 pt-4">
+                    <button
+                      onClick={() => {
+                        setIsTransitioning(true);
+                        setIsFiltering(true);
+                        setTimeout(() => {
+                          setSearchTerm('');
+                          setSelectedCategories([]);
+                          setSelectedBadges([]);
+                          requestAnimationFrame(scrollToContent);
+                        }, 150);
+                      }}
+                      className="w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium shadow-sm cursor-pointer
+                                 hover:bg-gray-200 hover:shadow-md transition-all duration-200 ease-out
+                                 border border-gray-200 hover:border-gray-300"
+                    >
+                      Očisti sve filtere
+                    </button>
+                  </div>
+                )}
 
                 {/* Results Count */}
                 <div className="border-t border-gray-200 pt-6">
