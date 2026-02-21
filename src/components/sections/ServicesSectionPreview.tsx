@@ -14,9 +14,11 @@ import 'swiper/css';
 interface ServicesSectionPreviewProps {
   /** Optional extra bottom padding - Tailwind class (e.g. 'pb-20', 'pb-24') */
   paddingBottom?: string;
+  /** Optional extra top padding - Tailwind class (e.g. 'pt-10', 'pt-20') */
+  paddingTop?: string;
 }
 
-export default function ServicesSectionPreview({ paddingBottom }: ServicesSectionPreviewProps = {}) {
+export default function ServicesSectionPreview({ paddingBottom, paddingTop }: ServicesSectionPreviewProps = {}) {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperType | null>(null);
   const totalSlides = Object.keys(services).length;
@@ -60,7 +62,7 @@ export default function ServicesSectionPreview({ paddingBottom }: ServicesSectio
   };
 
   return (
-    <section ref={sliderRef} className={`px-4 sm:px-6 lg:px-8 ${paddingBottom ?? ''}`.trim()} style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
+    <section ref={sliderRef} className={`px-4 sm:px-6 lg:px-8 ${paddingTop ?? ''} ${paddingBottom ?? ''}`.trim()} style={{ background: 'linear-gradient(to bottom, #ffffff, #e5e7eb)' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">

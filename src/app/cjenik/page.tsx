@@ -5,9 +5,28 @@ import { pricingData, pricingCategories, PricingItem } from '@/data/pricing';
 import { FaSearch, FaBox, FaChevronDown, FaChevronUp, FaStar } from 'react-icons/fa';
 import { FaFire, FaCrown } from 'react-icons/fa6';
 import React from 'react';
+import Link from 'next/link';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
+
+const DAN_ZENA_DISCOUNT = 0.1; // 10%
+
+function parsePrice(priceStr: string): { value: number; suffix: string } {
+  const match = priceStr.match(/^([\d.,]+)\s*(.*)$/);
+  if (!match) return { value: 0, suffix: '' };
+  const value = parseFloat(match[1].replace(',', '.'));
+  const suffix = (match[2] || '').trim();
+  return { value: isNaN(value) ? 0 : value, suffix };
+}
+
+function formatDiscountedPrice(priceStr: string): string | null {
+  const { value, suffix } = parsePrice(priceStr);
+  if (value <= 0) return null;
+  const discounted = value * (1 - DAN_ZENA_DISCOUNT);
+  const formatted = Number.isInteger(discounted) ? discounted : discounted.toFixed(2);
+  return `${formatted} ${suffix}`;
+}
 
 export default function PricingPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -131,7 +150,7 @@ export default function PricingPage() {
     <main>
       <HeroSection
         title="Cjenik usluga"
-        description="Pronađite savršenu uslugu za vaše potrebe. Naš cjenik je transparentan i jasno prikazuje sve naše usluge i njihove cijene."
+        description="10% popusta za Dan žena"
         image="/images/services/pricing-hero-visage-estetski-studio.webp"
       />
       <div className="w-full" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
@@ -142,7 +161,7 @@ export default function PricingPage() {
               Naše usluge
             </h2>
             <p className="text-xl text-gray-600">
-              Profesionalne estetske usluge za njegu lica i tijela s najnovijim tehnologijama i vrhunskim proizvodima
+              Profesionalne estetske usluge za njegu lica i tijela s najnovijim tehnologijama i vrhunskim proizvodima. Na sve usluge trenutno vrijedi 10% popusta u sklopu Dana žena - pogledajte snižene cijene uz svaku uslugu.
             </p>
           </div>
           
@@ -414,8 +433,23 @@ export default function PricingPage() {
                                 </div>
                                 <p className="text-sm text-gray-600">{item.description}</p>
                               </div>
-                              <div className="flex items-center justify-between sm:justify-end gap-4">
-                                <div className="text-base font-medium text-gray-900">{item.price}</div>
+                              <div className="flex flex-col items-end gap-2 sm:justify-end">
+                                <Link
+                                  href="/dan-zena"
+                                  className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-rose-600 text-white hover:bg-rose-700 transition-colors w-fit"
+                                >
+                                  10% Dan žena
+                                </Link>
+                                {formatDiscountedPrice(item.price) ? (
+                                  <div className="flex flex-wrap items-baseline justify-end gap-2">
+                                    <span className="text-sm text-gray-500 line-through">{item.price}</span>
+                                    <span className="text-base font-semibold text-rose-600">
+                                      {formatDiscountedPrice(item.price)}
+                                    </span>
+                                  </div>
+                                ) : (
+                                  <div className="text-base font-medium text-gray-900">{item.price}</div>
+                                )}
                               </div>
                             </div>
                           </div>

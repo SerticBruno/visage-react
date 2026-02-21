@@ -46,7 +46,7 @@ export default function Home() {
   // Get popular services using the utility function
   const popularServicesData = getPopularServices();
 
-  // Showcase slider items (mock data with horizontal images)
+  // Showcase: single slide for now (Dan žena); more slides can be added later
   const showcaseItems: ShowcaseItem[] = [
     {
       id: 'showcase-dan-zena',
@@ -59,43 +59,6 @@ export default function Home() {
       eventDate: '8. ožujka',
       discountLabel: '-10% ',
       ctaText: 'Rezervirajte tretman',
-    },
-    {
-      id: 'showcase-1',
-      image: '/images/services/toskani-woman-visage-estetski-studio.webp',
-      imageAlt: 'Tretmani lica VISAGE studio',
-      title: 'Profesionalni tretmani lica',
-      description: 'Nekirurški estetski tretmani prilagođeni vašim potrebama',
-      link: '/usluge',
-      price: 'Od 50 EUR',
-      discountLabel: 'Akcija',
-    },
-    {
-      id: 'showcase-2',
-      image: '/images/services/pricing-hero-visage-estetski-studio.webp',
-      imageAlt: 'Cjenik usluga',
-      title: 'Transparentni cjenik',
-      description: 'Pregledajte cijene naših tretmana i odaberite ono što vam odgovara',
-      link: '/cjenik',
-    },
-    {
-      id: 'showcase-3',
-      image: '/images/pages/katalog/katalog-visage-estetski-studio-sisak.webp',
-      imageAlt: 'Katalog proizvoda',
-      title: 'Katalog proizvoda',
-      description: 'TOSKANI, Circadia i drugi vodeći brendovi za njegu kože',
-      link: '/katalog',
-      price: 'Od 25 EUR',
-      oldPrice: '30 EUR',
-      discountLabel: '-17%',
-    },
-    {
-      id: 'showcase-4',
-      image: '/images/services/woman-face-visage-estetski-studio.webp',
-      imageAlt: 'Estetski tretmani',
-      title: 'Dermalni fileri i njega',
-      description: 'Savjetovanje i tretmani u centru Siska',
-      link: '/usluge',
     },
   ];
 
@@ -129,8 +92,8 @@ export default function Home() {
       <AboutSection />
       <ShowcaseSlider
         items={showcaseItems}
-        title="Istaknuta ponuda"
-        description="Posebne ponude i najtraženiji proizvodi za vašu njegu"
+        title="Dan žena"
+        description="Proslavite Dan žena u Visage studiju sa 10% popusta na sve usluge"
         widthFraction={0.8}
       />
       <ServiceSlider 

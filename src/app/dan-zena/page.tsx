@@ -30,7 +30,7 @@ export default function DanZenaPage() {
     <main>
       <HeroSection
         title="Dan žena u VISAGE studiju"
-        description="8. ožujka — posvetite si trenutak. Darujemo vam 10% popusta na sve usluge. Rezervirajte tretman i proslavite s njim za sebe."
+        description="8. ožujka - posvetite si trenutak. Darujemo vam 10% popusta na sve usluge. Rezervirajte tretman i proslavite s njim za sebe."
         image="/images/womensday.svg"
         ctaText="Rezervirajte tretman"
         ctaLink="/kontakt"
@@ -40,14 +40,14 @@ export default function DanZenaPage() {
       <AboutSection
         title="Dan žena u VISAGE studiju"
         description="Na Dan žena želimo vam dati do znanja da zaslužujete trenutak samo za sebe. Darujemo vam 10% popusta na sve usluge. Dođite u VISAGE studio u Sisku i prepustite se profesionalnim tretmanima lica i tijela — nekirurškoj estetici, njegi kože i opuštanju koje će vas oživjeti. Rezervirajte termin putem kontakta ili direktno u studiju."
-        imageSrc="/images/womensday.svg"
+        imageSrc="/images/womensday.png"
         imageAlt="Dan žena - VISAGE studio"
         buttonText="Rezervirajte termin"
         buttonHref="/kontakt"
         invertGradient
       />
       
-      <ComboPackagesSectionPreview paddingTop="pt-20" paddingBottom="pb-0" />
+      <ServicesSectionPreview paddingBottom="pb-0" paddingTop="pt-16" />
 
       <CTASection
         title="Rezervirajte svoj termin za 8. ožujka"
@@ -59,8 +59,7 @@ export default function DanZenaPage() {
         gradientDirection="b"
       />
 
-      
-      <ServicesSectionPreview paddingBottom="pb-20" />
+      <ComboPackagesSectionPreview paddingTop="pt-0" paddingBottom="pb-0" />
 
       <ContactSection hasTopPadding={false} />
     </main>
