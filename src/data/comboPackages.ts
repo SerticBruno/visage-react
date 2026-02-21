@@ -60,7 +60,7 @@ export const comboPackages: ComboPackage[] = [
     title: "Hair Boost",
     description: "Intenzivan tretman za poticanje rasta kose i jačanje vlasišta",
     image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
-    price: "770 EUR",
+    price: "784 EUR",
     oldPrice: "905 EUR",
     services: [
       { 
@@ -70,7 +70,7 @@ export const comboPackages: ComboPackage[] = [
       },
       { 
         id: "mezoterapija", 
-        title: "Mezoterapija vlasišta velike zone Mesoject gunom - 5 tretmana", 
+        title: "Mezoterapija vlasišta velike zone Dermapenom 4 - 5 tretmana", 
         image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.png"
       }
     ],
