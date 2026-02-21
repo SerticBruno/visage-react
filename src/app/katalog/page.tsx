@@ -61,7 +61,7 @@ function KatalogContent() {
                          product.marka.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesProductType = selectedProductTypes.length === 0 || 
       (product.productType && selectedProductTypes.includes(product.productType)) ||
-      (product.category && selectedProductTypes.includes(product.category));
+      (product.categories?.length && product.categories.some(c => selectedProductTypes.includes(c)));
     const matchesSkinType = selectedSkinTypes.length === 0 || 
       (product.skinType && product.skinType.some(skinType => selectedSkinTypes.includes(skinType)));
     const matchesSkinConcern = selectedSkinConcerns.length === 0 || 

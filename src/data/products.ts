@@ -3,7 +3,7 @@ export interface Product {
   title: string;
   description: string;
   previewDescription?: string;
-  category: string;
+  categories: string[];
   marka: string; // Brand field
   productType?: string; // New field for "Tip proizvoda"
   skinType?: string[]; // New field for "Tip kože"
@@ -108,7 +108,7 @@ export const products: Product[] = [
 
 Gel za čišćenje lica čuva neke slojeve masnoće na koži što sprječava isušivanje kože. Čisti, pročišćava i tonizira kožu.`,
     previewDescription: 'Gel sredstvo za čišćenje lica koje nježno čisti i tonizira kožu, čuvajući prirodnu hidrataciju',
-    category: 'Čišćenje lica',
+    categories: ['Čišćenje lica'],
     marka: 'TOSKANI',
     productType: 'Čišćenje lica',
     skinType: ['Suha koža', 'Normalna koža', 'Mješovita koža', 'Osjetljiva koža'],
@@ -141,7 +141,7 @@ Purifying Cleanser regulira proizvodnju sebuma i ostavlja kožu čistom, svježo
 
 Ovaj gel za čišćenje može se koristiti i na tijelu.`,
     previewDescription: 'Gel bez ulja koji regulira proizvodnju sebuma i čisti kožu sklonu aknama',
-    category: 'Čišćenje lica',
+    categories: ['Čišćenje lica'],
     marka: 'TOSKANI',
     productType: 'Čišćenje lica',
     skinType: ['Masna koža', 'Mješovita koža'],
@@ -172,7 +172,7 @@ Ovaj tonik sa svježim mirisom revitalizira i hidratizira kožu za potpuno proč
 
 Kombinira visoku koncentraciju biljnih ekstrakata kao što su bambus, limun i naranča, koji su prirodni izvor alfa-hidroksi kiselina.`,
     previewDescription: 'Tonik koji revitalizira i hidratizira kožu s prirodnim ekstraktima bambusa, limuna i naranče',
-    category: 'Tonik',
+    categories: ['Tonik'],
     marka: 'TOSKANI',
     productType: 'Tonik',
     skinType: ['Masna koža', 'Mješovita koža', 'Osjetljiva koža', 'Suha koža', 'Normalna koža'],
@@ -201,7 +201,7 @@ Sadrži ulje Rosa Mochata, sjemenke i vitamin E koji učinkovito zaglađuju kož
 
 Nutritive piling ostavlja kožu osvježenom, vidljivo čišću i mekšom uz zdrav sjaj u koji ćete se zaljubiti.`,
     previewDescription: 'Piling koji zaglađuje kožu i smanjuje nesavršenosti s uljem Rosa Mochata i vitaminom E',
-    category: 'Piling',
+    categories: ['Piling'],
     marka: 'TOSKANI',
     isPopular: true,
     productType: 'Piling',
@@ -233,7 +233,7 @@ Nutritive piling ostavlja kožu osvježenom, vidljivo čišću i mekšom uz zdra
 Formuliran s marokanskom glinom, ovaj piling uklanja višak ulja i stanica s površinskih slojeva kože pročišćavajući pore. Koža izgleda sjajnije, dok su sjaj i suhoća svedeni na minimum.
 
 Ekstrakt hamamelisa s adstringentnim svojstvima ostavlja osvježenu i ujednačenu kožu.`,
-    category: 'Piling',
+    categories: ['Piling'],
     marka: 'TOSKANI',
     productType: 'Piling',
     skinType: ['Masna koža', 'Mješovita koža'],
@@ -262,7 +262,7 @@ Ekstrakt hamamelisa s adstringentnim svojstvima ostavlja osvježenu i ujednačen
     description: `Zaštitna, hidratantna i hranjiva krema koja pruža moćnu regeneraciju suhe i normalne kože.
 
 Pruža snažne učinke obnavljanja kože. Poboljšava izgled oštećene kože.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Suha koža', 'Normalna koža'],
@@ -289,7 +289,7 @@ Pruža snažne učinke obnavljanja kože. Poboljšava izgled oštećene kože.`,
     description: `Obnavljajući, hidratantni i umirujući gel s aloe verom za normalnu, mješovitu i masnu kožu.
 
 Štiti i vlaži epidermu, pogodujući oporavku osjetljive kože nakon iritacija ili invazivnih tretmana.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'TOSKANI',
     isPopular: true,
     productType: 'Krema',
@@ -322,7 +322,7 @@ Sprječava dehidraciju, gubitak sjaja, mlitavost i pojavu bora i mrlja. Osim tog
 Sadrži liposomske aktivne sastojke za promicanje maksimalne učinkovitosti proizvoda.
 
 Preporučuje se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarjeloj koži, koži nejednake pigmentacije.`,
-    category: 'Zaštita od sunca',
+    categories: ['Zaštita od sunca'],
     marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža'],
@@ -350,7 +350,7 @@ Preporučuje se kao njega dehidrirane kože, kože s tamnim mrljama, foto-ostarj
 Njegovi aktivni sastojci koji djeluju u sinergiji kako bi se oduprli pojavi bora, umanjili bore i već formirane linije.
 
 Također pomaže u sprječavanju gubitka čvrstoće, pomaže koži da se vrati u njezino prirodno zdravlje i pruža ukupni učinak pomlađivanja.`,
-    category: 'Okoloočna njega',
+    categories: ['Okoloočna njega'],
     marka: 'TOSKANI',
     productType: 'Okoloočna njega',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
@@ -377,7 +377,7 @@ Također pomaže u sprječavanju gubitka čvrstoće, pomaže koži da se vrati u
     description: `Učinkovita krema za područje oko očiju koja ublažuje hiperpigmentacije i probleme s mikrocirkulacijom, koji uzrokuju podočnjake.
 
 Umanjite vrećice ispod očiju i podočnjake, pomažući drenaži i mikrocirkulaciji područja oko očiju i kapaka.`,
-    category: 'Okoloočna njega',
+    categories: ['Okoloočna njega'],
     marka: 'TOSKANI',
     productType: 'Okoloočna njega',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
@@ -407,7 +407,7 @@ Posebno razvijen za ujednačavanje tona kože i smanjenje nesavršenosti: sprje�
 
 Vaš novi saveznik u borbi protiv hiperpigmentacija s učinkovitim djelovanjem već u 1. mjesecu upotrebe!`,
     previewDescription: 'Vaš novi saveznik u borbi protiv hiperpigmentacija koji učinkovito ujednačava ton kože i smanjuje nesavršenosti',
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
@@ -441,7 +441,7 @@ Vaš novi saveznik u borbi protiv hiperpigmentacija s učinkovitim djelovanjem v
 Ovaj tretman treba povremeno koristiti kako bi se ubrzao nestanak lokaliziranih mrlja, štiteći ih od trenja i bakterija.
 
 Intenzivni serum indiciran je za lokalizirano liječenje mrlja i upala.`,
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Masna koža'],
@@ -469,7 +469,7 @@ Intenzivni serum indiciran je za lokalizirano liječenje mrlja i upala.`,
 Njeni aktivni sastojci djeluju zajedno kako bi smanjili upalu, smanjili bakterije i regulirali proizvodnju sebuma.
 
 Purifying krema također pomaže koži u borbi protiv slobodnih radikala i pruža vrlo nježan piling uz održavanje razine potrebne hidratacije u koži.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Masna koža'],
@@ -497,7 +497,7 @@ Purifying krema također pomaže koži u borbi protiv slobodnih radikala i pruž
 Pomaže pri minimiziranju vidljivih znakova starenja.
 
 Skin Architect mesoserum je serum koji rješava jedan od najfrustrirajućijih znakova starenja: opuštenu kožu.`,
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža', 'Zrela koža'],
@@ -526,7 +526,7 @@ Sadrži medicinsku hijaluronsku kiselinu i acetil heksapeptid-8 kao liposomski b
 
 Koži pruža čvrstoću i elastičnost uz primjetan lifting učinak. Hijaluronska kiselina niske molekularne težine (<100Kda), za dublju i dugotrajniju hidrataciju.`,
     previewDescription: 'Visoko koncentrirana krema protiv bora koja pruža koži čvrstoću i elastičnost uz primjetan lifting učinak.',
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža', 'Zrela koža'],
@@ -559,7 +559,7 @@ Koži pruža čvrstoću i elastičnost uz primjetan lifting učinak. Hijaluronsk
 Pomaže popraviti kožu od oštećenja uzrokovanih sunčevim zračenjem, zagađenjem, temperaturnim promjenama i lošim navikama.
 
 Jača barijeru kože, pogodan je za sve tipove kože, no najviše se preporučuje suhoj i dehidriranoj koži.`,
-    category: 'Noćna njega',
+    categories: ['Noćna njega'],
     marka: 'TOSKANI',
     productType: 'Noćna njega',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
@@ -589,7 +589,7 @@ Jača barijeru kože, pogodan je za sve tipove kože, no najviše se preporučuj
 Sadrži Alpsku termalnu vodu i ekstrakt morskog podrijetla koji pomaže zagladiti bore pružajući koži čvrstoću, hidrataciju i elastičnost.
 
 Pomaže u sprječavanju prvih znakova starenja. Jača kožnu barijeru. Pogodan je za biološku dob 20+ godina i sve tipove kože.`,
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
@@ -618,7 +618,7 @@ Pomaže u sprječavanju prvih znakova starenja. Jača kožnu barijeru. Pogodan j
 Pomaže u sprječavanju prvih znakova starenja, pruža maksimalnu hidrataciju te jača barijeru kože.
 
 Pogodno za biološku dob 20+ godina i sve tipove kože.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'TOSKANI',
     productType: 'Krema',
     isNew: true,
@@ -647,7 +647,7 @@ Pogodno za biološku dob 20+ godina i sve tipove kože.`,
 Sastoji se od kompleksa biljnog retinola i liposomalnog retinaldehida s velikom snagom učvršćivanja i protiv bora.
 
 Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
@@ -679,7 +679,7 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
 Sadrži spoj nastao od hijaluronske i retinoične kiseline te retinola biljnog podrijetla koji daje snagu protiv bora, zaglađuje nesavršenosti i ujednačava ton.
 
 Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
@@ -711,7 +711,7 @@ Pogodan za biološku dob 30+/40 godina i za sve tipove kože.`,
 S posebno biranim kompleksima anti-age aktivnih sastojaka koji ciljano djeluju na razne tipove znakova starenja: zategnutost, marionetske bore, Y zona (oval lica i vrat).
 
 Pogodno za biološku dob 45+ godina i za sve tipove kože.`,
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'TOSKANI',
     productType: 'Serum',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža', 'Zrela koža'],
@@ -741,7 +741,7 @@ S posebno biranim kompleksima anti-age aktivnih sastojaka koji ciljano djeluju n
 
 Pogodno za biološku dob 45+ godina i sve tipove kože.`,
     previewDescription: 'Globalni anti-aging za zrelu i suhu kožu s posebno biranim kompleksima anti-age aktivnih sastojaka',
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'TOSKANI',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža', 'Zrela koža'],
@@ -780,7 +780,7 @@ Namijenjeno svim vrstama alopecije i za svakodnevnu njegu fine, krhke i nježne 
 Losion protiv gubitka kose jača i revitalizira folikul dlake stimulirajući fazu rasta, povećavajući gustoću i poboljšavajući strukturu kose.
 
 Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlasištu.`,
-    category: 'Njega vlasišta',
+    categories: ['Njega vlasišta'],
     marka: 'TOSKANI',
     productType: 'Sprej',
     skinConcern: ['Opadanje kose'],
@@ -805,7 +805,7 @@ Ovaj losion pruža intenzivno djelovanje bez ostavljanja ostataka na kosi i vlas
     id: '24',
     title: 'DensiHair Boost Capsules',
     description: `Dodatak prehrani koji sadrži Sabal serrulata, vitamine i aminokiseline za jačanje kose i zaustavljanje gubitka kose.`,
-    category: 'Njega vlasišta',
+    categories: ['Njega vlasišta'],
     marka: 'TOSKANI',
     productType: 'Kapsule',
     skinConcern: ['Opadanje kose'],
@@ -835,7 +835,7 @@ Formula ove kreme inspirirana je epigenetikom. Time se sprječava prerano staren
 Krema je namijenjena svima koji pare od kože bez sjaja, oštećene kože koja je redovito izložena utjecajima iz okoline. Također, za kožu kojoj nedostaje hidratacije.
 
 Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od dnevnih oštećenja.`,
-    category: 'Noćna njega',
+    categories: ['Noćna njega'],
     marka: 'TOSKANI',
     productType: 'Krema',
     isForNight: true,
@@ -868,7 +868,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     Sadrži probiotike, funkcionalne peptide, čimbenike rasta i hijaluronsku kiselinu koji pomažu smanjiti i usporiti znakove starenja.
 
     Intenzivna njega od 30 dana.`,
-    category: 'Ampule',
+    categories: ['Ampule'],
     marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
@@ -909,7 +909,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     Pojačava i ujednačava ton kože, sprječava dehidraciju, gubitak sjaja, ispravlja znakove fotostarenja, mlohavost i pojavu mrlja.
 
     Intenzivna njega od 30 dana.`,
-    category: 'Ampule',
+    categories: ['Ampule'],
     marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
@@ -951,7 +951,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     Hidratiziraju kožu, poboljšavaju elastičnost i strukturu kože i imaju antioksidirajuća svojstva.
 
     Intenzivna njega od 30 dana.`,
-    category: 'Ampule',
+    categories: ['Ampule'],
     marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Osjetljiva koža'],
@@ -995,7 +995,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     Održavaju gladak i mat ten, reguliraju sebum te umanjuju tragove i ožiljke na koži.
 
     Intenzivna njega od 30 dana.`,
-    category: 'Ampule',
+    categories: ['Ampule'],
     marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Masna koža'],
@@ -1019,7 +1019,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     id: '30',
     title: 'Lipo Proteoglycans Ampule',
     description: `Lipo Proteoglycans ampule su intenzivan dnevni tretman koji pomaže u obnavljanju vezivnog tkiva i stimulaciji proizvodnje kolagena. Formuliran s liposomskim proteoglikanima prirodnog porijekla, koji dubinski hidratiziraju i posjeduju svojstva učvršćivanja te posvjetljuju kožu. Intenzivna dnevna kura od 30 dana.`,
-    category: 'Ampule',
+    categories: ['Ampule'],
     marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
@@ -1058,7 +1058,7 @@ Višestruko regenerirajući noćni tretman za resetiranje kože i obnavljanje od
     
     Vrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D. Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
     previewDescription: 'Regenerativna zaštita kože od sunca koja potiče i poboljšava sintezu vitamina D',
-    category: 'Zaštita od sunca',
+    categories: ['Zaštita od sunca'],
     marka: 'TOSKANI',
     isPopular: true,
     productType: 'Fluid',
@@ -1097,7 +1097,7 @@ Nije komedogen, što ga čini dobrim izborom i za masnu kožu.
 Vrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.
 
 Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.`,
-    category: 'Zaštita od sunca',
+    categories: ['Zaštita od sunca'],
     marka: 'TOSKANI',
     productType: 'Fluid',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
@@ -1129,7 +1129,7 @@ Vrlo je visoke fotozaštite SPF50+ i poboljšava sintezu vitamina D.
 Pruža širok spektar zaštite od sunca, što je ključno za zaštitu kože od oštećenja uzrokovanih različitim vrstama zračenja kao što su UVA, UVB, IR, HEV.
 
 Vodootporan je.`,
-    category: 'Zaštita od sunca',
+    categories: ['Zaštita od sunca'],
     marka: 'TOSKANI',
     productType: 'Sprej',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
@@ -1160,7 +1160,7 @@ Vodootporan je.`,
 Preporuka za korištenje prije bitnih događaja za intenzivan "blic" efekt.
 
 Sadrži aktivne sastojke koji pružaju trenutačni efekt liftinga, omekšavaju bore i posvjetljavaju kožu. Imaju snažan antioksidativni učinak, smanjuju znakove starenja i umora, pružajući svježiji i mlađi izgled.`,
-    category: 'Ampule',
+    categories: ['Ampule'],
     marka: 'TOSKANI',
     productType: 'Ampule',
     skinType: ['Normalna koža', 'Suha koža', 'Mješovita koža', 'Masna koža'],
@@ -1204,7 +1204,7 @@ Zahvaljujući povezanosti hijaluronskih kiselina niske i velike molekularne tež
 Vraća zaštitnu barijeru osjetljive kože koja je iritirana i crvena zbog oksidativnog stresa ili nakon estetskih tretmana.
 
 Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne težine obnavlja i održava integritet hidrolipidnog sloja kože, HA niske molekularne težine održava optimalnu hidriranost kože.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'Profhilo',
     productType: 'Krema',
     skinType: ['Normalna koža', 'Suha koža', 'Osjetljiva koža', 'Mješovita koža', 'Masna koža'],
@@ -1232,7 +1232,7 @@ Sinergistički učinak kompleksa hijaluronske kiseline: HA visoke molekularne te
 Namijenjen masnoj koži i koži sklonoj aknama.
 
 Može se koristiti i na tijelu.`,
-    category: 'Čišćenje lica',
+    categories: ['Čišćenje lica'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Čišćenje lica',
@@ -1263,7 +1263,7 @@ Može se koristiti i na tijelu.`,
 Pogodan za sve tipove kože.
 
 Pogodan za svakodnevno korištenje.`,
-    category: 'Čišćenje lica', 
+    categories: ['Čišćenje lica', 'Piling'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Čišćenje lica',
@@ -1293,7 +1293,7 @@ Pogodan za svakodnevno korištenje.`,
 Čistač na bazi ulja, koji je odličan za suhu i dehidriranu kožu.
 
 Pomaže očuvanju barijere kože i sadrži mješavinu prirodnih ulja i vitamina E.`,
-    category: 'Čišćenje lica',
+    categories: ['Čišćenje lica'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Čišćenje lica',
@@ -1321,7 +1321,7 @@ Pomaže očuvanju barijere kože i sadrži mješavinu prirodnih ulja i vitamina 
     description: `Osvježavajući gel za čišćenje lica koji učinkovito uklanja prljavštinu, šminku i višak lipida bez oštećenja barijere kože ili denaturacije keratina.
 
 Namijenjen svim tipovima kože, posebno normalnoj i mješovitoj koži.`,
-    category: 'Čišćenje lica',
+    categories: ['Čišćenje lica'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Čišćenje lica',
@@ -1349,7 +1349,7 @@ Namijenjen svim tipovima kože, posebno normalnoj i mješovitoj koži.`,
     description: `Njegujući čistač od bademovog mlijeka koji sadrži mliječnu kiselinu i mandeličnu kiselinu koje nježno eksfoliraju, hidratiziraju i posvjetljuju oštećenu kožu.
 
 Posebno namijenjen suhoj, dehidriranoj koži i koži sklonoj hiperpigmentacijama.`,
-    category: 'Čišćenje lica',
+    categories: ['Čišćenje lica'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Čišćenje lica',
@@ -1381,7 +1381,7 @@ Ovaj lagani serum također sadrži hijaluronsku kiselinu i vitamin B5 za hidrata
 Namijenjen svim tipovima kože, a posebno za anti-age djelovanje.
 
 Posvjetljuje i učvršćuje kožu.`,
-    category: 'Serum',
+    categories: ['Serum'],
     isRecommended: true,
     marka: 'Circadia',
     isNew: true,
@@ -1414,7 +1414,7 @@ Pomaže u posvjetljivanju tamnih mrlja i poboljšanju sjaja. Hidratizira i omek�
 Namijenjena oštećenoj koži, koži s pigmentacijama, koži sa znakovima starenja i melazmom nakon trudnoće.
 
 Ne sadrži hidrokinone ili kojnu kiselinu.`,
-    category: 'Tonik',
+    categories: ['Tonik'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Tonik',
@@ -1446,7 +1446,7 @@ Namijenjen oštećenoj koži, koži s pigmentacijama i znakovima starenja. Posvj
 Hidratizira kožu i posvjetljuje ju.
 
 Koristi se kao spot tretman.`,
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Serum',
@@ -1480,7 +1480,7 @@ Učinkovito posvjetljuje neravnomjerno pigmentiranu kožu
 Inhibira proizvodnju tirozinaze.
 
 Ne sadrži hidrokinon ili kojnu kiselinu.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Krema',
@@ -1510,7 +1510,7 @@ Ne sadrži hidrokinon ili kojnu kiselinu.`,
 Sadrži UVA/UVB zaštitu.
 
 Namijenjen je svim tipovima kože i ima hidratantna i anti-age svojstva.`,
-    category: 'Zaštita od sunca',
+    categories: ['Zaštita od sunca'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Krema',
@@ -1543,7 +1543,7 @@ Sadrži Beta glukan druge generacije i Neodermyl®, bakarni peptid nove generaci
 Pogodan za sve tipove kože.
 
 Ima anti-aging svojstva i svojstva posvjetljivanja kože.`,
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Serum',
@@ -1574,7 +1574,7 @@ Ima anti-aging svojstva i svojstva posvjetljivanja kože.`,
 Smanjuje bore i povećava čvrstoću i elastičnost kože. Pomlađuje stanice kože i nudi visoku antioksidativnu zaštitu.
 
 Pogodan za korištenje na oštećenoj koži i koži koja pokazuje prve znakove starenja`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Krema',
@@ -1608,7 +1608,7 @@ Pogodan za korištenje na oštećenoj koži i koži koja pokazuje prve znakove s
 Namijenjen zreloj koži ili koži s većim oštećenjima
 
 Smanjuje bore, povećava elastičnost i čvrstoću kože, nudi visoku antioksidacijsku zaštitu i oživljava stanice kože.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'Circadia',
     isNew: true,
     isForNight: true,
@@ -1641,7 +1641,7 @@ Sadrži sastojke koji pomažu stanicama kože da izgrade novo tkivo te je bogat 
 Smanjuje bore i fine linije te revitalizira kožu i čini ju elastičnom.
 
 Namijenjen svim tipovima kože.`,
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Serum',
@@ -1673,7 +1673,7 @@ Ovaj proizvod također može biti korišten kao alternativni tretman vitaminu A 
 Štiti kožu od oštećenja slobodnim radikalima koji uzrokuju oštećenje lipida i DNA te ima antioksidativna svojstva.
 
 Namijenjen svim tipovima kože.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Krema',
@@ -1706,7 +1706,7 @@ Ovaj kompleks protiv bora s anti-age učinkom pomaže koži da se osjeća i izgl
 Namijenjen osjetljivoj i oštećenoj koži, koži osjetljivoj na Vitamin A, koži sa znakovima starenja, suhoj koži.
 
 Namijenjen za sve tipove kože.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Krema',
@@ -1740,7 +1740,7 @@ Odličan za kožu kojoj nedostaje kolagena i elastičnosti.
 Posebna formulacija amino-kiselina smanjuje opuštenost kože i bore, dok peptidi smanjuju pojavu sitnih linija i bora.
 
 Namijenjen svim tipovima kože, posebno koži sa znakovima starenja`,
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Serum',
@@ -1772,7 +1772,7 @@ Multi-peptidna formula inhibira određene spojeve koji uzrokuju bore u koži te 
 Stimulira proizvodnju i regeneraciju kolagena i povećava elastičnost kože.
 
 Namijenjen je zreloj koži.`,
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Serum',
@@ -1802,7 +1802,7 @@ Namijenjen je zreloj koži.`,
 Sadrži kompleks lipida identičan koži koji povećava kapacitet zadržavanja vode i pruža polu-okluzivnu i zaštitnu barijeru.
 
 Brzo upijajući balzam koji smiruje kožu.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Krema',
@@ -1832,7 +1832,7 @@ Brzo upijajući balzam koji smiruje kožu.`,
 Sadrži peptide koji smanjuju crvenilo lica i proširenje krvnih žila te biljne ekstrakte koji aktiviraju sustav popravka kože te imaju protuupalna i antioksidativna svojstva.
 
 Namijenjen osjetljivoj koži, koži sklonoj crvenilu, iziritiranoj koži, koži s vidljivim kapilarima i rosaceom`,
-    category: 'Serum',
+    categories: ['Serum'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Serum',
@@ -1864,7 +1864,7 @@ Sadrži hidratizirajuće agense i moćne antiiritante koji pomažu u smanjenju c
 Ekstrakti biljaka djeluju na smanjenje crvenila, iritacija i svrbeža kože. Sadrži peptide i njegujuće lipidne komplekse koji pomažu obnoviti integritet barijere kože.
 
 Odmah nakon uporabe koža je manje iritirana, mekša i hidratizirana.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Krema',
@@ -1894,7 +1894,7 @@ Odmah nakon uporabe koža je manje iritirana, mekša i hidratizirana.`,
 Ekstrakt aloe potiče zacjeljivanje kože i ima umirujuće djelovanje.
 
 Hidratizira i umiruje nadraženu kožu te smiruje tegobe povezane s rosaceom i nadraženom kožom.`,
-    category: 'Tonik',
+    categories: ['Tonik'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Tonik',
@@ -1922,7 +1922,7 @@ Hidratizira i umiruje nadraženu kožu te smiruje tegobe povezane s rosaceom i n
     description: `Ova krema pomaže smiriti crvenilo i iritaciju povezanu s rosaceom, dok pomaže u kontroli grinja demodexa, za koju se smatra da pridonosi rosacei.
 
 Za osobe kojima je dijagnosticirana rozacea. Lagan je i podržava funkciju barijere i zadržavanje vlage.`,
-    category: 'Krema',
+    categories: ['Krema'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Krema',
@@ -1950,7 +1950,7 @@ Za osobe kojima je dijagnosticirana rozacea. Lagan je i podržava funkciju barij
     title: 'Emergency Eye Lift',
     description: 'Ovaj kristalno prozirni gel trenutno zateže i podiže područje oko očiju te popunjava fine linije za mlađi izgled. Ima učinak trenutačnog zatezanje i učvršćivanja područja oko očiju. Hidratizira i popunjava fine linije i bore. Namijenjen je svim tipovima kože. Savršen je za primjenu prije posebnog događaja, s dugotrajnim rezultatima. Dužim korištenjem pomlađuje područje oko očiju.',
     previewDescription: 'Kristalno prozirni gel za trenutno zatezanje i podizanje područja oko očiju',
-    category: 'Okoloočna njega',
+    categories: ['Okoloočna njega'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Gel',
@@ -1978,7 +1978,7 @@ Za osobe kojima je dijagnosticirana rozacea. Lagan je i podržava funkciju barij
     title: 'Full Circle Eye Repair',
     description: 'Pojačava prirodni ciklus obnove kože dok pomaže u sprječavanju nastanka novih linija i smanjenju natečenosti. Peptidi potiču, popravljaju i povećavaju formiranje kolagena te smanjuju nastanak novih linija. Vitamin A jača potpornu tkivu, pomaže u rastu i popravku epidermisa, potiče fibroblastične stanice da proizvode kolagen i zadebljavaju kožu, poboljšavajući čvrstoću i elastičnost. Djeluje na smanjenje nakupljanja tekućine na području oko očiju.',
     previewDescription: 'Set za okoloočnu njegu koji pojačava prirodni ciklus obnove kože',
-    category: 'Set',
+    categories: ['Set'],
     marka: 'Circadia',
     isNew: true,
     productType: 'Set',

@@ -209,7 +209,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                      {currentProduct.volume && (
                        <div className={`bg-slate-50 rounded-lg p-2 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                          <h3 className="text-xs font-semibold text-slate-900 mb-1">
-                           {currentProduct.category === 'Beauty Tretmani' ? 'Trajanje' : 'Sadržaj'}
+                           {currentProduct.categories?.includes('Beauty Tretmani') ? 'Trajanje' : 'Sadržaj'}
                          </h3>
                          <p className="text-xs text-slate-600">{currentProduct.volume}</p>
                        </div>
@@ -290,7 +290,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                     <div className={`mt-3 bg-slate-50 rounded-xl p-3 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                       <div className="flex items-center justify-between mb-1">
                         <h3 className="text-sm font-semibold text-slate-900">
-                          {currentProduct.category === 'Beauty Tretmani' ? 'Trajanje' : 'Sadržaj'}
+                          {currentProduct.categories?.includes('Beauty Tretmani') ? 'Trajanje' : 'Sadržaj'}
                         </h3>
                         <span className="text-sm font-medium text-slate-600">
                           {currentProduct.marka}
@@ -321,7 +321,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
 
                     {currentProduct.application && (
                       <div className="bg-slate-50 rounded-xl p-3">
-                        {currentProduct.category !== 'Beauty Tretmani' && (
+                        {!currentProduct.categories?.includes('Beauty Tretmani') && (
                           <h3 className="text-sm font-semibold text-slate-900 mb-3">Kako koristiti</h3>
                         )}
                         <div className="space-y-4">
@@ -413,9 +413,9 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                     {currentProduct.activeIngredients && (
                       <div className="bg-slate-50 rounded-xl p-3">
                         <h3 className="text-sm font-semibold text-slate-900 mb-3">
-                          {currentProduct.category === 'Beauty Tretmani' ? 'Prednosti' : 'Aktivni sastojci'}
+                          {currentProduct.categories?.includes('Beauty Tretmani') ? 'Prednosti' : 'Aktivni sastojci'}
                         </h3>
-                        {currentProduct.category === 'Beauty Tretmani' ? (
+                        {currentProduct.categories?.includes('Beauty Tretmani') ? (
                           <div className="space-y-2">
                             {currentProduct.activeIngredients.map((ingredient, index) => (
                               <div key={index} className="flex items-start">
