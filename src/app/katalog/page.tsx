@@ -1,11 +1,10 @@
 'use client';
 
 import { useState, useRef, useEffect, Fragment, Suspense } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp, FaSearch, FaChevronLeft, FaChevronRight, FaBox } from 'react-icons/fa';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import { products, productTypes, skinTypes, skinConcerns, brands, type Product } from '@/data/products';
-import { FaSearch, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaFire, FaSun, FaMoon, FaCrown, FaStar } from 'react-icons/fa6';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
@@ -73,7 +72,8 @@ function KatalogContent() {
       (selectedBadges.includes('day') && product.isForDay) ||
       (selectedBadges.includes('night') && product.isForNight) ||
       (selectedBadges.includes('recommended') && product.isRecommended) ||
-      (selectedBadges.includes('novo') && product.isNew);
+      (selectedBadges.includes('novo') && product.isNew) ||
+      (selectedBadges.includes('set') && product.isSet);
     return matchesSearch && matchesProductType && matchesSkinType && matchesSkinConcern && matchesBrands && matchesBadges;
   });
 
@@ -622,7 +622,7 @@ function KatalogContent() {
                         Za noć
                       </span>
                     </label>
-                    <label className="flex items-center space-x-2 cursor-pointer pb-2">
+                    <label className="flex items-center space-x-2 cursor-pointer">
                       <input
                         type="checkbox"
                         checked={selectedBadges.includes('recommended')}
@@ -632,6 +632,18 @@ function KatalogContent() {
                       <span className="text-sm text-gray-700 flex items-center gap-1">
                         <FaCrown className="w-3 h-3 text-gray-600" />
                         Naša preporuka
+                      </span>
+                    </label>
+                    <label className="flex items-center space-x-2 cursor-pointer pb-2">
+                      <input
+                        type="checkbox"
+                        checked={selectedBadges.includes('set')}
+                        onChange={() => toggleBadge('set')}
+                        className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
+                      />
+                      <span className="text-sm text-gray-700 flex items-center gap-1">
+                        <FaBox className="w-3 h-3 text-gray-600" />
+                        Set
                       </span>
                     </label>
                     <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
@@ -739,6 +751,12 @@ function KatalogContent() {
                         <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full inline-flex items-center gap-0.5 sm:gap-1 shadow-sm w-fit">
                           <FaCrown className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                           <span className="hidden sm:inline">Preporuka</span>
+                        </span>
+                      )}
+                      {product.isSet && (
+                        <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full inline-flex items-center gap-0.5 sm:gap-1 shadow-sm w-fit">
+                          <FaBox className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                          <span className="hidden sm:inline">Set</span>
                         </span>
                       )}
                     </div>

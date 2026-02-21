@@ -2,7 +2,7 @@
 
 import React, { Fragment, useEffect, useState, useCallback } from 'react';
 import { Transition } from '@headlessui/react';
-import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt, FaStar } from 'react-icons/fa';
+import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt, FaStar, FaBox } from 'react-icons/fa';
 import Image from 'next/image';
 import { Product } from '@/data/products';
 
@@ -177,6 +177,12 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                             Limitirano
                           </span>
                         )}
+                        {currentProduct.isSet && (
+                          <span className="bg-slate-700 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                            <FaBox className="w-3 h-3" />
+                            Set
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -260,6 +266,12 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                         <span className="bg-violet-500 text-white text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-2 shadow-lg">
                           <FaFire className="w-4 h-4" />
                           Limitirano
+                        </span>
+                      )}
+                      {currentProduct.isSet && (
+                        <span className="bg-slate-700 text-white text-sm font-semibold px-3 py-1 rounded-full flex items-center gap-2 shadow-lg">
+                          <FaBox className="w-4 h-4" />
+                          Set
                         </span>
                       )}
                     </div>

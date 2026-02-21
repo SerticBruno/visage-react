@@ -19,6 +19,7 @@ export interface Product {
   isForDay?: boolean; // New field for day use tag
   isForNight?: boolean; // New field for night use tag
   isRecommended?: boolean; // New field for recommended tag
+  isSet?: boolean; // New field for set/bundle tag
   features?: string[];
   volume?: string;
   activeIngredients?: string[];
@@ -1978,13 +1979,14 @@ Za osobe kojima je dijagnosticirana rozacea. Lagan je i podržava funkciju barij
     title: 'Full Circle Eye Repair',
     description: 'Pojačava prirodni ciklus obnove kože dok pomaže u sprječavanju nastanka novih linija i smanjenju natečenosti. Peptidi potiču, popravljaju i povećavaju formiranje kolagena te smanjuju nastanak novih linija. Vitamin A jača potpornu tkivu, pomaže u rastu i popravku epidermisa, potiče fibroblastične stanice da proizvode kolagen i zadebljavaju kožu, poboljšavajući čvrstoću i elastičnost. Djeluje na smanjenje nakupljanja tekućine na području oko očiju.',
     previewDescription: 'Set za okoloočnu njegu koji pojačava prirodni ciklus obnove kože',
-    categories: ['Set'],
+    categories: ['Set', 'Okoloočna njega'],
     marka: 'Circadia',
     isNew: true,
+    isSet: true,
     productType: 'Set',
     skinType: ['Svi tipovi kože'],
     skinConcern: ['Anti-age', 'Hidratacija', 'Okoloočna njega', 'Hiperpigmentacije'],
-    image: '/images/products/circadia/CircadiaFullCircleEyeRepair.webp',
+    image: '/images/products/circadia/CircadiaFullCircleEyeRepair.svg',
     price: '154 EUR',
     volume: '30 ml',
     activeIngredients: ['Argireline (acetyl hexapeptide-8)', 'Haloxyl (N-hydroxylsuccinimide, Chrysin, Palmitoyl oligopeptide, Palmitoyl Tetrapep-tide-7)', 'A2G (L-ascorbic acid 2-glucoside)'],
