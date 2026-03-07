@@ -12,6 +12,9 @@ interface HeroSectionProps {
   image?: string;
   ctaText?: string;
   ctaLink?: string;
+  /** Secondary CTA (dark style), e.g. for Dan žena */
+  secondaryCtaText?: string;
+  secondaryCtaLink?: string;
   variant?: 'home' | 'default';
   serviceName?: string;
   titleIcon?: React.ReactNode;
@@ -24,6 +27,8 @@ const HeroSection = ({
   image,
   ctaText,
   ctaLink,
+  secondaryCtaText,
+  secondaryCtaLink,
   variant = 'default',
   serviceName,
   titleIcon,
@@ -202,22 +207,32 @@ const HeroSection = ({
             </p>
           </motion.div>
 
-          {ctaText && ctaLink && (
+          {(ctaText && ctaLink) || (secondaryCtaText && secondaryCtaLink) ? (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="mb-16"
+              className="mb-16 flex flex-wrap items-center justify-center gap-4"
             >
-              <Link
-                href={serviceName ? `${ctaLink}?service=${encodeURIComponent(serviceName)}` : ctaLink}
-                className="group inline-flex items-center gap-3 bg-white text-gray-900 px-10 py-5 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg text-lg"
-              >
-                {ctaText}
-                <FaArrowRight className="transform group-hover:translate-x-1 transition-transform duration-300" />
-              </Link>
+              {secondaryCtaText && secondaryCtaLink && (
+                <Link
+                  href={secondaryCtaLink}
+                  className="group inline-flex items-center gap-3 bg-gray-900/80 text-white border border-white/30 px-10 py-5 rounded-full font-semibold hover:bg-gray-800 hover:border-white/50 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg text-lg"
+                >
+                  {secondaryCtaText}
+                </Link>
+              )}
+              {ctaText && ctaLink && (
+                <Link
+                  href={serviceName ? `${ctaLink}?service=${encodeURIComponent(serviceName)}` : ctaLink}
+                  className="group inline-flex items-center gap-3 bg-white text-gray-900 px-10 py-5 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg text-lg"
+                >
+                  {ctaText}
+                  <FaArrowRight className="transform group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
+              )}
             </motion.div>
-          )}
+          ) : null}
         </div>
 
         {/* Scroll Indicator */}

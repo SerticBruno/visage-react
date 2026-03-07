@@ -85,8 +85,10 @@ export default function Home() {
         title="VISAGE studio"
         description="Dan žena - 10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i posvetite si trenutak."
         image="/images/womensday.svg"
-        ctaText="Rezervirajte za Dan žena"
-        ctaLink="/dan-zena"
+        ctaText="Kontakt"
+        ctaLink="/kontakt"
+        secondaryCtaText="Dan žena"
+        secondaryCtaLink="/dan-zena"
         variant="home"
       />
       <AboutSection />
