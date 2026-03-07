@@ -46,7 +46,7 @@ export default function Home() {
   // Get popular services using the utility function
   const popularServicesData = getPopularServices();
 
-  // Showcase: single slide for now (Dan žena); more slides can be added later
+  // Showcase: Dan žena — Dermapen 10% akcija, rezervacija do kraja ožujka
   const showcaseItems: ShowcaseItem[] = [
     {
       id: 'showcase-dan-zena',
@@ -54,11 +54,11 @@ export default function Home() {
       image: '/images/womensday.svg',
       imageAlt: 'Dan žena - VISAGE studio',
       title: 'Dan žena',
-      description: 'Darujemo vam 10% popusta na sve usluge. Posvetite si trenutak i rezervirajte tretman 8. ožujka.',
+      description: '10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i posvetite si trenutak.',
       link: '/dan-zena',
-      eventDate: '8. ožujka',
-      discountLabel: '-10% ',
-      ctaText: 'Rezervirajte tretman',
+      eventDate: 'Rezervacija do 31. ožujka',
+      discountLabel: 'Dermapen -10%',
+      ctaText: 'Rezervirajte za Dan žena',
     },
   ];
 
@@ -83,17 +83,17 @@ export default function Home() {
     <main>
       <HeroSection
         title="VISAGE studio"
-        description="Estetski studio specijaliziran za nekirurške estetske tretmane lica koji su prilagođeni vašim potrebama"
-        image="/images/services/toskani-woman-visage-estetski-studio.webp"
-        ctaText="Dogovorite termin"
-        ctaLink="/kontakt"
+        description="Dan žena - 10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i posvetite si trenutak."
+        image="/images/womensday.svg"
+        ctaText="Rezervirajte za Dan žena"
+        ctaLink="/dan-zena"
         variant="home"
       />
       <AboutSection />
       <ShowcaseSlider
         items={showcaseItems}
         title="Dan žena"
-        description="Proslavite Dan žena u Visage studiju sa 10% popusta na sve usluge"
+        description="Proslavite Dan žena - 10% popusta na Dermapen 4. Rezervacija do kraja ožujka."
         widthFraction={0.8}
       />
       <ServiceSlider 
