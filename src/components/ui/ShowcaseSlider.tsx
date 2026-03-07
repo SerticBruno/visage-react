@@ -86,8 +86,6 @@ export default function ShowcaseSlider({
       style={{ background: 'rgb(229, 231, 235)' }}
     >
       <div className="container mx-auto px-4 max-w-7xl">
-        <SectionHeading title={title} description={description} />
-
         <div className="flex justify-center">
           <div
             className="relative w-full max-w-full"
