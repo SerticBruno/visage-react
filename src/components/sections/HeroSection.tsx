@@ -169,7 +169,7 @@ const HeroSection = ({
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8"
           >
-            {variant === 'home' ? (
+            {variant === 'default' ? (
               <div className="flex flex-col items-center">
                 <div className="relative w-full flex justify-center">
                   <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-[0.6em] text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-['Versailles'] pl-[0.6em]">
@@ -217,7 +217,7 @@ const HeroSection = ({
               {secondaryCtaText && secondaryCtaLink && (
                 <Link
                   href={secondaryCtaLink}
-                  className="group inline-flex items-center gap-3 bg-gray-900/80 text-white border border-white/30 px-10 py-5 rounded-full font-semibold hover:bg-gray-800 hover:border-white/50 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg text-lg"
+                  className="group inline-flex items-center gap-3 bg-[#9d304e] text-white border border-white/30 px-10 py-5 rounded-full font-semibold hover:bg-gray-800 hover:border-white/50 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg text-lg"
                 >
                   {secondaryCtaText}
                 </Link>

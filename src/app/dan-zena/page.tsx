@@ -9,11 +9,11 @@ import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview
 export const metadata: Metadata = {
   title: 'Dan žena - Dermapen 10% popusta',
   description:
-    'Proslavite Dan žena u VISAGE studiju. 10% popusta na Dermapen 4 — rezervirajte termin do kraja ožujka.',
+    'Proslavite Dan žena u VISAGE studiju. 10% popusta na Dermapen 4 - rezervirajte termin do kraja ožujka.',
   openGraph: {
     title: 'Dan žena | VISAGE Studio',
     description:
-      '10% popusta na Dermapen. Rezervirajte termin do kraja ožujka i posvetite si trenutak.',
+      '10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i poklonite svojoj koži i vlasištu obnovu kakvu zaslužuju.',
     images: [
       {
         url: '/images/womensday.svg',
@@ -30,17 +30,21 @@ export default function DanZenaPage() {
     <main>
       <HeroSection
         title="Dan žena u VISAGE studiju"
-        description="10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i posvetite si trenutak za sebe."
+        description="10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i poklonite svojoj koži i vlasištu obnovu kakvu zaslužuju."
         image="/images/womensday.svg"
-        ctaText="Rezervirajte za Dan žena"
+        ctaText="Rezervirajte termin"
         ctaLink="/kontakt"
-        variant="default"
+        variant="home"
       />
 
       <AboutSection
         title="Dan žena u VISAGE studiju"
-        description="Na Dan žena želimo vam dati do znanja da zaslužujete trenutak samo za sebe. Darujemo vam 10% popusta na Dermapen 4. Rezervacija je moguća do kraja ožujka. Dođite u VISAGE studio u Sisku i prepustite se profesionalnim tretmanima lica i tijela — nekirurškoj estetici, njegi kože i opuštanju koje će vas oživjeti. Rezervirajte termin putem kontakta ili direktno u studiju."
-        imageSrc="/images/womensday.png"
+        description="Ovog ožujka odvojite vrijeme za sebe i počastite se Dermapen 4 tretmanom.
+
+Darujemo vam 10% popusta na Dermapen 4 tretmane. Akcija traje do kraja ožujka.
+
+Dermapen 4 potiče prirodnu regeneraciju kože, poboljšava teksturu, smanjuje ožiljke, pore i sitne bore te poboljšava kvalitetu vlasišta i potiče rast kose."
+        imageSrc="/images/services/mezoterapija/mezoterapija-tijek-tretmana-visage-estetski-studio.jpeg"
         imageAlt="Dan žena - VISAGE studio"
         buttonText="Rezervirajte termin"
         buttonHref="/kontakt"
@@ -51,7 +55,7 @@ export default function DanZenaPage() {
 
       <CTASection
         title="Rezervirajte svoj termin do kraja ožujka"
-        description="10% popusta na Dermapen 4. Kontaktirajte nas i dogovorite posjet — radujemo se vašem pozivu ili poruci."
+        description="Iskoristite 10% popusta na Dermapen 4. Kontaktirajte nas i dogovorite termin."
         ctaText="Rezervirajte termin"
         ctaLink="/kontakt"
         secondaryCtaText="Pogledajte usluge"

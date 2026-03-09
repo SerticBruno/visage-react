@@ -176,10 +176,10 @@ function ShowcaseEventCard({ item }: { item: ShowcaseItem }) {
           background: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%)',
         }}
       />
-      {/* Content — right-aligned, extra horizontal padding so text clears arrow buttons */}
+      {/* Content - right-aligned, extra horizontal padding so text clears arrow buttons */}
       <div className="absolute inset-0 flex flex-col justify-end items-end py-6 px-14 md:py-10 md:px-24">
         <div className="max-w-xl text-right w-full flex flex-col items-end">
-          {/* Discount badge — right side, above the text */}
+          {/* Discount badge - right side, above the text */}
           {item.discountLabel && (
             <span className="inline-block px-4 py-2 md:px-5 md:py-2.5 bg-black text-white text-sm md:text-base font-bold rounded-xl shadow-lg ring-2 ring-black/10 uppercase tracking-wide mb-4">
               {item.discountLabel}
@@ -241,7 +241,7 @@ function ShowcaseCard({ item }: { item: ShowcaseItem }) {
             'linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%, transparent 100%)',
         }}
       />
-      {/* Bottom right: title, description, and optional price/discount — extra horizontal padding so text clears arrow buttons */}
+      {/* Bottom right: title, description, and optional price/discount - extra horizontal padding so text clears arrow buttons */}
       <div className="absolute bottom-0 left-0 right-0 flex justify-end p-4 px-14 md:p-6 md:px-24">
         <div className="text-white max-w-xl text-right">
           <h3 className="text-xl md:text-2xl font-bold drop-shadow-md">

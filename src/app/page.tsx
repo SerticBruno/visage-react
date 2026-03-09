@@ -46,7 +46,7 @@ export default function Home() {
   // Get popular services using the utility function
   const popularServicesData = getPopularServices();
 
-  // Showcase: Dan žena — Dermapen 10% akcija, rezervacija do kraja ožujka
+  // Showcase: Dan žena - Dermapen 10% akcija, rezervacija do kraja ožujka
   const showcaseItems: ShowcaseItem[] = [
     {
       id: 'showcase-dan-zena',
@@ -54,10 +54,10 @@ export default function Home() {
       image: '/images/womensday.svg',
       imageAlt: 'Dan žena - VISAGE studio',
       title: 'Dan žena',
-      description: '10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i posvetite si trenutak.',
+      description: '10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i poklonite svojoj koži i vlasištu obnovu kakvu zaslužuju.',
       link: '/dan-zena',
       eventDate: 'Rezervacija do 31. ožujka',
-      discountLabel: 'Dermapen -10%',
+      discountLabel: '-10%',
       ctaText: 'Rezervirajte za Dan žena',
     },
   ];
@@ -82,10 +82,10 @@ export default function Home() {
   return (
     <main>
       <HeroSection
-        title="VISAGE studio"
-        description="Dan žena - 10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i posvetite si trenutak."
+        title="Dan žena"
+        description="10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i poklonite svojoj koži i vlasištu obnovu kakvu zaslužuju."
         image="/images/womensday.svg"
-        ctaText="Kontakt"
+        ctaText="Rezervirajte termin"
         ctaLink="/kontakt"
         secondaryCtaText="Dan žena"
         secondaryCtaLink="/dan-zena"

@@ -85,7 +85,7 @@ const CTASection = ({
             <div className="relative h-64 lg:h-auto order-1 lg:order-2">
               <div className="absolute inset-0">
                 <Image
-                  src="/images/services/beauty-treatment-visage-estetski-studio.webp"
+                  src="/images/womensday.svg"
                   alt="VISAGE Studio interior"
                   fill
                   className="object-cover"

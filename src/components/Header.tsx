@@ -323,8 +323,8 @@ export default function Header() {
               href="/dan-zena" 
               className={`px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300 ${
                 isActive('/dan-zena')
-                  ? 'bg-black text-white'
-                  : 'bg-black text-white hover:bg-gray-800'
+                  ? 'bg-[#9d304e] text-white'
+                  : 'bg-[#9d304e] text-white hover:bg-gray-800'
               }`}
               onClick={(e) => handleLinkClick(e, '/dan-zena')}
             >
@@ -511,8 +511,8 @@ export default function Header() {
                 href="/dan-zena"
                 className={`block px-4 py-3 mx-2 mt-2 text-center rounded-lg text-lg font-medium transition-all duration-300 ${
                   isActive('/dan-zena')
-                    ? 'bg-black text-white'
-                    : 'bg-black text-white hover:bg-gray-800'
+                    ? 'bg-[#9d304e] text-white'
+                    : 'bg-[#9d304e] text-white hover:bg-gray-800'
                 }`}
                 onClick={(e) => handleLinkClick(e, '/dan-zena')}
               >

@@ -49,7 +49,7 @@ const AboutSection = ({
           <div>
             <h2 className="text-4xl font-bold mb-6">{title}</h2>
             {typeof description === 'string' ? (
-              <p className="text-lg text-gray-600 mb-8">{description}</p>
+              <p className="text-lg text-gray-600 mb-8 whitespace-pre-line">{description}</p>
             ) : (
               <div className="text-lg text-gray-600">{description}</div>
             )}
