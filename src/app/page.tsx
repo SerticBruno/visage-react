@@ -17,6 +17,8 @@ import { getPopularServices } from '@/data/services';
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
 
 import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSectionPreview';
+import ShowcaseSlider from '@/components/ui/ShowcaseSlider';
+import type { ShowcaseItem } from '@/components/ui/ShowcaseSlider';
 
 export const metadata: Metadata = {
   title: "Estetski studio Sisak",
@@ -44,6 +46,22 @@ export default function Home() {
   // Get popular services using the utility function
   const popularServicesData = getPopularServices();
 
+  // Showcase: Dan žena - Dermapen 10% akcija, rezervacija do kraja ožujka
+  const showcaseItems: ShowcaseItem[] = [
+    {
+      id: 'showcase-dan-zena',
+      variant: 'event',
+      image: '/images/womensday.svg',
+      imageAlt: 'Dan žena - VISAGE studio',
+      title: 'Dan žena',
+      description: '10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i poklonite svojoj koži i vlasištu obnovu kakvu zaslužuju.',
+      link: '/dan-zena',
+      eventDate: 'Rezervirajte termin do 31. ožujka',
+      discountLabel: '-10%',
+      ctaText: 'Rezervirajte termin',
+    },
+  ];
+
   // Convert popular products to match Service type for the slider
   const popularProductsData = getPopularProducts().map(product => ({
     id: product.id,
@@ -64,14 +82,22 @@ export default function Home() {
   return (
     <main>
       <HeroSection
-        title="VISAGE studio"
-        description="Estetski studio specijaliziran za nekirurške estetske tretmane lica koji su prilagođeni vašim potrebama"
-        image="/images/services/toskani-woman-visage-estetski-studio.webp"
-        ctaText="Dogovorite termin"
+        title="Dan žena"
+        description="10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i poklonite svojoj koži i vlasištu obnovu kakvu zaslužuju."
+        image="/images/womensday.svg"
+        ctaText="Rezervirajte termin"
         ctaLink="/kontakt"
+        secondaryCtaText="Dan žena"
+        secondaryCtaLink="/dan-zena"
         variant="home"
       />
       <AboutSection />
+      <ShowcaseSlider
+        items={showcaseItems}
+        title="Dan žena"
+        description="Proslavite Dan žena - 10% popusta na Dermapen 4. Rezervacija do kraja ožujka."
+        widthFraction={0.8}
+      />
       <ServiceSlider 
         services={popularServicesData}
         title="Popularni tretmani"
