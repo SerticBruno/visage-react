@@ -14,7 +14,10 @@ export interface PricingItem {
   packageDetails?: string;
 }
 
+export const DERMAPEN_4_CATEGORY = "Mezoterapija Dermapenom 4";
+
 export const pricingCategories = [
+  "Dan žena",
   "Konzultacije",
   "Beauty Tretmani",
   "Botox",
@@ -23,7 +26,7 @@ export const pricingCategories = [
   "Kemijski Piling",
   "Kombinirani Paketi",
   "LED Fototerapija",
-  "Mezoterapija Dermapenom 4",
+  DERMAPEN_4_CATEGORY,
   "Mezoterapija Mesoject Gunom",
   "Plasmage",
   "PRP",
