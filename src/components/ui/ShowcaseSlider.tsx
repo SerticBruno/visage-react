@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import Image from 'next/image';
 import Link from 'next/link';
-import SectionHeading from './SectionHeading';
 import { useIntersectionObserver } from '@/lib/useIntersectionObserver';
 import 'swiper/css';
 
@@ -42,8 +41,6 @@ interface ShowcaseSliderProps {
 
 export default function ShowcaseSlider({
   items,
-  title = 'Istaknuto',
-  description,
   widthFraction = 0.8,
   autoplayDelayMs = 5000,
 }: ShowcaseSliderProps) {
