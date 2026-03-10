@@ -6,22 +6,53 @@ import { Metadata } from 'next';
 import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSectionPreview';
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
 
+const PAGE_URL = '/dan-zena';
+const OG_IMAGE = '/images/womensday.png'; // PNG for SEO/social (Google Ads, Facebook, etc. prefer raster over SVG)
+
 export const metadata: Metadata = {
   title: 'Dan žena - Dermapen 10% popusta',
   description:
     'Proslavite Dan žena u VISAGE studiju. 10% popusta na Dermapen 4 - rezervirajte termin do kraja ožujka.',
+  keywords: [
+    'Dan žena',
+    'Dermapen 4',
+    'popust',
+    'VISAGE Studio',
+    'estetski studio Sisak',
+    'tretman kože',
+    'tretman vlasišta',
+    'rezervacija termina',
+  ],
+  alternates: {
+    canonical: `https://visagestudio.hr${PAGE_URL}`,
+  },
   openGraph: {
+    type: 'website',
+    url: `https://visagestudio.hr${PAGE_URL}`,
     title: 'Dan žena | VISAGE Studio',
     description:
       '10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i poklonite svojoj koži i vlasištu obnovu kakvu zaslužuju.',
+    siteName: 'VISAGE Studio',
+    locale: 'hr_HR',
     images: [
       {
-        url: '/images/womensday.svg',
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: 'Dan žena - VISAGE studio',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dan žena | VISAGE Studio',
+    description:
+      '10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i poklonite svojoj koži i vlasištu obnovu kakvu zaslužuju.',
+    images: [OG_IMAGE],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
