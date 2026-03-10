@@ -56,9 +56,9 @@ export default function Home() {
       title: 'Dan žena',
       description: '10% popusta na Dermapen 4. Rezervirajte termin do kraja ožujka i poklonite svojoj koži i vlasištu obnovu kakvu zaslužuju.',
       link: '/dan-zena',
-      eventDate: 'Rezervacija do 31. ožujka',
+      eventDate: 'Rezervirajte termin do 31. ožujka',
       discountLabel: '-10%',
-      ctaText: 'Rezervirajte za Dan žena',
+      ctaText: 'Rezervirajte termin',
     },
   ];
 

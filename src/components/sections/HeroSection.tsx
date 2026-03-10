@@ -169,9 +169,9 @@ const HeroSection = ({
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8"
           >
-            {variant === 'default' ? (
+            {variant === 'home' ? (
               <div className="flex flex-col items-center">
-                <div className="relative w-full flex justify-center">
+                {/* <div className="relative w-full flex justify-center">
                   <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-[0.6em] text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-['Versailles'] pl-[0.6em]">
                     VISAGE
                   </h1>
@@ -179,6 +179,10 @@ const HeroSection = ({
                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-normal leading-tight tracking-[0.1em] text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] font-['Noto_Serif_Display'] mt-2">
                   studio
                 </h2>
+                 */}
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                    {title}
+                  </h1>
               </div>
             ) : (
               <div className="flex flex-col items-center">

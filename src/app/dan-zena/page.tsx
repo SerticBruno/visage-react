@@ -55,7 +55,7 @@ Dermapen 4 potiče prirodnu regeneraciju kože, poboljšava teksturu, smanjuje o
 
       <CTASection
         title="Rezervirajte svoj termin do kraja ožujka"
-        description="Iskoristite 10% popusta na Dermapen 4. Kontaktirajte nas i dogovorite termin."
+        description="Iskoristite 10% popusta na Dermapen 4."
         ctaText="Rezervirajte termin"
         ctaLink="/kontakt"
         secondaryCtaText="Pogledajte usluge"
@@ -63,7 +63,7 @@ Dermapen 4 potiče prirodnu regeneraciju kože, poboljšava teksturu, smanjuje o
         gradientDirection="b"
       />
 
-      <ComboPackagesSectionPreview paddingTop="pt-0" paddingBottom="pb-0" />
+      <ComboPackagesSectionPreview paddingTop="pt-0" paddingBottom="pb-16" />
 
       <ContactSection hasTopPadding={false} />
     </main>
