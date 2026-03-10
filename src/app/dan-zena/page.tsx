@@ -7,7 +7,7 @@ import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSect
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
 
 const PAGE_URL = '/dan-zena';
-const OG_IMAGE = '/images/womensday.png'; // PNG for SEO/social (Google Ads, Facebook, etc. prefer raster over SVG)
+const OG_IMAGE = '/images/womensday.svg'; // PNG for SEO/social (Google Ads, Facebook, etc. prefer raster over SVG)
 
 export const metadata: Metadata = {
   title: 'Dan žena - Dermapen 10% popusta',
