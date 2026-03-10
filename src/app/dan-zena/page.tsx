@@ -7,7 +7,7 @@ import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSect
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
 
 const PAGE_URL = '/dan-zena';
-const OG_IMAGE = '/images/womensday.svg'; // PNG for SEO/social (Google Ads, Facebook, etc. prefer raster over SVG)
+const OG_IMAGE = '/images/visage-studio-dan-zena.png'; // PNG for SEO/social (Google Ads, Facebook, etc. prefer raster over SVG)
 
 export const metadata: Metadata = {
   title: 'Dan žena - Dermapen 10% popusta',
@@ -70,11 +70,11 @@ export default function DanZenaPage() {
 
       <AboutSection
         title="Dan žena u VISAGE studiju"
-        description="Ovog ožujka odvojite vrijeme za sebe i počastite se Dermapen 4 tretmanom.
+        description={`Ovog ožujka odvojite vrijeme za sebe i počastite se Dermapen 4 tretmanom.
 
 Darujemo vam 10% popusta na Dermapen 4 tretmane. Akcija traje do kraja ožujka.
 
-Dermapen 4 potiče prirodnu regeneraciju kože, poboljšava teksturu, smanjuje ožiljke, pore i sitne bore te poboljšava kvalitetu vlasišta i potiče rast kose."
+Dermapen 4 potiče prirodnu regeneraciju kože, poboljšava teksturu, smanjuje ožiljke, pore i sitne bore te poboljšava kvalitetu vlasišta i potiče rast kose.`}
         imageSrc="/images/services/mezoterapija/mezoterapija-tijek-tretmana-visage-estetski-studio.jpeg"
         imageAlt="Dan žena - VISAGE studio"
         buttonText="Rezervirajte termin"
