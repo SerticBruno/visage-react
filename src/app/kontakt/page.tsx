@@ -2,21 +2,35 @@ import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import { Metadata } from 'next';
 
+const TITLE = 'Kontakt | Rezervacija termina Sisak';
+const DESCRIPTION =
+  'Kontaktirajte VISAGE Studio u Siska. Rezervirajte termin za mezoterapiju, Dermapen 4 ili drugi tretman. Adresa, telefon, radno vrijeme i obrazac za upite.';
+
 export const metadata: Metadata = {
-  title: "Kontakt",
-  description: "Kontaktirajte VISAGE Studio u Siska. Dogovorite termin za tretman ili saznajte više o našim uslugama. Dostupni smo za sve vaše upite.",
+  title: 'Kontakt | Rezervacija termina Sisak',
+  description: DESCRIPTION,
+  keywords: [
+    'kontakt VISAGE Studio Sisak',
+    'rezervacija termina Sisak',
+    'estetski studio Sisak adresa',
+    'telefon estetski studio Sisak',
+  ],
+  alternates: {
+    canonical: 'https://visagestudio.hr/kontakt',
+  },
   openGraph: {
-    title: "Kontakt",
-    description: "Kontaktirajte VISAGE Studio u Siska. Dogovorite termin za tretman ili saznajte više o našim uslugama. Dostupni smo za sve vaše upite.",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: 'https://visagestudio.hr/kontakt',
     images: [
       {
-        url: "/images/services/toskani-woman-visage-estetski-studio.webp",
+        url: '/images/services/toskani-woman-visage-estetski-studio.webp',
         width: 1200,
         height: 630,
-        alt: "VISAGE Studio - Kontakt"
-      }
-    ]
-  }
+        alt: 'VISAGE Studio – Kontakt i rezervacija Sisak',
+      },
+    ],
+  },
 };
 
 interface KontaktPageProps {

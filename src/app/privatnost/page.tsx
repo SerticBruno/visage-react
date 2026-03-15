@@ -2,10 +2,28 @@ import { Metadata } from 'next';
 import HeroSection from '@/components/sections/HeroSection';
 import { FaShieldAlt } from 'react-icons/fa';
 
+const TITLE = 'Politika privatnosti | VISAGE Studio';
+const DESCRIPTION =
+  'Politika privatnosti VISAGE Studija. Saznajte kako štitimo vaše osobne podatke i kako ih koristimo u skladu s GDPR regulativom.';
+
 export const metadata: Metadata = {
-  title: 'Politika privatnosti | VISAGE Studio',
-  description: 'Saznajte kako VISAGE Studio štiti vaše osobne podatke i kako ih koristimo u skladu s GDPR regulativom.',
-  keywords: 'privatnost, GDPR, osobni podaci, VISAGE Studio, politika privatnosti',
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    'politika privatnosti',
+    'GDPR',
+    'osobni podaci',
+    'VISAGE Studio',
+    'privatnost estetski studio',
+  ],
+  alternates: {
+    canonical: 'https://visagestudio.hr/privatnost',
+  },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: 'https://visagestudio.hr/privatnost',
+  },
 };
 
 const PrivacyPolicy = () => {

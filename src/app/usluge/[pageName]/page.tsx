@@ -49,12 +49,34 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     };
   }
 
+  const description = service.metaDescription || service.description;
+  const keywords = service.metaKeywords
+    ? service.metaKeywords.split(',').map((s) => s.trim()).filter(Boolean)
+    : service.tags;
+  const canonicalUrl = `https://visagestudio.hr/usluge/${resolvedParams.pageName}`;
+  const imageUrl = service.heroImage.startsWith('http')
+    ? service.heroImage
+    : `https://visagestudio.hr${service.heroImage}`;
+
   return {
     title: service.title,
-    description: service.description,
-    keywords: service.tags,
+    description,
+    keywords: keywords.length ? keywords : undefined,
     alternates: {
-      canonical: `https://visagestudio.hr/usluge/${resolvedParams.pageName}`,
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${service.title} | VISAGE Studio Sisak`,
+      description,
+      url: canonicalUrl,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${service.title} – VISAGE Studio Sisak`,
+        },
+      ],
     },
   };
 }
