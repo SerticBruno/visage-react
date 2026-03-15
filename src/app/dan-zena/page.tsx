@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'Dan žena - VISAGE studio',
+        alt: 'Dan žena - Dermapen 4 popust 10% - VISAGE Studio Sisak',
       },
     ],
   },
