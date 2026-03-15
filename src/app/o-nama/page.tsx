@@ -3,21 +3,36 @@ import AboutContent from '@/components/sections/AboutContent';
 import ContactSection from '@/components/sections/ContactSection';
 import { Metadata } from 'next';
 
+const TITLE = 'O nama | VISAGE Studio Sisak';
+const DESCRIPTION =
+  'Upoznajte VISAGE Studio – estetski studio u centru Siska. Certificirani predstavnik TOSKANI. Tim stručnjaka za mezoterapiju, Dermapen 4, skin boostere i estetsku medicinu.';
+
 export const metadata: Metadata = {
-  title: "O nama",
-  description: "Upoznajte VISAGE Studio - vodeći estetski studio u Siska. Naš tim stručnjaka pruža najkvalitetnije usluge estetske medicine i kozmetičke tretmane.",
+  title: 'O nama | VISAGE Studio Sisak',
+  description: DESCRIPTION,
+  keywords: [
+    'VISAGE Studio Sisak',
+    'estetski studio Sisak',
+    'TOSKANI certificirani',
+    'tim estetske medicine',
+    'o nama Sisak',
+  ],
+  alternates: {
+    canonical: 'https://visagestudio.hr/o-nama',
+  },
   openGraph: {
-    title: "O nama",
-    description: "Upoznajte VISAGE Studio - vodeći estetski studio u Siska. Naš tim stručnjaka pruža najkvalitetnije usluge estetske medicine i kozmetičke tretmane.",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: 'https://visagestudio.hr/o-nama',
     images: [
       {
-        url: "/images/background.webp",
+        url: '/images/background.webp',
         width: 1200,
         height: 630,
-        alt: "VISAGE Studio - O nama"
-      }
-    ]
-  }
+        alt: 'VISAGE Studio – O nama, estetski studio Sisak',
+      },
+    ],
+  },
 };
 
 export default function OnamaPage() {

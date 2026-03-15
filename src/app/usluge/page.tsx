@@ -4,21 +4,37 @@ import HeroSection from '@/components/sections/HeroSection';
 import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSectionPreview';
 import { Metadata } from 'next';
 
+const TITLE = 'Usluge | Tretmani lica i tijela Sisak';
+const DESCRIPTION =
+  'Usluge VISAGE Studija u Siska: mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, botox, kemijski piling, foto-terapija. Profesionalni tretmani za lice, vlasište i tijelo.';
+
 export const metadata: Metadata = {
-  title: "Usluge",
-  description: "Otkrijte široku ponudu tretmana za lice i tijelo. Od estetske medicine do kozmetičkih tretmana - sve za vašu ljepotu i dobrobit.",
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    'usluge estetski studio Sisak',
+    'tretmani lica Sisak',
+    'mezoterapija Sisak',
+    'Dermapen 4 Sisak',
+    'estetska medicina Sisak',
+    'kozmetički tretmani Sisak',
+  ],
+  alternates: {
+    canonical: 'https://visagestudio.hr/usluge',
+  },
   openGraph: {
-    title: "Usluge",
-    description: "Otkrijte široku ponudu tretmana za lice i tijelo. Od estetske medicine do kozmetičkih tretmana - sve za vašu ljepotu i dobrobit.",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: 'https://visagestudio.hr/usluge',
     images: [
       {
-        url: "/images/services/services-hero-visage-estetski-studio.webp",
+        url: '/images/services/services-hero-visage-estetski-studio.webp',
         width: 1200,
         height: 630,
-        alt: "VISAGE Studio - Usluge"
-      }
-    ]
-  }
+        alt: 'VISAGE Studio – Usluge i tretmani Sisak',
+      },
+    ],
+  },
 };
 
 export default function ServicesPage() {

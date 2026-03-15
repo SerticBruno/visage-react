@@ -1,20 +1,35 @@
 import { Metadata } from 'next';
 
+const TITLE = 'Katalog proizvoda | TOSKANI i njega kože Sisak';
+const DESCRIPTION =
+  'Katalog proizvoda VISAGE Studija u Siska. TOSKANI i vodeći brendovi za njegu kože – profesionalna i kućna njega lica i tijela. Dostava u Sisak i okolicu.';
+
 export const metadata: Metadata = {
-  title: "Katalog proizvoda",
-  description: "Pregledajte naš katalog proizvoda za njegu kože. Visokokvalitetni proizvodi TOSKANI i drugih vodećih brendova za profesionalnu i kućnu njegu.",
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    'katalog proizvoda Sisak',
+    'TOSKANI proizvodi',
+    'njega kože Sisak',
+    'kozmetika Sisak',
+    'estetski studio proizvodi',
+  ],
+  alternates: {
+    canonical: 'https://visagestudio.hr/katalog',
+  },
   openGraph: {
-    title: "Katalog proizvoda",
-    description: "Pregledajte naš katalog proizvoda za njegu kože. Visokokvalitetni proizvodi TOSKANI i drugih vodećih brendova za profesionalnu i kućnu njegu.",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: 'https://visagestudio.hr/katalog',
     images: [
       {
-        url: "/images/services/toskani-woman-visage-estetski-studio.webp",
+        url: '/images/services/toskani-woman-visage-estetski-studio.webp',
         width: 1200,
         height: 630,
-        alt: "VISAGE Studio - Katalog proizvoda"
-      }
-    ]
-  }
+        alt: 'VISAGE Studio – Katalog proizvoda za njegu kože Sisak',
+      },
+    ],
+  },
 };
 
 export default function KatalogLayout({

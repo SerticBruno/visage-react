@@ -20,21 +20,39 @@ import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSect
 import ShowcaseSlider from '@/components/ui/ShowcaseSlider';
 import type { ShowcaseItem } from '@/components/ui/ShowcaseSlider';
 
+const HOME_TITLE = 'Estetski studio Sisak';
+const HOME_DESCRIPTION =
+  'VISAGE Studio – certificirani estetski studio u centru Siska. Mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, botox. Profesionalni tretmani lica i tijela. Rezervirajte termin.';
+
 export const metadata: Metadata = {
-  title: "Estetski studio Sisak",
-  description: "VISAGE Studio je vodeći estetski studio u centru Siska, certificirani predstavnik za TOSKANI. Pružamo profesionalne usluge estetske medicine i kozmetičke tretmane.",
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
+  keywords: [
+    'estetski studio Sisak',
+    'kozmetički studio Sisak',
+    'mezoterapija Sisak',
+    'Dermapen Sisak',
+    'TOSKANI Sisak',
+    'tretmani lica Sisak',
+    'estetska medicina Sisak',
+    'VISAGE Studio',
+  ],
+  alternates: {
+    canonical: 'https://visagestudio.hr',
+  },
   openGraph: {
-    title: "Estetski studio Sisak",
-    description: "VISAGE Studio je vodeći estetski studio u centru Siska, certificirani predstavnik za TOSKANI. Pružamo profesionalne usluge estetske medicine i kozmetičke tretmane.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: 'https://visagestudio.hr',
     images: [
       {
-        url: "/images/services/toskani-woman-visage-estetski-studio.webp",
+        url: '/images/services/toskani-woman-visage-estetski-studio.webp',
         width: 1200,
         height: 630,
-        alt: "VISAGE Studio - Estetski studio Sisak"
-      }
-    ]
-  }
+        alt: 'VISAGE Studio – Estetski studio Sisak',
+      },
+    ],
+  },
 };
 
 export default function Home() {
