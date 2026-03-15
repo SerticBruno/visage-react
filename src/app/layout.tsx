@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import GoogleTagManager from "@/components/GoogleTagManager";
 import { Analytics } from '@vercel/analytics/react';
 import CookieConsent from "@/components/CookieConsent";
+import { LocalBusinessStructuredData } from "@/components/StructuredData";
+import { businessData } from "@/data/business";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -79,6 +81,7 @@ export default function RootLayout({
   return (
     <html lang="hr">
       <body className={`${inter.className} ${versailles.variable}`}>
+        <LocalBusinessStructuredData data={businessData} />
         <GoogleTagManager />
         <Header />
         <main className="pt-16">

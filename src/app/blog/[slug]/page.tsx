@@ -11,6 +11,9 @@ import InteractiveLink from '@/components/blog/InteractiveLink';
 import { Metadata } from 'next';
 import ContactSection from '@/components/sections/ContactSection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
+import { ArticleStructuredData } from '@/components/StructuredData';
+
+const BASE_URL = 'https://visagestudio.hr';
 
 type SegmentParams = {
   slug: string;
@@ -134,8 +137,29 @@ export default async function BlogPostPage(
     notFound();
   }
 
+  const articleImage = post.image.startsWith('http') ? post.image : `${BASE_URL}${post.image}`;
+  const postUrl = `${BASE_URL}/blog/${post.slug}`;
+
   return (
     <div className="min-h-screen bg-gray-50">
+      <ArticleStructuredData
+        data={{
+          headline: post.title,
+          description: post.excerpt,
+          image: articleImage,
+          author: {
+            name: post.author,
+            url: `${BASE_URL}/blog/autor/${toSlug(post.author)}`,
+          },
+          publisher: {
+            name: 'VISAGE Studio',
+            logo: { url: `${BASE_URL}/images/LogoV-white.webp` },
+          },
+          datePublished: post.date.toISOString(),
+          dateModified: post.date.toISOString(),
+          mainEntityOfPage: { type: 'WebPage', id: postUrl },
+        }}
+      />
       {/* Hero Section */}
       <div className="container mx-auto px-4 pt-12">
         <div className="max-w-6xl mx-auto">
