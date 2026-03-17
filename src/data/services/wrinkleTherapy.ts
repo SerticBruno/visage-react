@@ -1,8 +1,8 @@
 import { Service } from './types';
 
 export const wrinkleTherapy: Service = {
-  id: 'botox',
-  title: 'Botox',
+  id: 'wrinkle-therapy',
+  title: 'Terapija bora lica',
   akuzativTitle: 'terapijom bora lica',
   description: 'Glatka i osvježena koža bez bora',
   longDescription: `Ako želite kožu bez vidljivih bora i linija, <strong>botox je tretman za vas</strong>!
@@ -27,7 +27,7 @@ Najčešće se koristi u <strong>sinergiji s drugim estetskim tretmanima</strong
   tags: ['terapija-bora', 'prevencija-bora', 'anti-aging', 'nježni-tretmani', 'lifting-lica'],
   isPopular: true,
   isRecommended: true,
-  pricingCategory: 'Botox',
+  pricingCategory: 'Terapija bora lica',
   relatedServices: ['mezoterapija', 'skin-boosteri', 'dermalni-fileri'],
   steps: [
     { 

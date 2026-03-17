@@ -12,7 +12,7 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
   {
     question: "Koje usluge nudite?",
-    answer: "Nudimo širok spektar nekirurških estetskih usluga: <a href='/usluge/mezoterapija'>mezoterapija</a>, <a href='/usluge/skin-boosteri'>skin boosteri</a>, <a href='/usluge/prp'>PRP tretman</a>, <a href='/usluge/dermalni-fileri'>dermalni fileri</a>, <a href='/usluge/botox'>botox</a>, <a href='/usluge/plasmage'>plasmage</a>, <a href='/usluge/kemijski-piling'>kemijski piling</a>. Nadalje nudimo sljedeće beauty tretmane: <a href='/usluge/beauty-tretmani'>Circadia Signature Dermaplaning facial</a>, <a href='/usluge/beauty-tretmani'>Circadia Beyond Botox Facial</a>, <a href='/usluge/beauty-tretmani'>Circadia Marshmallow Facial</a>, <a href='/usluge/beauty-tretmani'>Circadia Firming Peptide Facial</a> i <a href='/usluge/foto-terapija'>Dermalux Flex fototerapiju</a>."
+    answer: "Nudimo širok spektar nekirurških estetskih usluga: <a href='/usluge/mezoterapija'>mezoterapija</a>, <a href='/usluge/skin-boosteri'>skin boosteri</a>, <a href='/usluge/prp'>PRP tretman</a>, <a href='/usluge/dermalni-fileri'>dermalni fileri</a>, <a href='/usluge/terapija-bora-lica'>terapija bora lica</a>, <a href='/usluge/plasmage'>plasmage</a>, <a href='/usluge/kemijski-piling'>kemijski piling</a>. Nadalje nudimo sljedeće beauty tretmane: <a href='/usluge/beauty-tretmani'>Circadia Signature Dermaplaning facial</a>, <a href='/usluge/beauty-tretmani'>Circadia Beyond Botox Facial</a>, <a href='/usluge/beauty-tretmani'>Circadia Marshmallow Facial</a>, <a href='/usluge/beauty-tretmani'>Circadia Firming Peptide Facial</a> i <a href='/usluge/foto-terapija'>Dermalux Flex fototerapiju</a>."
   },
   {
     question: "Gdje mogu dogovoriti termin?",

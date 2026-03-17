@@ -15,7 +15,7 @@ Već nakon <strong>jednog tretmana</strong> možete primijetiti <strong>vidno po
 
 <strong>Regije koje se mogu tretirati</strong> su: nazolabijalne bore, marionetske bore, usne, jagodice, čeljust i brada.
 
-Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/botox">terapija bora lica</a>, <a href="/usluge/skin-boosteri">skin boosteri</a> i <a href="/usluge/mezoterapija">mezoterapija</a>.
+Koristi se najčešće u <strong>sinergiji s drugim estetskim tretmanima</strong>: <a href="/usluge/terapija-bora-lica">terapija bora lica</a>, <a href="/usluge/skin-boosteri">skin boosteri</a> i <a href="/usluge/mezoterapija">mezoterapija</a>.
 
 U <strong>Visage studiju</strong> koristimo <strong>Aliaxin</strong> i <strong>Skin Architect</strong> filere.
 
@@ -30,7 +30,7 @@ Vratite <strong>samopouzdanje</strong> uz <strong>prirodan volumen</strong> i <s
   isPopular: true,
   isRecommended: true,
   pricingCategory: 'Dermalni Fileri',
-  relatedServices: ['botox', 'skin-boosteri', 'mezoterapija'],
+  relatedServices: ['terapija-bora-lica', 'skin-boosteri', 'mezoterapija'],
   steps: [
     { 
       id: 'prednosti', 
