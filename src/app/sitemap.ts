@@ -25,7 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/o-nama',
     '/kontakt',
     '/katalog',
-    '/dan-zena',
     '/privatnost',
   ].map(route => ({
     url: `${baseUrl}${route}`,

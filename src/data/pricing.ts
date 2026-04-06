@@ -17,7 +17,6 @@ export interface PricingItem {
 export const DERMAPEN_4_CATEGORY = "Mezoterapija Dermapenom 4";
 
 export const pricingCategories = [
-  "Dan žena",
   "Konzultacije",
   "Beauty Tretmani",
   "Botox",

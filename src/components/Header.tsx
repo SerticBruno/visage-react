@@ -319,17 +319,6 @@ export default function Header() {
               Kontakt
             </Link>
             
-            <Link 
-              href="/dan-zena" 
-              className={`px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300 ${
-                isActive('/dan-zena')
-                  ? 'bg-[#9d304e] text-white hover:bg-gray-800'
-                  : 'bg-[#9d304e] text-white hover:bg-gray-800'
-              }`}
-              onClick={(e) => handleLinkClick(e, '/dan-zena')}
-            >
-              Dan žena
-            </Link>
           </nav>
 
           {/* Mobile Navigation Button */}
@@ -507,17 +496,6 @@ export default function Header() {
                 Kontakt
               </Link>
               
-              <Link
-                href="/dan-zena"
-                className={`block px-3 py-2 rounded-md text-lg font-medium transition-all duration-300 ${
-                  isActive('/dan-zena')
-                    ? 'bg-[#9d304e] text-white'
-                    : 'bg-[#9d304e] text-white hover:bg-gray-800'
-                }`}
-                onClick={(e) => handleLinkClick(e, '/dan-zena')}
-              >
-                Dan žena
-              </Link>
             </motion.div>
           </motion.div>
         )}

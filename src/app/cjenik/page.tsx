@@ -1,32 +1,13 @@
 'use client';
 
 import { useState, useMemo, useRef, useEffect } from 'react';
-import { pricingData, pricingCategories, PricingItem, DERMAPEN_4_CATEGORY } from '@/data/pricing';
+import { pricingData, pricingCategories, PricingItem } from '@/data/pricing';
 import { FaSearch, FaBox, FaChevronDown, FaChevronUp, FaStar } from 'react-icons/fa';
 import { FaFire, FaCrown } from 'react-icons/fa6';
 import React from 'react';
-import Link from 'next/link';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
-
-const DAN_ZENA_DISCOUNT = 0.1; // 10%
-
-function parsePrice(priceStr: string): { value: number; suffix: string } {
-  const match = priceStr.match(/^([\d.,]+)\s*(.*)$/);
-  if (!match) return { value: 0, suffix: '' };
-  const value = parseFloat(match[1].replace(',', '.'));
-  const suffix = (match[2] || '').trim();
-  return { value: isNaN(value) ? 0 : value, suffix };
-}
-
-function formatDiscountedPrice(priceStr: string): string | null {
-  const { value, suffix } = parsePrice(priceStr);
-  if (value <= 0) return null;
-  const discounted = value * (1 - DAN_ZENA_DISCOUNT);
-  const formatted = Number.isInteger(discounted) ? discounted : discounted.toFixed(2);
-  return `${formatted} ${suffix}`;
-}
 
 export default function PricingPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -52,8 +33,7 @@ export default function PricingPage() {
                           item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           item.category.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategories.length === 0 ||
-        selectedCategories.includes(item.category) ||
-        (selectedCategories.includes('Dan žena') && item.category === DERMAPEN_4_CATEGORY);
+        selectedCategories.includes(item.category);
       const matchesBadges = selectedBadges.length === 0 || 
         (selectedBadges.includes('popular') && item.isPopular) ||
         (selectedBadges.includes('package') && item.isPackage) ||
@@ -145,16 +125,10 @@ export default function PricingPage() {
       }
       groups[item.category].push(item);
     });
-    // Dan žena at top: show Dermapen 4 items under "Dan žena" with red header; other categories in order (skip Mezoterapija Dermapenom 4 to avoid duplicate)
-    const dermapen4Items = groups[DERMAPEN_4_CATEGORY] ?? [];
-    const ordered: { category: string; items: PricingItem[]; isDanZena?: boolean }[] = [];
-    if (dermapen4Items.length > 0) {
-      ordered.push({ category: 'Dan žena', items: dermapen4Items, isDanZena: true });
-    }
+    const ordered: { category: string; items: PricingItem[] }[] = [];
     pricingCategories.forEach(cat => {
-      if (cat === 'Dan žena' || cat === DERMAPEN_4_CATEGORY) return;
       const items = groups[cat];
-      if (items?.length) ordered.push({ category: cat, items, isDanZena: false });
+      if (items?.length) ordered.push({ category: cat, items });
     });
     return ordered;
   }, [filteredItems]);
@@ -163,7 +137,7 @@ export default function PricingPage() {
     <main>
       <HeroSection
         title="Cjenik usluga"
-        description="10% popusta na Dermapen 4 za Dan žena"
+        description="Pregled svih naših usluga i cijena."
         image="/images/services/pricing-hero-visage-estetski-studio.webp"
       />
       <div className="w-full" style={{ background: 'linear-gradient(to bottom, #e5e7eb, #ffffff)' }}>
@@ -174,7 +148,7 @@ export default function PricingPage() {
               Naše usluge
             </h2>
             <p className="text-xl text-gray-600">
-              Profesionalne estetske usluge za njegu lica i tijela s najnovijim tehnologijama i vrhunskim proizvodima. U sklopu Dana žena vrijedi 10% popusta na usluge Dermapen 4 - pogledajte snižene cijene u kategoriji Dan žena.
+              Profesionalne estetske usluge za njegu lica i tijela s najnovijim tehnologijama i vrhunskim proizvodima.
             </p>
           </div>
           
@@ -407,14 +381,13 @@ export default function PricingPage() {
               {/* Content View */}
               <div className={`transition-opacity duration-300 ${isScrolling || isFiltering || isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                 <div className="space-y-6">
-                  {groupedItems.map(({ category, items, isDanZena }) => (
+                  {groupedItems.map(({ category, items }) => (
                     <div key={`category-group-${category}`} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                      <div className={`px-6 py-3 border-b ${isDanZena ? 'bg-[#9d304e] border-[#9d304e]' : 'bg-gray-50 border-gray-200'}`}>
-                        <h3 className={`text-lg font-semibold ${isDanZena ? 'text-white' : 'text-gray-900'}`}>{category}</h3>
+                      <div className="px-6 py-3 border-b bg-gray-50 border-gray-200">
+                        <h3 className="text-lg font-semibold text-gray-900">{category}</h3>
                       </div>
                       <div className="divide-y divide-gray-200">
                         {items.map((item) => {
-                          const hasDanZenaDiscount = item.category === DERMAPEN_4_CATEGORY;
                           return (
                             <div key={item.id} className="p-6 hover:bg-gray-50 transition-colors duration-150">
                               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -449,24 +422,7 @@ export default function PricingPage() {
                                   <p className="text-sm text-gray-600">{item.description}</p>
                                 </div>
                                 <div className="flex flex-col items-end gap-2 sm:justify-end">
-                                  {hasDanZenaDiscount && (
-                                    <Link
-                                      href="/dan-zena"
-                                      className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-[#9d304e] text-white hover:bg-[#7a2640] transition-colors w-fit"
-                                    >
-                                      10% Dan žena
-                                    </Link>
-                                  )}
-                                  {hasDanZenaDiscount && formatDiscountedPrice(item.price) ? (
-                                    <div className="flex flex-wrap items-baseline justify-end gap-2">
-                                      <span className="text-sm text-gray-500 line-through">{item.price}</span>
-                                      <span className="text-base font-semibold text-rose-600">
-                                        {formatDiscountedPrice(item.price)}
-                                      </span>
-                                    </div>
-                                  ) : (
-                                    <div className="text-base font-medium text-gray-900">{item.price}</div>
-                                  )}
+                                  <div className="text-base font-medium text-gray-900">{item.price}</div>
                                 </div>
                               </div>
                             </div>
