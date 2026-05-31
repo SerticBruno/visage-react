@@ -36,15 +36,6 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
     return () => document.removeEventListener('keydown', handleEscape);
   }, [modalOpen]);
 
-  useEffect(() => {
-    if (!modalOpen) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, [modalOpen]);
-
   const closeModal = () => {
     setModalOpen(false);
     setError('');
@@ -109,7 +100,7 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
         className={`p-2 rounded-full shadow transition-all cursor-pointer ${
           subscribed
             ? 'bg-green-500 text-white cursor-default'
-            : 'bg-white/90 hover:bg-white text-amber-700 hover:text-amber-800 hover:scale-110'
+            : 'bg-white/90 hover:bg-white text-slate-700 hover:text-slate-800 hover:scale-110'
         } ${className}`}
       >
         {subscribed ? <FaCheck className="w-4 h-4" /> : <FaBell className="w-4 h-4" />}
@@ -128,8 +119,8 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
         onClick={openModal}
         className={`flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
           variant === 'secondary'
-            ? 'border border-amber-700 text-amber-800 hover:bg-amber-50'
-            : 'bg-amber-600 hover:bg-amber-700 text-white shadow-sm hover:shadow'
+            ? 'border border-slate-700 text-slate-800 hover:bg-slate-50'
+            : 'bg-slate-700 hover:bg-slate-800 text-white shadow-sm hover:shadow'
         } ${className}`}
       >
         <FaBell className="w-4 h-4 shrink-0" />
@@ -170,7 +161,7 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
           leaveTo="opacity-0 scale-95"
         >
           <div
-            className="relative w-full max-w-md rounded-2xl bg-white shadow-2xl border border-gray-200 p-6"
+            className="relative w-full max-w-md rounded-2xl bg-white shadow-2xl border border-slate-200 p-6"
             onMouseDown={absorbPointerEvent}
             onClick={absorbPointerEvent}
           >
@@ -178,7 +169,7 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
               type="button"
               onMouseDown={absorbPointerEvent}
               onClick={handleDismiss}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 p-1 rounded-full hover:bg-gray-100 cursor-pointer"
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-slate-100 cursor-pointer"
               aria-label="Zatvori"
             >
               <FaTimes className="w-4 h-4" />
@@ -189,13 +180,13 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600">
                   <FaCheck className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Prijava spremljena</h3>
-                <p className="text-sm text-gray-600 mb-6">{message}</p>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">Prijava spremljena</h3>
+                <p className="text-sm text-slate-600 mb-6">{message}</p>
                 <button
                   type="button"
                   onMouseDown={absorbPointerEvent}
                   onClick={handleDismiss}
-                  className="w-full rounded-lg bg-gray-900 text-white px-4 py-2.5 text-sm font-medium hover:bg-black cursor-pointer"
+                  className="w-full rounded-lg bg-slate-700 text-white px-4 py-2.5 text-sm font-medium hover:bg-slate-800 cursor-pointer"
                 >
                   U redu
                 </button>
@@ -203,12 +194,12 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
             ) : (
               <>
                 <div className="flex items-center gap-3 mb-1 pr-8">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-700">
                     <FaBell className="w-4 h-4" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">Obavijesti me</h3>
+                  <h3 className="text-lg font-semibold text-slate-900">Obavijesti me</h3>
                 </div>
-                <p className="text-sm text-gray-600 mb-5 pl-[52px]">
+                <p className="text-sm text-slate-600 mb-5 pl-[52px]">
                   Javit ćemo vam na email kad <span className="font-medium">{product.title}</span> bude opet na
                   zalihama.
                 </p>
@@ -226,7 +217,7 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
                       placeholder="vaš@email.com"
                       required
                       autoFocus
-                      className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500"
+                      className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-slate-500/40 focus:border-slate-600"
                     />
                   </div>
 
@@ -237,14 +228,14 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
                       type="button"
                       onMouseDown={absorbPointerEvent}
                       onClick={handleDismiss}
-                      className="flex-1 rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 cursor-pointer"
+                      className="flex-1 rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 cursor-pointer"
                     >
                       Odustani
                     </button>
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="flex-1 rounded-lg bg-gray-900 text-white px-4 py-2.5 text-sm font-medium hover:bg-black disabled:opacity-50 cursor-pointer"
+                      className="flex-1 rounded-lg bg-slate-700 text-white px-4 py-2.5 text-sm font-medium hover:bg-slate-800 disabled:opacity-50 cursor-pointer"
                     >
                       {submitting ? 'Spremanje…' : 'Obavijesti me'}
                     </button>
