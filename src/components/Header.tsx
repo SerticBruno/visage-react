@@ -183,16 +183,19 @@ export default function Header() {
               <Image
                 src="/images/LogoV.png"
                 alt="VISAGE Studio"
-                width={48}
-                height={48}
-                className="h-12 w-auto relative transform group-hover:scale-105 transition-transform duration-300"
+                width={40}
+                height={40}
+                className="h-10 w-auto relative transform group-hover:scale-105 transition-transform duration-300"
                 priority
               />
             </div>
-            <div className="flex flex-col items-center justify-center h-12 leading-none">
-              <span className="text-black text-2xl font-bold leading-none transform group-hover:translate-x-0.5 transition-transform duration-300" style={{ fontFamily: 'Versailles' }}>VISAGE</span>
-              <span className="text-black text-base md:text-lg font-medium leading-none transform group-hover:translate-x-0.5 transition-transform duration-300" style={{ fontFamily: 'Noto Serif Display' }}>studio</span>
-            </div>
+            <span
+              className="inline-flex items-baseline gap-2 text-black text-2xl font-bold leading-none whitespace-nowrap transform group-hover:translate-x-0.5 transition-transform duration-300 uppercase"
+              style={{ fontFamily: 'Versailles' }}
+            >
+              <span>VISAGE</span>
+              <span>STUDIO</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
