@@ -113,46 +113,6 @@ export const comboPackages: ComboPackage[] = [
     isLimited: true
   },
   {
-    id: "ultimate-glow-up-combo",
-    title: "Ultimate Glow Up",
-    description: "Ciljani tretmani za osvježenje lica i vrata",
-    image: "/images/services/woman-face-visage-estetski-studio.webp",
-    price: "820 EUR",
-    oldPrice: "965 EUR",
-    services: [
-      { 
-        id: "foto-terapija", 
-        title: "LED fototerapija - 4 tretmana", 
-        image: "/images/services/dermalux/dermalux-priprema-visage-estetski-studio.png"
-      },
-      { 
-        id: "mezoterapija", 
-        title: "Mezoterapija lica i vrata Mesoject gunom - 4 tretmana", 
-        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
-      },
-      { 
-        id: "botox", 
-        title: "Botox - 50 jedinica", 
-        image: "/images/services/botox/botox-visage-estetski-studio.webp"
-      },
-      { 
-        id: "dermalni-fileri", 
-        title: "Dermalni filer - 1 ml", 
-        image: "/images/services/dermalni-fileri/dermalni-fileri-visage-estetski-studio-sisak.webp"
-      }
-    ],
-    benefits: [
-      "Potiče proizvodnju kolagena i elastina",
-      "Daje volumen licu",
-      "Osvježava kožu lica",
-      "Poboljšava kvalitetu kože",
-      "Umanjuje bore i fine linije",
-      "Savršen za pripremu za važan događaj"
-    ],
-    isPopular: true,
-    isLimited: true
-  },
-  {
     id: "skin-revive-combo",
     title: "Skin Revive",
     description: "Regeneracija kože na staničnoj razini",
@@ -223,74 +183,6 @@ export const comboPackages: ComboPackage[] = [
     isLimited: true
   },
   {
-    id: "mesosynergy-combo",
-    title: "Mesosynergy",
-    description: "Biostimulirajući tretman koji povezuje sve elemente mezoterapije",
-    image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
-    price: "360 EUR",
-    oldPrice: "425 EUR",
-    services: [
-      { 
-        id: "kemijski-piling", 
-        title: "Kemijski piling Duosomal - 1 tretman", 
-        image: "/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg"
-      },
-      { 
-        id: "mezoterapija", 
-        title: "Mezoterapija lica Mesoject gunom - 1 tretman", 
-        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.png"
-      },
-      { 
-        id: "skin-boosteri", 
-        title: "Skin booster TKN HA3 - 1 tretman", 
-        image: "/images/services/skin-boosters/skin-boosteri-prednosti-visage-estetski-studio.png"
-      }
-    ],
-    benefits: [
-      "Poboljšana kvaliteta kože",
-      "Poboljšana čvrstoća kože",
-      "Manje vidljive bore",
-      "Usporen proces starenja",
-      "Glatka i nježna koža na dodir"
-    ],
-    isPopular: true,
-    isLimited: true
-  },
-  {
-    id: "profhilo-perfect-combo",
-    title: "Profhilo Perfect",
-    description: "Vratite sjaj i čvrstoću koži uz kombinaciju kemijskog pilinga, mezoterapije i bioremodulatora",
-    image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
-    price: "850 EUR",
-    oldPrice: "1000 EUR",
-    services: [
-      { 
-        id: "mezoterapija", 
-        title: "Mezoterapije lica Mesoject gunom - 2 tretmana", 
-        image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg"
-      },
-      { 
-        id: "kemijski-piling", 
-        title: "Kemijski piling Duosomal - 2 tretmana", 
-        image: "/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg"
-      },
-      { 
-        id: "skin-boosteri", 
-        title: "Skin booster Profhilo - 2 tretmana", 
-        image: "/images/services/skin-boosters/skin-boosteri-oporavak-visage-estetski-studio.png"
-      }
-    ],
-    benefits: [
-      "Cjeloviti anti-age pristup",
-      "Obnova kože iznutra i izvana",
-      "Dugotrajna hidratacija i sjaj",
-      "Vidljivo ujednačen i pomlađen ten",
-      "Idealno za umornu, dehidriranu i zrelu kožu"
-    ],
-    isPopular: true,
-    isLimited: true
-  },
-  {
     id: "eye-refresh-combo",
     title: "Eye Refresh",
     description: "Otvoren i osvježen pogled bez skalpela",
@@ -315,36 +207,6 @@ export const comboPackages: ComboPackage[] = [
       "Smanjuju se fine linije i opuštenost",
       "Smanjuje se vidljivost bora",
       "Kućna njega za bržu regeneraciju kože i dugotrajan rezultat"
-    ],
-    isPopular: true,
-    isLimited: true
-  },
-  {
-    id: "radiant-skin-combo",
-    title: "Radiant Skin",
-    description: "Reset kože, piling, obnova i zaštita u jednom tretmanu",
-    image: "/images/services/woman-face-visage-estetski-studio.webp",
-    price: "560 EUR",
-    oldPrice: "660 EUR",
-    services: [
-      { 
-        id: "kemijski-piling", 
-        title: "Kemijski piling Duosomal - 2 tretmana", 
-        image: "/images/services/kemijski-piling/kemijski-piling-priprema-estetski-studio-sisak.jpg"
-      },
-      { 
-        id: "prp", 
-        title: "PRP - 2 tretmana", 
-        image: "/images/services/prp/prp-tijek-zahvata-visage-estetski-studio.png"
-      }
-    ],
-    benefits: [
-      "uklanja mrtve stanice s površine kože",
-      "pruža bolju propusnost kože",
-      "pomaže u poboljšanju tonusa kože",
-      "poboljšava teksturu kože",
-      "potiče stvaranje kolagena i elastina",
-      "koristi vlastite biološke resurse minimizirajući rizik od alergijske reakcije"
     ],
     isPopular: true,
     isLimited: true
