@@ -908,7 +908,7 @@ function KatalogContent() {
 
 export default function KatalogPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={null}>
       <KatalogContent />
     </Suspense>
   );
