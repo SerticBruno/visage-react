@@ -97,12 +97,18 @@ function matchesSearch(product: AdminProduct, query: string): boolean {
   return haystack.includes(q);
 }
 
+function getStockRowClassName(quantity: number): string {
+  if (quantity === 0) return 'bg-red-50 hover:bg-red-100/80';
+  if (quantity < 5) return 'bg-orange-50 hover:bg-orange-100/80';
+  return 'hover:bg-gray-50/80';
+}
+
 export default function AdminProductsPage() {
   const [products, setProducts] = useState<AdminProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState(1);
-  const [sortField, setSortField] = useState<SortField>('title');
+  const [sortField, setSortField] = useState<SortField>('quantity');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -304,8 +310,10 @@ export default function AdminProductsPage() {
               </tr>
             )}
             {!loading &&
-              paginatedProducts.map((p) => (
-                <tr key={p.id} className="hover:bg-gray-50/80">
+              paginatedProducts.map((p) => {
+                const quantity = p.quantity ?? 0;
+                return (
+                <tr key={p.id} className={getStockRowClassName(quantity)}>
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-3">
                       <div className="relative h-10 w-10 shrink-0 rounded bg-gray-100 overflow-hidden">
@@ -331,12 +339,14 @@ export default function AdminProductsPage() {
                   <td className="px-4 py-3">
                     <span
                       className={
-                        (p.quantity ?? 0) <= 3
-                          ? 'text-amber-700 font-medium'
-                          : 'text-gray-700'
+                        quantity === 0
+                          ? 'text-red-800 font-semibold'
+                          : quantity < 5
+                            ? 'text-orange-800 font-medium'
+                            : 'text-gray-700'
                       }
                     >
-                      {p.quantity ?? 0}
+                      {quantity}
                     </span>
                   </td>
                   <td className="px-4 py-3 hidden md:table-cell">
@@ -366,7 +376,8 @@ export default function AdminProductsPage() {
                     </button>
                   </td>
                 </tr>
-              ))}
+              );
+              })}
           </tbody>
         </table>
       </div>

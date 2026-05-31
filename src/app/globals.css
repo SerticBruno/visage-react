@@ -103,7 +103,7 @@ html.modal-open {
 }
 
 .animate-loading-bar {
-  animation: loading-bar-indeterminate 1.1s ease-in-out infinite;
+  animation: loading-bar-indeterminate 1.8s ease-in-out infinite;
 }
 
 /* Diagonal shimmer sweep animation for map loading */

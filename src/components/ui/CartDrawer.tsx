@@ -2,12 +2,13 @@
 
 import { Fragment, useCallback, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
-import { FaTimes, FaShoppingCart, FaTrash, FaMinus, FaPlus } from 'react-icons/fa';
+import { FaTimes, FaShoppingCart, FaTrash, FaMinus, FaPlus, FaSpinner } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCart } from '@/context/CartContext';
 import { formatPrice, parsePriceCents } from '@/lib/price-utils';
+import { getProductStock } from '@/lib/inventory';
 import {
   getAmountUntilFreeShippingCents,
   getFreeShippingThresholdLabel,
@@ -76,7 +77,7 @@ export default function CartDrawer() {
         >
           <div
             className="fixed inset-0 bg-black/40 backdrop-blur-sm"
-            onClick={isCheckoutLoading ? undefined : closeCart}
+            onClick={closeCart}
           />
         </Transition.Child>
 
@@ -104,8 +105,7 @@ export default function CartDrawer() {
               </div>
               <button
                 onClick={closeCart}
-                disabled={isCheckoutLoading}
-                className="p-2 rounded-full hover:bg-gray-100 text-gray-500 hover:text-gray-700 transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+                className="p-2 rounded-full hover:bg-gray-100 text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
               >
                 <FaTimes className="w-4 h-4" />
               </button>
@@ -129,6 +129,8 @@ export default function CartDrawer() {
               ) : (
                 items.map((item) => {
                   const priceCents = parsePriceCents(item.product.price);
+                  const stock = getProductStock(item.product);
+                  const atMaxStock = stock !== null && item.quantity >= stock;
                   return (
                     <div key={item.product.id} className="flex gap-3 py-3 border-b border-gray-50 last:border-0">
                       {/* Image */}
@@ -164,7 +166,8 @@ export default function CartDrawer() {
                             <span className="text-sm font-medium w-5 text-center">{item.quantity}</span>
                             <button
                               onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                              className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                              disabled={atMaxStock}
+                              className="text-gray-600 hover:text-gray-900 transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
                             >
                               <FaPlus className="w-3 h-3" />
                             </button>
@@ -206,14 +209,24 @@ export default function CartDrawer() {
                   type="button"
                   onClick={handleCheckout}
                   disabled={isCheckoutLoading}
-                  className="relative block w-full text-center bg-gray-900 hover:bg-black disabled:bg-gray-700 disabled:cursor-wait text-white font-medium py-3 rounded-xl transition-colors cursor-pointer overflow-hidden"
+                  className={`relative flex w-full items-center justify-center gap-2 font-medium py-3 rounded-xl transition-colors cursor-pointer ${
+                    isCheckoutLoading
+                      ? 'bg-gray-500 text-white cursor-wait'
+                      : 'bg-gray-900 hover:bg-black text-white'
+                  }`}
                 >
-                  {isCheckoutLoading ? 'Učitavanje…' : 'Nastavi na plaćanje'}
+                  {isCheckoutLoading ? (
+                    <>
+                      <FaSpinner className="w-4 h-4 animate-spin" aria-hidden />
+                      Priprema
+                    </>
+                  ) : (
+                    'Nastavi na plaćanje'
+                  )}
                 </button>
                 <button
                   onClick={closeCart}
-                  disabled={isCheckoutLoading}
-                  className="block w-full text-center text-sm text-gray-500 hover:text-gray-700 py-1 transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="block w-full text-center text-sm text-gray-500 hover:text-gray-700 py-1 transition-colors cursor-pointer"
                 >
                   Nastavi kupovinu
                 </button>

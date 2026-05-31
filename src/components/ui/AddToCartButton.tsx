@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import { Product } from '@/data/products';
+import { canAddToCart, getProductStock } from '@/lib/inventory';
+import StockNotifyButton from '@/components/ui/StockNotifyButton';
 import { FaShoppingCart, FaCheck, FaMinus, FaPlus } from 'react-icons/fa';
 
 interface Props {
@@ -19,6 +21,9 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
   const addedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const cartQty = items.find((i) => i.product.id === product.id)?.quantity ?? 0;
+  const stock = getProductStock(product);
+  const outOfStock = stock !== null && stock <= 0;
+  const maxReached = stock !== null && !outOfStock && cartQty >= stock;
 
   useEffect(() => {
     return () => {
@@ -39,11 +44,18 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
 
   const handleAddOnce = (e: React.MouseEvent) => {
     e.stopPropagation();
+    if (outOfStock || !canAddToCart(product, cartQty, 1)) return;
     addItem(product);
     flashAdded();
   };
 
+  if (outOfStock) {
+    return <StockNotifyButton product={product} variant={variant} className={className} />;
+  }
+
   if (variant === 'quantity') {
+    const maxSelectable = stock !== null ? Math.max(1, stock - cartQty) : 99;
+
     const handleMinus = (e: React.MouseEvent) => {
       e.stopPropagation();
       setSelectQty((q) => Math.max(1, q - 1));
@@ -51,11 +63,12 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
 
     const handlePlus = (e: React.MouseEvent) => {
       e.stopPropagation();
-      setSelectQty((q) => q + 1);
+      setSelectQty((q) => Math.min(maxSelectable, q + 1));
     };
 
     const handleAddSelected = (e: React.MouseEvent) => {
       e.stopPropagation();
+      if (!canAddToCart(product, cartQty, selectQty)) return;
       if (cartQty === 0) {
         addItem(product);
         if (selectQty > 1) updateQuantity(product.id, selectQty);
@@ -86,8 +99,9 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
           <button
             type="button"
             onClick={handlePlus}
+            disabled={selectQty >= maxSelectable}
             aria-label="Povećaj količinu"
-            className="p-1.5 text-slate-600 hover:text-slate-900 rounded-md transition-colors cursor-pointer"
+            className="p-1.5 text-slate-600 hover:text-slate-900 rounded-md transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
           >
             <FaPlus className="w-2.5 h-2.5" />
           </button>
@@ -96,17 +110,22 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
         <button
           type="button"
           onClick={handleAddSelected}
+          disabled={maxReached && cartQty > 0}
           className={`
             flex flex-1 items-center justify-center gap-1.5 min-w-0 px-3 py-2 rounded-lg text-xs font-medium shadow-sm transition-all duration-300 cursor-pointer
             ${added
               ? 'bg-green-500 text-white scale-[1.02] shadow-green-200 shadow-md'
-              : 'bg-gray-900 hover:bg-black text-white hover:shadow'
+              : maxReached && cartQty > 0
+                ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                : 'bg-gray-900 hover:bg-black text-white hover:shadow'
             }
           `}
           style={{ transitionTimingFunction: added ? 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' : 'ease' }}
         >
           {added ? <FaCheck className="w-3.5 h-3.5 flex-shrink-0" /> : <FaShoppingCart className="w-3.5 h-3.5 flex-shrink-0" />}
-          <span className="truncate">{added ? 'Dodano!' : 'Dodaj u košaricu'}</span>
+          <span className="truncate">
+            {added ? 'Dodano!' : maxReached && cartQty > 0 ? 'Maks. zaliha' : 'Dodaj u košaricu'}
+          </span>
         </button>
       </div>
     );

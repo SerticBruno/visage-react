@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 import { productToRow, rowToProduct, type ProductInput } from '@/lib/products-db';
+import { notifyStockSubscribers } from '@/lib/stock-notifications';
 import type { Product } from '@/data/products';
 
 export async function GET(
@@ -67,6 +68,14 @@ export async function PATCH(
       .single();
 
     if (error) throw error;
+
+    const previousQty = existing.quantity ?? 0;
+    const newQty = data.quantity ?? 0;
+    if (previousQty <= 0 && newQty > 0) {
+      notifyStockSubscribers(id).catch((err) =>
+        console.error('Stock notification dispatch failed:', err)
+      );
+    }
 
     return NextResponse.json({
       product: { ...rowToProduct(data), quantity: data.quantity, published: data.published },

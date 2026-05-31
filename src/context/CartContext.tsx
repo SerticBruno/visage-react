@@ -10,6 +10,7 @@ import React, {
 } from 'react';
 import { Product } from '@/data/products';
 import { parsePriceCents } from '@/lib/price-utils';
+import { getProductStock } from '@/lib/inventory';
 
 export interface CartItem {
   product: Product;
@@ -38,11 +39,17 @@ function cartReducer(state: CartState, action: CartAction): CartState {
     case 'HYDRATE':
       return { ...state, items: action.items };
     case 'ADD_ITEM': {
+      const stock = getProductStock(action.product);
+      if (stock !== null && stock <= 0) return state;
+
       const existing = state.items.find((i) => i.product.id === action.product.id);
+      const nextQty = existing ? existing.quantity + 1 : 1;
+      if (stock !== null && nextQty > stock) return state;
+
       const items = existing
         ? state.items.map((i) =>
             i.product.id === action.product.id
-              ? { ...i, quantity: i.quantity + 1 }
+              ? { ...i, quantity: nextQty }
               : i
           )
         : [...state.items, { product: action.product, quantity: 1 }];
@@ -56,9 +63,13 @@ function cartReducer(state: CartState, action: CartAction): CartState {
       }
       return {
         ...state,
-        items: state.items.map((i) =>
-          i.product.id === action.productId ? { ...i, quantity: action.quantity } : i
-        ),
+        items: state.items.map((i) => {
+          if (i.product.id !== action.productId) return i;
+          const stock = getProductStock(i.product);
+          const quantity =
+            stock !== null ? Math.min(action.quantity, stock) : action.quantity;
+          return quantity > 0 ? { ...i, quantity } : i;
+        }).filter((i) => i.quantity > 0),
       };
     case 'CLEAR_CART':
       if (state.items.length === 0) return state;

@@ -56,15 +56,27 @@ function UspjehPageContent({ params }: Props) {
 
   useEffect(() => {
     const query = sessionId ? `?session_id=${encodeURIComponent(sessionId)}` : '';
-    fetch(`/api/orders/${orderId}${query}`)
-      .then(async (res) => {
+    const confirmPromise =
+      sessionId
+        ? fetch(`/api/orders/${orderId}/confirm`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ session_id: sessionId }),
+          }).catch(() => null)
+        : Promise.resolve(null);
+
+    Promise.all([
+      confirmPromise,
+      fetch(`/api/orders/${orderId}${query}`).then(async (res) => {
         if (!res.ok) {
           const body = await res.json().catch(() => ({}));
           throw new Error(body.error ?? 'Narudžba nije učitana');
         }
         return res.json();
-      })
-      .then((data: { order: OrderSummary; items: OrderItem[] }) => {
+      }),
+    ])
+      .then(([, orderRes]) => {
+        const data = orderRes as { order: OrderSummary; items: OrderItem[] };
         setOrder(data.order);
         setItems(data.items);
       })

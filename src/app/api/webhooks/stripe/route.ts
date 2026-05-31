@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { supabase } from '@/lib/supabase';
+import { fulfillOrder } from '@/lib/order-fulfillment';
 import Stripe from 'stripe';
 import nodemailer from 'nodemailer';
 
@@ -39,36 +40,22 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ received: true });
     }
 
-    // Fetch order items
+    try {
+      await fulfillOrder(orderId, { stripeSessionId: session.id });
+    } catch (err) {
+      console.error('Order fulfillment failed:', err);
+      return NextResponse.json({ error: 'Fulfillment failed' }, { status: 500 });
+    }
+
     const { data: orderItems } = await supabase
       .from('order_items')
       .select('product_id, quantity')
       .eq('order_id', orderId);
 
-    // Decrement stock atomically for each item
-    if (orderItems) {
-      for (const item of orderItems) {
-        const { error } = await supabase.rpc('decrement_stock', {
-          p_product_id: item.product_id,
-          p_quantity: item.quantity,
-        });
-        if (error) {
-          // Log but don't fail - stock may not be tracked for all products
-          console.warn(`Stock decrement failed for ${item.product_id}:`, error.message);
-        }
-      }
-    }
-
-    // Mark order as paid
     const { data: order } = await supabase
       .from('orders')
-      .update({
-        status: 'paid',
-        stripe_session_id: session.id,
-        paid_at: new Date().toISOString(),
-      })
+      .select('*')
       .eq('id', orderId)
-      .select()
       .single();
 
     // Send confirmation email

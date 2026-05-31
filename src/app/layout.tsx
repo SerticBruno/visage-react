@@ -11,7 +11,6 @@ import { LocalBusinessStructuredData } from "@/components/StructuredData";
 import { businessData } from "@/data/business";
 import { CartProvider } from "@/context/CartContext";
 import CartDrawer from "@/components/ui/CartDrawer";
-import CheckoutLoadingOverlay from "@/components/ui/CheckoutLoadingOverlay";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -119,7 +118,6 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           <CartDrawer />
-          <CheckoutLoadingOverlay />
           <main className="pt-20">
             {children}
           </main>

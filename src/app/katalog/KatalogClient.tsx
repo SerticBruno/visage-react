@@ -11,6 +11,7 @@ import { useSearchParams } from 'next/navigation';
 import ProductModal from '@/components/ui/ProductModal';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import AddToCartButton from '@/components/ui/AddToCartButton';
+import { isInStock } from '@/lib/inventory';
 import { scrollToElement } from '@/lib/scroll-offset';
 
 export default function KatalogClient({ products }: { products: Product[] }) {
@@ -770,6 +771,11 @@ export default function KatalogClient({ products }: { products: Product[] }) {
                         <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full inline-flex items-center gap-0.5 sm:gap-1 shadow-sm w-fit">
                           <FaBox className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                           <span className="hidden sm:inline">Set</span>
+                        </span>
+                      )}
+                      {!isInStock(product) && (
+                        <span className="bg-gray-500 text-white text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full shadow-sm w-fit">
+                          Nema na zalihama
                         </span>
                       )}
                     </div>

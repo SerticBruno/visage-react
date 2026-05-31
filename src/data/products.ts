@@ -15,6 +15,8 @@ export interface Product {
   weightGrams?: number;
   /** Stock-keeping unit - optional unique product code */
   sku?: string;
+  /** Available units in inventory (from Supabase products.quantity) */
+  quantity?: number;
   isPopular?: boolean;
   isNew?: boolean;
   isOnSale?: boolean;

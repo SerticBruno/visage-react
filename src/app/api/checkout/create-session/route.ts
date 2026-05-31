@@ -72,9 +72,20 @@ export async function POST(req: NextRequest) {
 
     for (const item of resolvedItems) {
       const available = stockMap.get(item.product.id);
-      if (available !== undefined && available < item.quantity) {
+      if (available === undefined) {
         return NextResponse.json(
-          { error: `Nedovoljno zaliha za: ${item.product.title}` },
+          { error: `Proizvod nije dostupan: ${item.product.title}` },
+          { status: 400 }
+        );
+      }
+      if (available < item.quantity) {
+        return NextResponse.json(
+          {
+            error:
+              available <= 0
+                ? `${item.product.title} trenutno nije na zalihama`
+                : `Nedovoljno zaliha za: ${item.product.title} (dostupno: ${available})`,
+          },
           { status: 400 }
         );
       }
