@@ -10,6 +10,7 @@ import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
 
 export default function PricingPage() {
+  const [searchInput, setSearchInput] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedBadges, setSelectedBadges] = useState<string[]>([]);
@@ -17,6 +18,7 @@ export default function PricingPage() {
   const [isFiltering, setIsFiltering] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  const isInitialSearchMount = useRef(true);
   
   // Accordion states for filter sections
   const [expandedSections, setExpandedSections] = useState({
@@ -42,6 +44,18 @@ export default function PricingPage() {
       return matchesSearch && matchesCategory && matchesBadges;
     });
   }, [searchTerm, selectedCategories, selectedBadges]);
+
+  // Debounce search so filtering doesn't run on every keystroke
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearchTerm(searchInput);
+      if (!isInitialSearchMount.current) {
+        setIsFiltering(true);
+      }
+      isInitialSearchMount.current = false;
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [searchInput]);
 
   // Reset filtering state after a delay
   useEffect(() => {
@@ -105,9 +119,7 @@ export default function PricingPage() {
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-    setIsFiltering(true);
-    requestAnimationFrame(scrollToContent);
+    setSearchInput(e.target.value);
   };
 
   const toggleSection = (section: keyof typeof expandedSections) => {
@@ -190,11 +202,11 @@ export default function PricingPage() {
                       type="text"
                       placeholder="Naziv ili opis..."
                       className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm"
-                      value={searchTerm}
+                      value={searchInput}
                       onChange={handleSearch}
                     />
                     <FaSearch className="absolute left-3 top-3.5 text-gray-400" />
-                    {searchTerm && (
+                    {searchInput && (
                       <button
                         onClick={() => {
                           setIsTransitioning(true);
@@ -202,6 +214,7 @@ export default function PricingPage() {
                           
                           // Fade out first, then clear search
                           setTimeout(() => {
+                            setSearchInput('');
                             setSearchTerm('');
                             requestAnimationFrame(scrollToContent);
                           }, 150); // Half of the transition duration
@@ -343,13 +356,14 @@ export default function PricingPage() {
                 </div>
 
                 {/* Clear Filters Button */}
-                {(searchTerm || selectedCategories.length > 0 || selectedBadges.length > 0) && (
+                {(searchInput || selectedCategories.length > 0 || selectedBadges.length > 0) && (
                   <div className="border-t border-gray-200 pt-4">
                     <button
                       onClick={() => {
                         setIsTransitioning(true);
                         setIsFiltering(true);
                         setTimeout(() => {
+                          setSearchInput('');
                           setSearchTerm('');
                           setSelectedCategories([]);
                           setSelectedBadges([]);
