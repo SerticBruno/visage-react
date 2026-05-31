@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useCart } from '@/context/CartContext';
 import { formatPrice, parsePriceCents } from '@/lib/price-utils';
 import {
@@ -46,8 +46,13 @@ const DELIVERY_ICONS: Record<DeliveryMethod, React.ReactNode> = {
 };
 
 export default function CheckoutPage() {
-  const { items, subtotalCents } = useCart();
+  const { items, subtotalCents, finishCheckoutLoading, closeCart } = useCart();
   const router = useRouter();
+
+  useEffect(() => {
+    finishCheckoutLoading();
+    closeCart();
+  }, [finishCheckoutLoading, closeCart]);
 
   const [form, setForm] = useState<FormData>({
     name: '',

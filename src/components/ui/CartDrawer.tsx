@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useCallback, useEffect, useState } from 'react';
+import { Fragment, useCallback, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import { FaTimes, FaShoppingCart, FaTrash, FaMinus, FaPlus } from 'react-icons/fa';
 import Image from 'next/image';
@@ -17,8 +17,17 @@ import {
 export default function CartDrawer() {
   const router = useRouter();
   const pathname = usePathname();
-  const { items, isOpen, closeCart, removeItem, updateQuantity, subtotalCents } = useCart();
-  const [isNavigating, setIsNavigating] = useState(false);
+  const {
+    items,
+    isOpen,
+    isCheckoutLoading,
+    closeCart,
+    removeItem,
+    updateQuantity,
+    subtotalCents,
+    startCheckoutLoading,
+    finishCheckoutLoading,
+  } = useCart();
   const freeShipping = qualifiesForFreeShipping(subtotalCents);
   const untilFreeShippingCents = getAmountUntilFreeShippingCents(subtotalCents);
 
@@ -29,23 +38,28 @@ export default function CartDrawer() {
   }, [isOpen, items.length, router]);
 
   const handleCheckout = useCallback(async () => {
-    if (isNavigating || items.length === 0) return;
+    if (isCheckoutLoading || items.length === 0) return;
 
     if (pathname === '/checkout') {
       closeCart();
       return;
     }
 
-    setIsNavigating(true);
+    startCheckoutLoading();
     try {
       await router.push('/checkout');
-      closeCart();
     } catch {
-      // Ostavi sidebar otvoren ako navigacija ne uspije
-    } finally {
-      setIsNavigating(false);
+      finishCheckoutLoading();
     }
-  }, [isNavigating, items.length, pathname, router, closeCart]);
+  }, [
+    closeCart,
+    finishCheckoutLoading,
+    isCheckoutLoading,
+    items.length,
+    pathname,
+    router,
+    startCheckoutLoading,
+  ]);
 
   return (
     <Transition show={isOpen} as={Fragment}>
@@ -62,7 +76,7 @@ export default function CartDrawer() {
         >
           <div
             className="fixed inset-0 bg-black/40 backdrop-blur-sm"
-            onClick={isNavigating ? undefined : closeCart}
+            onClick={isCheckoutLoading ? undefined : closeCart}
           />
         </Transition.Child>
 
@@ -77,15 +91,6 @@ export default function CartDrawer() {
           leaveTo="translate-x-full"
         >
           <div className="relative w-full max-w-md bg-white shadow-2xl flex flex-col h-full">
-            {isNavigating && (
-              <div
-                className="absolute top-0 inset-x-0 h-1 bg-gray-200 overflow-hidden z-20"
-                role="progressbar"
-                aria-label="Učitavanje checkouta"
-              >
-                <div className="h-full w-2/5 bg-gray-900 animate-loading-bar" />
-              </div>
-            )}
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
               <div className="flex items-center gap-2">
@@ -99,7 +104,7 @@ export default function CartDrawer() {
               </div>
               <button
                 onClick={closeCart}
-                disabled={isNavigating}
+                disabled={isCheckoutLoading}
                 className="p-2 rounded-full hover:bg-gray-100 text-gray-500 hover:text-gray-700 transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <FaTimes className="w-4 h-4" />
@@ -200,14 +205,14 @@ export default function CartDrawer() {
                 <button
                   type="button"
                   onClick={handleCheckout}
-                  disabled={isNavigating}
+                  disabled={isCheckoutLoading}
                   className="relative block w-full text-center bg-gray-900 hover:bg-black disabled:bg-gray-700 disabled:cursor-wait text-white font-medium py-3 rounded-xl transition-colors cursor-pointer overflow-hidden"
                 >
-                  {isNavigating ? 'Učitavanje…' : 'Nastavi na plaćanje'}
+                  {isCheckoutLoading ? 'Učitavanje…' : 'Nastavi na plaćanje'}
                 </button>
                 <button
                   onClick={closeCart}
-                  disabled={isNavigating}
+                  disabled={isCheckoutLoading}
                   className="block w-full text-center text-sm text-gray-500 hover:text-gray-700 py-1 transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   Nastavi kupovinu

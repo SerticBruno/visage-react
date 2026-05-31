@@ -19,6 +19,7 @@ export interface CartItem {
 interface CartState {
   items: CartItem[];
   isOpen: boolean;
+  isCheckoutLoading: boolean;
 }
 
 type CartAction =
@@ -28,6 +29,8 @@ type CartAction =
   | { type: 'CLEAR_CART' }
   | { type: 'OPEN_CART' }
   | { type: 'CLOSE_CART' }
+  | { type: 'START_CHECKOUT_LOADING' }
+  | { type: 'FINISH_CHECKOUT_LOADING' }
   | { type: 'HYDRATE'; items: CartItem[] };
 
 function cartReducer(state: CartState, action: CartAction): CartState {
@@ -64,6 +67,10 @@ function cartReducer(state: CartState, action: CartAction): CartState {
       return { ...state, isOpen: true };
     case 'CLOSE_CART':
       return { ...state, isOpen: false };
+    case 'START_CHECKOUT_LOADING':
+      return { ...state, isCheckoutLoading: true };
+    case 'FINISH_CHECKOUT_LOADING':
+      return { ...state, isCheckoutLoading: false };
     default:
       return state;
   }
@@ -72,12 +79,15 @@ function cartReducer(state: CartState, action: CartAction): CartState {
 interface CartContextValue {
   items: CartItem[];
   isOpen: boolean;
+  isCheckoutLoading: boolean;
   addItem: (product: Product) => void;
   removeItem: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
   openCart: () => void;
   closeCart: () => void;
+  startCheckoutLoading: () => void;
+  finishCheckoutLoading: () => void;
   totalItems: number;
   subtotalCents: number;
 }
@@ -87,7 +97,11 @@ const CartContext = createContext<CartContextValue | null>(null);
 const STORAGE_KEY = 'visage-cart';
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  const [state, dispatch] = useReducer(cartReducer, { items: [], isOpen: false });
+  const [state, dispatch] = useReducer(cartReducer, {
+    items: [],
+    isOpen: false,
+    isCheckoutLoading: false,
+  });
 
   // Hydrate from localStorage on mount
   useEffect(() => {
@@ -129,6 +143,23 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const clearCart = useCallback(() => dispatch({ type: 'CLEAR_CART' }), []);
   const openCart = useCallback(() => dispatch({ type: 'OPEN_CART' }), []);
   const closeCart = useCallback(() => dispatch({ type: 'CLOSE_CART' }), []);
+  const startCheckoutLoading = useCallback(
+    () => dispatch({ type: 'START_CHECKOUT_LOADING' }),
+    []
+  );
+  const finishCheckoutLoading = useCallback(
+    () => dispatch({ type: 'FINISH_CHECKOUT_LOADING' }),
+    []
+  );
+
+  // Sigurnosni timeout ako checkout stranica ne odgovori
+  useEffect(() => {
+    if (!state.isCheckoutLoading) return;
+    const timeout = window.setTimeout(() => {
+      dispatch({ type: 'FINISH_CHECKOUT_LOADING' });
+    }, 15000);
+    return () => window.clearTimeout(timeout);
+  }, [state.isCheckoutLoading]);
 
   const totalItems = state.items.reduce((sum, i) => sum + i.quantity, 0);
   const subtotalCents = state.items.reduce(
@@ -140,24 +171,30 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     () => ({
       items: state.items,
       isOpen: state.isOpen,
+      isCheckoutLoading: state.isCheckoutLoading,
       addItem,
       removeItem,
       updateQuantity,
       clearCart,
       openCart,
       closeCart,
+      startCheckoutLoading,
+      finishCheckoutLoading,
       totalItems,
       subtotalCents,
     }),
     [
       state.items,
       state.isOpen,
+      state.isCheckoutLoading,
       addItem,
       removeItem,
       updateQuantity,
       clearCart,
       openCart,
       closeCart,
+      startCheckoutLoading,
+      finishCheckoutLoading,
       totalItems,
       subtotalCents,
     ]
