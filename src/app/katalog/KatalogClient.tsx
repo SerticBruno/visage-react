@@ -11,6 +11,7 @@ import { useSearchParams } from 'next/navigation';
 import ProductModal from '@/components/ui/ProductModal';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import AddToCartButton from '@/components/ui/AddToCartButton';
+import { scrollToElement } from '@/lib/scroll-offset';
 
 export default function KatalogClient({ products }: { products: Product[] }) {
   const searchParams = useSearchParams();
@@ -106,9 +107,9 @@ export default function KatalogClient({ products }: { products: Product[] }) {
         setSelectedProduct(product);
         setIsModalOpen(true);
         // Scroll to products grid
-        setTimeout(() => {
-          scrollToProducts();
-        }, 100);
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => scrollToProducts());
+        });
         // Clean up the URL parameter
         const url = new URL(window.location.href);
         url.searchParams.delete('product');
@@ -116,6 +117,23 @@ export default function KatalogClient({ products }: { products: Product[] }) {
       }
     }
   }, [searchParams, products]);
+
+  // /katalog#produkti — hash scroll (npr. iz košarice); čeka layout nakon navigacije
+  useEffect(() => {
+    const scrollToHashTarget = () => {
+      if (window.location.hash !== '#produkti') return;
+      if (productsRef.current) scrollToProducts();
+    };
+
+    requestAnimationFrame(() => requestAnimationFrame(scrollToHashTarget));
+    const timeout = setTimeout(scrollToHashTarget, 200);
+
+    window.addEventListener('hashchange', scrollToHashTarget);
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener('hashchange', scrollToHashTarget);
+    };
+  }, []);
 
   // Reset filtering state after a delay
   useEffect(() => {
@@ -138,14 +156,8 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   }, [isTransitioning]);
 
   const scrollToProducts = () => {
-    const navbarHeight = 80;
-    const productsTop = productsRef.current?.offsetTop || 0;
-    const scrollPosition = productsTop - navbarHeight - 30;
-
-    window.scrollTo({
-      top: scrollPosition,
-      behavior: 'smooth' as ScrollBehavior
-    });
+    if (!productsRef.current) return;
+    scrollToElement(productsRef.current);
   };
 
   const handlePageChange = (newPage: number) => {
@@ -692,7 +704,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
           </div>
 
           {/* Products Grid */}
-          <div className="flex-1" ref={productsRef} id="produkti">
+          <div className="flex-1 scroll-mt-24" ref={productsRef} id="produkti">
             {/* Products Grid */}
             <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 transition-opacity duration-300 ${isScrolling || isFiltering || isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
               {currentProducts.map((product) => (

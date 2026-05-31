@@ -118,7 +118,7 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           <CartDrawer />
-          <main className="pt-16">
+          <main className="pt-20">
             {children}
           </main>
           <Footer />
