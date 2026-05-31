@@ -199,7 +199,7 @@ export default function ProductForm({
             onChange={(e) => update('productType', e.target.value || undefined)}
             className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
           >
-            <option value="">—</option>
+            <option value="">-</option>
             {productTypes.map((t) => (
               <option key={t} value={t}>
                 {t}

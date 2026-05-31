@@ -2,12 +2,19 @@
 
 import { useCart } from '@/context/CartContext';
 import { formatPrice, parsePriceCents } from '@/lib/price-utils';
+import {
+  getAmountUntilFreeShippingCents,
+  getFreeShippingThresholdLabel,
+  qualifiesForFreeShipping,
+} from '@/lib/shipping';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaTrash, FaMinus, FaPlus, FaShoppingCart, FaArrowLeft } from 'react-icons/fa';
 
 export default function KosaricaPage() {
   const { items, removeItem, updateQuantity, subtotalCents } = useCart();
+  const freeShipping = qualifiesForFreeShipping(subtotalCents);
+  const untilFreeShippingCents = getAmountUntilFreeShippingCents(subtotalCents);
 
   if (items.length === 0) {
     return (
@@ -121,8 +128,24 @@ export default function KosaricaPage() {
               <div className="border-t border-gray-100 mt-4 pt-4">
                 <div className="flex justify-between text-sm text-gray-500 mb-3">
                   <span>Dostava</span>
-                  <span>izračunava se na checkoutu</span>
+                  <span>
+                    {freeShipping ? (
+                      <span className="text-emerald-700 font-medium">Besplatno</span>
+                    ) : (
+                      'na checkoutu'
+                    )}
+                  </span>
                 </div>
+                {freeShipping ? (
+                  <p className="text-xs text-emerald-700 mb-3">
+                    Imate pravo na besplatnu dostavu (BoxNow / GLS)
+                  </p>
+                ) : (
+                  <p className="text-xs text-gray-500 mb-3">
+                    Besplatna dostava iznad {getFreeShippingThresholdLabel()} - još{' '}
+                    {formatPrice(untilFreeShippingCents)}
+                  </p>
+                )}
                 <div className="flex justify-between font-semibold text-gray-900">
                   <span>Ukupno (bez dostave)</span>
                   <span>{formatPrice(subtotalCents)}</span>

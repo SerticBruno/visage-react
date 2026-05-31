@@ -8,7 +8,7 @@ if (!secretKey) {
 
 if (process.env.NODE_ENV === 'development' && secretKey.startsWith('sk_live_')) {
   console.warn(
-    '[stripe] LIVE ključ u developmentu — u .env.local koristi sk_test_… i restartaj `npm run dev`'
+    '[stripe] LIVE ključ u developmentu - u .env.local koristi sk_test_… i restartaj `npm run dev`'
   );
 }
 

@@ -11,9 +11,9 @@ export interface Product {
   image: string;
   price: string;
   oldPrice?: string;
-  /** Weight in grams — used for shipping cost calculation */
+  /** Weight in grams - used for shipping cost calculation */
   weightGrams?: number;
-  /** Stock-keeping unit — optional unique product code */
+  /** Stock-keeping unit - optional unique product code */
   sku?: string;
   isPopular?: boolean;
   isNew?: boolean;

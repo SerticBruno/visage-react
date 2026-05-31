@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.SUPABASE_URL!;
-// Legacy: SUPABASE_SERVICE_ROLE_KEY — newer projects: SUPABASE_SECRET_KEY (sb_secret_…)
+// Legacy: SUPABASE_SERVICE_ROLE_KEY - newer projects: SUPABASE_SECRET_KEY (sb_secret_…)
 const supabaseServiceKey =
   process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.SUPABASE_SECRET_KEY;
 
@@ -11,7 +11,7 @@ if (!supabaseUrl || !supabaseServiceKey) {
   );
 }
 
-// Server-only client — never expose service role key to the browser
+// Server-only client - never expose service role key to the browser
 export const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
 export interface DbOrder {

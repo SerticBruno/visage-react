@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { supabase } from '@/lib/supabase';
 import { parsePriceCents } from '@/lib/price-utils';
-import { getShippingOption, DeliveryMethod } from '@/lib/shipping';
+import { calculateShippingCents, getShippingOption, DeliveryMethod } from '@/lib/shipping';
 import { getProductsByIds, getProductQuantities } from '@/lib/products-db';
 import { getSiteUrl } from '@/lib/site-url';
 import { calculateDiscountCents, resolvePromoCode } from '@/lib/promo-codes';
@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
     const productMap = await getProductsByIds(productIds);
     const stockMap = await getProductQuantities(productIds);
 
-    // Resolve products server-side — never trust client-provided prices
+    // Resolve products server-side - never trust client-provided prices
     const resolvedItems = items.map((item) => {
       const product = productMap.get(item.productId);
       if (!product) throw new Error(`Proizvod nije pronađen: ${item.productId}`);
@@ -67,7 +67,8 @@ export async function POST(req: NextRequest) {
     const discountCents = promo
       ? calculateDiscountCents(subtotalCents, promo.percentOff)
       : 0;
-    const totalCents = subtotalCents - discountCents + shippingOption.priceCents;
+    const shippingCents = calculateShippingCents(deliveryMethod, subtotalCents);
+    const totalCents = subtotalCents - discountCents + shippingCents;
 
     for (const item of resolvedItems) {
       const available = stockMap.get(item.product.id);
@@ -90,7 +91,7 @@ export async function POST(req: NextRequest) {
         customer_phone: customer.phone,
         shipping_address: shippingAddress,
         subtotal_cents: subtotalCents,
-        shipping_cents: shippingOption.priceCents,
+        shipping_cents: shippingCents,
         discount_cents: discountCents,
         promo_code: promo?.code ?? null,
         total_cents: totalCents,
@@ -133,17 +134,17 @@ export async function POST(req: NextRequest) {
     }));
 
     // Add shipping as a line item if applicable
-    if (shippingOption.priceCents > 0) {
+    if (shippingCents > 0) {
       stripeLineItems.push({
         price_data: {
           currency: 'eur',
           product_data: {
-            name: `Dostava — ${shippingOption.label}`,
+            name: `Dostava - ${shippingOption.label}`,
             description: shippingOption.estimatedDays,
             images: [],
             metadata: { product_id: 'shipping' },
           },
-          unit_amount: shippingOption.priceCents,
+          unit_amount: shippingCents,
         },
         quantity: 1,
       });

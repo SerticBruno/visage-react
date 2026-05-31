@@ -118,7 +118,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
     }
   }, [searchParams, products]);
 
-  // /katalog#produkti — hash scroll (npr. iz košarice); čeka layout nakon navigacije
+  // /katalog#produkti - hash scroll (npr. iz košarice); čeka layout nakon navigacije
   useEffect(() => {
     const scrollToHashTarget = () => {
       if (window.location.hash !== '#produkti') return;

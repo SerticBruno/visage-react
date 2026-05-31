@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
           p_quantity: item.quantity,
         });
         if (error) {
-          // Log but don't fail — stock may not be tracked for all products
+          // Log but don't fail - stock may not be tracked for all products
           console.warn(`Stock decrement failed for ${item.product_id}:`, error.message);
         }
       }
@@ -106,7 +106,7 @@ async function sendConfirmationEmail(
     await transporter.sendMail({
       from: `VISAGE Studio <${process.env.GMAIL_USER}>`,
       to: order.customer_email as string,
-      subject: `Potvrda narudžbe #${(order.id as string).slice(0, 8).toUpperCase()} — VISAGE Studio`,
+      subject: `Potvrda narudžbe #${(order.id as string).slice(0, 8).toUpperCase()} - VISAGE Studio`,
       html: `
         <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; color: #1a1a1a;">
           <h1 style="font-size: 22px; margin-bottom: 4px;">Hvala na narudžbi!</h1>
@@ -136,12 +136,12 @@ async function sendConfirmationEmail(
     await transporter.sendMail({
       from: `VISAGE Studio <${process.env.GMAIL_USER}>`,
       to: studioRecipients as string[],
-      subject: `Nova narudžba #${(order.id as string).slice(0, 8).toUpperCase()} — ${order.customer_name}`,
+      subject: `Nova narudžba #${(order.id as string).slice(0, 8).toUpperCase()} - ${order.customer_name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto;">
           <h2>Nova narudžba!</h2>
           <p><strong>Kupac:</strong> ${order.customer_name} (${order.customer_email})</p>
-          <p><strong>Telefon:</strong> ${order.customer_phone ?? '—'}</p>
+          <p><strong>Telefon:</strong> ${order.customer_phone ?? '-'}</p>
           <p><strong>Dostava:</strong> ${deliveryLabels[order.delivery_method as string] ?? order.delivery_method}</p>
           <p><strong>Adresa/Paketomat:</strong> ${JSON.stringify(order.shipping_address)}</p>
           <p><strong>Ukupno:</strong> ${((order.total_cents as number) / 100).toFixed(2)} EUR</p>

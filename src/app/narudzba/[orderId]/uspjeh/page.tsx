@@ -76,7 +76,7 @@ function UspjehPageContent({ params }: Props) {
     <div className="min-h-screen bg-gray-50 px-4 sm:px-6 py-10 lg:py-14">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-start">
-          {/* Left — confirmation */}
+          {/* Left - confirmation */}
           <div className="lg:col-span-2 lg:sticky lg:top-24">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-5">
@@ -134,7 +134,7 @@ function UspjehPageContent({ params }: Props) {
             </div>
           </div>
 
-          {/* Right — items + totals */}
+          {/* Right - items + totals */}
           <div className="lg:col-span-3 space-y-4">
             <h2 className="text-lg font-semibold text-gray-900 px-1">Vaša narudžba</h2>
 
@@ -149,7 +149,7 @@ function UspjehPageContent({ params }: Props) {
               <div className="bg-white rounded-2xl border border-gray-100 p-6 text-center text-sm text-gray-600">
                 <p>{error}</p>
                 <p className="mt-2 text-gray-500">
-                  Narudžba #{shortId} je zaprimljena — provjerite email za potvrdu.
+                  Narudžba #{shortId} je zaprimljena - provjerite email za potvrdu.
                 </p>
               </div>
             )}

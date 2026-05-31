@@ -210,7 +210,7 @@ export async function getProductQuantities(
   return new Map((data ?? []).map((r) => [r.id as string, r.quantity as number]));
 }
 
-/** Products for checkout — keyed by id */
+/** Products for checkout - keyed by id */
 export async function getProductsByIds(ids: string[]): Promise<Map<string, Product>> {
   if (!ids.length) return new Map();
 

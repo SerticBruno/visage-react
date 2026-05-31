@@ -3,7 +3,14 @@
 import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import { formatPrice, parsePriceCents } from '@/lib/price-utils';
-import { SHIPPING_OPTIONS, DeliveryMethod } from '@/lib/shipping';
+import {
+  SHIPPING_OPTIONS,
+  calculateShippingCents,
+  DeliveryMethod,
+  getAmountUntilFreeShippingCents,
+  getFreeShippingThresholdLabel,
+  qualifiesForFreeShipping,
+} from '@/lib/shipping';
 import {
   calculateDiscountCents,
   type PromoCode,
@@ -63,10 +70,13 @@ export default function CheckoutPage() {
   const [promoError, setPromoError] = useState('');
 
   const selectedShipping = SHIPPING_OPTIONS.find((o) => o.id === form.deliveryMethod)!;
+  const shippingCents = calculateShippingCents(form.deliveryMethod, subtotalCents);
   const discountCents = appliedPromo
     ? calculateDiscountCents(subtotalCents, appliedPromo.percentOff)
     : 0;
-  const totalCents = subtotalCents - discountCents + selectedShipping.priceCents;
+  const totalCents = subtotalCents - discountCents + shippingCents;
+  const freeShipping = qualifiesForFreeShipping(subtotalCents);
+  const untilFreeShippingCents = getAmountUntilFreeShippingCents(subtotalCents);
 
   const applyPromoCode = () => {
     const promo = resolvePromoCode(promoInput);
@@ -114,7 +124,7 @@ export default function CheckoutPage() {
     setForm((prev) => ({
       ...prev,
       boxnowLockerId: 'BN-SISAK-001',
-      boxnowLockerName: 'BoxNow — Sisak, Capraška ulica',
+      boxnowLockerName: 'BoxNow - Sisak, Capraška ulica',
       boxnowLockerAddress: 'Capraška ulica 6, Sisak',
     }));
   };
@@ -251,9 +261,14 @@ export default function CheckoutPage() {
 
               {/* Delivery method */}
               <section className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <h2 className="text-base font-semibold text-gray-900 mb-4">Način dostave</h2>
+                <h2 className="text-base font-semibold text-gray-900 mb-1">Način dostave</h2>
+                <p className="text-xs text-gray-500 mb-4">
+                  Besplatna dostava (BoxNow i GLS) za narudžbe iznad {getFreeShippingThresholdLabel()}
+                </p>
                 <div className="space-y-3">
-                  {SHIPPING_OPTIONS.map((option) => (
+                  {SHIPPING_OPTIONS.map((option) => {
+                    const optionShippingCents = calculateShippingCents(option.id, subtotalCents);
+                    return (
                     <label
                       key={option.id}
                       className={`flex items-start gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
@@ -275,14 +290,15 @@ export default function CheckoutPage() {
                         <div className="flex items-center justify-between">
                           <span className="font-medium text-gray-900 text-sm">{option.label}</span>
                           <span className="text-sm font-semibold text-gray-900">
-                            {option.priceCents === 0 ? 'Besplatno' : formatPrice(option.priceCents)}
+                            {optionShippingCents === 0 ? 'Besplatno' : formatPrice(optionShippingCents)}
                           </span>
                         </div>
                         <p className="text-xs text-gray-500 mt-0.5">{option.description}</p>
                         <p className="text-xs text-gray-400 mt-0.5">Procijenjeni rok: {option.estimatedDays}</p>
                       </div>
                     </label>
-                  ))}
+                    );
+                  })}
                 </div>
 
                 {/* BoxNow locker picker */}
@@ -474,8 +490,15 @@ export default function CheckoutPage() {
                   )}
                   <div className="flex justify-between text-gray-600">
                     <span>Dostava ({selectedShipping.label})</span>
-                    <span>{selectedShipping.priceCents === 0 ? 'Besplatno' : formatPrice(selectedShipping.priceCents)}</span>
+                    <span className={shippingCents === 0 && freeShipping ? 'text-emerald-700' : ''}>
+                      {shippingCents === 0 ? 'Besplatno' : formatPrice(shippingCents)}
+                    </span>
                   </div>
+                  {!freeShipping && untilFreeShippingCents > 0 && (
+                    <p className="text-xs text-gray-500">
+                      Još {formatPrice(untilFreeShippingCents)} do besplatne dostave
+                    </p>
+                  )}
                 </div>
 
                 <div className="border-t border-gray-100 pt-3 flex justify-between font-semibold text-gray-900">
