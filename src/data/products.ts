@@ -4,13 +4,17 @@ export interface Product {
   description: string;
   previewDescription?: string;
   categories: string[];
-  marka: string; // Brand field
-  productType?: string; // New field for "Tip proizvoda"
-  skinType?: string[]; // New field for "Tip kože"
-  skinConcern?: string[]; // New field for "Problematika kože"
+  marka: string;
+  productType?: string;
+  skinType?: string[];
+  skinConcern?: string[];
   image: string;
   price: string;
   oldPrice?: string;
+  /** Weight in grams — used for shipping cost calculation */
+  weightGrams?: number;
+  /** Stock-keeping unit — optional unique product code */
+  sku?: string;
   isPopular?: boolean;
   isNew?: boolean;
   isOnSale?: boolean;

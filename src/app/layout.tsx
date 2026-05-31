@@ -9,6 +9,8 @@ import { Analytics } from '@vercel/analytics/react';
 import CookieConsent from "@/components/CookieConsent";
 import { LocalBusinessStructuredData } from "@/components/StructuredData";
 import { businessData } from "@/data/business";
+import { CartProvider } from "@/context/CartContext";
+import CartDrawer from "@/components/ui/CartDrawer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -113,11 +115,14 @@ export default function RootLayout({
       <body className={`${inter.className} ${versailles.variable}`}>
         <LocalBusinessStructuredData data={businessData} />
         <GoogleTagManager />
-        <Header />
-        <main className="pt-16">
-          {children}
-        </main>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <CartDrawer />
+          <main className="pt-16">
+            {children}
+          </main>
+          <Footer />
+        </CartProvider>
         <Analytics />
         <CookieConsent />
       </body>

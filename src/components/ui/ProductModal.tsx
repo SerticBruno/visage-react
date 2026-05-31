@@ -5,6 +5,7 @@ import { Transition } from '@headlessui/react';
 import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt, FaStar, FaBox } from 'react-icons/fa';
 import Image from 'next/image';
 import { Product } from '@/data/products';
+import AddToCartButton from '@/components/ui/AddToCartButton';
 
 interface ProductModalProps {
   isOpen: boolean;
@@ -189,7 +190,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
 
                    {/* Right side info - 25% width */}
                    <div className="w-1/4 space-y-2 flex flex-col">
-                     {/* Price Section - Takes remaining space */}
+                     {/* Price Section */}
                      <div className={`bg-slate-50 rounded-lg p-2 flex-1 flex flex-col justify-center transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                        <h3 className="text-xs font-semibold text-slate-900 mb-2">
                          Cijena
@@ -227,6 +228,11 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                          Marka
                        </h3>
                        <p className="text-xs text-slate-600">{currentProduct.marka}</p>
+                     </div>
+
+                     {/* Add to cart - mobile */}
+                     <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+                       <AddToCartButton product={currentProduct} variant="icon" className="w-full rounded-lg justify-center" />
                      </div>
                    </div>
                 </div>
@@ -311,6 +317,11 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                       <p className="text-sm text-slate-600">{currentProduct.volume}</p>
                     </div>
                   )}
+
+                  {/* Add to cart */}
+                  <div className={`mt-3 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+                    <AddToCartButton product={currentProduct} />
+                  </div>
                 </div>
                 
                 {/* Scrollable Right Side */}

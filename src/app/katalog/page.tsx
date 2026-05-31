@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import ProductModal from '@/components/ui/ProductModal';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
+import AddToCartButton from '@/components/ui/AddToCartButton';
 
 function KatalogContent() {
   const searchParams = useSearchParams();
@@ -691,7 +692,7 @@ function KatalogContent() {
           </div>
 
           {/* Products Grid */}
-          <div className="flex-1" ref={productsRef}>
+          <div className="flex-1" ref={productsRef} id="produkti">
             {/* Products Grid */}
             <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 transition-opacity duration-300 ${isScrolling || isFiltering || isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
               {currentProducts.map((product) => (
@@ -795,17 +796,19 @@ function KatalogContent() {
                           </span>
                         )}
                       </div>
-                      <button 
-                        className="px-2 sm:px-4 py-1.5 sm:py-2 bg-slate-700 text-white rounded-lg text-xs sm:text-sm font-medium shadow-sm cursor-pointer
-                                   hover:bg-slate-800 hover:shadow-md transition-all duration-200 ease-out
-                                   group-hover:bg-slate-800 group-hover:shadow-lg transform-gpu"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          openProductModal(product);
-                        }}
-                      >
-                        Detalji
-                      </button>
+                      <div className="flex items-center gap-1 sm:gap-2">
+                        <button 
+                          className="px-2 sm:px-3 py-1.5 sm:py-2 bg-slate-700 text-white rounded-lg text-xs sm:text-sm font-medium shadow-sm cursor-pointer
+                                     hover:bg-slate-800 hover:shadow-md transition-all duration-200 ease-out transform-gpu"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openProductModal(product);
+                          }}
+                        >
+                          Detalji
+                        </button>
+                        <AddToCartButton product={product} variant="icon" />
+                      </div>
                     </div>
                   </div>
                 </div>

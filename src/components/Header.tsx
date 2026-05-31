@@ -4,10 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { services } from '@/data/services';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaShoppingCart } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BLOG_ENABLED } from '@/lib/config';
+import { useCart } from '@/context/CartContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,6 +19,24 @@ export default function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
+  const { totalItems, openCart } = useCart();
+
+  // Cart bump animation state
+  const [cartBumped, setCartBumped] = useState(false);
+  const [plusKey, setPlusKey] = useState(0);
+  const [showPlus, setShowPlus] = useState(false);
+  const prevTotalRef = useRef(0);
+
+  useEffect(() => {
+    if (totalItems > prevTotalRef.current) {
+      setCartBumped(true);
+      setShowPlus(true);
+      setPlusKey((k) => k + 1);
+      setTimeout(() => setCartBumped(false), 600);
+      setTimeout(() => setShowPlus(false), 900);
+    }
+    prevTotalRef.current = totalItems;
+  }, [totalItems]);
 
   useEffect(() => {
     setCurrentPath(pathname);
@@ -321,10 +340,58 @@ export default function Header() {
             
           </nav>
 
+          {/* Cart icon — shown on all screen sizes */}
+          <button
+            onClick={openCart}
+            aria-label="Košarica"
+            className="relative p-2 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-300 mr-1 cursor-pointer"
+          >
+            {/* Floating +1 */}
+            <AnimatePresence>
+              {showPlus && (
+                <motion.span
+                  key={plusKey}
+                  initial={{ opacity: 1, y: 0, scale: 1 }}
+                  animate={{ opacity: 0, y: -28, scale: 1.1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.75, ease: 'easeOut' }}
+                  className="absolute -top-1 left-1/2 -translate-x-1/2 text-xs font-bold text-green-600 pointer-events-none select-none"
+                  style={{ zIndex: 100 }}
+                >
+                  +1
+                </motion.span>
+              )}
+            </AnimatePresence>
+
+            {/* Cart icon with bump */}
+            <motion.div
+              animate={cartBumped ? { rotate: [0, -15, 15, -10, 10, 0], scale: [1, 1.2, 1.15, 1.1, 1] } : {}}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+            >
+              <FaShoppingCart className="h-5 w-5" />
+            </motion.div>
+
+            {/* Badge */}
+            <AnimatePresence>
+              {totalItems > 0 && (
+                <motion.span
+                  key={totalItems}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0 }}
+                  transition={{ type: 'spring', stiffness: 500, damping: 20 }}
+                  className="absolute -top-0.5 -right-0.5 bg-gray-900 text-white text-xs font-bold min-w-[18px] h-[18px] rounded-full flex items-center justify-center px-1"
+                >
+                  {totalItems}
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </button>
+
           {/* Mobile Navigation Button */}
           <button
             ref={menuButtonRef}
-            className="lg:hidden text-gray-700 hover:text-gray-900 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100"
+            className="lg:hidden text-gray-700 hover:text-gray-900 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100 cursor-pointer"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -396,7 +463,7 @@ export default function Header() {
                   <button
                     type="button"
                     onClick={toggleServices}
-                    className="px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300"
+                    className="px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-all duration-300 cursor-pointer"
                     aria-expanded={isServicesOpen}
                     aria-label="Toggle services submenu"
                   >
