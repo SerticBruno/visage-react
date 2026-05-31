@@ -231,8 +231,8 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                      </div>
 
                      {/* Add to cart - mobile */}
-                     <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
-                       <AddToCartButton product={currentProduct} variant="icon" className="w-full rounded-lg justify-center" />
+                     <div className={`bg-slate-50 rounded-lg p-2 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+                       <AddToCartButton product={currentProduct} variant="quantity" />
                      </div>
                    </div>
                 </div>
@@ -319,8 +319,8 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                   )}
 
                   {/* Add to cart */}
-                  <div className={`mt-3 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
-                    <AddToCartButton product={currentProduct} />
+                  <div className={`mt-3 bg-slate-50 rounded-xl px-3 py-2 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+                    <AddToCartButton product={currentProduct} variant="quantity" />
                   </div>
                 </div>
                 

@@ -5,6 +5,7 @@ import { parsePriceCents } from '@/lib/price-utils';
 import { getShippingOption, DeliveryMethod } from '@/lib/shipping';
 import { getProductsByIds, getProductQuantities } from '@/lib/products-db';
 import { getSiteUrl } from '@/lib/site-url';
+import { calculateDiscountCents, resolvePromoCode } from '@/lib/promo-codes';
 
 interface LineItemRequest {
   productId: string;
@@ -22,12 +23,14 @@ export async function POST(req: NextRequest) {
       deliveryMethod,
       shippingAddress,
       notes,
+      promoCode,
     }: {
       items: LineItemRequest[];
       customer: { name: string; email: string; phone: string };
       deliveryMethod: DeliveryMethod;
       shippingAddress: Record<string, string>;
       notes?: string;
+      promoCode?: string;
     } = body;
 
     if (!items?.length) {
@@ -55,7 +58,16 @@ export async function POST(req: NextRequest) {
       (sum, i) => sum + i.priceCents * i.quantity,
       0
     );
-    const totalCents = subtotalCents + shippingOption.priceCents;
+
+    const promo = resolvePromoCode(promoCode);
+    if (promoCode?.trim() && !promo) {
+      return NextResponse.json({ error: 'Kod za popust nije valjan' }, { status: 400 });
+    }
+
+    const discountCents = promo
+      ? calculateDiscountCents(subtotalCents, promo.percentOff)
+      : 0;
+    const totalCents = subtotalCents - discountCents + shippingOption.priceCents;
 
     for (const item of resolvedItems) {
       const available = stockMap.get(item.product.id);
@@ -79,6 +91,8 @@ export async function POST(req: NextRequest) {
         shipping_address: shippingAddress,
         subtotal_cents: subtotalCents,
         shipping_cents: shippingOption.priceCents,
+        discount_cents: discountCents,
+        promo_code: promo?.code ?? null,
         total_cents: totalCents,
         notes: notes ?? null,
       })
@@ -135,17 +149,30 @@ export async function POST(req: NextRequest) {
       });
     }
 
+    let stripeDiscounts: { coupon: string }[] | undefined;
+    if (discountCents > 0 && promo) {
+      const coupon = await stripe.coupons.create({
+        amount_off: discountCents,
+        currency: 'eur',
+        duration: 'once',
+        name: promo.code,
+      });
+      stripeDiscounts = [{ coupon: coupon.id }];
+    }
+
     // Create Stripe Checkout Session
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
       payment_method_types: ['card'],
       customer_email: customer.email,
       line_items: stripeLineItems,
+      ...(stripeDiscounts ? { discounts: stripeDiscounts } : {}),
       success_url: `${baseUrl}/narudzba/${order.id}/uspjeh?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/checkout`,
       metadata: {
         order_id: order.id,
         delivery_method: deliveryMethod,
+        ...(promo ? { promo_code: promo.code } : {}),
       },
       payment_intent_data: {
         metadata: { order_id: order.id },

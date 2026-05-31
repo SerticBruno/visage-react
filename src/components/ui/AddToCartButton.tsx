@@ -1,35 +1,125 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import { Product } from '@/data/products';
-import { FaShoppingCart, FaCheck } from 'react-icons/fa';
+import { FaShoppingCart, FaCheck, FaMinus, FaPlus } from 'react-icons/fa';
 
 interface Props {
   product: Product;
-  variant?: 'primary' | 'secondary' | 'icon';
+  variant?: 'primary' | 'secondary' | 'icon' | 'quantity';
   className?: string;
 }
 
 export default function AddToCartButton({ product, variant = 'primary', className = '' }: Props) {
-  const { addItem } = useCart();
+  const { addItem, items, updateQuantity } = useCart();
   const [added, setAdded] = useState(false);
+  const [popKey, setPopKey] = useState(0);
+  const [selectQty, setSelectQty] = useState(1);
+  const addedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const handleClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (added) return;
-    addItem(product);
+  const cartQty = items.find((i) => i.product.id === product.id)?.quantity ?? 0;
+
+  useEffect(() => {
+    return () => {
+      if (addedTimerRef.current) clearTimeout(addedTimerRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    setSelectQty(1);
+  }, [product.id]);
+
+  const flashAdded = () => {
     setAdded(true);
-    setTimeout(() => setAdded(false), 1600);
+    setPopKey((k) => k + 1);
+    if (addedTimerRef.current) clearTimeout(addedTimerRef.current);
+    addedTimerRef.current = setTimeout(() => setAdded(false), 1600);
   };
+
+  const handleAddOnce = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    addItem(product);
+    flashAdded();
+  };
+
+  if (variant === 'quantity') {
+    const handleMinus = (e: React.MouseEvent) => {
+      e.stopPropagation();
+      setSelectQty((q) => Math.max(1, q - 1));
+    };
+
+    const handlePlus = (e: React.MouseEvent) => {
+      e.stopPropagation();
+      setSelectQty((q) => q + 1);
+    };
+
+    const handleAddSelected = (e: React.MouseEvent) => {
+      e.stopPropagation();
+      if (cartQty === 0) {
+        addItem(product);
+        if (selectQty > 1) updateQuantity(product.id, selectQty);
+      } else {
+        updateQuantity(product.id, cartQty + selectQty);
+      }
+      flashAdded();
+    };
+
+    return (
+      <div
+        className={`flex items-center gap-2 w-full ${className}`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center gap-0.5 bg-slate-100 rounded-lg px-1 py-0.5 flex-shrink-0">
+          <button
+            type="button"
+            onClick={handleMinus}
+            disabled={selectQty <= 1}
+            aria-label="Smanji količinu"
+            className="p-1.5 text-slate-600 hover:text-slate-900 rounded-md transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+          >
+            <FaMinus className="w-2.5 h-2.5" />
+          </button>
+          <span className="text-xs font-semibold text-slate-900 w-6 text-center tabular-nums">
+            {selectQty}
+          </span>
+          <button
+            type="button"
+            onClick={handlePlus}
+            aria-label="Povećaj količinu"
+            className="p-1.5 text-slate-600 hover:text-slate-900 rounded-md transition-colors cursor-pointer"
+          >
+            <FaPlus className="w-2.5 h-2.5" />
+          </button>
+        </div>
+
+        <button
+          type="button"
+          onClick={handleAddSelected}
+          className={`
+            flex flex-1 items-center justify-center gap-1.5 min-w-0 px-3 py-2 rounded-lg text-xs font-medium shadow-sm transition-all duration-300 cursor-pointer
+            ${added
+              ? 'bg-green-500 text-white scale-[1.02] shadow-green-200 shadow-md'
+              : 'bg-gray-900 hover:bg-black text-white hover:shadow'
+            }
+          `}
+          style={{ transitionTimingFunction: added ? 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' : 'ease' }}
+        >
+          {added ? <FaCheck className="w-3.5 h-3.5 flex-shrink-0" /> : <FaShoppingCart className="w-3.5 h-3.5 flex-shrink-0" />}
+          <span className="truncate">{added ? 'Dodano!' : 'Dodaj u košaricu'}</span>
+        </button>
+      </div>
+    );
+  }
 
   if (variant === 'icon') {
     return (
       <button
-        onClick={handleClick}
+        type="button"
+        onClick={handleAddOnce}
         title={added ? 'Dodano!' : 'Dodaj u košaricu'}
         className={`
-          relative p-2 rounded-full shadow transition-all duration-300 cursor-pointer
+          relative p-2 rounded-full shadow transition-all duration-300 cursor-pointer overflow-visible
           ${added
             ? 'bg-green-500 text-white scale-110 rotate-12'
             : 'bg-white/90 hover:bg-white text-gray-700 hover:text-black hover:scale-110'
@@ -38,10 +128,16 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
         `}
         style={{ transitionTimingFunction: added ? 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' : 'ease' }}
       >
-        {added
-          ? <FaCheck className="w-4 h-4" />
-          : <FaShoppingCart className="w-4 h-4" />
-        }
+        {popKey > 0 && (
+          <span
+            key={popKey}
+            className="absolute left-1/2 -top-1 z-10 pointer-events-none text-[11px] font-bold text-emerald-600 animate-cart-add-pop"
+            aria-hidden
+          >
+            +1
+          </span>
+        )}
+        {added ? <FaCheck className="w-4 h-4 relative z-0" /> : <FaShoppingCart className="w-4 h-4" />}
       </button>
     );
   }
@@ -49,7 +145,8 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
   if (variant === 'secondary') {
     return (
       <button
-        onClick={handleClick}
+        type="button"
+        onClick={handleAddOnce}
         className={`
           flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer
           ${added
@@ -68,7 +165,8 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
   // primary
   return (
     <button
-      onClick={handleClick}
+      type="button"
+      onClick={handleAddOnce}
       className={`
         flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg text-sm font-medium shadow-sm transition-all duration-300 cursor-pointer
         ${added

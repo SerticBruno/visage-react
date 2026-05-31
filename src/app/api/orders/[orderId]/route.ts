@@ -13,7 +13,7 @@ export async function GET(
   const { data: order, error: orderError } = await supabase
     .from('orders')
     .select(
-      'id, status, delivery_method, customer_name, subtotal_cents, shipping_cents, total_cents, stripe_session_id'
+      'id, status, delivery_method, customer_name, subtotal_cents, shipping_cents, discount_cents, promo_code, total_cents, stripe_session_id'
     )
     .eq('id', orderId)
     .single();
@@ -70,6 +70,8 @@ export async function GET(
       deliveryLabel: delivery.label,
       subtotalCents: order.subtotal_cents,
       shippingCents: order.shipping_cents,
+      discountCents: order.discount_cents ?? 0,
+      promoCode: order.promo_code ?? null,
       totalCents: order.total_cents,
     },
     items,

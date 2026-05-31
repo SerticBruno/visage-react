@@ -107,6 +107,25 @@ html.modal-open {
   animation: shimmer-sweep 2s ease-in-out infinite;
 }
 
+@keyframes cart-add-pop {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(0.85);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -0.75rem) scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -1.35rem) scale(1);
+  }
+}
+
+.animate-cart-add-pop {
+  animation: cart-add-pop 0.75s ease-out forwards;
+}
+
 .shimmer-overlay {
   position: relative;
   overflow: hidden;

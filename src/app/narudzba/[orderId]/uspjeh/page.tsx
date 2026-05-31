@@ -28,6 +28,8 @@ interface OrderSummary {
   deliveryLabel: string;
   subtotalCents: number;
   shippingCents: number;
+  discountCents: number;
+  promoCode: string | null;
   totalCents: number;
 }
 
@@ -218,6 +220,15 @@ function UspjehPageContent({ params }: Props) {
                         : formatPrice(order.shippingCents)}
                     </span>
                   </div>
+                  {order.discountCents > 0 && (
+                    <div className="flex justify-between text-emerald-700">
+                      <span>
+                        Popust
+                        {order.promoCode ? ` (${order.promoCode})` : ''}
+                      </span>
+                      <span>−{formatPrice(order.discountCents)}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="border-t border-gray-100 mt-4 pt-4 flex justify-between font-semibold text-gray-900">
                   <span>Ukupno</span>

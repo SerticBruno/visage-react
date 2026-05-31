@@ -25,6 +25,8 @@ export interface DbOrder {
   shipping_address: Record<string, string>;
   subtotal_cents: number;
   shipping_cents: number;
+  discount_cents: number;
+  promo_code: string | null;
   total_cents: number;
   notes: string | null;
   created_at: string;

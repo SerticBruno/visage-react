@@ -4,6 +4,11 @@ import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import { formatPrice, parsePriceCents } from '@/lib/price-utils';
 import { SHIPPING_OPTIONS, DeliveryMethod } from '@/lib/shipping';
+import {
+  calculateDiscountCents,
+  type PromoCode,
+  resolvePromoCode,
+} from '@/lib/promo-codes';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowLeft, FaLock, FaBoxOpen, FaTruck, FaStore, FaMapMarkerAlt } from 'react-icons/fa';
@@ -53,9 +58,33 @@ export default function CheckoutPage() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [promoInput, setPromoInput] = useState('');
+  const [appliedPromo, setAppliedPromo] = useState<PromoCode | null>(null);
+  const [promoError, setPromoError] = useState('');
 
   const selectedShipping = SHIPPING_OPTIONS.find((o) => o.id === form.deliveryMethod)!;
-  const totalCents = subtotalCents + selectedShipping.priceCents;
+  const discountCents = appliedPromo
+    ? calculateDiscountCents(subtotalCents, appliedPromo.percentOff)
+    : 0;
+  const totalCents = subtotalCents - discountCents + selectedShipping.priceCents;
+
+  const applyPromoCode = () => {
+    const promo = resolvePromoCode(promoInput);
+    if (!promo) {
+      setPromoError('Kod za popust nije valjan');
+      setAppliedPromo(null);
+      return;
+    }
+    setPromoError('');
+    setAppliedPromo(promo);
+    setPromoInput(promo.code);
+  };
+
+  const removePromoCode = () => {
+    setAppliedPromo(null);
+    setPromoInput('');
+    setPromoError('');
+  };
 
   if (items.length === 0) {
     return (
@@ -133,6 +162,7 @@ export default function CheckoutPage() {
                 }
               : {},
           notes: form.notes,
+          promoCode: appliedPromo?.code,
         }),
       });
 
@@ -184,7 +214,7 @@ export default function CheckoutPage() {
                       value={form.name}
                       onChange={set('name')}
                       className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
-                      placeholder="Ana Anić"
+                      placeholder="Ime i prezime"
                       autoComplete="name"
                     />
                   </div>
@@ -377,11 +407,71 @@ export default function CheckoutPage() {
                   ))}
                 </div>
 
+                {/* Promo code */}
+                <div className="border-t border-gray-100 pt-3">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Kod za popust
+                  </label>
+                  {appliedPromo ? (
+                    <div className="flex items-center justify-between gap-2 bg-emerald-50 border border-emerald-100 rounded-lg px-3 py-2">
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium text-emerald-800 truncate">
+                          {appliedPromo.code}
+                        </p>
+                        <p className="text-xs text-emerald-600">{appliedPromo.label}</p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={removePromoCode}
+                        className="text-xs text-emerald-700 hover:text-emerald-900 underline flex-shrink-0 cursor-pointer"
+                      >
+                        Ukloni
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={promoInput}
+                        onChange={(e) => {
+                          setPromoInput(e.target.value);
+                          setPromoError('');
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            e.preventDefault();
+                            applyPromoCode();
+                          }
+                        }}
+                        className="flex-1 min-w-0 border border-gray-200 rounded-lg px-3 py-2 text-sm uppercase focus:outline-none focus:ring-2 focus:ring-gray-400"
+                        placeholder="Unesite kod"
+                        autoComplete="off"
+                      />
+                      <button
+                        type="button"
+                        onClick={applyPromoCode}
+                        className="px-3 py-2 text-sm font-medium text-gray-800 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors flex-shrink-0 cursor-pointer"
+                      >
+                        Primijeni
+                      </button>
+                    </div>
+                  )}
+                  {promoError && (
+                    <p className="text-xs text-red-600 mt-1.5">{promoError}</p>
+                  )}
+                </div>
+
                 <div className="border-t border-gray-100 pt-3 space-y-2 text-sm">
                   <div className="flex justify-between text-gray-600">
-                    <span>Ukupno</span>
+                    <span>Proizvodi</span>
                     <span>{formatPrice(subtotalCents)}</span>
                   </div>
+                  {discountCents > 0 && appliedPromo && (
+                    <div className="flex justify-between text-emerald-700">
+                      <span>Popust ({appliedPromo.percentOff}%)</span>
+                      <span>−{formatPrice(discountCents)}</span>
+                    </div>
+                  )}
                   <div className="flex justify-between text-gray-600">
                     <span>Dostava ({selectedShipping.label})</span>
                     <span>{selectedShipping.priceCents === 0 ? 'Besplatno' : formatPrice(selectedShipping.priceCents)}</span>
