@@ -45,15 +45,16 @@ export default function PricingPage() {
     });
   }, [searchTerm, selectedCategories, selectedBadges]);
 
-  // Debounce search so filtering doesn't run on every keystroke
+  // Debounce search so filtering and scroll don't run on every keystroke
   useEffect(() => {
     const timer = setTimeout(() => {
       setSearchTerm(searchInput);
       if (!isInitialSearchMount.current) {
         setIsFiltering(true);
+        requestAnimationFrame(scrollToContent);
       }
       isInitialSearchMount.current = false;
-    }, 300);
+    }, 600);
     return () => clearTimeout(timer);
   }, [searchInput]);
 
@@ -201,7 +202,7 @@ export default function PricingPage() {
                       id="search"
                       type="text"
                       placeholder="Naziv ili opis..."
-                      className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm"
+                      className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:outline-none shadow-sm"
                       value={searchInput}
                       onChange={handleSearch}
                     />
