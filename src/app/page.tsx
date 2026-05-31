@@ -21,7 +21,7 @@ import { faqItems } from '@/data/faq';
 
 const HOME_TITLE = 'VISAGE Studio Sisak - Estetski & Kozmetički Tretmani';
 const HOME_DESCRIPTION =
-  'VISAGE Studio - certificirani estetski studio u Sisku. Mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, fileri. Rezervirajte termin - dostupno i iz Zagreba.';
+  'VISAGE Studio - certificirani estetski studio u Sisku. Mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, fileri. Rezervirajte termin.';
 
 export const metadata: Metadata = {
   title: HOME_TITLE,
@@ -34,8 +34,6 @@ export const metadata: Metadata = {
     'TOSKANI Sisak',
     'tretmani lica Sisak',
     'estetska medicina Sisak',
-    'estetski studio Zagreb okolica',
-    'mezoterapija Zagreb',
     'VISAGE Studio',
   ],
   alternates: {

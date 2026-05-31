@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 const TITLE = 'Rezervirajte termin Sisak';
 const DESCRIPTION =
-  'Zakažite tretman u VISAGE Studiju u Sisku. Adresa, telefon, radno vrijeme i online rezervacija. Dostupno iz Zagreba i okolice - oko 40 min vožnje.';
+  'Zakažite tretman u VISAGE Studiju u Sisku. Adresa, telefon, radno vrijeme i online rezervacija.';
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     'rezervacija termina Sisak',
     'estetski studio Sisak adresa',
     'telefon estetski studio Sisak',
-    'estetski studio Zagreb okolica',
   ],
   alternates: {
     canonical: 'https://visagestudio.hr/kontakt',

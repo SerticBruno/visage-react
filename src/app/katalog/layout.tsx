@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 const TITLE = 'TOSKANI kozmetika Sisak - Katalog proizvoda';
 const DESCRIPTION =
-  'Katalog proizvoda VISAGE Studija u Sisku. TOSKANI i vodeći brendovi za njegu kože - profesionalna i kućna njega lica i tijela. Dostava u Sisak, okolicu i Zagreb.';
+  'Katalog proizvoda VISAGE Studija u Sisku. TOSKANI i vodeći brendovi za njegu kože - profesionalna i kućna njega lica i tijela. Pogledajte ponudu i kontaktirajte nas za više informacija.';
 
 export const metadata: Metadata = {
   title: TITLE,

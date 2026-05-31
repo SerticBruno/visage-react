@@ -57,12 +57,8 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const description = service.metaDescription || service.description;
   const pageTitle = `${service.title} Sisak`;
   const keywords = service.metaKeywords
-    ? [...new Set([
-        ...service.metaKeywords.split(',').map((s) => s.trim()).filter(Boolean),
-        `${service.title} Zagreb`,
-        'estetski studio Sisak',
-      ])]
-    : [...service.tags, `${service.title} Zagreb`, 'estetski studio Sisak'];
+    ? service.metaKeywords.split(',').map((s) => s.trim()).filter(Boolean)
+    : service.tags;
   const canonicalUrl = `https://visagestudio.hr/usluge/${resolvedParams.pageName}`;
   const imageUrl = service.heroImage.startsWith('http')
     ? service.heroImage

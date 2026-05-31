@@ -4,9 +4,9 @@ import HeroSection from '@/components/sections/HeroSection';
 import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSectionPreview';
 import { Metadata } from 'next';
 
-const TITLE = 'Estetski tretmani lica i tijela Sisak i Zagreb';
+const TITLE = 'Estetski tretmani lica i tijela Sisak';
 const DESCRIPTION =
-  'Usluge VISAGE Studija u Sisku: mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, fileri, kemijski piling, foto-terapija. Dostupno i pacijentima iz Zagreba.';
+  'Usluge VISAGE Studija u Sisku: mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, fileri, kemijski piling, foto-terapija. Profesionalni tretmani za lice, vlasište i tijelo.';
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -18,8 +18,6 @@ export const metadata: Metadata = {
     'Dermapen 4 Sisak',
     'estetska medicina Sisak',
     'kozmetički tretmani Sisak',
-    'estetski tretmani Zagreb',
-    'mezoterapija Zagreb',
   ],
   alternates: {
     canonical: 'https://visagestudio.hr/usluge',

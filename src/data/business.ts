@@ -7,7 +7,7 @@ const BASE_URL = 'https://visagestudio.hr';
 export const businessData = {
   name: 'VISAGE Studio',
   description:
-    'VISAGE Studio je estetski studio u centru Siska, certificirani predstavnik TOSKANI. Pružamo profesionalne usluge estetske medicine: mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, botox i kozmetički tretmani. Dostupno pacijentima iz Zagreba i okolice.',
+    'VISAGE Studio je estetski studio u centru Siska, certificirani predstavnik TOSKANI. Pružamo profesionalne usluge estetske medicine: mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, botox i kozmetički tretmani.',
   url: BASE_URL,
   telephone: '+385911105020',
   email: 'info@visagestudio.hr',
