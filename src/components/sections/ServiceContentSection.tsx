@@ -65,7 +65,7 @@ export default function ServiceContentSection({
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="order-1 lg:order-2">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">{title}</h1>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{title}</h2>
             <div 
               className="text-l text-gray-600 mb-8 leading-relaxed whitespace-pre-line [&_a]:text-gray-700 [&_a]:underline [&_a]:hover:text-gray-900 [&_a]:transition-colors [&_a]:cursor-pointer"
               dangerouslySetInnerHTML={{ __html: description }}

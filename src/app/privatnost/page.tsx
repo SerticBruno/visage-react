@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import HeroSection from '@/components/sections/HeroSection';
 import { FaShieldAlt } from 'react-icons/fa';
 
-const TITLE = 'Politika privatnosti | VISAGE Studio';
+const TITLE = 'Politika privatnosti';
 const DESCRIPTION =
   'Politika privatnosti VISAGE Studija. Saznajte kako štitimo vaše osobne podatke i kako ih koristimo u skladu s GDPR regulativom.';
 
@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: 'https://visagestudio.hr/privatnost',
+    images: [
+      {
+        url: '/images/services/toskani-woman-visage-estetski-studio.webp',
+        width: 1200,
+        height: 630,
+        alt: 'VISAGE Studio - Politika privatnosti',
+      },
+    ],
   },
 };
 
@@ -206,7 +214,7 @@ const PrivacyPolicy = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-slate-900 mb-4">Kontakt informacije</h3>
                   <div className="space-y-2 text-slate-700">
-                    <p>Email: contact@visagestudio.hr</p>
+                    <p>Email: info@visagestudio.hr</p>
                     <p>Telefon: 091 110 50 20</p>
                   </div>
                 </div>

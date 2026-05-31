@@ -3,12 +3,12 @@ import AboutContent from '@/components/sections/AboutContent';
 import ContactSection from '@/components/sections/ContactSection';
 import { Metadata } from 'next';
 
-const TITLE = 'O nama | VISAGE Studio Sisak';
+const TITLE = 'O nama - Estetski studio Sisak';
 const DESCRIPTION =
-  'Upoznajte VISAGE Studio – estetski studio u centru Siska. Certificirani predstavnik TOSKANI. Tim stručnjaka za mezoterapiju, Dermapen 4, skin boostere i estetsku medicinu.';
+  'Upoznajte VISAGE Studio - estetski studio u centru Siska, dostupan i pacijentima iz Zagreba. Certificirani predstavnik TOSKANI. Tim stručnjaka za mezoterapiju, Dermapen 4 i estetsku medicinu.';
 
 export const metadata: Metadata = {
-  title: 'O nama | VISAGE Studio Sisak',
+  title: TITLE,
   description: DESCRIPTION,
   keywords: [
     'VISAGE Studio Sisak',

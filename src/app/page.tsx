@@ -15,12 +15,13 @@ import ServiceSlider from '@/components/ui/ServiceSlider';
 import { Metadata } from 'next';
 import { getPopularServices } from '@/data/services';
 import ServicesSectionPreview from '@/components/sections/ServicesSectionPreview';
-
 import ComboPackagesSectionPreview from '@/components/sections/ComboPackagesSectionPreview';
+import { FAQPageStructuredData } from '@/components/StructuredData';
+import { faqItems } from '@/data/faq';
 
-const HOME_TITLE = 'Estetski studio Sisak';
+const HOME_TITLE = 'VISAGE Studio Sisak - Estetski & Kozmetički Tretmani';
 const HOME_DESCRIPTION =
-  'VISAGE Studio – certificirani estetski studio u centru Siska. Mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, botox. Profesionalni tretmani lica i tijela. Rezervirajte termin.';
+  'VISAGE Studio - certificirani estetski studio u Sisku. Mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, fileri. Rezervirajte termin - dostupno i iz Zagreba.';
 
 export const metadata: Metadata = {
   title: HOME_TITLE,
@@ -33,6 +34,8 @@ export const metadata: Metadata = {
     'TOSKANI Sisak',
     'tretmani lica Sisak',
     'estetska medicina Sisak',
+    'estetski studio Zagreb okolica',
+    'mezoterapija Zagreb',
     'VISAGE Studio',
   ],
   alternates: {
@@ -81,6 +84,7 @@ export default function Home() {
 
   return (
     <main>
+      <FAQPageStructuredData items={faqItems} />
       <HeroSection
         title="VISAGE studio"
         description="Estetski studio specijaliziran za nekirurške estetske tretmane lica koji su prilagođeni vašim potrebama"

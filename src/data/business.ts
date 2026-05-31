@@ -7,7 +7,7 @@ const BASE_URL = 'https://visagestudio.hr';
 export const businessData = {
   name: 'VISAGE Studio',
   description:
-    'VISAGE Studio je estetski studio u centru Siska, certificirani predstavnik TOSKANI. Pružamo profesionalne usluge estetske medicine: mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, botox i kozmetički tretmani.',
+    'VISAGE Studio je estetski studio u centru Siska, certificirani predstavnik TOSKANI. Pružamo profesionalne usluge estetske medicine: mezoterapija, Dermapen 4, skin boosteri, PRP, Plasmage, botox i kozmetički tretmani. Dostupno pacijentima iz Zagreba i okolice.',
   url: BASE_URL,
   telephone: '+385911105020',
   email: 'info@visagestudio.hr',
@@ -29,6 +29,7 @@ export const businessData = {
     'https://www.instagram.com/visage.estheticstudio',
     'https://www.facebook.com/visage.estheticstudio',
   ].filter(Boolean) as string[],
+  areaServed: ['Sisak', 'Sisačko-moslavačka županija', 'Zagreb', 'Hrvatska'],
 };
 
 export type LocalBusinessStructuredDataInput = typeof businessData & {

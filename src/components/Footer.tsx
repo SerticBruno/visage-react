@@ -177,13 +177,13 @@ const Footer = () => {
             </h3>
             <div className="space-y-4">
               <a 
-                href="mailto:contact@visagestudio.hr"
+                href="mailto:info@visagestudio.hr"
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
               >
                 <div className="bg-gray-800/50 p-2 rounded-lg group-hover:bg-gray-700/50 transition-colors">
                   <FaEnvelope className="text-slate-400 group-hover:text-slate-300" />
                 </div>
-                <span>contact@visagestudio.hr</span>
+                <span>info@visagestudio.hr</span>
               </a>
               <a 
                 href="https://wa.me/385911105020"

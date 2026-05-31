@@ -13,6 +13,11 @@ import CTASection from '@/components/sections/CTASection';
 import { notFound } from 'next/navigation';
 import { individualBeautyTreatments } from '@/data/services/beautyTreatments';
 import { findComboPackagesWithService } from '@/lib/services';
+import {
+  BreadcrumbListStructuredData,
+  ServiceStructuredData,
+} from '@/components/StructuredData';
+import { businessData } from '@/data/business';
 
 interface ServicePageProps {
   params: Promise<{
@@ -50,23 +55,28 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   }
 
   const description = service.metaDescription || service.description;
+  const pageTitle = `${service.title} Sisak`;
   const keywords = service.metaKeywords
-    ? service.metaKeywords.split(',').map((s) => s.trim()).filter(Boolean)
-    : service.tags;
+    ? [...new Set([
+        ...service.metaKeywords.split(',').map((s) => s.trim()).filter(Boolean),
+        `${service.title} Zagreb`,
+        'estetski studio Sisak',
+      ])]
+    : [...service.tags, `${service.title} Zagreb`, 'estetski studio Sisak'];
   const canonicalUrl = `https://visagestudio.hr/usluge/${resolvedParams.pageName}`;
   const imageUrl = service.heroImage.startsWith('http')
     ? service.heroImage
     : `https://visagestudio.hr${service.heroImage}`;
 
   return {
-    title: service.title,
+    title: pageTitle,
     description,
     keywords: keywords.length ? keywords : undefined,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${service.title} | VISAGE Studio Sisak`,
+      title: `${pageTitle} | VISAGE Studio`,
       description,
       url: canonicalUrl,
       images: [
@@ -92,9 +102,31 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const allServices = Object.values(services);
   const relatedServices = findRelatedServices(currentService, allServices);
   const comboPackagesWithService = findComboPackagesWithService(currentService.id);
+  const serviceUrl = `https://visagestudio.hr/usluge/${resolvedParams.pageName}`;
+  const serviceImageUrl = currentService.heroImage.startsWith('http')
+    ? currentService.heroImage
+    : `https://visagestudio.hr${currentService.heroImage}`;
 
   return (
     <main className="min-h-screen">
+      <BreadcrumbListStructuredData
+        items={[
+          { name: 'Početna', url: '/' },
+          { name: 'Usluge', url: '/usluge' },
+          { name: currentService.title, url: `/usluge/${resolvedParams.pageName}` },
+        ]}
+      />
+      <ServiceStructuredData
+        data={{
+          name: currentService.title,
+          description: currentService.metaDescription || currentService.description,
+          url: serviceUrl,
+          image: serviceImageUrl,
+          providerName: businessData.name,
+          providerUrl: businessData.url,
+          areaServed: businessData.areaServed,
+        }}
+      />
       <HeroSection
         title={currentService.title}
         description={currentService.description}

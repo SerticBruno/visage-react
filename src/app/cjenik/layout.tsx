@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
-const TITLE = 'Cjenik usluga | Cijene tretmana Sisak';
+const TITLE = 'Cjenik estetskih tretmana Sisak 2026';
 const DESCRIPTION =
-  'Cjenik VISAGE Studija u Siska. Transparentne cijene za mezoterapiju, Dermapen 4, skin boostere, PRP, Plasmage i sve tretmane estetske medicine. Pogledajte cijene i rezervirajte termin.';
+  'Transparentne cijene svih estetskih tretmana u VISAGE Studiju Sisak. Mezoterapija, PRP, fileri i više. Pogledajte cjenik i rezervirajte termin.';
 
 export const metadata: Metadata = {
   title: TITLE,

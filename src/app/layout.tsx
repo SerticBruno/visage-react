@@ -17,17 +17,33 @@ const versailles = localFont({
   variable: '--font-versailles',
 });
 
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://visagestudio.hr'),
   alternates: {
     canonical: 'https://visagestudio.hr',
   },
   title: {
-    default: "VISAGE Studio - Estetski studio Sisak",
+    default: "VISAGE Studio Sisak - Estetski & Kozmetički Tretmani",
     template: "%s | VISAGE Studio"
   },
-  description: "VISAGE Studio je estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI. Pružamo profesionalne usluge estetske medicine i kozmetičke tretmane.",
-  keywords: ["estetski studio", "Sisak", "TOSKANI", "kozmetički tretmani", "estetska medicina", "VISAGE studio"],
+  description: "VISAGE Studio - certificirani estetski studio u Sisku. Mezoterapija, PRP, Dermapen 4, fileri i beauty tretmani. Rezervirajte termin - dostupno i iz Zagreba.",
+  keywords: [
+    "estetski studio",
+    "Sisak",
+    "Zagreb",
+    "TOSKANI",
+    "kozmetički tretmani",
+    "estetska medicina",
+    "VISAGE studio",
+    "estetski tretmani Zagreb",
+    "mezoterapija Sisak",
+    "mezoterapija Zagreb",
+    "Dermapen Sisak",
+    "PRP Sisak",
+    "skin boosteri Sisak",
+  ],
   authors: [{ name: "VISAGE Studio" }],
   creator: "VISAGE Studio",
   publisher: "VISAGE Studio",
@@ -36,13 +52,22 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: [
+      { url: '/images/products/favicon_io/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/products/favicon_io/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/products/favicon_io/favicon.ico', sizes: 'any' },
+    ],
+    apple: '/images/products/favicon_io/apple-touch-icon.png',
+  },
+  manifest: '/images/products/favicon_io/site.webmanifest',
   openGraph: {
     type: "website",
     locale: "hr_HR",
     url: "https://visagestudio.hr",
     siteName: "VISAGE Studio",
-    title: "VISAGE Studio - Estetski studio Sisak",
-    description: "VISAGE Studio je estetski studio u centru Siska koji je certificirani predstavnik za TOSKANI.",
+    title: "VISAGE Studio Sisak - Estetski & Kozmetički Tretmani",
+    description: "VISAGE Studio - certificirani estetski studio u Sisku. Mezoterapija, PRP, Dermapen 4, fileri i beauty tretmani. Dostupno i iz Zagreba.",
     images: [
       {
         url: "/images/services/toskani-woman-visage-estetski-studio.webp",
@@ -52,7 +77,15 @@ export const metadata: Metadata = {
       }
     ],
     countryName: "Croatia",
-    emails: ["info@visagestudio.hr"], // Add your email if you have one
+    emails: ["info@visagestudio.hr"],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@visage.estheticstudio',
+    creator: '@visage.estheticstudio',
+    title: 'VISAGE Studio Sisak - Estetski & Kozmetički Tretmani',
+    description: 'Certificirani estetski studio u Sisku. Mezoterapija, PRP, Dermapen 4, fileri. Rezervirajte termin!',
+    images: ['/images/services/toskani-woman-visage-estetski-studio.webp'],
   },
   robots: {
     index: true,
@@ -65,12 +98,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: "your-google-site-verification", // Add your Google verification code
-  },
-  other: {
-    'google-site-verification': 'your-google-site-verification', // Add your Google verification code
-  },
+  ...(googleSiteVerification
+    ? {
+        verification: { google: googleSiteVerification },
+        other: { 'google-site-verification': googleSiteVerification },
+      }
+    : {}),
 };
 
 export default function RootLayout({

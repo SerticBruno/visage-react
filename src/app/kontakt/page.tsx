@@ -2,18 +2,19 @@ import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import { Metadata } from 'next';
 
-const TITLE = 'Kontakt | Rezervacija termina Sisak';
+const TITLE = 'Rezervirajte termin Sisak';
 const DESCRIPTION =
-  'Kontaktirajte VISAGE Studio u Siska. Rezervirajte termin za mezoterapiju, Dermapen 4 ili drugi tretman. Adresa, telefon, radno vrijeme i obrazac za upite.';
+  'Zakažite tretman u VISAGE Studiju u Sisku. Adresa, telefon, radno vrijeme i online rezervacija. Dostupno iz Zagreba i okolice - oko 40 min vožnje.';
 
 export const metadata: Metadata = {
-  title: 'Kontakt | Rezervacija termina Sisak',
+  title: TITLE,
   description: DESCRIPTION,
   keywords: [
     'kontakt VISAGE Studio Sisak',
     'rezervacija termina Sisak',
     'estetski studio Sisak adresa',
     'telefon estetski studio Sisak',
+    'estetski studio Zagreb okolica',
   ],
   alternates: {
     canonical: 'https://visagestudio.hr/kontakt',

@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
-const TITLE = 'Katalog proizvoda | TOSKANI i njega kože Sisak';
+const TITLE = 'TOSKANI kozmetika Sisak - Katalog proizvoda';
 const DESCRIPTION =
-  'Katalog proizvoda VISAGE Studija u Siska. TOSKANI i vodeći brendovi za njegu kože – profesionalna i kućna njega lica i tijela. Dostava u Sisak i okolicu.';
+  'Katalog proizvoda VISAGE Studija u Sisku. TOSKANI i vodeći brendovi za njegu kože - profesionalna i kućna njega lica i tijela. Dostava u Sisak, okolicu i Zagreb.';
 
 export const metadata: Metadata = {
   title: TITLE,
