@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { legalPaths } from '@/data/legal';
 
 type GtagCommand = 'config' | 'event' | 'consent' | 'set';
 type GtagParams = {
@@ -93,8 +95,21 @@ const CookieConsent = () => {
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-gray-700">
               <p className="text-sm md:text-base">
-                Koristimo kolačiće za poboljšanje vašeg iskustva na našoj web stranici. 
-                Možete prihvatiti sve kolačiće ili samo nužne.
+                Koristimo kolačiće za rad stranice, analitiku i marketing. Možete prihvatiti
+                sve kolačiće ili samo nužne.{' '}
+                <Link
+                  href={legalPaths.cookies}
+                  className="underline hover:text-gray-900"
+                >
+                  Politika kolačića
+                </Link>
+                {' · '}
+                <Link
+                  href={legalPaths.privacy}
+                  className="underline hover:text-gray-900"
+                >
+                  Privatnost
+                </Link>
               </p>
             </div>
             <div className="flex gap-3">

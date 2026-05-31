@@ -138,8 +138,9 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
             <div className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 max-h-[95vh] md:max-h-[90vh] flex flex-col">
               {/* Content */}
               <div className="flex flex-col md:flex-row h-full min-h-0 overflow-hidden">
-                {/* Mobile Layout - First Row with Image and Info */}
-                <div className="md:hidden w-full p-3 flex gap-3 items-stretch">
+                {/* Mobile Layout - Image row + add to cart (below, full width) */}
+                <div className="md:hidden w-full shrink-0 border-b border-slate-100">
+                <div className="p-3 flex gap-3 items-stretch">
                   {/* Left side - Image and Title */}
                   <div className="w-3/4 flex flex-col gap-3">
                     {/* Title Section */}
@@ -229,12 +230,21 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                        </h3>
                        <p className="text-xs text-slate-600">{currentProduct.marka}</p>
                      </div>
-
-                     {/* Add to cart - mobile */}
-                     <div className={`bg-slate-50 rounded-lg p-2 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
-                       <AddToCartButton product={currentProduct} variant="quantity" />
-                     </div>
                    </div>
+                </div>
+
+                {/* Add to cart - mobile, full width below image/price row */}
+                <div
+                  className={`px-3 pb-3 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}
+                >
+                  <div className="bg-slate-50 rounded-xl p-3">
+                    <AddToCartButton
+                      product={currentProduct}
+                      variant="quantity"
+                      className="[&_button]:py-2.5 [&_button]:text-sm"
+                    />
+                  </div>
+                </div>
                 </div>
 
                 {/* Desktop Layout - Fixed Left Side */}

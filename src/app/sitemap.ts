@@ -26,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/kontakt',
     '/katalog',
     '/privatnost',
+    '/kolacici',
+    '/uvjeti-kupnje',
+    '/opci-uvjeti',
+    '/uvjeti-dostave',
+    '/povrat-i-reklamacije',
+    '/podaci-o-prodavatelju',
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
