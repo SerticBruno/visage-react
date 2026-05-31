@@ -4,8 +4,7 @@ import { supabase } from '@/lib/supabase';
 import { parsePriceCents } from '@/lib/price-utils';
 import { getShippingOption, DeliveryMethod } from '@/lib/shipping';
 import { products } from '@/data/products';
-
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://visagestudio.hr';
+import { getSiteUrl } from '@/lib/site-url';
 
 interface LineItemRequest {
   productId: string;
@@ -13,6 +12,8 @@ interface LineItemRequest {
 }
 
 export async function POST(req: NextRequest) {
+  const baseUrl = getSiteUrl();
+
   try {
     const body = await req.json();
     const {
@@ -115,7 +116,7 @@ export async function POST(req: NextRequest) {
           name: item.product.title,
           description: item.product.volume ?? undefined,
           images: item.product.image.startsWith('/')
-            ? [`${BASE_URL}${item.product.image}`]
+            ? [`${baseUrl}${item.product.image}`]
             : [item.product.image],
           metadata: { product_id: item.product.id },
         },
@@ -144,10 +145,11 @@ export async function POST(req: NextRequest) {
     // Create Stripe Checkout Session
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
+      payment_method_types: ['card'],
       customer_email: customer.email,
       line_items: stripeLineItems,
-      success_url: `${BASE_URL}/narudzba/${order.id}/uspjeh?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${BASE_URL}/checkout`,
+      success_url: `${baseUrl}/narudzba/${order.id}/uspjeh?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${baseUrl}/checkout`,
       metadata: {
         order_id: order.id,
         delivery_method: deliveryMethod,

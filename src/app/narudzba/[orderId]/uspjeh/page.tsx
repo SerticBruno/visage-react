@@ -1,76 +1,247 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useCart } from '@/context/CartContext';
+import { Suspense, use, useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
-import { FaCheckCircle, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { useCart } from '@/context/CartContext';
+import { formatPrice } from '@/lib/price-utils';
+import { FaCheckCircle, FaEnvelope, FaPhone, FaSpinner } from 'react-icons/fa';
 
-interface Props {
-  params: { orderId: string };
+interface OrderItem {
+  productId: string;
+  title: string;
+  quantity: number;
+  unitPriceCents: number;
+  lineTotalCents: number;
+  image: string | null;
+  marka: string | null;
+  volume: string | null;
+  description: string | null;
+  imageNeedsResize: boolean;
 }
 
-export default function UspjehPage({ params }: Props) {
+interface OrderSummary {
+  id: string;
+  status: string;
+  customerName: string;
+  deliveryLabel: string;
+  subtotalCents: number;
+  shippingCents: number;
+  totalCents: number;
+}
+
+interface Props {
+  params: Promise<{ orderId: string }>;
+}
+
+function UspjehPageContent({ params }: Props) {
+  const { orderId } = use(params);
+  const searchParams = useSearchParams();
+  const sessionId = searchParams.get('session_id');
   const { clearCart } = useCart();
-  const shortId = params.orderId.slice(0, 8).toUpperCase();
+
+  const [order, setOrder] = useState<OrderSummary | null>(null);
+  const [items, setItems] = useState<OrderItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const shortId = orderId.slice(0, 8).toUpperCase();
 
   useEffect(() => {
     clearCart();
   }, [clearCart]);
 
+  useEffect(() => {
+    const query = sessionId ? `?session_id=${encodeURIComponent(sessionId)}` : '';
+    fetch(`/api/orders/${orderId}${query}`)
+      .then(async (res) => {
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}));
+          throw new Error(body.error ?? 'Narudžba nije učitana');
+        }
+        return res.json();
+      })
+      .then((data: { order: OrderSummary; items: OrderItem[] }) => {
+        setOrder(data.order);
+        setItems(data.items);
+      })
+      .catch((err: Error) => setError(err.message))
+      .finally(() => setLoading(false));
+  }, [orderId, sessionId]);
+
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4 py-16">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center">
-        <div className="flex justify-center mb-5">
-          <FaCheckCircle className="w-16 h-16 text-green-500" />
-        </div>
+    <div className="min-h-screen bg-gray-50 px-4 sm:px-6 py-10 lg:py-14">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-start">
+          {/* Left — confirmation */}
+          <div className="lg:col-span-2 lg:sticky lg:top-24">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <FaCheckCircle className="w-10 h-10 text-green-500 flex-shrink-0" />
+                <div className="text-left">
+                  <h1 className="text-2xl font-bold text-gray-900">Plaćanje uspješno!</h1>
+                  <p className="text-sm text-gray-500 mt-0.5">
+                    Hvala{order?.customerName ? `, ${order.customerName.split(' ')[0]}` : ''} na kupnji.
+                  </p>
+                </div>
+              </div>
 
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Plaćanje uspješno!</h1>
-        <p className="text-gray-500 mb-6">
-          Hvala na kupnji. Vaša narudžba je zaprimljena i plaćanje je potvrđeno.
-        </p>
+              <div className="bg-gray-50 rounded-xl p-4 mb-5 text-left">
+                <p className="text-sm text-gray-500 mb-1">Broj narudžbe</p>
+                <p className="text-lg font-bold text-gray-900 font-mono">#{shortId}</p>
+              </div>
 
-        <div className="bg-gray-50 rounded-xl p-4 mb-6">
-          <p className="text-sm text-gray-500 mb-1">Broj narudžbe</p>
-          <p className="text-lg font-bold text-gray-900 font-mono">#{shortId}</p>
-        </div>
+              <p className="text-sm text-gray-600 text-left mb-6">
+                Poslali smo potvrdu na vašu email adresu. Obavijestit ćemo vas kada narudžba bude
+                poslana.
+              </p>
 
-        <p className="text-sm text-gray-600 mb-6">
-          Poslali smo potvrdu na vašu email adresu. Obavijestit ćemo vas kada narudžba bude poslana.
-        </p>
+              <div className="space-y-2 mb-8 text-sm text-gray-600 text-left">
+                <p className="font-medium text-gray-700">Imate pitanja?</p>
+                <a
+                  href="mailto:info@visagestudio.hr"
+                  className="flex items-center gap-2 hover:text-gray-900 transition-colors"
+                >
+                  <FaEnvelope className="w-4 h-4 flex-shrink-0" />
+                  info@visagestudio.hr
+                </a>
+                <a
+                  href="tel:+385911105020"
+                  className="flex items-center gap-2 hover:text-gray-900 transition-colors"
+                >
+                  <FaPhone className="w-4 h-4 flex-shrink-0" />
+                  +385 91 110 5020
+                </a>
+              </div>
 
-        <div className="space-y-2 mb-8 text-sm text-gray-600">
-          <p className="font-medium text-gray-700 mb-2">Imate pitanja?</p>
-          <a
-            href="mailto:info@visagestudio.hr"
-            className="flex items-center justify-center gap-2 hover:text-gray-900 transition-colors"
-          >
-            <FaEnvelope className="w-4 h-4" />
-            info@visagestudio.hr
-          </a>
-          <a
-            href="tel:+385911105020"
-            className="flex items-center justify-center gap-2 hover:text-gray-900 transition-colors"
-          >
-            <FaPhone className="w-4 h-4" />
-            +385 91 110 5020
-          </a>
-        </div>
+              <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+                <Link
+                  href="/katalog"
+                  className="flex-1 py-3 border border-gray-200 text-gray-700 hover:bg-gray-50 font-medium rounded-xl transition-colors text-sm text-center"
+                >
+                  Nastavi kupovinu
+                </Link>
+                <Link
+                  href="/"
+                  className="flex-1 py-3 bg-gray-900 hover:bg-black text-white font-medium rounded-xl transition-colors text-sm text-center"
+                >
+                  Natrag na početnu
+                </Link>
+              </div>
+            </div>
+          </div>
 
-        <div className="flex flex-col sm:flex-row gap-3">
-          <Link
-            href="/katalog"
-            className="flex-1 py-3 border border-gray-200 text-gray-700 hover:bg-gray-50 font-medium rounded-xl transition-colors text-sm"
-          >
-            Nastavi kupovinu
-          </Link>
-          <Link
-            href="/"
-            className="flex-1 py-3 bg-gray-900 hover:bg-black text-white font-medium rounded-xl transition-colors text-sm"
-          >
-            Natrag na početnu
-          </Link>
+          {/* Right — items + totals */}
+          <div className="lg:col-span-3 space-y-4">
+            <h2 className="text-lg font-semibold text-gray-900 px-1">Vaša narudžba</h2>
+
+            {loading && (
+              <div className="bg-white rounded-2xl border border-gray-100 p-12 flex flex-col items-center justify-center text-gray-400">
+                <FaSpinner className="w-8 h-8 animate-spin mb-3" />
+                <p className="text-sm">Učitavanje narudžbe…</p>
+              </div>
+            )}
+
+            {error && !loading && (
+              <div className="bg-white rounded-2xl border border-gray-100 p-6 text-center text-sm text-gray-600">
+                <p>{error}</p>
+                <p className="mt-2 text-gray-500">
+                  Narudžba #{shortId} je zaprimljena — provjerite email za potvrdu.
+                </p>
+              </div>
+            )}
+
+            {!loading &&
+              !error &&
+              items.map((item) => (
+                <div
+                  key={item.productId}
+                  className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex gap-4"
+                >
+                  <div className="relative w-20 h-20 flex-shrink-0 bg-gray-50 rounded-xl overflow-hidden">
+                    {item.image ? (
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className={`object-contain ${item.imageNeedsResize ? 'scale-75' : ''}`}
+                        sizes="80px"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gray-100" aria-hidden />
+                    )}
+                  </div>
+
+                  <div className="flex-1 min-w-0 flex flex-col sm:flex-row sm:gap-4">
+                    <div className="flex-1 min-w-0">
+                      <p className="font-medium text-gray-900">{item.title}</p>
+                      {item.marka && (
+                        <p className="text-sm text-gray-500">{item.marka}</p>
+                      )}
+                      {item.volume && (
+                        <p className="text-xs text-gray-400 mt-0.5">{item.volume}</p>
+                      )}
+                      {item.description && (
+                        <p className="text-sm text-gray-500 mt-2 line-clamp-2">{item.description}</p>
+                      )}
+                      <p className="text-sm text-gray-500 mt-2 sm:hidden">
+                        Količina: {item.quantity}
+                      </p>
+                    </div>
+
+                    <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2 mt-3 sm:mt-0 flex-shrink-0">
+                      <span className="text-sm text-gray-500 hidden sm:block">
+                        × {item.quantity}
+                      </span>
+                      <span className="font-semibold text-gray-900 whitespace-nowrap">
+                        {formatPrice(item.lineTotalCents)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+            {order && !loading && (
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <h3 className="text-base font-semibold text-gray-900 mb-4">Sažetak</h3>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex justify-between">
+                    <span>Proizvodi</span>
+                    <span>{formatPrice(order.subtotalCents)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Dostava ({order.deliveryLabel})</span>
+                    <span>
+                      {order.shippingCents === 0
+                        ? 'Besplatno'
+                        : formatPrice(order.shippingCents)}
+                    </span>
+                  </div>
+                </div>
+                <div className="border-t border-gray-100 mt-4 pt-4 flex justify-between font-semibold text-gray-900">
+                  <span>Ukupno</span>
+                  <span>{formatPrice(order.totalCents)}</span>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
+  );
+}
+
+export default function UspjehPage(props: Props) {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <FaSpinner className="w-8 h-8 animate-spin text-gray-400" />
+        </div>
+      }
+    >
+      <UspjehPageContent {...props} />
+    </Suspense>
   );
 }

@@ -1,6 +1,13 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useReducer } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useReducer,
+} from 'react';
 import { Product } from '@/data/products';
 import { parsePriceCents } from '@/lib/price-utils';
 
@@ -51,6 +58,7 @@ function cartReducer(state: CartState, action: CartAction): CartState {
         ),
       };
     case 'CLEAR_CART':
+      if (state.items.length === 0) return state;
       return { ...state, items: [] };
     case 'OPEN_CART':
       return { ...state, isOpen: true };
@@ -105,31 +113,57 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
   }, [state.items]);
 
+  const addItem = useCallback(
+    (product: Product) => dispatch({ type: 'ADD_ITEM', product }),
+    []
+  );
+  const removeItem = useCallback(
+    (productId: string) => dispatch({ type: 'REMOVE_ITEM', productId }),
+    []
+  );
+  const updateQuantity = useCallback(
+    (productId: string, quantity: number) =>
+      dispatch({ type: 'UPDATE_QUANTITY', productId, quantity }),
+    []
+  );
+  const clearCart = useCallback(() => dispatch({ type: 'CLEAR_CART' }), []);
+  const openCart = useCallback(() => dispatch({ type: 'OPEN_CART' }), []);
+  const closeCart = useCallback(() => dispatch({ type: 'CLOSE_CART' }), []);
+
   const totalItems = state.items.reduce((sum, i) => sum + i.quantity, 0);
   const subtotalCents = state.items.reduce(
     (sum, i) => sum + parsePriceCents(i.product.price) * i.quantity,
     0
   );
 
-  return (
-    <CartContext.Provider
-      value={{
-        items: state.items,
-        isOpen: state.isOpen,
-        addItem: (product) => dispatch({ type: 'ADD_ITEM', product }),
-        removeItem: (productId) => dispatch({ type: 'REMOVE_ITEM', productId }),
-        updateQuantity: (productId, quantity) =>
-          dispatch({ type: 'UPDATE_QUANTITY', productId, quantity }),
-        clearCart: () => dispatch({ type: 'CLEAR_CART' }),
-        openCart: () => dispatch({ type: 'OPEN_CART' }),
-        closeCart: () => dispatch({ type: 'CLOSE_CART' }),
-        totalItems,
-        subtotalCents,
-      }}
-    >
-      {children}
-    </CartContext.Provider>
+  const value = useMemo(
+    () => ({
+      items: state.items,
+      isOpen: state.isOpen,
+      addItem,
+      removeItem,
+      updateQuantity,
+      clearCart,
+      openCart,
+      closeCart,
+      totalItems,
+      subtotalCents,
+    }),
+    [
+      state.items,
+      state.isOpen,
+      addItem,
+      removeItem,
+      updateQuantity,
+      clearCart,
+      openCart,
+      closeCart,
+      totalItems,
+      subtotalCents,
+    ]
   );
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
 
 export function useCart() {
