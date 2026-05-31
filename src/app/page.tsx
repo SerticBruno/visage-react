@@ -6,7 +6,7 @@ import CTASection from '@/components/sections/CTASection';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import FAQSection from '@/components/sections/FAQSection';
 import { BLOG_ENABLED } from '@/lib/config';
-import { getPopularProducts } from '@/data/products';
+import { getPopularProducts } from '@/lib/products-db';
 import { blogPosts } from '@/data/posts';
 
 // Conditionally import FeaturedBlogsSection only when blog is enabled
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
   // Get the 8 most recent blog posts (only when blog is enabled)
   const featuredPosts = BLOG_ENABLED ? blogPosts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -64,7 +64,7 @@ export default function Home() {
   const popularServicesData = getPopularServices();
 
   // Convert popular products to match Service type for the slider
-  const popularProductsData = getPopularProducts().map(product => ({
+  const popularProductsData = (await getPopularProducts()).map(product => ({
     id: product.id,
     title: product.title,
     description: product.description,

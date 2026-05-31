@@ -2007,19 +2007,4 @@ Za osobe kojima je dijagnosticirana rozacea. Lagan je i podržava funkciju barij
     imageNeedsResize: true
   }
   
-]; 
-
-// Utility function to get popular products
-export const getPopularProducts = () => {
-  const popularProductIds = ['15', '31', '22', '11'];
-  const popularProducts: Product[] = [];
-  
-  for (const id of popularProductIds) {
-    const product = products.find(p => p.id === id);
-    if (product) {
-      popularProducts.push(product);
-    }
-  }
-  
-  return popularProducts;
-};
+];

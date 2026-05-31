@@ -1,0 +1,22 @@
+-- Public bucket for product catalog images (admin uploads via service role API)
+
+INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+VALUES (
+  'product-images',
+  'product-images',
+  true,
+  5242880,
+  ARRAY['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif']
+)
+ON CONFLICT (id) DO UPDATE
+SET
+  public = EXCLUDED.public,
+  file_size_limit = EXCLUDED.file_size_limit,
+  allowed_mime_types = EXCLUDED.allowed_mime_types;
+
+-- Anyone can view product images (catalog, Stripe, etc.)
+DROP POLICY IF EXISTS "Product images public read" ON storage.objects;
+CREATE POLICY "Product images public read"
+ON storage.objects FOR SELECT
+TO public
+USING (bucket_id = 'product-images');

@@ -178,6 +178,11 @@ export default function Header() {
     return currentPath.startsWith(path);
   };
 
+  const desktopNavLinkClass = (path: string) =>
+    `text-gray-700 hover:text-gray-900 transition-colors duration-300 relative text-lg after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-gray-900 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+      isActive(path) ? 'text-gray-900 font-bold after:scale-x-100' : 'font-medium'
+    }`;
+
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     if (isActive(path) && path !== '/usluge' && path !== '/blog') {
       e.preventDefault();
@@ -214,13 +219,12 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          {/* Nav + cart grouped on the right */}
+          <div className="flex items-center gap-1 sm:gap-2 lg:gap-4">
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <Link 
               href="/" 
-              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
-                isActive('/') ? 'text-gray-900 font-bold' : 'font-medium'
-              }`}
+              className={desktopNavLinkClass('/')}
               onClick={(e) => handleLinkClick(e, '/')}
             >
               Početna
@@ -235,9 +239,7 @@ export default function Header() {
               <div className="flex items-center gap-1">
                 <Link 
                   href="/usluge" 
-                  className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
-                    isActive('/usluge') ? 'text-gray-900 font-bold' : 'font-medium'
-                  }`}
+                  className={desktopNavLinkClass('/usluge')}
                   onClick={(e) => handleLinkClick(e, '/usluge')}
                 >
                   Usluge
@@ -288,9 +290,7 @@ export default function Header() {
             
             <Link 
               href="/katalog" 
-              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
-                isActive('/katalog') ? 'text-gray-900 font-bold' : 'font-medium'
-              }`}
+              className={desktopNavLinkClass('/katalog')}
               onClick={(e) => handleLinkClick(e, '/katalog')}
             >
               Katalog
@@ -298,9 +298,7 @@ export default function Header() {
             
             <Link 
               href="/cjenik" 
-              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
-                isActive('/cjenik') ? 'text-gray-900 font-bold' : 'font-medium'
-              }`}
+              className={desktopNavLinkClass('/cjenik')}
               onClick={(e) => handleLinkClick(e, '/cjenik')}
             >
               Cjenik
@@ -309,9 +307,7 @@ export default function Header() {
             {BLOG_ENABLED && (
               <Link 
                 href="/blog" 
-                className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
-                  isActive('/blog') ? 'text-gray-900 font-bold' : 'font-medium'
-                }`}
+                className={desktopNavLinkClass('/blog')}
                 onClick={(e) => handleLinkClick(e, '/blog')}
               >
                 Blog
@@ -320,9 +316,7 @@ export default function Header() {
             
             <Link 
               href="/o-nama" 
-              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
-                isActive('/o-nama') ? 'text-gray-900 font-bold' : 'font-medium'
-              }`}
+              className={desktopNavLinkClass('/o-nama')}
               onClick={(e) => handleLinkClick(e, '/o-nama')}
             >
               O nama
@@ -330,9 +324,7 @@ export default function Header() {
             
             <Link 
               href="/kontakt" 
-              className={`text-gray-700 hover:text-gray-900 transition-all duration-300 relative group text-lg ${
-                isActive('/kontakt') ? 'text-gray-900 font-bold' : 'font-medium'
-              }`}
+              className={desktopNavLinkClass('/kontakt')}
               onClick={(e) => handleLinkClick(e, '/kontakt')}
             >
               Kontakt
@@ -340,11 +332,11 @@ export default function Header() {
             
           </nav>
 
-          {/* Cart icon — shown on all screen sizes */}
           <button
+            type="button"
             onClick={openCart}
             aria-label="Košarica"
-            className="relative p-2 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-300 mr-1 cursor-pointer"
+            className="group relative flex items-center justify-center p-2.5 rounded-xl text-gray-700 transition-all duration-300 cursor-pointer hover:text-gray-900 hover:bg-white hover:shadow-md hover:ring-1 hover:ring-gray-200/90 active:scale-95"
           >
             {/* Floating +1 */}
             <AnimatePresence>
@@ -365,6 +357,7 @@ export default function Header() {
 
             {/* Cart icon with bump */}
             <motion.div
+              className="transition-transform duration-300 group-hover:scale-110"
               animate={cartBumped ? { rotate: [0, -15, 15, -10, 10, 0], scale: [1, 1.2, 1.15, 1.1, 1] } : {}}
               transition={{ duration: 0.5, ease: 'easeOut' }}
             >
@@ -388,10 +381,10 @@ export default function Header() {
             </AnimatePresence>
           </button>
 
-          {/* Mobile Navigation Button */}
           <button
             ref={menuButtonRef}
-            className="lg:hidden text-gray-700 hover:text-gray-900 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100 cursor-pointer"
+            type="button"
+            className="lg:hidden text-gray-700 hover:text-gray-900 transition-all duration-300 p-2.5 rounded-xl hover:bg-white hover:shadow-md hover:ring-1 hover:ring-gray-200/90 cursor-pointer"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -418,6 +411,7 @@ export default function Header() {
               )}
             </svg>
           </button>
+          </div>
         </div>
       </div>
 

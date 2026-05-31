@@ -3,7 +3,7 @@ import { stripe } from '@/lib/stripe';
 import { supabase } from '@/lib/supabase';
 import { parsePriceCents } from '@/lib/price-utils';
 import { getShippingOption, DeliveryMethod } from '@/lib/shipping';
-import { products } from '@/data/products';
+import { getProductsByIds, getProductQuantities } from '@/lib/products-db';
 import { getSiteUrl } from '@/lib/site-url';
 
 interface LineItemRequest {
@@ -36,9 +36,13 @@ export async function POST(req: NextRequest) {
 
     const shippingOption = getShippingOption(deliveryMethod);
 
+    const productIds = items.map((i) => i.productId);
+    const productMap = await getProductsByIds(productIds);
+    const stockMap = await getProductQuantities(productIds);
+
     // Resolve products server-side — never trust client-provided prices
     const resolvedItems = items.map((item) => {
-      const product = products.find((p) => p.id === item.productId);
+      const product = productMap.get(item.productId);
       if (!product) throw new Error(`Proizvod nije pronađen: ${item.productId}`);
       return {
         product,
@@ -53,24 +57,13 @@ export async function POST(req: NextRequest) {
     );
     const totalCents = subtotalCents + shippingOption.priceCents;
 
-    // Check stock
-    const { data: stockRows } = await supabase
-      .from('product_stock')
-      .select('product_id, quantity')
-      .in(
-        'product_id',
-        resolvedItems.map((i) => i.product.id)
-      );
-
-    if (stockRows) {
-      for (const item of resolvedItems) {
-        const stock = stockRows.find((r) => r.product_id === item.product.id);
-        if (stock && stock.quantity < item.quantity) {
-          return NextResponse.json(
-            { error: `Nedovoljno zaliha za: ${item.product.title}` },
-            { status: 400 }
-          );
-        }
+    for (const item of resolvedItems) {
+      const available = stockMap.get(item.product.id);
+      if (available !== undefined && available < item.quantity) {
+        return NextResponse.json(
+          { error: `Nedovoljno zaliha za: ${item.product.title}` },
+          { status: 400 }
+        );
       }
     }
 
@@ -134,7 +127,7 @@ export async function POST(req: NextRequest) {
             name: `Dostava — ${shippingOption.label}`,
             description: shippingOption.estimatedDays,
             images: [],
-            metadata: {},
+            metadata: { product_id: 'shipping' },
           },
           unit_amount: shippingOption.priceCents,
         },

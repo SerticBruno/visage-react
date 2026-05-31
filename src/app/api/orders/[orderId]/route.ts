@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
-import { products } from '@/data/products';
+import { getProductsByIds } from '@/lib/products-db';
 import { getShippingOption, DeliveryMethod } from '@/lib/shipping';
 
 export async function GET(
@@ -37,8 +37,12 @@ export async function GET(
 
   const delivery = getShippingOption(order.delivery_method as DeliveryMethod);
 
+  const productMap = await getProductsByIds(
+    (rows ?? []).map((row) => row.product_id)
+  );
+
   const items = (rows ?? []).map((row) => {
-    const product = products.find((p) => p.id === row.product_id);
+    const product = productMap.get(row.product_id);
     const description =
       product?.previewDescription ??
       (product?.description ? product.description.slice(0, 140) : null);

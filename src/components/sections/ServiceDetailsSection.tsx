@@ -7,7 +7,8 @@ import { Service } from '@/data/services/types';
 import { FaUsers, FaRegClock, FaHandHoldingUsd, FaCheck, FaChevronRight, FaStar, FaBox, FaClipboard, FaHome } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa6';
 import { pricingData } from '@/data/pricing';
-import { products, Product } from '@/data/products';
+import { Product } from '@/data/products';
+import { useCatalogProducts } from '@/hooks/useCatalogProducts';
 import ProductModal from '@/components/ui/ProductModal';
 
 
@@ -94,6 +95,7 @@ const renderPricingTable = (service: Service) => {
 };
 
 export default function ServiceDetailsSection({ service }: ServiceDetailsSectionProps) {
+  const { products } = useCatalogProducts();
   const [activeTab, setActiveTab] = useState(service.steps[0].id);
   const sliderRef = useRef<HTMLDivElement>(null);
   const [hasUserChangedTab, setHasUserChangedTab] = useState(false);
