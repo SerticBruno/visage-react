@@ -1,4 +1,3 @@
-import Script from 'next/script';
 import { stripHtml } from '@/data/faq';
 
 interface LocalBusinessData {
@@ -70,10 +69,12 @@ const BASE_URL = 'https://visagestudio.hr';
 
 function JsonLdScript({ id, data }: { id: string; data: object }) {
   return (
-    <Script
+    <script
       id={id}
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, '\\u003c'),
+      }}
     />
   );
 }

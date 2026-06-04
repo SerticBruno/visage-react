@@ -84,7 +84,7 @@ export default async function Home() {
     <main>
       <FAQPageStructuredData items={faqItems} />
       <HeroSection
-        title="VISAGE studio"
+        title="VISAGE Studio"
         description="Estetski studio specijaliziran za nekirurške estetske tretmane lica koji su prilagođeni vašim potrebama"
         image="/images/services/toskani-woman-visage-estetski-studio.webp"
         ctaText="Dogovorite termin"

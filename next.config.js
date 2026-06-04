@@ -22,6 +22,7 @@ if (supabaseHostname) {
 
 const nextConfig = {
   reactStrictMode: true,
+  devIndicators: false,
   images: {
     remotePatterns: imageRemotePatterns,
   },
