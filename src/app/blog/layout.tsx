@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 
 const BLOG_TITLE = 'Blog | Savjeti estetske medicine i njega kože';
 const BLOG_DESCRIPTION =
-  'Blog VISAGE Studija – stručni članci o estetskoj medicini, mezoterapiji, njegi kože i kozmetičkim tretmanima. Savjeti i vijesti iz našeg studija u Siska.';
+  'Blog VISAGE Studija - stručni članci o estetskoj medicini, mezoterapiji, njegi kože i kozmetičkim tretmanima. Savjeti i vijesti iz našeg studija u Siska.';
 
 export const metadata: Metadata = {
   title: BLOG_ENABLED ? BLOG_TITLE : 'Stranica nije pronađena',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
             url: '/images/services/toskani-woman-visage-estetski-studio.webp',
             width: 1200,
             height: 630,
-            alt: 'VISAGE Studio – Blog estetska medicina Sisak',
+            alt: 'VISAGE Studio - Blog estetska medicina Sisak',
           },
         ]
       : [],

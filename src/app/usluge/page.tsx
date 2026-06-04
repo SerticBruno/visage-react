@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: '/images/services/services-hero-visage-estetski-studio.webp',
         width: 1200,
         height: 630,
-        alt: 'VISAGE Studio – Usluge i tretmani Sisak',
+        alt: 'VISAGE Studio - Usluge i tretmani Sisak',
       },
     ],
   },

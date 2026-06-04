@@ -58,9 +58,9 @@ export default function DeliveryTermsPage() {
 
       <h2>4. Rok isporuke</h2>
       <p>
-        Narudžbe se obrađuju radnim danima. Proizvodi se šalju u roku od 1–3 radna dana od
+        Narudžbe se obrađuju radnim danima. Proizvodi se šalju u roku od 1-3 radna dana od
         zaprimanja uplate, osim u slučaju više sile ili nedostupnosti zaliha (o čemu ćemo vas
-        obavijestiti). Procijenjeni rok dostave prijevoznika iznosi 2–4 radna dana od predaje
+        obavijestiti). Procijenjeni rok dostave prijevoznika iznosi 2-4 radna dana od predaje
         pošiljke, ovisno o odredištu.
       </p>
 

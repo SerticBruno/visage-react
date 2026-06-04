@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: '/images/services/toskani-woman-visage-estetski-studio.webp',
         width: 1200,
         height: 630,
-        alt: 'VISAGE Studio – Cjenik usluga Sisak',
+        alt: 'VISAGE Studio - Cjenik usluga Sisak',
       },
     ],
   },

@@ -80,7 +80,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${service.title} – VISAGE Studio Sisak`,
+          alt: `${service.title} - VISAGE Studio Sisak`,
         },
       ],
     },

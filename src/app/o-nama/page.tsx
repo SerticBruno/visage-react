@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: '/images/background.webp',
         width: 1200,
         height: 630,
-        alt: 'VISAGE Studio – O nama, estetski studio Sisak',
+        alt: 'VISAGE Studio - O nama, estetski studio Sisak',
       },
     ],
   },

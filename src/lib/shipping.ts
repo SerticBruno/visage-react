@@ -47,14 +47,14 @@ export const SHIPPING_OPTIONS: ShippingOption[] = [
     label: 'BoxNow paketomat',
     description: 'Dostava u BoxNow paketomat po vašem izboru',
     priceCents: 500, // 5.00 EUR
-    estimatedDays: '2–4 radna dana',
+    estimatedDays: '2-4 radna dana',
   },
   {
     id: 'gls',
     label: 'GLS kućna dostava',
     description: 'Dostava na vašu adresu',
     priceCents: 500, // 5.00 EUR
-    estimatedDays: '2–4 radna dana',
+    estimatedDays: '2-4 radna dana',
   },
   {
     id: 'pickup',

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         url: '/images/services/toskani-woman-visage-estetski-studio.webp',
         width: 1200,
         height: 630,
-        alt: 'VISAGE Studio – Katalog proizvoda za njegu kože Sisak',
+        alt: 'VISAGE Studio - Katalog proizvoda za njegu kože Sisak',
       },
     ],
   },

@@ -20,7 +20,7 @@ export function legalPageMetadata(
           url: '/images/services/toskani-woman-visage-estetski-studio.webp',
           width: 1200,
           height: 630,
-          alt: `${businessData.name} – ${title}`,
+          alt: `${businessData.name} - ${title}`,
         },
       ],
     },

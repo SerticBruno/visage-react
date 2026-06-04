@@ -230,7 +230,7 @@ export default function AdminProductsPage() {
         <p className="text-sm text-gray-500 mb-3">
           {sortedProducts.length > 0 ? (
             <>
-              Prikaz {rangeStart}–{rangeEnd} od {sortedProducts.length}
+              Prikaz {rangeStart}-{rangeEnd} od {sortedProducts.length}
               {searchQuery.trim() ? ' (filtrirano)' : ''}
             </>
           ) : (
