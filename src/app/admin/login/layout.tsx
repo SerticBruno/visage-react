@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Prijava',
+  title: { absolute: 'Prijava · Admin' },
 };
 
 export default function AdminLoginLayout({ children }: { children: React.ReactNode }) {

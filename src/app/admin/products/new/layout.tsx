@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Novi proizvod',
+  title: { absolute: 'Novi proizvod · Admin' },
 };
 
 export default function NewProductLayout({ children }: { children: React.ReactNode }) {

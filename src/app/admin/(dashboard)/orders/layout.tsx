@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Narudžbe',
+  title: { absolute: 'Narudžbe · Admin' },
 };
 
 export default function AdminOrdersLayout({ children }: { children: React.ReactNode }) {
