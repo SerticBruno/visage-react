@@ -139,6 +139,33 @@ html.modal-open {
   animation: cart-add-pop 0.75s ease-out forwards;
 }
 
+@keyframes qty-max-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+
+.animate-qty-max-shake {
+  animation: qty-max-shake 0.35s ease-in-out;
+}
+
+@keyframes qty-hint-in {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-qty-hint-in {
+  animation: qty-hint-in 0.2s ease-out forwards;
+}
+
 .shimmer-overlay {
   position: relative;
   overflow: hidden;

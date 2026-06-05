@@ -1,6 +1,9 @@
 'use client';
 
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useCart } from '@/context/CartContext';
+import QtyMaxHintTooltip from '@/components/ui/QtyMaxHintTooltip';
+import { getProductStock } from '@/lib/inventory';
 import { formatPrice, parsePriceCents } from '@/lib/price-utils';
 import {
   getAmountUntilFreeShippingCents,
@@ -15,6 +18,31 @@ export default function KosaricaPage() {
   const { items, removeItem, updateQuantity, subtotalCents } = useCart();
   const freeShipping = qualifiesForFreeShipping(subtotalCents);
   const untilFreeShippingCents = getAmountUntilFreeShippingCents(subtotalCents);
+  const [maxQtyHintId, setMaxQtyHintId] = useState<string | null>(null);
+  const maxQtyHintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (maxQtyHintTimerRef.current) clearTimeout(maxQtyHintTimerRef.current);
+    };
+  }, []);
+
+  const flashMaxQtyHint = useCallback((productId: string) => {
+    setMaxQtyHintId(productId);
+    if (maxQtyHintTimerRef.current) clearTimeout(maxQtyHintTimerRef.current);
+    maxQtyHintTimerRef.current = setTimeout(() => setMaxQtyHintId(null), 2500);
+  }, []);
+
+  const handleIncreaseQty = useCallback(
+    (productId: string, quantity: number, stock: number | null) => {
+      if (stock !== null && quantity >= stock) {
+        flashMaxQtyHint(productId);
+        return;
+      }
+      updateQuantity(productId, quantity + 1);
+    },
+    [flashMaxQtyHint, updateQuantity]
+  );
 
   if (items.length === 0) {
     return (
@@ -52,6 +80,11 @@ export default function KosaricaPage() {
           <div className="lg:col-span-2 space-y-4">
             {items.map((item) => {
               const priceCents = parsePriceCents(item.product.price);
+              const stock = getProductStock(item.product);
+              const atMaxStock = stock !== null && item.quantity >= stock;
+              const maxQtyMessage =
+                stock !== null ? `Maksimalno ${stock} kom na zalihi` : '';
+              const showMaxHint = maxQtyHintId === item.product.id;
               return (
                 <div
                   key={item.product.id}
@@ -75,22 +108,35 @@ export default function KosaricaPage() {
                     )}
 
                     <div className="flex items-center justify-between mt-3">
-                      <div className="flex items-center gap-2 bg-gray-100 rounded-lg px-2 py-1.5">
-                        <button
-                          onClick={() => updateQuantity(item.product.id, Math.max(1, item.quantity - 1))}
-                          disabled={item.quantity <= 1}
-                          className="text-gray-600 hover:text-gray-900 transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                      <QtyMaxHintTooltip show={showMaxHint} message={maxQtyMessage}>
+                        <div
+                          className={`flex items-center gap-2 bg-gray-100 rounded-lg px-2 py-1.5 ${
+                            showMaxHint ? 'animate-qty-max-shake' : ''
+                          }`}
                         >
-                          <FaMinus className="w-3 h-3" />
-                        </button>
-                        <span className="text-sm font-semibold w-5 text-center">{item.quantity}</span>
-                        <button
-                          onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                          className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
-                        >
-                          <FaPlus className="w-3 h-3" />
-                        </button>
-                      </div>
+                          <button
+                            onClick={() => updateQuantity(item.product.id, Math.max(1, item.quantity - 1))}
+                            disabled={item.quantity <= 1}
+                            className="text-gray-600 hover:text-gray-900 transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                          >
+                            <FaMinus className="w-3 h-3" />
+                          </button>
+                          <span className="text-sm font-semibold w-5 text-center">{item.quantity}</span>
+                          <button
+                            onClick={() =>
+                              handleIncreaseQty(item.product.id, item.quantity, stock)
+                            }
+                            aria-label={atMaxStock ? 'Maksimalna količina' : 'Povećaj količinu'}
+                            className={`transition-colors cursor-pointer ${
+                              atMaxStock
+                                ? 'text-gray-400 cursor-not-allowed'
+                                : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                          >
+                            <FaPlus className="w-3 h-3" />
+                          </button>
+                        </div>
+                      </QtyMaxHintTooltip>
 
                       <div className="flex items-center gap-3">
                         <span className="font-semibold text-gray-900">

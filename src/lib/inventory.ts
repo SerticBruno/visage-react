@@ -17,3 +17,12 @@ export function canAddToCart(
   if (stock === null) return true;
   return currentCartQty + addQty <= stock;
 }
+
+export function getMaxQtyMessage(
+  stock: number,
+  maxSelectable: number,
+  cartQty: number
+): string {
+  if (cartQty > 0) return `Možete dodati najviše ${maxSelectable} kom`;
+  return `Maksimalno ${stock} kom na zalihi`;
+}
