@@ -43,9 +43,7 @@ export async function GET(
 
   const items = (rows ?? []).map((row) => {
     const product = productMap.get(row.product_id);
-    const description =
-      product?.previewDescription ??
-      (product?.description ? product.description.slice(0, 140) : null);
+    const description = product?.description ?? product?.previewDescription ?? null;
 
     return {
       productId: row.product_id,

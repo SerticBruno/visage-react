@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { pricingData, pricingCategories, PricingItem } from '@/data/pricing';
+import { formatProductCardPrice } from '@/lib/price-utils';
 import { FaSearch, FaBox, FaChevronDown, FaChevronUp, FaStar } from 'react-icons/fa';
 import { FaFire, FaCrown } from 'react-icons/fa6';
 import React from 'react';
@@ -437,7 +438,9 @@ export default function PricingPage() {
                                   <p className="text-sm text-gray-600">{item.description}</p>
                                 </div>
                                 <div className="flex flex-col items-end gap-2 sm:justify-end">
-                                  <div className="text-base font-medium text-gray-900">{item.price}</div>
+                                  <div className="text-base font-medium text-gray-900">
+                                    {formatProductCardPrice(item.price)}
+                                  </div>
                                 </div>
                               </div>
                             </div>

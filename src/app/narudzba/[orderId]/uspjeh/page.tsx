@@ -37,6 +37,35 @@ interface Props {
   params: Promise<{ orderId: string }>;
 }
 
+const DESCRIPTION_COLLAPSED_LINES = 2;
+
+function OrderItemDescription({ description }: { description: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const isLong =
+    description.length > 100 || description.split('\n').length > DESCRIPTION_COLLAPSED_LINES;
+
+  if (!isLong) {
+    return <p className="text-sm text-gray-500 mt-2 whitespace-pre-line">{description}</p>;
+  }
+
+  return (
+    <div className="mt-2">
+      <p
+        className={`text-sm text-gray-500 whitespace-pre-line ${expanded ? '' : 'line-clamp-2'}`}
+      >
+        {description}
+      </p>
+      <button
+        type="button"
+        onClick={() => setExpanded((value) => !value)}
+        className="text-sm font-medium text-gray-700 hover:text-gray-900 mt-1 underline-offset-2 hover:underline cursor-pointer"
+      >
+        {expanded ? 'Sakrij' : 'Pročitaj više'}
+      </button>
+    </div>
+  );
+}
+
 function UspjehPageContent({ params }: Props) {
   const { orderId } = use(params);
   const searchParams = useSearchParams();
@@ -196,9 +225,7 @@ function UspjehPageContent({ params }: Props) {
                       {item.volume && (
                         <p className="text-xs text-gray-400 mt-0.5">{item.volume}</p>
                       )}
-                      {item.description && (
-                        <p className="text-sm text-gray-500 mt-2 line-clamp-2">{item.description}</p>
-                      )}
+                      {item.description && <OrderItemDescription description={item.description} />}
                       <p className="text-sm text-gray-500 mt-2 sm:hidden">
                         Količina: {item.quantity}
                       </p>
