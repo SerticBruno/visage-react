@@ -82,6 +82,46 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
     }
   }, [isTransitioning]);
 
+  // Block background scroll without changing layout (no body/html style changes)
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const isInModalScroll = (target: EventTarget | null) =>
+      target instanceof Element && !!target.closest('[data-modal-scroll]');
+
+    const onWheel = (e: WheelEvent) => {
+      const scrollable = (e.target as Element).closest('[data-modal-scroll]') as HTMLElement | null;
+      if (scrollable && scrollable.scrollHeight > scrollable.clientHeight) {
+        const { scrollTop, scrollHeight, clientHeight } = scrollable;
+        const canScrollUp = scrollTop > 0;
+        const canScrollDown = scrollTop + clientHeight < scrollHeight - 1;
+        if ((e.deltaY < 0 && canScrollUp) || (e.deltaY > 0 && canScrollDown)) return;
+      }
+      e.preventDefault();
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      if (isInModalScroll(e.target)) return;
+      e.preventDefault();
+    };
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (!['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(e.key)) return;
+      if (isInModalScroll(document.activeElement)) return;
+      e.preventDefault();
+    };
+
+    document.addEventListener('wheel', onWheel, { passive: false, capture: true });
+    document.addEventListener('touchmove', onTouchMove, { passive: false, capture: true });
+    document.addEventListener('keydown', onKeyDown, { capture: true });
+
+    return () => {
+      document.removeEventListener('wheel', onWheel, { capture: true });
+      document.removeEventListener('touchmove', onTouchMove, { capture: true });
+      document.removeEventListener('keydown', onKeyDown, { capture: true });
+    };
+  }, [isOpen]);
+
   // Handle Escape key to close modal
   useEffect(() => {
     const handleEscapeKey = (event: KeyboardEvent) => {
@@ -114,7 +154,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-6 pt-12 pb-12 md:p-4">
+      <div className="fixed inset-0 z-50 flex items-center justify-center overscroll-contain p-6 pt-12 pb-12 md:p-4">
         <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={handleClose} />
         
         <Transition.Child
@@ -335,7 +375,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                 </div>
                 
                 {/* Scrollable Right Side */}
-                <div className="w-full md:w-3/5 overflow-y-auto flex-1 min-h-0">
+                <div data-modal-scroll className="w-full md:w-3/5 overflow-y-auto overscroll-contain flex-1 min-h-0">
                   <div className={`p-3 md:p-4 space-y-3 transition-all duration-500 ${
                     isTransitioning 
                       ? 'opacity-25 blur-sm' 
