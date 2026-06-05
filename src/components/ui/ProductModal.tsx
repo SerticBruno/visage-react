@@ -6,6 +6,7 @@ import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt, FaStar, FaBox } from 'reac
 import Image from 'next/image';
 import { Product } from '@/data/products';
 import AddToCartButton from '@/components/ui/AddToCartButton';
+import { useLockBackgroundScroll } from '@/hooks/useLockBackgroundScroll';
 
 interface ProductModalProps {
   isOpen: boolean;
@@ -82,45 +83,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
     }
   }, [isTransitioning]);
 
-  // Block background scroll without changing layout (no body/html style changes)
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const isInModalScroll = (target: EventTarget | null) =>
-      target instanceof Element && !!target.closest('[data-modal-scroll]');
-
-    const onWheel = (e: WheelEvent) => {
-      const scrollable = (e.target as Element).closest('[data-modal-scroll]') as HTMLElement | null;
-      if (scrollable && scrollable.scrollHeight > scrollable.clientHeight) {
-        const { scrollTop, scrollHeight, clientHeight } = scrollable;
-        const canScrollUp = scrollTop > 0;
-        const canScrollDown = scrollTop + clientHeight < scrollHeight - 1;
-        if ((e.deltaY < 0 && canScrollUp) || (e.deltaY > 0 && canScrollDown)) return;
-      }
-      e.preventDefault();
-    };
-
-    const onTouchMove = (e: TouchEvent) => {
-      if (isInModalScroll(e.target)) return;
-      e.preventDefault();
-    };
-
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (!['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(e.key)) return;
-      if (isInModalScroll(document.activeElement)) return;
-      e.preventDefault();
-    };
-
-    document.addEventListener('wheel', onWheel, { passive: false, capture: true });
-    document.addEventListener('touchmove', onTouchMove, { passive: false, capture: true });
-    document.addEventListener('keydown', onKeyDown, { capture: true });
-
-    return () => {
-      document.removeEventListener('wheel', onWheel, { capture: true });
-      document.removeEventListener('touchmove', onTouchMove, { capture: true });
-      document.removeEventListener('keydown', onKeyDown, { capture: true });
-    };
-  }, [isOpen]);
+  useLockBackgroundScroll(isOpen, { scrollWithinSelector: '[data-modal-scroll]' });
 
   // Handle Escape key to close modal
   useEffect(() => {
