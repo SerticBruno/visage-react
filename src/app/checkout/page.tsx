@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { Fragment, useState, useEffect, useCallback } from 'react';
+import { Transition } from '@headlessui/react';
 import { useCart } from '@/context/CartContext';
 import { formatPrice, parsePriceCents } from '@/lib/price-utils';
 import {
@@ -699,6 +700,44 @@ export default function CheckoutPage() {
           </div>
         </form>
       </div>
+
+      <Transition show={loading} as={Fragment}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-500"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-400"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-white/45 backdrop-blur-[2px]"
+            aria-live="polite"
+            aria-busy="true"
+          >
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-500 delay-150"
+              enterFrom="opacity-0 translate-y-2 scale-[0.98]"
+              enterTo="opacity-100 translate-y-0 scale-100"
+              leave="ease-in duration-300"
+              leaveFrom="opacity-100 translate-y-0 scale-100"
+              leaveTo="opacity-0 translate-y-1 scale-[0.99]"
+            >
+              <div className="flex flex-col items-center gap-4 rounded-2xl bg-white/85 px-10 py-7 shadow-lg border border-white/70">
+                <div
+                  className="h-9 w-9 rounded-full border-2 border-gray-200 border-t-gray-500 animate-spin-easy"
+                  aria-hidden
+                />
+                <p className="text-sm font-medium text-gray-600 tracking-wide">
+                  Preusmjeravanje na plaćanje...
+                </p>
+              </div>
+            </Transition.Child>
+          </div>
+        </Transition.Child>
+      </Transition>
     </div>
   );
 }
