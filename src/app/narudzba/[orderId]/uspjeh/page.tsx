@@ -96,7 +96,7 @@ function UspjehPageContent({ params }: Props) {
                 <div className="text-left">
                   <h1 className="text-2xl font-bold text-gray-900">Plaćanje uspješno!</h1>
                   <p className="text-sm text-gray-500 mt-0.5">
-                    Hvala{order?.customerName ? `, ${order.customerName.split(' ')[0]}` : ''} na kupnji.
+                    Hvala{order?.customerName ? ` ${order.customerName.split(' ')[0]}` : ''} na kupnji.
                   </p>
                 </div>
               </div>
