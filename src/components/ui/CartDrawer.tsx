@@ -183,51 +183,52 @@ export default function CartDrawer() {
                         <p className="text-xs text-gray-400 mt-0.5">{formatPrice(priceCents)} / kom</p>
 
                         <div className="flex items-center justify-between mt-2">
-                          {/* Quantity controls */}
-                          <QtyMaxHintTooltip show={showMaxHint} message={maxQtyMessage}>
-                            <div
-                              className={`flex items-center gap-2 bg-gray-100 rounded-lg px-2 py-1 ${
-                                showMaxHint ? 'animate-qty-max-shake' : ''
-                              }`}
-                            >
-                              <button
-                                onClick={() => updateQuantity(item.product.id, Math.max(1, item.quantity - 1))}
-                                disabled={item.quantity <= 1}
-                                className="text-gray-600 hover:text-gray-900 transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-                              >
-                                <FaMinus className="w-3 h-3" />
-                              </button>
-                              <span className="text-sm font-medium w-5 text-center">{item.quantity}</span>
-                              <button
-                                onClick={() =>
-                                  handleIncreaseQty(item.product.id, item.quantity, stock)
-                                }
-                                aria-label={atMaxStock ? 'Maksimalna količina' : 'Povećaj količinu'}
-                                className={`transition-colors cursor-pointer ${
-                                  atMaxStock
-                                    ? 'text-gray-400 cursor-not-allowed'
-                                    : 'text-gray-600 hover:text-gray-900'
+                          <div className="flex items-center gap-2">
+                            <QtyMaxHintTooltip show={showMaxHint} message={maxQtyMessage}>
+                              <div
+                                className={`flex items-center gap-2 bg-gray-100 rounded-lg px-2 py-1 ${
+                                  showMaxHint ? 'animate-qty-max-shake' : ''
                                 }`}
                               >
-                                <FaPlus className="w-3 h-3" />
-                              </button>
-                            </div>
-                          </QtyMaxHintTooltip>
+                                <button
+                                  onClick={() => updateQuantity(item.product.id, Math.max(1, item.quantity - 1))}
+                                  disabled={item.quantity <= 1}
+                                  className="text-gray-600 hover:text-gray-900 transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                                >
+                                  <FaMinus className="w-3 h-3" />
+                                </button>
+                                <span className="text-sm font-medium w-5 text-center">{item.quantity}</span>
+                                <button
+                                  onClick={() =>
+                                    handleIncreaseQty(item.product.id, item.quantity, stock)
+                                  }
+                                  aria-label={atMaxStock ? 'Maksimalna količina' : 'Povećaj količinu'}
+                                  className={`transition-colors cursor-pointer ${
+                                    atMaxStock
+                                      ? 'text-gray-400 cursor-not-allowed'
+                                      : 'text-gray-600 hover:text-gray-900'
+                                  }`}
+                                >
+                                  <FaPlus className="w-3 h-3" />
+                                </button>
+                              </div>
+                            </QtyMaxHintTooltip>
+
+                            <button
+                              onClick={() => removeItem(item.product.id)}
+                              className="p-1.5 rounded-lg text-gray-300 hover:text-red-500 hover:bg-red-50 transition-colors cursor-pointer"
+                              title="Ukloni iz košarice"
+                              aria-label="Ukloni iz košarice"
+                            >
+                              <FaTrash className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
 
                           <span className="text-sm font-semibold text-gray-900">
                             {formatPrice(priceCents * item.quantity)}
                           </span>
                         </div>
                       </div>
-
-                      {/* Remove */}
-                      <button
-                        onClick={() => removeItem(item.product.id)}
-                        className="flex-shrink-0 p-1 text-gray-300 hover:text-red-400 transition-colors self-start mt-0.5 cursor-pointer"
-                        title="Ukloni"
-                      >
-                        <FaTrash className="w-3.5 h-3.5" />
-                      </button>
                     </div>
                   );
                 })
