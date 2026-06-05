@@ -8,6 +8,9 @@ import { FaBell, FaCheck, FaTimes } from 'react-icons/fa';
 
 type Variant = 'primary' | 'secondary' | 'icon' | 'quantity' | 'card';
 
+const SUBSCRIBED_BUTTON_CLASSES =
+  'bg-[#5ba2ff] text-white shadow-[0_4px_6px_-1px_rgb(91_162_255_/_0.35),0_2px_4px_-2px_rgb(91_162_255_/_0.25)]';
+
 interface Props {
   product: Product;
   variant?: Variant;
@@ -47,8 +50,12 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
     e.stopPropagation();
   };
 
+  const stopClickPropagation = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   const handleDismiss = (e: React.MouseEvent) => {
-    absorbPointerEvent(e);
+    stopClickPropagation(e);
     closeModal();
     setDismissShield(true);
     window.setTimeout(() => setDismissShield(false), 400);
@@ -99,7 +106,7 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
         title={subscribed ? message || 'Prijavljeni ste za obavijest' : 'Obavijesti me kad bude na zalihama'}
         className={`group flex items-center justify-center gap-1 sm:gap-1.5 min-w-0 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium shadow-sm transform-gpu transition-all duration-200 ease-out cursor-pointer ${
           subscribed
-            ? 'bg-green-50 text-green-700 border border-green-200 cursor-default'
+            ? `${SUBSCRIBED_BUTTON_CLASSES} cursor-default`
             : 'bg-slate-200 text-slate-700 border border-slate-300 hover:bg-slate-300 hover:text-slate-800 hover:border-slate-400 hover:-translate-y-0.5 hover:shadow-md hover:shadow-slate-500/15 active:translate-y-0 active:scale-[0.98]'
         } ${className}`}
       >
@@ -126,7 +133,7 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
         title={subscribed ? message || 'Prijavljeni ste za obavijest' : 'Obavijesti me kad bude na zalihama'}
         className={`p-2 rounded-full shadow transition-all cursor-pointer ${
           subscribed
-            ? 'bg-green-500 text-white cursor-default'
+            ? `${SUBSCRIBED_BUTTON_CLASSES} cursor-default`
             : 'bg-white/90 hover:bg-white text-slate-700 hover:text-slate-800 hover:scale-110'
         } ${className}`}
       >
@@ -134,7 +141,8 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
       </button>
     ) : subscribed ? (
       <div
-        className={`flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg text-sm font-medium bg-green-50 text-green-800 border border-green-200 ${className}`}
+        className={`flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg text-sm font-medium scale-[1.02] ${SUBSCRIBED_BUTTON_CLASSES} ${className}`}
+        style={{ transitionTimingFunction: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}
       >
         <FaCheck className="w-4 h-4 shrink-0" />
         <span className="text-left">{message || 'Obavijestit ćemo vas čim proizvod bude opet na zalihama.'}</span>
@@ -159,8 +167,8 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
     <Transition appear show={modalOpen} as={Fragment}>
       <div
         className="fixed inset-0 z-[10050] flex items-center justify-center p-4"
-        onMouseDown={absorbPointerEvent}
-        onClick={absorbPointerEvent}
+        onMouseDown={stopClickPropagation}
+        onClick={stopClickPropagation}
       >
         <Transition.Child
           as={Fragment}
@@ -173,7 +181,6 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
         >
           <div
             className="fixed inset-0 bg-black/40 backdrop-blur-sm"
-            onMouseDown={absorbPointerEvent}
             onClick={handleDismiss}
           />
         </Transition.Child>
@@ -189,12 +196,11 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
         >
           <div
             className="relative w-full max-w-md rounded-2xl bg-white shadow-2xl border border-slate-200 p-6"
-            onMouseDown={absorbPointerEvent}
-            onClick={absorbPointerEvent}
+            onMouseDown={stopClickPropagation}
+            onClick={stopClickPropagation}
           >
             <button
               type="button"
-              onMouseDown={absorbPointerEvent}
               onClick={handleDismiss}
               className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-slate-100 cursor-pointer"
               aria-label="Zatvori"
@@ -204,14 +210,13 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
 
             {subscribed ? (
               <div className="text-center pt-2">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#5ba2ff]/15 text-[#5ba2ff]">
                   <FaCheck className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">Prijava spremljena</h3>
                 <p className="text-sm text-slate-600 mb-6">{message}</p>
                 <button
                   type="button"
-                  onMouseDown={absorbPointerEvent}
                   onClick={handleDismiss}
                   className="w-full rounded-lg bg-slate-700 text-white px-4 py-2.5 text-sm font-medium hover:bg-slate-800 cursor-pointer"
                 >
@@ -253,7 +258,6 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
                   <div className="flex gap-2">
                     <button
                       type="button"
-                      onMouseDown={absorbPointerEvent}
                       onClick={handleDismiss}
                       className="flex-1 rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 cursor-pointer"
                     >

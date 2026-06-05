@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase';
+import { notifyStockSubscribers } from '@/lib/stock-notifications';
 import type { GeneratedSupplierEmail } from '@/lib/supplier-order-email';
 
 export type PurchaseOrderStatus = 'ordered' | 'received' | 'cancelled';
@@ -265,6 +266,7 @@ export async function receivePurchaseOrder(
 
   const itemMap = new Map(order.items.map((i) => [i.id, i]));
   const now = new Date().toISOString();
+  const productsToNotify = new Set<string>();
 
   for (const input of items) {
     const line = itemMap.get(input.itemId);
@@ -290,11 +292,25 @@ export async function receivePurchaseOrder(
     if (itemError) throw itemError;
 
     if (receivedQuantity > 0) {
+      const { data: productBefore, error: productError } = await supabase
+        .from('products')
+        .select('quantity')
+        .eq('id', line.productId)
+        .maybeSingle();
+
+      if (productError) throw productError;
+
+      const previousQty = productBefore?.quantity ?? 0;
+
       const { error: stockError } = await supabase.rpc('increment_stock', {
         p_product_id: line.productId,
         p_quantity: receivedQuantity,
       });
       if (stockError) throw stockError;
+
+      if (previousQty <= 0) {
+        productsToNotify.add(line.productId);
+      }
     }
   }
 
@@ -308,6 +324,12 @@ export async function receivePurchaseOrder(
     .eq('id', orderId);
 
   if (orderError) throw orderError;
+
+  for (const productId of productsToNotify) {
+    notifyStockSubscribers(productId).catch((err) =>
+      console.error(`Stock notification dispatch failed for ${productId}:`, err)
+    );
+  }
 
   const updated = await getPurchaseOrderById(orderId);
   if (!updated) throw new Error('Narudžbenica nije pronađena nakon ažuriranja');
