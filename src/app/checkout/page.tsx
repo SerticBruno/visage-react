@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useCart } from '@/context/CartContext';
 import { formatPrice, parsePriceCents } from '@/lib/price-utils';
 import {
@@ -39,6 +39,27 @@ interface FormData {
   notes: string;
 }
 
+type ValidatedField =
+  | 'name'
+  | 'email'
+  | 'phone'
+  | 'boxnowLockerId'
+  | 'street'
+  | 'city'
+  | 'zip'
+  | 'agreeTerms';
+
+const VALIDATION_FIELD_ORDER: ValidatedField[] = [
+  'name',
+  'email',
+  'phone',
+  'boxnowLockerId',
+  'street',
+  'city',
+  'zip',
+  'agreeTerms',
+];
+
 const DELIVERY_ICONS: Record<DeliveryMethod, React.ReactNode> = {
   boxnow: <FaBoxOpen className="w-5 h-5" />,
   gls: <FaTruck className="w-5 h-5" />,
@@ -70,6 +91,7 @@ export default function CheckoutPage() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<Partial<Record<ValidatedField, string>>>({});
   const [promoInput, setPromoInput] = useState('');
   const [appliedPromo, setAppliedPromo] = useState<PromoCode | null>(null);
   const [promoError, setPromoError] = useState('');
@@ -101,6 +123,15 @@ export default function CheckoutPage() {
     setPromoError('');
   };
 
+  const clearFieldError = useCallback((field: ValidatedField) => {
+    setFieldErrors((prev) => {
+      if (!prev[field]) return prev;
+      const next = { ...prev };
+      delete next[field];
+      return next;
+    });
+  }, []);
+
   if (items.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4 text-center">
@@ -117,7 +148,27 @@ export default function CheckoutPage() {
   ) => {
     const value = e.target.type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value;
     setForm((prev) => ({ ...prev, [field]: value }));
+    if (field in fieldErrors) {
+      clearFieldError(field as ValidatedField);
+    }
   };
+
+  const scrollToField = (field: ValidatedField) => {
+    const el = document.getElementById(`checkout-field-${field}`);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const focusable = el.querySelector<HTMLElement>(
+      'input:not([type="radio"]):not([type="checkbox"]), textarea, button, select'
+    );
+    focusable?.focus({ preventScroll: true });
+  };
+
+  const inputClassName = (field: ValidatedField) =>
+    `w-full border rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-1 ${
+      fieldErrors[field]
+        ? 'border-red-300 focus:ring-red-400/60 bg-red-50/30'
+        : 'border-gray-200 focus:ring-gray-400/50'
+    }`;
 
   const openBoxNowWidget = () => {
     // BoxNow widget integration point
@@ -132,29 +183,56 @@ export default function CheckoutPage() {
       boxnowLockerName: 'BoxNow - Sisak, Capraška ulica',
       boxnowLockerAddress: 'Capraška ulica 6, Sisak',
     }));
+    clearFieldError('boxnowLockerId');
   };
 
-  const validate = () => {
-    if (!form.name.trim()) return 'Unesite ime i prezime';
-    if (!form.email.trim() || !form.email.includes('@')) return 'Unesite ispravnu email adresu';
-    if (!form.phone.trim()) return 'Unesite broj telefona';
-    if (form.deliveryMethod === 'boxnow' && !form.boxnowLockerId) return 'Odaberite BoxNow paketomat';
-    if (form.deliveryMethod === 'gls') {
-      if (!form.street.trim()) return 'Unesite ulicu i broj';
-      if (!form.city.trim()) return 'Unesite grad';
-      if (!form.zip.trim()) return 'Unesite poštanski broj';
+  const getValidationErrors = (): Partial<Record<ValidatedField, string>> => {
+    const errors: Partial<Record<ValidatedField, string>> = {};
+
+    if (!form.name.trim()) errors.name = 'Unesite ime i prezime';
+    if (!form.email.trim() || !form.email.includes('@')) errors.email = 'Unesite ispravnu email adresu';
+    if (!form.phone.trim()) errors.phone = 'Unesite broj telefona';
+
+    if (form.deliveryMethod === 'boxnow' && !form.boxnowLockerId) {
+      errors.boxnowLockerId = 'Odaberite BoxNow paketomat';
     }
-    if (!form.agreeTerms) return 'Morate prihvatiti uvjete kupnje';
+    if (form.deliveryMethod === 'gls') {
+      if (!form.street.trim()) errors.street = 'Unesite ulicu i broj';
+      if (!form.city.trim()) errors.city = 'Unesite grad';
+      if (!form.zip.trim()) errors.zip = 'Unesite poštanski broj';
+    }
+
+    if (!form.agreeTerms) errors.agreeTerms = 'Morate prihvatiti uvjete kupnje';
+
+    return errors;
+  };
+
+  const getFirstInvalidField = (
+    errors: Partial<Record<ValidatedField, string>>
+  ): ValidatedField | null => {
+    for (const field of VALIDATION_FIELD_ORDER) {
+      if (field === 'boxnowLockerId' && form.deliveryMethod !== 'boxnow') continue;
+      if ((field === 'street' || field === 'city' || field === 'zip') && form.deliveryMethod !== 'gls') {
+        continue;
+      }
+      if (errors[field]) return field;
+    }
     return null;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const validationError = validate();
-    if (validationError) {
-      setError(validationError);
+    const errors = getValidationErrors();
+    const firstInvalidField = getFirstInvalidField(errors);
+
+    if (firstInvalidField) {
+      setFieldErrors(errors);
+      setError('');
+      scrollToField(firstInvalidField);
       return;
     }
+
+    setFieldErrors({});
     setError('');
     setLoading(true);
 
@@ -220,7 +298,7 @@ export default function CheckoutPage() {
               <section className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
                 <h2 className="text-base font-semibold text-gray-900 mb-4">Podaci kupca</h2>
                 <div className="space-y-4">
-                  <div>
+                  <div id="checkout-field-name">
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Ime i prezime <span className="text-red-500">*</span>
                     </label>
@@ -228,13 +306,17 @@ export default function CheckoutPage() {
                       type="text"
                       value={form.name}
                       onChange={set('name')}
-                      className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+                      className={inputClassName('name')}
                       placeholder="Ime i prezime"
                       autoComplete="name"
+                      aria-invalid={!!fieldErrors.name}
                     />
+                    {fieldErrors.name && (
+                      <p className="text-xs text-red-600 mt-1.5">{fieldErrors.name}</p>
+                    )}
                   </div>
                   <div className="grid grid-cols-2 gap-4">
-                    <div>
+                    <div id="checkout-field-email">
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Email <span className="text-red-500">*</span>
                       </label>
@@ -242,12 +324,16 @@ export default function CheckoutPage() {
                         type="email"
                         value={form.email}
                         onChange={set('email')}
-                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+                        className={inputClassName('email')}
                         placeholder="ana@example.com"
                         autoComplete="email"
+                        aria-invalid={!!fieldErrors.email}
                       />
+                      {fieldErrors.email && (
+                        <p className="text-xs text-red-600 mt-1.5">{fieldErrors.email}</p>
+                      )}
                     </div>
-                    <div>
+                    <div id="checkout-field-phone">
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Telefon <span className="text-red-500">*</span>
                       </label>
@@ -255,10 +341,14 @@ export default function CheckoutPage() {
                         type="tel"
                         value={form.phone}
                         onChange={set('phone')}
-                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+                        className={inputClassName('phone')}
                         placeholder="+385 91 234 5678"
                         autoComplete="tel"
+                        aria-invalid={!!fieldErrors.phone}
                       />
+                      {fieldErrors.phone && (
+                        <p className="text-xs text-red-600 mt-1.5">{fieldErrors.phone}</p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -287,7 +377,17 @@ export default function CheckoutPage() {
                         name="deliveryMethod"
                         value={option.id}
                         checked={form.deliveryMethod === option.id}
-                        onChange={() => setForm((p) => ({ ...p, deliveryMethod: option.id }))}
+                        onChange={() => {
+                          setForm((p) => ({ ...p, deliveryMethod: option.id }));
+                          setFieldErrors((prev) => {
+                            const next = { ...prev };
+                            delete next.boxnowLockerId;
+                            delete next.street;
+                            delete next.city;
+                            delete next.zip;
+                            return next;
+                          });
+                        }}
                         className="mt-0.5"
                       />
                       <span className="text-gray-600 mt-0.5">{DELIVERY_ICONS[option.id]}</span>
@@ -308,7 +408,14 @@ export default function CheckoutPage() {
 
                 {/* BoxNow locker picker */}
                 {form.deliveryMethod === 'boxnow' && (
-                  <div className="mt-4 p-4 bg-blue-50 rounded-xl border border-blue-100">
+                  <div
+                    id="checkout-field-boxnowLockerId"
+                    className={`mt-4 p-4 rounded-xl border ${
+                      fieldErrors.boxnowLockerId
+                        ? 'bg-red-50 border-red-200'
+                        : 'bg-blue-50 border-blue-100'
+                    }`}
+                  >
                     <h3 className="text-sm font-semibold text-gray-800 mb-2 flex items-center gap-2">
                       <FaMapMarkerAlt className="w-4 h-4 text-blue-500" />
                       Odabrani paketomat
@@ -331,10 +438,17 @@ export default function CheckoutPage() {
                       <button
                         type="button"
                         onClick={openBoxNowWidget}
-                        className="w-full py-2.5 px-4 bg-white border border-blue-200 text-blue-700 text-sm font-medium rounded-lg hover:bg-blue-50 transition-colors cursor-pointer"
+                        className={`w-full py-2.5 px-4 bg-white border text-sm font-medium rounded-lg transition-colors cursor-pointer ${
+                          fieldErrors.boxnowLockerId
+                            ? 'border-red-300 text-red-700 hover:bg-red-50'
+                            : 'border-blue-200 text-blue-700 hover:bg-blue-50'
+                        }`}
                       >
                         Odaberi paketomat na mapi
                       </button>
+                    )}
+                    {fieldErrors.boxnowLockerId && (
+                      <p className="text-xs text-red-600 mt-2">{fieldErrors.boxnowLockerId}</p>
                     )}
                   </div>
                 )}
@@ -342,7 +456,7 @@ export default function CheckoutPage() {
                 {/* GLS address */}
                 {form.deliveryMethod === 'gls' && (
                   <div className="mt-4 space-y-3">
-                    <div>
+                    <div id="checkout-field-street">
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Ulica i broj <span className="text-red-500">*</span>
                       </label>
@@ -350,13 +464,17 @@ export default function CheckoutPage() {
                         type="text"
                         value={form.street}
                         onChange={set('street')}
-                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+                        className={inputClassName('street')}
                         placeholder="Ilica 1"
                         autoComplete="street-address"
+                        aria-invalid={!!fieldErrors.street}
                       />
+                      {fieldErrors.street && (
+                        <p className="text-xs text-red-600 mt-1.5">{fieldErrors.street}</p>
+                      )}
                     </div>
                     <div className="grid grid-cols-2 gap-4">
-                      <div>
+                      <div id="checkout-field-city">
                         <label className="block text-sm font-medium text-gray-700 mb-1">
                           Grad <span className="text-red-500">*</span>
                         </label>
@@ -364,12 +482,16 @@ export default function CheckoutPage() {
                           type="text"
                           value={form.city}
                           onChange={set('city')}
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+                          className={inputClassName('city')}
                           placeholder="Zagreb"
                           autoComplete="address-level2"
+                          aria-invalid={!!fieldErrors.city}
                         />
+                        {fieldErrors.city && (
+                          <p className="text-xs text-red-600 mt-1.5">{fieldErrors.city}</p>
+                        )}
                       </div>
-                      <div>
+                      <div id="checkout-field-zip">
                         <label className="block text-sm font-medium text-gray-700 mb-1">
                           Poštanski broj <span className="text-red-500">*</span>
                         </label>
@@ -377,10 +499,14 @@ export default function CheckoutPage() {
                           type="text"
                           value={form.zip}
                           onChange={set('zip')}
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+                          className={inputClassName('zip')}
                           placeholder="10000"
                           autoComplete="postal-code"
+                          aria-invalid={!!fieldErrors.zip}
                         />
+                        {fieldErrors.zip && (
+                          <p className="text-xs text-red-600 mt-1.5">{fieldErrors.zip}</p>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -394,7 +520,7 @@ export default function CheckoutPage() {
                   value={form.notes}
                   onChange={set('notes')}
                   rows={3}
-                  className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 resize-none"
+                  className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400/50 resize-none"
                   placeholder="Posebne upute za dostavu ili napomena za studio..."
                 />
               </section>
@@ -464,7 +590,7 @@ export default function CheckoutPage() {
                             applyPromoCode();
                           }
                         }}
-                        className="flex-1 min-w-0 border border-gray-200 rounded-lg px-3 py-2 text-sm uppercase focus:outline-none focus:ring-2 focus:ring-gray-400"
+                        className="flex-1 min-w-0 border border-gray-200 rounded-lg px-3 py-2 text-sm uppercase focus:outline-none focus:ring-1 focus:ring-gray-400/50"
                         placeholder="Unesite kod"
                         autoComplete="off"
                       />
@@ -512,24 +638,36 @@ export default function CheckoutPage() {
                 </div>
 
                 {/* Terms checkbox */}
-                <label className="flex items-start gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={form.agreeTerms}
-                    onChange={(e) => setForm((p) => ({ ...p, agreeTerms: e.target.checked }))}
-                    className="mt-0.5 rounded"
-                  />
-                  <span className="text-xs text-gray-600">
-                    Prihvaćam{' '}
-                    <Link href="/uvjeti-kupnje" target="_blank" className="underline hover:text-gray-900">
-                      Uvjete kupnje
-                    </Link>{' '}
-                    i{' '}
-                    <Link href="/povrat-i-reklamacije" target="_blank" className="underline hover:text-gray-900">
-                      Politiku povrata
-                    </Link>
-                  </span>
-                </label>
+                <div
+                  id="checkout-field-agreeTerms"
+                  className={fieldErrors.agreeTerms ? 'rounded-lg border border-red-200 bg-red-50/40 p-2 -m-2' : ''}
+                >
+                  <label className="flex items-start gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={form.agreeTerms}
+                      onChange={(e) => {
+                        setForm((p) => ({ ...p, agreeTerms: e.target.checked }));
+                        if (e.target.checked) clearFieldError('agreeTerms');
+                      }}
+                      className="mt-0.5 rounded"
+                      aria-invalid={!!fieldErrors.agreeTerms}
+                    />
+                    <span className="text-xs text-gray-600">
+                      Prihvaćam{' '}
+                      <Link href="/uvjeti-kupnje" target="_blank" className="underline hover:text-gray-900">
+                        Uvjete kupnje
+                      </Link>{' '}
+                      i{' '}
+                      <Link href="/povrat-i-reklamacije" target="_blank" className="underline hover:text-gray-900">
+                        Politiku povrata
+                      </Link>
+                    </span>
+                  </label>
+                  {fieldErrors.agreeTerms && (
+                    <p className="text-xs text-red-600 mt-1.5 ml-6">{fieldErrors.agreeTerms}</p>
+                  )}
+                </div>
 
                 {error && (
                   <p className="text-sm text-red-600 bg-red-50 border border-red-100 rounded-lg px-3 py-2">
