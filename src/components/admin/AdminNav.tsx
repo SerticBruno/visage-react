@@ -15,6 +15,11 @@ const TABS = [
     label: 'Kupci',
     match: (path: string) => path.startsWith('/admin/customers'),
   },
+  {
+    href: '/admin/purchase-orders',
+    label: 'Narudžbenice',
+    match: (path: string) => path.startsWith('/admin/purchase-orders'),
+  },
 ] as const;
 
 export default function AdminNav() {

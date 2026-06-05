@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Product } from '@/data/products';
+import SupplierOrderPanel from '@/components/admin/SupplierOrderPanel';
 import { parsePriceCents } from '@/lib/price-utils';
 
 type AdminProduct = Product & { quantity: number; published?: boolean };
@@ -103,6 +104,12 @@ function getStockRowClassName(quantity: number): string {
   return 'hover:bg-gray-50/80';
 }
 
+function defaultOrderQuantity(stock: number): number {
+  if (stock <= 0) return 5;
+  if (stock < 5) return Math.max(1, 10 - stock);
+  return 3;
+}
+
 export default function AdminProductsPage() {
   const [products, setProducts] = useState<AdminProduct[]>([]);
   const [loading, setLoading] = useState(true);
@@ -111,6 +118,7 @@ export default function AdminProductsPage() {
   const [sortField, setSortField] = useState<SortField>('quantity');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedOrders, setSelectedOrders] = useState<Map<string, number>>(new Map());
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -168,6 +176,30 @@ export default function AdminProductsPage() {
     setPage(1);
   };
 
+  const toggleProductSelection = (product: AdminProduct) => {
+    setSelectedOrders((prev) => {
+      const next = new Map(prev);
+      if (next.has(product.id)) {
+        next.delete(product.id);
+      } else {
+        next.set(product.id, defaultOrderQuantity(product.quantity ?? 0));
+      }
+      return next;
+    });
+  };
+
+  const updateOrderQuantity = (productId: string, value: string) => {
+    const parsed = Math.max(1, Math.floor(Number(value) || 1));
+    setSelectedOrders((prev) => {
+      if (!prev.has(productId)) return prev;
+      const next = new Map(prev);
+      next.set(productId, parsed);
+      return next;
+    });
+  };
+
+  const clearSelection = () => setSelectedOrders(new Map());
+
   const handleDelete = async (id: string, title: string) => {
     if (!confirm(`Obrisati proizvod "${title}"?`)) return;
     const res = await fetch(`/api/admin/products/${encodeURIComponent(id)}`, {
@@ -182,7 +214,7 @@ export default function AdminProductsPage() {
   };
 
   return (
-    <>
+    <div className={selectedOrders.size > 0 ? 'pb-24' : undefined}>
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
         <div>
           <h2 className="text-lg font-semibold">Katalog proizvoda</h2>
@@ -192,6 +224,11 @@ export default function AdminProductsPage() {
               : searchQuery.trim()
                 ? `${filteredProducts.length} od ${products.length} proizvoda`
                 : `${products.length} proizvoda`}
+            {!loading && (
+              <span className="block text-gray-400">
+                Označite proizvode za automatsku narudžbu kod dobavljača.
+              </span>
+            )}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -243,6 +280,7 @@ export default function AdminProductsPage() {
         <table className="w-full text-sm">
           <thead className="bg-gray-50 text-left border-b border-gray-200">
             <tr>
+              <th className="px-3 py-3 w-10" aria-label="Odabir za narudžbu" />
               <SortableHeader
                 field="title"
                 label="Proizvod"
@@ -288,6 +326,9 @@ export default function AdminProductsPage() {
                 onSort={handleColumnSort}
                 className="hidden md:table-cell"
               />
+              <th className="px-4 py-3 font-medium text-gray-600 w-24 hidden sm:table-cell">
+                Narudžba
+              </th>
               <th className="px-4 py-3 font-medium text-gray-600 w-28 text-right">Akcije</th>
             </tr>
           </thead>
@@ -295,14 +336,14 @@ export default function AdminProductsPage() {
             {loading &&
               Array.from({ length: PAGE_SIZE }).map((_, i) => (
                 <tr key={i}>
-                  <td colSpan={7} className="px-4 py-3">
+                  <td colSpan={9} className="px-4 py-3">
                     <div className="h-10 bg-gray-100 rounded animate-pulse" />
                   </td>
                 </tr>
               ))}
             {!loading && paginatedProducts.length === 0 && (
               <tr>
-                <td colSpan={7} className="px-4 py-12 text-center text-gray-500">
+                <td colSpan={9} className="px-4 py-12 text-center text-gray-500">
                   {searchQuery.trim()
                     ? `Nema proizvoda koji odgovaraju „${searchQuery.trim()}“.`
                     : 'Nema proizvoda. Pokrenite seed skriptu ili dodajte novi proizvod.'}
@@ -312,8 +353,19 @@ export default function AdminProductsPage() {
             {!loading &&
               paginatedProducts.map((p) => {
                 const quantity = p.quantity ?? 0;
+                const isSelected = selectedOrders.has(p.id);
+                const orderQty = selectedOrders.get(p.id) ?? defaultOrderQuantity(quantity);
                 return (
                 <tr key={p.id} className={getStockRowClassName(quantity)}>
+                  <td className="px-3 py-3">
+                    <input
+                      type="checkbox"
+                      checked={isSelected}
+                      onChange={() => toggleProductSelection(p)}
+                      className="h-4 w-4 rounded border-gray-300 cursor-pointer"
+                      aria-label={`Odaberi ${p.title} za narudžbu`}
+                    />
+                  </td>
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-3">
                       <div className="relative h-10 w-10 shrink-0 rounded bg-gray-100 overflow-hidden">
@@ -358,6 +410,23 @@ export default function AdminProductsPage() {
                       <span className="text-xs rounded-full bg-green-50 px-2 py-0.5 text-green-700">
                         Objavljeno
                       </span>
+                    )}
+                  </td>
+                  <td className="px-4 py-3 hidden sm:table-cell">
+                    {isSelected ? (
+                      <div className="flex items-center gap-1.5">
+                        <input
+                          type="number"
+                          min={1}
+                          value={orderQty}
+                          onChange={(e) => updateOrderQuantity(p.id, e.target.value)}
+                          className="w-16 rounded-md border border-gray-300 px-2 py-1 text-sm"
+                          aria-label={`Količina za narudžbu: ${p.title}`}
+                        />
+                        <span className="text-xs text-gray-500">kom</span>
+                      </div>
+                    ) : (
+                      <span className="text-xs text-gray-300">—</span>
                     )}
                   </td>
                   <td className="px-4 py-3 text-right space-x-2 whitespace-nowrap">
@@ -421,6 +490,17 @@ export default function AdminProductsPage() {
           </button>
         </nav>
       )}
-    </>
+
+      <SupplierOrderPanel
+        products={products.map((p) => ({
+          id: p.id,
+          title: p.title,
+          marka: p.marka,
+          quantity: p.quantity ?? 0,
+        }))}
+        selected={selectedOrders}
+        onClearSelection={clearSelection}
+      />
+    </div>
   );
 }
