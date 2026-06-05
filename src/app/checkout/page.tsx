@@ -640,7 +640,11 @@ export default function CheckoutPage() {
                 {/* Terms checkbox */}
                 <div
                   id="checkout-field-agreeTerms"
-                  className={fieldErrors.agreeTerms ? 'rounded-lg border border-red-200 bg-red-50/40 p-2 -m-2' : ''}
+                  className={`rounded-lg border px-3 py-2.5 ${
+                    fieldErrors.agreeTerms
+                      ? 'border-red-200 bg-red-50/40'
+                      : 'border-transparent'
+                  }`}
                 >
                   <label className="flex items-start gap-2 cursor-pointer">
                     <input
@@ -665,7 +669,9 @@ export default function CheckoutPage() {
                     </span>
                   </label>
                   {fieldErrors.agreeTerms && (
-                    <p className="text-xs text-red-600 mt-1.5 ml-6">{fieldErrors.agreeTerms}</p>
+                    <p className="text-xs text-red-600 mt-1.5 ml-6" aria-live="polite">
+                      {fieldErrors.agreeTerms}
+                    </p>
                   )}
                 </div>
 
