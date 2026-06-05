@@ -9,7 +9,7 @@ import { FaShoppingCart, FaCheck, FaMinus, FaPlus } from 'react-icons/fa';
 
 interface Props {
   product: Product;
-  variant?: 'primary' | 'secondary' | 'icon' | 'quantity';
+  variant?: 'primary' | 'secondary' | 'icon' | 'quantity' | 'card';
   className?: string;
 }
 
@@ -128,6 +128,45 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
           </span>
         </button>
       </div>
+    );
+  }
+
+  if (variant === 'card') {
+    return (
+      <button
+        type="button"
+        onClick={handleAddOnce}
+        disabled={maxReached && cartQty > 0}
+        title={added ? 'Dodano!' : maxReached && cartQty > 0 ? 'Maksimalna zaliha' : 'Dodaj u košaricu'}
+        className={`
+          flex items-center justify-center gap-1 sm:gap-1.5 min-w-0 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium shadow-sm transition-all duration-300 cursor-pointer
+          ${added
+            ? 'bg-green-500 text-white scale-[1.02] shadow-green-200 shadow-md'
+            : maxReached && cartQty > 0
+              ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+              : 'bg-slate-700 hover:bg-slate-800 text-white hover:shadow-md'
+          }
+          ${className}
+        `}
+        style={{ transitionTimingFunction: added ? 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' : 'ease' }}
+      >
+        {added ? <FaCheck className="w-3.5 h-3.5 flex-shrink-0" /> : <FaShoppingCart className="w-3.5 h-3.5 flex-shrink-0" />}
+        <span className="truncate">
+          {added ? (
+            'Dodano!'
+          ) : maxReached && cartQty > 0 ? (
+            <>
+              <span className="sm:hidden">Maks.</span>
+              <span className="hidden sm:inline">Maks. zaliha</span>
+            </>
+          ) : (
+            <>
+              <span className="sm:hidden">U košaricu</span>
+              <span className="hidden sm:inline">Dodaj u košaricu</span>
+            </>
+          )}
+        </span>
+      </button>
     );
   }
 

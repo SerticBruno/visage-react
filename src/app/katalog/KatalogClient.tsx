@@ -12,6 +12,7 @@ import ProductModal from '@/components/ui/ProductModal';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import AddToCartButton from '@/components/ui/AddToCartButton';
 import { isInStock } from '@/lib/inventory';
+import { formatProductCardPrice } from '@/lib/price-utils';
 import { scrollToElement } from '@/lib/scroll-offset';
 
 export default function KatalogClient({ products }: { products: Product[] }) {
@@ -801,11 +802,11 @@ export default function KatalogClient({ products }: { products: Product[] }) {
                         <div className="flex flex-col h-10 sm:h-12 justify-center">
                           {product.isOnSale && product.oldPrice ? (
                             <>
-                              <span className="text-xs sm:text-sm text-slate-400 line-through">{product.oldPrice}</span>
-                              <span className="text-base sm:text-lg lg:text-xl font-bold text-rose-500">{product.price}</span>
+                              <span className="text-xs sm:text-sm text-slate-400 line-through">{formatProductCardPrice(product.oldPrice)}</span>
+                              <span className="text-base sm:text-lg lg:text-xl font-bold text-rose-500">{formatProductCardPrice(product.price)}</span>
                             </>
                           ) : (
-                            <span className="text-base sm:text-lg lg:text-xl font-bold text-slate-900">{product.price}</span>
+                            <span className="text-base sm:text-lg lg:text-xl font-bold text-slate-900">{formatProductCardPrice(product.price)}</span>
                           )}
                         </div>
                         {product.isOnSale && product.oldPrice && (
@@ -814,19 +815,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
                           </span>
                         )}
                       </div>
-                      <div className="flex items-center gap-1 sm:gap-2">
-                        <button 
-                          className="px-2 sm:px-3 py-1.5 sm:py-2 bg-slate-700 text-white rounded-lg text-xs sm:text-sm font-medium shadow-sm cursor-pointer
-                                     hover:bg-slate-800 hover:shadow-md transition-all duration-200 ease-out transform-gpu"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            openProductModal(product);
-                          }}
-                        >
-                          Detalji
-                        </button>
-                        <AddToCartButton product={product} variant="icon" />
-                      </div>
+                      <AddToCartButton product={product} variant="card" />
                     </div>
                   </div>
                 </div>

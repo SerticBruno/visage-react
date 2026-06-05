@@ -6,7 +6,7 @@ import { Transition } from '@headlessui/react';
 import type { Product } from '@/data/products';
 import { FaBell, FaCheck, FaTimes } from 'react-icons/fa';
 
-type Variant = 'primary' | 'secondary' | 'icon' | 'quantity';
+type Variant = 'primary' | 'secondary' | 'icon' | 'quantity' | 'card';
 
 interface Props {
   product: Product;
@@ -90,7 +90,30 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
   };
 
   const triggerButton =
-    variant === 'icon' ? (
+    variant === 'card' ? (
+      <button
+        type="button"
+        onMouseDown={absorbPointerEvent}
+        onClick={subscribed ? absorbPointerEvent : openModal}
+        disabled={subscribed}
+        title={subscribed ? message || 'Prijavljeni ste za obavijest' : 'Obavijesti me kad bude na zalihama'}
+        className={`flex items-center justify-center gap-1 sm:gap-1.5 min-w-0 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all cursor-pointer ${
+          subscribed
+            ? 'bg-green-50 text-green-700 border border-green-200 cursor-default'
+            : 'bg-slate-200 text-slate-700 border border-slate-300 hover:bg-slate-300 hover:text-slate-800 hover:border-slate-400'
+        } ${className}`}
+      >
+        {subscribed ? <FaCheck className="w-3.5 h-3.5 flex-shrink-0" /> : <FaBell className="w-3.5 h-3.5 flex-shrink-0" />}
+        <span className="truncate">
+          {subscribed ? 'Prijavljeno' : (
+            <>
+              <span className="sm:hidden">Obavijesti</span>
+              <span className="hidden sm:inline">Obavijesti me</span>
+            </>
+          )}
+        </span>
+      </button>
+    ) : variant === 'icon' ? (
       <button
         type="button"
         onMouseDown={absorbPointerEvent}

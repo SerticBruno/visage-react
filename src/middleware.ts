@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { ADMIN_SESSION_COOKIE } from '@/lib/admin-auth';
+import { ADMIN_SESSION_COOKIE } from '@/lib/admin-auth-constants';
 import { verifyAdminSessionTokenEdge } from '@/lib/admin-auth-edge';
 
 export async function middleware(request: NextRequest) {

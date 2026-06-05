@@ -1,7 +1,10 @@
+import 'server-only';
+
 import { createHmac, timingSafeEqual } from 'crypto';
 import { cookies } from 'next/headers';
+import { ADMIN_SESSION_COOKIE } from '@/lib/admin-auth-constants';
 
-export const ADMIN_SESSION_COOKIE = 'visage_admin_session';
+export { ADMIN_SESSION_COOKIE };
 
 const SESSION_MAX_AGE_SEC = 60 * 60 * 24 * 7; // 7 days
 
