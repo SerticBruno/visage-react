@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Product } from '@/data/products';
 import AddToCartButton from '@/components/ui/AddToCartButton';
 import { useLockBackgroundScroll } from '@/hooks/useLockBackgroundScroll';
+import { formatProductCardPrice } from '@/lib/price-utils';
 
 interface ProductModalProps {
   isOpen: boolean;
@@ -202,11 +203,11 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                        <div className="flex flex-col items-center">
                          {currentProduct.isOnSale && currentProduct.oldPrice ? (
                            <>
-                             <span className="text-xs text-slate-400 line-through">{currentProduct.oldPrice}</span>
-                             <span className="text-lg font-bold text-rose-500">{currentProduct.price}</span>
+                             <span className="text-xs text-slate-400 line-through">{formatProductCardPrice(currentProduct.oldPrice)}</span>
+                             <span className="text-lg font-bold text-rose-500">{formatProductCardPrice(currentProduct.price)}</span>
                            </>
                          ) : (
-                           <span className="text-lg font-bold text-slate-900">{currentProduct.price}</span>
+                           <span className="text-lg font-bold text-slate-900">{formatProductCardPrice(currentProduct.price)}</span>
                          )}
                          {currentProduct.isOnSale && currentProduct.oldPrice && (
                            <span className="bg-rose-500 text-white text-xs font-bold w-8 h-8 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center mt-1">
@@ -300,11 +301,11 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                         <div className="flex flex-col">
                           {currentProduct.isOnSale && currentProduct.oldPrice ? (
                             <>
-                              <span className="text-sm text-slate-400 line-through">{currentProduct.oldPrice}</span>
-                              <span className="text-xl font-bold text-rose-500">{currentProduct.price}</span>
+                              <span className="text-sm text-slate-400 line-through">{formatProductCardPrice(currentProduct.oldPrice)}</span>
+                              <span className="text-xl font-bold text-rose-500">{formatProductCardPrice(currentProduct.price)}</span>
                             </>
                           ) : (
-                            <span className="text-xl font-bold text-slate-900">{currentProduct.price}</span>
+                            <span className="text-xl font-bold text-slate-900">{formatProductCardPrice(currentProduct.price)}</span>
                           )}
                         </div>
                         {currentProduct.isOnSale && currentProduct.oldPrice && (
