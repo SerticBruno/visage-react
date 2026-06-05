@@ -2,14 +2,11 @@
 
 import { useState, useRef, useEffect, Fragment } from 'react';
 import { FaChevronDown, FaChevronUp, FaSearch, FaChevronLeft, FaChevronRight, FaBox } from 'react-icons/fa';
-import HeroSection from '@/components/sections/HeroSection';
-import ContactSection from '@/components/sections/ContactSection';
 import { productTypes, skinTypes, skinConcerns, brands, type Product } from '@/data/products';
 import { FaFire, FaSun, FaMoon, FaCrown, FaStar } from 'react-icons/fa6';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import ProductModal from '@/components/ui/ProductModal';
-import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 import AddToCartButton from '@/components/ui/AddToCartButton';
 import { isInStock } from '@/lib/inventory';
 import { formatProductCardPrice } from '@/lib/price-utils';
@@ -301,13 +298,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   };
 
   return (
-    <>
-      <HeroSection
-        title="Katalog proizvoda"
-        description="Otkrijte široku ponudu proizvoda za njegu lica i tijela"
-        image="/images/pages/katalog/katalog-visage-estetski-studio-sisak.webp"
-      />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-20">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">
             Naši proizvodi
@@ -909,9 +900,6 @@ export default function KatalogClient({ products }: { products: Product[] }) {
           product={selectedProduct}
           onProductChange={handleProductChange}
         />
-      </div>
-      <NewsletterCTASection></NewsletterCTASection>
-      <ContactSection hasTopPadding={true} />
-    </>
+    </div>
   );
 }

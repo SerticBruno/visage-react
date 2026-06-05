@@ -1,19 +1,23 @@
 import { Suspense } from 'react';
-import { getCatalogProducts } from '@/lib/products-db';
-import KatalogClient from './KatalogClient';
+import HeroSection from '@/components/sections/HeroSection';
+import ContactSection from '@/components/sections/ContactSection';
+import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
+import KatalogCatalog from './KatalogCatalog';
+import KatalogCatalogSkeleton from './KatalogCatalogSkeleton';
 
-export default async function KatalogPage() {
-  const catalogProducts = await getCatalogProducts();
-
+export default function KatalogPage() {
   return (
-    <Suspense
-      fallback={
-        <div className="min-h-[40vh] flex items-center justify-center">
-          Učitavanje kataloga…
-        </div>
-      }
-    >
-      <KatalogClient products={catalogProducts} />
-    </Suspense>
+    <>
+      <HeroSection
+        title="Katalog proizvoda"
+        description="Otkrijte široku ponudu proizvoda za njegu lica i tijela"
+        image="/images/pages/katalog/katalog-visage-estetski-studio-sisak.webp"
+      />
+      <Suspense fallback={<KatalogCatalogSkeleton />}>
+        <KatalogCatalog />
+      </Suspense>
+      <NewsletterCTASection />
+      <ContactSection hasTopPadding={true} />
+    </>
   );
 }
