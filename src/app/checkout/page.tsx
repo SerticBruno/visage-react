@@ -20,7 +20,6 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowLeft, FaLock, FaBoxOpen, FaTruck, FaStore, FaMapMarkerAlt } from 'react-icons/fa';
-import { useRouter } from 'next/navigation';
 
 interface FormData {
   name: string;
@@ -69,7 +68,6 @@ const DELIVERY_ICONS: Record<DeliveryMethod, React.ReactNode> = {
 
 export default function CheckoutPage() {
   const { items, subtotalCents, finishCheckoutLoading, closeCart } = useCart();
-  const router = useRouter();
 
   useEffect(() => {
     finishCheckoutLoading();
@@ -264,16 +262,19 @@ export default function CheckoutPage() {
 
       if (!res.ok) {
         setError(data.error ?? 'Greška pri kreiranju narudžbe. Pokušajte ponovo.');
+        setLoading(false);
         return;
       }
 
-      // Redirect to Stripe Checkout
       if (data.url) {
-        router.push(data.url);
+        window.location.assign(data.url);
+        return;
       }
+
+      setError('Greška pri preusmjeravanju na plaćanje. Pokušajte ponovo.');
+      setLoading(false);
     } catch {
       setError('Mrežna greška. Provjerite internetsku vezu i pokušajte ponovo.');
-    } finally {
       setLoading(false);
     }
   };
