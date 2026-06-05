@@ -97,13 +97,17 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
         onClick={subscribed ? absorbPointerEvent : openModal}
         disabled={subscribed}
         title={subscribed ? message || 'Prijavljeni ste za obavijest' : 'Obavijesti me kad bude na zalihama'}
-        className={`flex items-center justify-center gap-1 sm:gap-1.5 min-w-0 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all cursor-pointer ${
+        className={`group flex items-center justify-center gap-1 sm:gap-1.5 min-w-0 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium shadow-sm transform-gpu transition-all duration-200 ease-out cursor-pointer ${
           subscribed
             ? 'bg-green-50 text-green-700 border border-green-200 cursor-default'
-            : 'bg-slate-200 text-slate-700 border border-slate-300 hover:bg-slate-300 hover:text-slate-800 hover:border-slate-400'
+            : 'bg-slate-200 text-slate-700 border border-slate-300 hover:bg-slate-300 hover:text-slate-800 hover:border-slate-400 hover:-translate-y-0.5 hover:shadow-md hover:shadow-slate-500/15 active:translate-y-0 active:scale-[0.98]'
         } ${className}`}
       >
-        {subscribed ? <FaCheck className="w-3.5 h-3.5 flex-shrink-0" /> : <FaBell className="w-3.5 h-3.5 flex-shrink-0" />}
+        {subscribed ? (
+          <FaCheck className="w-3.5 h-3.5 flex-shrink-0" />
+        ) : (
+          <FaBell className="w-3.5 h-3.5 flex-shrink-0 transition-transform duration-200 group-hover:scale-110 group-hover:-rotate-12" />
+        )}
         <span className="truncate">
           {subscribed ? 'Prijavljeno' : (
             <>

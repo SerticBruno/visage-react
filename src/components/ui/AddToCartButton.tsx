@@ -137,23 +137,27 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
         type="button"
         onClick={handleAddOnce}
         disabled={maxReached && cartQty > 0}
-        title={added ? 'Dodano!' : maxReached && cartQty > 0 ? 'Maksimalna zaliha' : 'Dodaj u košaricu'}
+        title={added ? 'Dodano' : maxReached && cartQty > 0 ? 'Maksimalna zaliha' : 'Dodaj u košaricu'}
         className={`
-          flex items-center justify-center gap-1 sm:gap-1.5 min-w-0 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium shadow-sm transition-all duration-300 cursor-pointer
+          group flex items-center justify-center gap-1 sm:gap-1.5 min-w-[7rem] sm:min-w-[11rem] px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium shadow-sm transform-gpu transition-all duration-200 ease-out cursor-pointer
           ${added
-            ? 'bg-green-500 text-white scale-[1.02] shadow-green-200 shadow-md'
+            ? 'bg-[#5ba2ff] text-white shadow-[#5ba2ff]/35 shadow-md'
             : maxReached && cartQty > 0
               ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-              : 'bg-slate-700 hover:bg-slate-800 text-white hover:shadow-md'
+              : 'bg-slate-700 text-white hover:bg-slate-800 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-900/20 active:translate-y-0 active:scale-[0.98]'
           }
           ${className}
         `}
         style={{ transitionTimingFunction: added ? 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' : 'ease' }}
       >
-        {added ? <FaCheck className="w-3.5 h-3.5 flex-shrink-0" /> : <FaShoppingCart className="w-3.5 h-3.5 flex-shrink-0" />}
+        {added ? (
+          <FaCheck className="w-3.5 h-3.5 flex-shrink-0" />
+        ) : (
+          <FaShoppingCart className="w-3.5 h-3.5 flex-shrink-0 transition-transform duration-200 group-hover:scale-110" />
+        )}
         <span className="truncate">
           {added ? (
-            'Dodano!'
+            'Dodano'
           ) : maxReached && cartQty > 0 ? (
             <>
               <span className="sm:hidden">Maks.</span>
