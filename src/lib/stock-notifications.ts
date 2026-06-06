@@ -1,5 +1,6 @@
+import { buildStockBackInStockEmail } from '@/lib/emails/stock-back-in-stock';
+import { isResendConfigured, sendEmail } from '@/lib/email';
 import { supabase } from '@/lib/supabase';
-import { createMailTransporter, isEmailConfigured } from '@/lib/email';
 import { getSiteUrl } from '@/lib/site-url';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -52,8 +53,8 @@ export async function subscribeToStockNotification(
 }
 
 export async function notifyStockSubscribers(productId: string): Promise<void> {
-  if (!isEmailConfigured()) {
-    console.warn('Stock notifications skipped: Gmail not configured');
+  if (!isResendConfigured()) {
+    console.warn('Stock notifications skipped: Resend not configured');
     return;
   }
 
@@ -75,37 +76,18 @@ export async function notifyStockSubscribers(productId: string): Promise<void> {
 
   if (subsError || !subscriptions?.length) return;
 
-  const transporter = createMailTransporter();
   const productUrl = `${getSiteUrl()}/katalog?product=${encodeURIComponent(productId)}`;
-  const from = `VISAGE Studio <${process.env.GMAIL_USER}>`;
+  const { subject, html } = buildStockBackInStockEmail({
+    productTitle: product.title,
+    productUrl,
+  });
 
   for (const sub of subscriptions) {
     try {
-      await transporter.sendMail({
-        from,
+      await sendEmail({
         to: sub.email,
-        subject: `${product.title} je opet na zalihama - VISAGE Studio`,
-        html: `
-          <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; color: #1a1a1a;">
-            <h1 style="font-size: 22px; margin-bottom: 4px;">Proizvod je opet dostupan!</h1>
-            <p style="color: #555;">Dobar dan,</p>
-            <p style="color: #555;">
-              Proizvod <strong>${product.title}</strong> ponovno je na zalihama u VISAGE Studio webshopu.
-            </p>
-            <p style="margin: 24px 0;">
-              <a href="${productUrl}" style="display: inline-block; background: #111827; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: 600;">
-                Pogledaj proizvod
-              </a>
-            </p>
-            <p style="font-size: 14px; color: #555;">
-              Požurite — zalihe mogu biti ograničene.
-            </p>
-            <p style="font-size: 14px; color: #555;">
-              Za pitanja pišite na <a href="mailto:info@visagestudio.hr">info@visagestudio.hr</a>.
-            </p>
-            <p style="margin-top: 32px; color: #888; font-size: 13px;">S poštovanjem,<br>Tim VISAGE Studio</p>
-          </div>
-        `,
+        subject,
+        html,
       });
 
       await supabase
