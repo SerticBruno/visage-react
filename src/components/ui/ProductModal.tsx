@@ -141,7 +141,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
             
             <div className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 max-h-[calc(100dvh-5rem)] md:max-h-[85vh] flex flex-col">
               {/* Content */}
-              <div className="flex flex-col md:flex-row h-full min-h-0 overflow-hidden">
+              <div className="flex flex-col md:flex-row flex-1 min-h-0 overflow-hidden">
                 {/* Mobile Layout - Image row + add to cart (below, full width) */}
                 <div className="md:hidden w-full shrink-0 border-b border-slate-100">
                 <div className="p-3 flex gap-3 items-stretch">
@@ -251,16 +251,16 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                 </div>
                 </div>
 
-                {/* Desktop Layout - Fixed Left Side */}
-                <div className="hidden md:block w-2/5 p-4 border-r border-slate-100 flex-shrink-0">
+                {/* Desktop Layout - image fills space, cart controls stay pinned */}
+                <div className="hidden md:flex md:flex-col w-2/5 p-3 border-r border-slate-100 shrink-0 min-h-0 self-stretch overflow-hidden">
                   {/* Title Section */}
-                  <div className={`bg-slate-50 rounded-xl p-4 mb-4 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
-                    <h2 className="text-xl font-bold text-slate-900">
+                  <div className={`shrink-0 bg-slate-50 rounded-xl px-2.5 py-2 mb-2 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+                    <h2 className="text-lg font-bold text-slate-900 leading-snug line-clamp-3">
                       {currentProduct.title}
                     </h2>
                   </div>
                   
-                  <div className={`relative h-96 bg-slate-50 rounded-xl overflow-hidden shadow-sm transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+                  <div className={`relative flex-1 min-h-[10rem] bg-slate-50 rounded-xl overflow-hidden shadow-sm mb-2 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                     <Image
                       src={currentProduct.image}
                       alt={currentProduct.title}
@@ -319,21 +319,21 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
 
                   {/* Sadržaj Section */}
                   {currentProduct.volume && (
-                    <div className={`mt-3 bg-slate-50 rounded-xl p-3 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
-                      <div className="flex items-center justify-between mb-1">
-                        <h3 className="text-sm font-semibold text-slate-900">
+                    <div className={`shrink-0 bg-slate-50 rounded-xl px-2.5 py-2 mb-2 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+                      <div className="flex items-center justify-between gap-2 mb-0.5">
+                        <h3 className="text-xs font-semibold text-slate-900">
                           {currentProduct.categories?.includes('Beauty Tretmani') ? 'Trajanje' : 'Sadržaj'}
                         </h3>
-                        <span className="text-sm font-medium text-slate-600">
+                        <span className="text-xs font-medium text-slate-600 truncate">
                           {currentProduct.marka}
                         </span>
                       </div>
-                      <p className="text-sm text-slate-600">{currentProduct.volume}</p>
+                      <p className="text-xs text-slate-600">{currentProduct.volume}</p>
                     </div>
                   )}
 
-                  {/* Add to cart */}
-                  <div className={`mt-3 bg-slate-50 rounded-xl px-3 py-2 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+                  {/* Add to cart — always visible at bottom of column */}
+                  <div className={`shrink-0 bg-slate-50 rounded-xl px-2 py-1.5 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                     <AddToCartButton product={currentProduct} variant="quantity" />
                   </div>
                 </div>

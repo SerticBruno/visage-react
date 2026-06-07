@@ -80,38 +80,56 @@ function UspjehPageContent({ params }: Props) {
   const shortId = orderId.slice(0, 8).toUpperCase();
 
   useEffect(() => {
-    clearCart();
-  }, [clearCart]);
+    let cancelled = false;
 
-  useEffect(() => {
-    const query = sessionId ? `?session_id=${encodeURIComponent(sessionId)}` : '';
-    const confirmPromise =
-      sessionId
-        ? fetch(`/api/orders/${orderId}/confirm`, {
+    async function loadOrder() {
+      try {
+        let paymentConfirmed = false;
+
+        if (sessionId) {
+          const confirmRes = await fetch(`/api/orders/${orderId}/confirm`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ session_id: sessionId }),
-          }).catch(() => null)
-        : Promise.resolve(null);
+          }).catch(() => null);
 
-    Promise.all([
-      confirmPromise,
-      fetch(`/api/orders/${orderId}${query}`).then(async (res) => {
-        if (!res.ok) {
-          const body = await res.json().catch(() => ({}));
+          if (confirmRes?.ok) {
+            paymentConfirmed = true;
+          }
+        }
+
+        const query = sessionId ? `?session_id=${encodeURIComponent(sessionId)}` : '';
+        const orderRes = await fetch(`/api/orders/${orderId}${query}`);
+        if (!orderRes.ok) {
+          const body = await orderRes.json().catch(() => ({}));
           throw new Error(body.error ?? 'Narudžba nije učitana');
         }
-        return res.json();
-      }),
-    ])
-      .then(([, orderRes]) => {
-        const data = orderRes as { order: OrderSummary; items: OrderItem[] };
+
+        const data = (await orderRes.json()) as { order: OrderSummary; items: OrderItem[] };
+        if (cancelled) return;
+
         setOrder(data.order);
         setItems(data.items);
-      })
-      .catch((err: Error) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, [orderId, sessionId]);
+
+        // Clear cart after confirm succeeds or order is marked paid
+        if (data.order.status === 'paid' || paymentConfirmed) {
+          clearCart();
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : 'Greška');
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+
+    loadOrder();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [orderId, sessionId, clearCart]);
 
   return (
     <div className="min-h-screen bg-gray-50 px-4 sm:px-6 py-10 lg:py-14">

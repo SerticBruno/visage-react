@@ -18,11 +18,21 @@ export function canAddToCart(
   return currentCartQty + addQty <= stock;
 }
 
+export function getRemainingStock(stock: number | null, cartQty: number): number | null {
+  if (stock === null) return null;
+  return Math.max(0, stock - cartQty);
+}
+
 export function getMaxQtyMessage(
   stock: number,
-  maxSelectable: number,
+  remaining: number,
   cartQty: number
 ): string {
-  if (cartQty > 0) return `Možete dodati najviše ${maxSelectable} kom`;
+  if (remaining <= 0) {
+    return cartQty >= stock
+      ? 'Već imate maksimalnu količinu u košarici'
+      : 'Nema više na zalihi';
+  }
+  if (cartQty > 0) return `Možete dodati najviše ${remaining} kom`;
   return `Maksimalno ${stock} kom na zalihi`;
 }

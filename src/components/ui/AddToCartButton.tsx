@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import { Product } from '@/data/products';
-import { canAddToCart, getMaxQtyMessage, getProductStock } from '@/lib/inventory';
+import { canAddToCart, getMaxQtyMessage, getProductStock, getRemainingStock } from '@/lib/inventory';
 import QtyMaxHintTooltip from '@/components/ui/QtyMaxHintTooltip';
 import StockNotifyButton from '@/components/ui/StockNotifyButton';
 import { FaShoppingCart, FaCheck, FaMinus, FaPlus } from 'react-icons/fa';
@@ -40,6 +40,23 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
     setMaxQtyHint(false);
   }, [product.id]);
 
+  useEffect(() => {
+    const remaining = getRemainingStock(stock, cartQty);
+    if (remaining !== null) {
+      setSelectQty((q) => {
+        if (remaining === 0) return 1;
+        return Math.min(q, remaining);
+      });
+    }
+    setMaxQtyHint(false);
+    if (maxQtyHintTimerRef.current) clearTimeout(maxQtyHintTimerRef.current);
+  }, [cartQty, stock]);
+
+  const dismissMaxQtyHint = () => {
+    setMaxQtyHint(false);
+    if (maxQtyHintTimerRef.current) clearTimeout(maxQtyHintTimerRef.current);
+  };
+
   const flashMaxQtyHint = () => {
     setMaxQtyHint(true);
     if (maxQtyHintTimerRef.current) clearTimeout(maxQtyHintTimerRef.current);
@@ -65,7 +82,8 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
   }
 
   if (variant === 'quantity') {
-    const maxSelectable = stock !== null ? Math.max(1, stock - cartQty) : 99;
+    const remaining = getRemainingStock(stock, cartQty);
+    const maxSelectable = remaining !== null ? remaining : 99;
 
     const handleMinus = (e: React.MouseEvent) => {
       e.stopPropagation();
@@ -74,14 +92,14 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
 
     const handlePlus = (e: React.MouseEvent) => {
       e.stopPropagation();
-      if (selectQty >= maxSelectable) {
+      if (maxSelectable === 0 || selectQty >= maxSelectable) {
         if (stock !== null) flashMaxQtyHint();
         return;
       }
       setSelectQty((q) => q + 1);
     };
 
-    const atMaxSelectable = stock !== null && selectQty >= maxSelectable;
+    const atMaxSelectable = maxSelectable === 0 || selectQty >= maxSelectable;
     const maxQtyMessage =
       stock !== null ? getMaxQtyMessage(stock, maxSelectable, cartQty) : '';
 
@@ -94,6 +112,8 @@ export default function AddToCartButton({ product, variant = 'primary', classNam
       } else {
         updateQuantity(product.id, cartQty + selectQty);
       }
+      dismissMaxQtyHint();
+      setSelectQty(1);
       flashAdded();
     };
 

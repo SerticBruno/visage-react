@@ -7,6 +7,7 @@ import { formatPrice } from '@/lib/price-utils';
 import { formatDateTime, orderStatusClass, orderStatusLabel } from '@/lib/admin-labels';
 import { getShippingOption, type DeliveryMethod } from '@/lib/shipping';
 
+
 type AdminOrder = {
   id: string;
   status: string;
@@ -26,7 +27,6 @@ type SortDir = 'asc' | 'desc';
 const PAGE_SIZE = 15;
 
 const STATUS_OPTIONS = [
-  'pending',
   'paid',
   'processing',
   'shipped',
@@ -166,7 +166,7 @@ function AdminOrdersContent() {
         <div>
           <h2 className="text-lg font-semibold">Narudžbe</h2>
           <p className="text-sm text-gray-500 mt-1">
-            {loading ? 'Učitavanje…' : `${filteredOrders.length} narudžbi`}
+            {loading ? 'Učitavanje…' : `${filteredOrders.length} plaćenih narudžbi`}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">

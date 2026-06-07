@@ -229,7 +229,7 @@ export default function AdminOrderDetailPage() {
 
         <div className="px-5 py-4 border-t border-gray-200 space-y-1.5 text-sm">
           <div className="flex justify-between text-gray-600">
-            <span>Međuzbroj</span>
+            <span>Ukupno proizvodi</span>
             <span>{formatPrice(order.subtotalCents)}</span>
           </div>
           <div className="flex justify-between text-gray-600">

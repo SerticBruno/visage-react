@@ -7,10 +7,26 @@ import React, {
   useEffect,
   useMemo,
   useReducer,
+  useRef,
 } from 'react';
 import { Product } from '@/data/products';
 import { parsePriceCents } from '@/lib/price-utils';
 import { getProductStock } from '@/lib/inventory';
+
+const VISITOR_TOKEN_KEY = 'visage-visitor-token';
+const CART_SYNC_DEBOUNCE_MS = 5000;
+
+function getOrCreateVisitorToken(): string {
+  try {
+    const existing = localStorage.getItem(VISITOR_TOKEN_KEY);
+    if (existing) return existing;
+    const token = crypto.randomUUID();
+    localStorage.setItem(VISITOR_TOKEN_KEY, token);
+    return token;
+  } catch {
+    return crypto.randomUUID();
+  }
+}
 
 export interface CartItem {
   product: Product;
@@ -28,6 +44,7 @@ type CartAction =
   | { type: 'REMOVE_ITEM'; productId: string }
   | { type: 'UPDATE_QUANTITY'; productId: string; quantity: number }
   | { type: 'CLEAR_CART' }
+  | { type: 'REPLACE_ITEMS'; items: CartItem[] }
   | { type: 'OPEN_CART' }
   | { type: 'CLOSE_CART' }
   | { type: 'START_CHECKOUT_LOADING' }
@@ -74,6 +91,8 @@ function cartReducer(state: CartState, action: CartAction): CartState {
     case 'CLEAR_CART':
       if (state.items.length === 0) return state;
       return { ...state, items: [] };
+    case 'REPLACE_ITEMS':
+      return { ...state, items: action.items };
     case 'OPEN_CART':
       return { ...state, isOpen: true };
     case 'CLOSE_CART':
@@ -95,12 +114,15 @@ interface CartContextValue {
   removeItem: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
+  replaceCartItems: (items: CartItem[]) => void;
   openCart: () => void;
   closeCart: () => void;
   startCheckoutLoading: () => void;
   finishCheckoutLoading: () => void;
   totalItems: number;
   subtotalCents: number;
+  /** Call with email+name when user fills checkout form (triggers server sync for pre-checkout recovery) */
+  syncEmailToCart: (email: string, name?: string) => void;
 }
 
 const CartContext = createContext<CartContextValue | null>(null);
@@ -114,8 +136,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     isCheckoutLoading: false,
   });
 
-  // Hydrate from localStorage on mount
+  const visitorTokenRef = useRef<string | null>(null);
+  const syncEmailRef = useRef<{ email: string; name?: string } | null>(null);
+  const syncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Hydrate from localStorage on mount and initialise visitor token
   useEffect(() => {
+    visitorTokenRef.current = getOrCreateVisitorToken();
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
@@ -138,6 +165,39 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
   }, [state.items]);
 
+  // Debounced server sync for pre-checkout cart snapshots
+  useEffect(() => {
+    if (!visitorTokenRef.current) return;
+
+    if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+
+    syncTimerRef.current = setTimeout(() => {
+      const token = visitorTokenRef.current;
+      if (!token) return;
+
+      fetch('/api/cart/sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          visitorToken: token,
+          items: state.items.map((i) => ({
+            productId: i.product.id,
+            title: i.product.title,
+            quantity: i.quantity,
+            price: i.product.price,
+          })),
+          ...(syncEmailRef.current ?? {}),
+        }),
+      }).catch(() => {
+        // silent — cart sync is best-effort
+      });
+    }, CART_SYNC_DEBOUNCE_MS);
+
+    return () => {
+      if (syncTimerRef.current) clearTimeout(syncTimerRef.current);
+    };
+  }, [state.items]);
+
   const addItem = useCallback(
     (product: Product) => dispatch({ type: 'ADD_ITEM', product }),
     []
@@ -151,7 +211,59 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       dispatch({ type: 'UPDATE_QUANTITY', productId, quantity }),
     []
   );
-  const clearCart = useCallback(() => dispatch({ type: 'CLEAR_CART' }), []);
+  const replaceCartItems = useCallback((items: CartItem[]) => {
+    syncEmailRef.current = null;
+    dispatch({ type: 'REPLACE_ITEMS', items });
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    } catch {
+      // ignore storage errors
+    }
+  }, []);
+
+  const clearCart = useCallback(() => {
+    syncEmailRef.current = null;
+    dispatch({ type: 'CLEAR_CART' });
+    try {
+      localStorage.setItem(STORAGE_KEY, '[]');
+    } catch {
+      // ignore storage errors
+    }
+    const token = visitorTokenRef.current;
+    if (token) {
+      fetch('/api/cart/sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ visitorToken: token, items: [] }),
+      }).catch(() => {
+        // silent
+      });
+    }
+  }, []);
+
+  const syncEmailToCart = useCallback((email: string, name?: string) => {
+    syncEmailRef.current = { email, name };
+    const token = visitorTokenRef.current;
+    if (!token || !state.items.length) return;
+    // Immediate sync when email is captured (onBlur on checkout form)
+    fetch('/api/cart/sync', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        visitorToken: token,
+        items: state.items.map((i) => ({
+          productId: i.product.id,
+          title: i.product.title,
+          quantity: i.quantity,
+          price: i.product.price,
+        })),
+        customerEmail: email,
+        ...(name ? { customerName: name } : {}),
+      }),
+    }).catch(() => {
+      // silent
+    });
+  }, [state.items]);
   const openCart = useCallback(() => dispatch({ type: 'OPEN_CART' }), []);
   const closeCart = useCallback(() => dispatch({ type: 'CLOSE_CART' }), []);
   const startCheckoutLoading = useCallback(
@@ -187,12 +299,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       removeItem,
       updateQuantity,
       clearCart,
+      replaceCartItems,
       openCart,
       closeCart,
       startCheckoutLoading,
       finishCheckoutLoading,
       totalItems,
       subtotalCents,
+      syncEmailToCart,
     }),
     [
       state.items,
@@ -202,12 +316,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       removeItem,
       updateQuantity,
       clearCart,
+      replaceCartItems,
       openCart,
       closeCart,
       startCheckoutLoading,
       finishCheckoutLoading,
       totalItems,
       subtotalCents,
+      syncEmailToCart,
     ]
   );
 

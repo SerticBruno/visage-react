@@ -25,6 +25,11 @@ const TABS = [
     label: 'Obavijesti',
     match: (path: string) => path.startsWith('/admin/stock-notifications'),
   },
+  {
+    href: '/admin/abandoned-carts',
+    label: 'Napuštene košarice',
+    match: (path: string) => path.startsWith('/admin/abandoned-carts'),
+  },
 ] as const;
 
 export default function AdminNav() {

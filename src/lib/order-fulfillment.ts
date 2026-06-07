@@ -10,7 +10,7 @@ type OrderItemRow = { product_id: string; quantity: number };
 
 /**
  * Označava narudžbu kao plaćenu i smanjuje zalihe u products.quantity.
- * Idempotentno — preskače ako narudžba više nije pending.
+ * Idempotentno — preskače ako narudžba više nije pending/abandoned.
  */
 export async function fulfillOrder(
   orderId: string,
@@ -26,7 +26,7 @@ export async function fulfillOrder(
     throw new Error('Narudžba nije pronađena');
   }
 
-  if (order.status !== 'pending') {
+  if (order.status !== 'pending' && order.status !== 'abandoned') {
     return { status: 'already_fulfilled', orderId };
   }
 
@@ -46,9 +46,10 @@ export async function fulfillOrder(
   await decrementStockForItems(orderItems);
 
   const paidAt = new Date().toISOString();
-  const updatePayload: Record<string, string> = {
+  const updatePayload: Record<string, string | null> = {
     status: 'paid',
     paid_at: paidAt,
+    abandoned_at: null,
   };
   if (options?.stripeSessionId) {
     updatePayload.stripe_session_id = options.stripeSessionId;
@@ -58,7 +59,7 @@ export async function fulfillOrder(
     .from('orders')
     .update(updatePayload)
     .eq('id', orderId)
-    .eq('status', 'pending')
+    .in('status', ['pending', 'abandoned'])
     .select('id')
     .maybeSingle();
 

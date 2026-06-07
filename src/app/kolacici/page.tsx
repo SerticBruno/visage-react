@@ -84,9 +84,14 @@ export default function CookiePolicyPage() {
               <td className={legalTableCellClass}>Nužni</td>
             </tr>
             <tr className="border-b border-slate-100">
-              <td className={legalTableCellClass}>Košarica / sesija</td>
-              <td className={legalTableCellClass}>Rad webshopa i naplate</td>
+              <td className={legalTableCellClass}>visage-cart (localStorage)</td>
+              <td className={legalTableCellClass}>Pamćenje sadržaja košarice između posjeta</td>
               <td className={legalTableCellClass}>Nužni</td>
+            </tr>
+            <tr className="border-b border-slate-100">
+              <td className={legalTableCellClass}>visage-visitor-token (localStorage)</td>
+              <td className={legalTableCellClass}>Anonimni identifikator za sinkronizaciju košarice sa serverom (napuštene košarice)</td>
+              <td className={legalTableCellClass}>Nužni / legitimni interes</td>
             </tr>
             <tr className="border-b border-slate-100">
               <td className={legalTableCellClass}>Stripe</td>

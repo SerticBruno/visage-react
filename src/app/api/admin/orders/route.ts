@@ -1,6 +1,16 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
+// Real orders only — checkout attempts live in /admin/abandoned-carts
+const COMPLETED_ORDER_STATUSES = [
+  'paid',
+  'processing',
+  'shipped',
+  'ready_for_pickup',
+  'completed',
+  'cancelled',
+] as const;
+
 export async function GET() {
   try {
     const { data: orders, error } = await supabase
@@ -8,6 +18,7 @@ export async function GET() {
       .select(
         'id, status, delivery_method, customer_email, customer_name, customer_phone, subtotal_cents, shipping_cents, discount_cents, promo_code, total_cents, created_at, paid_at'
       )
+      .in('status', [...COMPLETED_ORDER_STATUSES])
       .order('created_at', { ascending: false });
 
     if (error) throw error;

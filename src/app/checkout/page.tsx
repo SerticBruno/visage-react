@@ -67,7 +67,7 @@ const DELIVERY_ICONS: Record<DeliveryMethod, React.ReactNode> = {
 };
 
 export default function CheckoutPage() {
-  const { items, subtotalCents, finishCheckoutLoading, closeCart } = useCart();
+  const { items, subtotalCents, finishCheckoutLoading, closeCart, syncEmailToCart } = useCart();
 
   useEffect(() => {
     finishCheckoutLoading();
@@ -331,6 +331,11 @@ export default function CheckoutPage() {
                         type="email"
                         value={form.email}
                         onChange={set('email')}
+                        onBlur={() => {
+                          if (form.email && form.email.includes('@')) {
+                            syncEmailToCart(form.email, form.name || undefined);
+                          }
+                        }}
                         className={inputClassName('email')}
                         placeholder="ime@email.com"
                         autoComplete="email"

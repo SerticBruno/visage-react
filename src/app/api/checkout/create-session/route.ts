@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { randomUUID } from 'crypto';
 import { stripe } from '@/lib/stripe';
 import { supabase } from '@/lib/supabase';
 import { parsePriceCents } from '@/lib/price-utils';
@@ -91,13 +92,23 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // Cancel any stale pending orders for this email (prevents duplicate recovery emails)
+    const staleCutoff = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+    await supabase
+      .from('orders')
+      .update({ status: 'cancelled' })
+      .eq('customer_email', customer.email.toLowerCase().trim())
+      .in('status', ['pending', 'abandoned'])
+      .lt('created_at', staleCutoff);
+
     // Create pending order in DB
+    const recoveryToken = randomUUID();
     const { data: order, error: orderError } = await supabase
       .from('orders')
       .insert({
         status: 'pending',
         delivery_method: deliveryMethod,
-        customer_email: customer.email,
+        customer_email: customer.email.toLowerCase().trim(),
         customer_name: customer.name,
         customer_phone: customer.phone,
         shipping_address: shippingAddress,
@@ -107,6 +118,7 @@ export async function POST(req: NextRequest) {
         promo_code: promo?.code ?? null,
         total_cents: totalCents,
         notes: notes ?? null,
+        recovery_token: recoveryToken,
       })
       .select('id')
       .single();
@@ -185,7 +197,7 @@ export async function POST(req: NextRequest) {
       line_items: stripeLineItems,
       ...(stripeDiscounts ? { discounts: stripeDiscounts } : {}),
       success_url: `${baseUrl}/narudzba/${order.id}/uspjeh?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${baseUrl}/checkout`,
+      cancel_url: `${baseUrl}/checkout?cancelled=1`,
       metadata: {
         order_id: order.id,
         delivery_method: deliveryMethod,
@@ -198,11 +210,23 @@ export async function POST(req: NextRequest) {
       phone_number_collection: { enabled: false },
     });
 
-    // Save stripe session id on order
-    await supabase
+    // Mark as abandoned cart once Stripe checkout is open (moved to paid on success)
+    const { error: markAbandonedError } = await supabase
       .from('orders')
-      .update({ stripe_session_id: session.id })
+      .update({
+        status: 'abandoned',
+        stripe_session_id: session.id,
+        abandoned_at: new Date().toISOString(),
+      })
       .eq('id', order.id);
+
+    if (markAbandonedError) {
+      console.error('Failed to mark order as abandoned:', markAbandonedError);
+      return NextResponse.json(
+        { error: 'Greška pri spremanju napuštene košarice' },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ url: session.url });
   } catch (err) {

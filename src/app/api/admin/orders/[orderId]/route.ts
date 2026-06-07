@@ -10,6 +10,7 @@ const VALID_STATUSES = [
   'ready_for_pickup',
   'completed',
   'cancelled',
+  'abandoned',
 ] as const;
 
 export async function GET(

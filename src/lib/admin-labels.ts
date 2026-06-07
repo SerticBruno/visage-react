@@ -6,6 +6,7 @@ const ORDER_STATUS_LABELS: Record<string, string> = {
   ready_for_pickup: 'Spremno za preuzimanje',
   completed: 'Završeno',
   cancelled: 'Otkazano',
+  abandoned: 'Napušteno',
 };
 
 export function orderStatusLabel(status: string): string {
@@ -23,6 +24,8 @@ export function orderStatusClass(status: string): string {
       return 'bg-blue-50 text-blue-700';
     case 'cancelled':
       return 'bg-red-50 text-red-700';
+    case 'abandoned':
+      return 'bg-orange-50 text-orange-700';
     default:
       return 'bg-gray-100 text-gray-600';
   }
