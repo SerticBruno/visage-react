@@ -51,7 +51,6 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [isScrolling, setIsScrolling] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -185,7 +184,6 @@ export default function KatalogClient({ products }: { products: Product[] }) {
       isInitialSearchMount.current = false;
     }, 600);
     return () => clearTimeout(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchInput]);
 
   const scrollToProducts = () => {
@@ -196,14 +194,12 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   const handlePageChange = (newPage: number) => {
     if (newPage >= 1 && newPage <= totalPages && newPage !== validCurrentPage) {
       setIsGridLoading(true);
-      setIsScrolling(true);
       setTimeout(() => {
         setCurrentPage(newPage);
         requestAnimationFrame(() => {
           scrollToProducts();
           setTimeout(() => {
             setIsGridLoading(false);
-            setIsScrolling(false);
           }, 400);
         });
       }, 150);

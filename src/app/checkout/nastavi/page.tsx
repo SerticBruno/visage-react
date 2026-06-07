@@ -169,7 +169,7 @@ function NastaviContent() {
           <p className="text-gray-500 text-sm mb-6">{errorMessage}</p>
           <Link
             href="/katalog"
-            className="inline-block bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors"
+            className="inline-block bg-gray-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors cursor-pointer"
           >
             Pregledaj katalog
           </Link>
@@ -282,7 +282,7 @@ function NastaviContent() {
             type="button"
             onClick={handleContinueShopping}
             disabled={cartItems.length === 0}
-            className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3.5 text-sm font-medium text-gray-800 hover:bg-gray-50 disabled:opacity-50 transition-colors"
+            className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 py-3.5 text-sm font-medium text-gray-800 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-colors"
           >
             <FaArrowLeft className="w-3.5 h-3.5" />
             Nastavi kupovinu
@@ -291,7 +291,7 @@ function NastaviContent() {
             type="button"
             onClick={handleGoToCheckout}
             disabled={order.hasStockIssues || cartItems.length === 0 || paying}
-            className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-6 py-3.5 text-sm font-medium text-white hover:bg-black disabled:opacity-50 transition-colors"
+            className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-6 py-3.5 text-sm font-medium text-white hover:bg-black disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-colors"
           >
             {paying ? (
               <>

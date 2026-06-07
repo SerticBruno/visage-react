@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Transition } from '@headlessui/react';
 import type { Product } from '@/data/products';
@@ -31,19 +31,19 @@ export default function StockNotifyButton({ product, variant = 'primary', classN
     setMounted(true);
   }, []);
 
+  const closeModal = useCallback(() => {
+    setModalOpen(false);
+    setError('');
+    setMessage((prev) => (subscribed ? prev : ''));
+  }, [subscribed]);
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && modalOpen) closeModal();
     };
     if (modalOpen) document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [modalOpen]);
-
-  const closeModal = () => {
-    setModalOpen(false);
-    setError('');
-    if (!subscribed) setMessage('');
-  };
+  }, [modalOpen, closeModal]);
 
   const absorbPointerEvent = (e: React.MouseEvent) => {
     e.preventDefault();

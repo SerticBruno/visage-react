@@ -53,7 +53,18 @@ export async function GET(req: NextRequest) {
       },
       checkoutPrefill: preview.checkoutPrefill,
       checkoutUrl: `${getSiteUrl()}/checkout?recover=${encodeURIComponent(token)}`,
-      items: preview.items.map(({ product: _p, ...item }) => item),
+      items: preview.items.map(
+        ({ productId, title, quantity, unitPriceCents, lineTotalCents, image, available, inStock }) => ({
+          productId,
+          title,
+          quantity,
+          unitPriceCents,
+          lineTotalCents,
+          image,
+          available,
+          inStock,
+        })
+      ),
       cartItems: preview.items
         .filter((i) => i.product)
         .map((i) => ({
