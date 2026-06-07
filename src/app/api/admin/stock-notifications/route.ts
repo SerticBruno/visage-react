@@ -30,7 +30,7 @@ export async function GET() {
     if (error) throw error;
 
     const subscriptions: AdminStockNotification[] = (data ?? []).map((row) => {
-      const product = row.products as { title: string; quantity: number } | null;
+      const product = (row.products as unknown) as { title: string; quantity: number } | null;
       return {
         id: row.id,
         email: row.email,

@@ -6,6 +6,16 @@ import { usePathname } from 'next/navigation';
 const TABS = [
   { href: '/admin', label: 'Proizvodi', match: (path: string) => path === '/admin' },
   {
+    href: '/admin/termini',
+    label: 'Termini',
+    match: (path: string) => path.startsWith('/admin/termini'),
+  },
+  {
+    href: '/admin/klijenti',
+    label: 'Klijenti',
+    match: (path: string) => path.startsWith('/admin/klijenti'),
+  },
+  {
     href: '/admin/orders',
     label: 'Narudžbe',
     match: (path: string) => path.startsWith('/admin/orders'),
@@ -29,6 +39,11 @@ const TABS = [
     href: '/admin/abandoned-carts',
     label: 'Napuštene košarice',
     match: (path: string) => path.startsWith('/admin/abandoned-carts'),
+  },
+  {
+    href: '/admin/postavke',
+    label: 'Postavke',
+    match: (path: string) => path.startsWith('/admin/postavke'),
   },
 ] as const;
 

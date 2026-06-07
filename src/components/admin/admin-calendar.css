@@ -1,0 +1,19 @@
+/* Minimal admin calendar tweaks — layout stays default (react-big-calendar) */
+
+.visage-admin-calendar .rbc-today {
+  background-color: #f9fafb;
+}
+
+.visage-admin-calendar .rbc-header {
+  font-size: 12px;
+  padding: 6px 4px;
+}
+
+.visage-admin-calendar .rbc-toolbar {
+  margin-bottom: 10px;
+}
+
+.visage-admin-calendar .rbc-event {
+  font-size: 11px;
+  line-height: 1.2;
+}

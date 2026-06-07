@@ -43,3 +43,50 @@ export interface DbOrderItem {
   quantity: number;
   unit_price_cents: number;
 }
+
+export interface DbClient {
+  id: string;
+  name: string;
+  email: string | null;
+  phone: string | null;
+  notes: string | null;
+  source: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export type AppointmentStatus = 'scheduled' | 'confirmed' | 'completed' | 'cancelled' | 'no_show';
+export type SyncSource = 'admin' | 'google';
+
+export interface DbAppointment {
+  id: string;
+  client_id: string;
+  treatment_id: string;
+  treatment_title: string;
+  price_cents: number;
+  duration_minutes: number;
+  starts_at: string;
+  ends_at: string;
+  status: AppointmentStatus;
+  notes: string | null;
+  google_event_id: string | null;
+  google_calendar_id: string | null;
+  last_synced_at: string | null;
+  sync_source: SyncSource | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface DbGoogleCalendarConnection {
+  id: string;
+  calendar_id: string;
+  refresh_token: string;
+  access_token: string | null;
+  token_expiry: string | null;
+  watch_channel_id: string | null;
+  watch_resource_id: string | null;
+  watch_expiration: string | null;
+  sync_token: string | null;
+  created_at: string;
+  updated_at: string;
+}
