@@ -7,6 +7,11 @@ import { calculateShippingCents, getShippingOption, type DeliveryMethod } from '
 import { calculateDiscountCents, resolvePromoCode } from '@/lib/promo-codes';
 import { getSiteUrl } from '@/lib/site-url';
 import type { Product } from '@/data/products';
+import {
+  isOrderReadyForDirectPayment,
+  orderToCheckoutPrefill,
+  type CheckoutPrefill,
+} from '@/lib/order-checkout-readiness';
 
 export type RecoveryPreviewItem = {
   productId: string;
@@ -35,6 +40,8 @@ export type RecoveryPreview =
       totalCents: number;
       promoCode: string | null;
       hasStockIssues: boolean;
+      needsCheckout: boolean;
+      checkoutPrefill: CheckoutPrefill;
       items: RecoveryPreviewItem[];
     };
 
@@ -44,7 +51,7 @@ export async function getRecoveryPreview(token: string): Promise<RecoveryPreview
   const { data: order, error: orderError } = await supabase
     .from('orders')
     .select(
-      'id, status, customer_name, delivery_method, promo_code, subtotal_cents, shipping_cents, discount_cents, total_cents'
+      'id, status, customer_name, customer_email, customer_phone, delivery_method, shipping_address, notes, promo_code, subtotal_cents, shipping_cents, discount_cents, total_cents'
     )
     .eq('recovery_token', token)
     .maybeSingle();
@@ -108,11 +115,13 @@ export async function getRecoveryPreview(token: string): Promise<RecoveryPreview
   );
   const totalCents = subtotalCents - discountCents + shippingCents;
   const delivery = getShippingOption(order.delivery_method as DeliveryMethod);
+  const checkoutPrefill = orderToCheckoutPrefill(order);
+  const needsCheckout = !isOrderReadyForDirectPayment(order);
 
   return {
     kind: 'preview',
     orderId: order.id,
-    customerName: order.customer_name,
+    customerName: order.customer_name ?? '',
     deliveryLabel: delivery.label,
     subtotalCents,
     shippingCents,
@@ -120,6 +129,8 @@ export async function getRecoveryPreview(token: string): Promise<RecoveryPreview
     totalCents,
     promoCode: order.promo_code ?? null,
     hasStockIssues: items.some((i) => !i.inStock),
+    needsCheckout,
+    checkoutPrefill,
     items,
   };
 }

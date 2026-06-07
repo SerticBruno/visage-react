@@ -7,6 +7,11 @@ import { calculateShippingCents, getShippingOption, type DeliveryMethod } from '
 import { calculateDiscountCents, resolvePromoCode } from '@/lib/promo-codes';
 import { getSiteUrl } from '@/lib/site-url';
 import { getRecoveryPreview } from '@/lib/recovery-order';
+import { logAbandonedCartEvent } from '@/lib/abandoned-cart-events';
+import {
+  isOrderReadyForDirectPayment,
+  buildShippingAddress,
+} from '@/lib/order-checkout-readiness';
 
 /** Preview abandoned order for recovery landing page */
 export async function GET(req: NextRequest) {
@@ -31,6 +36,8 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ redirect: preview.redirectUrl });
     }
 
+    await logAbandonedCartEvent(preview.orderId, 'recovery_link_opened');
+
     return NextResponse.json({
       order: {
         id: preview.orderId,
@@ -42,7 +49,10 @@ export async function GET(req: NextRequest) {
         totalCents: preview.totalCents,
         promoCode: preview.promoCode,
         hasStockIssues: preview.hasStockIssues,
+        needsCheckout: preview.needsCheckout,
       },
+      checkoutPrefill: preview.checkoutPrefill,
+      checkoutUrl: `${getSiteUrl()}/checkout?recover=${encodeURIComponent(token)}`,
       items: preview.items.map(({ product: _p, ...item }) => item),
       cartItems: preview.items
         .filter((i) => i.product)
@@ -57,12 +67,20 @@ export async function GET(req: NextRequest) {
   }
 }
 
-/** Create Stripe session for direct payment (optional fast path) */
+/** Create Stripe session for recovery, or redirect to checkout if data is incomplete */
 export async function POST(req: NextRequest) {
   const baseUrl = getSiteUrl();
 
   try {
-    const { token } = (await req.json()) as { token?: string };
+    const body = (await req.json()) as {
+      token?: string;
+      customer?: { name: string; email: string; phone: string };
+      deliveryMethod?: DeliveryMethod;
+      shippingAddress?: Record<string, string>;
+      notes?: string;
+      promoCode?: string;
+    };
+    const { token } = body;
 
     if (!token) {
       return NextResponse.json({ error: 'Token nije naveden' }, { status: 400 });
@@ -88,10 +106,56 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Ova narudžba je otkazana i ne može se nastaviti' }, { status: 410 });
     }
 
+    let activeOrder = order;
+
+    if (body.customer) {
+      const deliveryMethod = body.deliveryMethod ?? (order.delivery_method as DeliveryMethod);
+      const promo = resolvePromoCode(body.promoCode ?? order.promo_code ?? undefined);
+      const shippingAddress =
+        body.shippingAddress ??
+        buildShippingAddress(deliveryMethod, {
+          street: str(order.shipping_address, 'street'),
+          city: str(order.shipping_address, 'city'),
+          zip: str(order.shipping_address, 'zip'),
+          boxnowLockerId: str(order.shipping_address, 'locker_id'),
+          boxnowLockerName: str(order.shipping_address, 'locker_name'),
+          boxnowLockerAddress: str(order.shipping_address, 'locker_address'),
+        });
+
+      const { data: updated, error: updateCustomerError } = await supabase
+        .from('orders')
+        .update({
+          customer_name: body.customer.name.trim(),
+          customer_email: body.customer.email.toLowerCase().trim(),
+          customer_phone: body.customer.phone.trim(),
+          delivery_method: deliveryMethod,
+          shipping_address: shippingAddress,
+          notes: body.notes?.trim() || order.notes,
+          promo_code: promo?.code ?? (body.promoCode?.trim() ? body.promoCode.trim() : order.promo_code),
+        })
+        .eq('id', order.id)
+        .select(
+          'id, status, customer_email, customer_name, customer_phone, delivery_method, shipping_address, promo_code, notes, recovery_token'
+        )
+        .single();
+
+      if (updateCustomerError || !updated) {
+        return NextResponse.json({ error: 'Greška pri spremanju podataka' }, { status: 500 });
+      }
+
+      activeOrder = updated;
+    }
+
+    if (!isOrderReadyForDirectPayment(activeOrder)) {
+      return NextResponse.json({
+        redirect: `${baseUrl}/checkout?recover=${encodeURIComponent(token)}`,
+      });
+    }
+
     const { data: orderItems, error: itemsError } = await supabase
       .from('order_items')
       .select('product_id, title, quantity, unit_price_cents')
-      .eq('order_id', order.id);
+      .eq('order_id', activeOrder.id);
 
     if (itemsError || !orderItems?.length) {
       return NextResponse.json({ error: 'Narudžba nema stavki' }, { status: 400 });
@@ -124,10 +188,10 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const promo = resolvePromoCode(order.promo_code ?? undefined);
+    const promo = resolvePromoCode(activeOrder.promo_code ?? undefined);
     const subtotalCents = resolvedItems.reduce((s, i) => s + i.priceCents * i.quantity, 0);
     const discountCents = promo ? calculateDiscountCents(subtotalCents, promo.percentOff) : 0;
-    const shippingCents = calculateShippingCents(order.delivery_method as DeliveryMethod, subtotalCents);
+    const shippingCents = calculateShippingCents(activeOrder.delivery_method as DeliveryMethod, subtotalCents);
     const totalCents = subtotalCents - discountCents + shippingCents;
 
     await supabase
@@ -139,17 +203,17 @@ export async function POST(req: NextRequest) {
         total_cents: totalCents,
         status: 'pending',
       })
-      .eq('id', order.id);
+      .eq('id', activeOrder.id);
 
     for (const item of resolvedItems) {
       await supabase
         .from('order_items')
         .update({ unit_price_cents: item.priceCents, title: item.title })
-        .eq('order_id', order.id)
+        .eq('order_id', activeOrder.id)
         .eq('product_id', item.product_id);
     }
 
-    const shippingOption = getShippingOption(order.delivery_method as DeliveryMethod);
+    const shippingOption = getShippingOption(activeOrder.delivery_method as DeliveryMethod);
     const stripeLineItems = resolvedItems.map((item) => ({
       price_data: {
         currency: 'eur',
@@ -191,17 +255,17 @@ export async function POST(req: NextRequest) {
       mode: 'payment',
       payment_method_types: ['card'],
       wallet_options: { link: { display: 'never' } },
-      customer_email: order.customer_email,
+      customer_email: activeOrder.customer_email,
       line_items: stripeLineItems,
       ...(stripeDiscounts ? { discounts: stripeDiscounts } : {}),
-      success_url: `${baseUrl}/narudzba/${order.id}/uspjeh?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${baseUrl}/narudzba/${activeOrder.id}/uspjeh?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/checkout/nastavi?token=${encodeURIComponent(token)}`,
       metadata: {
-        order_id: order.id,
-        delivery_method: order.delivery_method,
+        order_id: activeOrder.id,
+        delivery_method: activeOrder.delivery_method,
         ...(promo ? { promo_code: promo.code } : {}),
       },
-      payment_intent_data: { metadata: { order_id: order.id } },
+      payment_intent_data: { metadata: { order_id: activeOrder.id } },
       locale: 'hr',
       phone_number_collection: { enabled: false },
     });
@@ -214,7 +278,9 @@ export async function POST(req: NextRequest) {
         recovered_at: new Date().toISOString(),
         abandoned_at: new Date().toISOString(),
       })
-      .eq('id', order.id);
+      .eq('id', activeOrder.id);
+
+    await logAbandonedCartEvent(activeOrder.id, 'recovery_checkout_started');
 
     return NextResponse.json({ url: session.url });
   } catch (err) {
@@ -222,4 +288,9 @@ export async function POST(req: NextRequest) {
     const message = err instanceof Error ? err.message : 'Interna greška servera';
     return NextResponse.json({ error: message }, { status: 500 });
   }
+}
+
+function str(address: Record<string, unknown> | null, key: string): string {
+  const value = address?.[key];
+  return typeof value === 'string' ? value : '';
 }

@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { supabase } from '@/lib/supabase';
+import { markRecoveryConversionIfEligible } from '@/lib/abandoned-cart-events';
 
 export type FulfillOrderResult =
   | { status: 'fulfilled'; orderId: string }
@@ -70,6 +71,8 @@ export async function fulfillOrder(
   if (!updated) {
     return { status: 'already_fulfilled', orderId };
   }
+
+  await markRecoveryConversionIfEligible(orderId, paidAt);
 
   return { status: 'fulfilled', orderId };
 }

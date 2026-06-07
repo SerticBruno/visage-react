@@ -35,6 +35,7 @@ type PreviewOrder = {
   totalCents: number;
   promoCode: string | null;
   hasStockIssues: boolean;
+  needsCheckout: boolean;
 };
 
 function NastaviContent() {
@@ -50,6 +51,7 @@ function NastaviContent() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const [paying, setPaying] = useState(false);
+  const [needsCheckout, setNeedsCheckout] = useState(false);
 
   useEffect(() => {
     if (!token) {
@@ -66,6 +68,7 @@ function NastaviContent() {
         }
         return data as {
           redirect?: string;
+          checkoutUrl?: string;
           order?: PreviewOrder;
           items?: PreviewItem[];
           cartItems?: { product: Product; quantity: number }[];
@@ -79,18 +82,32 @@ function NastaviContent() {
         if (!data.order || !data.items) {
           throw new Error('Narudžba nije učitana');
         }
+
+        const cart = (data.cartItems ?? []).filter(
+          (i) => i.product && i.quantity > 0
+        ) as CartItem[];
+
+        if (data.order.needsCheckout) {
+          if (cart.length > 0) {
+            replaceCartItems(cart);
+          }
+          router.replace(
+            data.checkoutUrl ?? `/checkout?recover=${encodeURIComponent(token!)}`
+          );
+          return;
+        }
+
         setOrder(data.order);
         setItems(data.items);
-        setCartItems(
-          (data.cartItems ?? []).filter((i) => i.product && i.quantity > 0) as CartItem[]
-        );
+        setCartItems(cart);
+        setNeedsCheckout(false);
         setStatus('ready');
       })
       .catch((err: Error) => {
         setErrorMessage(err.message);
         setStatus('error');
       });
-  }, [token, router]);
+  }, [token, router, replaceCartItems]);
 
   const restoreCart = () => {
     if (cartItems.length > 0) {
@@ -122,6 +139,9 @@ function NastaviContent() {
       }
 
       if (data.redirect) {
+        if (data.redirect.includes('/checkout')) {
+          restoreCart();
+        }
         router.replace(data.redirect);
         return;
       }
@@ -285,7 +305,9 @@ function NastaviContent() {
         </div>
 
         <p className="text-xs text-gray-400 text-center mt-4">
-          Plaćanje koristi već unesene podatke — ne morate ponovo ispunjavati checkout formu.
+          {needsCheckout
+            ? 'Za dovršetak kupnje potrebno je dopuniti podatke na checkout stranici.'
+            : 'Plaćanje koristi već unesene podatke — ne morate ponovo ispunjavati checkout formu.'}
         </p>
       </div>
     </div>

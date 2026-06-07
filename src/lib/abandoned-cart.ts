@@ -4,6 +4,7 @@ import { supabase } from '@/lib/supabase';
 import { sendEmail, isResendConfigured } from '@/lib/email';
 import { buildAbandonedCartEmail } from '@/lib/emails/abandoned-cart';
 import { getSiteUrl } from '@/lib/site-url';
+import { logAbandonedCartEvent } from '@/lib/abandoned-cart-events';
 
 type OrderItemRow = {
   title: string;
@@ -78,4 +79,6 @@ export async function sendManualAbandonedCartReminder(orderId: string): Promise<
     .from('orders')
     .update({ abandonment_email_count: order.abandonment_email_count + 1 })
     .eq('id', orderId);
+
+  await logAbandonedCartEvent(orderId, 'email_sent');
 }

@@ -1,7 +1,8 @@
 'use client';
 
-import { Fragment, useState, useEffect, useCallback } from 'react';
+import { Fragment, Suspense, useState, useEffect, useCallback, useRef } from 'react';
 import { Transition } from '@headlessui/react';
+import { useSearchParams } from 'next/navigation';
 import { useCart } from '@/context/CartContext';
 import { formatPrice, parsePriceCents } from '@/lib/price-utils';
 import {
@@ -19,6 +20,7 @@ import {
 } from '@/lib/promo-codes';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Product } from '@/data/products';
 import { FaArrowLeft, FaLock, FaBoxOpen, FaTruck, FaStore, FaMapMarkerAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 interface FormData {
@@ -67,7 +69,26 @@ const DELIVERY_ICONS: Record<DeliveryMethod, React.ReactNode> = {
 };
 
 export default function CheckoutPage() {
-  const { items, subtotalCents, finishCheckoutLoading, closeCart, syncEmailToCart } = useCart();
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <p className="text-gray-500 text-sm">Učitavanje checkouta…</p>
+        </div>
+      }
+    >
+      <CheckoutPageContent />
+    </Suspense>
+  );
+}
+
+function CheckoutPageContent() {
+  const searchParams = useSearchParams();
+  const recoverToken = searchParams.get('recover');
+  const recoverLoadedRef = useRef(false);
+
+  const { items, subtotalCents, finishCheckoutLoading, closeCart, syncEmailToCart, replaceCartItems } =
+    useCart();
 
   useEffect(() => {
     finishCheckoutLoading();
@@ -95,6 +116,80 @@ export default function CheckoutPage() {
   const [appliedPromo, setAppliedPromo] = useState<PromoCode | null>(null);
   const [promoError, setPromoError] = useState('');
   const [isPromoExpanded, setIsPromoExpanded] = useState(false);
+  const [recoverLoading, setRecoverLoading] = useState(!!recoverToken);
+
+  useEffect(() => {
+    if (!recoverToken || recoverLoadedRef.current) return;
+    recoverLoadedRef.current = true;
+
+    fetch(`/api/checkout/recover?token=${encodeURIComponent(recoverToken)}`)
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error ?? 'Neispravni link');
+        return data as {
+          redirect?: string;
+          checkoutPrefill?: {
+            name: string;
+            email: string;
+            phone: string;
+            deliveryMethod: DeliveryMethod;
+            street: string;
+            city: string;
+            zip: string;
+            boxnowLockerId: string;
+            boxnowLockerName: string;
+            boxnowLockerAddress: string;
+            notes: string;
+            promoCode: string;
+          };
+          cartItems?: { product: Product; quantity: number }[];
+          order?: { needsCheckout?: boolean };
+        };
+      })
+      .then((data) => {
+        if (data.redirect) {
+          window.location.assign(data.redirect);
+          return;
+        }
+
+        const prefill = data.checkoutPrefill;
+        if (prefill) {
+          setForm((prev) => ({
+            ...prev,
+            name: prefill.name || prev.name,
+            email: prefill.email || prev.email,
+            phone: prefill.phone || prev.phone,
+            deliveryMethod: prefill.deliveryMethod || prev.deliveryMethod,
+            street: prefill.street || prev.street,
+            city: prefill.city || prev.city,
+            zip: prefill.zip || prev.zip,
+            boxnowLockerId: prefill.boxnowLockerId || prev.boxnowLockerId,
+            boxnowLockerName: prefill.boxnowLockerName || prev.boxnowLockerName,
+            boxnowLockerAddress: prefill.boxnowLockerAddress || prev.boxnowLockerAddress,
+            notes: prefill.notes || prev.notes,
+          }));
+
+          const promo = resolvePromoCode(prefill.promoCode);
+          if (promo) {
+            setAppliedPromo(promo);
+            setPromoInput(promo.code);
+          }
+        }
+
+        const cart = (data.cartItems ?? []).filter(
+          (i) => i.product && i.quantity > 0
+        );
+        if (cart.length > 0) {
+          replaceCartItems(cart);
+        }
+      })
+      .catch((err: Error) => {
+        setError(err.message);
+      })
+      .finally(() => {
+        setRecoverLoading(false);
+      });
+  }, [recoverToken, replaceCartItems]);
 
   const selectedShipping = SHIPPING_OPTIONS.find((o) => o.id === form.deliveryMethod)!;
   const shippingCents = calculateShippingCents(form.deliveryMethod, subtotalCents);
@@ -135,6 +230,14 @@ export default function CheckoutPage() {
       return next;
     });
   }, []);
+
+  if (recoverLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+        <p className="text-gray-500 text-sm">Učitavamo vašu narudžbu…</p>
+      </div>
+    );
+  }
 
   if (items.length === 0) {
     return (
@@ -241,33 +344,54 @@ export default function CheckoutPage() {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/checkout/create-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          items: items.map((i) => ({ productId: i.product.id, quantity: i.quantity })),
-          customer: { name: form.name, email: form.email, phone: form.phone },
-          deliveryMethod: form.deliveryMethod,
-          shippingAddress:
-            form.deliveryMethod === 'gls'
-              ? { street: form.street, city: form.city, zip: form.zip, country: 'HR' }
-              : form.deliveryMethod === 'boxnow'
+      const shippingAddress =
+        form.deliveryMethod === 'gls'
+          ? { street: form.street, city: form.city, zip: form.zip, country: 'HR' }
+          : form.deliveryMethod === 'boxnow'
+          ? {
+              locker_id: form.boxnowLockerId,
+              locker_name: form.boxnowLockerName,
+              locker_address: form.boxnowLockerAddress,
+            }
+          : {};
+
+      const res = await fetch(
+        recoverToken ? '/api/checkout/recover' : '/api/checkout/create-session',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(
+            recoverToken
               ? {
-                  locker_id: form.boxnowLockerId,
-                  locker_name: form.boxnowLockerName,
-                  locker_address: form.boxnowLockerAddress,
+                  token: recoverToken,
+                  customer: { name: form.name, email: form.email, phone: form.phone },
+                  deliveryMethod: form.deliveryMethod,
+                  shippingAddress,
+                  notes: form.notes,
+                  promoCode: appliedPromo?.code,
                 }
-              : {},
-          notes: form.notes,
-          promoCode: appliedPromo?.code,
-        }),
-      });
+              : {
+                  items: items.map((i) => ({ productId: i.product.id, quantity: i.quantity })),
+                  customer: { name: form.name, email: form.email, phone: form.phone },
+                  deliveryMethod: form.deliveryMethod,
+                  shippingAddress,
+                  notes: form.notes,
+                  promoCode: appliedPromo?.code,
+                }
+          ),
+        }
+      );
 
       const data = await res.json();
 
       if (!res.ok) {
         setError(data.error ?? 'Greška pri kreiranju narudžbe. Pokušajte ponovo.');
         setLoading(false);
+        return;
+      }
+
+      if (data.redirect) {
+        window.location.assign(data.redirect);
         return;
       }
 
