@@ -19,7 +19,7 @@ import {
 } from '@/lib/promo-codes';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowLeft, FaLock, FaBoxOpen, FaTruck, FaStore, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaArrowLeft, FaLock, FaBoxOpen, FaTruck, FaStore, FaMapMarkerAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 interface FormData {
   name: string;
@@ -94,6 +94,7 @@ export default function CheckoutPage() {
   const [promoInput, setPromoInput] = useState('');
   const [appliedPromo, setAppliedPromo] = useState<PromoCode | null>(null);
   const [promoError, setPromoError] = useState('');
+  const [isPromoExpanded, setIsPromoExpanded] = useState(false);
 
   const selectedShipping = SHIPPING_OPTIONS.find((o) => o.id === form.deliveryMethod)!;
   const shippingCents = calculateShippingCents(form.deliveryMethod, subtotalCents);
@@ -121,6 +122,10 @@ export default function CheckoutPage() {
     setPromoInput('');
     setPromoError('');
   };
+
+  useEffect(() => {
+    if (appliedPromo) setIsPromoExpanded(true);
+  }, [appliedPromo]);
 
   const clearFieldError = useCallback((field: ValidatedField) => {
     setFieldErrors((prev) => {
@@ -327,7 +332,7 @@ export default function CheckoutPage() {
                         value={form.email}
                         onChange={set('email')}
                         className={inputClassName('email')}
-                        placeholder="ana@example.com"
+                        placeholder="ime@email.com"
                         autoComplete="email"
                         aria-invalid={!!fieldErrors.email}
                       />
@@ -558,56 +563,67 @@ export default function CheckoutPage() {
 
                 {/* Promo code */}
                 <div className="border-t border-gray-100 pt-3">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Kod za popust
-                  </label>
-                  {appliedPromo ? (
-                    <div className="flex items-center justify-between gap-2 bg-emerald-50 border border-emerald-100 rounded-lg px-3 py-2">
-                      <div className="min-w-0">
-                        <p className="text-sm font-medium text-emerald-800 truncate">
-                          {appliedPromo.code}
-                        </p>
-                        <p className="text-xs text-emerald-600">{appliedPromo.label}</p>
+                  <button
+                    type="button"
+                    onClick={() => setIsPromoExpanded((prev) => !prev)}
+                    className="flex items-center justify-between w-full text-left focus:outline-none cursor-pointer"
+                  >
+                    <span className="text-sm font-medium text-gray-700">Kod za popust</span>
+                    {isPromoExpanded ? (
+                      <FaChevronUp className="w-3 h-3 text-gray-400" />
+                    ) : (
+                      <FaChevronDown className="w-3 h-3 text-gray-400" />
+                    )}
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isPromoExpanded ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+                    {appliedPromo ? (
+                      <div className="flex items-center justify-between gap-2 bg-emerald-50 border border-emerald-100 rounded-lg px-3 py-2">
+                        <div className="min-w-0">
+                          <p className="text-sm font-medium text-emerald-800 truncate">
+                            {appliedPromo.code}
+                          </p>
+                          <p className="text-xs text-emerald-600">{appliedPromo.label}</p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={removePromoCode}
+                          className="text-xs text-emerald-700 hover:text-emerald-900 underline flex-shrink-0 cursor-pointer"
+                        >
+                          Ukloni
+                        </button>
                       </div>
-                      <button
-                        type="button"
-                        onClick={removePromoCode}
-                        className="text-xs text-emerald-700 hover:text-emerald-900 underline flex-shrink-0 cursor-pointer"
-                      >
-                        Ukloni
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="flex gap-2">
-                      <input
-                        type="text"
-                        value={promoInput}
-                        onChange={(e) => {
-                          setPromoInput(e.target.value);
-                          setPromoError('');
-                        }}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter') {
-                            e.preventDefault();
-                            applyPromoCode();
-                          }
-                        }}
-                        className="flex-1 min-w-0 border border-gray-200 rounded-lg px-3 py-2 text-sm uppercase focus:outline-none focus:ring-1 focus:ring-gray-400/50"
-                        placeholder="Unesite kod"
-                        autoComplete="off"
-                      />
-                      <button
-                        type="button"
-                        onClick={applyPromoCode}
-                        className="px-3 py-2 text-sm font-medium text-gray-800 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors flex-shrink-0 cursor-pointer"
-                      >
-                        Primijeni
-                      </button>
-                    </div>
-                  )}
-                  {promoError && (
-                    <p className="text-xs text-red-600 mt-1.5">{promoError}</p>
-                  )}
+                    ) : (
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          value={promoInput}
+                          onChange={(e) => {
+                            setPromoInput(e.target.value);
+                            setPromoError('');
+                          }}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                              e.preventDefault();
+                              applyPromoCode();
+                            }
+                          }}
+                          className="flex-1 min-w-0 border border-gray-200 rounded-lg px-3 py-2 text-sm uppercase focus:outline-none focus:ring-1 focus:ring-gray-400/50"
+                          placeholder="Unesite kod"
+                          autoComplete="off"
+                        />
+                        <button
+                          type="button"
+                          onClick={applyPromoCode}
+                          className="px-3 py-2 text-sm font-medium text-gray-800 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors flex-shrink-0 cursor-pointer"
+                        >
+                          Primijeni
+                        </button>
+                      </div>
+                    )}
+                    {promoError && (
+                      <p className="text-xs text-red-600 mt-1.5">{promoError}</p>
+                    )}
+                  </div>
                 </div>
 
                 <div className="border-t border-gray-100 pt-3 space-y-2 text-sm">

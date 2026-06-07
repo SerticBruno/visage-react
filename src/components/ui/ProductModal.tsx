@@ -118,7 +118,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <div className="fixed inset-0 z-50 flex items-center justify-center overscroll-contain p-6 pt-12 pb-12 md:p-4">
+      <div className="fixed inset-0 z-50 flex items-center justify-center overscroll-contain px-4 py-10 sm:py-6">
         <div className="fixed inset-0 backdrop-blur-sm bg-white/30" onClick={handleClose} />
         
         <Transition.Child
@@ -139,7 +139,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
               <FaTimes size={20} />
             </button>
             
-            <div className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 max-h-[95vh] md:max-h-[90vh] flex flex-col">
+            <div className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all border border-slate-200 max-h-[calc(100dvh-5rem)] md:max-h-[85vh] flex flex-col">
               {/* Content */}
               <div className="flex flex-col md:flex-row h-full min-h-0 overflow-hidden">
                 {/* Mobile Layout - Image row + add to cart (below, full width) */}
@@ -155,7 +155,7 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                     </div>
                     
                     {/* Image */}
-                    <div className={`relative bg-slate-50 rounded-xl overflow-hidden shadow-sm flex-1 transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+                    <div className={`relative h-36 bg-slate-50 rounded-xl overflow-hidden shadow-sm transition-opacity duration-300 ${isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
                                              <Image
                          src={currentProduct.image}
                          alt={currentProduct.title}

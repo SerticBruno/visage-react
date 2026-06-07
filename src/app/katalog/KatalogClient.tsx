@@ -8,13 +8,30 @@ import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import ProductModal from '@/components/ui/ProductModal';
 import AddToCartButton from '@/components/ui/AddToCartButton';
+import ProductCardSkeleton from '@/components/ui/ProductCardSkeleton';
 import { isInStock } from '@/lib/inventory';
 import { formatProductCardPrice } from '@/lib/price-utils';
 import { scrollToElement } from '@/lib/scroll-offset';
 
+function ProductCardImage({ src, alt, imageNeedsResize }: { src: string; alt: string; imageNeedsResize?: boolean }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className={`object-contain p-2 transition-all duration-500 transform-gpu ${imageNeedsResize ? 'scale-75' : 'group-hover:scale-105'} ${loaded ? 'opacity-100' : 'opacity-0'}`}
+      loading="lazy"
+      onLoad={() => setLoaded(true)}
+    />
+  );
+}
+
 export default function KatalogClient({ products }: { products: Product[] }) {
   const searchParams = useSearchParams();
+  const [searchInput, setSearchInput] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  const isInitialSearchMount = useRef(true);
   const [selectedProductTypes, setSelectedProductTypes] = useState<string[]>([]);
   const [selectedSkinTypes, setSelectedSkinTypes] = useState<string[]>([]);
   const [selectedSkinConcerns, setSelectedSkinConcerns] = useState<string[]>([]);
@@ -38,6 +55,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   const [isFiltering, setIsFiltering] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isGridLoading, setIsGridLoading] = useState(false);
   
   // Dynamic products per page based on screen size
   const productsPerPage = isMobile ? 6 : 9;
@@ -134,11 +152,12 @@ export default function KatalogClient({ products }: { products: Product[] }) {
     };
   }, []);
 
-  // Reset filtering state after a delay
+  // Reset filtering/grid-loading state after a delay
   useEffect(() => {
     if (isFiltering) {
       const timer = setTimeout(() => {
         setIsFiltering(false);
+        setIsGridLoading(false);
       }, 500);
       return () => clearTimeout(timer);
     }
@@ -154,38 +173,45 @@ export default function KatalogClient({ products }: { products: Product[] }) {
     }
   }, [isTransitioning]);
 
+  // Debounce search so filtering and scroll don't run on every keystroke
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearchTerm(searchInput);
+      if (!isInitialSearchMount.current) {
+        setIsGridLoading(true);
+        setIsFiltering(true);
+        requestAnimationFrame(scrollToProducts);
+      }
+      isInitialSearchMount.current = false;
+    }, 600);
+    return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchInput]);
+
   const scrollToProducts = () => {
     if (!productsRef.current) return;
     scrollToElement(productsRef.current);
   };
 
   const handlePageChange = (newPage: number) => {
-    console.log('handlePageChange called with:', newPage, 'currentPage:', currentPage, 'totalPages:', totalPages);
-    
-    // Validate that the new page is within bounds
     if (newPage >= 1 && newPage <= totalPages && newPage !== validCurrentPage) {
-      console.log('Setting page to:', newPage);
-      setIsTransitioning(true);
+      setIsGridLoading(true);
       setIsScrolling(true);
-      
-      // Fade out first
       setTimeout(() => {
         setCurrentPage(newPage);
-        
-        // Use requestAnimationFrame to ensure DOM is updated before scrolling
         requestAnimationFrame(() => {
           scrollToProducts();
           setTimeout(() => {
+            setIsGridLoading(false);
             setIsScrolling(false);
-          }, 500);
+          }, 400);
         });
-      }, 150); // Half of the transition duration
-    } else {
-      console.log('Page change rejected:', { newPage, validCurrentPage, totalPages });
+      }, 150);
     }
   };
 
   const toggleProductType = (productType: string) => {
+    setIsGridLoading(true);
     setIsTransitioning(true);
     setIsFiltering(true);
     
@@ -203,6 +229,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   };
 
   const toggleSkinType = (skinType: string) => {
+    setIsGridLoading(true);
     setIsTransitioning(true);
     setIsFiltering(true);
     
@@ -220,6 +247,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   };
 
   const toggleSkinConcern = (skinConcern: string) => {
+    setIsGridLoading(true);
     setIsTransitioning(true);
     setIsFiltering(true);
     
@@ -237,6 +265,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   };
 
   const toggleBrand = (brand: string) => {
+    setIsGridLoading(true);
     setIsTransitioning(true);
     setIsFiltering(true);
     
@@ -261,6 +290,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   };
 
   const toggleBadge = (badge: string) => {
+    setIsGridLoading(true);
     setIsTransitioning(true);
     setIsFiltering(true);
     
@@ -278,11 +308,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-    setIsFiltering(true);
-    
-    // Use requestAnimationFrame to ensure DOM is updated before scrolling
-    requestAnimationFrame(scrollToProducts);
+    setSearchInput(e.target.value);
   };
 
   const openProductModal = (product: Product) => {
@@ -344,25 +370,21 @@ export default function KatalogClient({ products }: { products: Product[] }) {
                   <input
                     id="search"
                     type="text"
-                    placeholder="Naziv, opis ili marka..."
+                    placeholder={isMobile ? "Naziv, opis ili marka..." : "Pretraži"}
                     className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm"
-                    value={searchTerm}
+                    value={searchInput}
                     onChange={handleSearch}
                   />
-                  <FaSearch className="absolute left-3 top-3.5 text-gray-400" />
-                  {searchTerm && (
+                  <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                  {searchInput && (
                     <button
                       onClick={() => {
-                        setIsTransitioning(true);
+                        setSearchInput('');
+                        setSearchTerm('');
                         setIsFiltering(true);
-                        
-                        // Fade out first, then clear search
-                        setTimeout(() => {
-                          setSearchTerm('');
-                          requestAnimationFrame(scrollToProducts);
-                        }, 150); // Half of the transition duration
+                        requestAnimationFrame(scrollToProducts);
                       }}
-                      className="absolute right-3 top-3.5 w-6 h-6 flex items-center justify-center bg-gray-200 hover:bg-gray-300 text-gray-600 hover:text-gray-800 rounded-full transition-all duration-200 cursor-pointer"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center bg-gray-200 hover:bg-gray-300 text-gray-600 hover:text-gray-800 rounded-full transition-all duration-200 cursor-pointer"
                       aria-label="Očisti pretraživanje"
                     >
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -658,23 +680,23 @@ export default function KatalogClient({ products }: { products: Product[] }) {
               </div>
 
               {/* Clear Filters Button */}
-              {(searchTerm || selectedProductTypes.length > 0 || selectedSkinTypes.length > 0 || selectedSkinConcerns.length > 0 || selectedBrands.length > 0 || selectedBadges.length > 0) && (
+              {(searchInput || selectedProductTypes.length > 0 || selectedSkinTypes.length > 0 || selectedSkinConcerns.length > 0 || selectedBrands.length > 0 || selectedBadges.length > 0) && (
                 <div className="border-t border-gray-200 pt-4">
                   <button
                     onClick={() => {
+                      setSearchInput('');
+                      setSearchTerm('');
+                      setIsGridLoading(true);
                       setIsTransitioning(true);
                       setIsFiltering(true);
-                      
-                      // Fade out first, then clear all filters
                       setTimeout(() => {
-                        setSearchTerm('');
                         setSelectedProductTypes([]);
                         setSelectedSkinTypes([]);
                         setSelectedSkinConcerns([]);
                         setSelectedBrands([]);
                         setSelectedBadges([]);
                         requestAnimationFrame(scrollToProducts);
-                      }, 150); // Half of the transition duration
+                      }, 150);
                     }}
                     className="w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium shadow-sm cursor-pointer
                                hover:bg-gray-200 hover:shadow-md transition-all duration-200 ease-out
@@ -699,7 +721,14 @@ export default function KatalogClient({ products }: { products: Product[] }) {
           {/* Products Grid */}
           <div className="flex-1 scroll-mt-24" ref={productsRef} id="produkti">
             {/* Products Grid */}
-            <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 transition-opacity duration-300 ${isScrolling || isFiltering || isTransitioning ? 'opacity-25' : 'opacity-100'}`}>
+            {isGridLoading ? (
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                {Array.from({ length: productsPerPage }).map((_, i) => (
+                  <ProductCardSkeleton key={i} />
+                ))}
+              </div>
+            ) : (
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {currentProducts.map((product) => (
                 <div
                   key={product.id}
@@ -717,16 +746,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
                   onClick={() => openProductModal(product)}
                 >
                   <div className="relative h-36 sm:h-40 lg:h-48 bg-slate-50 overflow-hidden">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      fill
-                      className={`object-contain p-2 transition-transform duration-300 transform-gpu ${product.imageNeedsResize ? 'scale-75' : 'group-hover:scale-105'}`}
-                      loading="lazy"
-                      style={{
-                        transform: 'translateZ(0)', // Force hardware acceleration
-                      }}
-                    />
+                    <ProductCardImage src={product.image} alt={product.title} imageNeedsResize={product.imageNeedsResize} />
                     {/* Product Badges */}
                     <div className="absolute top-1 right-1 sm:top-2 sm:right-2 flex flex-col items-end gap-0.5 sm:gap-1">
                       {product.isNew && (
@@ -812,6 +832,7 @@ export default function KatalogClient({ products }: { products: Product[] }) {
                 </div>
               ))}
             </div>
+            )}
 
             {/* Pagination */}
             {totalPages > 1 && (
