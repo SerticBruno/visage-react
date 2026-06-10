@@ -71,7 +71,10 @@ export function isGoogleCalendarConnected(
   return false;
 }
 
-async function refreshAccessToken(refreshToken: string): Promise<string | null> {
+async function refreshAccessToken(conn: {
+  id: string;
+  refresh_token: string;
+}): Promise<string | null> {
   const client = googleOAuthClient();
   if (!client) return null;
 
@@ -81,19 +84,22 @@ async function refreshAccessToken(refreshToken: string): Promise<string | null> 
     body: new URLSearchParams({
       client_id: client.clientId,
       client_secret: client.clientSecret,
-      refresh_token: refreshToken,
+      refresh_token: conn.refresh_token,
       grant_type: 'refresh_token',
     }),
   });
 
-  if (!res.ok) return null;
+  if (!res.ok) {
+    console.error('Google token refresh failed:', await res.text());
+    return null;
+  }
   const json = await res.json();
 
   const expiry = new Date(Date.now() + (json.expires_in ?? 3600) * 1000).toISOString();
   await supabase
     .from('google_calendar_connections')
     .update({ access_token: json.access_token, token_expiry: expiry })
-    .eq('refresh_token', refreshToken);
+    .eq('id', conn.id);
 
   return json.access_token as string;
 }
@@ -106,7 +112,41 @@ async function getAccessToken(): Promise<string | null> {
   if (conn.access_token && Date.now() < expiry - 60_000) {
     return conn.access_token;
   }
-  return refreshAccessToken(conn.refresh_token);
+
+  if (!conn.refresh_token) {
+    console.error('Google Calendar: no refresh_token on connection');
+    return null;
+  }
+
+  return refreshAccessToken(conn);
+}
+
+/** Google expects local wall time + separate timeZone (not UTC ISO with Z). */
+function formatGoogleDateTime(iso: string): string {
+  const date = new Date(iso);
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Europe/Zagreb',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  }).formatToParts(date);
+  const get = (type: string) => parts.find((p) => p.type === type)?.value ?? '00';
+  return `${get('year')}-${get('month')}-${get('day')}T${get('hour')}:${get('minute')}:${get('second')}`;
+}
+
+function normalizeClient(
+  clients: unknown
+): { name: string; phone: string | null } | null {
+  if (!clients) return null;
+  if (Array.isArray(clients)) {
+    const c = clients[0] as { name: string; phone: string | null } | undefined;
+    return c ?? null;
+  }
+  return clients as { name: string; phone: string | null };
 }
 
 // ─── Calendar event helpers ──────────────────────────────────────────────────
@@ -135,8 +175,8 @@ function buildEventBody(appt: {
     ]
       .filter(Boolean)
       .join('\n'),
-    start: { dateTime: appt.starts_at, timeZone: 'Europe/Zagreb' },
-    end: { dateTime: appt.ends_at, timeZone: 'Europe/Zagreb' },
+    start: { dateTime: formatGoogleDateTime(appt.starts_at), timeZone: 'Europe/Zagreb' },
+    end: { dateTime: formatGoogleDateTime(appt.ends_at), timeZone: 'Europe/Zagreb' },
     extendedProperties: {
       private: {
         visage_appointment_id: appt.id,
@@ -229,14 +269,22 @@ export async function syncAppointmentToGoogle(appt: {
   notes: string | null;
   google_event_id: string | null;
   google_calendar_id: string | null;
-  clients?: { name: string; phone: string | null } | null;
+  clients?: unknown;
 }): Promise<void> {
   const token = await getAccessToken();
-  if (!token) return; // Google not connected — skip silently
+  if (!token) {
+    console.error('Google Calendar push skipped: no access token');
+    throw new Error('Google Calendar nije spojen ili token nije valjan');
+  }
 
   const conn = await getConnection();
-  const calId = encodeURIComponent(conn?.calendar_id ?? 'primary');
-  const eventBody = buildEventBody(appt);
+  if (!conn) {
+    throw new Error('Google Calendar veza nije pronađena');
+  }
+
+  const client = normalizeClient(appt.clients);
+  const calId = encodeURIComponent(conn.calendar_id ?? 'primary');
+  const eventBody = buildEventBody({ ...appt, clients: client });
 
   let googleEventId = appt.google_event_id;
   let method: 'POST' | 'PUT' = 'POST';
@@ -244,7 +292,7 @@ export async function syncAppointmentToGoogle(appt: {
 
   if (googleEventId) {
     method = 'PUT';
-    url = `${url}/${googleEventId}`;
+    url = `${url}/${encodeURIComponent(googleEventId)}`;
   }
 
   const res = await fetch(url, {
@@ -258,20 +306,25 @@ export async function syncAppointmentToGoogle(appt: {
 
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`Google Calendar ${method} failed: ${res.status} ${text}`);
+    console.error(`Google Calendar ${method} failed:`, res.status, text);
+    throw new Error(`Google Calendar ${method} failed: ${res.status}`);
   }
 
   const json = await res.json();
   googleEventId = json.id as string;
 
-  await supabase
+  const { error: updateError } = await supabase
     .from('appointments')
     .update({
       google_event_id: googleEventId,
-      google_calendar_id: conn?.calendar_id ?? 'primary',
+      google_calendar_id: conn.calendar_id ?? 'primary',
       last_synced_at: new Date().toISOString(),
     })
     .eq('id', appt.id);
+
+  if (updateError) {
+    console.error('Failed to save google_event_id:', updateError);
+  }
 }
 
 export async function deleteGoogleEvent(

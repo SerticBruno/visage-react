@@ -87,12 +87,16 @@ export async function PATCH(
       throw error;
     }
 
-    // Push change to Google Calendar if connected
-    syncAppointmentToGoogle(data).catch((e) =>
-      console.error('Google sync failed (non-fatal):', e)
-    );
+    let googleSync: 'ok' | 'skipped' | 'failed' = 'skipped';
+    try {
+      await syncAppointmentToGoogle(data);
+      googleSync = 'ok';
+    } catch (syncErr) {
+      googleSync = 'failed';
+      console.error('Google sync on update failed:', syncErr);
+    }
 
-    return NextResponse.json({ appointment: data });
+    return NextResponse.json({ appointment: data, googleSync });
   } catch (err) {
     console.error('Admin update appointment:', err);
     return NextResponse.json({ error: 'Greška pri ažuriranju termina' }, { status: 500 });

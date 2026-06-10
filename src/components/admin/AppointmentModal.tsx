@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { formatPrice } from '@/lib/price-utils';
 import { APPOINTMENT_STATUS_LABELS } from '@/lib/appointments';
+import { toDatetimeLocalValue } from '@/lib/datetime-local';
 
 type Treatment = {
   id: string;
@@ -42,16 +43,6 @@ type Props = {
   onClose: () => void;
 };
 
-function toLocalDatetimeValue(isoString?: string): string {
-  if (!isoString) {
-    // Default to next hour, rounded
-    const d = new Date();
-    d.setHours(d.getHours() + 1, 0, 0, 0);
-    return d.toISOString().slice(0, 16);
-  }
-  return new Date(isoString).toISOString().slice(0, 16);
-}
-
 export default function AppointmentModal({ initialData, onSave, onDelete, onClose }: Props) {
   const isEdit = Boolean(initialData?.id);
 
@@ -74,7 +65,7 @@ export default function AppointmentModal({ initialData, onSave, onDelete, onClos
     client_id: initialData?.client_id ?? '',
     client: initialData?.client,
     treatment_id: initialData?.treatment_id ?? '',
-    starts_at: toLocalDatetimeValue(initialData?.starts_at),
+    starts_at: toDatetimeLocalValue(initialData?.starts_at),
     duration_minutes: initialData?.duration_minutes ?? 60,
     price_cents: initialData?.price_cents ?? 0,
     status: initialData?.status ?? 'scheduled',

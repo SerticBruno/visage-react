@@ -12,6 +12,8 @@ import { APPOINTMENT_EVENT_COLORS, APPOINTMENT_STATUS_LABELS, APPOINTMENT_STATUS
 import { formatPrice } from '@/lib/price-utils';
 import Link from 'next/link';
 
+import { toDatetimeLocalValue, fromDatetimeLocalValue } from '@/lib/datetime-local';
+
 const calendarViews = { [ROLLING_WEEK_VIEW]: RollingWeekView };
 
 const WORKDAY_START = new Date(1970, 0, 1, 7, 0, 0);
@@ -52,14 +54,6 @@ type CalendarEvent = {
 };
 
 type Stats = { today: number; thisWeek: number; noShowThisMonth: number };
-
-function toLocalDatetimeValue(isoString: string): string {
-  return new Date(isoString).toISOString().slice(0, 16);
-}
-
-function toISOFromLocal(localDt: string): string {
-  return new Date(localDt).toISOString();
-}
 
 export default function AdminTerminiPage() {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
@@ -209,7 +203,7 @@ export default function AdminTerminiPage() {
   }
 
   function handleSelectSlot(slot: SlotInfo) {
-    setPrefillStartsAt(new Date(slot.start).toISOString().slice(0, 16));
+    setPrefillStartsAt(toDatetimeLocalValue(slot.start));
     setEditingAppointment(null);
     setModalOpen(true);
   }
@@ -233,7 +227,7 @@ export default function AdminTerminiPage() {
     const body = {
       client_id: formData.client_id,
       treatment_id: formData.treatment_id,
-      starts_at: toISOFromLocal(formData.starts_at),
+      starts_at: fromDatetimeLocalValue(formData.starts_at),
       notes: formData.notes || null,
       status: formData.status,
       price_cents_override: formData.price_cents,
@@ -273,7 +267,7 @@ export default function AdminTerminiPage() {
         client_id: editingAppointment.client_id,
         client: editingAppointment.clients,
         treatment_id: editingAppointment.treatment_id,
-        starts_at: toLocalDatetimeValue(editingAppointment.starts_at),
+        starts_at: toDatetimeLocalValue(editingAppointment.starts_at),
         duration_minutes: editingAppointment.duration_minutes,
         price_cents: editingAppointment.price_cents,
         status: editingAppointment.status,

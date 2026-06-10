@@ -86,12 +86,16 @@ export async function POST(req: Request) {
       throw error;
     }
 
-    // Push to Google Calendar if connected (fire and forget)
-    syncAppointmentToGoogle(data).catch((e) =>
-      console.error('Google sync failed (non-fatal):', e)
-    );
+    let googleSync: 'ok' | 'skipped' | 'failed' = 'skipped';
+    try {
+      await syncAppointmentToGoogle(data);
+      googleSync = 'ok';
+    } catch (syncErr) {
+      googleSync = 'failed';
+      console.error('Google sync on create failed:', syncErr);
+    }
 
-    return NextResponse.json({ appointment: data }, { status: 201 });
+    return NextResponse.json({ appointment: data, googleSync }, { status: 201 });
   } catch (err) {
     console.error('Admin create appointment:', err);
     return NextResponse.json({ error: 'Greška pri kreiranju termina' }, { status: 500 });
