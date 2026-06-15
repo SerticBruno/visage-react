@@ -330,6 +330,28 @@ export default function ProductForm({
         ))}
       </div>
 
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="block">
+          <span className="text-sm font-medium text-gray-700">Popularity score (0–100)</span>
+          <p className="text-xs text-gray-500 mb-1">Ručni editorial boost za sortiranje po popularnosti</p>
+          <input
+            type="number"
+            min={0}
+            max={100}
+            value={values.popularityScore ?? 0}
+            onChange={(e) => update('popularityScore', Math.min(100, Math.max(0, Number(e.target.value) || 0)))}
+            className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+          />
+        </label>
+        <div className="block">
+          <span className="text-sm font-medium text-gray-700">Prodano (automatski)</span>
+          <p className="text-xs text-gray-500 mb-1">Ukupno prodanih komada iz plaćenih narudžbi</p>
+          <p className="mt-1 px-3 py-2 text-sm bg-gray-50 rounded-md border border-gray-200 text-gray-700">
+            {values.salesCount ?? 0} kom
+          </p>
+        </div>
+      </div>
+
       <div className="flex gap-3 pt-4 border-t">
         <button
           type="submit"

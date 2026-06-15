@@ -45,6 +45,7 @@ export async function fulfillOrder(
   }
 
   await decrementStockForItems(orderItems);
+  await incrementSalesForItems(orderItems);
 
   const paidAt = new Date().toISOString();
   const updatePayload: Record<string, string | null> = {
@@ -75,6 +76,15 @@ export async function fulfillOrder(
   await markRecoveryConversionIfEligible(orderId, paidAt);
 
   return { status: 'fulfilled', orderId };
+}
+
+async function incrementSalesForItems(items: OrderItemRow[]): Promise<void> {
+  for (const item of items) {
+    await supabase.rpc('increment_product_sales', {
+      p_product_id: item.product_id,
+      p_quantity: item.quantity,
+    });
+  }
 }
 
 async function decrementStockForItems(items: OrderItemRow[]): Promise<void> {

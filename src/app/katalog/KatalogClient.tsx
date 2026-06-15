@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useRef, useEffect, Fragment } from 'react';
+import { useState, useRef, useEffect, useMemo, Fragment } from 'react';
 import { FaChevronDown, FaChevronUp, FaSearch, FaChevronLeft, FaChevronRight, FaBox } from 'react-icons/fa';
 import { productTypes, skinTypes, skinConcerns, brands, type Product } from '@/data/products';
+import { sortProducts, type CatalogSortOption, CATALOG_SORT_LABELS } from '@/lib/catalog-sort';
 import { FaFire, FaSun, FaMoon, FaCrown, FaStar } from 'react-icons/fa6';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
@@ -37,7 +38,8 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   const [selectedSkinConcerns, setSelectedSkinConcerns] = useState<string[]>([]);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [selectedBadges, setSelectedBadges] = useState<string[]>([]);
-  
+  const [sortBy, setSortBy] = useState<CatalogSortOption>('popularity');
+
   // Accordion states for filter sections
   const [expandedSections, setExpandedSections] = useState({
     productTypes: true,
@@ -72,28 +74,31 @@ export default function KatalogClient({ products }: { products: Product[] }) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const filteredProducts = products.filter(product => {
-    const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         product.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         product.marka.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesProductType = selectedProductTypes.length === 0 || 
-      (product.productType && selectedProductTypes.includes(product.productType)) ||
-      (product.categories?.length && product.categories.some(c => selectedProductTypes.includes(c)));
-    const matchesSkinType = selectedSkinTypes.length === 0 || 
-      (product.skinType && product.skinType.some(skinType => selectedSkinTypes.includes(skinType)));
-    const matchesSkinConcern = selectedSkinConcerns.length === 0 || 
-      (product.skinConcern && product.skinConcern.some(concern => selectedSkinConcerns.includes(concern)));
-    const matchesBrands = selectedBrands.length === 0 || 
-      selectedBrands.includes(product.marka);
-    const matchesBadges = selectedBadges.length === 0 || 
-      (selectedBadges.includes('popular') && product.isPopular) ||
-      (selectedBadges.includes('day') && product.isForDay) ||
-      (selectedBadges.includes('night') && product.isForNight) ||
-      (selectedBadges.includes('recommended') && product.isRecommended) ||
-      (selectedBadges.includes('novo') && product.isNew) ||
-      (selectedBadges.includes('set') && product.isSet);
-    return matchesSearch && matchesProductType && matchesSkinType && matchesSkinConcern && matchesBrands && matchesBadges;
-  });
+  const filteredProducts = useMemo(() => {
+    const filtered = products.filter(product => {
+      const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           product.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           product.marka.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesProductType = selectedProductTypes.length === 0 || 
+        (product.productType && selectedProductTypes.includes(product.productType)) ||
+        (product.categories?.length && product.categories.some(c => selectedProductTypes.includes(c)));
+      const matchesSkinType = selectedSkinTypes.length === 0 || 
+        (product.skinType && product.skinType.some(skinType => selectedSkinTypes.includes(skinType)));
+      const matchesSkinConcern = selectedSkinConcerns.length === 0 || 
+        (product.skinConcern && product.skinConcern.some(concern => selectedSkinConcerns.includes(concern)));
+      const matchesBrands = selectedBrands.length === 0 || 
+        selectedBrands.includes(product.marka);
+      const matchesBadges = selectedBadges.length === 0 || 
+        (selectedBadges.includes('popular') && product.isPopular) ||
+        (selectedBadges.includes('day') && product.isForDay) ||
+        (selectedBadges.includes('night') && product.isForNight) ||
+        (selectedBadges.includes('recommended') && product.isRecommended) ||
+        (selectedBadges.includes('novo') && product.isNew) ||
+        (selectedBadges.includes('set') && product.isSet);
+      return matchesSearch && matchesProductType && matchesSkinType && matchesSkinConcern && matchesBrands && matchesBadges;
+    });
+    return sortProducts(filtered, sortBy);
+  }, [products, searchTerm, selectedProductTypes, selectedSkinTypes, selectedSkinConcerns, selectedBrands, selectedBadges, sortBy]);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -108,10 +113,10 @@ export default function KatalogClient({ products }: { products: Product[] }) {
   const endIndex = startIndex + productsPerPage;
   const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
-  // Reset to first page when filters change
+  // Reset to first page when filters or sort change
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, selectedProductTypes, selectedSkinTypes, selectedSkinConcerns, selectedBrands, selectedBadges]);
+  }, [searchTerm, selectedProductTypes, selectedSkinTypes, selectedSkinConcerns, selectedBrands, selectedBadges, sortBy]);
 
   // Handle URL parameter for auto-opening product modal
   useEffect(() => {
@@ -301,6 +306,16 @@ export default function KatalogClient({ products }: { products: Product[] }) {
       // Use requestAnimationFrame to ensure DOM is updated before scrolling
       requestAnimationFrame(scrollToProducts);
     }, 150); // Half of the transition duration
+  };
+
+  const handleSort = (option: CatalogSortOption) => {
+    setIsGridLoading(true);
+    setIsTransitioning(true);
+    setIsFiltering(true);
+    setTimeout(() => {
+      setSortBy(option);
+      requestAnimationFrame(scrollToProducts);
+    }, 150);
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -703,12 +718,6 @@ export default function KatalogClient({ products }: { products: Product[] }) {
                 </div>
               )}
 
-              {/* Results Count */}
-              <div className="border-t border-gray-200 pt-6">
-                <p className="text-sm text-gray-600">
-                  Pronađeno proizvoda: <span className="font-semibold">{filteredProducts.length}</span>
-                </p>
-              </div>
                 </div>
               </div>
             </div>
@@ -716,7 +725,28 @@ export default function KatalogClient({ products }: { products: Product[] }) {
 
           {/* Products Grid */}
           <div className="flex-1 scroll-mt-24" ref={productsRef} id="produkti">
-            {/* Products Grid */}
+            {/* Sort toolbar */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+              <p className="text-sm text-gray-600">
+                Pronađeno proizvoda: <span className="font-semibold">{filteredProducts.length}</span>
+              </p>
+              <div className="flex items-center gap-2">
+                <label htmlFor="catalog-sort" className="text-sm text-gray-600 whitespace-nowrap">
+                  Sortiraj po
+                </label>
+                <select
+                  id="catalog-sort"
+                  value={sortBy}
+                  onChange={(e) => handleSort(e.target.value as CatalogSortOption)}
+                  className="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-400 cursor-pointer w-full sm:w-auto"
+                >
+                  {(Object.keys(CATALOG_SORT_LABELS) as CatalogSortOption[]).map((opt) => (
+                    <option key={opt} value={opt}>{CATALOG_SORT_LABELS[opt]}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
             {isGridLoading ? (
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {Array.from({ length: productsPerPage }).map((_, i) => (

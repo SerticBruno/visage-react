@@ -39,6 +39,12 @@ export interface Product {
   benefits?: string[]; // Alternative to features for slider display
   // Image sizing properties
   imageNeedsResize?: boolean; // Flag for images that need smaller sizing
+  /** Editorial boost for catalog sort (0–100, set in admin) */
+  popularityScore?: number;
+  /** Total units sold across fulfilled orders (auto-incremented) */
+  salesCount?: number;
+  /** ISO timestamp from DB created_at — used for "Najnovije" sort */
+  createdAt?: string;
 }
 
 // Pro tip interface for product-specific tips

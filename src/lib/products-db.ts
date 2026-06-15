@@ -38,6 +38,8 @@ export interface DbProductRow {
   benefits: string[] | null;
   pro_tips: ProTip[] | null;
   published: boolean;
+  popularity_score: number;
+  sales_count: number;
   created_at: string;
   updated_at: string;
 }
@@ -86,6 +88,9 @@ export function rowToProduct(row: DbProductRow): Product {
     link: row.link ?? undefined,
     benefits: parseJsonArray<string>(row.benefits),
     imageNeedsResize: row.image_needs_resize || undefined,
+    popularityScore: row.popularity_score ?? 0,
+    salesCount: row.sales_count ?? 0,
+    createdAt: row.created_at,
   };
 }
 
@@ -131,6 +136,8 @@ export function productToRow(
     benefits: product.benefits ?? null,
     pro_tips: product.proTips ?? null,
     published,
+    popularity_score: product.popularityScore ?? 0,
+    sales_count: product.salesCount ?? 0,
   };
 }
 
@@ -166,8 +173,7 @@ export async function getProductsWithStock(): Promise<(Product & { quantity: num
   const { data, error } = await supabase
     .from('products')
     .select('*')
-    .eq('published', true)
-    .order('title', { ascending: true });
+    .eq('published', true);
 
   if (error) throw new Error(error.message);
 
@@ -178,21 +184,25 @@ export async function getProductsWithStock(): Promise<(Product & { quantity: num
 }
 
 export async function getPopularProducts(): Promise<Product[]> {
-  const popularIds = ['15', '31', '22', '11'];
   try {
-    const all = await getProducts();
-    if (all.length > 0) {
-      return popularIds
-        .map((id) => all.find((p) => p.id === id))
-        .filter((p): p is Product => !!p);
+    const { data, error } = await supabase
+      .from('products')
+      .select('*')
+      .eq('published', true);
+
+    if (!error && data && data.length > 0) {
+      return (data as DbProductRow[])
+        .map(rowToProduct)
+        .sort((a, b) => ((b.popularityScore ?? 0) + (b.salesCount ?? 0)) - ((a.popularityScore ?? 0) + (a.salesCount ?? 0)))
+        .slice(0, 4);
     }
   } catch (err) {
     console.warn('Popular products from DB failed:', err);
   }
   const { products: staticProducts } = await import('@/data/products');
-  return popularIds
-    .map((id) => staticProducts.find((p) => p.id === id))
-    .filter((p): p is Product => !!p);
+  return [...staticProducts]
+    .sort((a, b) => ((b.popularityScore ?? 0) + (b.salesCount ?? 0)) - ((a.popularityScore ?? 0) + (a.salesCount ?? 0)))
+    .slice(0, 4);
 }
 
 export async function getProductQuantities(
