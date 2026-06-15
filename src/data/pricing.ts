@@ -77,7 +77,7 @@ export const pricingData: PricingItem[] = [
     id: "signature-dermaplaning",
     title: "Signature Dermaplaning Facial",
     description: "Čišćenje lica, dermaplaning, enzimski piling, Marshmallow Whip Hydrating maska, serum, krema, spf",
-    price: "100 EUR",
+    price: "110 EUR",
     category: "Beauty Tretmani",
     isRecommended: true
   },
