@@ -63,7 +63,7 @@ export const pricingData: PricingItem[] = [
     id: "firming-peptide-facial",
     title: "Firming Peptide Facial",
     description: "Čišćenje lica, maska, serum, krema, spf",
-    price: "60 EUR",
+    price: "70 EUR",
     category: "Beauty Tretmani"
   },
   {
