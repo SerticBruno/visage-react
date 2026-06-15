@@ -136,14 +136,14 @@ export const pricingData: PricingItem[] = [
     id: "botox-25",
     title: "Botox 25",
     description: "25 jedinica botoxa",
-    price: "105 EUR",
+    price: "120 EUR",
     category: "Botox"
   },
   {
     id: "botox-50",
     title: "Botox 50",
     description: "50 jedinica botoxa",
-    price: "210 EUR",
+    price: "240 EUR",
     category: "Botox",
     isPopular: true,
     isRecommended: true,
@@ -152,7 +152,7 @@ export const pricingData: PricingItem[] = [
     id: "botox-100",
     title: "Botox 100",
     description: "100 jedinica botoxa",
-    price: "420 EUR",
+    price: "480 EUR",
     category: "Botox"
   },
 
