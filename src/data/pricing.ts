@@ -60,15 +60,22 @@ export const pricingData: PricingItem[] = [
     duration: "20 min"
   },
   {
-    id: "firming-peptide-facial",
-    title: "Firming Peptide Facial",
+    id: "peptidna-maska",
+    title: "Peptidna maska",
     description: "Čišćenje lica, maska, serum, krema, spf",
     price: "70 EUR",
     category: "Beauty Tretmani"
   },
   {
-    id: "marshmallow-facial",
-    title: "Marshmallow Facial",
+    id: "marshmallow-hydrating-maska",
+    title: "Marshmallow Hydrating maska",
+    description: "Čišćenje lica, maska, serum, krema, spf",
+    price: "60 EUR",
+    category: "Beauty Tretmani"
+  },
+  {
+    id: "charcoal-clarifying-maska",
+    title: "Charcoal Clarifying maska",
     description: "Čišćenje lica, maska, serum, krema, spf",
     price: "60 EUR",
     category: "Beauty Tretmani"
@@ -80,6 +87,14 @@ export const pricingData: PricingItem[] = [
     price: "110 EUR",
     category: "Beauty Tretmani",
     isRecommended: true
+  },
+  {
+    id: "firming-peptide-maska",
+    title: "Firming Peptide Facial",
+    description: "Čišćenje lica, dermaplaning, enzimski piling, Firming Peptide maska, serum, krema, spf",
+    price: "120 EUR",
+    category: "Beauty Tretmani",
+    isPopular: true
   },
   {
     id: "beyond-botox-facial",
