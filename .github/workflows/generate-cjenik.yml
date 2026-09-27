@@ -2,9 +2,9 @@ name: Generate digitalni cjenik
 
 on:
   schedule:
-    # TEST: 12:55 Europe/Zagreb (CEST=UTC+2) → 10:55 UTC — every day while testing
+    # TEST: 13:01 Europe/Zagreb (CEST=UTC+2) → 11:01 UTC
     # After test, restore: '45 5 * * 1-5' (≈06:45–07:45 Zagreb, weekdays, before 08:00)
-    - cron: '55 10 * * *'
+    - cron: '1 11 * * *'
   push:
     paths:
       - 'src/data/pricing.ts'
