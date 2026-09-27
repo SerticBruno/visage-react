@@ -5,6 +5,7 @@ import { Transition } from '@headlessui/react';
 import { FaTimes, FaLeaf, FaTag, FaFire, FaShieldAlt, FaStar, FaBox } from 'react-icons/fa';
 import Image from 'next/image';
 import { Product } from '@/data/products';
+import AnchorPriceDisplay from '@/components/ui/AnchorPriceDisplay';
 
 interface ProductModalProps {
   isOpen: boolean;
@@ -203,6 +204,12 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                          ) : (
                            <span className="text-lg font-bold text-slate-900">{currentProduct.price}</span>
                          )}
+                         <AnchorPriceDisplay
+                           anchorPrice={currentProduct.anchorPrice}
+                           anchorDate={currentProduct.anchorDate}
+                           size="sm"
+                           className="mt-1 text-center"
+                         />
                          {currentProduct.isOnSale && currentProduct.oldPrice && (
                            <span className="bg-rose-500 text-white text-xs font-bold w-8 h-8 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center mt-1">
                              -{Math.round((1 - parseFloat(currentProduct.price) / parseFloat(currentProduct.oldPrice)) * 100)}%
@@ -287,6 +294,12 @@ export default function ProductModal({ isOpen, onClose, product, onProductChange
                           ) : (
                             <span className="text-xl font-bold text-slate-900">{currentProduct.price}</span>
                           )}
+                          <AnchorPriceDisplay
+                            anchorPrice={currentProduct.anchorPrice}
+                            anchorDate={currentProduct.anchorDate}
+                            size="sm"
+                            className="mt-0.5"
+                          />
                         </div>
                         {currentProduct.isOnSale && currentProduct.oldPrice && (
                           <span className="bg-rose-500 text-white text-sm font-bold w-12 h-12 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center">

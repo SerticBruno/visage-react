@@ -8,6 +8,7 @@ import { Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import ComboPackageNavigationModal from '@/components/ui/ComboPackageNavigationModal';
+import AnchorPriceDisplay from '@/components/ui/AnchorPriceDisplay';
 import { useIntersectionObserver } from '@/lib/useIntersectionObserver';
 
 import 'swiper/css';
@@ -146,7 +147,7 @@ export default function ComboPackagesSectionPreview({ paddingTop, paddingBottom 
                           <p className="text-base text-white line-clamp-2 mb-2">
                             {comboPackage.description}
                           </p>
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2 flex-wrap">
                             <span className="text-lg font-bold text-white">
                               {comboPackage.price}
                             </span>
@@ -156,6 +157,12 @@ export default function ComboPackagesSectionPreview({ paddingTop, paddingBottom 
                               </span>
                             )}
                           </div>
+                          <AnchorPriceDisplay
+                            anchorPrice={comboPackage.anchorPrice}
+                            anchorDate={comboPackage.anchorDate}
+                            size="sm"
+                            className="mt-1 text-white/80 [&_span]:text-white/90"
+                          />
                         </div>
                       </div>
 
@@ -164,7 +171,7 @@ export default function ComboPackagesSectionPreview({ paddingTop, paddingBottom 
                         <h3 className="text-xl font-bold text-white">
                           {comboPackage.title}
                         </h3>
-                        <div className="flex items-center gap-2 mt-1">
+                        <div className="flex items-center gap-2 mt-1 flex-wrap">
                           <span className="text-lg font-bold text-white">
                             {comboPackage.price}
                           </span>
@@ -174,6 +181,12 @@ export default function ComboPackagesSectionPreview({ paddingTop, paddingBottom 
                             </span>
                           )}
                         </div>
+                        <AnchorPriceDisplay
+                          anchorPrice={comboPackage.anchorPrice}
+                          anchorDate={comboPackage.anchorDate}
+                          size="sm"
+                          className="mt-1 text-white/80 [&_span]:text-white/90"
+                        />
                       </div>
 
                       {/* Desktop: Hover Content - Hidden by default, appears on hover */}
@@ -188,18 +201,26 @@ export default function ComboPackagesSectionPreview({ paddingTop, paddingBottom 
                           <p className="text-sm text-white line-clamp-3 mb-2">
                             {comboPackage.description}
                           </p>
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2">
-                              <span className="text-lg font-bold text-white">
-                                {comboPackage.price}
-                              </span>
-                              {comboPackage.oldPrice && (
-                                <span className="text-sm text-white/80 line-through">
-                                  {comboPackage.oldPrice}
+                          <div className="flex items-center justify-between gap-2">
+                            <div>
+                              <div className="flex items-center gap-2 flex-wrap">
+                                <span className="text-lg font-bold text-white">
+                                  {comboPackage.price}
                                 </span>
-                              )}
+                                {comboPackage.oldPrice && (
+                                  <span className="text-sm text-white/80 line-through">
+                                    {comboPackage.oldPrice}
+                                  </span>
+                                )}
+                              </div>
+                              <AnchorPriceDisplay
+                                anchorPrice={comboPackage.anchorPrice}
+                                anchorDate={comboPackage.anchorDate}
+                                size="sm"
+                                className="mt-1 text-white/80 [&_span]:text-white/90"
+                              />
                             </div>
-                            <span className="text-sm text-white font-medium underline">
+                            <span className="text-sm text-white font-medium underline flex-shrink-0">
                               Saznajte više
                             </span>
                           </div>

@@ -9,6 +9,7 @@ import { FaHeart } from 'react-icons/fa6';
 import { pricingData } from '@/data/pricing';
 import { products, Product } from '@/data/products';
 import ProductModal from '@/components/ui/ProductModal';
+import AnchorPriceDisplay from '@/components/ui/AnchorPriceDisplay';
 
 
 interface ServiceDetailsSectionProps {
@@ -70,8 +71,13 @@ const renderPricingTable = (service: Service) => {
                         </div>
                         <p className="text-sm text-gray-600">{item.description}</p>
                       </div>
-                      <div className="flex items-center justify-between sm:justify-end gap-4">
+                      <div className="flex flex-col items-end sm:items-end gap-1">
                         <div className="text-base font-medium text-gray-900">{item.price}</div>
+                        <AnchorPriceDisplay
+                          anchorPrice={item.anchorPrice}
+                          anchorDate={item.anchorDate}
+                          size="sm"
+                        />
                       </div>
                     </div>
                   </div>

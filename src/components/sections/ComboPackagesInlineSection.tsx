@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { comboPackages } from '@/data/comboPackages';
 import { FaCheck, FaPlus, FaArrowRight } from 'react-icons/fa';
+import AnchorPriceDisplay from '@/components/ui/AnchorPriceDisplay';
 
 export default function ComboPackagesInlineSection() {
   return (
@@ -25,12 +26,17 @@ export default function ComboPackagesInlineSection() {
                 <div className="text-center mb-6 md:mb-8">
                   <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{pkg.title}</h3>
                   <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg">{pkg.description}</p>
-                  <div className="flex items-baseline justify-center gap-2 md:gap-3">
+                  <div className="flex items-baseline justify-center gap-2 md:gap-3 flex-wrap">
                     <span className="text-2xl md:text-3xl font-bold text-primary">{pkg.price}</span>
                     {pkg.oldPrice && (
                       <span className="text-lg md:text-xl text-gray-400 line-through">{pkg.oldPrice}</span>
                     )}
                   </div>
+                  <AnchorPriceDisplay
+                    anchorPrice={pkg.anchorPrice}
+                    anchorDate={pkg.anchorDate}
+                    className="mt-2"
+                  />
                 </div>
 
                 <div className="mb-6 md:mb-8">

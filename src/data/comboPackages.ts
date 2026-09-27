@@ -4,6 +4,10 @@ export interface ComboPackage {
   description: string;
   image: string;
   price: string;
+  /** Regular package price on the anchor reference date (sidrena cijena). */
+  anchorPrice: string;
+  /** ISO date `YYYY-MM-DD`; defaults to 2026-09-10 when omitted. */
+  anchorDate?: string;
   oldPrice?: string;
   services: {
     id: string;
@@ -32,6 +36,7 @@ export const comboPackages: ComboPackage[] = [
     description: "Elegantna definicija linije čeljusti i svjež izgled vrata",
     image: "/images/services/woman-face-visage-estetski-studio.webp",
     price: "635 EUR",
+    anchorPrice: "635 EUR",
     oldPrice: "750 EUR",
     services: [
       { 
@@ -61,6 +66,7 @@ export const comboPackages: ComboPackage[] = [
     description: "Intenzivan tretman za poticanje rasta kose i jačanje vlasišta",
     image: "/images/services/mezoterapija/mezoterapija-visage-estetski-studio.jpg",
     price: "784 EUR",
+    anchorPrice: "784 EUR",
     oldPrice: "905 EUR",
     services: [
       { 
@@ -90,6 +96,7 @@ export const comboPackages: ComboPackage[] = [
     description: "Kombinacija liftinga i prirodnog volumena za brzo osvježenje kože",
     image: "/images/services/woman-face-visage-estetski-studio.webp",
     price: "445 EUR",
+    anchorPrice: "445 EUR",
     oldPrice: "525 EUR",
     services: [
       { 
@@ -118,6 +125,7 @@ export const comboPackages: ComboPackage[] = [
     description: "Regeneracija kože na staničnoj razini",
     image: "/images/services/skin-boosters-hero-visage-estetski-studio.webp",
     price: "926 EUR",
+    anchorPrice: "926 EUR",
     oldPrice: "1090 EUR",
     services: [
       { 
@@ -152,6 +160,7 @@ export const comboPackages: ComboPackage[] = [
     description: "Ciljani tretmani za svježinu i definiciju donjeg dijela lica",
     image: "/images/services/woman-face-visage-estetski-studio.webp",
     price: "930 EUR",
+    anchorPrice: "930 EUR",
     oldPrice: "1095 EUR",
     services: [
       { 
@@ -188,6 +197,7 @@ export const comboPackages: ComboPackage[] = [
     description: "Otvoren i osvježen pogled bez skalpela",
     image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg",
     price: "720 EUR",
+    anchorPrice: "720 EUR",
     oldPrice: "845 EUR",
     services: [
       { 
@@ -217,6 +227,7 @@ export const comboPackages: ComboPackage[] = [
     description: "Osvježenje i podizanje okoloočnih bora",
     image: "/images/services/plasmage/plasmage-estetski-studio-visage-sisak.jpg",
     price: "435 EUR",
+    anchorPrice: "435 EUR",
     oldPrice: "510 EUR",
     services: [
       { 
@@ -246,6 +257,7 @@ export const comboPackages: ComboPackage[] = [
     description: "Zaboravi na umornu kožu!",
     image: "/images/services/woman-face-visage-estetski-studio.webp",
     price: "300 EUR",
+    anchorPrice: "300 EUR",
     oldPrice: "350 EUR",
     services: [
       { 

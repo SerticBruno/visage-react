@@ -3,6 +3,10 @@ export interface PricingItem {
   title: string;
   description: string;
   price: string;
+  /** Regular price that applied on the anchor reference date (sidrena cijena). */
+  anchorPrice: string;
+  /** ISO date `YYYY-MM-DD`; defaults to 2026-09-10 when omitted. */
+  anchorDate?: string;
   category: string;
   duration?: string;
   features?: string[];
@@ -29,8 +33,7 @@ export const pricingCategories = [
   "Mezoterapija Mesoject Gunom",
   "Plasmage",
   "PRP",
-  "Skin Boosteri",
-  "TOSKANI Proizvodi"
+  "Skin Boosteri"
 ];
 
 export const pricingData: PricingItem[] = [
@@ -40,6 +43,7 @@ export const pricingData: PricingItem[] = [
     title: "Konzultacije",
     description: "Ako tretman radite kod nas cijena konzultacija se oduzima od cijene tretmana",
     price: "40 EUR",
+    anchorPrice: "40 EUR",
     category: "Konzultacije"
   },
 
@@ -49,6 +53,7 @@ export const pricingData: PricingItem[] = [
     title: "Dermaplaning",
     description: "Čišćenje lica, dermaplaning, umirujuća maska",
     price: "70 EUR",
+    anchorPrice: "70 EUR",
     category: "Beauty Tretmani"
   },
   {
@@ -56,6 +61,7 @@ export const pricingData: PricingItem[] = [
     title: "Masaža Lica",
     description: "Trajanje 20min",
     price: "20 EUR",
+    anchorPrice: "20 EUR",
     category: "Beauty Tretmani",
     duration: "20 min"
   },
@@ -64,6 +70,7 @@ export const pricingData: PricingItem[] = [
     title: "Peptidna maska",
     description: "Čišćenje lica, maska, serum, krema, spf",
     price: "70 EUR",
+    anchorPrice: "70 EUR",
     category: "Beauty Tretmani"
   },
   {
@@ -71,6 +78,7 @@ export const pricingData: PricingItem[] = [
     title: "Marshmallow Hydrating maska",
     description: "Čišćenje lica, maska, serum, krema, spf",
     price: "60 EUR",
+    anchorPrice: "60 EUR",
     category: "Beauty Tretmani"
   },
   {
@@ -78,6 +86,7 @@ export const pricingData: PricingItem[] = [
     title: "Charcoal Clarifying maska",
     description: "Čišćenje lica, maska, serum, krema, spf",
     price: "60 EUR",
+    anchorPrice: "60 EUR",
     category: "Beauty Tretmani"
   },
   {
@@ -85,6 +94,7 @@ export const pricingData: PricingItem[] = [
     title: "Signature Dermaplaning Facial",
     description: "Čišćenje lica, dermaplaning, enzimski piling, Marshmallow Whip Hydrating maska, serum, krema, spf",
     price: "110 EUR",
+    anchorPrice: "110 EUR",
     category: "Beauty Tretmani",
     isRecommended: true
   },
@@ -93,6 +103,7 @@ export const pricingData: PricingItem[] = [
     title: "Firming Peptide Facial",
     description: "Čišćenje lica, dermaplaning, enzimski piling, Firming Peptide maska, serum, krema, spf",
     price: "120 EUR",
+    anchorPrice: "120 EUR",
     category: "Beauty Tretmani",
     isPopular: true
   },
@@ -101,6 +112,7 @@ export const pricingData: PricingItem[] = [
     title: "Beyond Botox Facial",
     description: "Čišćenje lica, dermaplaning, kemijski piling, 1 LED fototerapija, Firming peptide maska, okoloočna njega, serum, krema, spf",
     price: "200 EUR",
+    anchorPrice: "200 EUR",
     category: "Beauty Tretmani",
     isPopular: true
   },
@@ -112,6 +124,7 @@ export const pricingData: PricingItem[] = [
     title: "LED Fototerapija - Pojedinačni Tretman",
     description: "1 tretman LED fototerapije u trajanju od 30 min",
     price: "25 EUR",
+    anchorPrice: "25 EUR",
     category: "LED Fototerapija",
     isNew: true,
     duration: "30 min"
@@ -121,6 +134,7 @@ export const pricingData: PricingItem[] = [
     title: "LED Fototerapija - Standard Paket",
     description: "Paket od 6 tretmana LED fototerapije",
     price: "135 EUR",
+    anchorPrice: "135 EUR",
     category: "LED Fototerapija",
     isPackage: true,
     isNew: true,
@@ -131,6 +145,7 @@ export const pricingData: PricingItem[] = [
     title: "LED Fototerapija - Premium Paket",
     description: "Paket od 10 tretmana LED fototerapije",
     price: "220 EUR",
+    anchorPrice: "220 EUR",
     category: "LED Fototerapija",
     isPopular: true,
     isPackage: true,
@@ -142,6 +157,7 @@ export const pricingData: PricingItem[] = [
     title: "LED Fototerapija - Dodatak",
     description: "Kao dodatak drugom tretmanu u trajanju od 15min",
     price: "15 EUR",
+    anchorPrice: "15 EUR",
     isNew: true,
     category: "LED Fototerapija",
     duration: "15 min"
@@ -152,6 +168,7 @@ export const pricingData: PricingItem[] = [
     title: "Botox 25",
     description: "25 jedinica botoxa",
     price: "120 EUR",
+    anchorPrice: "120 EUR",
     category: "Botox"
   },
   {
@@ -159,6 +176,7 @@ export const pricingData: PricingItem[] = [
     title: "Botox 50",
     description: "50 jedinica botoxa",
     price: "240 EUR",
+    anchorPrice: "240 EUR",
     category: "Botox",
     isPopular: true,
     isRecommended: true,
@@ -168,6 +186,7 @@ export const pricingData: PricingItem[] = [
     title: "Botox 100",
     description: "100 jedinica botoxa",
     price: "480 EUR",
+    anchorPrice: "480 EUR",
     category: "Botox"
   },
 
@@ -177,6 +196,7 @@ export const pricingData: PricingItem[] = [
     title: "Aliaxin",
     description: "1 ml",
     price: "315 EUR",
+    anchorPrice: "315 EUR",
     category: "Dermalni Fileri",
     isPopular: true,
   },
@@ -185,6 +205,7 @@ export const pricingData: PricingItem[] = [
     title: "Model H",
     description: "1 ml",
     price: "315 EUR",
+    anchorPrice: "315 EUR",
     category: "Dermalni Fileri",
     isNew: true,
   },
@@ -194,6 +215,7 @@ export const pricingData: PricingItem[] = [
     title: "Hijaluronidaza",
     description: "Enzim za razgradnju hijaluronske kiseline",
     price: "53 EUR",
+    anchorPrice: "53 EUR",
     category: "Hijaluronidaza"
   },
 
@@ -203,6 +225,7 @@ export const pricingData: PricingItem[] = [
     title: "Standard",
     description: "1 tretman kemijskog pilinga lica",
     price: "55 EUR",
+    anchorPrice: "55 EUR",
     category: "Kemijski Piling"
   },
   {
@@ -210,6 +233,7 @@ export const pricingData: PricingItem[] = [
     title: "Standard Paket",
     description: "4 tretmana kemijskog pilinga lica",
     price: "195 EUR",
+    anchorPrice: "195 EUR",
     category: "Kemijski Piling",
     isPackage: true,
     isRecommended: true,
@@ -220,6 +244,7 @@ export const pricingData: PricingItem[] = [
     title: "Premium",
     description: "1 tretman kemijskog pilinga lica, vrata i dekoltea",
     price: "75 EUR",
+    anchorPrice: "75 EUR",
     category: "Kemijski Piling"
   },
   {
@@ -227,6 +252,7 @@ export const pricingData: PricingItem[] = [
     title: "Premium Paket",
     description: "4 tretmana kemijskog pilinga lica, vrata i dekoltea",
     price: "270 EUR",
+    anchorPrice: "270 EUR",
     category: "Kemijski Piling",
     isPackage: true,
     packageDetails: "4 tretmana"
@@ -238,6 +264,7 @@ export const pricingData: PricingItem[] = [
     title: "Neck Refine",
     description: "Uključuje botox 50 jedinica, Y zona 5 mezoterapija otapanja i zatezanja podbratka i vrata",
     price: "635 EUR",
+    anchorPrice: "635 EUR",
     category: "Kombinirani Paketi",
     isPopular: true,
     isNew: true,
@@ -248,6 +275,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair Boost",
     description: "Uključuje 5 tretmana mezoterapije vlasišta velike zone i 2 PRP tretmana",
     price: "784 EUR",
+    anchorPrice: "784 EUR",
     category: "Kombinirani Paketi",
     isRecommended: true,
     isLimited: true
@@ -257,6 +285,7 @@ export const pricingData: PricingItem[] = [
     title: "Fresh Up",
     description: "Uključuje botox 50 jedinica, dermalni filer 1ml",
     price: "445 EUR",
+    anchorPrice: "445 EUR",
     category: "Kombinirani Paketi",
     isLimited: true
   },
@@ -265,6 +294,7 @@ export const pricingData: PricingItem[] = [
     title: "Skin Revive",
     description: "Uključuje skin booster TKN HA3 2 tretmana, 2 PRP tretmana, 2 LED fototerapija",
     price: "830 EUR",
+    anchorPrice: "830 EUR",
     category: "Kombinirani Paketi",
     isLimited: true
   },
@@ -273,6 +303,7 @@ export const pricingData: PricingItem[] = [
     title: "Glow & Define",
     description: "Uključuje mezoterapija dermapenom 4 4 tretmana, Y zona 5 tretmana, fototerapija 5 tretmana",
     price: "920 EUR",
+    anchorPrice: "920 EUR",
     category: "Kombinirani Paketi",
     isNew: true,
     isLimited: true
@@ -282,6 +313,7 @@ export const pricingData: PricingItem[] = [
     title: "Eye Refresh",
     description: "Uključuje plasmage donjeg ili gornjeg kapka, botox 50 jedinica",
     price: "780 EUR",
+    anchorPrice: "780 EUR",
     category: "Kombinirani Paketi",
     isPopular: true,
     isLimited: true
@@ -291,6 +323,7 @@ export const pricingData: PricingItem[] = [
     title: "Eye Lift",
     description: "Uključuje plasmage okoloočnih bora, botox 50 jedinica",
     price: "420 EUR",
+    anchorPrice: "420 EUR",
     category: "Kombinirani Paketi",
     isPopular: true,
     isLimited: true
@@ -300,6 +333,7 @@ export const pricingData: PricingItem[] = [
     title: "LumiFusion",
     description: "Uključuje PRP tretman, dermaplaning i LED fototerapiju",
     price: "300 EUR",
+    anchorPrice: "300 EUR",
     category: "Kombinirani Paketi",
     isNew: true,
     isLimited: true
@@ -313,6 +347,7 @@ export const pricingData: PricingItem[] = [
     title: "Microneedling Face",
     description: "1 tretman lica Dermapenom 4",
     price: "120 EUR",
+    anchorPrice: "120 EUR",
     category: "Mezoterapija Dermapenom 4"
   },
   {
@@ -320,6 +355,7 @@ export const pricingData: PricingItem[] = [
     title: "Microneedling Face Standard Paket",
     description: "paket od 4 tretmana lica Dermapenom 4",
     price: "435 EUR",
+    anchorPrice: "435 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     isRecommended: true,
@@ -331,6 +367,7 @@ export const pricingData: PricingItem[] = [
     title: "Microneedling Face Premium Paket",
     description: "paket od 6 tretmana lica Dermapenom 4",
     price: "615 EUR",
+    anchorPrice: "615 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     packageDetails: "6 tretmana"
@@ -340,6 +377,7 @@ export const pricingData: PricingItem[] = [
     title: "Microneedling Beauty",
     description: "1 tretman lica, vrata i dekoltea Dermapenom 4",
     price: "155 EUR",
+    anchorPrice: "155 EUR",
     category: "Mezoterapija Dermapenom 4"
   },
   {
@@ -347,6 +385,7 @@ export const pricingData: PricingItem[] = [
     title: "Microneedling Beauty Standard Paket",
     description: "paket od 4 tretmana lica, vrata i dekoltea Dermapenom 4",
     price: "560 EUR",
+    anchorPrice: "560 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     packageDetails: "4 tretmana"
@@ -356,6 +395,7 @@ export const pricingData: PricingItem[] = [
     title: "Microneedling Beauty Premium Paket",
     description: "6 tretmana lica, vrata i dekoltea Dermapenom 4",
     price: "835 EUR",
+    anchorPrice: "835 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     packageDetails: "6 tretmana"
@@ -365,6 +405,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Face",
     description: "1 tretman lica egzosomima",
     price: "175 EUR",
+    anchorPrice: "175 EUR",
     isNew: true,
     category: "Mezoterapija Dermapenom 4"
   },
@@ -373,6 +414,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Face Classic",
     description: "Paket od 4 tretmana lica egzosomima",
     price: "630 EUR",
+    anchorPrice: "630 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     isNew: true,
@@ -383,6 +425,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Hair",
     description: "1 tretman vlasišta egzosomima",
     price: "175 EUR",
+    anchorPrice: "175 EUR",
     isNew: true,
     category: "Mezoterapija Dermapenom 4"
   },
@@ -391,6 +434,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Hair Classic",
     description: "Paket od 4 tretmana vlasišta egzosomima",
     price: "630 EUR",
+    anchorPrice: "630 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     isNew: true,
@@ -401,6 +445,7 @@ export const pricingData: PricingItem[] = [
     title: "Y Zona",
     description: "5 tretmana topljenja i zatezanja podbratka i vrata",
     price: "540 EUR",
+    anchorPrice: "540 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     isPopular: true,
@@ -412,6 +457,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair S",
     description: "1 mezoterapija male zone vlasišta",
     price: "60 EUR",
+    anchorPrice: "60 EUR",
     category: "Mezoterapija Dermapenom 4"
   },
   {
@@ -419,6 +465,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair S - Standard Paket",
     description: "5 mezoterapija male zone vlasišta",
     price: "270 EUR",
+    anchorPrice: "270 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     packageDetails: "5 tretmana"
@@ -428,6 +475,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair S - Premium Paket",
     description: "10 mezoterapija male zone vlasišta",
     price: "500 EUR",
+    anchorPrice: "500 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     packageDetails: "10 tretmana"
@@ -437,6 +485,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair L",
     description: "1 mezoterapija velike zone vlasišta",
     price: "90 EUR",
+    anchorPrice: "90 EUR",
     category: "Mezoterapija Dermapenom 4"
   },
   {
@@ -444,6 +493,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair L - Standard Paket",
     description: "5 mezoterapija velike zone vlasišta",
     price: "405 EUR",
+    anchorPrice: "405 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     isPopular: true,
@@ -454,6 +504,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair L - Premium Paket",
     description: "10 mezoterapija velike zone vlasišta",
     price: "770 EUR",
+    anchorPrice: "770 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     packageDetails: "10 tretmana"
@@ -463,6 +514,7 @@ export const pricingData: PricingItem[] = [
     title: "Brows",
     description: "Nadoplata na tretman mezoterapije vlasišta",
     price: "10 EUR",
+    anchorPrice: "10 EUR",
     category: "Mezoterapija Dermapenom 4"
   },
   {
@@ -470,6 +522,7 @@ export const pricingData: PricingItem[] = [
     title: "Brows Paket",
     description: "5 mezoterapija obrva",
     price: "185 EUR",
+    anchorPrice: "185 EUR",
     category: "Mezoterapija Dermapenom 4",
     isPackage: true,
     packageDetails: "5 tretmana"
@@ -479,6 +532,7 @@ export const pricingData: PricingItem[] = [
     title: "Beard",
     description: "Nadoplata na tretman mezoterapije vlasišta",
     price: "20 EUR",
+    anchorPrice: "20 EUR",
     category: "Mezoterapija Dermapenom 4"
   },
   // Mezoterapija Mesoject Gunom
@@ -487,6 +541,7 @@ export const pricingData: PricingItem[] = [
     title: "Standard",
     description: "1 mezoterapija lica",
     price: "95 EUR",
+    anchorPrice: "95 EUR",
     category: "Mezoterapija Mesoject Gunom"
   },
   {
@@ -494,6 +549,7 @@ export const pricingData: PricingItem[] = [
     title: "Standard Paket",
     description: "4 mezoterapije lica i Hydraboost usana",
     price: "340 EUR",
+    anchorPrice: "340 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     packageDetails: "4 tretmana"
@@ -503,6 +559,7 @@ export const pricingData: PricingItem[] = [
     title: "Premium",
     description: "1 mezoterapija lica, vrata i dekoltea",
     price: "130 EUR",
+    anchorPrice: "130 EUR",
     category: "Mezoterapija Mesoject Gunom"
   },
   {
@@ -510,6 +567,7 @@ export const pricingData: PricingItem[] = [
     title: "Premium Paket",
     description: "4 mezoterapije lica i vrata",
     price: "470 EUR",
+    anchorPrice: "470 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     packageDetails: "4 tretmana"
@@ -519,6 +577,7 @@ export const pricingData: PricingItem[] = [
     title: "Duosomal Standard",
     description: "1 kemijski piling Duosomal, mezoterapiju lica i skin architect masku",
     price: "130 EUR",
+    anchorPrice: "130 EUR",
     category: "Mezoterapija Mesoject Gunom"
   },
   {
@@ -526,6 +585,7 @@ export const pricingData: PricingItem[] = [
     title: "Duosomal Standard Paket",
     description: "5 kemijski piling Duosomal, mezoterapiju lica i skin architect masku",
     price: "520 EUR",
+    anchorPrice: "520 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     packageDetails: "5 tretmana"
@@ -535,6 +595,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair S",
     description: "1 mezoterapija male zone vlasišta",
     price: "45 EUR",
+    anchorPrice: "45 EUR",
     category: "Mezoterapija Mesoject Gunom"
   },
   {
@@ -542,6 +603,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair S - Standard Paket",
     description: "5 mezoterapija male zone vlasišta",
     price: "200 EUR",
+    anchorPrice: "200 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     isPopular: true,
@@ -552,6 +614,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair S - Premium Paket",
     description: "10 mezoterapija male zone vlasišta",
     price: "360 EUR",
+    anchorPrice: "360 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     packageDetails: "10 tretmana"
@@ -561,6 +624,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair L",
     description: "1 mezoterapija velike zone vlasišta",
     price: "75 EUR",
+    anchorPrice: "75 EUR",
     category: "Mezoterapija Mesoject Gunom"
   },
   {
@@ -568,6 +632,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair L - Standard Paket",
     description: "5 mezoterapija velike zone vlasišta",
     price: "335 EUR",
+    anchorPrice: "335 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     isRecommended: true,
@@ -578,6 +643,7 @@ export const pricingData: PricingItem[] = [
     title: "Hair L - Premium Paket",
     description: "10 mezoterapija velike zone vlasišta",
     price: "630 EUR",
+    anchorPrice: "630 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     packageDetails: "10 tretmana"
@@ -587,6 +653,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Face",
     description: "Jedan tretman lica egzosomima",
     price: "150 EUR",
+    anchorPrice: "150 EUR",
     isNew: true,
     category: "Mezoterapija Mesoject Gunom"
   },
@@ -595,6 +662,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Face Classic",
     description: "Paket od 4 tretmana lica egzosomima",
     price: "540 EUR",
+    anchorPrice: "540 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     isRecommended: true,
@@ -606,6 +674,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Hair",
     description: "Jedan tretman vlasišta egzosomima",
     price: "150 EUR",
+    anchorPrice: "150 EUR",
     isNew: true,
     category: "Mezoterapija Mesoject Gunom"
   },
@@ -614,6 +683,7 @@ export const pricingData: PricingItem[] = [
     title: "Exo Hair Classic",
     description: "Paket od 4 tretmana vlasišta egzosomima",
     price: "540 EUR",
+    anchorPrice: "540 EUR",
     category: "Mezoterapija Mesoject Gunom",
     isPackage: true,
     isNew: true,
@@ -624,6 +694,7 @@ export const pricingData: PricingItem[] = [
     title: "Brows",
     description: "Nadoplata na tretman mezoterapije vlasišta",
     price: "10 EUR",
+    anchorPrice: "10 EUR",
     category: "Mezoterapija Mesoject Gunom"
   },
   {
@@ -631,6 +702,7 @@ export const pricingData: PricingItem[] = [
     title: "Beard",
     description: "Nadoplata na tretman mezoterapije vlasišta",
     price: "15 EUR",
+    anchorPrice: "15 EUR",
     category: "Mezoterapija Mesoject Gunom"
   },
 
@@ -640,6 +712,7 @@ export const pricingData: PricingItem[] = [
     title: "Eyes Standard",
     description: "Nekirurško podizanje gornjeg ili donjeg kapka",
     price: "600 EUR",
+    anchorPrice: "600 EUR",
     isPopular: true,
     category: "Plasmage"
   },
@@ -648,6 +721,7 @@ export const pricingData: PricingItem[] = [
     title: "Eyes Premium",
     description: "Nekirurško podizanje gornjeg i donjeg kapka",
     price: "850 EUR",
+    anchorPrice: "850 EUR",
     category: "Plasmage"
   },
   {
@@ -655,6 +729,7 @@ export const pricingData: PricingItem[] = [
     title: "Uklanjanje Dobroćudnih Promjena",
     description: "Uklanjanje 1 promjene",
     price: "20 EUR",
+    anchorPrice: "20 EUR",
     category: "Plasmage"
   },
   {
@@ -662,6 +737,7 @@ export const pricingData: PricingItem[] = [
     title: "Anti-Age Tretman",
     description: "Tretman uklanjanja bora plasmageom",
     price: "300 EUR",
+    anchorPrice: "300 EUR",
     isRecommended: true,
     category: "Plasmage"
   },
@@ -670,6 +746,7 @@ export const pricingData: PricingItem[] = [
     title: "Scar S",
     description: "Terapija malog ožiljka plasmageom",
     price: "50 EUR",
+    anchorPrice: "50 EUR",
     category: "Plasmage"
   },
   {
@@ -677,6 +754,7 @@ export const pricingData: PricingItem[] = [
     title: "Scar L",
     description: "Terapija velikog ožiljka plasmageom",
     price: "90 EUR",
+    anchorPrice: "90 EUR",
     category: "Plasmage"
   },
 
@@ -686,6 +764,7 @@ export const pricingData: PricingItem[] = [
     title: "PRP",
     description: "1 PRP tretman (4 ml)",
     price: "265 EUR",
+    anchorPrice: "265 EUR",
     category: "PRP"
   },
   {
@@ -693,6 +772,7 @@ export const pricingData: PricingItem[] = [
     title: "PRP Ideal",
     description: "2 PRP tretmana",
     price: "475 EUR",
+    anchorPrice: "475 EUR",
     category: "PRP",
     isPackage: true,
     isPopular: true,
@@ -704,6 +784,7 @@ export const pricingData: PricingItem[] = [
     title: "PRP Superior",
     description: "3 PRP tretmana",
     price: "675 EUR",
+    anchorPrice: "675 EUR",
     category: "PRP",
     isPackage: true,
     isPopular: true,
@@ -714,6 +795,7 @@ export const pricingData: PricingItem[] = [
     title: "PRP Classic",
     description: "4 PRP tretmana",
     price: "845 EUR",
+    anchorPrice: "845 EUR",
     category: "PRP",
     isPackage: true,
     packageDetails: "4 tretmana"
@@ -727,6 +809,7 @@ export const pricingData: PricingItem[] = [
     title: "TKN HA3",
     description: "1 tretman TKN HA3",
     price: "265 EUR",
+    anchorPrice: "265 EUR",
     category: "Skin Boosteri"
   },
   {
@@ -734,6 +817,7 @@ export const pricingData: PricingItem[] = [
     title: "TKN HA3 - Standard Paket",
     description: "2 tretmana TKN HA3",
     price: "475 EUR",
+    anchorPrice: "475 EUR",
     category: "Skin Boosteri",
     isPackage: true,
     isRecommended: true,
@@ -744,6 +828,7 @@ export const pricingData: PricingItem[] = [
     title: "TKN HA3 - Premium Paket",
     description: "Premium paket - 3 tretmana TKN HA3",
     price: "640 EUR",
+    anchorPrice: "640 EUR",
     category: "Skin Boosteri",
     isPackage: true,
     packageDetails: "3 tretmana"
@@ -753,6 +838,7 @@ export const pricingData: PricingItem[] = [
     title: "Profhilo",
     description: "1 tretman Profhilo",
     price: "340 EUR",
+    anchorPrice: "340 EUR",
     category: "Skin Boosteri"
   },
   {
@@ -760,6 +846,7 @@ export const pricingData: PricingItem[] = [
     title: "Profhilo Paket",
     description: "2 tretmana Profhilo",
     price: "635 EUR",
+    anchorPrice: "635 EUR",
     category: "Skin Boosteri",
     isPackage: true,
     isPopular: true,

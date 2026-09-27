@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-cjenik": "npx --yes tsx scripts/generate-cjenik.ts"
   },
   "dependencies": {
     "@getbrevo/brevo": "^2.5.0",

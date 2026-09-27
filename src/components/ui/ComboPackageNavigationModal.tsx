@@ -7,6 +7,7 @@ import { FaTimes, FaCheck, FaGift, FaChevronLeft, FaChevronRight, FaStar } from 
 import Image from 'next/image';
 import Link from 'next/link';
 import { ComboPackage, comboPackages } from '@/data/comboPackages';
+import AnchorPriceDisplay from '@/components/ui/AnchorPriceDisplay';
 
 interface ComboPackageNavigationModalProps {
   isOpen: boolean;
@@ -266,6 +267,12 @@ export default function ComboPackageNavigationModal({
                               </span>
                             )}
                           </div>
+                          <AnchorPriceDisplay
+                            anchorPrice={currentComboPackage.anchorPrice}
+                            anchorDate={currentComboPackage.anchorDate}
+                            size="sm"
+                            className="mb-1"
+                          />
                           {currentComboPackage.oldPrice && (
                             <div className="flex items-center gap-2">
                               <div className="text-xs text-slate-700 font-semibold bg-slate-200 px-2 py-1 rounded-lg">
@@ -467,6 +474,12 @@ export default function ComboPackageNavigationModal({
                               </span>
                             )}
                           </div>
+                          <AnchorPriceDisplay
+                            anchorPrice={currentComboPackage.anchorPrice}
+                            anchorDate={currentComboPackage.anchorDate}
+                            size="sm"
+                            className="mb-1"
+                          />
                           {currentComboPackage.oldPrice && (
                             <div className="flex items-center gap-2">
                               <div className="text-xs text-slate-700 font-semibold bg-slate-200 px-2 py-1 rounded-lg">

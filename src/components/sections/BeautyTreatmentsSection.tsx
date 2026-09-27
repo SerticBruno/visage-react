@@ -5,22 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaChevronRight } from 'react-icons/fa';
 import BeautyTreatmentModal from '@/components/ui/BeautyTreatmentModal';
-
-
-interface BeautyTreatment {
-  id: string;
-  title: string;
-  description: string;
-  price: string;
-  image: string;
-  benefits: string[];
-  suitableFor: string[];
-  preparation: string;
-  procedure: string;
-  aftercare: string;
-  isPopular?: boolean;
-  isNew?: boolean;
-}
+import type { BeautyTreatment } from '@/data/services/beautyTreatments';
 
 interface BeautyTreatmentsSectionProps {
   treatments: BeautyTreatment[];

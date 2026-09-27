@@ -6,6 +6,7 @@ import { FaTimes, FaCheck, FaGift } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ComboPackage } from '@/data/comboPackages';
+import AnchorPriceDisplay from '@/components/ui/AnchorPriceDisplay';
 
 interface SingleComboPackageModalProps {
   isOpen: boolean;
@@ -202,6 +203,11 @@ export default function SingleComboPackageModal({
                                 {comboPackage.oldPrice}
                               </span>
                             )}
+                            <AnchorPriceDisplay
+                              anchorPrice={comboPackage.anchorPrice}
+                              anchorDate={comboPackage.anchorDate}
+                              className="mt-1"
+                            />
                           </div>
                           {comboPackage.oldPrice && (
                             <div className="text-sm text-green-600 font-semibold bg-green-50 px-3 py-2 rounded-lg">
