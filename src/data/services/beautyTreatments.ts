@@ -5,6 +5,10 @@ export interface BeautyTreatment {
   title: string;
   description: string;
   price: string;
+  /** Regular price that applied on the anchor reference date (sidrena cijena). */
+  anchorPrice: string;
+  /** ISO date `YYYY-MM-DD`; defaults to 2026-09-10 when omitted. */
+  anchorDate?: string;
   image: string;
   benefits: string[];
   suitableFor: string[];
@@ -184,6 +188,7 @@ Maska se suši 10 do 20 minuta
 Uklanjanje maske
 Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     price: '70 EUR',
+    anchorPrice: '70 EUR',
     image: '/images/services/beauty-tretmani/dermaplaning-visage-estetski-studio-sisak.webp',
     benefits: [
       'Neinvazivni mehanički piling',
@@ -239,6 +244,7 @@ Circadia serum ovisno o tipu i stanju kože
 Circadia krema ovisno o tipu i stanju kože
 Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     price: '60 EUR',
+    anchorPrice: '60 EUR',
     image: '/images/services/beauty-tretmani/marshmallow-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen svim tipovima kože',
@@ -305,6 +311,7 @@ Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme
 
 UPOZORENJE: Prilikom sušenja maska pruža osjećaj zatezanja!`,
     price: '60 EUR',
+    anchorPrice: '60 EUR',
     image: '/images/services/beauty-tretmani/firming-peptide-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen koži s vidljivim znakovima starenja',
@@ -371,6 +378,7 @@ Circadia serum ovisno o tipu i stanju kože
 Circadia krema ovisno o tipu i stanju kože
 Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     price: '100 EUR',
+    anchorPrice: '100 EUR',
     image: '/images/services/beauty-tretmani/sitgnature-dermaplaning-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen svim tipovima kože',
@@ -441,6 +449,7 @@ Circadia serum ovisno o tipu i stanju kože
 Circadia krema ovisno o tipu i stanju kože
 Aplikacija Light Day Sunscreen Broad Spectrum SPF 37 kreme`,
     price: '200 EUR',
+    anchorPrice: '200 EUR',
     image: '/images/services/beauty-tretmani/beyond-botox-visage-estetski-studio-sisak.webp',
     benefits: [
       'Namijenjen koži s vidljivim znakovima starenja',

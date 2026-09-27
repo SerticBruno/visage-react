@@ -1,6 +1,7 @@
 import React from 'react';
 import { BeautyTreatment } from '@/data/services/beautyTreatments';
 import { beautyTreatmentProcedures } from '@/data/beautyTreatmentsSection';
+import AnchorPriceDisplay from '@/components/ui/AnchorPriceDisplay';
 
 export const renderTreatmentSteps = (treatmentId: string) => {
   const procedure = beautyTreatmentProcedures[treatmentId];
@@ -59,6 +60,11 @@ export const renderTreatmentContent = (treatment: BeautyTreatment) => {
         <div className="bg-gray-50 rounded-lg p-4">
           <div className="text-center">
             <div className="text-2xl font-bold text-gray-900 mb-1">{treatment.price}</div>
+            <AnchorPriceDisplay
+              anchorPrice={treatment.anchorPrice}
+              anchorDate={treatment.anchorDate}
+              className="mb-2"
+            />
             <p className="text-gray-600 text-sm">
               Za detaljne informacije i rezervacije, slobodno nas kontaktirajte
             </p>

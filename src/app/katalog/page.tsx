@@ -9,6 +9,7 @@ import { FaFire, FaSun, FaMoon, FaCrown, FaStar } from 'react-icons/fa6';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import ProductModal from '@/components/ui/ProductModal';
+import AnchorPriceDisplay from '@/components/ui/AnchorPriceDisplay';
 import NewsletterCTASection from '@/components/sections/NewsletterCTASection';
 
 function KatalogContent() {
@@ -778,8 +779,8 @@ function KatalogContent() {
                       </p>
                     </div>
                     <div className="flex items-center justify-between mt-auto pt-2 sm:pt-4 border-t border-slate-100">
-                      <div className="flex items-center gap-1 sm:gap-2">
-                        <div className="flex flex-col h-10 sm:h-12 justify-center">
+                      <div className="flex items-center gap-1 sm:gap-2 min-w-0">
+                        <div className="flex flex-col justify-center min-w-0">
                           {product.isOnSale && product.oldPrice ? (
                             <>
                               <span className="text-xs sm:text-sm text-slate-400 line-through">{product.oldPrice}</span>
@@ -788,9 +789,15 @@ function KatalogContent() {
                           ) : (
                             <span className="text-base sm:text-lg lg:text-xl font-bold text-slate-900">{product.price}</span>
                           )}
+                          <AnchorPriceDisplay
+                            anchorPrice={product.anchorPrice}
+                            anchorDate={product.anchorDate}
+                            size="sm"
+                            className="mt-0.5"
+                          />
                         </div>
                         {product.isOnSale && product.oldPrice && (
-                          <span className="bg-rose-500 text-white text-xs font-bold w-8 h-8 sm:w-10 sm:h-10 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center">
+                          <span className="bg-rose-500 text-white text-xs font-bold w-8 h-8 sm:w-10 sm:h-10 rounded-full shadow-lg transform -rotate-12 flex items-center justify-center flex-shrink-0">
                             -{Math.round((1 - parseFloat(product.price) / parseFloat(product.oldPrice)) * 100)}%
                           </span>
                         )}

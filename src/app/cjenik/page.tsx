@@ -8,6 +8,7 @@ import React from 'react';
 import HeroSection from '@/components/sections/HeroSection';
 import ContactSection from '@/components/sections/ContactSection';
 import CTASection from '@/components/sections/CTASection';
+import AnchorPriceDisplay from '@/components/ui/AnchorPriceDisplay';
 
 export default function PricingPage() {
   const [searchInput, setSearchInput] = useState('');
@@ -436,8 +437,13 @@ export default function PricingPage() {
                                   </div>
                                   <p className="text-sm text-gray-600">{item.description}</p>
                                 </div>
-                                <div className="flex flex-col items-end gap-2 sm:justify-end">
+                                <div className="flex flex-col items-end gap-1 sm:justify-end text-right">
                                   <div className="text-base font-medium text-gray-900">{item.price}</div>
+                                  <AnchorPriceDisplay
+                                    anchorPrice={item.anchorPrice}
+                                    anchorDate={item.anchorDate}
+                                    size="sm"
+                                  />
                                 </div>
                               </div>
                             </div>

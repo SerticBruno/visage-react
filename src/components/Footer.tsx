@@ -136,6 +136,14 @@ const Footer = () => {
                   Cjenik
                 </Link>
               </li>
+              <li>
+                <Link 
+                  href="/cjenici" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Digitalni cjenici
+                </Link>
+              </li>
               {BLOG_ENABLED && (
                 <li>
                   <Link 

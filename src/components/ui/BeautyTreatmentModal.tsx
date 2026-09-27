@@ -5,6 +5,7 @@ import { Transition } from '@headlessui/react';
 import { FaTimes } from 'react-icons/fa';
 import Image from 'next/image';
 import { BeautyTreatment } from '@/data/services/beautyTreatments';
+import AnchorPriceDisplay from '@/components/ui/AnchorPriceDisplay';
 
 interface BeautyTreatmentModalProps {
   isOpen: boolean;
@@ -114,6 +115,11 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
                               {treatment.price}
                             </span>
                           </div>
+                          <AnchorPriceDisplay
+                            anchorPrice={treatment.anchorPrice}
+                            anchorDate={treatment.anchorDate}
+                            size="sm"
+                          />
                         </div>
                         <button
                           onClick={() => {
@@ -197,6 +203,11 @@ export default function BeautyTreatmentModal({ isOpen, onClose, treatment }: Bea
                               {treatment.price}
                             </span>
                           </div>
+                          <AnchorPriceDisplay
+                            anchorPrice={treatment.anchorPrice}
+                            anchorDate={treatment.anchorDate}
+                            size="sm"
+                          />
                         </div>
                         <button
                           onClick={() => {

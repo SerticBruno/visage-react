@@ -1,0 +1,87 @@
+name: Generate digitalni cjenik
+
+on:
+  schedule:
+    # TEST: 12:55 Europe/Zagreb (CEST=UTC+2) → 10:55 UTC — every day while testing
+    # After test, restore: '45 5 * * 1-5' (≈06:45–07:45 Zagreb, weekdays, before 08:00)
+    - cron: '55 10 * * *'
+  push:
+    paths:
+      - 'src/data/pricing.ts'
+      - 'src/data/comboPackages.ts'
+      - 'src/data/products.ts'
+      - 'src/lib/cjenikExport.ts'
+      - 'scripts/generate-cjenik.ts'
+  workflow_dispatch:
+    inputs:
+      type:
+        description: 'Which price list to regenerate'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - products
+          - services
+          - all
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Resolve generate type
+        id: type
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "value=products" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "value=${{ inputs.type }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            FILES=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" || true)
+            HAS_PRODUCTS=false
+            HAS_SERVICES=false
+            echo "$FILES" | grep -q 'src/data/products.ts' && HAS_PRODUCTS=true
+            echo "$FILES" | grep -qE 'src/data/(pricing|comboPackages)\.ts|src/lib/cjenikExport\.ts|scripts/generate-cjenik\.ts' && HAS_SERVICES=true
+            if [ "$HAS_PRODUCTS" = true ] && [ "$HAS_SERVICES" = true ]; then
+              echo "value=all" >> "$GITHUB_OUTPUT"
+            elif [ "$HAS_PRODUCTS" = true ]; then
+              echo "value=products" >> "$GITHUB_OUTPUT"
+            elif [ "$HAS_SERVICES" = true ]; then
+              echo "value=services" >> "$GITHUB_OUTPUT"
+            else
+              echo "value=all" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "value=all" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Generate CSV cjenik
+        run: npm run generate-cjenik -- --type=${{ steps.type.outputs.value }}
+
+      - name: Commit and push if changed
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/cjenici
+          if git diff --staged --quiet; then
+            echo "No cjenik changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update digitalni cjenik CSV ($(date -u +%Y-%m-%d))"
+          git push
