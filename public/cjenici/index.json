@@ -1,13 +1,7 @@
 {
-  "updatedAt": "2026-11-18T14:34:13.152Z",
-  "nextStorageNumber": 41,
+  "updatedAt": "2026-11-19T14:42:04.741Z",
+  "nextStorageNumber": 42,
   "entries": [
-    {
-      "kind": "products",
-      "filename": "salon_Ulica Stjepana i Antuna Radića 49 Sisak_U-01_019_20.10.2026_12-26.csv",
-      "generatedAt": "2026-10-20T10:26:44.970Z",
-      "storageNumber": 19
-    },
     {
       "kind": "products",
       "filename": "salon_Ulica Stjepana i Antuna Radića 49 Sisak_U-01_020_21.10.2026_12-37.csv",
@@ -133,8 +127,14 @@
       "filename": "salon_Ulica Stjepana i Antuna Radića 49 Sisak_U-01_040_18.11.2026_15-34.csv",
       "generatedAt": "2026-11-18T14:34:13.152Z",
       "storageNumber": 40
+    },
+    {
+      "kind": "products",
+      "filename": "salon_Ulica Stjepana i Antuna Radića 49 Sisak_U-01_041_19.11.2026_15-42.csv",
+      "generatedAt": "2026-11-19T14:42:04.741Z",
+      "storageNumber": 41
     }
   ],
-  "latestProducts": "salon_Ulica Stjepana i Antuna Radića 49 Sisak_U-01_040_18.11.2026_15-34.csv",
+  "latestProducts": "salon_Ulica Stjepana i Antuna Radića 49 Sisak_U-01_041_19.11.2026_15-42.csv",
   "latestServices": "salon_Ulica Stjepana i Antuna Radića 49 Sisak_U-01_002_27.09.2026_13-32.csv"
 }
